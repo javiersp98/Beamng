@@ -1,0 +1,32 @@
+{
+"0-120 mph":13.6,
+"Performance Class":"9",
+"Drivetrain":"AWD",
+"100-200 km/h":11.5,
+"Weight":1528,
+"60-120 mph":9,
+"Value":80000,
+"0-200 km/h":16.3,
+"TorquePeakRPM":"4150 - 5350",
+"0-100 km/h":4.8,
+"Off-Road Score":26,
+"Configuration":"3000tix GTR",
+"Description":"A car made infamous by the most wanted street racer",
+"PowerPeakRPM":"4850 - 6250",
+"60-100 mph":5.6,
+"0-60 mph":4.6,
+"Config Type":"Custom",
+"100-0 km/h":39.7,
+"Top Speed":75.6615,
+"Transmission":"Manual",
+"Torque":499.572,
+"Power":356.326,
+"0-100 mph":10.2,
+"Weight/Power":4.21348,
+"60-0 mph":117.6,
+"Years":{
+  "min":1987,
+  "max":1989
+},
+"default_color":"Silver"
+}

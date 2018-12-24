@@ -1,0 +1,23 @@
+{
+"Performance Class":"1",
+"Drivetrain":"RWD",
+"Body Style":"Semi Truck",
+"Value":21000,
+"TorquePeakRPM":1250,
+"Off-Road Score":34,
+"Configuration":"T75 Fifth Wheel Upfit 'Base' (M)",
+"Description":"The basic version of the T75 with steel wheels.",
+"default_color":"Silver",
+"0-60 mph":19.1,
+"Config Type":"Factory",
+"100-0 km/h":50.2,
+"Top Speed":40.4469,
+"Transmission":"Manual",
+"Torque":1355.66,
+"Weight":6790,
+"Power":303.51,
+"Weight/Power":22.4092,
+"60-0 mph":145.2,
+"PowerPeakRPM":1550,
+"0-100 km/h":20.5
+}

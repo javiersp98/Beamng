@@ -1,0 +1,12 @@
+{
+"MostWanted": {
+    "information":{
+        "authors":"Admiral Fatass",
+        "name":"Most Wanted Livery",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "MostWanted",
+}
+
+}

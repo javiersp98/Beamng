@@ -1,0 +1,649 @@
+{
+"sunburst_engine_vme": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"HEV Electric Engine",
+        "value":2000,
+    },
+    "slotType" : "sunburst_engine",
+    "slots": [
+        ["type", "default", "description"],        
+        ["sunburst_transmission","sunburst_transmission_CVT_electric2", "Transmission"],
+        
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["electricMotor", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine":{
+        "torque":[
+            ["rpm", "torque"],
+            [0, 200],
+            [500, 200],
+            [1000, 200],
+            [2000, 200],
+            [3000, 200],
+            [4000, 200],
+            [5000, 200],
+            [6000, 200],
+            [7000, 200],
+            [8000, 200],
+            
+        ],
+
+        "idleRPM":100,
+        "maxRPM":8000,
+        "revLimiterRPMDrop":250,
+        "inertia":0.01,
+        "friction":11,
+		"throttleSensitivity":1.4
+        "dynamicFriction":0.023,
+        "burnEfficiency":17,
+        "torqueReactionNodes:":["e1r","e2r","e4l"],
+        "particulates":0
+        "energyStorage": "mainBattery",
+        "requiredEnergyType":"electricEnergy",
+
+        //cooling and oil system
+        "thermalsEnabled":false,
+        "engineBlockMaterial":"aluminum",
+        "oilVolume":4,
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":130,
+        "headGasketDamageThreshold":1500000,
+        "pistonRingDamageThreshold":1500000,
+        "connectingRodDamageThreshold":2000000,
+
+        //node beam interface
+        "waterDamage": {"[engineGroup]:":["engine_intake"]},
+        "radiator": {"[engineGroup]:":["radiator"]},
+        "engineBlock": {"[engineGroup]:":["engine_block"]},
+        "breakTriggerBeam":"engine",
+
+        "soundConfig": "soundConfig",
+    },
+    "soundConfig": {
+        "sampleName": "I4",
+        "mainGain": -200000,
+        "maxLoadMix": 0,
+        "minLoadMix": 0,
+        "onLoadGain":0,
+        "offLoadGain":00,
+        "eqLowGain": 0,
+        "eqLowFreq": 0,
+        //"eqLowWidth": 0,
+        "eqHighGain": 5,
+        "eqHighFreq": 0,
+        //"eqHighWidth": 0.5,
+        "lowCutFreq":0,
+        "fundamentalFrequencyCylinderCount":4
+        "eqFundamentalGain": 0
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":2000,
+        "clutchLaunchTargetRPM":2800,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":[0,0,0,3300,3800,4000,4200,4200]
+        //**highShiftUp can be overwritten by intake modifications**
+        "highShiftUpRPM":6400
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sunburst_engineevm", ["sunburst_engine","sunburst_transmission"]],
+		 ["ecu", ["sunburst_engine","sunburst_transmission","sunburst_engine_bay"]],
+         ["sunburst_e_gaugesvm", ["sunburst_dash"]],
+		 
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--1.8L I4 Engine--
+         {"selfCollision":false},
+         {"collision":true},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"sunburst_engine"},
+         {"nodeWeight":20.2},
+         {"engineGroup":"engine_block"}
+         ["e1r", -0.34, -1.62, 0.32,{"chemEnergy":1000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.15}],
+         ["e1l", -0.34, -1.31, 0.32],
+         ["e2r", 0.17, -1.62, 0.32,{"chemEnergy":1000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.15}],
+         ["e2l", 0.17, -1.31, 0.32],
+         {"engineGroup":["engine_block","engine_intake"]}
+         ["e3r", -0.34, -1.62, 0.74,{"chemEnergy":1000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.15}],
+         ["e3l", -0.34, -1.31, 0.74],
+         ["e4r", 0.17, -1.62, 0.74,{"isExhaust":true,"chemEnergy":1000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.15}],
+         ["e4l", 0.17, -1.31, 0.74],
+         {"engineGroup":""},
+         {"chemEnergy":200,"burnRate":0.3,"flashPoint":600,"specHeat":0.1,"smokePoint":580,"selfIgnitionCoef":false},
+         ["tc1", 0.0, -1.6, 0.45],
+         {"chemEnergy":false,"burnRate":false,"flashPoint":false,"specHeat":false,"smokePoint":false,"selfIgnitionCoef":false},
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":8400600,"beamDamp":150},
+          {"beamDeform":600000,"beamStrength":"FLT_MAX"},
+          //engine
+          ["e1r","e1l"],
+          ["e2r","e2l"],
+          ["e3r","e3l"],
+          ["e4r","e4l"],
+
+          ["e1r","e2r"],
+          ["e1l","e2l"],
+          ["e3r","e4r"],
+          ["e3l","e4l"],
+
+          ["e1r","e3r"],
+          ["e1l","e3l"],
+          ["e2r","e4r"{"isExhaust":true}],
+          ["e2l","e4l"],
+
+          ["e2r","e3r"],
+          ["e2l","e3l"],
+          ["e2r","e3l"],
+          ["e2l","e3r"],
+
+          ["e1r","e4r"],
+          ["e1l","e4l"],
+          ["e1r","e4l"],
+          ["e1l","e4r"],
+
+          ["e1r","e2l"],
+          ["e1l","e2r"],
+          ["e3r","e4l"],
+          ["e3l","e4r"],
+
+          ["e1r","e3l"],
+          ["e1l","e3r"],
+          ["e2r","e4l"],
+          ["e2l","e4r"],
+
+          ["tc1","e3l"],
+          ["tc1","e3r"],
+          ["tc1","e4l"],
+          ["tc1","e4r"],
+          ["tc1","e1l"],
+          ["tc1","e1r"],
+          ["tc1","e2l"],
+          ["tc1","e2r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+"sunburst_transmission_CVT_electric2": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"HEV Electric Transmission",
+        "value":800,
+    },
+    "slotType" : "sunburst_transmission",
+    "slots": [
+        ["type", "default", "description"],
+        ["sunburst_transfer_case","sunburst_transfer_case_FWD", "Transfer Case"{"coreSlot":true}],
+        ["sunburst_differential_F","sunburst_differential_F", "Front Differential"],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["cvtGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter": 0.40,
+        "converterStiffness":20,
+        "couplingAVRatio":20,
+        "stallTorqueRatio":1,
+        "additionalEngineInertia":0.14,
+    },
+    "gearbox": {
+        "uiName":"Gearbox",
+        "minGearRatio":0.6,
+        "maxGearRatio":3.5,
+        "friction": 1,
+        "oneWayViscousCoef":12,
+        "parkLockTorque":2000,
+        "gearboxNode:":"tra1",
+    },
+    "vehicleController": {
+        "automaticModes":"PRNDS",
+        "cvtHighRPM":7700,
+        "cvtLowRPM":100,
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sunburst_transmission_awd", ["sunburst_engine","sunburst_transmission"]],
+         ["sunburst_auto", ["sunburst_body"]],
+    ],
+    "props": [
+        ["func",    "mesh",                  "idRef:","idX:","idY:", "baseRotation",          "rotation",              "translation",             "min", "max", "offset", "multiplier"],
+        //displays
+        ["disp_P_cvt", "sunburst_displayP",     "f7r","f7l","f8r",      {"x":225, "y":0, "z":0}, {"x":0, "y":0, "z":0},   {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_R_cvt", "sunburst_displayR",     "f7r","f7l","f8r",      {"x":225, "y":0, "z":0}, {"x":0, "y":0, "z":0},   {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_N_cvt", "sunburst_displayN",     "f7r","f7l","f8r",      {"x":225, "y":0, "z":0}, {"x":0, "y":0, "z":0},   {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_D_cvt", "sunburst_displayD",     "f7r","f7l","f8r",      {"x":225, "y":0, "z":0}, {"x":0, "y":0, "z":0},   {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_L_cvt", "sunburst_displayL",     "f7r","f7l","f8r",      {"x":225, "y":0, "z":0}, {"x":0, "y":0, "z":0},   {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["gear_A",  "sunburst_shifter_auto", "f7r","f7l","f8r",      {"x":90, "y":0, "z":0},  {"x":0, "y":0, "z":0.1}, {"x":0, "y":0.14, "z":0},  0, 1, -0.12, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--CVT--
+         {"selfCollision":false},
+         {"collision":true},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"sunburst_transmission"},
+         {"nodeWeight":8.5},
+         ["tra1r",-0.32, -1.31, 0.33],
+         ["tra1l", 0.32, -1.31, 0.33],
+         ["tra1", -0.2, -1.43, 0.22],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--TRANSMISSION CONE--
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":12001000,"beamDamp":400},
+          {"beamDeform":250000,"beamStrength":"FLT_MAX"},
+          ["tra1l","e2r"],
+          ["tra1l","e4r"],
+          ["tra1l","e2l"],
+          ["tra1l","e4l"],
+          ["tra1r","e1r"],
+          ["tra1r","e3r"],
+          ["tra1r","e1l"],
+          ["tra1r","e3l"],
+          ["tra1r","tra1l"],
+          ["tra1","e1l"],
+          ["tra1","e2l"],
+          ["tra1","e4l"],
+          ["tra1","e3l"],
+          ["tra1","tra1l"],
+          ["tra1","tra1r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+"sunburst_hoodvmaero": {
+            "information":{
+                "authors":"BeamNG",
+                "name":"Aero Hood",
+                "value":195,
+            }
+            "slotType" : "sunburst_hood",
+            "slots": [
+                ["type", "default", "description"]
+                ["sunburst_rallylights","", "Rally Lights"],
+                ["sunburst_vmaelogo_F","sunburst_logo_hoodaevm","Logo"]
+            ],
+            "flexbodies": [
+                 ["mesh", "[group]:", "nonFlexMaterials"],
+                 ["sunburst_hoodvmev", ["sunburst_hood"]],
+            ],
+            "nodes": [
+                 ["id", "posX", "posY", "posZ"],
+                 //--HOOD--
+                 {"nodeMaterial":"|NM_METAL"},
+                 {"frictionCoef":0.5},
+                 {"collision":true}
+                 {"selfCollision":true},
+                 {"group":"sunburst_hood"},
+                 {"nodeWeight":0.80},
+                 ["h1rr",-0.73, -0.93, 0.86],
+                 ["h1r",-0.31, -1.06, 0.875],
+                 ["h1l",0.31, -1.06, 0.875],
+                 ["h1ll",0.73, -0.93, 0.86],
+
+                 ["h2rr",-0.725, -1.315, 0.845],
+                 ["h2r",-0.31, -1.41, 0.835],
+                 ["h2l",0.31, -1.41, 0.835],
+                 ["h2ll",0.725, -1.315, 0.845],
+
+                 ["h3rr",-0.71, -1.62, 0.80],
+                 ["h3r",-0.36, -1.72, 0.78],
+                 ["h3",0.0, -1.74, 0.78],
+                 ["h3l",0.36, -1.72, 0.78],
+                 ["h3ll",0.71, -1.62, 0.80],
+
+                 ["h4rr",-0.68, -1.82, 0.73],
+                 ["h4r",-0.34, -2.00, 0.69],
+                 ["h4",0.0, -2.05, 0.69],
+                 ["h4l",0.34, -2.00, 0.69],
+                 ["h4ll",0.68, -1.82, 0.73],
+
+                 //grill nodes
+                 ["h5r", -0.36, -2.02, 0.61],
+                 ["h5", 0, -2.09, 0.61],
+                 ["h5l", 0.36, -2.02, 0.61],
+
+                 //rigidifier
+                 {"selfCollision":false},
+                 {"collision":false}
+                 {"group":""},
+                 ["h6",0.0, -1.44, 0.62],
+                 {"selfCollision":true}
+            ],
+            "beams": [
+                  ["id1:", "id2:"],
+                  //--HOOD--
+                  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                  {"beamSpring":801000,"beamDamp":60},
+                  {"beamDeform":36150,"beamStrength":"FLT_MAX"},
+                  //hood main shape
+                  ["h1rr","h2rr"],
+                  ["h1r","h2r"],
+                  ["h1l","h2l"],
+                  ["h1ll","h2ll"],
+                  ["h2rr","h3rr"],
+                  ["h2r","h3r"],
+                  ["h2l","h3l"],
+                  ["h2ll","h3ll"],
+                  ["h3rr","h4rr"],
+                  ["h3r","h4r"],
+                  ["h3","h4"],
+                  ["h3l","h4l"],
+                  ["h3ll","h4ll"],
+                  //widthwise
+                  ["h1rr","h1r"],
+                  ["h1r","h1l"],
+                  ["h1l","h1ll"],
+                  ["h2rr","h2r"],
+                  ["h2r","h2l"],
+                  ["h2l","h2ll"],
+                  ["h3rr","h3r"],
+                  ["h3r","h3"],
+                  ["h3","h3l"],
+                  ["h3l","h3ll"],
+                  ["h4rr","h4r"],
+                  ["h4r","h4"],
+                  ["h4","h4l"],
+                  ["h4l","h4ll"],
+
+                  //grille
+                  ["h4r","h5r"],
+                  ["h4","h5"],
+                  ["h4l","h5l"],
+
+                  ["h5r","h5"],
+                  ["h5l","h5"],
+
+                  //surficial crossing
+                  {"beamDeform":13500,"beamStrength":"FLT_MAX"},
+                  ["h1rr","h2r"],
+                  ["h1r","h2rr"],
+                  ["h1r","h2l"],
+                  ["h1l","h2r"],
+                  ["h1l","h2ll"],
+                  ["h1ll","h2l"],
+
+                  ["h2rr","h3r"],
+                  ["h2r","h3rr"],
+                  ["h2r","h3"],
+                  ["h2l","h3"],
+
+                  ["h2l","h3r"],
+                  ["h2r","h3l"],
+
+                  ["h2l","h3ll"],
+                  ["h2ll","h3l"],
+
+                  ["h3rr","h4r"],
+                  ["h3r","h4rr"],
+                  ["h3r","h4"],
+                  ["h3","h4r"],
+                  ["h3","h4l"],
+                  ["h3l","h4"],
+                  ["h3l","h4ll"],
+                  ["h3ll","h4l"],
+
+                  //grille
+                  ["h5r","h4"],
+                  ["h5l","h4"],
+                  ["h4r","h5"],
+                  ["h4l","h5"],
+
+                  ["h5r","h4rr"],
+                  ["h5l","h4ll"],
+
+                  //extra
+                  //rigids
+                  {"beamSpring":401000,"beamDamp":60},
+                  {"beamDeform":2000,"beamStrength":"FLT_MAX"},
+                  //lengthwise
+                  /*
+                  ["h1rr","h3rr"],
+                  ["h1r","h3r"],
+                  ["h1","h3"],
+                  ["h1l","h3l"],
+                  ["h1ll","h3ll"],
+                  */
+
+                  //["h2rr","h4rr"],
+                  //["h2r","h4r"],
+                  //["h2r","h4"],
+                  //["h2l","h4"],
+                  //["h2l","h4l"],
+                  //["h2ll","h4ll"],
+                  //widthwise
+                  /*
+                  ["h1rr","h1"],
+                  ["h1r","h1l"],
+                  ["h1","h1ll"],
+                  ["h2rr","h2"],
+                  ["h2r","h2l"],
+                  ["h2","h2ll"],
+                  ["h3rr","h3"],
+                  ["h3r","h3l"],
+                  ["h3","h3ll"],
+                  ["h4rr","h4"],
+                  ["h4r","h4l"],
+                  ["h4","h4ll"],
+                  */
+
+                  ["h2rr","h4rr"],
+                  ["h2r","h4r"],
+                  ["h2r","h4"],
+                  ["h2l","h4"],
+                  ["h2l","h4l"],
+                  ["h2ll","h4ll"],
+
+                  ["h1rr","h3rr"],
+                  ["h1r","h3r"],
+                  ["h1r","h3"],
+                  ["h1l","h3"],
+                  ["h1l","h3l"],
+                  ["h1ll","h3ll"],
+
+                  //corner grille
+                  ["h3r","h5r"],
+                  ["h3","h5"],
+                  ["h3l","h5l"],
+
+                  //rigidifier
+                  {"beamSpring":801000,"beamDamp":60},
+                  {"beamDeform":3750,"beamStrength":"FLT_MAX"},
+                  ["h6","h1rr"],
+                  ["h6","h2rr"],
+                  ["h6","h3rr"],
+                  ["h6","h4rr"],
+                  ["h6","h1r"],
+                  ["h6","h2r"],
+                  ["h6","h3r"],
+                  ["h6","h4r"],
+                  ["h6","h3"],
+                  ["h6","h4"],
+                  ["h6","h1l"],
+                  ["h6","h2l"],
+                  ["h6","h3l"],
+                  ["h6","h4l"],
+                  ["h6","h1ll"],
+                  ["h6","h2ll"],
+                  ["h6","h3ll"],
+                  ["h6","h4ll"],
+
+                  ["h6","h5r"],
+                  ["h6","h5"],
+                  ["h6","h5l"],
+
+                  //hood hinge
+                  {"beamSpring":1201000,"beamDamp":60},
+                  {"beamDeform":16500,"beamStrength":45000},
+                  //r
+                  {"breakGroup":"sunburst_hoodhinge_R"},
+                  ["h1rr","f5rr"],
+                  ["h1r","f5rr"],
+                  ["h1r","f6rr"],
+                  //l
+                  {"breakGroup":"sunburst_hoodhinge_L"},
+                  ["h1ll","f5ll"],
+                  ["h1l","f5ll"],
+                  ["h1l","f6ll"],
+                  {"breakGroup":""},
+
+                  //hood latch
+                  {"beamDeform":8500,"beamStrength":25000},
+                  {"breakGroup":"sunburst_hoodlatch"},
+                  ["h4r","f15"],
+                  ["h4","f15"],
+                  ["h4l","f15"],
+                  {"breakGroup":""},
+
+                  //damping
+                  {"beamDeform":15000,"beamStrength":25000},
+                  {"beamSpring":0,"beamDamp":50},
+                  {"breakGroup":"sunburst_hoodhinge_R"},
+                  ["h4rr","f13rr"],
+                  {"breakGroup":"sunburst_hoodhinge_L"},
+                  ["h4ll","f13ll"],
+                  {"breakGroup":""},
+
+                  //anti stretch
+                  {"beamSpring":0,"beamDamp":0,"beamDeform":"FLT_MAX","beamStrength":"FLT_MAX"},
+                  {"beamLimitSpring":1001000,"beamLimitDamp":80},
+                  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.05, "beamShortBound":1.0},
+                  ["h1rr","h4rr"],
+                  ["h1r","h4r"],
+                  ["h1r","h4"],
+                  ["h1l","h4"],
+                  ["h1l","h4l"],
+                  ["h1ll","h4ll"],
+
+                  ["h1rr","h1ll"],
+                  ["h2rr","h2ll"],
+                  ["h3rr","h3ll"],
+                  ["h4rr","h4ll"],
+
+                  //hood support beams
+                  {"beamType":"|SUPPORT", "beamLongBound":8},
+                  {"beamSpring":801000,"beamDamp":60},
+                  {"beamDeform":15000,"beamStrength":125000},
+                  ["h1rr","f5rr"],
+                  ["h1r","f5r"],
+                  ["h1l","f5l"],
+                  ["h1ll","f5ll"],
+
+                  ["h2rr","fx1r"],
+                  ["h2r","fx1r"],
+                  ["h2l","fx1l"],
+                  ["h2ll","fx1l"],
+
+                  ["h3rr","fx1r"],
+                  ["h3ll","fx1l"],
+
+                  ["h3r","fx1r"],
+                  ["h3l","fx1l"],
+
+                  ["h2r","f14rr"],
+                  ["h2l","f14ll"],
+
+                  /*
+                  ["h4rr","f11rr"],
+                  ["h4r","f11rr"],
+                  ["h4","f11"],
+                  ["h4l","f11ll"],
+                  ["h4ll","f11ll"],
+
+                  ["h5r","f11rr"],
+                  ["h5","f11"],
+                  ["h5l","f11ll"],
+
+                  ["h4rr","f11rr"],
+                  ["h4r","f11rr"],
+                  ["h4","f11"],
+                  ["h4l","f11ll"],
+                  ["h4ll","f11ll"],
+
+                  ["h5r","f17r"],
+                  ["h5","f17"],
+                  ["h5l","f17l"],
+                  */
+
+                  ["h1rr","p1r"],
+                  ["h1ll","p1l"],
+
+                  //width
+                  ["h1r","f6rr"],
+                  ["h2r","f14rr"],
+                  ["h4r","f15rr"],
+
+                  ["h1l","f6ll"],
+                  ["h2l","f14ll"],
+                  ["h4l","f15ll"],
+
+                  {"optional":true},
+                  ["h3r","fe10r"],
+                  ["h3l","fe10l"],
+                  {"optional":false},
+
+                  {"beamDeform":2500,"beamStrength":125000},
+                  ["h4","f15"],
+                  ["h5","f15"],
+                  //["h4r","f15r"],
+                  //["h4l","f15l"],
+                  ["h5r","f15r"],
+                  ["h5l","f15l"],
+                  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+            ],
+            "triangles": [
+                    ["id1:","id2:","id3:"],
+                    //hood
+                    {"dragCoef":3},
+                    {"group":"sunburst_hood"},
+                    ["h1r","h1rr","h2rr"],
+                    ["h1r","h2rr","h2r"],
+                    ["h1l","h1r","h2r"],
+                    ["h1l","h2r","h2l"],
+                    ["h1ll","h1l","h2l"],
+                    ["h1ll","h2l","h2ll"],
+                    ["h2r","h2rr","h3rr"],
+                    ["h2r","h3rr","h3r"],
+                    ["h2r","h3r","h3"],
+                    ["h2l","h2r","h3"],
+                    ["h2l","h3","h3l"],
+
+                    ["h2ll","h2l","h3ll"],
+                    ["h2l","h3l","h3ll"],
+
+                    ["h3r","h3rr","h4rr"],
+                    ["h3r","h4rr","h4r"],
+                    ["h3","h3r","h4r"],
+                    ["h3","h4r","h4"],
+
+                    ["h3l","h4ll","h3ll"],
+                    ["h4l","h4ll","h3l"],
+                    ["h3","h4l","h3l"],
+                    ["h4","h4l","h3"],
+
+                    //grille
+                    ["h4","h4r","h5r"],
+                    ["h4","h5r","h5"],
+                    ["h4l","h4","h5l"],
+                    ["h4","h5","h5l"],
+                    {"group":""},
+            ],
+}
+
+
+}

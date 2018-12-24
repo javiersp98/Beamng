@@ -1,0 +1,29 @@
+{
+"0-100 km/h":8.9,
+"Weight":1525,
+"Braking G":0.946,
+"Value":9400,
+"Performance Class":"4",
+"TorquePeakRPM":"1900 - 3800",
+"0-100 mph":28.7,
+"Off-Road Score":59,
+"Configuration":"Croft Edition (M)",
+"Drivetrain":"4WD",
+"Power":166.548,
+"60-100 mph":20.4,
+"0-60 mph":8.4,
+"Config Type":"Factory",
+"100-0 km/h":41.6,
+"Top Speed":50.0734,
+"Transmission":"Manual",
+"Torque":290.806,
+"Description":"Fully off-road focused edition with tons of equipment, , snorkel, , search lights, custom roll bar, improved transfer case, a hook and removed parts for lighter weight",
+"default_color":"Light Brown",
+"Weight/Power":9.18675,
+"60-0 mph":123.9,
+"Years":{
+  "min":1991,
+  "max":1996
+},
+"PowerPeakRPM":"4300 - 5400"
+}

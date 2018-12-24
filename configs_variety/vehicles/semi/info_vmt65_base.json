@@ -1,0 +1,23 @@
+{
+"Performance Class":"1",
+"Drivetrain":"RWD",
+"Body Style":"Semi Truck",
+"Value":15000,
+"TorquePeakRPM":1250,
+"Off-Road Score":34,
+"Configuration":"T65 Fifth Wheel Upfit 'Base' (M)",
+"Description":"The basic version of the T65 with steel wheels.",
+"default_color":"Silver",
+"0-60 mph":17.6,
+"Config Type":"Factory",
+"100-0 km/h":50.9,
+"Top Speed":43.3566,
+"Transmission":"Manual",
+"Torque":1355.66,
+"Weight":5815,
+"Power":303.51,
+"Weight/Power":19.1914,
+"60-0 mph":144.9,
+"PowerPeakRPM":1550,
+"0-100 km/h":18.7
+}

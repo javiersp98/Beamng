@@ -1,0 +1,779 @@
+
+/*
+{
+"sbr_engine_F4_2.5vmdiesel": {
+    "information":{
+        "authors":"Ninetynine",
+        "name":"2.5L F4 Diesel Engine",
+        "value":8300,
+    }
+    "slotType" : "sbr_engine",
+    "slots": [
+        ["type", "default", "description"]
+        ["sbr_muffler","sbr_muffler", "Muffler"],
+        ["sbr_transaxlevmd","sbr_transaxle_6Mvmd", "Transaxle"],
+        ["sbr_intake_F4vmd","sbr_intake_F4_TTvmd2", "F4 Intake & Exhaust"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sbr_engine", ["sbr_engine"]],
+    ],
+    "enginetorque":[
+        ["rpm", "torque"]
+        [0, 0],
+        [350, 95],
+        [700, 160],
+        [1000, 217],
+        [1750, 293],
+        [2000, 321],
+        [3000, 334],
+        [4000, 302],
+        [4500, 261],
+        [5000, 215],
+        [6000, 110],
+    ],
+    "engine":{
+        "idleRPM":650,
+        "maxRPM":6000,
+        "inertia":0.080,
+        "friction":12
+        "brakingCoefRPS":0.16
+        "burnEfficiency":0.39
+        "throttleSensitivity":1.2
+        "torqueReactionNodes:":["e1l","e2l","e4r"]
+        "particulates":0.02
+        "clutchTorque":965
+
+        //cooling and oil system
+        "thermalsEnabled":true
+        "engineBlockMaterial":"aluminum"
+        "oilVolume":6
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":160
+        "headGasketDamageThreshold":1500000
+        "pistonRingDamageThreshold":1500000
+        "connectingRodDamageThreshold":2000000
+    },
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //2.5L F4 Engine
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true}
+           {"group":"sbr_engine"}
+         {"engineGroup":"engine_block"}
+         {"nodeWeight":17.5},
+         {"chemEnergy":1000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.15},
+         ["e1r", -0.36, 1.40, 0.18{"isExhaust":true}],
+         ["e1l", 0.36, 1.40, 0.18],
+         ["e2r", -0.36, 1.69, 0.18],
+         ["e2l", 0.36, 1.69, 0.18],
+         {"engineGroup":["engine_block","engine_intake"]}
+         {"chemEnergy":false,"burnRate":false,"flashPoint":false, "specHeat": false,"selfIgnitionCoef":false,"smokePoint":false,"baseTemp":false,"conductionRadius":false}
+         ["e3r", -0.36, 1.40, 0.51],
+         ["e3l", 0.36, 1.40, 0.51],
+         ["e4r", -0.36, 1.69, 0.51],
+         ["e4l", 0.36, 1.69, 0.51],
+         {"engineGroup":""}
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":7700550,"beamDamp":125},
+          {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+          //engine
+          ["e1r","e1l"{"isExhaust":true}],
+          ["e2r","e2l"],
+          ["e3r","e3l"],
+          ["e4r","e4l"],
+
+          ["e1r","e2r"],
+          ["e1l","e2l"],
+          ["e3r","e4r"],
+          ["e3l","e4l"],
+
+          ["e1r","e3r"],
+          ["e1l","e3l"],
+          ["e2r","e4r"],
+          ["e2l","e4l"],
+
+          ["e2r","e3r"],
+          ["e2l","e3l"],
+          ["e2r","e3l"],
+          ["e2l","e3r"],
+
+          ["e1r","e4r"],
+          ["e1l","e4l"],
+          ["e1r","e4l"],
+          ["e1l","e4r"],
+
+          ["e1r","e2l"],
+          ["e1l","e2r"],
+          ["e3r","e4l"],
+          ["e3l","e4r"],
+
+          ["e1r","e3l"],
+          ["e1l","e3r"],
+          ["e2r","e4l"],
+          ["e2l","e4r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    
+
+    ],
+
+},
+"sbr_intake_F4_TTvmd": {
+    "information":{
+        "authors":"Ninetynine",
+        "name":"S Twin Turbochargers",
+        "value":3400,
+    }
+    "slotType" : "sbr_intake_F4vmd",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sbr_intake_TT", ["sbr_body","sbr_engine"]],
+         ["sbr_exhaust_TT", ["sbr_engine","sbr_twinturbo","sbr_exhaust"]],
+    ],
+    "turbocharger": {
+
+	"wastegateStart":20,
+        "wastegateLimit":23,
+        "maxExhaustPower": 1250,
+        "backPressureCoef": 0.0000005,
+        "frictionCoef": 2.5,
+        "pressureRatePSI": 30,
+        "inertia":0.30,
+        "bovEnabled":false,
+        "bovSoundVolumeCoef": 0.0,
+        "bovSoundFileName": "TurboBovSound",
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -2.5],
+            [10000,      -1.5],
+            [30000,     6],
+            [60000,     12],
+            [90000,     14],
+            [150000,    17],
+            [200000,    20],
+            [250000,    24],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.0,    0.0],
+            [650,   0.4,   0.5],
+            [1000,   0.75,   0.7],
+            [1450,  0.95,    0.8],
+            [2000,  0.71,    0.8],
+            [2500,  0.63,    1.0],
+            [3000,  0.64,    1.0],
+            [4000,  0.54,    1.0],
+            [5000,  0.4,    1.0],
+            [6000,  0.35,    1.0],
+        ],
+    },
+    "engine":{
+        "shiftDownRPM":2600,
+        "shiftUpRPM":3400,
+        "highShiftUpRPM":4800,
+        "maxRPM":6000,
+        "clutchTorque":960
+        "brakingCoefRPS":0.17
+        "burnEfficiency":0.35
+    },
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"selfCollision":true}
+        {"collision":true}
+        //--exhaust
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+        {"nodeWeight":3.61},
+        {"group":"sbr_twinturbo"},
+        ["exh1r",-0.54, 1.78, 0.21],
+        ["exh1l", 0.54, 1.78, 0.21],
+        {"group":"sbr_exhaust"},
+        ["exh2",0.0, 1.97, 0.21],
+        ["exh3",0.0, 1.97, 0.35],
+        //tips
+        {"nodeWeight":0.48},
+        ["exh4rr",-0.68, 2.045, 0.24],
+        ["exh4r",-0.48, 2.105, 0.24],
+        ["exh4l", 0.48, 2.105, 0.24],
+        ["exh4ll", 0.68, 2.045, 0.24],
+
+        ["exh5rr",-0.67, 2.085, 0.34],
+        ["exh5r",-0.48, 2.145, 0.35],
+        ["exh5l", 0.48, 2.145, 0.35],
+        ["exh5ll", 0.67, 2.085, 0.34],
+
+        //rigidifier
+        {"selfCollision":false}
+        ["exh6r",-0.57, 1.93, 0.32],
+        ["exh6l", 0.57, 1.93, 0.32],
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamSpring":825550,"beamDamp":50},
+        {"beamDeform":22500,"beamStrength":"FLT_MAX"},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        //tips
+        ["exh4r","exh4rr"],
+        ["exh4l","exh4ll"],
+        ["exh5r","exh5rr"],
+        ["exh5l","exh5ll"],
+        ["exh4r","exh5r"],
+        ["exh4rr","exh5rr"],
+        ["exh4l","exh5l"],
+        ["exh4ll","exh5ll"],
+
+        {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+        //cross
+        ["exh4r","exh5rr"],
+        ["exh5r","exh4rr"],
+        ["exh4l","exh5ll"],
+        ["exh5l","exh4ll"],
+
+        //rigid
+        ["exh4r","exh6r"],
+        ["exh4rr","exh6r"],
+        ["exh5r","exh6r"],
+        ["exh5rr","exh6r"],
+
+        ["exh4l","exh6l"],
+        ["exh4ll","exh6l"],
+        ["exh5l","exh6l"],
+        ["exh5ll","exh6l"],
+
+        {"beamSpring":413050,"beamDamp":50},
+        //turbo and log connect to tip
+        //r
+        ["exh4r","exh3"],
+        ["exh4r","exh2"],
+        ["exh4rr","exh3"],
+        ["exh4rr","exh2"],
+        ["exh5r","exh3"],
+        ["exh5r","exh2"],
+        ["exh5rr","exh3"],
+        ["exh5rr","exh2"],
+        ["exh6r","exh3"],
+        ["exh6r","exh2"],
+
+        //l
+        ["exh4l","exh3"],
+        ["exh4l","exh2"],
+        ["exh4ll","exh3"],
+        ["exh4ll","exh2"],
+        ["exh5l","exh3"],
+        ["exh5l","exh2"],
+        ["exh5ll","exh3"],
+        ["exh5ll","exh2"],
+        ["exh6l","exh3"],
+        ["exh6l","exh2"],
+
+        {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+        ["exh4r","exh1r"],
+        ["exh4rr","exh1r"],
+        ["exh5r","exh1r"],
+        ["exh5rr","exh1r"],
+        ["exh6r","exh1r"{"isExhaust":true}],
+        ["exh4l","exh1l"],
+        ["exh4ll","exh1l"],
+        ["exh5l","exh1l"],
+        ["exh5ll","exh1l"],
+        ["exh6l","exh1l"{"isExhaust":true}],
+
+        //big log beef
+        {"beamSpring":1375550,"beamDamp":50},
+        {"beamDeform":22500,"beamStrength":"FLT_MAX"},
+        ["exh2","exh3"],
+        ["exh1r","exh2"],
+        ["exh1r","exh3"],
+        ["exh1l","exh2"],
+        ["exh1l","exh3"],
+
+        //attach to engine
+        {"beamSpring":825550,"beamDamp":50},
+        {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+
+        ["exh1r","e2r"],
+        ["exh1r","e4r"],
+        ["exh2","e2r"],
+        ["exh3","e2r"],
+        ["exh2","e4r"],
+        ["exh3","e4r"],
+        ["exh1r","e1r"{"isExhaust":true}],
+        ["exh2","e1r"],
+        ["exh3","e1r"],
+
+        ["exh1l","e2l"],
+        ["exh1l","e4l"],
+        ["exh2","e2l"],
+        ["exh3","e2l"],
+        ["exh2","e4l"],
+        ["exh3","e4l"],
+        ["exh1l","e1l"{"isExhaust":true}],
+        ["exh2","e1l"],
+        ["exh3","e1l"],
+
+        ["exh1r","e2l"],
+        ["exh1l","e2r"],
+
+        //attach to body
+        {"beamSpring":275550,"beamDamp":50},
+        {"beamDeform":6600,"beamStrength":35000},
+        ["exh1r","r5rr"],
+        ["exh1r","r1rr"],
+        ["exh1l","r5ll"],
+        ["exh1l","r1ll"],
+
+        ["exh1r","r3rr"],
+        ["exh1l","r3ll"],
+        ["exh2","r3rr"],
+        ["exh2","r3ll"],
+
+        {"beamSpring":275550,"beamDamp":50},
+        {"beamDeform":5400,"beamStrength":20000},
+        ["exh6r","r3rr"],
+        ["exh6l","r3ll"],
+        ["exh4r","r3rr"],
+        ["exh4l","r3ll"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"group":"sbr_exhaust"},
+            {"dragCoef":6},
+            ["exh5l","exh5ll","exh4ll"],
+            ["exh5l","exh4ll","exh4l"],
+            ["exh5rr","exh5r","exh4rr"],
+            ["exh5r","exh4r","exh4rr"],
+            {"group":""},
+
+    ],
+},
+"sbr_intake_F4_TTvmd2": {
+    "information":{
+        "authors":"Ninetynine",
+        "name":"Twin Turbochargers",
+        "value":2900,
+    }
+    "slotType" : "sbr_intake_F4vmd",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sbr_intake_TT", ["sbr_body","sbr_engine"]],
+         ["sbr_exhaust_TT", ["sbr_engine","sbr_twinturbo","sbr_exhaust"]],
+    ],
+    "turbocharger": {
+
+	"wastegateStart":17,
+        "wastegateLimit":19,
+        "maxExhaustPower": 950,
+        "backPressureCoef": 0.0000005,
+        "frictionCoef": 2.5,
+        "pressureRatePSI": 30,
+        "inertia":0.30,
+        "bovEnabled":false,
+        "bovSoundVolumeCoef": 0.0,
+        "bovSoundFileName": "TurboBovSound",
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -2.5],
+            [10000,      -1.5],
+            [30000,     6],
+            [60000,     12],
+            [90000,     14],
+            [150000,    17],
+            [200000,    20],
+            [250000,    24],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.0,    0.0],
+            [650,   0.4,   0.5],
+            [1000,   0.75,   0.7],
+            [1450,  0.95,    0.8],
+            [2000,  0.71,    0.8],
+            [2500,  0.63,    1.0],
+            [3000,  0.64,    1.0],
+            [4000,  0.54,    1.0],
+            [5000,  0.4,    1.0],
+            [6000,  0.35,    1.0],
+        ],
+    },
+    "engine":{
+        "shiftDownRPM":2500,
+        "shiftUpRPM":3400,
+        "highShiftUpRPM":4700,
+        "maxRPM":6000,
+        "clutchTorque":960
+        "brakingCoefRPS":0.17
+        "burnEfficiency":0.35
+    },
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"selfCollision":true}
+        {"collision":true}
+        //--exhaust
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+        {"nodeWeight":3.61},
+        {"group":"sbr_twinturbo"},
+        ["exh1r",-0.54, 1.78, 0.21],
+        ["exh1l", 0.54, 1.78, 0.21],
+        {"group":"sbr_exhaust"},
+        ["exh2",0.0, 1.97, 0.21],
+        ["exh3",0.0, 1.97, 0.35],
+        //tips
+        {"nodeWeight":0.48},
+        ["exh4rr",-0.68, 2.045, 0.24],
+        ["exh4r",-0.48, 2.105, 0.24],
+        ["exh4l", 0.48, 2.105, 0.24],
+        ["exh4ll", 0.68, 2.045, 0.24],
+
+        ["exh5rr",-0.67, 2.085, 0.34],
+        ["exh5r",-0.48, 2.145, 0.35],
+        ["exh5l", 0.48, 2.145, 0.35],
+        ["exh5ll", 0.67, 2.085, 0.34],
+
+        //rigidifier
+        {"selfCollision":false}
+        ["exh6r",-0.57, 1.93, 0.32],
+        ["exh6l", 0.57, 1.93, 0.32],
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamSpring":825550,"beamDamp":50},
+        {"beamDeform":22500,"beamStrength":"FLT_MAX"},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        //tips
+        ["exh4r","exh4rr"],
+        ["exh4l","exh4ll"],
+        ["exh5r","exh5rr"],
+        ["exh5l","exh5ll"],
+        ["exh4r","exh5r"],
+        ["exh4rr","exh5rr"],
+        ["exh4l","exh5l"],
+        ["exh4ll","exh5ll"],
+
+        {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+        //cross
+        ["exh4r","exh5rr"],
+        ["exh5r","exh4rr"],
+        ["exh4l","exh5ll"],
+        ["exh5l","exh4ll"],
+
+        //rigid
+        ["exh4r","exh6r"],
+        ["exh4rr","exh6r"],
+        ["exh5r","exh6r"],
+        ["exh5rr","exh6r"],
+
+        ["exh4l","exh6l"],
+        ["exh4ll","exh6l"],
+        ["exh5l","exh6l"],
+        ["exh5ll","exh6l"],
+
+        {"beamSpring":413050,"beamDamp":50},
+        //turbo and log connect to tip
+        //r
+        ["exh4r","exh3"],
+        ["exh4r","exh2"],
+        ["exh4rr","exh3"],
+        ["exh4rr","exh2"],
+        ["exh5r","exh3"],
+        ["exh5r","exh2"],
+        ["exh5rr","exh3"],
+        ["exh5rr","exh2"],
+        ["exh6r","exh3"],
+        ["exh6r","exh2"],
+
+        //l
+        ["exh4l","exh3"],
+        ["exh4l","exh2"],
+        ["exh4ll","exh3"],
+        ["exh4ll","exh2"],
+        ["exh5l","exh3"],
+        ["exh5l","exh2"],
+        ["exh5ll","exh3"],
+        ["exh5ll","exh2"],
+        ["exh6l","exh3"],
+        ["exh6l","exh2"],
+
+        {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+        ["exh4r","exh1r"],
+        ["exh4rr","exh1r"],
+        ["exh5r","exh1r"],
+        ["exh5rr","exh1r"],
+        ["exh6r","exh1r"{"isExhaust":true}],
+        ["exh4l","exh1l"],
+        ["exh4ll","exh1l"],
+        ["exh5l","exh1l"],
+        ["exh5ll","exh1l"],
+        ["exh6l","exh1l"{"isExhaust":true}],
+
+        //big log beef
+        {"beamSpring":1375550,"beamDamp":50},
+        {"beamDeform":22500,"beamStrength":"FLT_MAX"},
+        ["exh2","exh3"],
+        ["exh1r","exh2"],
+        ["exh1r","exh3"],
+        ["exh1l","exh2"],
+        ["exh1l","exh3"],
+
+        //attach to engine
+        {"beamSpring":825550,"beamDamp":50},
+        {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+
+        ["exh1r","e2r"],
+        ["exh1r","e4r"],
+        ["exh2","e2r"],
+        ["exh3","e2r"],
+        ["exh2","e4r"],
+        ["exh3","e4r"],
+        ["exh1r","e1r"{"isExhaust":true}],
+        ["exh2","e1r"],
+        ["exh3","e1r"],
+
+        ["exh1l","e2l"],
+        ["exh1l","e4l"],
+        ["exh2","e2l"],
+        ["exh3","e2l"],
+        ["exh2","e4l"],
+        ["exh3","e4l"],
+        ["exh1l","e1l"{"isExhaust":true}],
+        ["exh2","e1l"],
+        ["exh3","e1l"],
+
+        ["exh1r","e2l"],
+        ["exh1l","e2r"],
+
+        //attach to body
+        {"beamSpring":275550,"beamDamp":50},
+        {"beamDeform":6600,"beamStrength":35000},
+        ["exh1r","r5rr"],
+        ["exh1r","r1rr"],
+        ["exh1l","r5ll"],
+        ["exh1l","r1ll"],
+
+        ["exh1r","r3rr"],
+        ["exh1l","r3ll"],
+        ["exh2","r3rr"],
+        ["exh2","r3ll"],
+
+        {"beamSpring":275550,"beamDamp":50},
+        {"beamDeform":5400,"beamStrength":20000},
+        ["exh6r","r3rr"],
+        ["exh6l","r3ll"],
+        ["exh4r","r3rr"],
+        ["exh4l","r3ll"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"group":"sbr_exhaust"},
+            {"dragCoef":6},
+            ["exh5l","exh5ll","exh4ll"],
+            ["exh5l","exh4ll","exh4l"],
+            ["exh5rr","exh5r","exh4rr"],
+            ["exh5r","exh4r","exh4rr"],
+            {"group":""},
+
+    ],
+},
+"sbr_transaxle_6Mvmd": {
+    "information":{
+        "authors":"Ninetynine",
+        "name":"Diesel 6-Speed Manual Transaxle",
+        "value":4700,
+    }
+    "engine":{
+        "transmissionType":"manual",
+        // -1, 0 (neutral), 1, etc
+        "gears":[-3.51, 0, 5.79, 3.30, 2.10, 1.31, 1.00, 0.72]
+        "clutchDuration":0.12
+        "clutchTorque":975
+        "axleFriction":12,
+        "differential":3.73,
+        "autoGearChangeDelay":1.2
+    },
+    "slotType" : "sbr_transaxlevmd",
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        //clutch pedal
+        ["clutch"     ,"sbr_clutchpedal", "f7r","f7l","f8r",  {"x":90, "y":0, "z":0} , {"x":-20, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+        //displays
+        ["disp_R",         "sbr_displayR", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_N",         "sbr_displayN", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_1",         "sbr_display1", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_2",         "sbr_display2", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_3",         "sbr_display3", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_4",         "sbr_display4", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_5",         "sbr_display5", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_6",         "sbr_display6", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--6 Speed Manual--
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true}
+         {"group":"sbr_transaxle"},
+         {"nodeWeight":22},
+         ["tra1", 0.0, 0.82, 0.25],
+         ["rdiff", 0.0, 1.26, 0.25],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":7700550,"beamDamp":125},
+          {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          //differential
+          ["rdiff","e1r"],
+          ["rdiff","e3r"],
+          ["rdiff","e1l"],
+          ["rdiff","e3l"],
+          ["rdiff","tra1"],
+          {"beamSpring":825550,"beamDamp":125},
+          //driveshaft-ish beam
+          {"beamDeform":13500,"beamStrength":35000},
+          ["rx2r","tra1",{"name":"driveshaft"}],
+          ["rx2l","tra1",{"name":"driveshaft"}],
+          //halfshafts
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.02, "beamShortBound":0.02},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":3600,"beamStrength":9500},
+          {"beamLimitSpring":7501000,"beamLimitDamp":250},
+          {"breakGroupType":1},
+          {"optional":true},
+          {"breakGroup":"wheel_RR"},
+          ["rw1r","rdiff", {"name":"axle_RR"}],
+          {"breakGroup":"wheel_RL"},
+          ["rw1l","rdiff", {"name":"axle_RL"}],
+          {"breakGroup":""},
+          {"optional":false},
+          {"breakGroupType":0},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sbr_transaxle", ["sbr_engine","sbr_transaxle"]],
+         ["sbr_halfshaft_R", ["sbr_hub_R","sbr_upperarm_R","sbr_lowerarm_RR","sbr_lowerarm_RL","sbr_transaxle","sbr_uppermounts_R","sbr_lowermounts_R"]],
+         //
+         ["sbr_shiftgate_M", ["sbr_body","sbr_dash"]],
+         ["sbr_shifter_M", ["sbr_body","sbr_dash"]],
+    ],
+    "differentials": [
+            ["wheelName1",     "wheelName2", "type", "state", "closedTorque", "engineTorqueCoef"],
+            ["RL","RR", "lsd", "closed", 250, 1.3]
+    ],
+}
+"sbr_transaxle_7DCTvmd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Diesel 7-Speed Dual-Clutch Transaxle",
+        "value":7200,
+    }
+    "engine":{
+        "transmissionType":"manual",
+        "dct":true
+        "lowShiftDownRPM":2100,
+        "lowShiftUpRPM":1800,
+        "highShiftDownRPM":2400,
+        "highShiftUpRPM":4700,
+        "differential":3.73
+        "gears":[-3.61, 0, 2.22, 2.14, 1.72, 1.31, 1.00, 0.82, 0.64]
+        "clutchDuration":0.01
+        "clutchTorque":965
+        "axleFriction":14,
+        "autoGearChangeDelay":0.4
+    },
+    "slotType" : "sbr_transaxlevmd",
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"]
+        //displays
+        ["disp_R",         "sbr_displayR", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_N",         "sbr_displayN", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_1",         "sbr_display1", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_2",         "sbr_display2", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_3",         "sbr_display3", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_4",         "sbr_display4", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_5",         "sbr_display5", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_6",         "sbr_display6", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_7",         "sbr_display7", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["gear_A",       "sbr_shifter_A",    "f7r","f7l","f8r", {"x":90, "y":0, "z":0}, {"x":0, "y":0, "z":0},   {"x":0, "y":0.08, "z":0.0}, 0, 1, -0.6, 1],
+   ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sbr_transaxle", ["sbr_engine","sbr_transmission"]],
+         ["sbr_halfshaft_R", ["sbr_hub_R","sbr_upperarm_R","sbr_lowerarm_RR","sbr_lowerarm_RL","sbr_transaxle","sbr_uppermounts_R","sbr_lowermounts_R"]],
+         //
+         ["sbr_shiftgate_A", ["sbr_body","sbr_dash"]],
+         //["sbr_shifter_A", ["sbr_body","sbr_dash"]],
+    ]
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true}
+         {"group":"sbr_transaxle"},
+         {"nodeWeight":24},
+         ["tra1", 0.0, 0.82, 0.25],
+         ["rdiff", 0.0, 1.26, 0.25],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":7700550,"beamDamp":125},
+          {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          //differential
+          ["rdiff","e1r"],
+          ["rdiff","e3r"],
+          ["rdiff","e1l"],
+          ["rdiff","e3l"],
+          ["rdiff","tra1"],
+          //driveshaft-ish beam
+          {"beamSpring":825550,"beamDamp":125},
+          {"beamDeform":13500,"beamStrength":35000},
+          ["rx2r","tra1",{"name":"driveshaft"}],
+          ["rx2l","tra1",{"name":"driveshaft"}],
+          //halfshafts
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.02, "beamShortBound":0.02},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":3600,"beamStrength":9500},
+          {"beamLimitSpring":7501000,"beamLimitDamp":250},
+          {"breakGroupType":1},
+          {"optional":true},
+          {"breakGroup":"wheel_RR"},
+          ["rw1r","rdiff", {"name":"axle_RR"}],
+          {"breakGroup":"wheel_RL"},
+          ["rw1l","rdiff", {"name":"axle_RL"}],
+          {"breakGroup":""},
+          {"optional":false},
+          {"breakGroupType":0},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "differentials": [
+            ["wheelName1",     "wheelName2", "type", "state", "closedTorque", "engineTorqueCoef"],
+            ["RL","RR", "lsd", "closed", 300, 1.4]
+    ],
+}
+}
+
+*/
