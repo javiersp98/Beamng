@@ -1,0 +1,185 @@
+{
+"midsize_engine_v6_mod1_dpmp": {
+    "information":{
+        "authors":"wrinkle345 & DjPlopper",
+        "name":"2.7L V6 Race Engine",
+        "value":1200,
+    }
+    "slotType" : "midsize_engine",
+    "slots": [
+        ["type", "default", "description"]
+        ["midsize_exhaust","midsize_exhaust", "Exhaust"],
+        ["midsize_transmission","midsize_transmission_6M_V6_dpmp", "Transmission"],
+        ["midsize_enginetuning_v6","", "Engine Tuning"],
+        ["midsize_radiator","midsize_radiator_v6", "Radiator"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["midsize_engine_v6", ["midsize_engine"]],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["combustionEngine", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine": {
+        "torque":[
+        ["rpm", "torque"]
+        [0, 0],
+        [500, 126],
+        [1000, 185],
+        [2000, 243],
+        [3000, 299],
+        [4000, 324],
+        [5000, 343],
+        [6000, 344],
+        [7000, 320],
+        [8000, 257],
+    ],
+        "idleRPM":1200,
+        "energyStorage": "mainTank",
+        "requiredEnergyType":"gasoline",
+        "maxRPM":8000,
+        "inertia":0.11,
+        "friction":21
+        "brakingCoefRPS":0.14
+        "burnEfficiency":0.34
+        "throttleSensitivity":1.1
+         "clutchTorque":280
+        "torqueReactionNodes:":["e1l","e2l","e4r"]
+        "particulates":0.02
+
+        //cooling and oil system
+        "thermalsEnabled":true
+        "engineBlockMaterial":"aluminum"
+        "oilVolume":6
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":150
+        "headGasketDamageThreshold":1500000
+        "pistonRingDamageThreshold":1500000
+        "connectingRodDamageThreshold":2000000
+
+        //node beam interface
+        "waterDamage": {"[engineGroup]:":["engine_intake"]},
+        "radiator": {"[engineGroup]:":["radiator"]},
+        "engineBlock": {"[engineGroup]:":["engine_block"]},
+        "breakTriggerBeam":"engine",
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":2000,
+        "clutchLaunchTargetRPM":2700,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":[0,0,0,2800,3300,3700,4000,4200]
+        //**highShiftUp can be overwritten by intake modifications**
+        "highShiftUpRPM":6300
+    },
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--2.7L V6 Engine--
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"midsize_engine"},
+         {"engineGroup":"engine_block"}
+         {"nodeWeight":24},
+         ["e1r", 0.17, -1.74, 0.30,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":6,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":550,"baseTemp":500,"conductionRadius":0.12}],
+         ["e1l", 0.17, -1.50, 0.30],
+         ["e2r", -0.30, -1.74, 0.30,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":6,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":550,"baseTemp":500,"conductionRadius":0.12}],
+         ["e2l", -0.30, -1.50, 0.30],
+         {"engineGroup":["engine_block","engine_intake"]}
+         ["e3r", 0.17, -1.81, 0.75,{"isExhaust":true,"chemEnergy":2000,"burnRate":0.39,"flashPoint":6,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":550,"baseTemp":500,"conductionRadius":0.12}],
+         ["e3l", 0.17, -1.26, 0.79],
+         ["e4r", -0.30, -1.81, 0.75,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":6,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":550,"baseTemp":500,"conductionRadius":0.12}],
+         ["e4l", -0.30, -1.26, 0.79],
+         ["tc1", 0, -1.65, 0.42],
+         {"engineGroup":""}
+         {"group":""},
+
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          {"beamSpring":8400600,"beamDamp":150},
+          {"beamDeform":540000,"beamStrength":"FLT_MAX"},
+          //engine
+          ["e1r","e1l"],
+          ["e2r","e2l"],
+          ["e3r","e3l"],
+          ["e4r","e4l"],
+
+          ["e1r","e2r"],
+          ["e1l","e2l"],
+          ["e3r","e4r"],
+          ["e3l","e4l"],
+
+          ["e1r","e3r"],
+          ["e1l","e3l"],
+          ["e2r","e4r"],
+          ["e2l","e4l"],
+
+          ["e2r","e3r"],
+          ["e2l","e3l"],
+          ["e2r","e3l"],
+          ["e2l","e3r"],
+
+          ["e1r","e4r"],
+          ["e1l","e4l"],
+          ["e1r","e4l"],
+          ["e1l","e4r"],
+
+          ["e1r","e2l"],
+          ["e1l","e2r"],
+          ["e3r","e4l"],
+          ["e3l","e4r"],
+
+          ["e1r","e3l"],
+          ["e1l","e3r"],
+          ["e2r","e4l"],
+          ["e2l","e4r"],
+
+          ["tc1","e3l"],
+          ["tc1","e3r"],
+          ["tc1","e4l"],
+          ["tc1","e4r"],
+          ["tc1","e1l"],
+          ["tc1","e1r"],
+          {"disableMeshBreaking":true},
+          {"beamDeform":90000,"beamStrength":90000}
+          ["tc1","e2l"{"name":"driveshaft"}],
+          ["tc1","e2r"{"name":"driveshaft"}],
+          {"disableMeshBreaking":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"midsize_enginetuning_v6_mod1_dpmp": {
+    "information":{
+        "authors":"wrinkle345 & DjPlopper",
+        "name":"V6 Engine Tuning Stage 1 DPMP",
+        "value":1200,
+    }
+    "slotType" : "midsize_enginetuning_v6",
+    "mainEngine": {
+        "torque":[
+        ["rpm", "torque"]
+        [0, 0],
+        [500, 136],
+        [1000, 195],
+        [2000, 240],
+        [3000, 289],
+        [4000, 310],
+        [5000, 341],
+        [6000, 359],
+        [7000, 377],
+        [8000, 387],
+        [9000, 367],
+        [10000, 317],
+    ],
+        "idleRPM":1200,
+        "maxRPM":9500,
+        },
+}
+
+}
