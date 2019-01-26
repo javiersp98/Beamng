@@ -1,0 +1,40 @@
+{
+
+"van_skin_sfdosurf": {
+    "information":{
+        "authors":"BeamNG, AR162b",
+        "name":"Sfdo Surf",
+        "value":100,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "sfdosurf",
+}
+"van_skin_sfdorusty": {
+    "information":{
+        "authors":"BeamNG, AR162b",
+        "name":"Sfdo Rusty",
+        "value":100,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "sfdorusty",
+}
+"van_skin_sfdoar162b_racing": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Sfdo Ar162B Racing Team",
+        "value":100,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "sfdoar162b_racing",
+}
+"van_skin_sfdo_garage": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Sfdo Garage",
+        "value":100,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "sfdo_garage",
+
+}
+}

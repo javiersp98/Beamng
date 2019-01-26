@@ -1,0 +1,92 @@
+{
+"fullsize_radiator_bellco_stock": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Radiator w/ Bellco Oil Cooler",
+        "value":110,
+    }
+    "slotType" : "fullsize_radiator",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["fullsize_radiator", ["fullsize_radiator"]],
+    ],
+    "mainEngine":{
+        "radiatorArea":0.4,
+        "radiatorEffectiveness":10000,
+        "coolantVolume":13,
+        "radiatorFanType":"electric",
+        "radiatorFanTemperature":100,
+        "radiatorFanMaxAirSpeed":2,
+        "thermostatTemperature":90
+        "oilRadiatorArea":0.16,
+        "oilRadiatorEffectiveness":1000,
+        "oilThermostatTemperature":110
+        },
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"fullsize_radiator_race_bellco": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"High Performance Radiator w/ Bellco Oil Cooler",
+        "value":220,
+    }
+    "slotType" : "fullsize_radiator",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["fullsize_radiator", ["fullsize_radiator"]],
+    ],
+    "mainEngine":{
+        "radiatorArea":0.4,
+        "radiatorEffectiveness":16000,
+        "coolantVolume":14,
+        "radiatorFanType":"electric",
+        "radiatorFanTemperature":100,
+        "radiatorFanMaxAirSpeed":3,
+        "thermostatTemperature":90
+        "oilRadiatorArea":0.18,
+        "oilRadiatorEffectiveness":1200,
+        "oilThermostatTemperature":110
+        },
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"fullsize_radiator_bellco": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Bellco Performance Supercooler",
+        "value":500,
+    }
+    "slotType" : "fullsize_radiator",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["fullsize_radiator", ["fullsize_radiator"]],
+    ],
+    "mainEngine":{
+        "radiatorArea":0.5,
+        "radiatorEffectiveness":19000,
+        "coolantVolume":16,
+        "radiatorFanType":"electric",
+        "radiatorFanTemperature":100,
+        "radiatorFanMaxAirSpeed":5,
+        "thermostatTemperature":100
+        "oilRadiatorArea":0.18,
+        "oilRadiatorEffectiveness":1200,
+        "oilThermostatTemperature":110
+        },
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+}

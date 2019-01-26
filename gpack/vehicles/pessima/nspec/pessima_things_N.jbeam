@@ -1,0 +1,58 @@
+{
+"pessima_lettering_N": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"NSPEC Trunk Lettering",
+        "value":12,
+    }
+    "slotType" : "pessima_lettering_trunk",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pessima_lettering_trunkN" ["pessima_trunk"]],
+         ["pessima_lettering_2.0N" ["pessima_trunk"]],
+         ["pessima_lettering_turboN" ["pessima_trunk"]],
+         ["pessima_lettering_4wdN" ["pessima_trunk"]],
+         ["pessima_lettering_NSPEC", ["pessima_trunk"]],
+
+    ],
+}
+"pessima_bmesh": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Mesh",
+        "value":12,
+    }
+    "slotType" : "pessima_bmesh_N",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pessima_bmesh_N" ["pessima_bumper_F"]],
+
+    ],
+}
+"pessima_mesh": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Mesh",
+        "value":12,
+    }
+    "slotType" : "pessima_grillemesh",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pessima_mesh_N" ["pessima_grille"]],
+
+    ],
+}
+"pessima_logo_N": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"NSPEC Logo",
+        "value":12,
+    }
+    "slotType" : "pessima_logo_F",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pessima_logo_grille_N" ["pessima_hood"]],
+
+    ],
+}
+}

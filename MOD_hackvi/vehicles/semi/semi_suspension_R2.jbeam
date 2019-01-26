@@ -1,0 +1,17 @@
+{
+
+"semi_differential_R_1_lsd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"2.78 Limited Slip Front Rear Differential",
+        "value":1900,
+    }
+    "slotType" : "semi_differential_R_1",
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        //rear diff
+        ["differential", "differential_R_1", "transfercase", 1, {"diffType":"lsd", "gearRatio": 2.78, "lsdPreload":75, "lsdLockCoef":0.15, "lsdRevLockCoef":0.03, "friction":8, "uiName":"Front Rear Differential","defaultVirtualInertia":0.25}]
+    ],
+}
+
+}

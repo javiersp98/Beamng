@@ -1,0 +1,30 @@
+{
+"0-100 km/h":8.5,
+"Weight":1505,
+"Braking G":0.829,
+"Value":5300,
+"Performance Class":"4",
+"TorquePeakRPM":"1900 - 3800",
+"0-100 mph":25.8,
+"Off-Road Score":41,
+"Configuration":"2001 Will's Edition (M)",
+"Drivetrain":"4WD",
+"Power":166.548,
+"60-100 mph":17.8,
+"0-60 mph":8,
+"Config Type":"Factory",
+"100-0 km/h":47.4,
+"Top Speed":51.3457,
+"default_color":"Shale Green",
+"default_color_2":"Pearl White",
+"Torque":290.806,
+"Description":"Limited edition XT-6 with a green soft-top and camo seats",
+"Transmission":"Manual",
+"Weight/Power":9.06627,
+"60-0 mph":143.1,
+"Years":{
+  "min":2001,
+  "max":2001
+},
+"PowerPeakRPM":"4300 - 5400"
+}

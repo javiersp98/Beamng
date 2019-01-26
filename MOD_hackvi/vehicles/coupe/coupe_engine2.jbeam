@@ -1,0 +1,100 @@
+{
+
+"coupe_turbo_typex": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Type-X Turbocharger",
+        "value":1500,
+    }
+    "slotType" : "coupe_intake",
+    
+    "turbocharger": {
+        "volumePer10kRPM":0.07
+        "wastegateStart":5,
+        "wastegateLimit":7,
+        "maxExhaustPower": 40000,
+        "backPressureCoef": 0.000040,
+        "frictionCoef": 150.4,
+        "inertia":15.4,
+        "damageThresholdTemperature": 830,
+        "pressureRatePSI": 70,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -4.5],
+            [30000,     -2.5],
+            [60000,     9],
+            [90000,     23],
+            [150000,    37],
+            [200000,    46],
+            [250000,    51],
+            [300000,    55],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.0,    0.0],
+            [650,   0.25,   0.15],
+            [1400,  0.42,   0.18],
+            [2000,  0.57,    0.35],
+            [2500,  0.70,    0.55],
+            [3000,  0.82,    0.61],
+            [4000,  0.91,    0.77],
+            [5000,  1.0,    0.87],
+            [6000,  1.097,    0.93],
+            [7000,  1.148,    1.00],
+            [8000,  1.2,    0.95],
+            [9000,  1.1,    0.91],
+        ],
+    },
+    "mainEngine":{
+        "idleRPM":950,
+        "maxRPM":6900,
+        "burnEfficiency":0.24,
+        "cylinderWallTemperatureDamageThreshold":180
+        //turbocharger name
+        "turbocharger":"turbocharger",
+		"instantAfterFireCoef": 1.2,
+		"sustainedAfterFireCoef": 1.2,
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":1800,
+        "clutchLaunchTargetRPM":2400,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":[0,0,0,2400,4300,5100,5500,5800]
+        "highShiftUpRPM":7800
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["coupe_turbo", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+        ["coupe_intercooler", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+        ["coupe_manifold_turbo", ["coupe_engine"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--turbo and intercooler weight--
+         {"selfCollision":false},
+         {"collision":false}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":""},
+         {"nodeWeight":14.25},
+         ["turbo", 0.0, -1.33, 0.66],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":2750550,"beamDamp":125},
+          {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+          ["turbo","e1r"],
+          ["turbo","e2r"],
+          ["turbo","e3r"],
+          ["turbo","e4r"],
+          ["turbo","e1l"],
+          ["turbo","e2l"],
+          ["turbo","e3l"],
+          ["turbo","e4l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+}

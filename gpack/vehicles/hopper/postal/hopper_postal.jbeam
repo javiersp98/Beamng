@@ -1,0 +1,11 @@
+{
+"hopper_skin_postal": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Delivery",
+        "value":50,
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "postal",
+  },
+}

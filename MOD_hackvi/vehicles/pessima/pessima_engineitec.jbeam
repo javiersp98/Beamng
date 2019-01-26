@@ -1,0 +1,161 @@
+{
+
+"pessima_engine_ecu_gtz": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GTz ECU",
+        "value":250,
+    }
+    "slotType" : "pessima_engine_ecu",
+    "mainEngine":{
+        "idleRPM":1000,
+        "revLimiterRPM":7000,
+        "revLimiterType":"timeBased",
+        "revLimiterCutTime":0.09,
+    },
+},
+
+"pessima_engine_ecu_itec": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"i-TEC ECU",
+        "value":250,
+    }
+    "slotType" : "pessima_engine_ecu",
+    "mainEngine":{
+        "idleRPM":1000,
+        "revLimiterRPM":6800,
+        "revLimiterType":"timeBased",
+        "revLimiterCutTime":0.10,
+    },
+},
+
+"pessima_engine_ecu_tecs": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"i-TEC-S ECU",
+        "value":300,
+    }
+    "slotType" : "pessima_engine_ecu",
+    "mainEngine":{
+        "idleRPM":1000,
+        "revLimiterRPM":7000,
+        "revLimiterType":"timeBased",
+        "revLimiterCutTime":0.10,
+    },
+},
+
+"pessima_engine_ecu_itecr": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"i-TEC-R ECU",
+        "value":350,
+    }
+    "slotType" : "pessima_engine_ecu",
+    "mainEngine":{
+        "idleRPM":1100,
+        "revLimiterRPM":8000,
+        "revLimiterType":"soft",        
+    },
+},
+
+"pessima_engine_internals_itec": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"i-TEC Tuning",
+        "value":300,
+    }
+    "slotType" : "pessima_engine_internals",
+    "mainEngine":{
+        "torqueModMult":[
+            ["rpm", "torque"],
+            [0,    1],
+            [1000, 1],
+            [2500, 1],
+            [4400, 1],
+			[4450, 0.95],
+			[4500, 1.07]
+            [5000, 1.08],
+            [6000, 1.08],
+            [7000, 1.07],
+            [7500, 1.06],
+            [8000, 1],
+            [8500, 1],
+            [9000, 1],
+        ],
+        //max rpm physically capable of
+        "maxRPM":7800,
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":160,
+        "maxTorqueRating": 500,
+        "maxOverTorqueDamage": 550,
+    },
+},
+
+"pessima_engine_internals_itecs": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"i-TEC-S Tuning",
+        "value":400,
+    }
+    "slotType" : "pessima_engine_internals",
+    "mainEngine":{
+        "torqueModMult":[
+            ["rpm", "torque"],
+            [0,    1],
+            [1000, 1],
+            [2500, 1],
+            [4000, 1],
+			[4400, 1],
+			[4450, 0.95],
+			[4500, 1.10]
+            [5000, 1.11],
+            [6000, 1.13],
+            [7000, 1.17],
+            [7500, 1.10],
+            [8000, 1.08],
+            [8500, 1],
+            [9000, 1],            
+        ],
+        //max rpm physically capable of
+        "maxRPM":7800,
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":160,
+        "maxTorqueRating": 600,
+        "maxOverTorqueDamage": 650,
+    },
+},
+
+"pessima_engine_internals_itecr": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"i-TEC-R Tuning",
+        "value":650,
+    }
+    "slotType" : "pessima_engine_internals",
+    "mainEngine":{
+        "torqueModMult":[
+            ["rpm", "torque"],
+            [0,    1],
+            [1000, 1],
+            [2500, 1],
+            [4000, 1],
+			[4900, 1],
+			[4950, 0.95],
+            [5000, 1.10],
+			[5500, 1.15]
+            [6000, 1.20],
+            [7000, 1.37],
+            [7500, 1.50],
+            [8000, 1.65],            
+        ],
+        //max rpm physically capable of
+        "maxRPM":8000,
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":160,
+        "maxTorqueRating": 800,
+        "maxOverTorqueDamage": 850,
+    },
+},
+
+}

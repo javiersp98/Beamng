@@ -1,0 +1,242 @@
+{
+"sbr_transaxle_6M_short": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Short 6-Speed Manual Transaxle",
+        "value":4700,
+    }
+    "slotType" : "sbr_transaxle",
+    "slots": [
+        ["type", "default", "description"],
+        ["sbr_flywheel","sbr_flywheel","Flywheel", {"coreSlot":true}],
+        ["sbr_transfer_case","sbr_transfer_case_RWD", "Transfer Case"{"coreSlot":true}],
+        ["sbr_differential_R","sbr_differential_R", "Rear Differential"],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "vehicleController": {
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.22,
+        "lowShiftDownRPM":[0,0,0,1400,1600,1500,1500,1500],
+        "lowShiftUpRPM":[0,0,3400,3000,2700,2700,2700],
+    },
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-4.88, 0, 4.88, 2.9, 2.01, 1.6, 1.25, 1.0],
+        "friction": 1,
+        "gearboxNode:":"tra1",
+    },
+    "props": [
+        ["func",   "mesh",            "idRef:", "idX:", "idY:", "baseRotation",            "rotation",              "translation",            "min", "max", "offset", "multiplier"]
+        //clutch pedal
+        ["clutch", "sbr_clutchpedal", "f1l","f1r","f6l",        {"x":-5, "y":0, "z":180}, {"x":-20, "y":0, "z":0}, {"x":0.0, "y":0, "z":0},   0, 1, 0, 1],
+        //displays
+        ["disp_R",         "sbr_displayR", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_N",         "sbr_displayN", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_1",         "sbr_display1", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_2",         "sbr_display2", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_3",         "sbr_display3", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_4",         "sbr_display4", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_5",         "sbr_display5", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_6",         "sbr_display6", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sbr_transaxle", ["sbr_engine","sbr_transaxle"]],
+         //
+         ["sbr_shiftgate_M", ["sbr_body","sbr_dash"]],
+         ["sbr_shifter_M", ["sbr_body","sbr_dash"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--6 Speed Manual--
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true}
+         {"group":"sbr_transaxle"},
+         {"nodeWeight":22},
+         ["tra1", 0.0, 0.82, 0.25],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":15001000,"beamDamp":500},
+          {"beamDeform":175000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+
+"sbr_transaxle_7DCT_short": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Short 7-Speed Dual-Clutch Transaxle",
+        "value":7000,
+    }
+    "slotType" : "sbr_transaxle",
+    "slots": [
+        ["type", "default", "description"],
+        ["sbr_transfer_case","sbr_transfer_case_RWD", "Transfer Case"{"coreSlot":true}],
+        ["sbr_differential_R","sbr_differential_R", "Rear Differential"],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["dctGearbox", "gearbox", "mainEngine", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-4.88, 0, 4.88, 3.27, 2.36, 1.85, 1.54, 1.25, 1],
+        "parkLockTorque":2000,
+        "additionalEngineInertia":0.05,
+        "gearboxNode:":"tra1",
+    },
+    "vehicleController": {
+        "automaticModes":"PRNDSM",
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.2,
+        //"aggressionSmoothingUp":2
+        //"aggressionSmoothingDown":0.06
+        "lowShiftDownRPM":[0,0,0,1700,1800,1700,1600,1600,1600],
+        "lowShiftUpRPM":[0,0,3200,2900,2700,2600,2600,2600],
+    },
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"]
+        //displays
+        ["disp_P",         "sbr_displayP", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_Ra",         "sbr_displayR", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_Na",         "sbr_displayN", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_D",         "sbr_displayD", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_1",         "sbr_display1", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_2",         "sbr_display2", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_3",         "sbr_display3", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_4",         "sbr_display4", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_5",         "sbr_display5", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_6",         "sbr_display6", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_7",         "sbr_display7", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["gear_A",       "sbr_shifter_A",    "f7r","f7l","f8r", {"x":90, "y":0, "z":0}, {"x":0, "y":0, "z":0},   {"x":0, "y":0.12, "z":0.0}, 0, 0.3, -0.3, 1],
+   ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sbr_transaxle", ["sbr_engine","sbr_transmission"]],
+         //
+         ["sbr_shiftgate_A", ["sbr_body","sbr_dash"]],
+         //["sbr_shifter_A", ["sbr_body","sbr_dash"]],
+    ]
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true}
+         {"group":"sbr_transaxle"},
+         {"nodeWeight":30},
+         ["tra1", 0.0, 0.82, 0.25],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":15001000,"beamDamp":500},
+          {"beamDeform":175000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+
+"sbr_transaxle_9DCT": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"9-Speed Dual-Clutch Transaxle",
+        "value":9000,
+    }
+    "slotType" : "sbr_transaxle",
+    "slots": [
+        ["type", "default", "description"],
+        ["sbr_transfer_case","sbr_transfer_case_RWD", "Transfer Case"{"coreSlot":true}],
+        ["sbr_differential_R","sbr_differential_R", "Rear Differential"],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["dctGearbox", "gearbox", "mainEngine", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-4.93, 0, 5.50, 3.33, 2.32, 1.66, 1.21, 1, 0.87, 0.72, 0.60],
+        "parkLockTorque":2000,
+        "additionalEngineInertia":0.05,
+        "gearboxNode:":"tra1",
+    },
+    "vehicleController": {
+        "automaticModes":"PRNDSM",
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.2,
+        //"aggressionSmoothingUp":2
+        //"aggressionSmoothingDown":0.06
+        "lowShiftDownRPM":[0,0,0,1700,1800,1700,1600,1600,1600],
+        "lowShiftUpRPM":[0,0,3200,2900,2700,2600,2600,2600],
+    },
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"]
+        //displays
+        ["disp_P",         "sbr_displayP", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_Ra",         "sbr_displayR", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_Na",         "sbr_displayN", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_D",         "sbr_displayD", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_1",         "sbr_display1", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_2",         "sbr_display2", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_3",         "sbr_display3", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_4",         "sbr_display4", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_5",         "sbr_display5", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_6",         "sbr_display6", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_7",         "sbr_display7", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["gear_A",       "sbr_shifter_A",    "f7r","f7l","f8r", {"x":90, "y":0, "z":0}, {"x":0, "y":0, "z":0},   {"x":0, "y":0.12, "z":0.0}, 0, 0.3, -0.3, 1],
+   ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sbr_transaxle", ["sbr_engine","sbr_transmission"]],
+         //
+         ["sbr_shiftgate_A", ["sbr_body","sbr_dash"]],
+         //["sbr_shifter_A", ["sbr_body","sbr_dash"]],
+    ]
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true}
+         {"group":"sbr_transaxle"},
+         {"nodeWeight":30},
+         ["tra1", 0.0, 0.82, 0.25],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":15001000,"beamDamp":500},
+          {"beamDeform":175000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+
+}

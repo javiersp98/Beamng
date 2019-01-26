@@ -1,0 +1,789 @@
+{
+"van_flatbed_heavy_ar162b": {
+	"information":{
+		"authors":"BeamNG, added slots and side lights by AR162b",
+		"name":"Flatbed w options AR162b",
+        	"value":1500,
+	}
+    "slotType" : "van_upfit_heavy",
+	"scalenodeWeight":1,
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+	"slots": [
+		 ["type", "default", "description"],
+		 ["van_receiver_heavy", "", "Trailer Receiver or Towhitch", {"nodeOffset":{"x":0,"y":0,"z":0}}],
+		 ["van_flatbed_edge", "", "Flatbed Upfit", {"nodeOffset":{"x":0,"y":0,"z":0}}],
+        	 ["van_licenseplate_R_alt2_left", "van_licenseplate_R_alt2_left", "Rear License Plate"],
+	],
+	"props": [
+		["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+		{
+			"lightInnerAngle":40
+			"lightOuterAngle":80
+			"lightBrightness":0.15
+			"lightRange":30
+			"lightColor":{"r":255, "g":255, "b":200, "a":255}
+			"lightAttenuation":{"x":0, "y":1, "z":1}
+			"lightCastShadows":false
+            "flareName":"vehicleReverseLightFlare"
+            "flareScale":0.5
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5    
+		}
+		//reverse lights
+		["reverse" , 		"SPOTLIGHT"        , "cf1rr", "cf1r", "cf11rr", {"x":0, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":0.01},"deformGroup":"van_flatbedlights_R_break"}],
+		["reverse" , 		"SPOTLIGHT"        , "cf1ll", "cf1l", "cf11ll", {"x":180, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":-0.01},"deformGroup":"van_flatbedlights_L_break"}],
+		//taillights
+		{
+			"lightInnerAngle":0
+			"lightOuterAngle":140
+			"lightBrightness":0.06
+			"lightRange":20
+			"lightColor":{"r":255, "g":50, "b":0, "a":255}
+			"lightCastShadows":false
+            "flareName":"vehicleBrakeLightFlare"
+            "flareScale":0.15
+		}
+		["brake" , 		"SPOTLIGHT"        , "cf1rr", "cf1r", "cf11rr", {"x":0, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.18, "y":0.5, "z":0.01},"deformGroup":"van_flatbedlights_R_break"}],
+		["brake" , 		"SPOTLIGHT"        , "cf1ll", "cf1l", "cf11ll", {"x":180, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.18, "y":0.5, "z":-0.01},"deformGroup":"van_flatbedlights_L_break"}],
+		["lowhighbeam" ,	"SPOTLIGHT"        , "cf1rr", "cf1r", "cf11rr", {"x":0, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.18, "y":0.5, "z":0.01},"deformGroup":"van_flatbedlights_R_break"}],
+		["lowhighbeam" , 	"SPOTLIGHT"        , "cf1ll", "cf1l", "cf11ll", {"x":180, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.18, "y":0.5, "z":-0.01},"deformGroup":"van_flatbedlights_L_break"}],
+		["signal_R" , 		"SPOTLIGHT"        , "cf1rr", "cf1r", "cf11rr", {"x":0, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.18, "y":0.5, "z":0.01},"deformGroup":"van_flatbedlights_R_break"}],
+		["signal_L" , 		"SPOTLIGHT"        , "cf1ll", "cf1l", "cf11ll", {"x":180, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.18, "y":0.5, "z":-0.01},"deformGroup":"van_flatbedlights_L_break"}],
+
+		["lowhighbeam" , 	"SPOTLIGHT"        , "cf12rr", "cf12r", "cf11rr", {"x":90, "y":90, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1,, {"baseTranslation":{"x":-0.02, "y":0.95, "z": 0.05},"deformGroup":"fullfbtrailer_flatbedlights_R_break"}],
+		["lowhighbeam" , 	"SPOTLIGHT"        , "cf12ll", "cf12l", "cf11ll", {"x":90, "y":90, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1,, {"baseTranslation":{"x":-0.02, "y":0.95, "z":-0.05},"deformGroup":"fullfbtrailer_flatbedlights_L_break"}],
+
+		//id lights
+		{
+			"lightInnerAngle":0
+			"lightOuterAngle":120
+			"lightBrightness":0.04
+			"lightRange":15
+			"lightColor":{"r":255, "g":50, "b":0, "a":255}
+			"lightCastShadows":false
+            "flareName":"vehicleBrakeLightFlare"
+            "flareScale":0.4
+		}
+		//["brake" , 		"SPOTLIGHT"        , "cf11","cf11l","cf1", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0, "y":0.6, "z":-0.02},"deformGroup":"van_flatbedlights_rear_break"}],
+		["lowhighbeam" , 	"SPOTLIGHT"        , "cf11","cf11l","cf1", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0, "y":0.6, "z":-0.02},"deformGroup":"van_flatbedlights_rear_break"}],	
+
+		//["brake" , 		"SPOTLIGHT"        , "cf11","cf11l","cf1", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.4, "y":0.6, "z":-0.02},"deformGroup":"van_flatbedlights_rear_break"}],
+		["lowhighbeam" , 	"SPOTLIGHT"        , "cf11","cf11l","cf1", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.4, "y":0.6, "z":-0.02},"deformGroup":"van_flatbedlights_rear_break"}],	
+
+		//["brake" , 		"SPOTLIGHT"        , "cf11","cf11r","cf1", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.4, "y":0.6, "z":  0.02},"deformGroup":"van_flatbedlights_rear_break"}],
+		["lowhighbeam" , 	"SPOTLIGHT"        , "cf11","cf11r","cf1", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.4, "y":0.6, "z":  0.02},"deformGroup":"van_flatbedlights_rear_break"}],	
+
+
+		//side lights
+        	{
+            		"lightInnerAngle":0
+            		"lightOuterAngle":120
+           		"lightBrightness":0.05
+            		"lightRange":20
+            		"lightColor":{"r":255, "g":255, "b":0, "a":255}
+            		"lightAttenuation":{"x":0, "y":1, "z":1}
+           		"lightCastShadows":false
+            		"flareName":"vehicleBrakeLightFlare"
+            		"flareScale":0.35
+        	}
+
+		["lowhighbeam" ,	"SPOTLIGHT"        , "cf15rr", "cf15r", "cf14rr", {"x":270, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.19, "y":-0.05, "z": 0.05},"deformGroup":"fullfbtrailer_flatbed_sidelight_FR_break"}],
+		["lowhighbeam" ,	"SPOTLIGHT"        , "cf15ll", "cf15l", "cf14ll", {"x":270, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.19, "y":-0.05, "z":-0.05},"deformGroup":"fullfbtrailer_flatbed_sidelight_FL_break"}],
+
+		["lowhighbeam" , 	"SPOTLIGHT"        , "cf15rr", "cf15r", "cf14rr", {"x":90, "y":90, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.02, "y":0.25, "z": 0.05},"deformGroup":"fullfbtrailer_flatbed_sidelight_FR_break"}],
+		["lowhighbeam" , 	"SPOTLIGHT"        , "cf15ll", "cf15l", "cf14ll", {"x":90, "y":90, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.02, "y":0.25, "z":-0.05},"deformGroup":"fullfbtrailer_flatbed_sidelight_FL_break"}],
+
+
+	 ],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["van_flatbed", ["van_flatbed"]],
+		 ["van_cargobase", ["van_flatbed","van_framerear"]],
+		 
+		 //lights
+		 ["van_flatbedlightedges", ["van_flatbed"]],
+
+		 {"deformGroup":"van_flatbedlights_R_break","deformMaterialBase":"van_lights", "deformMaterialDamaged":"van_lights_dmg"},
+		 ["van_flatbed_lights_R", ["van_flatbed"],[]{"deformSound":"GlassBreakSound3", "deformVolume":0.5}],
+		 ["van_flatbed_sidelight_RR", ["van_flatbed"]],
+		 {"deformGroup":"van_flatbedlights_L_break","deformMaterialBase":"van_lights", "deformMaterialDamaged":"van_lights_dmg"},
+		 ["van_flatbed_lights_L", ["van_flatbed"],[]{"deformSound":"GlassBreakSound3", "deformVolume":0.5}],
+		 ["van_flatbed_sidelight_RL", ["van_flatbed"]],
+
+
+		 {"deformGroup":"van_flatbedlights_FR_break","deformMaterialBase":"van_lights", "deformMaterialDamaged":"van_lights_dmg"},
+		 ["van_flatbed_sidelight_FR", ["van_flatbed"]],
+		 {"deformGroup":"van_flatbedlights_FL_break","deformMaterialBase":"van_lights", "deformMaterialDamaged":"van_lights_dmg"},
+		 ["van_flatbed_sidelight_FL", ["van_flatbed"]],
+		 {"deformGroup":"van_flatbedlights_rear_break","deformMaterialBase":"van_lights", "deformMaterialDamaged":"van_lights_dmg"},
+		 ["van_flatbed_lights_id", ["van_flatbed"]],
+
+
+		 {"deformGroup":""},
+		 
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"frictionCoef":0.5},
+		 {"collision":true}
+		 {"selfCollision":true}
+		 //--FLOOR/FRAME--
+		 {"group":"van_flatbed"}
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":5.2},
+		 ["cf1rr", -1.2, 4.47, 0.75],
+		 ["cf1r", -0.6, 4.47, 0.75],
+		 ["cf1", 0.0, 4.47, 0.75],
+		 ["cf1l", 0.6, 4.47, 0.75],
+		 ["cf1ll", 1.2, 4.47, 0.75],
+		 
+		 //["cf2rr", -1.2, 3.47, 0.75],
+		 ["cf2r", -0.4, 3.47, 0.75],
+		 ["cf2l", 0.4, 3.47, 0.75],
+		 //["cf2ll", 1.2, 3.47, 0.75],
+		 
+		 //["cf3rr", -1.2, 2.49, 0.75],
+		 ["cf3r", -0.4, 2.49, 0.75],
+		 ["cf3l", 0.4, 2.49, 0.75],
+		 //["cf3ll", 1.2, 2.49, 0.75],
+		 
+		 //["cf4rr", -1.2, 1.38, 0.75],
+		 ["cf4r", -0.4, 1.38, 0.75],
+		 ["cf4l", 0.4, 1.38, 0.75],
+		 //["cf4ll", 1.2, 1.38, 0.75],
+		 
+		 //["cf5rr", -1.2, 0.11, 0.75],
+		 ["cf5r", -0.4, 0.11, 0.75],
+		 ["cf5l", 0.4, 0.11, 0.75],
+		 //["cf5ll", 1.2, 0.11, 0.75],
+		 
+		 //upper
+		 ["cf11rr", -1.2, 4.47, 0.86],
+		 ["cf11r", -0.6, 4.47, 0.86],
+		 ["cf11", 0.0, 4.47, 0.86],
+		 ["cf11l", 0.6, 4.47, 0.86],
+		 ["cf11ll", 1.2, 4.47, 0.86],
+		 
+		 ["cf12rr", -1.2, 3.47, 0.86],
+		 ["cf12r", -0.4, 3.47, 0.86],
+		 ["cf12l", 0.4, 3.47, 0.86],
+		 ["cf12ll", 1.2, 3.47, 0.86],
+		 
+		 ["cf13rr", -1.2, 2.49, 0.86],
+		 ["cf13r", -0.4, 2.49, 0.86],
+		 ["cf13l", 0.4, 2.49, 0.86],
+		 ["cf13ll", 1.2, 2.49, 0.86],
+		 
+		 ["cf14rr", -1.2, 1.38, 0.86],
+		 ["cf14r", -0.4, 1.38, 0.86],
+		 ["cf14l", 0.4, 1.38, 0.86],
+		 ["cf14ll", 1.2, 1.38, 0.86],
+		 
+		 ["cf15rr", -1.2, 0.11, 0.86],
+		 ["cf15r", -0.4, 0.11, 0.86],
+		 ["cf15l", 0.4, 0.11, 0.86],
+		 ["cf15ll", 1.2, 0.11, 0.86],
+		 
+		 //rear step base thing
+		 ["cf6rr", -1.2, 4.40, 0.42],
+		 ["cf6r", -0.6, 4.40, 0.42],
+		 ["cf6", 0.0, 4.40, 0.42],
+		 ["cf6l", 0.6, 4.40, 0.42],
+		 ["cf6ll", 1.2, 4.40, 0.42],
+		 
+		 ["cf7rr", -1.2, 4.71, 0.42],
+		 ["cf7r", -0.6, 4.71, 0.42],
+		 ["cf7", 0.0, 4.71, 0.42],
+		 ["cf7l", 0.6, 4.71, 0.42],
+		 ["cf7ll", 1.2, 4.71, 0.42],
+		 
+		 {"collision":true}
+		 {"selfCollision":true}
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+        	  {"beamPrecompression":0.95, "beamType":"|SUPPORT", "beamLongBound":1.0},
+        	  //rear susp limiters
+        	  {"beamSpring":2501000,"beamDamp":500},
+        	  {"beamDeform":300000,"beamStrength":712000},
+		  {"deformationTriggerRatio":0.01},
+		  {"optional":true},
+		  {"breakGroupType":1},
+		  {"breakGroup":"wheel_RR"},
+		  ["ax1r","cf13rr"],
+		  ["axwr","cf13rr"],
+		  
+		  {"breakGroup":"wheel_RL"},
+		  ["ax1l","cf13ll"],
+		  ["axwl","cf13ll"],
+		  
+		  {"breakGroup":""},
+		  {"breakGroupType":0},
+		  {"optional":false},
+		  //support beams
+		  {"beamSpring":2772840,"beamDamp":325},
+		  {"beamDeform":90000,"beamStrength":267000},
+		  {"beamPrecompression":1, "beamType":"|SUPPORT", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  //--CARGO BOX FLOOR/FRAME--
+		  //rear step thing
+		  {"beamSpring":4001000,"beamDamp":150},
+		  {"beamDeform":150000,"beamStrength":4717000},
+		  ["cf6rr","cf6r"],
+		  ["cf6r","cf6"],
+		  ["cf6","cf6l"],
+		  ["cf6l","cf6ll"],
+		  
+		  ["cf7rr","cf7r"],
+		  ["cf7r","cf7"],
+		  ["cf7","cf7l"],
+		  ["cf7l","cf7ll"],
+		  
+		  ["cf6rr","cf7rr"],
+		  ["cf6r","cf7r"],
+		  ["cf6","cf7"],
+		  ["cf6l","cf7l"],
+		  ["cf6ll","cf7ll"],
+		  
+		  //surf cross
+		  ["cf6r","cf7rr"],
+		  ["cf6rr","cf7r"],
+		  ["cf6","cf7r"],
+		  ["cf6r","cf7"],
+		  ["cf6l","cf7"],
+		  ["cf6","cf7l"],
+		  ["cf6ll","cf7l"],
+		  ["cf6l","cf7ll"],
+		  
+		  //attach
+		  ["cf6rr","cf1rr"],
+		  ["cf6r","cf1r"],
+		  ["cf6","cf1"],
+		  ["cf6l","cf1l"],
+		  ["cf6ll","cf1ll"],
+		  
+		  ["cf7rr","cf1rr"],
+		  ["cf7r","cf1r"],
+		  ["cf7","cf1"],
+		  ["cf7l","cf1l"],
+		  ["cf7ll","cf1ll"],
+		  
+		  ["cf6rr","cf11rr"],
+		  ["cf6r","cf11r"],
+		  ["cf6","cf11"],
+		  ["cf6l","cf11l"],
+		  ["cf6ll","cf11ll"],
+		  
+		  ["cf7rr","cf11rr"],
+		  ["cf7r","cf11r"],
+		  ["cf7","cf11"],
+		  ["cf7l","cf11l"],
+		  ["cf7ll","cf11ll"],
+		  
+		  {"beamSpring":2001000,"beamDamp":150},
+		  {"beamDeform":45000,"beamStrength":3293000},
+		  //corner
+		  ["cf6rr","cf12rr"],
+		  ["cf6r","cf12r"],
+		  //["cf6","cf12"],
+		  ["cf6l","cf12l"],
+		  ["cf6ll","cf12ll"],
+		  
+		  ["cf6rr","fr20r"],
+		  ["cf6ll","fr20l"],
+		  ["cf6rr","fr19r"],
+		  ["cf6ll","fr19l"],
+		  
+		  
+		  {"beamSpring":4501000,"beamDamp":150},
+		  {"beamDeform":225000,"beamStrength":4717000},
+		  //floor main shape
+		  {"deformGroup":"van_flatbedlights_R_break"},
+		  ["cf1rr","cf1r"],
+		  {"deformGroup":"van_flatbedlights_rear_break"},
+		  ["cf1r","cf1"],
+		  ["cf1l","cf1"],
+		  {"deformGroup":"van_flatbedlights_L_break"},
+		  ["cf1ll","cf1l"],
+		  
+		  {"deformGroup":""},
+		  //["cf2rr","cf2r"],
+		  ["cf2r","cf2l"],
+		  //["cf2ll","cf2l"],
+		  
+		  //["cf3rr","cf3r"],
+		  ["cf3r","cf3l"],
+		  //["cf3ll","cf3l"],
+		  
+		  //["cf4rr","cf4r"],
+		  ["cf4r","cf4l"],
+		  //["cf4ll","cf4l"],
+		  
+		  //["cf5rr","cf5r"],
+		  ["cf5r","cf5l"],
+		  //["cf5ll","cf5l"],
+		  
+		  //["cf1rr","cf2rr"],
+		  ["cf1r","cf2r"],
+		  ["cf1","cf2r"],
+		  ["cf1","cf2l"],
+		  ["cf1l","cf2l"],
+		  //["cf1ll","cf2ll"],
+		  
+		  //["cf2rr","cf3rr"],
+		  ["cf2r","cf3r"],
+		  ["cf2l","cf3l"],
+		  //["cf2ll","cf3ll"],
+		  
+		  //["cf3rr","cf4rr"],
+		  ["cf3r","cf4r"],
+		  ["cf3l","cf4l"],
+		  //["cf3ll","cf4ll"],
+		  
+		  {"deformGroup":"van_flatbedlights_FR_break"},
+		  //["cf4rr","cf5rr"],
+		  ["cf4r","cf5r"],
+		  {"deformGroup":"van_flatbedlights_FL_break"},
+		  ["cf4l","cf5l"],
+		  //["cf4ll","cf5ll"],
+		  {"deformGroup":""},
+		  
+		  //surf cross
+		  {"deformGroup":"van_flatbedlights_R_break"},
+		  ["cf12rr","cf1r"],
+		  ["cf11rr","cf2r"],
+		  {"deformGroup":"van_flatbedlights_L_break"},
+		  ["cf11ll","cf2l"],
+		  ["cf12ll","cf1l"],
+		  {"deformGroup":""},
+		  
+		  {"deformGroup":"van_flatbedlights_rear_break"},
+		  ["cf12rr","cf1r"],
+		  ["cf12ll","cf1l"],
+		  {"deformGroup":""},
+		  ["cf12rr","cf11r"],
+		  ["cf12ll","cf11l"],
+		  
+		  ["cf13rr","cf2r"],
+		  ["cf3r","cf12rr"],
+		  ["cf3r","cf2l"],
+		  ["cf3l","cf2r"],
+		  ["cf3l","cf12ll"],
+		  ["cf13ll","cf2l"],
+		  
+		  ["cf14rr","cf3r"],
+		  ["cf4r","cf13rr"],
+		  ["cf4r","cf3l"],
+		  ["cf4l","cf3r"],
+		  ["cf4l","cf13ll"],
+		  ["cf14ll","cf3l"],
+		  
+		  {"deformGroup":"van_flatbedlights_FR_break"},
+		  ["cf15rr","cf4r"],
+		  ["cf5r","cf14rr"],
+		  {"deformGroup":""},
+		  ["cf5r","cf4l"],
+		  ["cf5l","cf4r"],
+		  {"deformGroup":"van_flatbedlights_FL_break"},
+		  ["cf5l","cf14ll"],
+		  ["cf15ll","cf4l"],
+		  {"deformGroup":""},
+		  
+		  //upper floor main shape
+		  {"deformGroup":"van_flatbedlights_R_break"},
+		  ["cf11rr","cf11r"],
+		  {"deformGroup":"van_flatbedlights_rear_break"},
+		  ["cf11r","cf11"],
+		  ["cf11l","cf11"],
+		  {"deformGroup":"van_flatbedlights_L_break"},
+		  ["cf11ll","cf11l"],
+		  {"deformGroup":""},
+		  
+		  ["cf12rr","cf12r"],
+		  ["cf12r","cf12l"],
+		  ["cf12ll","cf12l"],
+		  
+		  ["cf13rr","cf13r"],
+		  ["cf13r","cf13l"],
+		  ["cf13ll","cf13l"],
+		  
+		  ["cf14rr","cf14r"],
+		  ["cf14r","cf14l"],
+		  ["cf14ll","cf14l"],
+		  
+		  {"deformGroup":"van_flatbedlights_FR_break"},
+		  ["cf15rr","cf15r"],
+		  {"deformGroup":""},
+		  ["cf15r","cf15l"],
+		  {"deformGroup":"van_flatbedlights_FL_break"},
+		  ["cf15ll","cf15l"],
+		  {"deformGroup":""},
+		  
+		  {"deformGroup":"van_flatbedlights_R_break"},
+		  ["cf11rr","cf12rr"],
+		  ["cf11r","cf12r"],
+		  {"deformGroup":"van_flatbedlights_rear_break"},
+		  ["cf11","cf12r"],
+		  ["cf11","cf12l"],
+		  {"deformGroup":"van_flatbedlights_L_break"},
+		  ["cf11l","cf12l"],
+		  ["cf11ll","cf12ll"],
+		  {"deformGroup":""},
+		  
+		  ["cf12rr","cf13rr"],
+		  ["cf12r","cf13r"],
+		  ["cf12l","cf13l"],
+		  ["cf12ll","cf13ll"],
+		  
+		  ["cf13rr","cf14rr"],
+		  ["cf13r","cf14r"],
+		  ["cf13l","cf14l"],
+		  ["cf13ll","cf14ll"],
+		  
+		  {"deformGroup":"van_flatbedlights_FR_break"},
+		  ["cf14rr","cf15rr"],
+		  ["cf14r","cf15r"],
+		  {"deformGroup":"van_flatbedlights_FL_break"},
+		  ["cf14l","cf15l"],
+		  ["cf14ll","cf15ll"],
+		  {"deformGroup":""},
+		  
+		  {"beamDeform":90000,"beamStrength":4717000},
+		  //surf cross
+		  ["cf12rr","cf11r"],
+		  ["cf11rr","cf12r"],
+		  ["cf11ll","cf12l"],
+		  ["cf12ll","cf11l"],
+		  
+		  ["cf13rr","cf12r"],
+		  ["cf13r","cf12rr"],
+		  ["cf13r","cf12l"],
+		  ["cf13l","cf12r"],
+		  ["cf13l","cf12ll"],
+		  ["cf13ll","cf12l"],
+		  
+		  ["cf14rr","cf13r"],
+		  ["cf14r","cf13rr"],
+		  ["cf14r","cf13l"],
+		  ["cf14l","cf13r"],
+		  ["cf14l","cf13ll"],
+		  ["cf14ll","cf13l"],
+		  
+		  ["cf15rr","cf14r"],
+		  ["cf15r","cf14rr"],
+		  ["cf15r","cf14l"],
+		  ["cf15l","cf14r"],
+		  ["cf15l","cf14ll"],
+		  ["cf15ll","cf14l"],
+		  
+		  {"beamDeform":300000,"beamStrength":4717000},
+		  {"beamSpring":4501000,"beamDamp":150},
+		  //vertical
+		  ["cf1rr","cf11rr"],
+		  ["cf1r","cf11r"],
+		  ["cf1","cf11"],
+		  ["cf1l","cf11l"],
+		  ["cf1ll","cf11ll"],
+		  
+		  //["cf2rr","cf12rr"],
+		  ["cf2r","cf12r"],
+		  ["cf2l","cf12l"],
+		  //["cf2ll","cf12ll"],
+		  
+		  //["cf3rr","cf13rr"],
+		  ["cf3r","cf13r"],
+		  ["cf3l","cf13l"],
+		  //["cf3ll","cf13ll"],
+		  
+		  //["cf4rr","cf14rr"],
+		  ["cf4r","cf14r"],
+		  ["cf4l","cf14l"],
+		  //["cf4ll","cf14ll"],
+		  
+		  //["cf5rr","cf15rr"],
+		  ["cf5r","cf15r"],
+		  ["cf5l","cf15l"],
+		  //["cf5ll","cf15ll"],
+		  
+		  {"beamDeform":60000,"beamStrength":4717000},
+		  {"beamSpring":4001000,"beamDamp":150},
+		  //cross lengthwise
+		  ["cf11rr","cf12rr"],
+		  ["cf12rr","cf11rr"],
+		  ["cf1r","cf12r"],
+		  ["cf2r","cf11r"],
+		  ["cf1l","cf12l"],
+		  ["cf2l","cf11l"],
+		  ["cf11ll","cf12ll"],
+		  ["cf12ll","cf11ll"],
+		  
+		  ["cf12rr","cf13rr"],
+		  ["cf13rr","cf12rr"],
+		  ["cf2r","cf13r"],
+		  ["cf3r","cf12r"],
+		  ["cf2l","cf13l"],
+		  ["cf3l","cf12l"],
+		  ["cf12ll","cf13ll"],
+		  ["cf13ll","cf12ll"],
+		  
+		  ["cf13rr","cf14rr"],
+		  ["cf14rr","cf13rr"],
+		  ["cf3r","cf14r"],
+		  ["cf4r","cf13r"],
+		  ["cf3l","cf14l"],
+		  ["cf4l","cf13l"],
+		  ["cf13ll","cf14ll"],
+		  ["cf14ll","cf13ll"],
+		  
+		  ["cf14rr","cf15rr"],
+		  ["cf15rr","cf14rr"],
+		  ["cf4r","cf15r"],
+		  ["cf5r","cf14r"],
+		  ["cf4l","cf15l"],
+		  ["cf5l","cf14l"],
+		  ["cf14ll","cf15ll"],
+		  ["cf15ll","cf14ll"],
+		  
+		  //widthwise
+		  ["cf1rr","cf11r"],
+		  ["cf1r","cf11rr"],
+		  ["cf1r","cf11"],
+		  ["cf1","cf11r"],
+		  ["cf1","cf11l"],
+		  ["cf1l","cf11"],
+		  ["cf1l","cf11ll"],
+		  ["cf1ll","cf11l"],
+		  
+		  //["cf2rr","cf12r"],
+		  ["cf2r","cf12rr"],
+		  ["cf2r","cf12l"],
+		  ["cf2l","cf12r"],
+		  ["cf2l","cf12ll"],
+		  //["cf2ll","cf12l"],
+		  
+		  //["cf3rr","cf13r"],
+		  ["cf3r","cf13rr"],
+		  ["cf3r","cf13l"],
+		  ["cf3l","cf13r"],
+		  ["cf3l","cf13ll"],
+		  //["cf3ll","cf13l"],
+		  
+		  //["cf4rr","cf14r"],
+		  ["cf4r","cf14rr"],
+		  ["cf4r","cf14l"],
+		  ["cf4l","cf14r"],
+		  ["cf4l","cf14ll"],
+		  //["cf4ll","cf14l"],
+		  
+		  //["cf5rr","cf15r"],
+		  ["cf5r","cf15rr"],
+		  ["cf5r","cf15l"],
+		  ["cf5l","cf15r"],
+		  ["cf5l","cf15ll"],
+		  //["cf5ll","cf15l"],
+		  
+		  //rigids
+		  /*
+		  ["cf2rr","cf2"],
+		  ["cf2r","cf2"],
+		  ["cf2l","cf2"],
+		  ["cf2ll","cf2"],
+		  
+		  ["cf3rr","cf3"],
+		  ["cf3r","cf3"],
+		  ["cf3l","cf3"],
+		  ["cf3ll","cf3"],
+		  
+		  ["cf4rr","cf4"],
+		  ["cf4r","cf4"],
+		  ["cf4l","cf4"],
+		  ["cf4ll","cf4"],
+		  
+		  ["cf5rr","cf5"],
+		  ["cf5r","cf5"],
+		  ["cf5l","cf5"],
+		  ["cf5ll","cf5"],
+		  */
+		  
+		  //attach
+		  {"beamSpring":3501000,"beamDamp":700},
+		  {"beamDeform":36000,"beamStrength":115700},
+		  ["cf15ll","fr11l"],
+		  ["cf5l","fr11l"],
+		  ["cf5l","fr11"],
+		  ["cf5r","fr11"],
+		  ["cf5r","fr11r"],
+		  ["cf15rr","fr11r"],
+		  
+		  ["cf15ll","fr12l"],
+		  ["cf5l","fr12l"],
+		  ["cf5l","fr12"],
+		  ["cf5r","fr12"],
+		  ["cf5r","fr12r"],
+		  ["cf15rr","fr12r"],
+		  
+		  ["cf14ll","fr12l"],
+		  ["cf4l","fr12l"],
+		  ["cf4l","fr12"],
+		  ["cf4r","fr12"],
+		  ["cf4r","fr12r"],
+		  ["cf14rr","fr12r"],
+		  
+		  ["cf14ll","fr16l"],
+		  ["cf4l","fr16l"],
+		  ["cf4l","fr16"],
+		  ["cf4r","fr16"],
+		  ["cf4r","fr16r"],
+		  ["cf14rr","fr16r"],
+		  
+		  ["cf13ll","fr16l"],
+		  ["cf3l","fr16l"],
+		  ["cf3l","fr16"],
+		  ["cf3r","fr16"],
+		  ["cf3r","fr16r"],
+		  ["cf13rr","fr16r"],
+		  
+		  ["cf13ll","fr17l"],
+		  ["cf3l","fr17l"],
+		  ["cf3l","fr17"],
+		  ["cf3r","fr17"],
+		  ["cf3r","fr17r"],
+		  ["cf13rr","fr17r"],
+		  
+		  ["cf12ll","fr18l"],
+		  ["cf2l","fr18l"],
+		  ["cf2l","fr18"],
+		  ["cf2r","fr18"],
+		  ["cf2r","fr18r"],
+		  ["cf12rr","fr18r"],
+		  
+		  ["cf12ll","fr20l"],
+		  ["cf2l","fr20l"],
+		  ["cf2l","fr20"],
+		  ["cf2r","fr20"],
+		  ["cf2r","fr20r"],
+		  ["cf12rr","fr20r"],
+		  
+		  ["cf1l","fr20l"],
+		  ["cf1l","fr20"],
+		  ["cf1","fr20"],
+		  ["cf1","fr20"],
+		  ["cf1r","fr20"],
+		  ["cf1r","fr20r"],
+		  
+		  {"beamDeform":36000,"beamStrength":364900},
+		  //step thing
+		  ["cf6r","fr20r"],
+		  ["cf6r","fr20"],
+		  ["cf6","fr20r"],
+		  ["cf6","fr20"],
+		  ["cf6","fr20l"],
+		  ["cf6l","fr20"],
+		  ["cf6l","fr20l"],
+		  
+		  ["cf6r","fr19r"],
+		  ["cf6r","fr19"],
+		  ["cf6","fr19r"],
+		  ["cf6","fr19"],
+		  ["cf6","fr19l"],
+		  ["cf6l","fr19"],
+		  ["cf6l","fr19l"],
+		  
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//floor
+			{"group":"van_flatbed"},
+            {"dragCoef":12},
+			{"groundModel":"asphalt"},
+			["cf15l","cf15ll","cf14ll"],
+			["cf15l","cf14ll","cf14l"],
+			["cf14l","cf14ll","cf13ll"],
+			["cf14l","cf13ll","cf13l"],
+			["cf13l","cf13ll","cf12ll"],
+			["cf13l","cf12ll","cf12l"],
+			["cf12l","cf12ll","cf11ll"],
+			["cf12l","cf11ll","cf11l"],
+			
+			["cf15r","cf15l","cf14l"],
+			["cf15r","cf14l","cf14r"],
+			["cf14r","cf14l","cf13l"],
+			["cf14r","cf13l","cf13r"],
+			["cf13r","cf13l","cf12l"],
+			["cf13r","cf12l","cf12r"],
+			["cf12l","cf11l","cf11"],
+			["cf12r","cf12l","cf11"],
+			["cf12r","cf11","cf11r"],
+			
+			["cf15rr","cf15r","cf14rr"],
+			["cf15r","cf14r","cf14rr"],
+			["cf14rr","cf14r","cf13rr"],
+			["cf14r","cf13r","cf13rr"],
+			["cf13rr","cf13r","cf12rr"],
+			["cf13r","cf12r","cf12rr"],
+			["cf12rr","cf12r","cf11rr"],
+			["cf12r","cf11r","cf11rr"],
+			
+			{"groundModel":"metal"},
+			
+			//rear step
+			["cf6l","cf6ll","cf7ll"],
+			["cf6l","cf7ll","cf7l"],
+			["cf6","cf6l","cf7l"],
+			["cf6","cf7l","cf7"],
+			["cf6","cf7r","cf6r"],
+			["cf7","cf7r","cf6"],
+			["cf6r","cf7rr","cf6rr"],
+			["cf7r","cf7rr","cf6r"],
+			
+			["cf11ll","cf1ll","cf1l"],
+			["cf11l","cf11ll","cf1l"],
+			["cf11l","cf1l","cf1"],
+			["cf11","cf11l","cf1"],
+			["cf1r","cf11r","cf1"],
+			["cf11r","cf11","cf1"],
+			["cf1rr","cf11rr","cf1r"],
+			["cf11rr","cf11r","cf1r"],
+			
+			["cf1ll","cf6ll","cf6l"],
+			["cf1l","cf1ll","cf6l"],
+			["cf1l","cf6l","cf6"],
+			["cf1","cf1l","cf6"],
+			["cf6r","cf1r","cf6"],
+			["cf1r","cf1","cf6"],
+			["cf6rr","cf1rr","cf6r"],
+			["cf1rr","cf1r","cf6r"],
+
+			/*
+			//connection to frame
+			//r
+			["cf15r","fr12r","fr11r"],
+			["cf14r","fr12r","cf15r"],
+			["cf14r","fr16r","fr12r"],
+			["cf13r","fr16r","cf14r"],
+			["cf13r","fr18r","fr17r"],
+			["cf12r","fr18r","cf13r"],
+			["cf12r","fr20r","fr18r"],
+			["cf11r","fr20r","cf12r"],
+			
+			//l
+			["cf15l","fr11l","fr12l"],
+			["cf15l","fr12l","cf14l"],
+			["cf14l","fr12l","fr16l"],
+			["cf14l","fr16l","cf13l"],
+			["cf13l","fr17l","fr18l"],
+			["cf13l","fr18l","cf12l"],
+			["cf12l","fr18l","fr20l"],
+			["cf12l","fr20l","cf11l"],
+			*/
+			{"group":""},
+			
+	],
+}
+}

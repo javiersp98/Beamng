@@ -1,0 +1,11 @@
+{
+"hopper_skin_mojave": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Mojave",
+        "value":50,
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "mojave",
+  },
+}

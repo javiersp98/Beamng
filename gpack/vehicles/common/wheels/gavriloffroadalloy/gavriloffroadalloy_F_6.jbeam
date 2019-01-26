@@ -1,0 +1,203 @@
+{
+"roameralloy16_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Gavril Terra-XT 16x8 Front Wheels",
+        "value":600,
+    }
+    "slotType" : "wheel_F_6",
+    "slots": [
+        ["type", "default", "description"]
+        ["tire_F_16x8_alt","tire_F_225_75_16_standard","Front Tires"],
+	],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        //wheels
+        ["roameralloy16", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.547, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+        ["roameralloy16", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x": 0.547, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+		{"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+        {"collision":true}
+        {"selfCollision":true}
+        {"nodeWeight":5.0},
+        {"group":"wheelhub_FR"},
+        ["fw1r", -0.36, 0.0, 0.0],
+        {"group":"wheelhub_FL"},
+        ["fw1l", 0.36, 0.0, 0.0],
+        {"group":"wheelhub_FR"},
+        ["fw1rr", -0.65, 0.0, 0.0],
+        {"group":"wheelhub_FL"},
+        ["fw1ll", 0.65, 0.0, 0.0],
+		{"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+        {"collision":true}
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //hub
+        {"beamSpring":801000,"beamDamp":6},
+        {"beamDeform":110000,"beamStrength":1400000},
+        ["fw1r","fw1rr"],
+        ["fw1l","fw1ll"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        {"disableMeshBreaking":true,"disableHubMeshBreaking":false,"hasTire":false},
+
+        //general settings
+        {"hubRadius":0.215},
+        {"wheelOffset":-0.055},
+        {"hubWidth":0.235},
+        {"numRays":16},
+
+        //hub options
+        {"hubTreadBeamSpring":1801000, "hubTreadBeamDamp":10},
+        {"hubPeripheryBeamSpring":1801000, "hubPeripheryBeamDamp":10},
+        {"hubSideBeamSpring":2201000, "hubSideBeamDamp":10}
+        {"hubBeamDeform":31000, "hubBeamStrength":95000},
+        {"hubNodeWeight":0.75},
+        {"hubNodeMaterial":"|NM_METAL"},
+        {"hubFrictionCoef":0.5},
+    ],
+}
+"rodeoalloy16_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Gavril Terra-XT 16x8 Front Wheels (Two-Tone)",
+        "value":600,
+    }
+    "slotType" : "wheel_F_6",
+    "slots": [
+        ["type", "default", "description"]
+        ["tire_F_16x8_alt","tire_F_225_75_16_standard","Front Tires"],
+	],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        //wheels
+        ["rodeoalloy16", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.547, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+        ["rodeoalloy16", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x": 0.547, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+		{"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+        {"collision":true}
+        {"selfCollision":true}
+        {"nodeWeight":5.0},
+        {"group":"wheelhub_FR"},
+        ["fw1r", -0.36, 0.0, 0.0],
+        {"group":"wheelhub_FL"},
+        ["fw1l", 0.36, 0.0, 0.0],
+        {"group":"wheelhub_FR"},
+        ["fw1rr", -0.65, 0.0, 0.0],
+        {"group":"wheelhub_FL"},
+        ["fw1ll", 0.65, 0.0, 0.0],
+		{"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+        {"collision":true}
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //hub
+        {"beamSpring":801000,"beamDamp":6},
+        {"beamDeform":110000,"beamStrength":1400000},
+        ["fw1r","fw1rr"],
+        ["fw1l","fw1ll"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        {"disableMeshBreaking":true,"disableHubMeshBreaking":false,"hasTire":false},
+
+        //general settings
+        {"hubRadius":0.215},
+        {"wheelOffset":-0.055},
+        {"hubWidth":0.235},
+        {"numRays":16},
+
+        //hub options
+        {"hubTreadBeamSpring":1801000, "hubTreadBeamDamp":10},
+        {"hubPeripheryBeamSpring":1801000, "hubPeripheryBeamDamp":10},
+        {"hubSideBeamSpring":2201000, "hubSideBeamDamp":10}
+        {"hubBeamDeform":31000, "hubBeamStrength":95000},
+        {"hubNodeWeight":0.75},
+        {"hubNodeMaterial":"|NM_METAL"},
+        {"hubFrictionCoef":0.5},
+    ],
+}
+"pickupalloy16_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Gavril D-Alloy 16x8 Front Wheels",
+        "value":550,
+    }
+    "slotType" : "wheel_F_6",
+    "slots": [
+        ["type", "default", "description"]
+        ["tire_F_16x8_alt","tire_F_225_75_16_standard","Front Tires"],
+	],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        //wheels
+        ["pickupalloy16", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.547, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+        ["pickupalloy16", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x": 0.547, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+		{"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+        {"collision":true}
+        {"selfCollision":true}
+        {"nodeWeight":5.0},
+        {"group":"wheelhub_FR"},
+        ["fw1r", -0.36, 0.0, 0.0],
+        {"group":"wheelhub_FL"},
+        ["fw1l", 0.36, 0.0, 0.0],
+        {"group":"wheelhub_FR"},
+        ["fw1rr", -0.65, 0.0, 0.0],
+        {"group":"wheelhub_FL"},
+        ["fw1ll", 0.65, 0.0, 0.0],
+		{"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+        {"collision":true}
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //hub
+        {"beamSpring":801000,"beamDamp":6},
+        {"beamDeform":110000,"beamStrength":1400000},
+        ["fw1r","fw1rr"],
+        ["fw1l","fw1ll"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        {"disableMeshBreaking":true,"disableHubMeshBreaking":false,"hasTire":false},
+
+        //general settings
+        {"hubRadius":0.215},
+        {"wheelOffset":-0.055},
+        {"hubWidth":0.235},
+        {"numRays":16},
+
+        //hub options
+        {"hubTreadBeamSpring":1801000, "hubTreadBeamDamp":10},
+        {"hubPeripheryBeamSpring":1801000, "hubPeripheryBeamDamp":10},
+        {"hubSideBeamSpring":2201000, "hubSideBeamDamp":10}
+        {"hubBeamDeform":31000, "hubBeamStrength":95000},
+        {"hubNodeWeight":0.75},
+        {"hubNodeMaterial":"|NM_METAL"},
+        {"hubFrictionCoef":0.5},
+    ],
+}
+}

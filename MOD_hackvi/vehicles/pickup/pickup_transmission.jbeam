@@ -1,0 +1,138 @@
+{
+
+"pickup_transmission_6M2": {
+    "information":{
+        "authors":"Javiersp98",
+        "name":"6-Speed Manual Transmission",
+        "value":400,
+    },
+    "slotType" : "pickup_transmission",
+    "slots": [
+        ["type", "default","description"]
+        ["pickup_flywheel","pickup_flywheel","Flywheel", {"coreSlot":true}],
+        ["pickup_transfer_case","pickup_transfer_case_4WD","Transfer Case", {"coreSlot":true}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-3.6, 0, 4.17, 2.34, 1.52, 1.14, 0.87, 0.69],
+        "friction": 1,
+        "gearboxNode:":"tra1",
+    },
+    "clutch": {
+        "uiName":"Clutch",
+    },
+    "vehicleController": {
+        "calculateOptimalLoadShiftPoints": true
+        "lowShiftDownRPM":[0,0,0,1300,1500,1400,1300,1100]
+        "lowShiftUpRPM":[0,0,2800,2600,2500,2300,2000]
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["pickup_transmission", ["pickup_engine","pickup_transmission"]],
+    ],
+    "props": [
+        ["func"        , "mesh"                , "idRef:", "idX:", "idY:", "baseRotation"      , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        //pedal
+        ["clutch"       , "pickup_clutchpedal"   , "fr8", "fr8l", "fr1l", {"x":-90, "y":0, "z":0}, {"x":-25, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false}
+         {"collision":true}
+         //--5 Speed Manual-
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"nodeWeight":35},
+         {"group":"pickup_transmission"},
+         ["tra1", 0.0, -0.59, 0.48],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":20001000,"beamDamp":500},
+          {"beamDeform":250000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+"pickup_transmission_6A_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race 6-Speed Automatic Transmission",
+        "value":1200,
+    }
+    "slotType" : "pickup_transmission",
+    "slots": [
+        ["type", "default", "description"]
+        ["pickup_converter","pickup_converter_heavy","Torque Converter", {"coreSlot":true}],
+        ["pickup_transfer_case","pickup_transfer_case_4WD","Transfer Case", {"coreSlot":true}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["automaticGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        //premultiplied to account for 3.55 differential ratio instead of 3.15
+        //source ratios: [-3.4, 0, 4.17, 2.34, 1.52, 1.14, 0.87, 0.69]
+        "gearRatios":[-3.4, 0, 4.17, 2.34, 1.52, 1.14, 0.93, 0.72],
+        "parkLockTorque":2500,
+        "oneWayViscousCoef":60,
+        "friction": 10,
+        "gearboxNode:":"tra1",
+    },
+    "vehicleController": {
+        "automaticModes":"PRNDSM",
+        "transmissionGearChangeDelay":1.5
+        "calculateOptimalLoadShiftPoints": true
+        "aggressionSmoothingUp":1
+        "aggressionSmoothingDown":0.5
+        "aggressionHoldOffThrottleDelay":1.75,
+        "gearboxDecisionSmoothingUp":2
+        "gearboxDecisionSmoothingDown":2
+        "lowShiftDownRPM":1000,
+        "lowShiftUpRPM":[0,0,1700,1500,1500,1500,1500]
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["pickup_transmission", ["pickup_engine","pickup_transmission"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false}
+         {"collision":true}
+         //--6 Speed Auto-
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"nodeWeight":40},
+         {"group":"pickup_transmission"},
+         ["tra1", 0.0, -0.59, 0.48],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":20001000,"beamDamp":500},
+          {"beamDeform":250000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+}

@@ -1,0 +1,739 @@
+{
+	/*
+"sbr_twinturbo_nomi550R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Nomi 550R Twin Turbochargers",
+        "value":10500,
+    }
+    "slotType" : "sbr_intake",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sbr_intake_TT", ["sbr_body","sbr_engine"]],
+         ["sbr_exhaust_TT", ["sbr_engine","sbr_twinturbo","sbr_exhaust"]],
+    ],
+    "turbocharger": {
+        "wastegateStart":23.5,
+        "wastegateLimit":26.5,
+        "maxExhaustPower": 250000,
+        "backPressureCoef": 0.0005,
+        "frictionCoef": 20.3,
+        "inertia":45.0,
+        "pressureRatePSI": 85,
+        "bovSoundVolumeCoef":0.5,
+        "damageThresholdTemperature": 720,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -2.5],
+            [20000,     -1.8],
+            [30000,     10],
+            [60000,     15],
+            [90000,     19],
+            [150000,    25],
+            [200000,    28],
+            [250000,    29],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.0,    0.0],
+            [650,   0.39,    0.25],
+            [1400,  0.54,    0.35],
+            [2000,  0.79,   0.45],
+            [2500,  0.92,    0.62],
+            [3000,  0.95,    0.75],
+            [4000,  0.84,    0.88],
+            [5000,  0.83,    1.0],
+            [6000,  0.83,    1.0],
+            [7000,  0.83,   1.0],
+            [8000,  1.0,   1.0],
+            [9000,  1.0,    1.0],
+        ],
+    },
+    "mainEngine":{
+        "maxRPM":8400,
+        "burnEfficiency":0.35
+        //turbocharger name
+        "turbocharger":"turbocharger",
+    },
+    "vehicleController": {
+        "highShiftUpRPM":8100
+    },
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"selfCollision":true}
+        {"collision":true}
+        //--exhaust
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+        {"nodeWeight":3.61},
+        {"group":"sbr_twinturbo"},
+        ["exh1r",-0.54, 1.78, 0.21],
+        ["exh1l", 0.54, 1.78, 0.21],
+        {"group":"sbr_exhaust"},
+        ["exh2",0.0, 1.97, 0.21],
+        ["exh3",0.0, 1.97, 0.35],
+        //tips
+        {"nodeWeight":0.48},
+        {"selfCollision":false}
+        ["exh4rr",-0.68, 2.045, 0.24],
+        ["exh4r",-0.48, 2.105, 0.24],
+        ["exh4l", 0.48, 2.105, 0.24],
+        ["exh4ll", 0.68, 2.045, 0.24],
+
+        ["exh5rr",-0.67, 2.085, 0.34],
+        ["exh5r",-0.48, 2.145, 0.35],
+        ["exh5l", 0.48, 2.145, 0.35],
+        ["exh5ll", 0.67, 2.085, 0.34],
+
+        //rigidifier
+        ["exh6r",-0.57, 1.93, 0.32],
+        ["exh6l", 0.57, 1.93, 0.32],
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamSpring":825550,"beamDamp":50},
+        {"beamDeform":22500,"beamStrength":"FLT_MAX"},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        //tips
+        ["exh4r","exh4rr"],
+        ["exh4l","exh4ll"],
+        ["exh5r","exh5rr"],
+        ["exh5l","exh5ll"],
+        ["exh4r","exh5r"],
+        ["exh4rr","exh5rr"],
+        ["exh4l","exh5l"],
+        ["exh4ll","exh5ll"],
+
+        {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+        //cross
+        ["exh4r","exh5rr"],
+        ["exh5r","exh4rr"],
+        ["exh4l","exh5ll"],
+        ["exh5l","exh4ll"],
+
+        //rigid
+        ["exh4r","exh6r"],
+        ["exh4rr","exh6r"],
+        ["exh5r","exh6r"],
+        ["exh5rr","exh6r"],
+
+        ["exh4l","exh6l"],
+        ["exh4ll","exh6l"],
+        ["exh5l","exh6l"],
+        ["exh5ll","exh6l"],
+
+        {"beamSpring":413050,"beamDamp":50},
+        //turbo and log connect to tip
+        //r
+        ["exh4r","exh3"],
+        ["exh4r","exh2"],
+        ["exh4rr","exh3"],
+        ["exh4rr","exh2"],
+        ["exh5r","exh3"],
+        ["exh5r","exh2"],
+        ["exh5rr","exh3"],
+        ["exh5rr","exh2"],
+        ["exh6r","exh3"],
+        ["exh6r","exh2"],
+
+        //l
+        ["exh4l","exh3"],
+        ["exh4l","exh2"],
+        ["exh4ll","exh3"],
+        ["exh4ll","exh2"],
+        ["exh5l","exh3"],
+        ["exh5l","exh2"],
+        ["exh5ll","exh3"],
+        ["exh5ll","exh2"],
+        ["exh6l","exh3"],
+        ["exh6l","exh2"],
+
+        {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+        ["exh4r","exh1r"],
+        ["exh4rr","exh1r"],
+        ["exh5r","exh1r"],
+        ["exh5rr","exh1r"],
+        ["exh6r","exh1r"{"isExhaust":true}],
+        ["exh4l","exh1l"],
+        ["exh4ll","exh1l"],
+        ["exh5l","exh1l"],
+        ["exh5ll","exh1l"],
+        ["exh6l","exh1l"{"isExhaust":true}],
+
+        //big log beef
+        {"beamSpring":1375550,"beamDamp":50},
+        {"beamDeform":22500,"beamStrength":"FLT_MAX"},
+        ["exh2","exh3"],
+        ["exh1r","exh2"],
+        ["exh1r","exh3"],
+        ["exh1l","exh2"],
+        ["exh1l","exh3"],
+
+        //attach to engine
+        {"beamSpring":825550,"beamDamp":50},
+        {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+
+        ["exh1r","e2r"],
+        ["exh1r","e4r"],
+        ["exh2","e2r"],
+        ["exh3","e2r"],
+        ["exh2","e4r"],
+        ["exh3","e4r"],
+        ["exh1r","e1r"{"isExhaust":true}],
+        ["exh2","e1r"],
+        ["exh3","e1r"],
+
+        ["exh1l","e2l"],
+        ["exh1l","e4l"],
+        ["exh2","e2l"],
+        ["exh3","e2l"],
+        ["exh2","e4l"],
+        ["exh3","e4l"],
+        ["exh1l","e1l"{"isExhaust":true}],
+        ["exh2","e1l"],
+        ["exh3","e1l"],
+
+        ["exh1r","e2l"],
+        ["exh1l","e2r"],
+        ["exh6l","e4l"],
+        ["exh6r","e4r"],
+
+        //attach to body
+        {"beamSpring":275550,"beamDamp":50},
+        {"beamDeform":6600,"beamStrength":35000},
+        ["exh1r","r5rr"],
+        ["exh1r","r1rr"],
+        ["exh1l","r5ll"],
+        ["exh1l","r1ll"],
+
+        ["exh1r","r3rr"],
+        ["exh1l","r3ll"],
+        ["exh2","r3rr"],
+        ["exh2","r3ll"],
+
+        {"beamSpring":275550,"beamDamp":50},
+        {"beamDeform":5400,"beamStrength":20000},
+        ["exh6r","r3rr"],
+        ["exh6l","r3ll"],
+        ["exh4r","r3rr"],
+        ["exh4l","r3ll"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"group":"sbr_exhaust"},
+            {"groundModel":"metal"},
+            {"dragCoef":6},
+            ["exh5l","exh5ll","exh4ll"],
+            ["exh5l","exh4ll","exh4l"],
+            ["exh5rr","exh5r","exh4rr"],
+            ["exh5r","exh4r","exh4rr"],
+
+            ["exh5rr", "exh4rr", "exh6r"],
+            ["exh6r", "exh5r", "exh5rr"],
+            ["exh5r", "exh6r", "exh4r"],
+            ["exh4r", "exh6r", "exh4rr"],
+
+            ["exh4ll", "exh5ll", "exh6l"],
+            ["exh5l", "exh6l", "exh5ll"],
+            ["exh6l", "exh5l", "exh4l"],
+            ["exh6l", "exh4l", "exh4ll"],
+            {"group":""},
+    ],
+    },
+    "sbr_twinturbo_stages17": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"S17 Twin Turbochargers",
+            "value":3500,
+        }
+        "slotType" : "sbr_intake",
+        "turbocharger": {
+            "wastegateStart":7,
+            "wastegateLimit":11,
+            "maxExhaustPower": 5000,
+            "backPressureCoef": 0.00003,
+            "frictionCoef": 10.3,
+            "bovSoundVolumeCoef": 0.3,
+            "bovSoundFileName": "TurboBovSound",
+            "pressureRatePSI": 70,
+            "inertia":25.2,
+            "damageThresholdTemperature": 670,
+            "pressurePSI":[
+                //turbineRPM, pressure(PSI)
+                [0,         -2.5],
+                [10000,      -1.5],
+                [40000,     6],
+                [80000,     12],
+                [110000,     14],
+                [170000,    17],
+                [240000,    20],
+                [300000,    24],
+            ],
+            "engineDef":[
+                //engineRPM, efficiency, exhaustFactor
+                [0,     0.0,    0.0],
+                [650,   0.3,   0.15],
+                [1400,  0.6,   0.3],
+                [2000,  0.85,    0.45],
+                [2500,  0.95,    0.6],
+                [3000,  0.9,    0.79],
+                [4000,  0.74,    0.90],
+                [5000,  0.7,    0.96],
+                [6000,  0.7,    1],
+                [7000,  0.73,    1],
+                [8000,  0.95,    1.0],
+                [9000,  0.85,    1.0],
+            ],
+        },
+        "mainEngine":{
+            "maxRPM":8400,
+            "burnEfficiency":0.39
+            //turbocharger name
+            "turbocharger":"turbocharger",
+        },
+        "vehicleController": {
+            "highShiftUpRPM":8100
+        },
+        "nodes": [
+            ["id", "posX", "posY", "posZ"],
+            {"selfCollision":true}
+            {"collision":true}
+            //--exhaust
+            {"frictionCoef":0.5},
+            {"nodeMaterial":"|NM_METAL"},
+            {"nodeWeight":3.61},
+            {"group":"sbr_twinturbo"},
+            ["exh1r",-0.54, 1.78, 0.21],
+            ["exh1l", 0.54, 1.78, 0.21],
+            {"group":"sbr_exhaust"},
+            ["exh2",0.0, 1.97, 0.21],
+            ["exh3",0.0, 1.97, 0.35],
+            //tips
+            {"nodeWeight":0.48},
+            {"selfCollision":false}
+            ["exh4rr",-0.68, 2.045, 0.24],
+            ["exh4r",-0.48, 2.105, 0.24],
+            ["exh4l", 0.48, 2.105, 0.24],
+            ["exh4ll", 0.68, 2.045, 0.24],
+
+            ["exh5rr",-0.67, 2.085, 0.34],
+            ["exh5r",-0.48, 2.145, 0.35],
+            ["exh5l", 0.48, 2.145, 0.35],
+            ["exh5ll", 0.67, 2.085, 0.34],
+
+            //rigidifier
+            ["exh6r",-0.57, 1.93, 0.32],
+            ["exh6l", 0.57, 1.93, 0.32],
+            {"group":""},
+        ],
+        "beams": [
+            ["id1:", "id2:"],
+            {"beamSpring":825550,"beamDamp":50},
+            {"beamDeform":22500,"beamStrength":"FLT_MAX"},
+            {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+            //tips
+            ["exh4r","exh4rr"],
+            ["exh4l","exh4ll"],
+            ["exh5r","exh5rr"],
+            ["exh5l","exh5ll"],
+            ["exh4r","exh5r"],
+            ["exh4rr","exh5rr"],
+            ["exh4l","exh5l"],
+            ["exh4ll","exh5ll"],
+
+            {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+            //cross
+            ["exh4r","exh5rr"],
+            ["exh5r","exh4rr"],
+            ["exh4l","exh5ll"],
+            ["exh5l","exh4ll"],
+
+            //rigid
+            ["exh4r","exh6r"],
+            ["exh4rr","exh6r"],
+            ["exh5r","exh6r"],
+            ["exh5rr","exh6r"],
+
+            ["exh4l","exh6l"],
+            ["exh4ll","exh6l"],
+            ["exh5l","exh6l"],
+            ["exh5ll","exh6l"],
+
+            {"beamSpring":413050,"beamDamp":50},
+            //turbo and log connect to tip
+            //r
+            ["exh4r","exh3"],
+            ["exh4r","exh2"],
+            ["exh4rr","exh3"],
+            ["exh4rr","exh2"],
+            ["exh5r","exh3"],
+            ["exh5r","exh2"],
+            ["exh5rr","exh3"],
+            ["exh5rr","exh2"],
+            ["exh6r","exh3"],
+            ["exh6r","exh2"],
+
+            //l
+            ["exh4l","exh3"],
+            ["exh4l","exh2"],
+            ["exh4ll","exh3"],
+            ["exh4ll","exh2"],
+            ["exh5l","exh3"],
+            ["exh5l","exh2"],
+            ["exh5ll","exh3"],
+            ["exh5ll","exh2"],
+            ["exh6l","exh3"],
+            ["exh6l","exh2"],
+
+            {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+            ["exh4r","exh1r"],
+            ["exh4rr","exh1r"],
+            ["exh5r","exh1r"],
+            ["exh5rr","exh1r"],
+            ["exh6r","exh1r"{"isExhaust":true}],
+            ["exh4l","exh1l"],
+            ["exh4ll","exh1l"],
+            ["exh5l","exh1l"],
+            ["exh5ll","exh1l"],
+            ["exh6l","exh1l"{"isExhaust":true}],
+
+            //big log beef
+            {"beamSpring":1375550,"beamDamp":50},
+            {"beamDeform":22500,"beamStrength":"FLT_MAX"},
+            ["exh2","exh3"],
+            ["exh1r","exh2"],
+            ["exh1r","exh3"],
+            ["exh1l","exh2"],
+            ["exh1l","exh3"],
+
+            //attach to engine
+            {"beamSpring":825550,"beamDamp":50},
+            {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+
+            ["exh1r","e2r"],
+            ["exh1r","e4r"],
+            ["exh2","e2r"],
+            ["exh3","e2r"],
+            ["exh2","e4r"],
+            ["exh3","e4r"],
+            ["exh1r","e1r"{"isExhaust":true}],
+            ["exh2","e1r"],
+            ["exh3","e1r"],
+
+            ["exh1l","e2l"],
+            ["exh1l","e4l"],
+            ["exh2","e2l"],
+            ["exh3","e2l"],
+            ["exh2","e4l"],
+            ["exh3","e4l"],
+            ["exh1l","e1l"{"isExhaust":true}],
+            ["exh2","e1l"],
+            ["exh3","e1l"],
+
+            ["exh1r","e2l"],
+            ["exh1l","e2r"],
+            ["exh6l","e4l"],
+            ["exh6r","e4r"],
+
+            //attach to body
+            {"beamSpring":275550,"beamDamp":50},
+            {"beamDeform":6600,"beamStrength":35000},
+            ["exh1r","r5rr"],
+            ["exh1r","r1rr"],
+            ["exh1l","r5ll"],
+            ["exh1l","r1ll"],
+
+            ["exh1r","r3rr"],
+            ["exh1l","r3ll"],
+            ["exh2","r3rr"],
+            ["exh2","r3ll"],
+
+            {"beamSpring":275550,"beamDamp":50},
+            {"beamDeform":5400,"beamStrength":20000},
+            ["exh6r","r3rr"],
+            ["exh6l","r3ll"],
+            ["exh4r","r3rr"],
+            ["exh4l","r3ll"],
+            {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        ],
+        "triangles": [
+                ["id1:","id2:","id3:"],
+                {"group":"sbr_exhaust"},
+                {"groundModel":"metal"},
+                {"dragCoef":6},
+                ["exh5l","exh5ll","exh4ll"],
+                ["exh5l","exh4ll","exh4l"],
+                ["exh5rr","exh5r","exh4rr"],
+                ["exh5r","exh4r","exh4rr"],
+
+                ["exh5rr", "exh4rr", "exh6r"],
+                ["exh6r", "exh5r", "exh5rr"],
+                ["exh5r", "exh6r", "exh4r"],
+                ["exh4r", "exh6r", "exh4rr"],
+
+                ["exh4ll", "exh5ll", "exh6l"],
+                ["exh5l", "exh6l", "exh5ll"],
+                ["exh6l", "exh5l", "exh4l"],
+                ["exh6l", "exh4l", "exh4ll"],
+                {"group":""},
+        ],
+        },
+        "sbr_twinturbo_stage2s17": {
+            "information":{
+                "authors":"BeamNG",
+                "name":"Stage 2 S17 Twin Turbochargers",
+                "value":9000,
+            }
+            "slotType" : "sbr_intake",
+            "flexbodies": [
+                 ["mesh", "[group]:", "nonFlexMaterials"],
+                 ["sbr_intake_TT", ["sbr_body","sbr_engine"]],
+                 ["sbr_exhaust_TT", ["sbr_engine","sbr_twinturbo","sbr_exhaust"]],
+            ],
+            "turbocharger": {
+                "wastegateStart":20.5,
+                "wastegateLimit":22.5,
+                "maxExhaustPower": 250000,
+                "backPressureCoef": 0.0005,
+                "frictionCoef": 20.3,
+                "inertia":45.0,
+                "pressureRatePSI": 85,
+                "bovSoundVolumeCoef":0.5,
+                "damageThresholdTemperature": 720,
+                "pressurePSI":[
+                    //turbineRPM, pressure(PSI)
+                    [0,         -2.5],
+                    [20000,     -1.8],
+                    [30000,     10],
+                    [60000,     15],
+                    [90000,     19],
+                    [150000,    25],
+                    [200000,    28],
+                    [250000,    29],
+                ],
+                "engineDef":[
+                    //engineRPM, efficiency, exhaustFactor
+                    [0,     0.0,    0.0],
+                    [650,   0.39,    0.25],
+                    [1400,  0.54,    0.35],
+                    [2000,  0.79,   0.45],
+                    [2500,  0.92,    0.6],
+                    [3000,  0.95,    0.72],
+                    [4000,  0.82,    0.85],
+                    [5000,  0.81,    1.0],
+                    [6000,  0.83,    1.0],
+                    [7000,  0.83,   1.0],
+                    [8000,  1.0,   1.0],
+                    [9000,  1.0,    1.0],
+                ],
+            },
+            "mainEngine":{
+                "maxRPM":8500,
+                "burnEfficiency":0.35
+                //turbocharger name
+                "turbocharger":"turbocharger",
+            },
+            "vehicleController": {
+                "highShiftUpRPM":8100
+            },
+            "nodes": [
+                ["id", "posX", "posY", "posZ"],
+                {"selfCollision":true}
+                {"collision":true}
+                //--exhaust
+                {"frictionCoef":0.5},
+                {"nodeMaterial":"|NM_METAL"},
+                {"nodeWeight":3.61},
+                {"group":"sbr_twinturbo"},
+                ["exh1r",-0.54, 1.78, 0.21],
+                ["exh1l", 0.54, 1.78, 0.21],
+                {"group":"sbr_exhaust"},
+                ["exh2",0.0, 1.97, 0.21],
+                ["exh3",0.0, 1.97, 0.35],
+                //tips
+                {"nodeWeight":0.48},
+                {"selfCollision":false}
+                ["exh4rr",-0.68, 2.045, 0.24],
+                ["exh4r",-0.48, 2.105, 0.24],
+                ["exh4l", 0.48, 2.105, 0.24],
+                ["exh4ll", 0.68, 2.045, 0.24],
+
+                ["exh5rr",-0.67, 2.085, 0.34],
+                ["exh5r",-0.48, 2.145, 0.35],
+                ["exh5l", 0.48, 2.145, 0.35],
+                ["exh5ll", 0.67, 2.085, 0.34],
+
+                //rigidifier
+                ["exh6r",-0.57, 1.93, 0.32],
+                ["exh6l", 0.57, 1.93, 0.32],
+                {"group":""},
+            ],
+            "beams": [
+                ["id1:", "id2:"],
+                {"beamSpring":825550,"beamDamp":50},
+                {"beamDeform":22500,"beamStrength":"FLT_MAX"},
+                {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+                //tips
+                ["exh4r","exh4rr"],
+                ["exh4l","exh4ll"],
+                ["exh5r","exh5rr"],
+                ["exh5l","exh5ll"],
+                ["exh4r","exh5r"],
+                ["exh4rr","exh5rr"],
+                ["exh4l","exh5l"],
+                ["exh4ll","exh5ll"],
+
+                {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+                //cross
+                ["exh4r","exh5rr"],
+                ["exh5r","exh4rr"],
+                ["exh4l","exh5ll"],
+                ["exh5l","exh4ll"],
+
+                //rigid
+                ["exh4r","exh6r"],
+                ["exh4rr","exh6r"],
+                ["exh5r","exh6r"],
+                ["exh5rr","exh6r"],
+
+                ["exh4l","exh6l"],
+                ["exh4ll","exh6l"],
+                ["exh5l","exh6l"],
+                ["exh5ll","exh6l"],
+
+                {"beamSpring":413050,"beamDamp":50},
+                //turbo and log connect to tip
+                //r
+                ["exh4r","exh3"],
+                ["exh4r","exh2"],
+                ["exh4rr","exh3"],
+                ["exh4rr","exh2"],
+                ["exh5r","exh3"],
+                ["exh5r","exh2"],
+                ["exh5rr","exh3"],
+                ["exh5rr","exh2"],
+                ["exh6r","exh3"],
+                ["exh6r","exh2"],
+
+                //l
+                ["exh4l","exh3"],
+                ["exh4l","exh2"],
+                ["exh4ll","exh3"],
+                ["exh4ll","exh2"],
+                ["exh5l","exh3"],
+                ["exh5l","exh2"],
+                ["exh5ll","exh3"],
+                ["exh5ll","exh2"],
+                ["exh6l","exh3"],
+                ["exh6l","exh2"],
+
+                {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+                ["exh4r","exh1r"],
+                ["exh4rr","exh1r"],
+                ["exh5r","exh1r"],
+                ["exh5rr","exh1r"],
+                ["exh6r","exh1r"{"isExhaust":true}],
+                ["exh4l","exh1l"],
+                ["exh4ll","exh1l"],
+                ["exh5l","exh1l"],
+                ["exh5ll","exh1l"],
+                ["exh6l","exh1l"{"isExhaust":true}],
+
+                //big log beef
+                {"beamSpring":1375550,"beamDamp":50},
+                {"beamDeform":22500,"beamStrength":"FLT_MAX"},
+                ["exh2","exh3"],
+                ["exh1r","exh2"],
+                ["exh1r","exh3"],
+                ["exh1l","exh2"],
+                ["exh1l","exh3"],
+
+                //attach to engine
+                {"beamSpring":825550,"beamDamp":50},
+                {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+
+                ["exh1r","e2r"],
+                ["exh1r","e4r"],
+                ["exh2","e2r"],
+                ["exh3","e2r"],
+                ["exh2","e4r"],
+                ["exh3","e4r"],
+                ["exh1r","e1r"{"isExhaust":true}],
+                ["exh2","e1r"],
+                ["exh3","e1r"],
+
+                ["exh1l","e2l"],
+                ["exh1l","e4l"],
+                ["exh2","e2l"],
+                ["exh3","e2l"],
+                ["exh2","e4l"],
+                ["exh3","e4l"],
+                ["exh1l","e1l"{"isExhaust":true}],
+                ["exh2","e1l"],
+                ["exh3","e1l"],
+
+                ["exh1r","e2l"],
+                ["exh1l","e2r"],
+                ["exh6l","e4l"],
+                ["exh6r","e4r"],
+
+                //attach to body
+                {"beamSpring":275550,"beamDamp":50},
+                {"beamDeform":6600,"beamStrength":35000},
+                ["exh1r","r5rr"],
+                ["exh1r","r1rr"],
+                ["exh1l","r5ll"],
+                ["exh1l","r1ll"],
+
+                ["exh1r","r3rr"],
+                ["exh1l","r3ll"],
+                ["exh2","r3rr"],
+                ["exh2","r3ll"],
+
+                {"beamSpring":275550,"beamDamp":50},
+                {"beamDeform":5400,"beamStrength":20000},
+                ["exh6r","r3rr"],
+                ["exh6l","r3ll"],
+                ["exh4r","r3rr"],
+                ["exh4l","r3ll"],
+                {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+            ],
+            "triangles": [
+                    ["id1:","id2:","id3:"],
+                    {"group":"sbr_exhaust"},
+                    {"groundModel":"metal"},
+                    {"dragCoef":6},
+                    ["exh5l","exh5ll","exh4ll"],
+                    ["exh5l","exh4ll","exh4l"],
+                    ["exh5rr","exh5r","exh4rr"],
+                    ["exh5r","exh4r","exh4rr"],
+
+                    ["exh5rr", "exh4rr", "exh6r"],
+                    ["exh6r", "exh5r", "exh5rr"],
+                    ["exh5r", "exh6r", "exh4r"],
+                    ["exh4r", "exh6r", "exh4rr"],
+
+                    ["exh4ll", "exh5ll", "exh6l"],
+                    ["exh5l", "exh6l", "exh5ll"],
+                    ["exh6l", "exh5l", "exh4l"],
+                    ["exh6l", "exh4l", "exh4ll"],
+                    {"group":""},
+            ],
+}
+*/
+"sbr_muffler_custom_fl": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Chrome X-Pipe Muffler",
+        "value":1900,
+    }
+    "slotType" : "sbr_muffler",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sbr_muffler_custom", ["sbr_engine","sbr_exhaust"]],
+         ["sbr_exhausttip_custom_fl", ["sbr_exhaust"]],
+    ],
+}
+}

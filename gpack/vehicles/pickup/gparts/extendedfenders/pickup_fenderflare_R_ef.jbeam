@@ -1,0 +1,321 @@
+{
+"pickup_fenderflare_R_ef": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Off-Road Rear Fender Flares",
+        "value":250,
+    }
+    "slotType" : "pickup_fenderflare_R_ef",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pickup_fenderflare_R_ef", ["pickup_bed"], [],{"pos":{"x":0,"y":0,"z":0}}],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+        {"nodeMaterial":"|NM_METAL"},
+        {"group":"pickup_bed"},
+        {"frictionCoef":0.5},
+        {"collision":true}
+        {"nodeWeight":4.1},
+        {"selfCollision":true}
+        ["b7rr",-0.95, 0.98, 0.83],
+        ["b7ll",0.95, 0.98, 0.83],
+        ["b8rr",-1.01, 1.49, 0.91],
+        ["b8ll",1.01, 1.49, 0.91],
+        ["b9rr",-0.99, 1.92, 0.80],
+        ["b9ll",0.99, 1.92, 0.80],
+        {"group":""},
+    ],
+}
+"pickup_fenderflare_dually_ef": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Dually Rear Fender Flares",
+        "value":150,
+    }
+    "slotType" : "pickup_fenderflare_R_ef",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pickup_fenderflare_dually_ef", ["pickup_bed"], [],{"pos":{"x":0,"y":0,"z":0}}],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"nodeWeight":1.0},
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"group":"pickup_bed"},
+         {"frictionCoef":0.5},
+         {"collision":true}
+         {"selfCollision":true}
+         //r
+         ["rff1r",-1.13, 0.92, 1.10],
+         ["rff2r",-1.13, 1.487, 1.10],
+         ["rff3r",-1.13, 2.04, 1.10],
+
+         ["rff4r",-1.13, 0.92, 0.80],
+         ["rff5r",-1.16, 1.487, 0.91],
+         ["rff6r",-1.13, 2.04, 0.80],
+
+         ["rff7r",-1.06, 0.93, 0.39],
+         ["rff8r",-1.06, 2.03, 0.45],
+         //l
+         ["rff1l", 1.13, 0.92, 1.10],
+         ["rff2l", 1.13, 1.48, 1.10],
+         ["rff3l", 1.13, 2.04, 1.10],
+
+         ["rff4l", 1.13, 0.92, 0.80],
+         ["rff5l", 1.16, 1.487, 0.91],
+         ["rff6l", 1.13, 2.04, 0.80],
+
+         ["rff7l", 1.06, 0.93, 0.39],
+         ["rff8l", 1.06, 2.03, 0.45],
+         {"group":""},
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamSpring":1166840,"beamDamp":150},
+          {"beamDeform":25750,"beamStrength":"FLT_MAX"},
+          //main shape
+          //r
+          {"deformGroup":"duallysignal_FR_break", "deformationTriggerRatio":0.05}
+          ["rff1r","rff2r"],
+          ["rff4r","rff5r"],
+          ["rff4r","rff7r"],
+          ["rff7r","b12rr"],
+          {"deformGroup":"duallysignal_RR_break", "deformationTriggerRatio":0.05}
+          ["rff3r","rff6r"],
+          ["rff6r","rff8r"],
+          ["rff8r","b14rr"],
+          ["rff3r","b5rr"],
+          ["rff6r","b10rr"],
+
+          ["rff8r","b13rr"],
+          {"deformGroup":""}
+          ["rff2r","rff3r"],
+          ["rff5r","rff6r"],
+
+          ["rff1r","rff4r"],
+          ["rff2r","rff5r"],
+
+          ["rff2r","b3rr"],
+
+          ["rff5r","b8rr"],
+          ["b4rr","rff3r"],
+          ["b2rr","rff1r"],
+
+          //l
+          {"deformGroup":"duallysignal_FL_break", "deformationTriggerRatio":0.05}
+          ["rff1l","rff2l"],
+          ["rff4l","rff5l"],
+          ["rff4l","rff7l"],
+          ["rff7l","b12ll"],
+          {"deformGroup":"duallysignal_RL_break", "deformationTriggerRatio":0.05}
+          ["rff3l","rff6l"],
+          ["rff6l","b10ll"],
+          ["rff6l","rff8l"],
+          ["rff3l","b5ll"],
+          ["rff8l","b14ll"],
+
+          ["rff8l","b13ll"],
+          {"deformGroup":""}
+          ["rff2l","rff3l"],
+          ["rff5l","rff6l"],
+
+          ["rff1l","rff4l"],
+          ["rff2l","rff5l"],
+
+
+
+          ["rff2l","b3ll"],
+
+          ["rff5l","b8ll"],
+          ["b4ll","rff3l"],
+          ["b2ll","rff1l"],
+          {"beamDeform":9750,"beamStrength":"FLT_MAX"},
+          //cross
+          //r
+          {"deformGroup":"duallysignal_FR_break", "deformationTriggerRatio":0.05}
+          ["rff1r","rff5r"],
+          ["rff1r","b7rr"],
+          ["rff1r","b1rr"],
+
+          ["rff7r","b7rr"],
+          ["rff4r","b2rr"],
+          ["rff4r","b12rr"],
+
+          ["rff4r","b6rr"],
+          ["rff7r","b11rr"],
+
+          ["rff1r","b6rr"],
+          ["rff7r","b6rr"],
+          ["rff4r","b11rr"],
+          ["rff4r","b1rr"],
+          ["b3rr","rff1r"],
+          ["rff2r","rff4r"],
+          ["rff5r","rff7r"],
+          {"deformGroup":"duallysignal_RR_break", "deformationTriggerRatio":0.05}
+          ["rff3r","rff5r"],
+
+          ["rff6r","b5rr"],
+          ["rff3r","b10rr"],
+          ["rff8r","b10rr"],
+          ["rff6r","b14rr"],
+          ["b3rr","rff3r"],
+          ["rff2r","rff6r"],
+          ["rff5r","rff8r"],
+          {"deformGroup":""}
+
+
+          ["rff2r","b4rr"],
+          ["rff2r","b2rr"],
+
+          //l
+          {"deformGroup":"duallysignal_FL_break", "deformationTriggerRatio":0.05}
+          ["rff1l","rff5l"],
+          ["rff1l","b7ll"],
+          ["rff1l","b1ll"],
+
+          ["rff7l","b7ll"],
+          ["rff4l","b2ll"],
+          ["rff4l","b12ll"],
+
+          ["rff4l","b6ll"],
+          ["rff7l","b11ll"],
+
+          ["rff1l","b6ll"],
+          ["rff7l","b6ll"],
+          ["rff4l","b11ll"],
+          ["rff4l","b1ll"],
+          ["b3ll","rff1l"],
+          ["rff2l","rff4l"],
+          ["rff5l","rff7l"],
+          {"deformGroup":"duallysignal_RL_break", "deformationTriggerRatio":0.05}
+          ["rff3l","rff5l"],
+
+          ["rff6l","b5ll"],
+          ["rff3l","b10ll"],
+          ["rff8l","b10ll"],
+          ["rff6l","b14ll"],
+          ["b3ll","rff3l"],
+          ["rff2l","rff6l"],
+          ["rff5l","rff8l"],
+          {"deformGroup":""}
+
+
+          ["rff2l","b4ll"],
+          ["rff2l","b2ll"],
+          {"beamDeform":5750,"beamStrength":"FLT_MAX"},
+          //rigids
+          //r
+          {"deformGroup":"duallysignal_FR_break", "deformationTriggerRatio":0.05}
+          ["b2rr","rff4r"],
+
+          ["rff1r","rff7r"],
+          {"deformGroup":"duallysignal_RR_break", "deformationTriggerRatio":0.05}
+          ["b4rr","rff6r"],
+          ["rff3r","rff8r"],
+
+          ["rff8r","fr17r"],
+          ["rff6r","fr17r"],
+          {"deformGroup":""}
+          ["rff1r","rff3r"],
+          ["rff4r","rff6r"],
+
+          ["b3rr","rff5r"],
+
+          //l
+          {"deformGroup":"duallysignal_FL_break", "deformationTriggerRatio":0.05}
+          ["b2ll","rff4l"],
+
+          ["rff1l","rff7l"],
+          {"deformGroup":"duallysignal_RL_break", "deformationTriggerRatio":0.05}
+          ["b4ll","rff6l"],
+          ["rff3l","rff8l"],
+
+          ["rff8l","fr17l"],
+          ["rff6l","fr17l"],
+          {"deformGroup":""}
+          ["rff1l","rff3l"],
+          ["rff4l","rff6l"],
+
+          ["b3ll","rff5l"],
+
+
+
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"group":"pickup_fenderflare_RR"},
+            ["b2rr","rff1r","b1rr"],
+            ["b2rr","rff2r","rff1r"],
+            ["b3rr","rff2r","b2rr"],
+            ["b3rr","rff3r","rff2r"],
+            ["b4rr","rff3r","b3rr"],
+            ["b5rr","rff3r","b4rr"],
+
+            ["b6rr","b1rr","rff4r"],
+            ["b1rr","rff1r","rff4r"],
+            ["b11rr","b6rr","rff7r"],
+            ["b6rr","rff4r","rff7r"],
+
+            ["rff4r","rff1r","rff5r"],
+            ["rff5r","rff1r","rff2r"],
+            ["rff5r","rff2r","rff6r"],
+            ["rff6r","rff2r","rff3r"],
+
+            ["rff6r","rff3r","b10rr"],
+            ["rff3r","b5rr","b10rr"],
+            ["rff8r","rff6r","b14rr"],
+            ["rff6r","b10rr","b14rr"],
+
+            ["rff7r","rff4r","b12rr"],
+            ["rff4r","b8rr","b12rr"],
+            ["rff5r","b8rr","rff4r"],
+            ["rff6r","b8rr","rff5r"],
+            ["rff8r","b13rr","rff6r"],
+            ["b13rr","b8rr","rff6r"],
+
+
+            //
+            ["rff7r","b12rr","b11rr"],
+            ["rff8r","b14rr","b13rr"],
+
+            {"group":"pickup_fenderflare_RL"},
+            ["b1ll","rff1l","b2ll"],
+            ["b2ll","rff1l","rff2l"],
+            ["b2ll","rff2l","b3ll"],
+            ["b3ll","rff2l","rff3l"],
+            ["b3ll","rff3l","b4ll"],
+            ["b4ll","rff3l","b5ll"],
+
+            ["b1ll","b6ll","rff4l"],
+            ["b1ll","rff4l","rff1l"],
+            ["b6ll","b11ll","rff7l"],
+            ["b6ll","rff7l","rff4l"],
+
+            ["rff1l","rff4l","rff5l"],
+            ["rff1l","rff5l","rff2l"],
+            ["rff2l","rff5l","rff6l"],
+            ["rff2l","rff6l","rff3l"],
+
+            ["rff3l","rff6l","b10ll"],
+            ["rff3l","b10ll","b5ll"],
+            ["rff6l","rff8l","b14ll"],
+            ["rff6l","b14ll","b10ll"],
+
+            ["rff4l","rff7l","b12ll"],
+            ["rff4l","b12ll","b8ll"],
+            ["rff4l","b8ll","rff5l"],
+            ["rff5l","b8ll","rff6l"],
+            ["rff6l","b13ll","rff8l"],
+            ["b8ll","b13ll","rff6l"],
+
+
+            //
+            ["rff7l","b11ll","b12ll"],
+            ["rff8l","b13ll","b14ll"],
+
+            {"group":""},
+    ],
+},
+}

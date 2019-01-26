@@ -1,0 +1,146 @@
+{
+
+"pessima_turbo2": {
+    "information":{
+        "authors":"Javiersp98",
+        "name":"GTz V2 Turbocharger",
+        "value":1050,
+    }
+    "slotType" : "pessima_intake",
+    "turbocharger": {
+        "bovSoundFileName":"event:>Vehicle>Forced_Induction>Turbo_01_stock>turbo_bov"
+        "hissLoopEvent":"event:>Vehicle>Forced_Induction>Turbo_01_stock>turbo_hiss"
+        "whineLoopEvent":"event:>Vehicle>Forced_Induction>Turbo_01_stock>turbo_spin"
+        "bovSoundVolumeCoef": 0.4,
+		"hissVolumePerPSI": 0.04,
+		"whineVolumePer10kRPM": 0.06,
+        "whinePitchPer10kRPM": 0.05,
+        "wastegateStart":10,
+        "wastegateLimit":12,
+        "maxExhaustPower": 6500,
+        "backPressureCoef": 0.000035,
+        "frictionCoef": 10.4,
+        "inertia":1.10,
+        "damageThresholdTemperature": 665,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -3.5],
+            [30000,     0],
+            [60000,     6],
+            [90000,     9],
+            [150000,    12],
+            [200000,    15],
+            [250000,    18],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.0,    0.0],
+            [650,   0.25,   0.05],
+            [1000,   0.35,   0.1],
+            [1400,  0.75,   0.45],
+            [2000,  0.85,    0.7],
+            [2500,  0.95,    0.85],
+            [3000,  0.98,    0.9],
+            [4000,  0.96,    0.95],
+            [5000,  0.92,    1.0],
+            [6000,  0.86,    1.0],
+            [7000,  0.80,    1.0],
+            [8000,  0.75,    1.0],
+            [9000,  0.5,    1.0],
+        ],
+    },
+    "mainEngine":{
+        //turbocharger name
+        "turbocharger":"turbocharger",
+        "instantAfterFireCoef": 1,
+        "sustainedAfterFireCoef": 0.75,
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pessima_icpipe_intake", ["pessima_intercooler","pessima_rad"]],
+         ["pessima_icpipe_turbo", ["pessima_intercooler","pessima_rad"]],
+         ["pessima_turbo", ["pessima_engine"]],
+         ["pessima_intercooler", ["pessima_intercooler","pessima_rad"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--turbo and intercooler weight--
+         {"selfCollision":false},
+         {"collision":false}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":""},
+         {"nodeWeight":10},
+         ["turbo", 0, -1.73, 0.51],
+         {"collision":true}
+         {"group":"pessima_intercooler"},
+         {"nodeWeight":5},
+         ["interc", 0.0, -2.00, 0.35],
+         {"nodeWeight":1},
+         {"group":"pessima_intercooler"},
+         ["airb1", 0.15, -1.22, 0.73],
+         ["airb2", 0.1, -1.73, 0.41],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":2750550,"beamDamp":125},
+          {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+          ["turbo", "e1r"],
+          ["turbo", "e2r"],
+          ["turbo", "e3r"],
+          ["turbo", "e4r"],
+          ["turbo", "e3l"],
+          ["turbo", "e2l"],
+
+          {"beamSpring":501000,"beamDamp":60},
+          {"beamDeform":4000,"beamStrength":12000},
+          {"breakGroup":"radtube"},
+          ["airb1","e1r"],
+          ["airb1","e1l"],
+          ["airb1","e3r"],
+          ["airb1","e3l"],
+          ["airb1","e4r"],
+          ["airb1","e4l"],
+
+          ["airb2","e2r"],
+          ["airb2","e2l"],
+          ["airb2","e4r"],
+          ["airb2","e4l"],
+          ["airb2","e3r"],
+          ["airb2","e3l"],
+          {"breakGroup":""},
+
+          {"beamSpring":501000,"beamDamp":100},
+          {"beamDeform":3000,"beamStrength":"FLT_MAX"},
+          ["interc","f13rr"],
+          ["interc","f13"],
+          ["interc","f13ll"],
+          ["interc","f11rr"],
+          ["interc","f11"],
+          ["interc","f11ll"],
+
+          {"beamDeform":3000,"beamStrength":16000},
+          ["interc","f18"],
+          ["interc","f18r"],
+          ["interc","f18l"],
+
+          {"beamType":"|BOUNDED", "beamLongBound":0.025, "beamShortBound":0.025},
+          {"beamSpring":20000,"beamDamp":50},
+          {"beamLimitSpring":1001000,"beamLimitDamp":200},
+          {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+          ["airb1", "f11ll"],
+          ["airb1", "f15l"],
+          ["airb1", "f15"],
+          ["airb1", "f11"],
+
+          ["airb2", "f11ll"],
+          ["airb2", "f15l"],
+          ["airb2", "f15"],
+          ["airb2", "f11"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+}

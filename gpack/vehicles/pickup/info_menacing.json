@@ -1,0 +1,33 @@
+{
+"0-120 mph":69.3,
+"Performance Class":"4",
+"Drivetrain":"RWD",
+"100-200 km/h":89.8,
+"Body Style":"Pickup",
+"Braking G":0.926,
+"Configuration":"The Menacing (M)",
+"Value":3750,
+"Weight":1995,
+"TorquePeakRPM":"2750 - 5000",
+"Description":"With an enlarged front bumper, off-road wheels and a purple paint job this truck is enough to make people not feel so good",
+"Off-Road Score":39,
+"0-100 mph":27.7,
+"0-200 km/h":99.5,
+"Power":220.555,
+"60-100 mph":19.2,
+"0-60 mph":8.5,
+"Config Type":"Custom",
+"100-0 km/h":42.5,
+"Top Speed":56.3877,
+"Transmission":"Manual",
+"Torque":321.584,
+"default_color":"Menacing Violet",
+"colors":{
+  "Menacing Violet":"0.225995 0.00945946 0.690541 1.419"
+},
+"PowerPeakRPM":4850,
+"Weight/Power":9.06818,
+"60-0 mph":126.8,
+"60-120 mph":61.5,
+"0-100 km/h":9.7
+}

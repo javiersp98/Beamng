@@ -1,0 +1,62 @@
+{
+
+"hatch_driveshaft_f": {
+    "information":{
+        "authors":"javiersp98",
+        "name":"Front Driveshaft",
+        "value":200,
+    }
+    "slotType" : "hatch_driveshaft_f",
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        ["shaft", "driveshaftF", "transfercase", 2, {"electricsName":"driveshaft", "friction":2}]
+    ],
+},
+	
+"hatch_differential_F_CJD": {
+    "information":{
+        "authors":"javiersp98",
+        "name":"Limited Slip Front Differential",
+        "value":800,
+    },
+    "slotType" : "hatch_differential_F_CJD",
+    "slots": [
+        ["type", "default", "description"]
+        ["hatch_driveshaft_f","hatch_driveshaft_f", "Rear Driveshaft"],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$lsdpreload_F", "range", "N/m", "Differentials", 50, 0, 500, "Front LSD Preload", "Initial cross torque between left and right wheels"],
+        ["$lsdlockcoef_F", "range", "", "Differentials", 0.20, 0, 0.5, "Front LSD Forward Locking ", "Locking effect proportional to engine torque", {"minDis":0, "maxDis":100}],
+        ["$lsdlockcoefrev_F", "range", "", "Differentials", 0.10, 0, 0.5, "Front LSD Reverse Locking", "Locking effect proportional to engine braking", {"minDis":0, "maxDis":100}],
+        ["$finaldrive", "range", ":1", "Differentials", 4.25, 2.0, 6.0, "Final Drive Ratio", "Torque multiplication ratio"]
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["differential", "differential_F", "driveshaftF", 1, {"diffType":"lsd", "gearRatio":"$finaldrive", "lsdPreload":"$lsdpreload_F", "lsdLockCoef":"$lsdlockcoef_F", "lsdRevLockCoef":"$lsdlockcoefrev_F", "friction":4}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["hatch_halfshaft", ["hatch_differential","hatch_hub_F","wheelhub_FR","wheelhub_FL","wheelhub_FR","wheelhub_FL"]],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //halfshafts
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.06, "beamShortBound":0.06},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":5000,"beamStrength":8000},
+          {"beamLimitSpring":5001000,"beamLimitDamp":100},
+          {"breakGroupType":1},
+          {"breakGroup":"wheel_FR"},
+          {"optional":true},
+          ["fw1r","tra3", {"name":"axle_FR"}],
+          {"breakGroup":"wheel_FL"},
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.12, "beamShortBound":0.12},
+          ["fw1l","tra2", {"name":"axle_FL"}],
+          {"optional":false},
+          {"breakGroup":""},
+          {"breakGroupType":0},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},	
+	
+}

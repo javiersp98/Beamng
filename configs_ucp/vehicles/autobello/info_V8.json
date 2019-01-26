@@ -1,0 +1,25 @@
+{
+"Performance Class":"12",
+"Weight":905,
+"Drivetrain":"RWD",
+"Braking G":0.998,
+"60-0 mph":119.9,
+"Value":150000,
+"0-100 km/h":1.6,
+"Propulsion":"ICE",
+"Description":"Who needs rear seats if you can have a widebody Piccolina with a widebody and a mad V8 in the back instead?",
+"Configuration":"V8 Widebody (M)",
+"Transmission":"Manual",
+"Induction Type":"NA",
+"0-60 mph":5,
+"Config Type":"Custom",
+"100-0 km/h":39.4,
+"Power":650,
+"Off-Road Score":85,
+"Weight/Power":0.85,
+"Years":{
+  "min":1968,
+  "max":1973
+},
+"Fuel Type":"Gasoline"
+}

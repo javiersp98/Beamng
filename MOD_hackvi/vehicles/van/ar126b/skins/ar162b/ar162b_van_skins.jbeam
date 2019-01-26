@@ -1,0 +1,32 @@
+{
+"van_skin_ar162bgavril": {
+    "information":{
+        "authors":"BeamNG, AR162b",
+        "name":"AR162B Gavril Motors Livery",
+        "value":100,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "ar162bgavril",
+}
+
+"van_skin_ambulance_AR162B": {
+    "information":{
+        "authors":"BeamNG, AR162b",
+        "name":"Ambulance Livery, slightly adjusted",
+        "value":100,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "ar162bambulance",
+}
+
+"van_skin_police_AR162B": {
+    "information":{
+        "authors":"BeamNG, AR162b",
+        "name":"Police Livery, slightly adjusted",
+        "value":100,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "ar162bpolice",
+}
+
+}

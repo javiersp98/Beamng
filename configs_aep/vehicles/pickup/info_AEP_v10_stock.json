@@ -1,0 +1,23 @@
+{
+"Performance Class":"6",
+"Drivetrain":"AWD",
+"Body Style":"Pickup",
+"Value":10000,
+"TorquePeakRPM":"3800 - 4400",
+"PowerPeakRPM":4500,
+"Off-Road Score":41,
+"Configuration":"D15 V10 Sport AWD (A)",
+"Transmission":"Automatic",
+"0-100 km/h":5.8,
+"Config Type":"Factory",
+"100-0 km/h":36.2,
+"Top Speed":52.5569,
+"default_color":"Solar Yellow",
+"Torque":613.773,
+"Description":"The V10 Sport is the most powerful and sporty trim of the D-Series, it is based on the normal D15 Sport but it has larger wheels with bigger fenders and a large 8.0 L V10 instead of the V8",
+"Power":379.359,
+"Weight/Power":9.21659,
+"60-0 mph":110.3,
+"Weight":2000,
+"0-100 mph":29
+}

@@ -1,0 +1,17 @@
+{
+"sunburst_lettering_sport_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Sport R Trunk Lettering",
+        "value":15,
+    }
+    "slotType" : "sunburst_lettering_trunk",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sunburst_lettering_20", ["sunburst_trunk"]],
+         ["sunburst_lettering_AW", ["sunburst_trunk"]],
+         ["sunburst_lettering_sp", ["sunburst_trunk"]],
+         ["sunburst_lettering_R", ["sunburst_trunk"]],
+    ],
+}
+}

@@ -1,0 +1,342 @@
+{
+"van_exhaust_side": {
+	"information":{
+		"authors":"BeamNG, modded by AR162b",
+		"name":"idepipe Exhausts",
+	}
+    "slotType" : "van_exhaust_v8",
+
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["van_exhaust_side_L", ["van_side_exhaust_L"]],
+		 ["van_exhaust_side_R", ["van_side_exhaust_R"]],
+	],
+
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":true}
+		 {"collision":true}
+		 //--Left Side Exhaust-
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":2.5},
+		 {"group":"van_side_exhaust_L"},
+		 {"selfCollision":false}
+		 ["ex1l", 0.35, -0.53, 0.42],
+		 {"collision":true}
+		 {"nodeWeight":2.0},
+		 ["ex2all",1.02, -0.51, 0.40],
+		 ["ex2bll",1.07, -0.51, 0.32],
+		 ["ex2cll",0.98, -0.51, 0.32],
+
+		 ["ex3all",1.02, 0.43, 0.40],
+		 ["ex3bll",1.07, 0.43, 0.32],
+		 ["ex3cll",0.98, 0.43, 0.32],
+
+		 ["ex4all",1.02, 1.18, 0.40],
+		 ["ex4bll",1.07, 1.18, 0.32],
+		 ["ex4cll",0.98, 1.18, 0.32],
+
+		 {"nodeWeight":2.5},
+		 {"group":"van_side_exhaust_R"},
+		 {"selfCollision":false}
+		 ["ex1r",-0.45, -0.53, 0.42],
+
+		 {"collision":true}
+		 {"nodeWeight":2.0},
+		 ["ex2arr",-1.02, -0.51, 0.40],
+		 ["ex2brr",-1.07, -0.51, 0.32],
+		 ["ex2crr",-0.98, -0.51, 0.32],
+
+		 ["ex3arr",-1.02, 0.43, 0.40],
+		 ["ex3brr",-1.07, 0.43, 0.32],
+		 ["ex3crr",-0.98, 0.43, 0.32],
+
+		 ["ex4arr",-1.02, 1.18, 0.40],
+		 ["ex4brr",-1.07, 1.18, 0.32],
+		 ["ex4crr",-0.98, 1.18, 0.32],
+		
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  //--EXHAUST--
+		  {"beamSpring":1176000,"beamDamp":42.9},
+		  {"beamDeform":57600,"beamStrength":"FLT_MAX"},
+		  //l
+		  ["ex1l","ex2all"{"isExhaust":true}],
+		  ["ex1l","ex2bll"],
+		  ["ex1l","ex2cll"],
+
+		  //r
+		  ["ex1r","ex2arr"{"isExhaust":true}],
+		  ["ex1r","ex2brr"],
+		  ["ex1r","ex2crr"],
+
+		  {"beamSpring":1176840,"beamDamp":42.9},
+		  {"beamDeform":27600,"beamStrength":"FLT_MAX"},
+
+		  ["ex2all","ex3all"{"isExhaust":true}],
+		  ["ex2bll","ex3bll"],
+		  ["ex2cll","ex3cll"],
+
+		  ["ex3all","ex4all"{"isExhaust":true}],
+		  ["ex3bll","ex4bll"],
+		  ["ex3cll","ex4cll"],
+
+		  ["ex2all","ex3bll"],
+		  ["ex2bll","ex3cll"],
+		  ["ex2cll","ex3all"],
+
+		  ["ex3all","ex4bll"],
+		  ["ex3bll","ex4cll"],
+		  ["ex3cll","ex4all"],
+
+		  ["ex2arr","ex3arr"{"isExhaust":true}],
+		  ["ex2brr","ex3brr"],
+		  ["ex2crr","ex3crr"],
+
+		  ["ex3arr","ex4arr"{"isExhaust":true}],
+		  ["ex3brr","ex4brr"],
+		  ["ex3crr","ex4crr"],
+
+		  ["ex2arr","ex3brr"],
+		  ["ex2brr","ex3crr"],
+		  ["ex2crr","ex3arr"],
+
+		  ["ex3arr","ex4brr"],
+		  ["ex3brr","ex4crr"],
+		  ["ex3crr","ex4arr"],
+
+
+		  {"beamSpring":1512840,"beamDamp":42.9},
+		  {"beamDeform":57600,"beamStrength":"FLT_MAX"},
+
+		  ["ex2all","ex4all"],
+		  ["ex2bll","ex4bll"],
+		  ["ex2cll","ex4cll"],
+
+		  ["ex2all","ex4bll"],
+		  ["ex2bll","ex4cll"],
+		  ["ex2cll","ex4all"],
+
+		  ["ex2arr","ex4arr"],
+		  ["ex2brr","ex4brr"],
+		  ["ex2crr","ex4crr"],
+
+		  ["ex2arr","ex4brr"],
+		  ["ex2brr","ex4crr"],
+		  ["ex2crr","ex4arr"],
+
+		  {"beamSpring":588840,"beamDamp":84.5},
+		  {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+
+		  ["ex2all","ex2bll"],
+		  ["ex2bll","ex2cll"],
+		  ["ex2cll","ex2all"],
+
+		  ["ex3all","ex3bll"],
+		  ["ex3bll","ex3cll"],
+		  ["ex3cll","ex3all"],
+
+		  ["ex4all","ex4bll"],
+		  ["ex4bll","ex4cll"],
+		  ["ex4cll","ex4all"],
+
+		  ["ex2arr","ex2brr"],
+		  ["ex2brr","ex2crr"],
+		  ["ex2crr","ex2arr"],
+
+		  ["ex3arr","ex3brr"],
+		  ["ex3brr","ex3crr"],
+		  ["ex3crr","ex3arr"],
+
+		  ["ex4arr","ex4brr"],
+		  ["ex4brr","ex4crr"],
+		  ["ex4crr","ex4arr"],
+
+
+		  {"breakGroup":"van_exhaust_a_L"},
+		  {"beamSpring":672840,"beamDamp":65},
+		  {"beamDeform":15000,"beamStrength":32040},
+		  //attach
+		  //l
+
+		  //["ex1l","exh1l"],
+		  //["ex1ll","exh1l"],
+
+		  ["ex1l","e1l"],
+		  ["ex1l","e2l"],
+		  ["ex1l","e3l"],
+		  ["ex1l","e4l"],
+		  ["ex1l","e1r"{"isExhaust":true}],
+		  ["ex1l","e2r"],
+		  ["ex1l","e3r"],
+		  ["ex1l","e4r"],
+
+		  {"breakGroup":"van_exhaust_a_R"},
+		  ["ex1r","e1l"],
+		  ["ex1r","e2l"],
+		  ["ex1r","e3l"],
+		  ["ex1r","e4l"],
+		  ["ex1r","e1r"{"isExhaust":true}],
+		  ["ex1r","e2r"],
+		  ["ex1r","e3r"],
+		  ["ex1r","e4r"],
+
+
+		  {"beamSpring":249829.4,"beamDamp":41.6},
+		  {"beamDeform":3300,"beamStrength":10146},
+		  {"breakGroup":"van_exhaust_b_L"},
+		  ["ex2all","f8ll"],
+		  ["ex2all","c1ll"],
+		  ["ex2all","f6ll"],
+		  ["ex2all","fr4l"],
+		  
+		  ["ex2cll","f8ll"],
+		  ["ex2cll","c1ll"],
+		  ["ex2cll","f6ll"],
+		  ["ex2cll","fr4l"],
+
+		  ["ex2bll","f8ll"],
+		  ["ex2bll","f6ll"],
+
+		  {"breakGroup":"van_exhaust_c_L"},
+		  ["ex3all","c2ll"],
+		  ["ex3all","c1ll"],
+		  ["ex3all","c3ll"],
+		  ["ex3all","fr10l"],
+		  //["ex3all","v7ll"],
+		  
+		  ["ex3cll","f4ll"],
+		  ["ex3cll","f5ll"],
+		  ["ex3cll","v1ll"],
+		  ["ex3cll","fr10l"],
+
+		  ["ex3bll","c2ll"],
+		  ["ex3bll","c3ll"],
+
+		  {"breakGroup":"van_exhaust_d_L"},
+		  ["ex4all","v1ll"],
+		  ["ex4all","v2ll"],
+		  //["ex4all","v7ll"],
+		  ["ex4all","v8ll"],
+		  ["ex4all","fr13l"],
+		  ["ex4all","fr16l"],
+		  
+		  //["ex4cll","b12ll"],
+		  //["ex4cll","b11ll"],
+		  //["ex4cll","v7ll"],
+		  ["ex4cll","fr13l"],
+
+		  ["ex4bll","v2ll"],
+		  //["ex4bll","c7ll"],
+
+
+		  {"breakGroup":"van_exhaust_b_R"},
+		  ["ex2arr","f8rr"],
+		  ["ex2arr","c1rr"],
+		  ["ex2arr","f6rr"],
+		  ["ex2arr","fr4r"],
+		  
+		  ["ex2crr","f8rr"],
+		  ["ex2crr","c1rr"],
+		  ["ex2crr","f6rr"],
+		  ["ex2crr","fr4r"],
+
+		  ["ex2brr","f8rr"],
+		  ["ex2brr","f6rr"],
+
+		  {"breakGroup":"van_exhaust_c_R"},
+		  ["ex3arr","c2rr"],
+		  ["ex3arr","c1rr"],
+		  ["ex3arr","c3rr"],
+		  ["ex3arr","fr10r"],
+		  //["ex3arr","v7rr"],
+		  
+		  ["ex3crr","f4rr"],
+		  ["ex3crr","f5rr"],
+		  ["ex3crr","v1rr"],
+		  ["ex3crr","fr10r"],
+
+		  ["ex3brr","c2rr"],
+		  ["ex3brr","c3rr"],
+
+		  {"breakGroup":"van_exhaust_d_R"},
+		  ["ex4arr","v1rr"],
+		  ["ex4arr","v2rr"],
+		  //["ex4arr","v7rr"],
+		  ["ex4arr","v8rr"],
+		  ["ex4arr","fr13r"],
+		  ["ex4arr","fr16r"],
+		  
+		  //["ex4crr","b12rr"],
+		  //["ex4crr","b11rr"],
+		  //["ex4crr","v7rr"],
+		  ["ex4crr","fr13r"],
+
+		  ["ex4brr","v2rr"],
+		  //["ex4brr","c7rr"],
+		  
+		  
+		  {"breakGroup":""},
+
+
+		 
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+
+			["ex2all","ex2cll","ex2bll"],
+
+			["ex2all","ex2bll","ex3all"],
+			["ex2bll","ex3bll","ex3all"],
+
+			["ex2bll","ex2cll","ex3bll"],
+			["ex2cll","ex3cll","ex3bll"],
+
+			["ex2cll","ex2all","ex3cll"],
+			["ex2all","ex3all","ex3cll"],
+			
+
+			["ex3all","ex3bll","ex4all"],
+			["ex3bll","ex4bll","ex4all"],
+
+			["ex3bll","ex3cll","ex4bll"],
+			["ex3cll","ex4cll","ex4bll"],
+
+			["ex3cll","ex3all","ex4cll"],
+			["ex3all","ex4all","ex4cll"],
+
+			["ex4all","ex4bll","ex4cll"],
+
+
+			["ex2arr","ex2brr","ex2crr"],
+
+			["ex2arr","ex3arr","ex2brr"],
+			["ex2brr","ex3arr","ex3brr"],
+
+			["ex2brr","ex3brr","ex2crr"],
+			["ex2crr","ex3brr","ex3crr"],
+
+			["ex2crr","ex3crr","ex2arr"],
+			["ex2arr","ex3crr","ex3arr"],
+			
+
+			["ex3arr","ex4arr","ex3brr"],
+			["ex3brr","ex4arr","ex4brr"],
+
+			["ex3brr","ex4brr","ex3crr"],
+			["ex3crr","ex4brr","ex4crr"],
+
+			["ex3crr","ex4crr","ex3arr"],
+			["ex3arr","ex4crr","ex4arr"],
+
+			["ex4arr","ex4crr","ex4brr"],
+			
+	],
+}
+
+}

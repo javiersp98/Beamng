@@ -1,0 +1,27 @@
+{
+"coupe_lettering_PF": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Full Trunk Lettering",
+        "value":5,
+    }
+    "slotType" : "coupe_lettering_PF",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_lettering_200BX_PF", ["coupe_trunk"]],
+         ["coupe_lettering_ibishu_PF", ["coupe_trunk"]],
+    ],
+}
+"coupe_lettering_PF_alt": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"200BX Trunk Lettering",
+        "value":5,
+    }
+    "slotType" : "coupe_lettering_PF",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_lettering_200BX_PF", ["coupe_trunk"]],
+    ],
+}
+}

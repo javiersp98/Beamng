@@ -1,0 +1,68 @@
+{
+"van_receiver_heavy": {
+	"information":{
+		"authors":"gabester, modded by AR162b",
+		"name":"Heavy Duty Tow Hitch Receiver",
+	}
+    "slotType" : "van_receiver_heavy",
+	"scalenodeWeight":1,
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+	"slots": [
+		 ["type", "default", "description"],
+		 ["van_heavy_trailer", "", "Gavril H-Series Heavy Trailer"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["van_receiver_heavy", ["van_cargobox_floorframe","van_framerear","van_receiver"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true}
+		 {"frictionCoef":0.7},
+		 {"selfCollision":false}
+		 //--TOW HITCH--
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"van_receiver"}
+		 {"nodeWeight":8},
+		 ["tw", 0.0, 4.51, 0.58,{"couplerTag":"tow_hitch_HD","couplerStrength":1001000,"couplerRadius":1.4}],
+		 {"group":""}
+	],
+	
+	"ties":[
+		["id1:", "maxLen", "rate", "short", "long", "group", "maxforce"],
+		["tw", 0.75, 1, 1, 1, "van_receiver", 10000000],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--TOW HITCH--
+		  {"beamSpring":1848840,"beamDamp":195},
+		  {"beamDeform":120000,"beamStrength":1424000},
+
+		  ["tw","cf1r"],
+		  ["tw","cf1"],
+		  ["tw","cf1l"],
+		  ["tw","cf2r"],,
+		  ["tw","cf2l"],
+
+		  ["tw","fr19r"],
+		  ["tw","fr19"],
+		  ["tw","fr19l"],
+		  ["tw","fr20r"],
+		  ["tw","fr20"],
+		  ["tw","fr20l"],
+		  
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//towhitch
+			{"group":"van_towhitch"},
+			{"group":""},
+			
+	],
+}
+}

@@ -1,0 +1,30 @@
+{
+"hatch_radiator_race_N": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"High Performance Radiator",
+        "value":140,
+    }
+    "slotType" : "hatch_radiator_N",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pessima_radiator", ["hatch_rad"]],
+		 ["pessima_radtube", ["hatch_engine"]],
+    ],
+    "mainEngine":{
+        "radiatorArea":0.34,
+        "radiatorEffectiveness":14000,
+        "coolantVolume":6.5,
+        "radiatorFanType":"electric",
+        "radiatorFanTemperature":100,
+        "radiatorFanMaxAirSpeed":3,
+        "thermostatTemperature":90
+        },
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+}

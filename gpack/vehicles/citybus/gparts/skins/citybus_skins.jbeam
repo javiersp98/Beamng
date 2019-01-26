@@ -1,0 +1,11 @@
+{
+    "citybus_skin_bisd": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"Belasco ISD",
+          "value":12000,
+      }
+      "slotType" : "paint_design",
+      "globalSkin" : "bisd",
+	}
+}

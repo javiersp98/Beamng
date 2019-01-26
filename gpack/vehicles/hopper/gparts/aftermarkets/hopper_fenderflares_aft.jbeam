@@ -1,0 +1,294 @@
+{
+"hopper_fenderflare_FR_TT": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Two-Tone Front Right Fender Flare",
+        "value":25,
+    },
+    "slotType" : "hopper_fenderflare_FR",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        //fenderflare
+        ["hopper_fenderflare_FR_TT", ["hopper_fenderflare_FR"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true},
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"nodeWeight":0.2},
+         {"group":"hopper_fenderflare_FR"},
+         ["fff1r",-0.73, -0.65, 0.45],
+         ["fff2r",-0.71, -0.87, 0.90],
+         ["fff3r",-0.69, -1.19, 0.92],
+         ["fff4r",-0.61, -1.51, 0.90],
+         ["fff5r",-0.57, -1.63, 0.70],
+
+         ["fff1rr",-0.825, -0.715, 0.45],
+         ["fff2rr",-0.825, -0.93, 0.84],
+         ["fff3rr",-0.825, -1.19, 0.86],
+         ["fff4rr",-0.825, -1.47, 0.84],
+         ["fff5rr",-0.825, -1.60, 0.72],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":201000,"beamDamp":25},
+          {"beamDeform":17500,"beamStrength":"FLT_MAX"},
+          //fenderflare main shape
+          ["fff1r","fff2r"],
+          ["fff2r","fff3r"],
+          ["fff3r","fff4r"],
+          ["fff4r","fff5r"],
+          ["fff1rr","fff2rr"],
+          ["fff2rr","fff3rr"],
+          ["fff3rr","fff4rr"],
+          ["fff4rr","fff5rr"],
+
+          ["fff1r","fff1rr"],
+          ["fff2r","fff2rr"],
+          ["fff3r","fff3rr"],
+          ["fff4r","fff4rr"],
+          ["fff5r","fff5rr"],
+
+          //cross
+          {"beamDeform":3500,"beamStrength":112500},
+          ["fff1r","fff2rr"],
+          ["fff1rr","fff2r"],
+          ["fff2r","fff3rr"],
+          ["fff2rr","fff3r"],
+          ["fff3r","fff4rr"],
+          ["fff3rr","fff4r"],
+          ["fff4r","fff5rr"],
+          ["fff4rr","fff5r"],
+          //corner rigids
+          {"beamDeform":1750,"beamStrength":112500},
+          ["fff1r","fff3r"],
+          ["fff2r","fff4r"],
+          ["fff3r","fff5r"],
+          ["fff1rr","fff3rr"],
+          ["fff2rr","fff4rr"],
+          ["fff3rr","fff5rr"],
+
+          ["fff1r","fff3rr"],
+          ["fff2r","fff4rr"],
+          ["fff3r","fff5rr"],
+          ["fff1rr","fff3r"],
+          ["fff2rr","fff4r"],
+          ["fff3rr","fff5r"],
+
+          //
+          ["fff1r","fff4r"],
+          ["fff2r","fff5r"],
+          ["fff1rr","fff4rr"],
+          ["fff2rr","fff5rr"],
+          //attach
+          {"beamSpring":201000,"beamDamp":20},
+          {"beamDeform":2800,"beamStrength":5250},
+          {"breakGroup":"fenderflare_FR_a"}
+          ["fff1r","fe2r"],
+          ["fff1r","fe4r"],
+          ["fff1r","fe1r"],
+          ["fff1rr","fe2r"],
+          {"breakGroup":"fenderflare_FR_b"}
+          ["fff2r","fe8r"],
+          ["fff2r","fe2r"],
+          ["fff2r","fe4r"],
+          ["fff2r","fe5r"],
+          ["fff2rr","fe4r"],
+          {"breakGroup":"fenderflare_FR_c"}
+          ["fff3r","fe9r"],
+          ["fff3r","fe4r"],
+          ["fff3r","fe5r"],
+          ["fff3r","fe6r"],
+          ["fff3rr","fe5r"],
+          {"breakGroup":"fenderflare_FR_d"}
+          ["fff4r","fe5r"],
+          ["fff4r","fe10r"],
+          ["fff4r","fe6r"],
+          ["fff4rr","fe6r"],
+          ["fff5r","fe6r"],
+          {"breakGroup":""}
+
+          //fenderflare support beams
+          {"beamPrecompression":1, "beamType":"|SUPPORT", "beamLongBound":4, "beamShortBound":1},
+          {"beamSpring":201000,"beamDamp":25},
+          {"beamDeform":8400,"beamStrength":175950},
+          {"optional":true}
+          ["fff4r","fa2r"],
+          ["fff4rr","fa2rr"],
+          ["fff5r","fa3r"],
+          ["fff5rr","fa3rr"],
+          {"optional":false}
+
+          ["fff1rr","fe2r"],
+          ["fff2rr","fe4r"],
+          ["fff3rr","fe5r"],
+          ["fff4rr","fe6r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"groundModel":"metal"},
+            {"dragCoef":10},
+            {"group":"hopper_fenderflare_FR"},
+            ["fff4r","fff5rr","fff5r"],
+            ["fff4rr","fff5rr","fff4r"],
+            ["fff3r","fff4rr","fff4r"],
+            ["fff3rr","fff4rr","fff3r"],
+            ["fff2r","fff3rr","fff3r"],
+            ["fff2rr","fff3rr","fff2r"],
+            ["fff1r","fff2rr","fff2r"],
+            ["fff1rr","fff2rr","fff1r"],
+            {"group":""}
+    ],
+},
+"hopper_fenderflare_FL_TT": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Two-Tone Front Left Fender Flare",
+        "value":25,
+    },
+    "slotType" : "hopper_fenderflare_FL",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        //fenderflare
+        ["hopper_fenderflare_FL_TT", ["hopper_fenderflare_FL"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true},
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"nodeWeight":0.2},
+         {"group":"hopper_fenderflare_FL"},
+         ["fff1l", 0.73, -0.65, 0.45],
+         ["fff2l", 0.71, -0.87, 0.90],
+         ["fff3l", 0.69, -1.19, 0.92],
+         ["fff4l", 0.61, -1.51, 0.90],
+         ["fff5l", 0.57, -1.63, 0.70],
+
+         ["fff1ll", 0.825, -0.715, 0.45],
+         ["fff2ll", 0.825, -0.93, 0.84],
+         ["fff3ll", 0.825, -1.19, 0.86],
+         ["fff4ll", 0.825, -1.47, 0.84],
+         ["fff5ll", 0.825, -1.60, 0.72],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":201000,"beamDamp":25},
+          {"beamDeform":17500,"beamStrength":"FLT_MAX"},
+          //fenderflare main shape
+          ["fff1l","fff2l"],
+          ["fff2l","fff3l"],
+          ["fff3l","fff4l"],
+          ["fff4l","fff5l"],
+          ["fff1ll","fff2ll"],
+          ["fff2ll","fff3ll"],
+          ["fff3ll","fff4ll"],
+          ["fff4ll","fff5ll"],
+
+          ["fff1l","fff1ll"],
+          ["fff2l","fff2ll"],
+          ["fff3l","fff3ll"],
+          ["fff4l","fff4ll"],
+          ["fff5l","fff5ll"],
+
+          //cross
+          {"beamDeform":3500,"beamStrength":112500},
+          ["fff1l","fff2ll"],
+          ["fff1ll","fff2l"],
+          ["fff2l","fff3ll"],
+          ["fff2ll","fff3l"],
+          ["fff3l","fff4ll"],
+          ["fff3ll","fff4l"],
+          ["fff4l","fff5ll"],
+          ["fff4ll","fff5l"],
+          //corner rigids
+          {"beamDeform":1750,"beamStrength":112500},
+          ["fff1l","fff3l"],
+          ["fff2l","fff4l"],
+          ["fff3l","fff5l"],
+          ["fff1ll","fff3ll"],
+          ["fff2ll","fff4ll"],
+          ["fff3ll","fff5ll"],
+
+          ["fff1l","fff3ll"],
+          ["fff2l","fff4ll"],
+          ["fff3l","fff5ll"],
+          ["fff1ll","fff3l"],
+          ["fff2ll","fff4l"],
+          ["fff3ll","fff5l"],
+
+          //
+          ["fff1l","fff4l"],
+          ["fff2l","fff5l"],
+          ["fff1ll","fff4ll"],
+          ["fff2ll","fff5ll"],
+          //attach
+          {"beamSpring":201000,"beamDamp":20},
+          {"beamDeform":2800,"beamStrength":5250},
+          {"breakGroup":"fenderflare_FL_a"}
+          ["fff1l","fe2l"],
+          ["fff1l","fe4l"],
+          ["fff1l","fe1l"],
+          ["fff1ll","fe2l"],
+          {"breakGroup":"fenderflare_FL_b"}
+          ["fff2l","fe8l"],
+          ["fff2l","fe2l"],
+          ["fff2l","fe4l"],
+          ["fff2l","fe5l"],
+          ["fff2ll","fe4l"],
+          {"breakGroup":"fenderflare_FL_c"}
+          ["fff3l","fe9l"],
+          ["fff3l","fe4l"],
+          ["fff3l","fe5l"],
+          ["fff3l","fe6l"],
+          ["fff3ll","fe5l"],
+          {"breakGroup":"fenderflare_FL_d"}
+          ["fff4l","fe5l"],
+          ["fff4l","fe10l"],
+          ["fff4l","fe6l"],
+          ["fff4ll","fe6l"],
+          ["fff5l","fe6l"],
+          {"breakGroup":""}
+
+          //fenderflare support beams
+          {"beamPrecompression":1, "beamType":"|SUPPORT", "beamLongBound":4, "beamShortBound":1},
+          {"beamSpring":201000,"beamDamp":25},
+          {"beamDeform":8400,"beamStrength":175950},
+          {"optional":true}
+          ["fff4l","fa2l"],
+          ["fff4ll","fa2ll"],
+          ["fff5l","fa3l"],
+          ["fff5ll","fa3ll"],
+          {"optional":false}
+
+          ["fff1ll","fe2l"],
+          ["fff2ll","fe4l"],
+          ["fff3ll","fe5l"],
+          ["fff4ll","fe6l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"groundModel":"metal"},
+            {"dragCoef":10},
+            {"group":"hopper_fenderflare_FL"},
+            ["fff4l","fff5l","fff5ll"],
+            ["fff4l","fff5ll","fff4ll"],
+            ["fff3l","fff4l","fff4ll"],
+            ["fff3l","fff4ll","fff3ll"],
+            ["fff2l","fff3l","fff3ll"],
+            ["fff2l","fff3ll","fff2ll"],
+            ["fff1l","fff2l","fff2ll"],
+            ["fff1l","fff2ll","fff1ll"],
+            {"group":""}
+    ],
+},
+}

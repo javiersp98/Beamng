@@ -1,0 +1,13 @@
+{
+
+"sbr_skin_shr": {
+    "information":{
+        "authors":"welshtoast",
+        "name":"Sigarette Hirochi Racing",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "shr",
+}
+
+}

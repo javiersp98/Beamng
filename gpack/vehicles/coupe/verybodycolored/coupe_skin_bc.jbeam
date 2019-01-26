@@ -1,0 +1,11 @@
+{
+"coupe_skin_verybodycolored": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Body Colored Trim (Extra)",
+        "value":50,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "verybodycolored",
+},
+}

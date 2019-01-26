@@ -1,0 +1,38 @@
+{
+"0-100 km/h":3.4,
+"Weight":11970,
+"0-300 km/h":11.7,
+"100-200 km/h":3.9,
+"Configuration":"School Rocket",
+"Braking G":0.859,
+"Author":"BeamNG",
+"Country":"United States",
+"Type":"Truck",
+"Value":300000,
+"0-200 mph":5.0,
+"TorquePeakRPM":"1100 - 1600",
+"Description":"Equipped with overpowered JATO liquid fuel rockets, you'll wish this is a normal field trip",
+"100-0 km/h":45.8,
+"Off-Road Score":15,
+"0-100 mph":2.0,
+"PowerPeakRPM":1800,
+"Power":350.851,
+"60-100 mph":2.4,
+"0-60 mph":1.3,
+"colors":{
+  "Pearl White":"0.9 0.9 0.9 1.18"
+},
+"Name":"DT40L",
+"Top Speed":300.025,
+"default_color":"Pearl White",
+"Torque":1474.18,
+"Derby Class":"Heavy Truck",
+"Brand":"Wentward",
+"Weight/Power":34.2,
+"60-0 mph":137.6,
+"Years":{
+  "min":2018,
+  "max":2018
+},
+"0-200 km/h":2.3
+}

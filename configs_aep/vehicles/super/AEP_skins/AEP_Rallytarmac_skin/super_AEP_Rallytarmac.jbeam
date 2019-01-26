@@ -1,0 +1,11 @@
+{
+"super_skin_AEP_Rallytarmac": {
+    "information":{
+        "authors":"Djplopper",
+        "name":"Rally 'AeroItalia' Livery",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "AEP_Rallytarmac",
+}
+}

@@ -1,0 +1,75 @@
+{
+"rc_skin_raider": {
+    "information":{
+        "authors":"Godzilla!",
+        "name":"Bruckell Raider",
+        "value":50,
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "rc_raider",
+  },
+"rcS_skin_interior": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Raider Interior",
+        "value":50,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "raider",
+  },
+"rc_skin_interior": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Gray Interior (Bruckell)",
+        "value":50,
+    }
+    "slotType" : "skin_interior",
+    "skinName" : "rc",
+  },
+"rc_skin_interior_black": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Black Interior (Bruckell)",
+        "value":50,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "blackrc",
+  },
+"rc_skin_interior_tan": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Tan Interior (Bruckell)",
+        "value":50,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "tanrc",
+  },
+"rc_skin_interior_blue": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Blue Interior (Bruckell)",
+        "value":50,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "bluerc",
+  },
+"rc_skin_interior_red": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Red Interior (Bruckell)",
+        "value":50,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "redrc",
+  },
+"fullsize_skin_fbc": {
+    "information":{
+        "authors":"Godzilla!",
+        "name":"Full Body Colored Trim",
+        "value":50,
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "fbc",
+  },
+}
+}

@@ -1,0 +1,11 @@
+{
+"pickup_skin_AEPv10sc": {
+    "information":{
+        "authors":"Djplopper",
+        "name":"V10 Supercharged Livery AEP",
+        "value":50,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "AEPv10sc",
+}
+}

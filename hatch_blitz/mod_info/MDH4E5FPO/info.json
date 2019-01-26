@@ -1,0 +1,189 @@
+{
+    "attachments": [
+        {
+            "data_filename": "325421.png",
+            "original_filename": "screenshot_04396small.png",
+            "thumb_filename": "thumbs\/325421.jpg"
+        },
+        {
+            "data_filename": "325422.png",
+            "original_filename": "screenshot_04395.png",
+            "thumb_filename": "thumbs\/325422.jpg"
+        },
+        {
+            "data_filename": "325423.png",
+            "original_filename": "screenshot_04398.png",
+            "thumb_filename": "thumbs\/325423.jpg"
+        }
+    ],
+    "resource_id": 2763,
+    "current_version_id": 7292,
+    "download_count": 2509,
+    "resource_version_id": 7292,
+    "version_string": "1.0",
+    "last_update": 1504675566,
+    "rating_avg": 5,
+    "rating_count": 41,
+    "rating_sum": 205,
+    "resource_category_id": 7,
+    "resource_date": 1504675566,
+    "review_count": 41,
+    "tag_line": "BeamNG's own Superturbo",
+    "update_count": 0,
+    "path": "MDH4E5FPO\/7292\/",
+    "filename": "covet_blitz.zip",
+    "title": "Ibishu Covet BLITZ",
+    "user_id": 143371,
+    "username": "NinetyNine!",
+    "tagid": "MDH4E5FPO",
+    "message": "[ATTACH]325421[\/ATTACH]\n[SIZE=3][I]As fast as the lightning[\/I]\n[I][HR][\/HR][\/I]\n[\/SIZE]\n[SIZE=4]A little surprise as a small gift to the community for all the support i got lately :)\n[MEDIA=youtube]7OjHIAwU0GY[\/MEDIA]\n\n[HR][\/HR]\nThis Covet isn't a normal Covet. It's the Blitz. A March Superturbo inspired car which has, first time in BNG History, A Totally accurate 'Superturbo' engine character. \n[ATTACH]325423[\/ATTACH] \nBut whats so special about that?\nLet me tell you how this engine works :\n0-4000rpm is where the Supercharger is at home. at full throttle, it gives you full power, but if you dont need that power (for like cruising or so) The Supercharger goes almost completely offline, until you push the car again. Then the 2nd step kicks in : Supercharger turns off once the Turbo is loaded (which is around 4k rpm). That Moment you might feel a very short cut in power, but the turbo builds up boost quickly and the car's full potential is available again. The result, a smart system that always gives you what you need. \nFuel economy? Check.\nPower? Check!\n\nI'm pretty happy about how it turned out. definitely something different which is worth a try :)\n[HR][\/HR]\n\n[ATTACH]325422[\/ATTACH] \n\nWith the Mod you get 4 specs. 'Blitz', 'Blitz Special Edition', 'Blitz Custom' and the 'Blitz Cup Car'. Every car with its own personality.\n\n[HR][\/HR]\n\nWanna support me a bit? :)\nDonations can be sent here : [URL]https:\/\/streamlabs.com\/ninetynine[\/URL]\n\n[HR][\/HR]\n[\/SIZE]\n[SIZE=7][COLOR=#b30000]BUG REPORTS GO TO DISCUSSION TAB, [U]NOT[\/U] REVIEWS[\/COLOR][\/SIZE]",
+    "category_title": "",
+    "prefix_title": "",
+    "via": "packed by repo on Fri, 08 Sep 2017 07:09:37 GMT",
+    "hashes": [
+        [
+            "vehicles\/hatch\/blitz_race.pc",
+            "b506f045f6ff3c6e"
+        ],
+        [
+            "vehicles\/hatch\/blitz_special_garage_side.png",
+            "7d822360605e9bd7"
+        ],
+        [
+            "vehicles\/hatch\/blitz_custom_garage_side.png",
+            "2df21558bc7575a6"
+        ],
+        [
+            "vehicles\/hatch\/blitz_special.pc",
+            "de779e7363063bdd"
+        ],
+        [
+            "vehicles\/hatch\/blitz_custom.pc",
+            "0756018288d50003"
+        ],
+        [
+            "vehicles\/hatch\/covet_sturbo\/materials.cs",
+            "945c9724259452d3"
+        ],
+        [
+            "vehicles\/hatch\/covet_sturbo\/sturbo_skins.jbeam",
+            "1079ae23cc645434"
+        ],
+        [
+            "vehicles\/hatch\/covet_sturbo\/hatchst.blend1",
+            "a49526d6e3728202"
+        ],
+        [
+            "vehicles\/hatch\/covet_sturbo\/hatch_rearpanel.jbeam",
+            "aebdc59d3ceb3907"
+        ],
+        [
+            "vehicles\/hatch\/covet_sturbo\/hatch_bumper_F.jbeam",
+            "24e02bf9d3f57c64"
+        ],
+        [
+            "vehicles\/hatch\/covet_sturbo\/hatch_lettering.jbeam",
+            "e70a299f76aa4964"
+        ],
+        [
+            "vehicles\/hatch\/covet_sturbo\/hatch_hood.jbeam",
+            "d80833bc22819d09"
+        ],
+        [
+            "vehicles\/hatch\/covet_sturbo\/hatch_fascia.jbeam",
+            "659a7c21ee57f4c6"
+        ],
+        [
+            "vehicles\/hatch\/covet_sturbo\/hatch_skin_blitzstock_palette_uv1.dds",
+            "86b93bf068fd2388"
+        ],
+        [
+            "vehicles\/hatch\/covet_sturbo\/blitz_badge_s.dds",
+            "f443341e7ccc4921"
+        ],
+        [
+            "vehicles\/hatch\/covet_sturbo\/blitz_badge_d.dds",
+            "39f74c719cac8528"
+        ],
+        [
+            "vehicles\/hatch\/covet_sturbo\/hatchst.blend",
+            "a031442a75c83e14"
+        ],
+        [
+            "vehicles\/hatch\/covet_sturbo\/hatch_skin_blitzrace_palette_uv1.dds",
+            "31f88f5e3ed6ed2c"
+        ],
+        [
+            "vehicles\/hatch\/covet_sturbo\/hatch_body.jbeam",
+            "8379f50581fc0149"
+        ],
+        [
+            "vehicles\/hatch\/covet_sturbo\/hatch_skin_blitzrace.dds",
+            "bc2074fe35444aac"
+        ],
+        [
+            "vehicles\/hatch\/covet_sturbo\/hatch_sturbo.jbeam",
+            "9c21d6b404b5e787"
+        ],
+        [
+            "vehicles\/hatch\/covet_sturbo\/hatch_skin_blitzspecial.dds",
+            "32b4d6bc3262f21f"
+        ],
+        [
+            "vehicles\/hatch\/covet_sturbo\/blitz_badge_n.dds",
+            "cf00b78418898109"
+        ],
+        [
+            "vehicles\/hatch\/covet_sturbo\/hatchst.dae",
+            "79f6e06d0aad53eb"
+        ],
+        [
+            "vehicles\/hatch\/covet_sturbo\/hatch_skin_blitzspecial_palette_uv1.dds",
+            "8e45309bd2080040"
+        ],
+        [
+            "vehicles\/hatch\/blitz_special.png",
+            "037aa6decd5ba210"
+        ],
+        [
+            "vehicles\/hatch\/info_blitz_special.json",
+            "2b63541f0f82de56"
+        ],
+        [
+            "vehicles\/hatch\/info_blitz_race.json",
+            "83b4c6f40efb39cd"
+        ],
+        [
+            "vehicles\/hatch\/blitz_custom.png",
+            "18d0ccd4362bf4a7"
+        ],
+        [
+            "vehicles\/hatch\/blitz.pc",
+            "ba9b78226bd1795d"
+        ],
+        [
+            "vehicles\/hatch\/blitz_race.png",
+            "14b4d4fe3ed17434"
+        ],
+        [
+            "vehicles\/hatch\/info_blitz.json",
+            "89b7155e9aa23e48"
+        ],
+        [
+            "vehicles\/hatch\/blitz_race_garage_side.png",
+            "574cfb1dfac98335"
+        ],
+        [
+            "vehicles\/hatch\/blitz_garage_side.png",
+            "90734c161cdf95e4"
+        ],
+        [
+            "vehicles\/hatch\/blitz.png",
+            "b4abd7b5addf5c37"
+        ],
+        [
+            "vehicles\/hatch\/info_blitz_custom.json",
+            "e2fb631b8c3b3904"
+        ]
+    ]
+}

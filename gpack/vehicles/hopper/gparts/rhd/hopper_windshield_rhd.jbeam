@@ -1,0 +1,266 @@
+{
+"hopper_windshield_pd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Windshield",
+        "value":180,
+    },
+    "slotType" : "hopper_windshield_pd",
+    "slots": [
+        ["type", "default", "description"]
+        ["hopper_windshieldlatch_pd","hopper_windshieldlatch_pd","Windshield Latch"],
+        ["hopper_windshieldbar","","Windshield Bar"],
+        ["hopper_rollbar_F","hopper_rollbar_F", "Front Roll Bar"],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        //windshield
+        {"deformGroup":"windshield_break","deformMaterialBase":"hopper_glass","deformMaterialDamaged":"hopper_windshield_dmg"}
+        ["hopper_windshield", ["hopper_windshield"],[]{"deformSound":"GlassBreakSound1", "deformVolume":0.7}],
+        {"deformGroup":"windshield_break","deformMaterialBase":"glass_invisible","deformMaterialDamaged":"glass_mirror"}
+        ["hopper_windshield_dmg", ["hopper_windshield"]],
+        {"deformGroup":"windshield_break","deformMaterialBase":"hopper_glass_int","deformMaterialDamaged":"invis"}
+        ["hopper_windshield_int", ["hopper_windshield"],[]{"deformSound":"GlassBreakSound1", "deformVolume":0.7}],
+        {"deformGroup":""}
+        ["hopper_windshieldframe", ["hopper_windshield"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"nodeWeight":1.5},
+         {"group":"hopper_windshield"},
+         ["wi1rr",-0.72, -0.258, 1.195{"group":["hopper_windshield","hopper_windshield_lightbar"]}],
+         ["wi1r",-0.28, -0.258, 1.195{"group":["hopper_windshield","hopper_windshield_lightbar"]}],
+         ["wi1l", 0.28, -0.258, 1.195{"group":["hopper_windshield","hopper_windshield_lightbar"]}],
+         ["wi1ll", 0.72, -0.258, 1.195{"group":["hopper_windshield","hopper_windshield_lightbar"]}],
+
+         ["wi2rr",-0.71, -0.165, 1.41{"group":["hopper_windshield","hopper_windshield_lightbar"]}],
+         ["wi2r",-0.28, -0.165, 1.41],
+         ["wi2l", 0.28, -0.165, 1.41],
+         ["wi2ll", 0.71, -0.165, 1.41{"group":["hopper_windshield","hopper_windshield_lightbar"]}],
+         {"group":["hopper_rollbar_F","hopper_windshield"]}
+         ["wi3rr",-0.685, -0.09, 1.60],
+         ["wi3r",-0.28, -0.09, 1.60],
+         ["wi3l", 0.28, -0.09, 1.60],
+         ["wi3ll", 0.685, -0.09, 1.60],
+         {"group":""},
+
+         //rigidifier
+         {"selfCollision":false},
+         {"collision":false},
+         {"nodeWeight":1.6},
+         ["wi4r",-0.40, 0.0, 1.38],
+         ["wi4l", 0.40, 0.0, 1.38],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":901000,"beamDamp":70},
+          {"beamDeform":42000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"windshield_break","deformationTriggerRatio":0.02}
+          {"disableMeshBreaking":true}
+          //windshield frame main shape
+          ["wi1rr","wi1r"],
+          ["wi1r","wi1l"],
+          ["wi1ll","wi1l"],
+
+          ["wi2rr","wi2r"],
+          ["wi2r","wi2l"],
+          ["wi2ll","wi2l"],
+
+          ["wi3rr","wi3r"],
+          ["wi3r","wi3l"],
+          ["wi3ll","wi3l"],
+
+          ["wi1rr","wi2rr"],
+          ["wi1ll","wi2ll"],
+
+          ["wi2rr","wi3rr"],
+          ["wi2ll","wi3ll"],
+
+          //
+          ["wi1r","wi2r"],
+          ["wi1l","wi2l"],
+          ["wi2r","wi3r"],
+          ["wi2l","wi3l"],
+
+          //cross
+          {"beamDeform":14000,"beamStrength":"FLT_MAX"},
+          ["wi1r","wi2rr"],
+          ["wi1l","wi2ll"],
+          ["wi3r","wi2rr"],
+          ["wi3l","wi2ll"],
+
+          {"beamDeform":14000,"beamStrength":75000},
+          ["wi1rr","wi2r"],
+          ["wi3rr","wi2r"],
+          ["wi1ll","wi2l"],
+          ["wi3ll","wi2l"],
+
+          ["wi2r","wi1l"],
+          ["wi2l","wi1r"],
+          ["wi2r","wi3l"],
+          ["wi2l","wi3r"],
+
+          //corner rigids
+          {"beamDeform":5600,"beamStrength":"FLT_MAX"},
+          ["wi1rr","wi3rr"],
+          ["wi1ll","wi3ll"],
+
+          {"beamDeform":5600,"beamStrength":6000},
+          ["wi1r","wi3r"],
+          ["wi1l","wi3l"],
+          //rigidifiers
+          {"beamDeform":5600,"beamStrength":"FLT_MAX"},
+          ["wi4r","wi4l"],
+
+          ["wi4r","wi1rr"],
+          ["wi4r","wi1r"],
+          ["wi4r","wi1l"],
+          ["wi4r","wi1ll"],
+          ["wi4r","wi2rr"],
+          ["wi4r","wi2ll"],
+          ["wi4r","wi3rr"],
+          ["wi4r","wi3r"],
+          ["wi4r","wi3l"],
+          ["wi4r","wi3ll"],
+
+          ["wi4l","wi1rr"],
+          ["wi4l","wi1r"],
+          ["wi4l","wi1l"],
+          ["wi4l","wi1ll"],
+          ["wi4l","wi2rr"],
+          ["wi4l","wi2ll"],
+          ["wi4l","wi3rr"],
+          ["wi4l","wi3r"],
+          ["wi4l","wi3l"],
+          ["wi4l","wi3ll"],
+
+          {"beamDeform":5600,"beamStrength":75000},
+          ["wi4r","wi2r"],
+          ["wi4r","wi2l"],
+          ["wi4l","wi2r"],
+          ["wi4l","wi2l"],
+          {"deformGroup":""}
+          {"disableMeshBreaking":false}
+          //hinge
+          {"beamSpring":901000,"beamDamp":70},
+          {"beamDeform":12600,"beamStrength":28500},
+          {"breakGroup":"windshieldhinge_R"}
+          ["wi1rr","b15rr"],
+          ["wi1rr","b15r"],
+          ["wi1rr","b14rr"],
+          ["wi1rr","b14r"],
+
+          ["wi1r","b15rr"],
+          ["wi1r","b15r"],
+          ["wi1r","b15l"],
+          ["wi1r","b14rr"],
+          ["wi1r","b14r"],
+          ["wi1r","b14l"],
+          {"breakGroup":"windshieldhinge_L"}
+
+          ["wi1l","b15ll"],
+          ["wi1l","b15l"],
+          ["wi1l","b15r"],
+          ["wi1l","b14ll"],
+          ["wi1l","b14l"],
+          ["wi1l","b14r"],
+
+          ["wi1ll","b15ll"],
+          ["wi1ll","b15l"],
+          ["wi1ll","b14ll"],
+          ["wi1ll","b14l"],
+          {"breakGroup":""}
+
+          //windshield support beams
+          {"beamPrecompression":1, "beamType":"|SUPPORT", "beamLongBound":3, "beamShortBound":1},
+          {"beamSpring":1001000,"beamDamp":250},
+          {"beamDeform":2500,"beamStrength":175000},
+          //prevent falling backwards
+          ["wi2rr","b8rr"],
+          ["wi2r","b8r"],
+          ["wi2l","b8l"],
+          ["wi2ll","b8ll"],
+
+          ["wi3rr","b8rr"],
+          ["wi3r","b8r"],
+          ["wi3l","b8l"],
+          ["wi3ll","b8ll"],
+          
+          ["wi4r","b7r"],
+          ["wi4l","b7l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"groundModel":"metal"},
+            {"dragCoef":10},
+            {"group":"hopper_windshield"},
+            ["wi1ll","wi2ll","wi2l"],
+            ["wi1ll","wi2l","wi1l"],
+            ["wi1l","wi2l","wi2r"],
+            ["wi1l","wi2r","wi1r"],
+            ["wi1rr","wi2r","wi2rr"],
+            ["wi1rr","wi1r","wi2r"],
+            ["wi2ll","wi3ll","wi3l"],
+            ["wi2ll","wi3l","wi2l"],
+            ["wi2l","wi3l","wi3r"],
+            ["wi2l","wi3r","wi2r"],
+            ["wi2rr","wi3r","wi3rr"],
+            ["wi2rr","wi2r","wi3r"],
+            {"group":""}
+    ],
+},
+"hopper_windshieldlatch_pd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Windshield Latch",
+        "value":30,
+    },
+    "slotType" : "hopper_windshieldlatch_pd",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["hopper_wipers_pd", ["hopper_body"]],
+        ["hopper_intmirror_pd", ["hopper_windshield"]],
+        ["hopper_sunvisor", ["hopper_windshield"]],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          //latch
+          {"beamSpring":901000,"beamDamp":70},
+          {"beamDeform":7000,"beamStrength":21000},
+          {"breakGroup":"windshieldlatch_R"}
+          ["wi2rr","b15rr"],
+          ["wi2rr","b15r"],
+          ["wi2rr","b14rr"],
+          ["wi2rr","b14r"],
+
+          ["wi2r","b15rr"],
+          ["wi2r","b15r"],
+          ["wi2r","b15l"],
+          ["wi2r","b14rr"],
+          ["wi2r","b14r"],
+          ["wi2r","b14l"],
+          {"breakGroup":"windshieldlatch_L"}
+
+          ["wi2l","b15ll"],
+          ["wi2l","b15l"],
+          ["wi2l","b15r"],
+          ["wi2l","b14ll"],
+          ["wi2l","b14l"],
+          ["wi2l","b14r"],
+
+          ["wi2ll","b15ll"],
+          ["wi2ll","b15l"],
+          ["wi2ll","b14ll"],
+          ["wi2ll","b14l"],
+          {"breakGroup":""}
+    ],
+},
+}

@@ -1,0 +1,57 @@
+{
+
+"burnside_differential_R_locking2": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"3.31 Locking Rear Differential",
+        "value":400,
+    }
+    "slotType" : "burnside_differential_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["burnside_driveshaft","burnside_driveshaft", "Driveshaft"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        //rear diff
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":["open","locked"], "gearRatio":3.31, "friction":5, "uiName":"Rear Differential","defaultVirtualInertia":0.5}]
+    ],
+}
+
+"burnside_differential_R_LSD_308": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"3.08 Limited Slip Rear Differential",
+        "value":600,
+    }
+    "slotType" : "burnside_differential_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["burnside_driveshaft","burnside_driveshaft", "Driveshaft"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        //rear diff
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"lsd", "gearRatio":3.08, "lsdPreload":150, "lsdLockCoef":0.3, "lsdRevLockCoef":0.15, "friction":9, "uiName":"Rear Differential","defaultVirtualInertia":0.5}]
+    ],
+}
+
+"burnside_differential_R_286": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"2.86 Open Rear Differential",
+        "value":300,
+    }
+    "slotType" : "burnside_differential_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["burnside_driveshaft","burnside_driveshaft", "Driveshaft"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        //rear diff
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"open", "gearRatio":2.86, "friction":5, "uiName":"Rear Differential","defaultVirtualInertia":0.5}]
+    ],
+}
+
+}

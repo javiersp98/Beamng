@@ -1,0 +1,11 @@
+{
+"autobello_skin_rx": {
+    "information":{
+        "authors":"welshtoast",
+        "name":"RX",
+        "value":100,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "rx",
+}
+}

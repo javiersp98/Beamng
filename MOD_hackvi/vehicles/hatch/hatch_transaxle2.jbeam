@@ -1,0 +1,97 @@
+{
+
+"hatch_differential_F_312": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"3.12 Open Front Differential",
+        "value":200,
+    },
+    "slotType" : "hatch_differential_F",
+
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torsionReactor", "torsionReactorF", "gearbox", 1, {"gearRatio":3.12}]
+        ["differential", "differential_F", "torsionReactorF", 1, {"diffType":"open", "gearRatio": 1, "friction":4, "uiName":"Front Differential","defaultVirtualInertia":0.25}],
+    ],
+    "torsionReactorF": {
+        "torqueReactionNodes:":["e1l","e2l","e4r"],
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["hatch_halfshaft", ["hatch_differential","hatch_hub_F","wheelhub_FR","wheelhub_FL"]],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //halfshafts
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.06, "beamShortBound":0.06},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":5000,"beamStrength":8000},
+          {"beamLimitSpring":5001000,"beamLimitDamp":100},
+          {"breakGroupType":1},
+          {"breakGroup":"wheel_FR"},
+          {"optional":true},
+          ["fw1r","tra3", {"name":"axle_FR"}],
+          {"breakGroup":"wheel_FL"},
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.12, "beamShortBound":0.12},
+          ["fw1l","tra2", {"name":"axle_FL"}],
+          {"optional":false},
+          {"breakGroup":""},
+          {"breakGroupType":0},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+"hatch_differential_F_354": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"3.54 Open Front Differential",
+        "value":200,
+    },
+    "slotType" : "hatch_differential_F",
+
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torsionReactor", "torsionReactorF", "gearbox", 1, {"gearRatio":3.54}]
+        ["differential", "differential_F", "torsionReactorF", 1, {"diffType":"open", "gearRatio": 1, "friction":4, "uiName":"Front Differential","defaultVirtualInertia":0.25}],
+    ],
+    "torsionReactorF": {
+        "torqueReactionNodes:":["e1l","e2l","e4r"],
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["hatch_halfshaft", ["hatch_differential","hatch_hub_F","wheelhub_FR","wheelhub_FL"]],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //halfshafts
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.06, "beamShortBound":0.06},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":5000,"beamStrength":8000},
+          {"beamLimitSpring":5001000,"beamLimitDamp":100},
+          {"breakGroupType":1},
+          {"breakGroup":"wheel_FR"},
+          {"optional":true},
+          ["fw1r","tra3", {"name":"axle_FR"}],
+          {"breakGroup":"wheel_FL"},
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.12, "beamShortBound":0.12},
+          ["fw1l","tra2", {"name":"axle_FL"}],
+          {"optional":false},
+          {"breakGroup":""},
+          {"breakGroupType":0},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+"hatch_flywheel_diesel": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Diesel Flywheel",
+        "value":170,
+    },
+    "slotType" : "hatch_flywheel",
+    "clutch": {
+        "uiName":"Clutch",
+        "additionalEngineInertia":0.11,
+        "clutchMass":4.2,
+    },
+},
+
+}

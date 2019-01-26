@@ -1,0 +1,22 @@
+{
+"sbr_skin_interior": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Black & Red Interior",
+        "value":300,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "",
+	
+	//this enables Interior Color slot
+  }
+"sbr_skin_interior_nomi": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Nomi Interior",
+        "value":300,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "nomi",
+  },
+}

@@ -1,0 +1,943 @@
+{
+"van_flatbedsmall_upfit": {
+    "information":{
+        "authors":"SergentFido & AR162B",
+        "name":"Small Flatbed upfit",
+        "value":2000,
+    }
+    "slotType" : "van_upfit",
+    "slots": [
+         ["type", "default", "description"],
+        ["van_flatbedsmall_licenseplate_R","van_flatbedsmall_licenseplate_R", "Rear License Plate"],
+        ["van_flatbedsmall_options","", "Flatbed Loading Options"],
+    ],
+
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["van_flatbed_small", ["van_flatbedsmall"]],
+         //["van_flatbed_small", ["van_rearshocktop", "van_framerear", "van_flatbedsmall"]],
+         ["van_flatbedsmall_lightedge", ["van_framerear"]],
+
+         //side lights	
+         {"deformGroup":"van_flatbed_small_sidelights_L", "deformMaterialBase":"van_lights", "deformMaterialDamaged":"van_lights_dmg"}
+         ["van_flatbedsmall_sidelights_L", ["van_flatbedsmall"]],
+         {"deformGroup":"van_flatbed_small_sidelights_R", "deformMaterialBase":"van_lights", "deformMaterialDamaged":"van_lights_dmg"}
+         ["van_flatbedsmall_sidelights_R", ["van_flatbedsmall"]],
+
+         //rear lights
+         {"deformGroup":"van_flatbed_small_rearlights_L", "deformMaterialBase":"van_lights", "deformMaterialDamaged":"van_lights_dmg"}
+         ["van_flatbedsmall_lights_L", ["van_framerear"]],
+         {"deformGroup":"van_flatbed_small_rearlights_R", "deformMaterialBase":"van_lights", "deformMaterialDamaged":"van_lights_dmg"}
+         ["van_flatbedsmall_lights_R", ["van_framerear"]],
+
+         {"deformGroup":""}
+
+    ],
+
+	"props": [
+         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        //reverse lights
+        {
+            "lightInnerAngle":40
+            "lightOuterAngle":80
+            "lightBrightness":0.15
+            "lightRange":30
+            "lightColor":{"r":255, "g":255, "b":200, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":false
+            "flareName":"vehicleReverseLightFlare"
+            "flareScale":0.2
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        ["reverse" ,         "SPOTLIGHT"        , "fr19r", "fr19", "fr20r", {"x":0, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.54, "y":0.43, "z":0.01},"deformGroup":"van_flatbed_small_rearlights_R"}],
+        ["reverse" ,         "SPOTLIGHT"        , "fr19l", "fr19", "fr20l", {"x":180, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.54, "y":0.43, "z":-0.01},"deformGroup":"van_flatbed_small_rearlights_L"}],
+
+        //taillights
+        {
+            "lightInnerAngle":0
+            "lightOuterAngle":140
+            "lightBrightness":0.06
+            "lightRange":20
+            "lightColor":{"r":255, "g":50, "b":0, "a":255}
+            "lightCastShadows":false
+            "flareName":"vehicleBrakeLightFlare"
+            "flareScale":0.15
+        }
+        ["brake" ,         "SPOTLIGHT"        , "fr19r", "fr19", "fr20r", {"x":0, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.18, "y":0.43, "z":0.01},"deformGroup":"van_flatbed_small_rearlights_R"}],
+        ["brake" ,         "SPOTLIGHT"        , "fr19l", "fr19", "fr20l", {"x":180, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.18, "y":0.43, "z":-0.01},"deformGroup":"van_flatbed_small_rearlights_L"}],
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "fr19r", "fr19", "fr20r", {"x":0, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.18, "y":0.43, "z":0.01},"deformGroup":"van_flatbed_small_rearlights_R"}],
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "fr19l", "fr19", "fr20l", {"x":180, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.18, "y":0.43, "z":-0.01},"deformGroup":"van_flatbed_small_rearlights_L"}],
+        ["signal_R" ,         "SPOTLIGHT"        , "fr19r", "fr19", "fr20r", {"x":0, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.18, "y":0.43, "z":0.01},"deformGroup":"van_flatbed_small_rearlights_R"}],
+        ["signal_L" ,         "SPOTLIGHT"        , "fr19l", "fr19", "fr20l", {"x":180, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.18, "y":0.43, "z":-0.01},"deformGroup":"van_flatbed_small_rearlights_L"}],
+
+        //side lights
+        {
+            "lightInnerAngle":0
+            "lightOuterAngle":120
+            "lightBrightness":0.05
+            "lightRange":20
+            "lightColor":{"r":255, "g":255, "b":0, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":false
+            "flareName":"vehicleBrakeLightFlare"
+            "flareScale":0.10
+        }
+        ["signal_L" ,         "SPOTLIGHT"        , "vsfb21ll", "vsfb22ll", "vsfb11l", {"x":0, "y":90, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.02, "y":0.29, "z": 0.03},"deformGroup":"van_flatbed_small_sidelights_L"}],
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "vsfb21ll", "vsfb22ll", "vsfb11l", {"x":0, "y":90, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.02, "y":0.29, "z": 0.03},"deformGroup":"van_flatbed_small_sidelights_L"}],
+        ["signal_L" ,         "SPOTLIGHT"        , "vsfb21ll", "vsfb22ll", "vsfb11l", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.06, "y":0.29, "z":-0.01},"deformGroup":"van_flatbed_small_sidelights_L"}],
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "vsfb21ll", "vsfb22ll", "vsfb11l", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.06, "y":0.29, "z":-0.01},"deformGroup":"van_flatbed_small_sidelights_L"}],
+        ["signal_L" ,         "SPOTLIGHT"        , "vsfb23ll", "vsfb24ll", "vsfb13l", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.19, "y":0.29, "z":-0.01},"deformGroup":"van_flatbed_small_sidelights_L"}],
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "vsfb23ll", "vsfb24ll", "vsfb13l", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.19, "y":0.29, "z":-0.01},"deformGroup":"van_flatbed_small_sidelights_L"}],
+        ["signal_L" ,         "SPOTLIGHT"        , "vsfb24ll", "vsfb25ll", "vsfb14l", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.91, "y":0.29, "z":-0.01},"deformGroup":"van_flatbed_small_sidelights_L"}],
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "vsfb24ll", "vsfb25ll", "vsfb14l", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.91, "y":0.29, "z":-0.01},"deformGroup":"van_flatbed_small_sidelights_L"}],
+
+        ["signal_R" ,         "SPOTLIGHT"        , "vsfb21rr", "vsfb22rr", "vsfb11r", {"x":0, "y":90, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.02, "y":0.29, "z": 0.03},"deformGroup":"van_flatbed_small_sidelights_R"}],
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "vsfb21rr", "vsfb22rr", "vsfb11r", {"x":0, "y":90, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.02, "y":0.29, "z": 0.03},"deformGroup":"van_flatbed_small_sidelights_R"}],
+        ["signal_R" ,         "SPOTLIGHT"        , "vsfb21rr", "vsfb22rr", "vsfb11r", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.06, "y":0.29, "z": 0.01},"deformGroup":"van_flatbed_small_sidelights_R"}],
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "vsfb21rr", "vsfb22rr", "vsfb11r", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.06, "y":0.29, "z": 0.01},"deformGroup":"van_flatbed_small_sidelights_R"}],
+        ["signal_R" ,         "SPOTLIGHT"        , "vsfb23rr", "vsfb24rr", "vsfb13r", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.19, "y":0.29, "z": 0.01},"deformGroup":"van_flatbed_small_sidelights_R"}],
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "vsfb23rr", "vsfb24rr", "vsfb13r", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.19, "y":0.29, "z": 0.01},"deformGroup":"van_flatbed_small_sidelights_R"}],
+        ["signal_R" ,         "SPOTLIGHT"        , "vsfb24rr", "vsfb25rr", "vsfb14r", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.91, "y":0.29, "z": 0.01},"deformGroup":"van_flatbed_small_sidelights_R"}],
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "vsfb24rr", "vsfb25rr", "vsfb14r", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.91, "y":0.29, "z": 0.01},"deformGroup":"van_flatbed_small_sidelights_R"}],
+
+
+
+     ],
+
+
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--small flatbed--
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true}
+         {"selfCollision":true}
+         {"group":"van_flatbedsmall"},
+         {"nodeWeight":4.5},
+         //--bed
+         ["vsfb01r",-0.55, 0.13, 1.0],
+         ["vsfb01l", 0.55, 0.13, 1.0],
+         ["vsfb01rr",-1.04, 0.13, 1.0],
+         ["vsfb01ll", 1.04, 0.13, 1.0],
+
+         ["vsfb02r",-0.55, 0.82, 1.0],
+         ["vsfb02l", 0.55, 0.82, 1.0],
+         ["vsfb02rr",-1.04, 0.82, 1.0],
+         ["vsfb02ll", 1.04, 0.82, 1.0],
+
+         ["vsfb03r",-0.55, 1.54, 1.0],
+         ["vsfb03l", 0.55, 1.54, 1.0],
+         ["vsfb03rr",-1.04, 1.54, 1.0],
+         ["vsfb03ll", 1.04, 1.54, 1.0],
+
+         ["vsfb04r",-0.55, 2.48, 1.0],
+         ["vsfb04l", 0.55, 2.48, 1.0],
+         ["vsfb04rr",-1.04, 2.48, 1.0],
+         ["vsfb04ll", 1.04, 2.48, 1.0],
+
+         ["vsfb05r",-0.55, 3.43, 1.0],
+         ["vsfb05l", 0.55, 3.43, 1.0],
+         ["vsfb05rr",-1.04, 3.43, 1.0],
+         ["vsfb05ll", 1.04, 3.43, 1.0],
+
+         {"nodeWeight":3.0},
+         //--right side
+         ["vsfb11r",-1.11, 0.13, 1.08],
+         ["vsfb21rr",-1.11, 0.13, 0.91],
+         //["vsfb31r",-0.88, 0.13, 0.42],
+
+         ["vsfb12r",-1.11, 0.82, 1.08],
+         ["vsfb22rr",-1.11, 0.82, 0.91],
+         //["vsfb32r",-0.88, 0.82, 0.42],
+
+         ["vsfb13r",-1.11, 1.54, 1.08],
+         ["vsfb23rr",-1.11, 1.54, 0.91],
+         //["vsfb33r",-0.88, 1.45, 0.42],
+
+         ["vsfb14r",-1.11, 2.48, 1.08],
+         ["vsfb24rr",-1.11, 2.48, 0.91],
+         //["vsfb34r",-0.88, 2.61, 0.42],
+
+         ["vsfb15r",-1.11, 3.43, 1.08],
+         ["vsfb25rr",-1.11, 3.43, 0.91],
+         //["vsfb35r",-0.88, 2.96, 0.42],
+
+         //--left side
+         ["vsfb11l", 1.11, 0.13, 1.08],
+         ["vsfb21ll", 1.11, 0.13, 0.91],
+         //["vsfb31l", 0.88, 0.13, 0.42],
+
+         ["vsfb12l", 1.11, 0.82, 1.08],
+         ["vsfb22ll", 1.11, 0.82, 0.91],
+         //["vsfb32l", 0.88, 0.82, 0.42],
+
+         ["vsfb13l", 1.11, 1.54, 1.08],
+         ["vsfb23ll", 1.11, 1.54, 0.91],
+         //["vsfb33l", 0.88, 1.45, 0.42],
+
+         ["vsfb14l", 1.11, 2.48, 1.08],
+         ["vsfb24ll", 1.11, 2.48, 0.91],
+         //["vsfb34l", 0.88, 2.61, 0.42],
+
+         ["vsfb15l", 1.11, 3.43, 1.08],
+         ["vsfb25ll", 1.11, 3.43, 0.91],
+         //["vsfb35l", 0.88, 2.96, 0.42],
+
+         //--rear
+         ["vsfb25r",-0.55, 3.43, 0.91],
+         ["vsfb25l", 0.55, 3.43, 0.91],
+
+         //--side rails
+         {"nodeWeight":1.5},
+         //--right side
+         ["vsfb31r",-0.88, 0.13, 0.42],
+         ["vsfb32r",-0.88, 0.82, 0.42],
+         ["vsfb33r",-0.88, 1.45, 0.42],
+         ["vsfb34r",-0.88, 2.61, 0.42],
+         ["vsfb35r",-0.88, 2.96, 0.42],
+
+         //--left side
+         ["vsfb31l", 0.88, 0.13, 0.42],
+         ["vsfb32l", 0.88, 0.82, 0.42],
+         ["vsfb33l", 0.88, 1.45, 0.42],
+         ["vsfb34l", 0.88, 2.61, 0.42],
+         ["vsfb35l", 0.88, 2.96, 0.42],
+
+         {"group":""},
+
+
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"breakGroupType":0},
+          //bed length and width
+          //{"optional":true},
+          {"beamSpring":2500000,"beamDamp":300},
+          {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+          //bed width
+          ["vsfb01r","vsfb01l"],
+          ["vsfb01r","vsfb01rr"],
+          ["vsfb01l","vsfb01ll"],
+          ["vsfb02r","vsfb02l"],
+          ["vsfb02r","vsfb02rr"],
+          ["vsfb02l","vsfb02ll"],
+          ["vsfb03r","vsfb03l"],
+          ["vsfb03r","vsfb03rr"],
+          ["vsfb03l","vsfb03ll"],
+          ["vsfb04r","vsfb04l"],
+          ["vsfb04r","vsfb04rr"],
+          ["vsfb04l","vsfb04ll"],
+          ["vsfb05r","vsfb05l"],
+          ["vsfb05r","vsfb05rr"],
+          ["vsfb05l","vsfb05ll"],
+          //bed length
+          ["vsfb01r","vsfb02r"],
+          ["vsfb01l","vsfb02l"],
+          ["vsfb01rr","vsfb02rr"],
+          ["vsfb01ll","vsfb02ll"],
+          ["vsfb02r","vsfb03r"],
+          ["vsfb02l","vsfb03l"],
+          ["vsfb02rr","vsfb03rr"],
+          ["vsfb02ll","vsfb03ll"],
+          ["vsfb03r","vsfb04r"],
+          ["vsfb03l","vsfb04l"],
+          ["vsfb03rr","vsfb04rr"],
+          ["vsfb03ll","vsfb04ll"],
+          ["vsfb04l","vsfb05l"],
+          ["vsfb04r","vsfb05r"],
+          ["vsfb04rr","vsfb05rr"],
+          ["vsfb04ll","vsfb05ll"],
+          {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+          //diagonal
+          ["vsfb01r","vsfb02l"],
+          ["vsfb02r","vsfb03l"],
+          ["vsfb03r","vsfb04l"],
+          ["vsfb04r","vsfb05l"],
+          ["vsfb01l","vsfb02r"],
+          ["vsfb02l","vsfb03r"],
+          ["vsfb03l","vsfb04r"],
+          ["vsfb04l","vsfb05r"],
+
+          ["vsfb01rr","vsfb02r"],
+          ["vsfb02rr","vsfb03r"],
+          ["vsfb03rr","vsfb04r"],
+          ["vsfb04rr","vsfb05r"],
+          ["vsfb01r","vsfb02rr"],
+          ["vsfb02r","vsfb03rr"],
+          ["vsfb03r","vsfb04rr"],
+          ["vsfb04r","vsfb05rr"],
+
+          ["vsfb01l","vsfb02ll"],
+          ["vsfb02l","vsfb03ll"],
+          ["vsfb03l","vsfb04ll"],
+          ["vsfb04l","vsfb05ll"],
+          ["vsfb01ll","vsfb02l"],
+          ["vsfb02ll","vsfb03l"],
+          ["vsfb03ll","vsfb04l"],
+          ["vsfb04ll","vsfb05l"],
+
+          {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+          //extra anti invert bed width
+          ["vsfb01r","vsfb21rr"],
+          ["vsfb02r","vsfb22rr"],
+          ["vsfb03r","vsfb23rr"],
+          ["vsfb04r","vsfb24rr"],
+          ["vsfb05r","vsfb25rr"],
+          ["vsfb01l","vsfb21ll"],
+          ["vsfb02l","vsfb22ll"],
+          ["vsfb03l","vsfb23ll"],
+          ["vsfb04l","vsfb24ll"],
+          ["vsfb05l","vsfb25ll"],
+
+          {"deformGroup":"van_flatbed_small_sidelights_R","deformationTriggerRatio":0.01},
+          ["vsfb01rr","vsfb21rr"],
+          ["vsfb02rr","vsfb22rr"],
+          ["vsfb03rr","vsfb23rr"],
+          ["vsfb04rr","vsfb24rr"],
+          ["vsfb05rr","vsfb25rr"],
+          {"deformGroup":"van_flatbed_small_sidelights_L"},
+          ["vsfb01ll","vsfb21ll"],
+          ["vsfb02ll","vsfb22ll"],
+          ["vsfb03ll","vsfb23ll"],
+          ["vsfb04ll","vsfb24ll"],
+          ["vsfb05ll","vsfb25ll"],
+          {"deformGroup":""},
+
+          ["vsfb05r","vsfb25r"],
+          ["vsfb05l","vsfb25l"],
+          ["vsfb04r","vsfb25r"],
+          ["vsfb04l","vsfb25l"],
+
+          {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+          //extra anti invert bed diagonal
+          ["vsfb01r","vsfb22rr"],
+          ["vsfb02r","vsfb23rr"],
+          ["vsfb03r","vsfb24rr"],
+          ["vsfb04r","vsfb25rr"],
+          ["vsfb02r","vsfb21rr"],
+          ["vsfb03r","vsfb22rr"],
+          ["vsfb04r","vsfb23rr"],
+          ["vsfb05r","vsfb24rr"],
+          ["vsfb01l","vsfb22ll"],
+          ["vsfb02l","vsfb23ll"],
+          ["vsfb03l","vsfb24ll"],
+          ["vsfb04l","vsfb25ll"],
+          ["vsfb02l","vsfb21ll"],
+          ["vsfb03l","vsfb22ll"],
+          ["vsfb04l","vsfb23ll"],
+          ["vsfb05l","vsfb24ll"],
+
+          {"deformGroup":"van_flatbed_small_sidelights_R"},
+          ["vsfb01rr","vsfb22rr"],
+          ["vsfb02rr","vsfb23rr"],
+          ["vsfb03rr","vsfb24rr"],
+          ["vsfb04rr","vsfb25rr"],
+          {"deformGroup":"van_flatbed_small_sidelights_L"},
+          ["vsfb01ll","vsfb22ll"],
+          ["vsfb02ll","vsfb23ll"],
+          ["vsfb03ll","vsfb24ll"],
+          ["vsfb04ll","vsfb25ll"],
+          {"deformGroup":"van_flatbed_small_sidelights_R"},
+          ["vsfb02rr","vsfb21rr"],
+          ["vsfb03rr","vsfb22rr"],
+          ["vsfb04rr","vsfb23rr"],
+          ["vsfb05rr","vsfb24rr"],
+          {"deformGroup":"van_flatbed_small_sidelights_L"},
+          ["vsfb02ll","vsfb21ll"],
+          ["vsfb03ll","vsfb22ll"],
+          ["vsfb04ll","vsfb23ll"],
+          ["vsfb05ll","vsfb24ll"],
+          {"deformGroup":""},
+
+          ["vsfb05r","vsfb25l"],
+          ["vsfb05l","vsfb25r"],
+          ["vsfb05rr","vsfb25r"],
+          ["vsfb05ll","vsfb25l"],
+
+          {"beamSpring":1500000,"beamDamp":300},
+          {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+          //sides width
+          //["vsfb01rr","vsfb11r"],
+          ["vsfb11r","vsfb21rr"],
+          ["vsfb21rr","vsfb31r"],
+          //["vsfb02rr","vsfb12r"],
+          ["vsfb12r","vsfb22rr"],
+          ["vsfb22rr","vsfb32r"],
+          //["vsfb03rr","vsfb13r"],
+          ["vsfb13r","vsfb23rr"],
+          ["vsfb23rr","vsfb33r"],
+          //["vsfb04rr","vsfb14r"],
+          ["vsfb14r","vsfb24rr"],
+          ["vsfb24rr","vsfb34r"],
+          //["vsfb05rr","vsfb15r"],
+          ["vsfb15r","vsfb25rr"],
+          ["vsfb25rr","vsfb35r"],
+
+          //["vsfb01ll","vsfb11l"],
+          ["vsfb11l","vsfb21ll"],
+          ["vsfb21ll","vsfb31l"],
+          //["vsfb02ll","vsfb12l"],
+          ["vsfb12l","vsfb22ll"],
+          ["vsfb22ll","vsfb32l"],
+          //["vsfb03ll","vsfb13l"],
+          ["vsfb13l","vsfb23ll"],
+          ["vsfb23ll","vsfb33l"],
+          //["vsfb04ll","vsfb14l"],
+          ["vsfb14l","vsfb24ll"],
+          ["vsfb24ll","vsfb34l"],
+          //["vsfb05ll","vsfb15l"],
+          ["vsfb15l","vsfb25ll"],
+          ["vsfb25ll","vsfb35l"],
+
+          //sides length
+          ["vsfb11r","vsfb12r"],
+          ["vsfb21rr","vsfb22rr"],
+          ["vsfb31r","vsfb32r"],
+          ["vsfb12r","vsfb13r"],
+          ["vsfb22rr","vsfb23rr"],
+          ["vsfb32r","vsfb33r"],
+          ["vsfb13r","vsfb14r"],
+          ["vsfb23rr","vsfb24rr"],
+          //["vsfb33r","vsfb34r"],
+          ["vsfb14r","vsfb15r"],
+          ["vsfb24rr","vsfb25rr"],
+          ["vsfb34r","vsfb35r"],
+
+          ["vsfb11l","vsfb12l"],
+          ["vsfb21ll","vsfb22ll"],
+          ["vsfb31l","vsfb32l"],
+          ["vsfb12l","vsfb13l"],
+          ["vsfb22ll","vsfb23ll"],
+          ["vsfb32l","vsfb33l"],
+          ["vsfb13l","vsfb14l"],
+          ["vsfb23ll","vsfb24ll"],
+          //["vsfb33l","vsfb34l"],
+          ["vsfb14l","vsfb15l"],
+          ["vsfb24ll","vsfb25ll"],
+          ["vsfb34l","vsfb35l"],
+
+          //rear
+          ["vsfb25r","vsfb25rr"],
+          ["vsfb25l","vsfb25ll"],
+
+          {"beamSpring":900000,"beamDamp":200},
+          {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+          //weak rail
+          ["vsfb01rr","vsfb11r"],
+          ["vsfb02rr","vsfb12r"],
+          ["vsfb03rr","vsfb13r"],
+          ["vsfb04rr","vsfb14r"],
+          ["vsfb05rr","vsfb15r"],
+
+          ["vsfb01ll","vsfb11l"],
+          ["vsfb02ll","vsfb12l"],
+          ["vsfb03ll","vsfb13l"],
+          ["vsfb04ll","vsfb14l"],
+          ["vsfb05ll","vsfb15l"],
+
+          {"beamSpring":1200000,"beamDamp":300},
+          {"beamDeform":16000,"beamStrength":"FLT_MAX"},
+          //sides diagonal
+          //["vsfb01rr","vsfb12r"],
+          ["vsfb11r","vsfb22rr"],
+          ["vsfb21rr","vsfb32r"],
+          //["vsfb02rr","vsfb13r"],
+          ["vsfb12r","vsfb23rr"],
+          ["vsfb22rr","vsfb33r"],
+          //["vsfb03rr","vsfb14r"],
+          ["vsfb13r","vsfb24rr"],
+          //["vsfb23rr","vsfb34r"],
+          //["vsfb04rr","vsfb15r"],
+          ["vsfb14r","vsfb25rr"],
+          ["vsfb24rr","vsfb35r"],
+
+          //["vsfb02rr","vsfb11r"],
+          ["vsfb12r","vsfb21rr"],
+          ["vsfb22rr","vsfb31r"],
+          //["vsfb03rr","vsfb12r"],
+          ["vsfb13r","vsfb22rr"],
+          ["vsfb23rr","vsfb32r"],
+          //["vsfb04rr","vsfb13r"],
+          ["vsfb14r","vsfb23rr"],
+          //["vsfb24rr","vsfb33r"],
+          //["vsfb05rr","vsfb14r"],
+          ["vsfb15r","vsfb24rr"],
+          ["vsfb25rr","vsfb34r"],
+
+          //["vsfb02ll","vsfb11l"],
+          ["vsfb12l","vsfb21ll"],
+          ["vsfb22ll","vsfb31l"],
+          //["vsfb03ll","vsfb12l"],
+          ["vsfb13l","vsfb22ll"],
+          ["vsfb23ll","vsfb32l"],
+          //["vsfb04ll","vsfb13l"],
+          ["vsfb14l","vsfb23ll"],
+          //["vsfb24ll","vsfb33l"],
+          //["vsfb05ll","vsfb14l"],
+          ["vsfb15l","vsfb24ll"],
+          ["vsfb25ll","vsfb34l"],
+
+          //["vsfb01ll","vsfb12l"],
+          ["vsfb11l","vsfb22ll"],
+          ["vsfb21ll","vsfb32l"],
+          //["vsfb02ll","vsfb13l"],
+          ["vsfb12l","vsfb23ll"],
+          ["vsfb22ll","vsfb33l"],
+          //["vsfb03ll","vsfb14l"],
+          ["vsfb13l","vsfb24ll"],
+          //["vsfb23ll","vsfb34l"],
+          //["vsfb04ll","vsfb15l"],
+          ["vsfb14l","vsfb25ll"],
+          ["vsfb24ll","vsfb35l"],
+
+
+          {"beamSpring":1500000,"beamDamp":400},
+          {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.1, "beamShortBound":0.8},
+          
+{"beamLimitSpring":3000000,"beamLimitDamp":600},
+          //rigids
+          //bed width
+          ["vsfb01r","vsfb01ll"],
+          ["vsfb02r","vsfb02ll"],
+          ["vsfb03r","vsfb03ll"],
+          ["vsfb04r","vsfb04ll"],
+          ["vsfb05r","vsfb05ll"],
+
+          ["vsfb01rr","vsfb01l"],
+          ["vsfb02rr","vsfb02l"],
+          ["vsfb03rr","vsfb03l"],
+          ["vsfb04rr","vsfb04l"],
+          ["vsfb05rr","vsfb05l"],
+
+          //bed length
+          ["vsfb01r","vsfb03r"],
+          ["vsfb01l","vsfb03l"],
+          ["vsfb01rr","vsfb03rr"],
+          ["vsfb01ll","vsfb03ll"],
+          ["vsfb02l","vsfb04l"],
+          ["vsfb02r","vsfb04r"],
+          ["vsfb02rr","vsfb04rr"],
+          ["vsfb02ll","vsfb04ll"],
+          ["vsfb03l","vsfb05l"],
+          ["vsfb03r","vsfb05r"],
+          ["vsfb03rr","vsfb05rr"],
+          ["vsfb03ll","vsfb05ll"],
+
+          {"beamSpring":1000000,"beamDamp":300},
+          {"beamDeform":20000,"beamStrength":"FLT_MAX"},
+          //sides width
+          ["vsfb01rr","vsfb31r"],
+          ["vsfb01l","vsfb21rr"],
+          ["vsfb01r","vsfb31r"],
+          ["vsfb02rr","vsfb32r"],
+          ["vsfb02l","vsfb22rr"],
+          ["vsfb02r","vsfb32r"],
+          ["vsfb03rr","vsfb33r"],
+          ["vsfb03l","vsfb23rr"],
+          ["vsfb03r","vsfb33r"],
+          ["vsfb04rr","vsfb34r"],
+          ["vsfb04l","vsfb24rr"],
+          ["vsfb04r","vsfb34r"],
+          ["vsfb05rr","vsfb35r"],
+          ["vsfb05l","vsfb25rr"],
+          ["vsfb05r","vsfb35r"],
+
+          ["vsfb01ll","vsfb31l"],
+          ["vsfb01r","vsfb21ll"],
+          ["vsfb01l","vsfb31l"],
+          ["vsfb02ll","vsfb32r"],
+          ["vsfb02r","vsfb22ll"],
+          ["vsfb02l","vsfb32l"],
+          ["vsfb03ll","vsfb33l"],
+          ["vsfb03r","vsfb23ll"],
+          ["vsfb03l","vsfb33l"],
+          ["vsfb04ll","vsfb34l"],
+          ["vsfb04r","vsfb24ll"],
+          ["vsfb04l","vsfb34l"],
+          ["vsfb05ll","vsfb35l"],
+          ["vsfb05r","vsfb25ll"],
+          ["vsfb05l","vsfb35l"],
+
+          //sides length
+          ["vsfb11r","vsfb13r"],
+          ["vsfb21rr","vsfb23rr"],
+          ["vsfb31r","vsfb33r"],
+          ["vsfb12r","vsfb14r"],
+          ["vsfb22rr","vsfb24rr"],
+          ["vsfb32r","vsfb34r"],
+          ["vsfb13r","vsfb15r"],
+          ["vsfb23rr","vsfb25rr"],
+          ["vsfb33r","vsfb35r"],
+
+          ["vsfb11l","vsfb13l"],
+          ["vsfb21ll","vsfb23ll"],
+          ["vsfb31l","vsfb33l"],
+          ["vsfb12l","vsfb14l"],
+          ["vsfb22ll","vsfb24ll"],
+          ["vsfb32l","vsfb34l"],
+          ["vsfb13l","vsfb15l"],
+          ["vsfb23ll","vsfb25ll"],
+          ["vsfb33l","vsfb35l"],
+
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":1100000,"beamDamp":200},
+          {"beamDeform":40000,"beamStrength":55000},
+            {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"breakGroupType":0},
+          //attachments
+          //sides width
+          {"breakGroup":"van_flatbedsmall_FR"},
+          ["vsfb31r","fr9r"],
+          ["vsfb32r","fr10r"],
+          ["vsfb33r","fr13r"],
+          {"breakGroup":"van_flatbedsmall_RR"},
+          ["vsfb34r","fr15r"],
+          ["vsfb35r","fr19r"],
+
+          {"breakGroup":"van_flatbedsmall_FR"},
+          ["vsfb31r","fr11r"],
+          ["vsfb32r","fr12r"],
+          ["vsfb33r","fr16r"],
+          {"breakGroup":"van_flatbedsmall_RR"},
+          ["vsfb34r","fr18r"],
+          ["vsfb35r","fr20r"],
+
+          {"breakGroup":"van_flatbedsmall_FL"},
+          ["vsfb31l","fr9l"],
+          ["vsfb32l","fr10l"],
+          ["vsfb33l","fr13l"],
+          {"breakGroup":"van_flatbedsmall_RL"},
+          ["vsfb34l","fr15l"],
+          ["vsfb35l","fr19l"],
+
+          {"breakGroup":"van_flatbedsmall_FL"},
+          ["vsfb31l","fr11l"],
+          ["vsfb32l","fr12l"],
+          ["vsfb33l","fr16l"],
+          {"breakGroup":"van_flatbedsmall_RL"},
+          ["vsfb34l","fr18l"],
+          ["vsfb35l","fr20l"],
+
+          //diagonal
+          {"breakGroup":"van_flatbedsmall_FR"},
+          ["vsfb31r","fr10r"],
+          ["vsfb32r","fr13r"],
+          ["vsfb33r","fr15r"],
+          {"breakGroup":"van_flatbedsmall_RR"},
+          ["vsfb34r","fr19r"],
+
+          {"breakGroup":"van_flatbedsmall_FR"},
+          ["vsfb32r","fr9r"],
+          ["vsfb33r","fr10r"],
+          ["vsfb34r","fr13r"],
+          {"breakGroup":"van_flatbedsmall_RR"},
+          ["vsfb35r","fr15r"],
+
+          {"breakGroup":"van_flatbedsmall_FL"},
+          ["vsfb31l","fr10l"],
+          ["vsfb32l","fr13l"],
+          ["vsfb33l","fr15l"],
+          {"breakGroup":"van_flatbedsmall_RL"},
+          ["vsfb34l","fr19l"],
+
+          {"breakGroup":"van_flatbedsmall_FL"},
+          ["vsfb32l","fr9l"],
+          ["vsfb33l","fr10l"],
+          ["vsfb34l","fr13l"],
+          {"breakGroup":"van_flatbedsmall_RL"},
+          ["vsfb35l","fr15l"],
+
+          //rear
+          {"breakGroup":"van_flatbedsmall_RR"},
+          ["vsfb25r","fr20r"],
+          {"breakGroup":"van_flatbedsmall_RL"},
+          ["vsfb25l","fr20l"],
+
+          {"beamSpring":2000000,"beamDamp":400},
+          {"beamDeform":45000,"beamStrength":65000},
+          //attachments
+          //bed vertical
+          {"breakGroup":"van_flatbedsmall_FR"},
+          ["vsfb01rr","fr11r"],
+          ["vsfb02rr","fr12r"],
+          ["vsfb03rr","fr16r"],
+          {"breakGroup":"van_flatbedsmall_RR"},
+          ["vsfb04rr","fr18r"],
+          ["vsfb05rr","fr20r"],
+
+          {"breakGroup":"van_flatbedsmall_FR"},
+          ["vsfb01r","fr11r"],
+          ["vsfb02r","fr12r"],
+          ["vsfb03r","fr16r"],
+          {"breakGroup":"van_flatbedsmall_RR"},
+          ["vsfb04r","fr18r"],
+          ["vsfb05r","fr20r"],
+
+          {"breakGroup":"van_flatbedsmall_FL"},
+          ["vsfb01ll","fr11l"],
+          ["vsfb02ll","fr12l"],
+          ["vsfb03ll","fr16l"],
+          {"breakGroup":"van_flatbedsmall_RL"},
+          ["vsfb04ll","fr18l"],
+          ["vsfb05ll","fr20l"],
+
+          {"breakGroup":"van_flatbedsmall_FL"},
+          ["vsfb01l","fr11l"],
+          ["vsfb02l","fr12l"],
+          ["vsfb03l","fr16l"],
+          {"breakGroup":"van_flatbedsmall_RL"},
+          ["vsfb04l","fr18l"],
+          ["vsfb05l","fr20l"],
+
+          //bed diagonal
+          {"breakGroup":"van_flatbedsmall_FR"},
+          ["vsfb01r","fr12r"],
+          ["vsfb02r","fr16r"],
+          ["vsfb03r","fr18r"],
+          {"breakGroup":"van_flatbedsmall_RR"},
+          ["vsfb04r","fr20r"],
+          {"breakGroup":"van_flatbedsmall_FR"},
+          ["vsfb02r","fr11r"],
+          ["vsfb03r","fr12r"],
+          {"breakGroup":"van_flatbedsmall_RR"},
+          ["vsfb04r","fr16r"],
+          ["vsfb05r","fr18r"],
+
+          {"breakGroup":"van_flatbedsmall_FL"},
+          ["vsfb01l","fr12l"],
+          ["vsfb02l","fr16l"],
+          ["vsfb03l","fr18l"],
+          {"breakGroup":"van_flatbedsmall_RL"},
+          ["vsfb04l","fr20l"],
+          {"breakGroup":"van_flatbedsmall_FL"},
+          ["vsfb02l","fr11l"],
+          ["vsfb03l","fr12l"],
+          {"breakGroup":"van_flatbedsmall_FL"},
+          ["vsfb04l","fr16l"],
+          ["vsfb05l","fr18l"],
+
+          {"breakGroup":"van_flatbedsmall_FR"},
+          ["vsfb01r","fr12"],
+          ["vsfb02r","fr16"],
+          ["vsfb03r","fr17"],
+          {"breakGroup":"van_flatbedsmall_RR"},
+          ["vsfb04r","fr18"],
+          ["vsfb05r","fr20"],
+
+          {"breakGroup":"van_flatbedsmall_FL"},
+          ["vsfb01l","fr12"],
+          ["vsfb02l","fr16"],
+          ["vsfb03l","fr17"],
+          {"breakGroup":"van_flatbedsmall_RL"},
+          ["vsfb04l","fr18"],
+          ["vsfb05l","fr20"],
+
+          {"breakGroup":""},
+
+		//extra beams to trigger the deformgroup
+          {"beamSpring":50,"beamDamp":5},
+          {"beamDeform":10,"beamStrength":40000},
+          {"optional":true},
+          {"deformGroup":"van_flatbed_small_rearlights_L","deformationTriggerRatio":0.03},
+
+          ["fr19l","fr20l"],
+          ["fr19l","fr15l"],
+          ["fr18l","fr20l"],
+
+          ["fr19","fr15l"],
+          ["fr18","fr20l"],
+          ["fr19l","fr15"],
+          ["fr18l","fr20"],
+
+          {"deformGroup":"van_flatbed_small_rearlights_R"},
+          ["fr19r","fr20r"],
+          ["fr19r","fr15r"],
+          ["fr18r","fr20r"],
+
+          ["fr19","fr15r"],
+          ["fr18","fr20r"],
+          ["fr19r","fr15"],
+          ["fr18r","fr20"],
+
+          {"deformGroup":""},
+          {"optional":false},
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+	],
+
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"group":"van_flatbedsmall"},
+            {"dragCoef":15},
+		//bed
+            ["vsfb01ll","vsfb02ll","vsfb02l"],
+            ["vsfb01ll","vsfb02l","vsfb01l"],
+            ["vsfb02ll","vsfb03ll","vsfb03l"],
+            ["vsfb02ll","vsfb03l","vsfb02l"],
+            ["vsfb03ll","vsfb04ll","vsfb04l"],
+            ["vsfb03ll","vsfb04l","vsfb03l"],
+            ["vsfb04ll","vsfb05ll","vsfb05l"],
+            ["vsfb04ll","vsfb05l","vsfb04l"],
+
+            ["vsfb01l","vsfb02l","vsfb02r"],
+            ["vsfb01l","vsfb02r","vsfb01r"],
+            ["vsfb02l","vsfb03l","vsfb03r"],
+            ["vsfb02l","vsfb03r","vsfb02r"],
+            ["vsfb03l","vsfb04l","vsfb04r"],
+            ["vsfb03l","vsfb04r","vsfb03r"],
+            ["vsfb04l","vsfb05l","vsfb05r"],
+            ["vsfb04l","vsfb05r","vsfb04r"],
+
+            ["vsfb01r","vsfb02r","vsfb02rr"],
+            ["vsfb01r","vsfb02rr","vsfb01rr"],
+            ["vsfb02r","vsfb03r","vsfb03rr"],
+            ["vsfb02r","vsfb03rr","vsfb02rr"],
+            ["vsfb03r","vsfb04r","vsfb04rr"],
+            ["vsfb03r","vsfb04rr","vsfb03rr"],
+            ["vsfb04r","vsfb05r","vsfb05rr"],
+            ["vsfb04r","vsfb05rr","vsfb04rr"],
+
+		//side L
+            ["vsfb31l","vsfb32l","vsfb22ll"],
+            ["vsfb31l","vsfb22ll","vsfb21ll"],
+            ["vsfb32l","vsfb33l","vsfb23ll"],
+            ["vsfb32l","vsfb23ll","vsfb22ll"],
+            //["vsfb33l","vsfb34l","vsfb24ll"],
+            //["vsfb33l","vsfb24ll","vsfb23ll"],
+            ["vsfb34l","vsfb35l","vsfb25ll"],
+            ["vsfb34l","vsfb25ll","vsfb24ll"],
+
+            ["vsfb21ll","vsfb22ll","vsfb12l"],
+            ["vsfb21ll","vsfb12l","vsfb11l"],
+            ["vsfb22ll","vsfb23ll","vsfb13l"],
+            ["vsfb22ll","vsfb13l","vsfb12l"],
+            ["vsfb23ll","vsfb24ll","vsfb14l"],
+            ["vsfb23ll","vsfb14l","vsfb13l"],
+            ["vsfb24ll","vsfb25ll","vsfb15l"],
+            ["vsfb24ll","vsfb15l","vsfb14l"],
+
+            ["vsfb11l","vsfb12l","vsfb02ll"],
+            ["vsfb11l","vsfb02ll","vsfb01ll"],
+            ["vsfb12l","vsfb13l","vsfb03ll"],
+            ["vsfb12l","vsfb03ll","vsfb02ll"],
+            ["vsfb13l","vsfb14l","vsfb04ll"],
+            ["vsfb13l","vsfb04ll","vsfb03ll"],
+            ["vsfb14l","vsfb15l","vsfb05ll"],
+            ["vsfb14l","vsfb05ll","vsfb04ll"],
+
+		//bottom L
+          {"breakGroup":"van_flatbedsmall_FL"},
+            ["fr9l","vsfb32l","vsfb31l"],
+            ["fr9l","fr10l","vsfb32l"],
+            ["fr10l","vsfb33l","vsfb32l"],
+            ["fr10l","fr13l","vsfb33l"],
+		//front side wheel well
+            ["fr13l","fr16l","vsfb23ll"],
+            ["fr13l","vsfb23ll","vsfb33l"],
+          {"breakGroup":"van_flatbedsmall_RL"},
+		//upper wheel well
+            ["fr16l","fr17l","vsfb23ll"],
+            ["fr17l","vsfb24ll","vsfb23ll"],
+            ["fr17l","fr18l","vsfb24ll"],
+		//rear wheel well
+            ["fr15l","vsfb34l","vsfb24ll"],
+            ["fr15l","vsfb24ll","fr18l"],
+            ["fr15l","vsfb35l","vsfb34l"],
+            ["fr15l","fr19l","vsfb35l"],
+          {"breakGroup":""},
+
+		//side R
+            ["vsfb31r","vsfb22rr","vsfb32r"],
+            ["vsfb31r","vsfb21rr","vsfb22rr"],
+            ["vsfb32r","vsfb23rr","vsfb33r"],
+            ["vsfb32r","vsfb22rr","vsfb23rr"],
+            //["vsfb33r","vsfb24rr","vsfb34r"],
+            //["vsfb33r","vsfb23rr","vsfb24rr"],
+            ["vsfb34r","vsfb25rr","vsfb35r"],
+            ["vsfb34r","vsfb24rr","vsfb25rr"],
+
+            ["vsfb21rr","vsfb12r","vsfb22rr"],
+            ["vsfb21rr","vsfb11r","vsfb12r"],
+            ["vsfb22rr","vsfb13r","vsfb23rr"],
+            ["vsfb22rr","vsfb12r","vsfb13r"],
+            ["vsfb23rr","vsfb14r","vsfb24rr"],
+            ["vsfb23rr","vsfb13r","vsfb14r"],
+            ["vsfb24rr","vsfb15r","vsfb25rr"],
+            ["vsfb24rr","vsfb14r","vsfb15r"],
+
+            ["vsfb11r","vsfb02rr","vsfb12r"],
+            ["vsfb11r","vsfb01rr","vsfb02rr"],
+            ["vsfb12r","vsfb03rr","vsfb13r"],
+            ["vsfb12r","vsfb02rr","vsfb03rr"],
+            ["vsfb13r","vsfb04rr","vsfb14r"],
+            ["vsfb13r","vsfb03rr","vsfb04rr"],
+            ["vsfb14r","vsfb05rr","vsfb15r"],
+            ["vsfb14r","vsfb04rr","vsfb05rr"],
+
+		//bottom R
+          {"breakGroup":"van_flatbedsmall_FR"},
+            ["fr9r","vsfb31r","vsfb32r"],
+            ["fr9r","vsfb32r","fr10r"],
+            ["fr10r","vsfb32r","vsfb33r"],
+            ["fr10r","vsfb33r","fr13r"],
+		//front side wheel well
+            ["fr13r","vsfb23rr","fr16r"],
+            ["fr13r","vsfb33r","vsfb23rr"],
+          {"breakGroup":"van_flatbedsmall_RR"},
+		//upper wheel well
+            ["fr16r","vsfb23rr","fr17r"],
+            ["fr17r","vsfb23rr","vsfb24rr"],
+            ["fr17r","vsfb24rr","fr18r"],
+		//rear wheel well
+            ["fr15r","vsfb24rr","vsfb34r"],
+            ["fr15r","fr18r","vsfb24rr"],
+            ["fr15r","vsfb34r","vsfb35r"],
+            ["fr15r","vsfb35r","fr19r"],
+          {"breakGroup":""},
+
+		//rear
+          {"breakGroup":"van_flatbedsmall_RL"},
+            ["vsfb05ll","vsfb15l","vsfb25ll"],
+            ["vsfb05l","vsfb05ll","vsfb25ll"],
+            ["vsfb05l","vsfb25ll","vsfb25l"],
+            ["vsfb25ll","vsfb35l","vsfb25l"],
+            ["vsfb25l","vsfb35l","fr19l"],
+            ["vsfb25l","fr19l","fr20l"],
+            ["vsfb25l","fr20l","fr20"],
+
+            ["vsfb05l","vsfb25l","vsfb25r"],
+            ["vsfb05l","vsfb25r","vsfb05r"],
+            ["vsfb25l","fr20","vsfb25r"],
+
+          {"breakGroup":"van_flatbedsmall_RR"},
+            ["vsfb05rr","vsfb25rr","vsfb15r"],
+            ["vsfb05r","vsfb25rr","vsfb05rr"],
+            ["vsfb05r","vsfb25r","vsfb25rr"],
+            ["vsfb25rr","vsfb25r","vsfb35r"],
+            ["vsfb25r","fr19r","vsfb35r"],
+            ["vsfb25r","fr20r","fr19r"],
+            ["vsfb25r","fr20","fr20r"],
+          {"breakGroup":""},
+
+		//front
+          {"breakGroup":"van_flatbedsmall_FL"},
+            ["vsfb01ll","vsfb21ll","vsfb11l"],
+            ["vsfb01ll","vsfb31l","vsfb21ll"],
+            ["vsfb01ll","vsfb01l","vsfb31l"],
+
+          {"breakGroup":"van_flatbedsmall_FR"},
+            ["vsfb01rr","vsfb11r","vsfb21rr"],
+            ["vsfb01rr","vsfb21rr","vsfb31r"],
+            ["vsfb01rr","vsfb31r","vsfb01r"],
+          {"breakGroup":""},
+            {"group":""},
+
+	],
+
+
+}
+}

@@ -1,0 +1,29 @@
+{
+"0-100 km/h":8.1,
+"Weight":1530,
+"Braking G":0.842,
+"Value":5799,
+"Performance Class":"4",
+"TorquePeakRPM":"1900 - 3800",
+"0-100 mph":27.4,
+"Off-Road Score":35,
+"Configuration":"Postal  (A)",
+"Drivetrain":"4WD",
+"Power":166.548,
+"60-100 mph":19.8,
+"0-60 mph":7.6,
+"Config Type":"Factory",
+"100-0 km/h":46.7,
+"Top Speed":50.446,
+"default_color":"Pleasant Blue",
+"Torque":290.806,
+"Description":"Right hand drive LXT-6 for mail delivery use in rural areas, only offered in Automatic",
+"Transmission":"Automatic",
+"Weight/Power":9.21687,
+"60-0 mph":140.6,
+"Years":{
+  "min":1991,
+  "max":2001
+},
+"PowerPeakRPM":"4300 - 5400"
+}

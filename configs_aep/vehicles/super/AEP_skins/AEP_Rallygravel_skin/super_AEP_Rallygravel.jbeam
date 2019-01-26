@@ -1,0 +1,11 @@
+{
+"super_skin_AEP_Rallygravel": {
+    "information":{
+        "authors":"Djplopper",
+        "name":"Rally 'Olio Riva' Livery",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "AEP_Rallygravel",
+}
+}

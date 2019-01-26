@@ -1,0 +1,50 @@
+{
+
+"etk_engine_i6_internals_gts": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GTS Long Block",
+        "value":3500,
+    }
+    "slotType" : "etk_engine_i6_internals",	
+    "mainEngine":{
+		"torqueModMult":[
+            ["rpm", "torque"],
+            [0,    1],
+            [1000, 1],
+            [2500, 1],            		
+			[4500, 1.05]
+            [5000, 1.08],
+            [6000, 1.10],
+            [7000, 1.10],
+            [7500, 1.20],            
+        ],
+        //max rpm physically capable of
+        "maxRPM":7500,
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":175,
+        "headGasketDamageThreshold":1700000,
+        "pistonRingDamageThreshold":1700000,
+        "connectingRodDamageThreshold":2200000,
+        "maxTorqueRating": 860,
+        "maxOverTorqueDamage": 450,
+    },
+},
+
+"etk_engine_i6_ecu_gts": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GTS ECU",
+        "value":700,
+    }
+    "slotType" : "etk_engine_i6_ecu",
+    "mainEngine":{
+        "idleRPM":850,
+        "revLimiterRPM":7500,
+        "revLimiterType":"timeBased",
+        "revLimiterCutTime":0.10,
+    },
+},
+
+
+}

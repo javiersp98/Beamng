@@ -1,0 +1,66 @@
+{
+"fullsize_taillight_aft1": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Aftermarket Taillights",
+        "value":120,
+    }
+    "slotType" : "fullsize_taillight",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["fullsize_taillight", ["fullsize_body"],[],{"pos":{"x":0,"y":0,"z":0}}],
+         {"deformGroup":"taillight_R_break", "deformMaterialBase":"fullsize_lights", "deformMaterialDamaged":"fullsize_lights_dmg"}
+         ["fullsize_taillight_R_aft1", ["fullsize_body"],[],{"pos":{"x":0,"y":0,"z":0}}],
+         {"deformGroup":"taillight_L_break", "deformMaterialBase":"fullsize_lights", "deformMaterialDamaged":"fullsize_lights_dmg"}
+         ["fullsize_taillight_L_aft1", ["fullsize_body"],[],{"pos":{"x":0,"y":0,"z":0}}],
+         {"deformGroup":"taillight_R_break", "deformMaterialBase":"fullsize_glass", "deformMaterialDamaged":"fullsize_glass_dmg"}
+         ["fullsize_taillightglass_R_aft1", ["fullsize_body"],[],{"pos":{"x":0,"y":0,"z":0},"deformSound":"GlassBreakSound1", "deformVolume":0.5}],
+         {"deformGroup":"taillight_L_break", "deformMaterialBase":"fullsize_glass", "deformMaterialDamaged":"fullsize_glass_dmg"}
+         ["fullsize_taillightglass_L_aft1", ["fullsize_body"],[],{"pos":{"x":0,"y":0,"z":0},"deformSound":"GlassBreakSound2", "deformVolume":0.5}],
+
+         {"deformGroup":""},
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":0
+            "lightOuterAngle":140
+            "lightBrightness":0.1
+            "lightRange":20
+            "lightColor":{"r":255, "g":50, "b":0, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":false
+            "flareName":"vehicleBrakeLightFlare"
+            "flareScale":0.2
+        }
+        //taillights
+        ["brake" ,         "SPOTLIGHT"        , "q9r", "r7rr", "q4r", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.84, "y":0.4, "z":0.0},"deformGroup":"taillight_R_break"}],
+        ["brake" ,         "SPOTLIGHT"        , "q9l", "r7ll", "q4l", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.84, "y":0.4, "z":-0.0},"deformGroup":"taillight_L_break"}],
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "q9r", "r7rr", "q4r", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.84, "y":0.4, "z":0.0},"deformGroup":"taillight_R_break"}],
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "q9l", "r7ll", "q4l", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.84, "y":0.4, "z":-0.0},"deformGroup":"taillight_L_break"}],
+        //corner
+        ["signal_R" ,         "SPOTLIGHT"        , "q8r", "q9r", "q3r", {"x":0, "y":0, "z":-15} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.98, "y":0.4, "z":0.0},"deformGroup":"taillight_R_break"}],
+        ["signal_L" ,         "SPOTLIGHT"        , "q8l", "q9l", "q3l", {"x":180, "y":0, "z":15} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.98, "y":0.4, "z":-0.0},"deformGroup":"taillight_L_break"}],
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "q8r", "q9r", "q3r", {"x":0, "y":0, "z":-15} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.98, "y":0.4, "z":0.0},"deformGroup":"taillight_R_break"}],
+        ["lowhighbeam" ,         "SPOTLIGHT"        , "q8l", "q9l", "q3l", {"x":180, "y":0, "z":15} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.98, "y":0.4, "z":-0.0},"deformGroup":"taillight_L_break"}],
+        {
+            "lightInnerAngle":0
+            "lightOuterAngle":80
+            "lightBrightness":0.3
+            "lightRange":30
+            "lightColor":{"r":205, "g":255, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":false
+            "flareName":"vehicleBrakeLightFlare"
+            "flareScale":0.15
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+		//reverse
+        ["reverse" ,         "SPOTLIGHT"        , "q8r", "q9r", "q3r", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":1.17, "y":0.2, "z":-0.2},"deformGroup":"taillight_R_break"}],
+        ["reverse" ,         "SPOTLIGHT"        , "q8l", "q9l", "q3l", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":1.17, "y":0.2, "z":0.2},"deformGroup":"taillight_L_break"}],
+
+    ],
+}
+}

@@ -1,0 +1,20 @@
+{
+"pessima_skin_NSPEC": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"NSPEC",
+        "value":100,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "NSPEC",
+},
+"pessima_skin_interior_N": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"NSPEC Interior",
+        "value":50,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "NSPEC",
+  },
+}

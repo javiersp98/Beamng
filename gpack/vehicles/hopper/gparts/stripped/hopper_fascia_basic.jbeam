@@ -1,0 +1,142 @@
+{
+"hopper_grille_m": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Basic Grille",
+        "value":40,
+    },
+    "slotType" : "hopper_grille",
+    "slots": [
+        ["type", "default", "description"]
+        ["hopper_logo_F_m","hopper_logo_F_m", "Grille Badge"],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        //grille
+        ["hopper_grille_m", ["hopper_fascia"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true},
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"nodeWeight":2.0},
+         {"group":"hopper_fascia"},
+         ["fa2", 0.0, -1.55, 0.90],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":601000,"beamDamp":60},
+          {"beamDeform":35000,"beamStrength":225000},
+          //grille main shape
+          ["fa2r","fa2"],
+          ["fa2l","fa2"],
+          ["fa1","fa2"],
+          //cross
+          {"beamDeform":14000,"beamStrength":225000},
+          ["fa1r","fa2"],
+          ["fa1l","fa2"],
+          ["fa3r","fa2"],
+          ["fa3l","fa2"],
+          //corner rigids
+          {"beamDeform":5600,"beamStrength":225000},
+          ["fa4","fa2"],
+
+          //rigidifiers
+          ["fa5r","fa2"],
+          ["fa5l","fa2"],
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"groundModel":"metal"},
+            {"dragCoef":10},
+            {"group":"hopper_grille"},
+
+            ["fa1","fa2r","fa2"],
+            ["fa1","fa2","fa2l"],
+            ["fa2r","fa3","fa2"],
+            ["fa2","fa3","fa2l"],
+            {"group":""}
+    ],
+},
+"hopper_grille_m_b": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Basic Grille (Colored)",
+        "value":40,
+    },
+    "slotType" : "hopper_grille",
+    "slots": [
+        ["type", "default", "description"]
+        ["hopper_logo_F_m","hopper_logo_F_m", "Grille Badge"],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        //grille
+        ["hopper_grille_m_b", ["hopper_fascia"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true},
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"nodeWeight":2.0},
+         {"group":"hopper_fascia"},
+         ["fa2", 0.0, -1.55, 0.90],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":601000,"beamDamp":60},
+          {"beamDeform":35000,"beamStrength":225000},
+          //grille main shape
+          ["fa2r","fa2"],
+          ["fa2l","fa2"],
+          ["fa1","fa2"],
+          //cross
+          {"beamDeform":14000,"beamStrength":225000},
+          ["fa1r","fa2"],
+          ["fa1l","fa2"],
+          ["fa3r","fa2"],
+          ["fa3l","fa2"],
+          //corner rigids
+          {"beamDeform":5600,"beamStrength":225000},
+          ["fa4","fa2"],
+
+          //rigidifiers
+          ["fa5r","fa2"],
+          ["fa5l","fa2"],
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"groundModel":"metal"},
+            {"dragCoef":10},
+            {"group":"hopper_grille"},
+
+            ["fa1","fa2r","fa2"],
+            ["fa1","fa2","fa2l"],
+            ["fa2r","fa3","fa2"],
+            ["fa2","fa3","fa2l"],
+            {"group":""}
+    ],
+},
+"hopper_logo_F_m": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Ibishu Badge",
+        "value":5,
+    }
+    "slotType" : "hopper_logo_F_m",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["hopper_badge_grille_m" ["hopper_fascia"],[],{"pos":{"x":0,"y":0.0,"z":0}}],
+    ],
+
+}
+
+}

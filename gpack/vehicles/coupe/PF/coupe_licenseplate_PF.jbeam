@@ -1,0 +1,14 @@
+{
+"coupe_licenseplate_PF": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear License Plate",
+        "value":0,
+    }
+    "slotType" : "coupe_licenseplate_PF",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate", ["coupe_trunk"],[],{"pos":{"x":0.0, "y":2.143, "z":0.762}, "rot":{"x":7.75, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+}
+}

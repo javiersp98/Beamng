@@ -1,0 +1,1404 @@
+{
+
+
+"van_flatbed_haystack_4": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Four Haystacks",
+	}
+    "slotType" : "van_flatbed_edge",
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["van_haybale_square", ["vnfb_haybale1"], [], {"pos":{"x":-0.6, "y":1.15, "z":0.87}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["van_haybale_square", ["vnfb_haybale2"], [], {"pos":{"x":-0.6, "y":3.25, "z":0.87}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["van_haybale_square", ["vnfb_haybale5"], [], {"pos":{"x":0.6, "y":1.15, "z":0.87}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["van_haybale_square", ["vnfb_haybale6"], [], {"pos":{"x":0.6, "y":3.25, "z":0.87}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+
+//+5.15
+		 //["van_metal_box_rope_R", ["van_metal_box_R_rope"]],
+	],
+    "nodes": //y-4,6m, z-0.15
+    [
+        ["id", "posX", "posY", "posZ"],
+        {"frictionCoef":1.0},
+        {"nodeMaterial":"|NM_PLASTIC"},
+        {"nodeWeight":56},
+        {"collision":true}
+        
+        {"group":"vnfb_haybale1"},
+	["vnfb_hbl_00", -0.03, 0.20, 1.85],
+	["vnfb_hbl_01", -1.17, 0.20, 1.85],
+	["vnfb_hbl_02", -0.03, 0.20, 0.90],
+	["vnfb_hbl_03", -1.17, 0.20, 0.90],
+	["vnfb_hbl_04", -0.03, 2.15, 1.85],
+	["vnfb_hbl_05", -1.17, 2.15, 1.85],
+	["vnfb_hbl_06", -0.03, 2.15, 0.90],
+	["vnfb_hbl_07", -1.17, 2.15, 0.90],
+        {"group":"vnfb_haybale2"},
+	["vnfb_hbl_10", -0.03, 2.25, 1.85],
+	["vnfb_hbl_11", -1.17, 2.25, 1.85],
+	["vnfb_hbl_12", -0.03, 2.25, 0.90],
+	["vnfb_hbl_13", -1.17, 2.25, 0.90],
+	["vnfb_hbl_14", -0.03, 4.25, 1.85],
+	["vnfb_hbl_15", -1.17, 4.25, 1.85],
+	["vnfb_hbl_16", -0.03, 4.25, 0.90],
+	["vnfb_hbl_17", -1.17, 4.25, 0.90],
+
+        {"group":"vnfb_haybale5"},
+	["vnfb_hbl_40", 0.03, 0.20, 1.85],
+	["vnfb_hbl_41", 1.17, 0.20, 1.85],
+	["vnfb_hbl_42", 0.03, 0.20, 0.90],
+	["vnfb_hbl_43", 1.17, 0.20, 0.90],
+	["vnfb_hbl_44", 0.03, 2.15, 1.85],
+	["vnfb_hbl_45", 1.17, 2.15, 1.85],
+	["vnfb_hbl_46", 0.03, 2.15, 0.90],
+	["vnfb_hbl_47", 1.17, 2.15, 0.90],
+        {"group":"vnfb_haybale6"},
+	["vnfb_hbl_50", 0.03, 2.25, 1.85],
+	["vnfb_hbl_51", 1.17, 2.25, 1.85],
+	["vnfb_hbl_52", 0.03, 2.25, 0.90],
+	["vnfb_hbl_53", 1.17, 2.25, 0.90],
+	["vnfb_hbl_54", 0.03, 4.25, 1.85],
+	["vnfb_hbl_55", 1.17, 4.25, 1.85],
+	["vnfb_hbl_56", 0.03, 4.25, 0.90],
+	["vnfb_hbl_57", 1.17, 4.25, 0.90],
+ 
+        
+        {"group":""},
+    ],
+    
+    "beams": 
+    [
+        ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":25000,"beamDamp":1500},
+          {"beamDeform":"FLT_MAX","beamStrength":"FLT_MAX"},
+          //connect all nodes to each other - uniform structure
+          ["vnfb_hbl_00","vnfb_hbl_01"],
+          ["vnfb_hbl_00","vnfb_hbl_02"],
+          ["vnfb_hbl_00","vnfb_hbl_03"],
+          ["vnfb_hbl_00","vnfb_hbl_04"],
+          ["vnfb_hbl_00","vnfb_hbl_05"],
+          ["vnfb_hbl_00","vnfb_hbl_06"],
+          ["vnfb_hbl_00","vnfb_hbl_07"],
+          
+          ["vnfb_hbl_01","vnfb_hbl_02"],
+          ["vnfb_hbl_01","vnfb_hbl_03"],
+          ["vnfb_hbl_01","vnfb_hbl_04"],
+          ["vnfb_hbl_01","vnfb_hbl_05"],
+          ["vnfb_hbl_01","vnfb_hbl_06"],
+          ["vnfb_hbl_01","vnfb_hbl_07"],
+          
+          ["vnfb_hbl_02","vnfb_hbl_03"],
+          ["vnfb_hbl_02","vnfb_hbl_04"],
+          ["vnfb_hbl_02","vnfb_hbl_05"],
+          ["vnfb_hbl_02","vnfb_hbl_06"],
+          ["vnfb_hbl_02","vnfb_hbl_07"],
+          
+          ["vnfb_hbl_03","vnfb_hbl_04"],
+          ["vnfb_hbl_03","vnfb_hbl_05"],
+          ["vnfb_hbl_03","vnfb_hbl_06"],
+          ["vnfb_hbl_03","vnfb_hbl_07"],
+          
+          ["vnfb_hbl_04","vnfb_hbl_05"],
+          ["vnfb_hbl_04","vnfb_hbl_06"],
+          ["vnfb_hbl_04","vnfb_hbl_07"],
+          
+          ["vnfb_hbl_05","vnfb_hbl_06"],
+          ["vnfb_hbl_05","vnfb_hbl_07"],
+          
+          ["vnfb_hbl_06","vnfb_hbl_07"],
+
+
+          ["vnfb_hbl_10","vnfb_hbl_11"],
+          ["vnfb_hbl_10","vnfb_hbl_12"],
+          ["vnfb_hbl_10","vnfb_hbl_13"],
+          ["vnfb_hbl_10","vnfb_hbl_14"],
+          ["vnfb_hbl_10","vnfb_hbl_15"],
+          ["vnfb_hbl_10","vnfb_hbl_16"],
+          ["vnfb_hbl_10","vnfb_hbl_17"],
+          
+          ["vnfb_hbl_11","vnfb_hbl_12"],
+          ["vnfb_hbl_11","vnfb_hbl_13"],
+          ["vnfb_hbl_11","vnfb_hbl_14"],
+          ["vnfb_hbl_11","vnfb_hbl_15"],
+          ["vnfb_hbl_11","vnfb_hbl_16"],
+          ["vnfb_hbl_11","vnfb_hbl_17"],
+          
+          ["vnfb_hbl_12","vnfb_hbl_13"],
+          ["vnfb_hbl_12","vnfb_hbl_14"],
+          ["vnfb_hbl_12","vnfb_hbl_15"],
+          ["vnfb_hbl_12","vnfb_hbl_16"],
+          ["vnfb_hbl_12","vnfb_hbl_17"],
+          
+          ["vnfb_hbl_13","vnfb_hbl_14"],
+          ["vnfb_hbl_13","vnfb_hbl_15"],
+          ["vnfb_hbl_13","vnfb_hbl_16"],
+          ["vnfb_hbl_13","vnfb_hbl_17"],
+          
+          ["vnfb_hbl_14","vnfb_hbl_15"],
+          ["vnfb_hbl_14","vnfb_hbl_16"],
+          ["vnfb_hbl_14","vnfb_hbl_17"],
+          
+          ["vnfb_hbl_15","vnfb_hbl_16"],
+          ["vnfb_hbl_15","vnfb_hbl_17"],
+          
+          ["vnfb_hbl_16","vnfb_hbl_17"],
+
+
+
+          ["vnfb_hbl_40","vnfb_hbl_41"],
+          ["vnfb_hbl_40","vnfb_hbl_42"],
+          ["vnfb_hbl_40","vnfb_hbl_43"],
+          ["vnfb_hbl_40","vnfb_hbl_44"],
+          ["vnfb_hbl_40","vnfb_hbl_45"],
+          ["vnfb_hbl_40","vnfb_hbl_46"],
+          ["vnfb_hbl_40","vnfb_hbl_47"],
+          
+          ["vnfb_hbl_41","vnfb_hbl_42"],
+          ["vnfb_hbl_41","vnfb_hbl_43"],
+          ["vnfb_hbl_41","vnfb_hbl_44"],
+          ["vnfb_hbl_41","vnfb_hbl_45"],
+          ["vnfb_hbl_41","vnfb_hbl_46"],
+          ["vnfb_hbl_41","vnfb_hbl_47"],
+          
+          ["vnfb_hbl_42","vnfb_hbl_43"],
+          ["vnfb_hbl_42","vnfb_hbl_44"],
+          ["vnfb_hbl_42","vnfb_hbl_45"],
+          ["vnfb_hbl_42","vnfb_hbl_46"],
+          ["vnfb_hbl_42","vnfb_hbl_47"],
+          
+          ["vnfb_hbl_43","vnfb_hbl_44"],
+          ["vnfb_hbl_43","vnfb_hbl_45"],
+          ["vnfb_hbl_43","vnfb_hbl_46"],
+          ["vnfb_hbl_43","vnfb_hbl_47"],
+          
+          ["vnfb_hbl_44","vnfb_hbl_45"],
+          ["vnfb_hbl_44","vnfb_hbl_46"],
+          ["vnfb_hbl_44","vnfb_hbl_47"],
+          
+          ["vnfb_hbl_45","vnfb_hbl_46"],
+          ["vnfb_hbl_45","vnfb_hbl_47"],
+          
+          ["vnfb_hbl_46","vnfb_hbl_47"],
+
+
+          ["vnfb_hbl_50","vnfb_hbl_51"],
+          ["vnfb_hbl_50","vnfb_hbl_52"],
+          ["vnfb_hbl_50","vnfb_hbl_53"],
+          ["vnfb_hbl_50","vnfb_hbl_54"],
+          ["vnfb_hbl_50","vnfb_hbl_55"],
+          ["vnfb_hbl_50","vnfb_hbl_56"],
+          ["vnfb_hbl_50","vnfb_hbl_57"],
+          
+          ["vnfb_hbl_51","vnfb_hbl_52"],
+          ["vnfb_hbl_51","vnfb_hbl_53"],
+          ["vnfb_hbl_51","vnfb_hbl_54"],
+          ["vnfb_hbl_51","vnfb_hbl_55"],
+          ["vnfb_hbl_51","vnfb_hbl_56"],
+          ["vnfb_hbl_51","vnfb_hbl_57"],
+          
+          ["vnfb_hbl_52","vnfb_hbl_53"],
+          ["vnfb_hbl_52","vnfb_hbl_54"],
+          ["vnfb_hbl_52","vnfb_hbl_55"],
+          ["vnfb_hbl_52","vnfb_hbl_56"],
+          ["vnfb_hbl_52","vnfb_hbl_57"],
+          
+          ["vnfb_hbl_53","vnfb_hbl_54"],
+          ["vnfb_hbl_53","vnfb_hbl_55"],
+          ["vnfb_hbl_53","vnfb_hbl_56"],
+          ["vnfb_hbl_53","vnfb_hbl_57"],
+          
+          ["vnfb_hbl_54","vnfb_hbl_55"],
+          ["vnfb_hbl_54","vnfb_hbl_56"],
+          ["vnfb_hbl_54","vnfb_hbl_57"],
+          
+          ["vnfb_hbl_55","vnfb_hbl_56"],
+          ["vnfb_hbl_55","vnfb_hbl_57"],
+          
+          ["vnfb_hbl_56","vnfb_hbl_57"],
+
+
+
+          {"beamSpring":210000,"beamDamp":325},
+          {"beamDeform":"5000","beamStrength":"5500"},
+	  {"breakGroup":"vnfb_haybale1"},
+	  {"breakGroupType":0},
+
+          ["vnfb_hbl_00","cf15rr"],
+          ["vnfb_hbl_00","cf15r"],
+          ["vnfb_hbl_00","cf14rr"],
+          ["vnfb_hbl_00","cf14r"],
+          ["vnfb_hbl_01","cf15rr"],
+          ["vnfb_hbl_01","cf15r"],
+          ["vnfb_hbl_01","cf14rr"],
+          ["vnfb_hbl_01","cf14r"],
+          ["vnfb_hbl_02","cf15rr"],
+          ["vnfb_hbl_02","cf15r"],
+          ["vnfb_hbl_02","cf14rr"],
+          ["vnfb_hbl_02","cf14r"],
+          ["vnfb_hbl_03","cf15rr"],
+          ["vnfb_hbl_03","cf15r"],
+          ["vnfb_hbl_03","cf14rr"],
+          ["vnfb_hbl_03","cf14r"],
+
+          ["vnfb_hbl_04","cf14rr"],
+          ["vnfb_hbl_04","cf14r"],
+          ["vnfb_hbl_04","cf13rr"],
+          ["vnfb_hbl_04","cf13r"],
+          ["vnfb_hbl_05","cf14rr"],
+          ["vnfb_hbl_05","cf14r"],
+          ["vnfb_hbl_05","cf13rr"],
+          ["vnfb_hbl_05","cf13r"],
+          ["vnfb_hbl_06","cf14rr"],
+          ["vnfb_hbl_06","cf14r"],
+          ["vnfb_hbl_06","cf13rr"],
+          ["vnfb_hbl_06","cf13r"],
+          ["vnfb_hbl_07","cf14rr"],
+          ["vnfb_hbl_07","cf14r"],
+          ["vnfb_hbl_07","cf13rr"],
+          ["vnfb_hbl_07","cf13r"],
+
+	  {"breakGroup":"vnfb_haybale2"},
+	  {"breakGroupType":0},
+
+          ["vnfb_hbl_10","cf13rr"],
+          ["vnfb_hbl_10","cf13r"],
+          ["vnfb_hbl_10","cf12rr"],
+          ["vnfb_hbl_10","cf12r"],
+          ["vnfb_hbl_11","cf13rr"],
+          ["vnfb_hbl_11","cf13r"],
+          ["vnfb_hbl_11","cf12rr"],
+          ["vnfb_hbl_11","cf12r"],
+          ["vnfb_hbl_12","cf13rr"],
+          ["vnfb_hbl_12","cf13r"],
+          ["vnfb_hbl_12","cf12rr"],
+          ["vnfb_hbl_12","cf12r"],
+          ["vnfb_hbl_13","cf13rr"],
+          ["vnfb_hbl_13","cf13r"],
+          ["vnfb_hbl_13","cf12rr"],
+          ["vnfb_hbl_13","cf12r"],
+
+          ["vnfb_hbl_14","cf12rr"],
+          ["vnfb_hbl_14","cf12r"],
+          ["vnfb_hbl_14","cf11rr"],
+          ["vnfb_hbl_14","cf11r"],
+          ["vnfb_hbl_15","cf12rr"],
+          ["vnfb_hbl_15","cf12r"],
+          ["vnfb_hbl_15","cf11rr"],
+          ["vnfb_hbl_15","cf11r"],
+          ["vnfb_hbl_16","cf12rr"],
+          ["vnfb_hbl_16","cf12r"],
+          ["vnfb_hbl_16","cf11rr"],
+          ["vnfb_hbl_16","cf11r"],
+          ["vnfb_hbl_17","cf12rr"],
+          ["vnfb_hbl_17","cf12r"],
+          ["vnfb_hbl_17","cf11rr"],
+          ["vnfb_hbl_17","cf11r"],
+
+
+
+
+	  {"breakGroup":"vnfb_haybale5"},
+	  {"breakGroupType":0},
+
+          ["vnfb_hbl_40","cf15ll"],
+          ["vnfb_hbl_40","cf15l"],
+          ["vnfb_hbl_40","cf14ll"],
+          ["vnfb_hbl_40","cf14l"],
+          ["vnfb_hbl_41","cf15ll"],
+          ["vnfb_hbl_41","cf15l"],
+          ["vnfb_hbl_41","cf14ll"],
+          ["vnfb_hbl_41","cf14l"],
+          ["vnfb_hbl_42","cf15ll"],
+          ["vnfb_hbl_42","cf15l"],
+          ["vnfb_hbl_42","cf14ll"],
+          ["vnfb_hbl_42","cf14l"],
+          ["vnfb_hbl_43","cf15ll"],
+          ["vnfb_hbl_43","cf15l"],
+          ["vnfb_hbl_43","cf14ll"],
+          ["vnfb_hbl_43","cf14l"],
+
+          ["vnfb_hbl_44","cf14ll"],
+          ["vnfb_hbl_44","cf14l"],
+          ["vnfb_hbl_44","cf13ll"],
+          ["vnfb_hbl_44","cf13l"],
+          ["vnfb_hbl_45","cf14ll"],
+          ["vnfb_hbl_45","cf14l"],
+          ["vnfb_hbl_45","cf13ll"],
+          ["vnfb_hbl_45","cf13l"],
+          ["vnfb_hbl_46","cf14ll"],
+          ["vnfb_hbl_46","cf14l"],
+          ["vnfb_hbl_46","cf13ll"],
+          ["vnfb_hbl_46","cf13l"],
+          ["vnfb_hbl_47","cf14ll"],
+          ["vnfb_hbl_47","cf14l"],
+          ["vnfb_hbl_47","cf13ll"],
+          ["vnfb_hbl_47","cf13l"],
+
+	  {"breakGroup":"vnfb_haybale6"},
+	  {"breakGroupType":0},
+
+          ["vnfb_hbl_50","cf13ll"],
+          ["vnfb_hbl_50","cf13l"],
+          ["vnfb_hbl_50","cf12ll"],
+          ["vnfb_hbl_50","cf12l"],
+          ["vnfb_hbl_51","cf13ll"],
+          ["vnfb_hbl_51","cf13l"],
+          ["vnfb_hbl_51","cf12ll"],
+          ["vnfb_hbl_51","cf12l"],
+          ["vnfb_hbl_52","cf13ll"],
+          ["vnfb_hbl_52","cf13l"],
+          ["vnfb_hbl_52","cf12ll"],
+          ["vnfb_hbl_52","cf12l"],
+          ["vnfb_hbl_53","cf13ll"],
+          ["vnfb_hbl_53","cf13l"],
+          ["vnfb_hbl_53","cf12ll"],
+          ["vnfb_hbl_53","cf12l"],
+
+          ["vnfb_hbl_54","cf12ll"],
+          ["vnfb_hbl_54","cf12l"],
+          ["vnfb_hbl_54","cf11ll"],
+          ["vnfb_hbl_54","cf11l"],
+          ["vnfb_hbl_55","cf12ll"],
+          ["vnfb_hbl_55","cf12l"],
+          ["vnfb_hbl_55","cf11ll"],
+          ["vnfb_hbl_55","cf11l"],
+          ["vnfb_hbl_56","cf12ll"],
+          ["vnfb_hbl_56","cf12l"],
+          ["vnfb_hbl_56","cf11ll"],
+          ["vnfb_hbl_56","cf11l"],
+          ["vnfb_hbl_57","cf12ll"],
+          ["vnfb_hbl_57","cf12l"],
+          ["vnfb_hbl_57","cf11ll"],
+          ["vnfb_hbl_57","cf11l"],
+
+
+
+
+
+	  {"breakGroup":""},
+          
+        
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    
+    
+    "triangles": 
+    [
+        ["id1:","id2:","id3:"],
+	//right
+        ["vnfb_hbl_05","vnfb_hbl_06","vnfb_hbl_07"],
+        ["vnfb_hbl_05","vnfb_hbl_04","vnfb_hbl_06"],
+        
+        ["vnfb_hbl_04","vnfb_hbl_02","vnfb_hbl_06"],
+        ["vnfb_hbl_04","vnfb_hbl_00","vnfb_hbl_02"],
+        
+        ["vnfb_hbl_00","vnfb_hbl_03","vnfb_hbl_02"],
+        ["vnfb_hbl_00","vnfb_hbl_01","vnfb_hbl_03"],
+        
+        ["vnfb_hbl_01","vnfb_hbl_07","vnfb_hbl_03"],
+        ["vnfb_hbl_01","vnfb_hbl_05","vnfb_hbl_07"],
+        
+        ["vnfb_hbl_00","vnfb_hbl_05","vnfb_hbl_01"],
+        ["vnfb_hbl_00","vnfb_hbl_04","vnfb_hbl_05"],
+        
+        ["vnfb_hbl_02","vnfb_hbl_07","vnfb_hbl_06"],
+        ["vnfb_hbl_02","vnfb_hbl_03","vnfb_hbl_07"],
+
+
+        ["vnfb_hbl_15","vnfb_hbl_16","vnfb_hbl_17"],
+        ["vnfb_hbl_15","vnfb_hbl_14","vnfb_hbl_16"],
+        
+        ["vnfb_hbl_14","vnfb_hbl_12","vnfb_hbl_16"],
+        ["vnfb_hbl_14","vnfb_hbl_10","vnfb_hbl_12"],
+        
+        ["vnfb_hbl_10","vnfb_hbl_13","vnfb_hbl_12"],
+        ["vnfb_hbl_10","vnfb_hbl_11","vnfb_hbl_13"],
+        
+        ["vnfb_hbl_11","vnfb_hbl_17","vnfb_hbl_13"],
+        ["vnfb_hbl_11","vnfb_hbl_15","vnfb_hbl_17"],
+        
+        ["vnfb_hbl_10","vnfb_hbl_15","vnfb_hbl_11"],
+        ["vnfb_hbl_10","vnfb_hbl_14","vnfb_hbl_15"],
+        
+        ["vnfb_hbl_12","vnfb_hbl_17","vnfb_hbl_16"],
+        ["vnfb_hbl_12","vnfb_hbl_13","vnfb_hbl_17"],
+
+
+	//left
+        ["vnfb_hbl_45","vnfb_hbl_47","vnfb_hbl_46"],
+        ["vnfb_hbl_45","vnfb_hbl_46","vnfb_hbl_44"],
+        
+        ["vnfb_hbl_44","vnfb_hbl_46","vnfb_hbl_42"],
+        ["vnfb_hbl_44","vnfb_hbl_42","vnfb_hbl_40"],
+        
+        ["vnfb_hbl_40","vnfb_hbl_42","vnfb_hbl_43"],
+        ["vnfb_hbl_40","vnfb_hbl_43","vnfb_hbl_41"],
+        
+        ["vnfb_hbl_41","vnfb_hbl_43","vnfb_hbl_47"],
+        ["vnfb_hbl_41","vnfb_hbl_47","vnfb_hbl_45"],
+        
+        ["vnfb_hbl_40","vnfb_hbl_41","vnfb_hbl_45"],
+        ["vnfb_hbl_40","vnfb_hbl_45","vnfb_hbl_44"],
+        
+        ["vnfb_hbl_42","vnfb_hbl_46","vnfb_hbl_47"],
+        ["vnfb_hbl_42","vnfb_hbl_47","vnfb_hbl_43"],
+
+
+
+        ["vnfb_hbl_55","vnfb_hbl_57","vnfb_hbl_56"],
+        ["vnfb_hbl_55","vnfb_hbl_56","vnfb_hbl_54"],
+        
+        ["vnfb_hbl_54","vnfb_hbl_56","vnfb_hbl_52"],
+        ["vnfb_hbl_54","vnfb_hbl_52","vnfb_hbl_50"],
+        
+        ["vnfb_hbl_50","vnfb_hbl_52","vnfb_hbl_53"],
+        ["vnfb_hbl_50","vnfb_hbl_53","vnfb_hbl_51"],
+        
+        ["vnfb_hbl_51","vnfb_hbl_53","vnfb_hbl_57"],
+        ["vnfb_hbl_51","vnfb_hbl_57","vnfb_hbl_55"],
+        
+        ["vnfb_hbl_50","vnfb_hbl_51","vnfb_hbl_55"],
+        ["vnfb_hbl_50","vnfb_hbl_55","vnfb_hbl_54"],
+        
+        ["vnfb_hbl_52","vnfb_hbl_56","vnfb_hbl_57"],
+        ["vnfb_hbl_52","vnfb_hbl_57","vnfb_hbl_53"],
+
+
+  
+
+    ],
+}
+
+"van_flatbed_haystack_8": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Eight Haystacks",
+	}
+    "slotType" : "van_flatbed_edge",
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["van_haybale_square", ["vnfb_haybale1"], [], {"pos":{"x":-0.6, "y":1.15, "z":0.87}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["van_haybale_square", ["vnfb_haybale2"], [], {"pos":{"x":-0.6, "y":3.25, "z":0.87}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["van_haybale_square", ["vnfb_haybale5"], [], {"pos":{"x":0.6, "y":1.15, "z":0.87}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["van_haybale_square", ["vnfb_haybale6"], [], {"pos":{"x":0.6, "y":3.25, "z":0.87}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+
+		 ["van_haybale_square", ["vnfb_haybale11"], [], {"pos":{"x":-0.6, "y":1.15, "z":1.92}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["van_haybale_square", ["vnfb_haybale12"], [], {"pos":{"x":-0.6, "y":3.25, "z":1.92}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["van_haybale_square", ["vnfb_haybale15"], [], {"pos":{"x":0.6, "y":1.15, "z":1.92}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["van_haybale_square", ["vnfb_haybale16"], [], {"pos":{"x":0.6, "y":3.25, "z":1.92}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+
+//+5.15
+		 //["van_metal_box_rope_R", ["van_metal_box_R_rope"]],
+	],
+    "nodes": 
+    [
+        ["id", "posX", "posY", "posZ"],
+        {"frictionCoef":1.0},
+        {"nodeMaterial":"|NM_PLASTIC"},
+        {"nodeWeight":56},
+        {"collision":true}
+        
+        {"group":"vnfb_haybale1"},
+	["vnfb_hbl_00", -0.03, 0.20, 1.85],
+	["vnfb_hbl_01", -1.17, 0.20, 1.85],
+	["vnfb_hbl_02", -0.03, 0.20, 0.90],
+	["vnfb_hbl_03", -1.17, 0.20, 0.90],
+	["vnfb_hbl_04", -0.03, 2.15, 1.85],
+	["vnfb_hbl_05", -1.17, 2.15, 1.85],
+	["vnfb_hbl_06", -0.03, 2.15, 0.90],
+	["vnfb_hbl_07", -1.17, 2.15, 0.90],
+        {"group":"vnfb_haybale2"},
+	["vnfb_hbl_10", -0.03, 2.25, 1.85],
+	["vnfb_hbl_11", -1.17, 2.25, 1.85],
+	["vnfb_hbl_12", -0.03, 2.25, 0.90],
+	["vnfb_hbl_13", -1.17, 2.25, 0.90],
+	["vnfb_hbl_14", -0.03, 4.25, 1.85],
+	["vnfb_hbl_15", -1.17, 4.25, 1.85],
+	["vnfb_hbl_16", -0.03, 4.25, 0.90],
+	["vnfb_hbl_17", -1.17, 4.25, 0.90],
+
+        {"group":"vnfb_haybale5"},
+	["vnfb_hbl_40", 0.03, 0.20, 1.85],
+	["vnfb_hbl_41", 1.17, 0.20, 1.85],
+	["vnfb_hbl_42", 0.03, 0.20, 0.90],
+	["vnfb_hbl_43", 1.17, 0.20, 0.90],
+	["vnfb_hbl_44", 0.03, 2.15, 1.85],
+	["vnfb_hbl_45", 1.17, 2.15, 1.85],
+	["vnfb_hbl_46", 0.03, 2.15, 0.90],
+	["vnfb_hbl_47", 1.17, 2.15, 0.90],
+        {"group":"vnfb_haybale6"},
+	["vnfb_hbl_50", 0.03, 2.25, 1.85],
+	["vnfb_hbl_51", 1.17, 2.25, 1.85],
+	["vnfb_hbl_52", 0.03, 2.25, 0.90],
+	["vnfb_hbl_53", 1.17, 2.25, 0.90],
+	["vnfb_hbl_54", 0.03, 4.25, 1.85],
+	["vnfb_hbl_55", 1.17, 4.25, 1.85],
+	["vnfb_hbl_56", 0.03, 4.25, 0.90],
+	["vnfb_hbl_57", 1.17, 4.25, 0.90],
+
+
+
+
+        {"group":"vnfb_haybale11"},
+	["vnfb_hbl_100", -0.03, 0.2, 2.9],
+	["vnfb_hbl_101", -1.17, 0.2, 2.9],
+	["vnfb_hbl_102", -0.03, 0.2, 1.95],
+	["vnfb_hbl_103", -1.17, 0.2, 1.95],
+	["vnfb_hbl_104", -0.03, 2.15, 2.9],
+	["vnfb_hbl_105", -1.17, 2.15, 2.9],
+	["vnfb_hbl_106", -0.03, 2.15, 1.95],
+	["vnfb_hbl_107", -1.17, 2.15, 1.95],
+        {"group":"vnfb_haybale12"},
+	["vnfb_hbl_110", -0.03, 2.25, 2.9],
+	["vnfb_hbl_111", -1.17, 2.25, 2.9],
+	["vnfb_hbl_112", -0.03, 2.25, 1.95],
+	["vnfb_hbl_113", -1.17, 2.25, 1.95],
+	["vnfb_hbl_114", -0.03, 4.25, 2.9],
+	["vnfb_hbl_115", -1.17, 4.25, 2.9],
+	["vnfb_hbl_116", -0.03, 4.25, 1.95],
+	["vnfb_hbl_117", -1.17, 4.25, 1.95],
+
+        {"group":"vnfb_haybale15"},
+	["vnfb_hbl_140", 0.03, 0.2, 2.9],
+	["vnfb_hbl_141", 1.17, 0.2, 2.9],
+	["vnfb_hbl_142", 0.03, 0.2, 1.95],
+	["vnfb_hbl_143", 1.17, 0.2, 1.95],
+	["vnfb_hbl_144", 0.03, 2.15, 2.9],
+	["vnfb_hbl_145", 1.17, 2.15, 2.9],
+	["vnfb_hbl_146", 0.03, 2.15, 1.95],
+	["vnfb_hbl_147", 1.17, 2.15, 1.95],
+        {"group":"vnfb_haybale16"},
+	["vnfb_hbl_150", 0.03, 2.25, 2.9],
+	["vnfb_hbl_151", 1.17, 2.25, 2.9],
+	["vnfb_hbl_152", 0.03, 2.25, 1.95],
+	["vnfb_hbl_153", 1.17, 2.25, 1.95],
+	["vnfb_hbl_154", 0.03, 4.25, 2.9],
+	["vnfb_hbl_155", 1.17, 4.25, 2.9],
+	["vnfb_hbl_156", 0.03, 4.25, 1.95],
+	["vnfb_hbl_157", 1.17, 4.25, 1.95],
+
+        
+        {"group":""},
+    ],
+    
+    "beams": 
+    [
+        ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":21000,"beamDamp":1500},
+          {"beamDeform":"FLT_MAX","beamStrength":"FLT_MAX"},
+          //connect all nodes to each other - uniform structure
+          ["vnfb_hbl_00","vnfb_hbl_01"],
+          ["vnfb_hbl_00","vnfb_hbl_02"],
+          ["vnfb_hbl_00","vnfb_hbl_03"],
+          ["vnfb_hbl_00","vnfb_hbl_04"],
+          ["vnfb_hbl_00","vnfb_hbl_05"],
+          ["vnfb_hbl_00","vnfb_hbl_06"],
+          ["vnfb_hbl_00","vnfb_hbl_07"],
+          
+          ["vnfb_hbl_01","vnfb_hbl_02"],
+          ["vnfb_hbl_01","vnfb_hbl_03"],
+          ["vnfb_hbl_01","vnfb_hbl_04"],
+          ["vnfb_hbl_01","vnfb_hbl_05"],
+          ["vnfb_hbl_01","vnfb_hbl_06"],
+          ["vnfb_hbl_01","vnfb_hbl_07"],
+          
+          ["vnfb_hbl_02","vnfb_hbl_03"],
+          ["vnfb_hbl_02","vnfb_hbl_04"],
+          ["vnfb_hbl_02","vnfb_hbl_05"],
+          ["vnfb_hbl_02","vnfb_hbl_06"],
+          ["vnfb_hbl_02","vnfb_hbl_07"],
+          
+          ["vnfb_hbl_03","vnfb_hbl_04"],
+          ["vnfb_hbl_03","vnfb_hbl_05"],
+          ["vnfb_hbl_03","vnfb_hbl_06"],
+          ["vnfb_hbl_03","vnfb_hbl_07"],
+          
+          ["vnfb_hbl_04","vnfb_hbl_05"],
+          ["vnfb_hbl_04","vnfb_hbl_06"],
+          ["vnfb_hbl_04","vnfb_hbl_07"],
+          
+          ["vnfb_hbl_05","vnfb_hbl_06"],
+          ["vnfb_hbl_05","vnfb_hbl_07"],
+          
+          ["vnfb_hbl_06","vnfb_hbl_07"],
+
+
+          ["vnfb_hbl_10","vnfb_hbl_11"],
+          ["vnfb_hbl_10","vnfb_hbl_12"],
+          ["vnfb_hbl_10","vnfb_hbl_13"],
+          ["vnfb_hbl_10","vnfb_hbl_14"],
+          ["vnfb_hbl_10","vnfb_hbl_15"],
+          ["vnfb_hbl_10","vnfb_hbl_16"],
+          ["vnfb_hbl_10","vnfb_hbl_17"],
+          
+          ["vnfb_hbl_11","vnfb_hbl_12"],
+          ["vnfb_hbl_11","vnfb_hbl_13"],
+          ["vnfb_hbl_11","vnfb_hbl_14"],
+          ["vnfb_hbl_11","vnfb_hbl_15"],
+          ["vnfb_hbl_11","vnfb_hbl_16"],
+          ["vnfb_hbl_11","vnfb_hbl_17"],
+          
+          ["vnfb_hbl_12","vnfb_hbl_13"],
+          ["vnfb_hbl_12","vnfb_hbl_14"],
+          ["vnfb_hbl_12","vnfb_hbl_15"],
+          ["vnfb_hbl_12","vnfb_hbl_16"],
+          ["vnfb_hbl_12","vnfb_hbl_17"],
+          
+          ["vnfb_hbl_13","vnfb_hbl_14"],
+          ["vnfb_hbl_13","vnfb_hbl_15"],
+          ["vnfb_hbl_13","vnfb_hbl_16"],
+          ["vnfb_hbl_13","vnfb_hbl_17"],
+          
+          ["vnfb_hbl_14","vnfb_hbl_15"],
+          ["vnfb_hbl_14","vnfb_hbl_16"],
+          ["vnfb_hbl_14","vnfb_hbl_17"],
+          
+          ["vnfb_hbl_15","vnfb_hbl_16"],
+          ["vnfb_hbl_15","vnfb_hbl_17"],
+          
+          ["vnfb_hbl_16","vnfb_hbl_17"],
+
+
+ 
+
+          ["vnfb_hbl_40","vnfb_hbl_41"],
+          ["vnfb_hbl_40","vnfb_hbl_42"],
+          ["vnfb_hbl_40","vnfb_hbl_43"],
+          ["vnfb_hbl_40","vnfb_hbl_44"],
+          ["vnfb_hbl_40","vnfb_hbl_45"],
+          ["vnfb_hbl_40","vnfb_hbl_46"],
+          ["vnfb_hbl_40","vnfb_hbl_47"],
+          
+          ["vnfb_hbl_41","vnfb_hbl_42"],
+          ["vnfb_hbl_41","vnfb_hbl_43"],
+          ["vnfb_hbl_41","vnfb_hbl_44"],
+          ["vnfb_hbl_41","vnfb_hbl_45"],
+          ["vnfb_hbl_41","vnfb_hbl_46"],
+          ["vnfb_hbl_41","vnfb_hbl_47"],
+          
+          ["vnfb_hbl_42","vnfb_hbl_43"],
+          ["vnfb_hbl_42","vnfb_hbl_44"],
+          ["vnfb_hbl_42","vnfb_hbl_45"],
+          ["vnfb_hbl_42","vnfb_hbl_46"],
+          ["vnfb_hbl_42","vnfb_hbl_47"],
+          
+          ["vnfb_hbl_43","vnfb_hbl_44"],
+          ["vnfb_hbl_43","vnfb_hbl_45"],
+          ["vnfb_hbl_43","vnfb_hbl_46"],
+          ["vnfb_hbl_43","vnfb_hbl_47"],
+          
+          ["vnfb_hbl_44","vnfb_hbl_45"],
+          ["vnfb_hbl_44","vnfb_hbl_46"],
+          ["vnfb_hbl_44","vnfb_hbl_47"],
+          
+          ["vnfb_hbl_45","vnfb_hbl_46"],
+          ["vnfb_hbl_45","vnfb_hbl_47"],
+          
+          ["vnfb_hbl_46","vnfb_hbl_47"],
+
+
+          ["vnfb_hbl_50","vnfb_hbl_51"],
+          ["vnfb_hbl_50","vnfb_hbl_52"],
+          ["vnfb_hbl_50","vnfb_hbl_53"],
+          ["vnfb_hbl_50","vnfb_hbl_54"],
+          ["vnfb_hbl_50","vnfb_hbl_55"],
+          ["vnfb_hbl_50","vnfb_hbl_56"],
+          ["vnfb_hbl_50","vnfb_hbl_57"],
+          
+          ["vnfb_hbl_51","vnfb_hbl_52"],
+          ["vnfb_hbl_51","vnfb_hbl_53"],
+          ["vnfb_hbl_51","vnfb_hbl_54"],
+          ["vnfb_hbl_51","vnfb_hbl_55"],
+          ["vnfb_hbl_51","vnfb_hbl_56"],
+          ["vnfb_hbl_51","vnfb_hbl_57"],
+          
+          ["vnfb_hbl_52","vnfb_hbl_53"],
+          ["vnfb_hbl_52","vnfb_hbl_54"],
+          ["vnfb_hbl_52","vnfb_hbl_55"],
+          ["vnfb_hbl_52","vnfb_hbl_56"],
+          ["vnfb_hbl_52","vnfb_hbl_57"],
+          
+          ["vnfb_hbl_53","vnfb_hbl_54"],
+          ["vnfb_hbl_53","vnfb_hbl_55"],
+          ["vnfb_hbl_53","vnfb_hbl_56"],
+          ["vnfb_hbl_53","vnfb_hbl_57"],
+          
+          ["vnfb_hbl_54","vnfb_hbl_55"],
+          ["vnfb_hbl_54","vnfb_hbl_56"],
+          ["vnfb_hbl_54","vnfb_hbl_57"],
+          
+          ["vnfb_hbl_55","vnfb_hbl_56"],
+          ["vnfb_hbl_55","vnfb_hbl_57"],
+          
+          ["vnfb_hbl_56","vnfb_hbl_57"],
+
+
+
+
+
+	//upper
+
+          ["vnfb_hbl_100","vnfb_hbl_101"],
+          ["vnfb_hbl_100","vnfb_hbl_102"],
+          ["vnfb_hbl_100","vnfb_hbl_103"],
+          ["vnfb_hbl_100","vnfb_hbl_104"],
+          ["vnfb_hbl_100","vnfb_hbl_105"],
+          ["vnfb_hbl_100","vnfb_hbl_106"],
+          ["vnfb_hbl_100","vnfb_hbl_107"],
+          
+          ["vnfb_hbl_101","vnfb_hbl_102"],
+          ["vnfb_hbl_101","vnfb_hbl_103"],
+          ["vnfb_hbl_101","vnfb_hbl_104"],
+          ["vnfb_hbl_101","vnfb_hbl_105"],
+          ["vnfb_hbl_101","vnfb_hbl_106"],
+          ["vnfb_hbl_101","vnfb_hbl_107"],
+          
+          ["vnfb_hbl_102","vnfb_hbl_103"],
+          ["vnfb_hbl_102","vnfb_hbl_104"],
+          ["vnfb_hbl_102","vnfb_hbl_105"],
+          ["vnfb_hbl_102","vnfb_hbl_106"],
+          ["vnfb_hbl_102","vnfb_hbl_107"],
+          
+          ["vnfb_hbl_103","vnfb_hbl_104"],
+          ["vnfb_hbl_103","vnfb_hbl_105"],
+          ["vnfb_hbl_103","vnfb_hbl_106"],
+          ["vnfb_hbl_103","vnfb_hbl_107"],
+          
+          ["vnfb_hbl_104","vnfb_hbl_105"],
+          ["vnfb_hbl_104","vnfb_hbl_106"],
+          ["vnfb_hbl_104","vnfb_hbl_107"],
+          
+          ["vnfb_hbl_105","vnfb_hbl_106"],
+          ["vnfb_hbl_105","vnfb_hbl_107"],
+          
+          ["vnfb_hbl_106","vnfb_hbl_107"],
+
+
+          ["vnfb_hbl_110","vnfb_hbl_111"],
+          ["vnfb_hbl_110","vnfb_hbl_112"],
+          ["vnfb_hbl_110","vnfb_hbl_113"],
+          ["vnfb_hbl_110","vnfb_hbl_114"],
+          ["vnfb_hbl_110","vnfb_hbl_115"],
+          ["vnfb_hbl_110","vnfb_hbl_116"],
+          ["vnfb_hbl_110","vnfb_hbl_117"],
+          
+          ["vnfb_hbl_111","vnfb_hbl_112"],
+          ["vnfb_hbl_111","vnfb_hbl_113"],
+          ["vnfb_hbl_111","vnfb_hbl_114"],
+          ["vnfb_hbl_111","vnfb_hbl_115"],
+          ["vnfb_hbl_111","vnfb_hbl_116"],
+          ["vnfb_hbl_111","vnfb_hbl_117"],
+          
+          ["vnfb_hbl_112","vnfb_hbl_113"],
+          ["vnfb_hbl_112","vnfb_hbl_114"],
+          ["vnfb_hbl_112","vnfb_hbl_115"],
+          ["vnfb_hbl_112","vnfb_hbl_116"],
+          ["vnfb_hbl_112","vnfb_hbl_117"],
+          
+          ["vnfb_hbl_113","vnfb_hbl_114"],
+          ["vnfb_hbl_113","vnfb_hbl_115"],
+          ["vnfb_hbl_113","vnfb_hbl_116"],
+          ["vnfb_hbl_113","vnfb_hbl_117"],
+          
+          ["vnfb_hbl_114","vnfb_hbl_115"],
+          ["vnfb_hbl_114","vnfb_hbl_116"],
+          ["vnfb_hbl_114","vnfb_hbl_117"],
+          
+          ["vnfb_hbl_115","vnfb_hbl_116"],
+          ["vnfb_hbl_115","vnfb_hbl_117"],
+          
+          ["vnfb_hbl_116","vnfb_hbl_117"],
+
+
+
+
+          ["vnfb_hbl_140","vnfb_hbl_141"],
+          ["vnfb_hbl_140","vnfb_hbl_142"],
+          ["vnfb_hbl_140","vnfb_hbl_143"],
+          ["vnfb_hbl_140","vnfb_hbl_144"],
+          ["vnfb_hbl_140","vnfb_hbl_145"],
+          ["vnfb_hbl_140","vnfb_hbl_146"],
+          ["vnfb_hbl_140","vnfb_hbl_147"],
+          
+          ["vnfb_hbl_141","vnfb_hbl_142"],
+          ["vnfb_hbl_141","vnfb_hbl_143"],
+          ["vnfb_hbl_141","vnfb_hbl_144"],
+          ["vnfb_hbl_141","vnfb_hbl_145"],
+          ["vnfb_hbl_141","vnfb_hbl_146"],
+          ["vnfb_hbl_141","vnfb_hbl_147"],
+          
+          ["vnfb_hbl_142","vnfb_hbl_143"],
+          ["vnfb_hbl_142","vnfb_hbl_144"],
+          ["vnfb_hbl_142","vnfb_hbl_145"],
+          ["vnfb_hbl_142","vnfb_hbl_146"],
+          ["vnfb_hbl_142","vnfb_hbl_147"],
+          
+          ["vnfb_hbl_143","vnfb_hbl_144"],
+          ["vnfb_hbl_143","vnfb_hbl_145"],
+          ["vnfb_hbl_143","vnfb_hbl_146"],
+          ["vnfb_hbl_143","vnfb_hbl_147"],
+          
+          ["vnfb_hbl_144","vnfb_hbl_145"],
+          ["vnfb_hbl_144","vnfb_hbl_146"],
+          ["vnfb_hbl_144","vnfb_hbl_147"],
+          
+          ["vnfb_hbl_145","vnfb_hbl_146"],
+          ["vnfb_hbl_145","vnfb_hbl_147"],
+          
+          ["vnfb_hbl_146","vnfb_hbl_147"],
+
+
+          ["vnfb_hbl_150","vnfb_hbl_151"],
+          ["vnfb_hbl_150","vnfb_hbl_152"],
+          ["vnfb_hbl_150","vnfb_hbl_153"],
+          ["vnfb_hbl_150","vnfb_hbl_154"],
+          ["vnfb_hbl_150","vnfb_hbl_155"],
+          ["vnfb_hbl_150","vnfb_hbl_156"],
+          ["vnfb_hbl_150","vnfb_hbl_157"],
+          
+          ["vnfb_hbl_151","vnfb_hbl_152"],
+          ["vnfb_hbl_151","vnfb_hbl_153"],
+          ["vnfb_hbl_151","vnfb_hbl_154"],
+          ["vnfb_hbl_151","vnfb_hbl_155"],
+          ["vnfb_hbl_151","vnfb_hbl_156"],
+          ["vnfb_hbl_151","vnfb_hbl_157"],
+          
+          ["vnfb_hbl_152","vnfb_hbl_153"],
+          ["vnfb_hbl_152","vnfb_hbl_154"],
+          ["vnfb_hbl_152","vnfb_hbl_155"],
+          ["vnfb_hbl_152","vnfb_hbl_156"],
+          ["vnfb_hbl_152","vnfb_hbl_157"],
+          
+          ["vnfb_hbl_153","vnfb_hbl_154"],
+          ["vnfb_hbl_153","vnfb_hbl_155"],
+          ["vnfb_hbl_153","vnfb_hbl_156"],
+          ["vnfb_hbl_153","vnfb_hbl_157"],
+          
+          ["vnfb_hbl_154","vnfb_hbl_155"],
+          ["vnfb_hbl_154","vnfb_hbl_156"],
+          ["vnfb_hbl_154","vnfb_hbl_157"],
+          
+          ["vnfb_hbl_155","vnfb_hbl_156"],
+          ["vnfb_hbl_155","vnfb_hbl_157"],
+          
+          ["vnfb_hbl_156","vnfb_hbl_157"],
+
+
+
+          {"beamSpring":210000,"beamDamp":195},
+          {"beamDeform":"5000","beamStrength":"5500"},
+	  {"breakGroup":"vnfb_haybale1"},
+	  {"breakGroupType":0},
+
+          ["vnfb_hbl_00","cf15rr"],
+          ["vnfb_hbl_00","cf15r"],
+          ["vnfb_hbl_00","cf14rr"],
+          ["vnfb_hbl_00","cf14r"],
+          ["vnfb_hbl_01","cf15rr"],
+          ["vnfb_hbl_01","cf15r"],
+          ["vnfb_hbl_01","cf14rr"],
+          ["vnfb_hbl_01","cf14r"],
+          ["vnfb_hbl_02","cf15rr"],
+          ["vnfb_hbl_02","cf15r"],
+          ["vnfb_hbl_02","cf14rr"],
+          ["vnfb_hbl_02","cf14r"],
+          ["vnfb_hbl_03","cf15rr"],
+          ["vnfb_hbl_03","cf15r"],
+          ["vnfb_hbl_03","cf14rr"],
+          ["vnfb_hbl_03","cf14r"],
+
+          ["vnfb_hbl_04","cf14rr"],
+          ["vnfb_hbl_04","cf14r"],
+          ["vnfb_hbl_04","cf13rr"],
+          ["vnfb_hbl_04","cf13r"],
+          ["vnfb_hbl_05","cf14rr"],
+          ["vnfb_hbl_05","cf14r"],
+          ["vnfb_hbl_05","cf13rr"],
+          ["vnfb_hbl_05","cf13r"],
+          ["vnfb_hbl_06","cf14rr"],
+          ["vnfb_hbl_06","cf14r"],
+          ["vnfb_hbl_06","cf13rr"],
+          ["vnfb_hbl_06","cf13r"],
+          ["vnfb_hbl_07","cf14rr"],
+          ["vnfb_hbl_07","cf14r"],
+          ["vnfb_hbl_07","cf13rr"],
+          ["vnfb_hbl_07","cf13r"],
+
+	  {"breakGroup":"vnfb_haybale2"},
+	  {"breakGroupType":0},
+
+          ["vnfb_hbl_10","cf13rr"],
+          ["vnfb_hbl_10","cf13r"],
+          ["vnfb_hbl_10","cf12rr"],
+          ["vnfb_hbl_10","cf12r"],
+          ["vnfb_hbl_11","cf13rr"],
+          ["vnfb_hbl_11","cf13r"],
+          ["vnfb_hbl_11","cf12rr"],
+          ["vnfb_hbl_11","cf12r"],
+          ["vnfb_hbl_12","cf13rr"],
+          ["vnfb_hbl_12","cf13r"],
+          ["vnfb_hbl_12","cf12rr"],
+          ["vnfb_hbl_12","cf12r"],
+          ["vnfb_hbl_13","cf13rr"],
+          ["vnfb_hbl_13","cf13r"],
+          ["vnfb_hbl_13","cf12rr"],
+          ["vnfb_hbl_13","cf12r"],
+
+          ["vnfb_hbl_14","cf12rr"],
+          ["vnfb_hbl_14","cf12r"],
+          ["vnfb_hbl_14","cf11rr"],
+          ["vnfb_hbl_14","cf11r"],
+          ["vnfb_hbl_15","cf12rr"],
+          ["vnfb_hbl_15","cf12r"],
+          ["vnfb_hbl_15","cf11rr"],
+          ["vnfb_hbl_15","cf11r"],
+          ["vnfb_hbl_16","cf12rr"],
+          ["vnfb_hbl_16","cf12r"],
+          ["vnfb_hbl_16","cf11rr"],
+          ["vnfb_hbl_16","cf11r"],
+          ["vnfb_hbl_17","cf12rr"],
+          ["vnfb_hbl_17","cf12r"],
+          ["vnfb_hbl_17","cf11rr"],
+          ["vnfb_hbl_17","cf11r"],
+
+
+
+
+	  {"breakGroup":"vnfb_haybale5"},
+	  {"breakGroupType":0},
+
+          ["vnfb_hbl_40","cf15ll"],
+          ["vnfb_hbl_40","cf15l"],
+          ["vnfb_hbl_40","cf14ll"],
+          ["vnfb_hbl_40","cf14l"],
+          ["vnfb_hbl_41","cf15ll"],
+          ["vnfb_hbl_41","cf15l"],
+          ["vnfb_hbl_41","cf14ll"],
+          ["vnfb_hbl_41","cf14l"],
+          ["vnfb_hbl_42","cf15ll"],
+          ["vnfb_hbl_42","cf15l"],
+          ["vnfb_hbl_42","cf14ll"],
+          ["vnfb_hbl_42","cf14l"],
+          ["vnfb_hbl_43","cf15ll"],
+          ["vnfb_hbl_43","cf15l"],
+          ["vnfb_hbl_43","cf14ll"],
+          ["vnfb_hbl_43","cf14l"],
+
+          ["vnfb_hbl_44","cf14ll"],
+          ["vnfb_hbl_44","cf14l"],
+          ["vnfb_hbl_44","cf13ll"],
+          ["vnfb_hbl_44","cf13l"],
+          ["vnfb_hbl_45","cf14ll"],
+          ["vnfb_hbl_45","cf14l"],
+          ["vnfb_hbl_45","cf13ll"],
+          ["vnfb_hbl_45","cf13l"],
+          ["vnfb_hbl_46","cf14ll"],
+          ["vnfb_hbl_46","cf14l"],
+          ["vnfb_hbl_46","cf13ll"],
+          ["vnfb_hbl_46","cf13l"],
+          ["vnfb_hbl_47","cf14ll"],
+          ["vnfb_hbl_47","cf14l"],
+          ["vnfb_hbl_47","cf13ll"],
+          ["vnfb_hbl_47","cf13l"],
+
+	  {"breakGroup":"vnfb_haybale6"},
+	  {"breakGroupType":0},
+
+          ["vnfb_hbl_50","cf13ll"],
+          ["vnfb_hbl_50","cf13l"],
+          ["vnfb_hbl_50","cf12ll"],
+          ["vnfb_hbl_50","cf12l"],
+          ["vnfb_hbl_51","cf13ll"],
+          ["vnfb_hbl_51","cf13l"],
+          ["vnfb_hbl_51","cf12ll"],
+          ["vnfb_hbl_51","cf12l"],
+          ["vnfb_hbl_52","cf13ll"],
+          ["vnfb_hbl_52","cf13l"],
+          ["vnfb_hbl_52","cf12ll"],
+          ["vnfb_hbl_52","cf12l"],
+          ["vnfb_hbl_53","cf13ll"],
+          ["vnfb_hbl_53","cf13l"],
+          ["vnfb_hbl_53","cf12ll"],
+          ["vnfb_hbl_53","cf12l"],
+
+          ["vnfb_hbl_54","cf12ll"],
+          ["vnfb_hbl_54","cf12l"],
+          ["vnfb_hbl_54","cf11ll"],
+          ["vnfb_hbl_54","cf11l"],
+          ["vnfb_hbl_55","cf12ll"],
+          ["vnfb_hbl_55","cf12l"],
+          ["vnfb_hbl_55","cf11ll"],
+          ["vnfb_hbl_55","cf11l"],
+          ["vnfb_hbl_56","cf12ll"],
+          ["vnfb_hbl_56","cf12l"],
+          ["vnfb_hbl_56","cf11ll"],
+          ["vnfb_hbl_56","cf11l"],
+          ["vnfb_hbl_57","cf12ll"],
+          ["vnfb_hbl_57","cf12l"],
+          ["vnfb_hbl_57","cf11ll"],
+          ["vnfb_hbl_57","cf11l"],
+
+
+	  {"breakGroup":"vnfb_haybale11"},
+
+          ["vnfb_hbl_100","vnfb_hbl_00"],
+          ["vnfb_hbl_100","vnfb_hbl_01"],
+          ["vnfb_hbl_100","vnfb_hbl_04"],
+          ["vnfb_hbl_100","vnfb_hbl_05"],
+          ["vnfb_hbl_101","vnfb_hbl_00"],
+          ["vnfb_hbl_101","vnfb_hbl_01"],
+          ["vnfb_hbl_101","vnfb_hbl_04"],
+          ["vnfb_hbl_101","vnfb_hbl_05"],
+          ["vnfb_hbl_102","vnfb_hbl_00"],
+          ["vnfb_hbl_102","vnfb_hbl_01"],
+          ["vnfb_hbl_102","vnfb_hbl_04"],
+          ["vnfb_hbl_102","vnfb_hbl_05"],
+          ["vnfb_hbl_103","vnfb_hbl_00"],
+          ["vnfb_hbl_103","vnfb_hbl_01"],
+          ["vnfb_hbl_103","vnfb_hbl_04"],
+          ["vnfb_hbl_103","vnfb_hbl_05"],
+
+          ["vnfb_hbl_104","vnfb_hbl_00"],
+          ["vnfb_hbl_104","vnfb_hbl_01"],
+          ["vnfb_hbl_104","vnfb_hbl_04"],
+          ["vnfb_hbl_104","vnfb_hbl_05"],
+          ["vnfb_hbl_105","vnfb_hbl_00"],
+          ["vnfb_hbl_105","vnfb_hbl_01"],
+          ["vnfb_hbl_105","vnfb_hbl_04"],
+          ["vnfb_hbl_105","vnfb_hbl_05"],
+          ["vnfb_hbl_106","vnfb_hbl_00"],
+          ["vnfb_hbl_106","vnfb_hbl_01"],
+          ["vnfb_hbl_106","vnfb_hbl_04"],
+          ["vnfb_hbl_106","vnfb_hbl_05"],
+          ["vnfb_hbl_107","vnfb_hbl_00"],
+          ["vnfb_hbl_107","vnfb_hbl_01"],
+          ["vnfb_hbl_107","vnfb_hbl_04"],
+          ["vnfb_hbl_107","vnfb_hbl_05"],
+
+
+	  {"breakGroup":"vnfb_haybale12"},
+
+          ["vnfb_hbl_110","vnfb_hbl_10"],
+          ["vnfb_hbl_110","vnfb_hbl_11"],
+          ["vnfb_hbl_110","vnfb_hbl_14"],
+          ["vnfb_hbl_110","vnfb_hbl_15"],
+          ["vnfb_hbl_111","vnfb_hbl_10"],
+          ["vnfb_hbl_111","vnfb_hbl_11"],
+          ["vnfb_hbl_111","vnfb_hbl_14"],
+          ["vnfb_hbl_111","vnfb_hbl_15"],
+          ["vnfb_hbl_112","vnfb_hbl_10"],
+          ["vnfb_hbl_112","vnfb_hbl_11"],
+          ["vnfb_hbl_112","vnfb_hbl_14"],
+          ["vnfb_hbl_112","vnfb_hbl_15"],
+          ["vnfb_hbl_113","vnfb_hbl_10"],
+          ["vnfb_hbl_113","vnfb_hbl_11"],
+          ["vnfb_hbl_113","vnfb_hbl_14"],
+          ["vnfb_hbl_113","vnfb_hbl_15"],
+
+          ["vnfb_hbl_114","vnfb_hbl_10"],
+          ["vnfb_hbl_114","vnfb_hbl_11"],
+          ["vnfb_hbl_114","vnfb_hbl_14"],
+          ["vnfb_hbl_114","vnfb_hbl_15"],
+          ["vnfb_hbl_115","vnfb_hbl_10"],
+          ["vnfb_hbl_115","vnfb_hbl_11"],
+          ["vnfb_hbl_115","vnfb_hbl_14"],
+          ["vnfb_hbl_115","vnfb_hbl_15"],
+          ["vnfb_hbl_116","vnfb_hbl_10"],
+          ["vnfb_hbl_116","vnfb_hbl_11"],
+          ["vnfb_hbl_116","vnfb_hbl_14"],
+          ["vnfb_hbl_116","vnfb_hbl_15"],
+          ["vnfb_hbl_117","vnfb_hbl_10"],
+          ["vnfb_hbl_117","vnfb_hbl_11"],
+          ["vnfb_hbl_117","vnfb_hbl_14"],
+          ["vnfb_hbl_117","vnfb_hbl_15"],
+
+	  {"breakGroup":"vnfb_haybale14"},
+
+          ["vnfb_hbl_140","vnfb_hbl_40"],
+          ["vnfb_hbl_140","vnfb_hbl_42"],
+          ["vnfb_hbl_140","vnfb_hbl_44"],
+          ["vnfb_hbl_140","vnfb_hbl_45"],
+          ["vnfb_hbl_141","vnfb_hbl_40"],
+          ["vnfb_hbl_141","vnfb_hbl_42"],
+          ["vnfb_hbl_141","vnfb_hbl_44"],
+          ["vnfb_hbl_141","vnfb_hbl_45"],
+          ["vnfb_hbl_142","vnfb_hbl_40"],
+          ["vnfb_hbl_142","vnfb_hbl_42"],
+          ["vnfb_hbl_142","vnfb_hbl_44"],
+          ["vnfb_hbl_142","vnfb_hbl_45"],
+          ["vnfb_hbl_143","vnfb_hbl_40"],
+          ["vnfb_hbl_143","vnfb_hbl_42"],
+          ["vnfb_hbl_143","vnfb_hbl_44"],
+          ["vnfb_hbl_143","vnfb_hbl_45"],
+
+          ["vnfb_hbl_144","vnfb_hbl_40"],
+          ["vnfb_hbl_144","vnfb_hbl_42"],
+          ["vnfb_hbl_144","vnfb_hbl_44"],
+          ["vnfb_hbl_144","vnfb_hbl_45"],
+          ["vnfb_hbl_145","vnfb_hbl_40"],
+          ["vnfb_hbl_145","vnfb_hbl_42"],
+          ["vnfb_hbl_145","vnfb_hbl_44"],
+          ["vnfb_hbl_145","vnfb_hbl_45"],
+          ["vnfb_hbl_146","vnfb_hbl_40"],
+          ["vnfb_hbl_146","vnfb_hbl_42"],
+          ["vnfb_hbl_146","vnfb_hbl_44"],
+          ["vnfb_hbl_146","vnfb_hbl_45"],
+          ["vnfb_hbl_147","vnfb_hbl_40"],
+          ["vnfb_hbl_147","vnfb_hbl_42"],
+          ["vnfb_hbl_147","vnfb_hbl_44"],
+          ["vnfb_hbl_147","vnfb_hbl_45"],
+
+
+
+	  {"breakGroup":"vnfb_haybale15"},
+
+          ["vnfb_hbl_150","vnfb_hbl_50"],
+          ["vnfb_hbl_150","vnfb_hbl_52"],
+          ["vnfb_hbl_150","vnfb_hbl_54"],
+          ["vnfb_hbl_150","vnfb_hbl_55"],
+          ["vnfb_hbl_151","vnfb_hbl_50"],
+          ["vnfb_hbl_151","vnfb_hbl_52"],
+          ["vnfb_hbl_151","vnfb_hbl_54"],
+          ["vnfb_hbl_151","vnfb_hbl_55"],
+          ["vnfb_hbl_152","vnfb_hbl_50"],
+          ["vnfb_hbl_152","vnfb_hbl_52"],
+          ["vnfb_hbl_152","vnfb_hbl_54"],
+          ["vnfb_hbl_152","vnfb_hbl_55"],
+          ["vnfb_hbl_153","vnfb_hbl_50"],
+          ["vnfb_hbl_153","vnfb_hbl_52"],
+          ["vnfb_hbl_153","vnfb_hbl_54"],
+          ["vnfb_hbl_153","vnfb_hbl_55"],
+
+          ["vnfb_hbl_154","vnfb_hbl_50"],
+          ["vnfb_hbl_154","vnfb_hbl_52"],
+          ["vnfb_hbl_154","vnfb_hbl_54"],
+          ["vnfb_hbl_154","vnfb_hbl_55"],
+          ["vnfb_hbl_155","vnfb_hbl_50"],
+          ["vnfb_hbl_155","vnfb_hbl_52"],
+          ["vnfb_hbl_155","vnfb_hbl_54"],
+          ["vnfb_hbl_155","vnfb_hbl_55"],
+          ["vnfb_hbl_156","vnfb_hbl_50"],
+          ["vnfb_hbl_156","vnfb_hbl_52"],
+          ["vnfb_hbl_156","vnfb_hbl_54"],
+          ["vnfb_hbl_156","vnfb_hbl_55"],
+          ["vnfb_hbl_157","vnfb_hbl_50"],
+          ["vnfb_hbl_157","vnfb_hbl_52"],
+          ["vnfb_hbl_157","vnfb_hbl_54"],
+          ["vnfb_hbl_157","vnfb_hbl_55"],
+
+	//between bales
+          {"beamSpring":20000,"beamDamp":120},
+          {"beamDeform":"4000","beamStrength":"4500"},
+	  {"breakGroup":"vnfb_stack1"},
+	  {"breakGroupType":0},
+
+          ["vnfb_hbl_100","vnfb_hbl_140"],
+          ["vnfb_hbl_104","vnfb_hbl_144"],
+          ["vnfb_hbl_100","vnfb_hbl_142"],
+          ["vnfb_hbl_104","vnfb_hbl_146"],
+          ["vnfb_hbl_102","vnfb_hbl_140"],
+          ["vnfb_hbl_106","vnfb_hbl_145"],
+
+	  {"breakGroup":"vnfb_stack2"},
+	  {"breakGroupType":0},
+
+          ["vnfb_hbl_110","vnfb_hbl_150"],
+          ["vnfb_hbl_114","vnfb_hbl_154"],
+          ["vnfb_hbl_110","vnfb_hbl_152"],
+          ["vnfb_hbl_114","vnfb_hbl_156"],
+          ["vnfb_hbl_112","vnfb_hbl_150"],
+          ["vnfb_hbl_116","vnfb_hbl_155"],
+
+
+	  {"breakGroup":""},
+          
+        
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    
+    
+    "triangles": 
+    [
+        ["id1:","id2:","id3:"],
+	//lower
+	//right
+        ["vnfb_hbl_05","vnfb_hbl_06","vnfb_hbl_07"],
+        ["vnfb_hbl_05","vnfb_hbl_04","vnfb_hbl_06"],
+        
+        ["vnfb_hbl_04","vnfb_hbl_02","vnfb_hbl_06"],
+        ["vnfb_hbl_04","vnfb_hbl_00","vnfb_hbl_02"],
+        
+        ["vnfb_hbl_00","vnfb_hbl_03","vnfb_hbl_02"],
+        ["vnfb_hbl_00","vnfb_hbl_01","vnfb_hbl_03"],
+        
+        ["vnfb_hbl_01","vnfb_hbl_07","vnfb_hbl_03"],
+        ["vnfb_hbl_01","vnfb_hbl_05","vnfb_hbl_07"],
+        
+        ["vnfb_hbl_00","vnfb_hbl_05","vnfb_hbl_01"],
+        ["vnfb_hbl_00","vnfb_hbl_04","vnfb_hbl_05"],
+        
+        ["vnfb_hbl_02","vnfb_hbl_07","vnfb_hbl_06"],
+        ["vnfb_hbl_02","vnfb_hbl_03","vnfb_hbl_07"],
+
+
+        ["vnfb_hbl_15","vnfb_hbl_16","vnfb_hbl_17"],
+        ["vnfb_hbl_15","vnfb_hbl_14","vnfb_hbl_16"],
+        
+        ["vnfb_hbl_14","vnfb_hbl_12","vnfb_hbl_16"],
+        ["vnfb_hbl_14","vnfb_hbl_10","vnfb_hbl_12"],
+        
+        ["vnfb_hbl_10","vnfb_hbl_13","vnfb_hbl_12"],
+        ["vnfb_hbl_10","vnfb_hbl_11","vnfb_hbl_13"],
+        
+        ["vnfb_hbl_11","vnfb_hbl_17","vnfb_hbl_13"],
+        ["vnfb_hbl_11","vnfb_hbl_15","vnfb_hbl_17"],
+        
+        ["vnfb_hbl_10","vnfb_hbl_15","vnfb_hbl_11"],
+        ["vnfb_hbl_10","vnfb_hbl_14","vnfb_hbl_15"],
+        
+        ["vnfb_hbl_12","vnfb_hbl_17","vnfb_hbl_16"],
+        ["vnfb_hbl_12","vnfb_hbl_13","vnfb_hbl_17"],
+
+	//left
+        ["vnfb_hbl_45","vnfb_hbl_47","vnfb_hbl_46"],
+        ["vnfb_hbl_45","vnfb_hbl_46","vnfb_hbl_44"],
+        
+        ["vnfb_hbl_44","vnfb_hbl_46","vnfb_hbl_42"],
+        ["vnfb_hbl_44","vnfb_hbl_42","vnfb_hbl_40"],
+        
+        ["vnfb_hbl_40","vnfb_hbl_42","vnfb_hbl_43"],
+        ["vnfb_hbl_40","vnfb_hbl_43","vnfb_hbl_41"],
+        
+        ["vnfb_hbl_41","vnfb_hbl_43","vnfb_hbl_47"],
+        ["vnfb_hbl_41","vnfb_hbl_47","vnfb_hbl_45"],
+        
+        ["vnfb_hbl_40","vnfb_hbl_41","vnfb_hbl_45"],
+        ["vnfb_hbl_40","vnfb_hbl_45","vnfb_hbl_44"],
+        
+        ["vnfb_hbl_42","vnfb_hbl_46","vnfb_hbl_47"],
+        ["vnfb_hbl_42","vnfb_hbl_47","vnfb_hbl_43"],
+
+
+
+        ["vnfb_hbl_55","vnfb_hbl_57","vnfb_hbl_56"],
+        ["vnfb_hbl_55","vnfb_hbl_56","vnfb_hbl_54"],
+        
+        ["vnfb_hbl_54","vnfb_hbl_56","vnfb_hbl_52"],
+        ["vnfb_hbl_54","vnfb_hbl_52","vnfb_hbl_50"],
+        
+        ["vnfb_hbl_50","vnfb_hbl_52","vnfb_hbl_53"],
+        ["vnfb_hbl_50","vnfb_hbl_53","vnfb_hbl_51"],
+        
+        ["vnfb_hbl_51","vnfb_hbl_53","vnfb_hbl_57"],
+        ["vnfb_hbl_51","vnfb_hbl_57","vnfb_hbl_55"],
+        
+        ["vnfb_hbl_50","vnfb_hbl_51","vnfb_hbl_55"],
+        ["vnfb_hbl_50","vnfb_hbl_55","vnfb_hbl_54"],
+        
+        ["vnfb_hbl_52","vnfb_hbl_56","vnfb_hbl_57"],
+        ["vnfb_hbl_52","vnfb_hbl_57","vnfb_hbl_53"],
+
+
+
+
+
+	//upper
+	//right
+        ["vnfb_hbl_105","vnfb_hbl_106","vnfb_hbl_107"],
+        ["vnfb_hbl_105","vnfb_hbl_104","vnfb_hbl_106"],
+        
+        ["vnfb_hbl_104","vnfb_hbl_102","vnfb_hbl_106"],
+        ["vnfb_hbl_104","vnfb_hbl_100","vnfb_hbl_102"],
+        
+        ["vnfb_hbl_100","vnfb_hbl_103","vnfb_hbl_102"],
+        ["vnfb_hbl_100","vnfb_hbl_101","vnfb_hbl_103"],
+        
+        ["vnfb_hbl_101","vnfb_hbl_107","vnfb_hbl_103"],
+        ["vnfb_hbl_101","vnfb_hbl_105","vnfb_hbl_107"],
+        
+        ["vnfb_hbl_100","vnfb_hbl_105","vnfb_hbl_101"],
+        ["vnfb_hbl_100","vnfb_hbl_104","vnfb_hbl_105"],
+        
+        ["vnfb_hbl_102","vnfb_hbl_107","vnfb_hbl_106"],
+        ["vnfb_hbl_102","vnfb_hbl_103","vnfb_hbl_107"],
+
+
+        ["vnfb_hbl_115","vnfb_hbl_116","vnfb_hbl_117"],
+        ["vnfb_hbl_115","vnfb_hbl_114","vnfb_hbl_116"],
+        
+        ["vnfb_hbl_114","vnfb_hbl_112","vnfb_hbl_116"],
+        ["vnfb_hbl_114","vnfb_hbl_110","vnfb_hbl_112"],
+        
+        ["vnfb_hbl_110","vnfb_hbl_113","vnfb_hbl_112"],
+        ["vnfb_hbl_110","vnfb_hbl_111","vnfb_hbl_113"],
+        
+        ["vnfb_hbl_111","vnfb_hbl_117","vnfb_hbl_113"],
+        ["vnfb_hbl_111","vnfb_hbl_115","vnfb_hbl_117"],
+        
+        ["vnfb_hbl_110","vnfb_hbl_115","vnfb_hbl_111"],
+        ["vnfb_hbl_110","vnfb_hbl_114","vnfb_hbl_115"],
+        
+        ["vnfb_hbl_112","vnfb_hbl_117","vnfb_hbl_116"],
+        ["vnfb_hbl_112","vnfb_hbl_113","vnfb_hbl_117"],
+
+
+	//left
+        ["vnfb_hbl_145","vnfb_hbl_147","vnfb_hbl_146"],
+        ["vnfb_hbl_145","vnfb_hbl_146","vnfb_hbl_144"],
+        
+        ["vnfb_hbl_144","vnfb_hbl_146","vnfb_hbl_142"],
+        ["vnfb_hbl_144","vnfb_hbl_142","vnfb_hbl_140"],
+        
+        ["vnfb_hbl_140","vnfb_hbl_142","vnfb_hbl_143"],
+        ["vnfb_hbl_140","vnfb_hbl_143","vnfb_hbl_141"],
+        
+        ["vnfb_hbl_141","vnfb_hbl_143","vnfb_hbl_147"],
+        ["vnfb_hbl_141","vnfb_hbl_147","vnfb_hbl_145"],
+        
+        ["vnfb_hbl_140","vnfb_hbl_141","vnfb_hbl_145"],
+        ["vnfb_hbl_140","vnfb_hbl_145","vnfb_hbl_144"],
+        
+        ["vnfb_hbl_142","vnfb_hbl_146","vnfb_hbl_147"],
+        ["vnfb_hbl_142","vnfb_hbl_147","vnfb_hbl_143"],
+
+
+
+        ["vnfb_hbl_155","vnfb_hbl_157","vnfb_hbl_156"],
+        ["vnfb_hbl_155","vnfb_hbl_156","vnfb_hbl_154"],
+        
+        ["vnfb_hbl_154","vnfb_hbl_156","vnfb_hbl_152"],
+        ["vnfb_hbl_154","vnfb_hbl_152","vnfb_hbl_150"],
+        
+        ["vnfb_hbl_150","vnfb_hbl_152","vnfb_hbl_153"],
+        ["vnfb_hbl_150","vnfb_hbl_153","vnfb_hbl_151"],
+        
+        ["vnfb_hbl_151","vnfb_hbl_153","vnfb_hbl_157"],
+        ["vnfb_hbl_151","vnfb_hbl_157","vnfb_hbl_155"],
+        
+        ["vnfb_hbl_150","vnfb_hbl_151","vnfb_hbl_155"],
+        ["vnfb_hbl_150","vnfb_hbl_155","vnfb_hbl_154"],
+        
+        ["vnfb_hbl_152","vnfb_hbl_156","vnfb_hbl_157"],
+        ["vnfb_hbl_152","vnfb_hbl_157","vnfb_hbl_153"],
+
+
+
+
+    ],
+}
+
+
+}

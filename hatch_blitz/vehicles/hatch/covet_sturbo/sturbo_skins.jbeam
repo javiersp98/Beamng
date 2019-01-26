@@ -1,0 +1,29 @@
+{
+"hatch_skin_blitzstock": {
+    "information":{
+        "authors":"Ninetynine",
+        "name":"Blitz Factory Stickers",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "blitz_stock",
+}
+"hatch_skin_blitzspecial": {
+    "information":{
+        "authors":"Ninetynine",
+        "name":"Blitz Special Factory Livery",
+        "value":1000,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "blitz_special",
+  }
+  "hatch_skin_blitzrace": {
+      "information":{
+          "authors":"Ninetynine",
+          "name":"Blitz Race Livery",
+          "value":2500,
+      }
+      "slotType" : "paint_design",
+      "globalSkin" : "blitz_race",
+    },
+}

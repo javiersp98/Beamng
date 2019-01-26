@@ -1,0 +1,29 @@
+{
+"pickup_fenderflare_AEP":{
+	"information":{
+	"authors":"FLyInG 2 YoUr SoUL",
+	"name":"Body Coloured Rear Fender Flares AEP",
+ 	},
+	"slotType":"pickup_fenderflare_R",
+	"flexbodies":[
+	["mesh","[group]:","nonFlexMaterials"],
+	["pickup_fenderflare_AEP",["pickup_bed"],[],{"pos":{"x":0,"y":0,"z":0}}],
+	],
+	"nodes":[
+	["id","posX","posY","posZ"],
+	{"nodeMaterial":"|NM_METAL"},
+	{"group":"pickup_bed"},
+	{"frictionCoef":0.5},
+	{"collision":true},
+	{"selfCollision":true},
+	{"nodeWeight":4.1},
+	["b7rr",-0.95,0.98,0.83],
+	["b7ll",0.95,0.98,0.83],
+	["b8rr",-1.01,1.49,0.91],
+	["b8ll",1.01,1.49,0.91],
+	["b9rr",-0.99,1.92,0.80],
+	["b9ll",0.99,1.92,0.80],
+	{"group":""},
+	],
+},
+}

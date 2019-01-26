@@ -1,0 +1,12 @@
+{
+"etk800_skin_gstripes": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stripes",
+        "value":3900,
+    },
+    "slotType" : "paint_design",
+    "skinName" : "stripes",
+  },
+}
+}

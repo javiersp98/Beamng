@@ -1,0 +1,30 @@
+{
+"Performance Class":"2",
+"Weight":735,
+"Fuel Type":"Gasoline",
+"Drivetrain":"RWD",
+"Value":5000,
+"Braking G":1.034,
+"TorquePeakRPM":"1700 - 2500",
+"Off-Road Score":46,
+"Description":"Modified Base model with 1100cc engine",
+"Configuration":"Herbie (M)",
+"Transmission":"Manual",
+"Induction Type":"NA",
+"Torque":92.5766,
+"0-60 mph":20.3,
+"Config Type":"Factory",
+"100-0 km/h":38,
+"Top Speed":32.7903,
+"Power":34.7652,
+"Propulsion":"ICE",
+"default_color":"Bianco Perla",
+"PowerPeakRPM":"2850 - 3450",
+"Weight/Power":21.6176,
+"60-0 mph":115.6,
+"Years":{
+  "min":1957,
+  "max":1963
+},
+"0-100 km/h":22.3
+}

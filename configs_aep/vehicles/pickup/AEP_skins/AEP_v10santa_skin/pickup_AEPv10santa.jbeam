@@ -1,0 +1,11 @@
+{
+"pickup_skin_AEPv10santa": {
+    "information":{
+        "authors":"Djplopper",
+        "name":"Santa Wagon Livery AEP",
+        "value":50,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "AEPv10santa",
+}
+}

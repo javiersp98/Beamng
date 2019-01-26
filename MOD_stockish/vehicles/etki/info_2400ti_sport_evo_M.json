@@ -1,0 +1,33 @@
+{
+"0-120 mph":13.7,
+"Performance Class":"8",
+"Drivetrain":"RWD",
+"100-200 km/h":14.8,
+"Weight":1475,
+"60-120 mph":8.9,
+"Configuration":"2400ti TTSport Evolution (M)",
+"Value":48500,
+"0-200 km/h":21.5,
+"TorquePeakRPM":"3600 - 5650",
+"0-100 km/h":6.7,
+"Off-Road Score":21,
+"0-100 mph":13.9,
+"Description":"Factory homologation model, with a Brigsby body kit and race suspension",
+"Transmission":"Manual",
+"60-100 mph":7.4,
+"0-60 mph":6.5,
+"Config Type":"Factory",
+"100-0 km/h":34.1,
+"PowerPeakRPM":5200,
+"Power":333.734,
+"Torque":442.032,
+"Top Speed":63.1091,
+"Braking G":1.153,
+"Weight/Power":4.42943,
+"60-0 mph":103.7,
+"Years":{
+  "min":1987,
+  "max":1989
+},
+"default_color":"Jet Black"
+}

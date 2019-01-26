@@ -1,0 +1,35 @@
+singleton Material("hatch.skin.AEPRtypeRace")
+{
+    mapTo = "hatch.skin.AEPRtypeRace";
+    colorPaletteMap[2] = "vehicles/hatch/AEP_skins/AEP_RtypeRace_skin/hatch_AEP_RtypeRace_palette_uv1.dds";
+    overlayMap[2] = "vehicles/hatch/AEP_skins/AEP_RtypeRace_skin/hatch_AEP_RtypeRace_skin.dds";
+    diffuseMap[2] = "vehicles/hatch/AEP_skins/AEP_Rtype_skin/hatch_c_AEP_Rtype.dds";
+    specularMap[2] = "vehicles/hatch/AEP_skins/AEP_Rtype_skin/hatch_s_AEP_Rtype";
+    normalMap[2] = "vehicles/hatch/hatch_n.dds";
+    diffuseMap[1] = "vehicles/hatch/AEP_skins/AEP_Rtype_skin/hatch_d_AEP_Rtype.dds";
+    specularMap[1] = "vehicles/hatch/AEP_skins/AEP_Rtype_skin/hatch_s_AEP_Rtype.dds";
+    normalMap[1] = "vehicles/hatch/hatch_n.dds";
+    diffuseMap[0] = "vehicles/common/null.dds";
+    specularMap[0] = "vehicles/common/null.dds";
+    normalMap[0] = "vehicles/hatch/hatch_n.dds";
+    specularPower[0] = "128";
+    pixelSpecular[0] = "1";
+    specularPower[1] = "32";
+    pixelSpecular[1] = "1";
+    specularPower[2] = "128";
+    pixelSpecular[2] = "1";
+    diffuseColor[0] = "1 1 1 1";
+    diffuseColor[1] = "1 1 1 1";
+    diffuseColor[2] = "1 1 1 1";
+    useAnisotropic[0] = "1";
+    useAnisotropic[1] = "1";
+    useAnisotropic[2] = "1";
+    castShadows = "1";
+    translucent = "1";
+    translucentBlendOp = "None";
+    alphaTest = "0";
+    alphaRef = "0";
+    dynamicCubemap = true;
+    instanceDiffuse[2] = true;
+    materialTag0 = "beamng"; materialTag1 = "vehicle";
+};

@@ -1,0 +1,38 @@
+{
+"sbr_licenseplate_F_fl": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front License Plate",
+        "value":0,
+    }
+    "slotType" : "sbr_licenseplate_F_fl",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate", ["sbr_bumper_F"],[],{"pos":{"x":0.0, "y":-2.01024, "z":0.38874}, "rot":{"x":3.899, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+    }
+    "sbr_licenseplate_F_sidemfl": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Side Mounted Front License Plate",
+            "value":0,
+        }
+        "slotType" : "sbr_licenseplate_F_fl",
+        "flexbodies": [
+             ["mesh", "[group]:", "nonFlexMaterials"],
+             ["licenseplate", ["sbr_bumper_F"],[],{"pos":{"x":-0.344, "y":-1.982, "z":0.37086}, "rot":{"x":0, "y":0, "z":-9.232}, "scale":{"x":1, "y":1, "z":1}}],
+        ],
+}
+"sbr_licenseplate_R_fl": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear License Plate",
+        "value":0,
+    }
+    "slotType" : "sbr_licenseplate_R_fl",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate", ["sbr_bumper_R"],[],{"pos":{"x":0.0, "y":2.16877, "z":0.41236}, "rot":{"x":3.899, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+}
+}

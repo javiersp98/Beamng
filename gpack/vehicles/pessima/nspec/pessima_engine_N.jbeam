@@ -1,0 +1,102 @@
+{
+"pessima_engine_ecu_NSPEC": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"NSPEC ECU",
+        "value":250,
+    }
+    "slotType" : "pessima_engine_ecu",
+    "mainEngine":{
+        "idleRPM":950,
+        "revLimiterRPM":7250,
+        "revLimiterType":"timeBased",
+        "revLimiterCutTime":0.15,
+    },
+    "vehicleController": {
+        "highShiftUpRPM":6600
+    },
+},
+"pessima_turbo_N": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"NSPEC Turbocharger",
+        "value":950,
+    }
+    "slotType" : "pessima_intake",
+    "turbocharger": {
+        "wastegateStart":13,
+        "wastegateLimit":15,
+        "maxExhaustPower": 5000,
+        "backPressureCoef": 0.000035,
+        "frictionCoef": 10.4,
+        "inertia":1.6,
+        "damageThresholdTemperature": 875,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -3.5],
+            [30000,     -0.5],
+            [60000,     7],
+            [90000,     11],
+            [150000,    15],
+            [200000,    19],
+            [250000,    24],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.0,    0.0],
+            [650,   0.2,   0.15],
+            [1400,  0.3,   0.23],
+            [2000,  0.36,    0.29],
+            [2500,  0.46,    0.39],
+            [3000,  0.78,    0.6],
+            [4000,  0.85,    0.8],
+            [5000,  0.85,    0.85],
+            [6000,  0.9,    0.85],
+            [7000,  0.95,    0.95],
+            [8000,  0.9,    1.0],
+        ],
+    },
+    "mainEngine":{
+        //turbocharger name
+        "turbocharger":"turbocharger",
+        "instantAfterFireCoef": 1,
+        "sustainedAfterFireCoef": 0.75,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["pessima_icpipe_intake", ["hatch_engine","hatch_intercooler","hatch_rad"]],
+        ["pessima_icpipe_turbo", ["hatch_engine","hatch_intercooler","hatch_rad"]],
+        ["pessima_turbo", ["hatch_engine"]],
+        ["pessima_intercooler", ["hatch_intercooler","hatch_rad"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"pessima_intercooler"},
+         {"nodeWeight":8},
+         ["interc", 0.0, -2.00, 0.35],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":501000,"beamDamp":100},
+          {"beamDeform":3000,"beamStrength":"FLT_MAX"},
+          ["interc","f13rr"],
+          ["interc","f13"],
+          ["interc","f13ll"],
+          ["interc","f11rr"],
+          ["interc","f11"],
+          ["interc","f11ll"],
+
+          {"beamDeform":3000,"beamStrength":16000},
+          ["interc","f18"],
+          ["interc","f18r"],
+          ["interc","f18l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+}

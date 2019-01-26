@@ -1,0 +1,110 @@
+{
+
+"hatch_transfer_case_AWD2": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"AWD Transfer Case",
+        "value":900,
+    },
+    "slotType" : "hatch_differential_F",
+	"slots": [
+        ["type", "default", "description"]
+        ["hatch_differential_F_CJD","hatch_differential_F_CJD", "Front Differential"],
+        ["hatch_differential_R_CJD","hatch_differential_R_CJD","Rear Differential"],
+    ],
+    "controller": [
+        ["fileName"],
+        ["viscotronic", {"transfercaseName":"transfercase"}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["splitShaft", "transfercase", "gearbox", 1, {"splitType":"viscous", "primaryOutputID":2, "viscousCoef":15, "viscousTorque":500, "friction":5, "uiName":"Viscous Torque Splitter","defaultVirtualInertia":0.1}],
+    ],  
+},
+
+"hatch_transfer_case_AWD_race2": {
+    "information":{
+        "authors":"javiersp98",
+        "name":"AWD Race Transfer Case",
+        "value":1200,
+    },
+    "slotType" : "hatch_differential_F",
+    "slots": [
+        ["type", "default", "description"]
+        ["hatch_differential_F_CJD","hatch_differential_F_CJD", "Front Differential"],
+        ["hatch_differential_R_CJD","hatch_differential_R_CJD","Rear Differential"],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$difftorquesplit_C", "range", "", "Differentials", 0.7, 0, 1, "Center LSD Torque Split", "Percent torque to rear wheels", {"minDis":20, "maxDis":80}],
+        ["$lsdpreload_C", "range", "N/m", "Differentials", 50, 0, 500, "Center LSD Preload", "Initial cross torque between front and rear wheels"],
+        ["$lsdlockcoef_C", "range", "", "Differentials", 0.10, 0, 0.5, "Center LSD Forward Locking ", "Locking effect proportional to engine torque", {"minDis":0, "maxDis":100}],
+        ["$lsdlockcoefrev_C", "range", "", "Differentials", 0.10, 0, 0.5, "Center LSD Reverse Locking", "Locking effect proportional to engine braking", {"minDis":0, "maxDis":100}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["differential", "transfercase", "gearbox", 1, {"diffType":"lsd", "lsdPreload":"$lsdpreload_C", "lsdLockCoef":"$lsdlockcoef_C", "lsdRevLockCoef":"$lsdlockcoefrev_C", "diffTorqueSplit":"$difftorquesplit_C", "friction":5}],
+    ],
+},
+
+"hatch_transfer_case_4WD_offroad2": {
+    "information":{
+        "authors":"javiersp98",
+        "name":"4WD Offroad Transfer Case",
+        "value":1100,
+    },
+    "slotType" : "hatch_differential_F",
+	"slots": [
+        ["type", "default", "description"]
+        ["hatch_differential_F_CJD","hatch_differential_F_CJD", "Front Differential"],
+        ["hatch_differential_R_CJD","hatch_differential_R_CJD","Rear Differential"],
+    ],
+    "controller": [
+    ["fileName"],
+    ["vehicleController", {}],
+],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],		
+        ["splitShaft", "transfercase", "gearbox", 1, {"splitType":"viscous", "primaryOutputID":2, "viscousCoef":15, "viscousTorque":500, "friction":5, "uiName":"Viscous Torque Splitter","defaultVirtualInertia":0.1}]
+		["rangeBox", "rangebox", "gearbox", 2, {"gearRatios":[1,2.2], "uiName":"Rangebox"}],
+    ],    
+},
+
+/*
+"hatch_transfer_case_FWD": {
+    "information":{
+        "authors":"javiersp98",
+        "name":"FWD Transfer Case",
+        "value":600,
+    },
+    "slotType" : "hatch_transfer_case",
+    "slots": [
+        ["type", "default", "description"]
+        ["hatch_differential_F_CJD","hatch_differential_F_CJD", "Front Differential"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["shaft", "transfercase", "gearbox", 1, {"outputPortOverride":[2], "friction":2}],
+    ],
+},
+*/
+"hatch_transfer_case_RWD": {
+    "information":{
+        "authors":"javiersp98",
+        "name":"RWD Transfer Case",
+        "value":600,
+    },
+    "slotType" : "hatch_differential_F",
+    "slots": [
+        ["type", "default", "description"]
+        ["hatch_differential_R_CJD","hatch_differential_R_CJD", "Front Differential"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["shaft", "transfercase", "gearbox", 1, {"outputPortOverride":[1], "friction":2}],
+    ],
+},
+
+
+
+}

@@ -1,0 +1,1024 @@
+{
+"super_noseconecrs": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"'Corse' Nosecone",
+        "value":3000,
+    }
+    "slotType" : "super_noseconecrs",
+    "slots": [
+        ["type", "default", "description"]
+        ["super_licenseplatecrs_F","", "Front License Plate"],
+        ["super_lipcrs_F","", "Front Lip"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["super_noseconecrs", ["super_nosecone"]],
+         ["super_noseconecrs_grille", ["super_nosecone"]],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":0
+            "lightOuterAngle":150
+            "lightBrightness":0.06
+            "lightRange":25
+            "lightColor":{"r":255, "g":255, "b":0, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":false
+            "flareName":"vehicleBrakeLightFlare"
+            "flareScale":0.1
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.1
+        }
+        //foglights
+        {
+            "lightInnerAngle":0
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":70
+            "lightColor":{"r":255, "g":255, "b":235, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":false
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.15
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.4
+        }
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.8},
+         {"nodeMaterial":"|NM_PLASTIC"},
+         //--NOSECONE--
+         {"collision":true}
+         {"selfCollision":true},
+         {"group":"super_nosecone"},
+         {"nodeWeight":0.70},
+         ["n1rr", -0.83000, -1.96000, 0.56000],
+         ["n1r", -0.44000, -2.02000, 0.58000],
+         ["n1", 0.00000, -2.04000, 0.58000],
+         ["n1l", 0.44000, -2.02000, 0.58000],
+         ["n1ll", 0.83000, -1.96000, 0.56000],
+
+         {"nodeWeight":0.83},
+         ["n2rr", -0.79000, -2.14000, 0.49001],
+         ["n2r", -0.43000, -2.20000, 0.51001],
+         ["n2", 0.00000, -2.22000, 0.51001],
+         ["n2l", 0.43000, -2.20000, 0.51001],
+         ["n2ll", 0.79000, -2.14000, 0.49001],
+
+         ["n3rr", -0.79000, -2.14000, 0.39000],
+         ["n3r", -0.43000, -2.20686, 0.39000],
+         ["n3", 0.00000, -2.22686, 0.39000],
+         ["n3l", 0.43000, -2.20686, 0.39000],
+         ["n3ll", 0.79000, -2.14000, 0.39000],
+
+         {"nodeWeight":0.72},
+         ["n4rr", -0.75000, -2.17278, 0.16004],
+         ["n4r", -0.43000, -2.23278, 0.15004],
+         ["n4", 0.00000, -2.25278, 0.15004],
+         ["n4l", 0.43000, -2.23278, 0.15004],
+         ["n4ll", 0.75000, -2.17278, 0.16004],
+
+         ["n5rr", -0.90786, -1.65000, 0.16000],
+         ["n5r", -0.50437, -1.68000, 0.16000],
+         ["n5", 0.00000, -1.69000, 0.16000],
+         ["n5l", 0.50437, -1.68000, 0.16000],
+         ["n5ll", 0.90786, -1.65000, 0.16000],
+
+         ["n6rr", -0.89495, -1.87000, 0.28000],
+         ["n6ll", 0.89495, -1.87000, 0.28000],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--NOSECONE--
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":501000,"beamDamp":100},
+          {"beamDeform":48440,"beamStrength":"FLT_MAX"},
+          //nosecone main shape
+          {"deformGroup":"noselight_R_break","deformationTriggerRatio":0.03},
+          ["n1rr","n1r"],
+          ["n2rr","n2r"],
+          ["n3rr","n3r"],
+          ["n4rr","n4r"],
+          ["n5rr","n5r"],
+          {"deformGroup":"noselight_L_break"},
+          ["n1ll","n1l"],
+          ["n2ll","n2l"],
+          ["n3ll","n3l"],
+          ["n4ll","n4l"],
+          ["n5ll","n5l"],
+          {"deformGroup":""},
+
+          ["n1r","n1"],
+          ["n1l","n1"],
+          ["n2r","n2"],
+          ["n2l","n2"],
+          ["n3r","n3"],
+          ["n3l","n3"],
+          ["n4r","n4"],
+          ["n4l","n4"],
+          ["n5r","n5"],
+          ["n5l","n5"],
+
+          //length/vertical
+          {"deformGroup":"noselight_R_break"},
+          ["n1rr","n2rr"],
+          ["n1r","n2r"],
+          ["n2rr","n3rr"],
+          ["n2r","n3r"],
+          ["n3rr","n4rr"],
+          ["n3r","n4r"],
+          ["n4rr","n5rr"],
+          ["n4r","n5r"],
+          ["n1rr","n6rr"],
+          ["n5rr","n6rr"],
+          ["n6rr","n3rr"],
+
+          {"deformGroup":"noselight_L_break"},
+          ["n1l","n2l"],
+          ["n1ll","n2ll"],
+          ["n2l","n3l"],
+          ["n2ll","n3ll"],
+          ["n3l","n4l"],
+          ["n3ll","n4ll"],
+          ["n4l","n5l"],
+          ["n4ll","n5ll"],
+          ["n1ll","n6ll"],
+          ["n5ll","n6ll"],
+          ["n6ll","n3ll"],
+          {"deformGroup":""},
+
+          ["n1","n2"],
+          ["n2","n3"],
+          ["n3","n4"],
+          ["n4","n5"],
+
+          //cross
+          {"beamDeform":7560,"beamStrength":49840},
+          {"deformGroup":"noselight_R_break"},
+          ["n1rr","n2r"],
+          ["n1r","n2rr"],
+          ["n2rr","n3r"],
+          ["n2r","n3rr"],
+          ["n3rr","n4r"],
+          ["n3r","n4rr"],
+          ["n4rr","n5r"],
+          ["n4r","n5rr"],
+          ["n4rr","n6rr"],
+          ["n3rr","n5rr"],
+          ["n2rr","n6rr"],
+          ["n1rr","n3rr"],
+          {"deformGroup":"noselight_L_break"},
+          ["n1l","n2ll"],
+          ["n1ll","n2l"],
+          ["n2l","n3ll"],
+          ["n2ll","n3l"],
+          ["n3l","n4ll"],
+          ["n3ll","n4l"],
+          ["n4l","n5ll"],
+          ["n4ll","n5l"],
+          ["n4ll","n6ll"],
+          ["n3ll","n5ll"],
+          ["n2ll","n6ll"],
+          ["n1ll","n3ll"],
+          {"deformGroup":""},
+
+          ["n1r","n2"],
+          ["n1","n2r"],
+          ["n1","n2l"],
+          ["n1l","n2"],
+          ["n2r","n3"],
+          ["n2","n3r"],
+          ["n2","n3l"],
+          ["n2l","n3"],
+          ["n3r","n4"],
+          ["n3","n4r"],
+          ["n3","n4l"],
+          ["n3l","n4"],
+          ["n4r","n5"],
+          ["n4","n5r"],
+          ["n4","n5l"],
+          ["n4l","n5"],
+
+          //rigids widthwise
+          {"beamSpring":301000,"beamDamp":100},
+          {"beamDeform":4760,"beamStrength":49840},
+          {"deformGroup":"noselight_R_break"},
+          ["n2rr","n2"],
+          ["n3rr","n3"],
+          ["n4rr","n4"],
+          {"deformGroup":"noselight_L_break"},
+          ["n2ll","n2"],
+          ["n3ll","n3"],
+          ["n4ll","n4"],
+          {"deformGroup":""},
+
+          ["n1rr","n1"],
+          ["n1r","n1l"],
+          ["n1ll","n1"],
+          ["n2r","n2l"],
+          ["n3r","n3l"],
+          ["n4r","n4l"],
+          ["n5rr","n5"],
+          ["n5r","n5l"],
+          ["n5ll","n5"],
+
+          //vert/length
+          {"deformGroup":"noselight_R_break"},
+          ["n2rr","n4rr"],
+          ["n2r","n4r"],
+          {"deformGroup":"noselight_L_break"},
+          ["n2ll","n4ll"],
+          ["n2l","n4l"],
+          {"deformGroup":""},
+
+          ["n1r","n3r"],
+          ["n1","n3"],
+          ["n1l","n3l"],
+          ["n1rr","n5rr"],
+          ["n1ll","n5ll"],
+          ["n1rr","n4rr"],
+          ["n1r","n4r"],
+          ["n1","n4"],
+          ["n1l","n4l"],
+          ["n1ll","n4ll"],
+          ["n2","n4"],
+
+          //corner
+          {"deformGroup":"noselight_R_break"},
+          ["n5r","n6rr"],
+          {"deformGroup":"noselight_L_break"},
+          ["n5l","n6ll"],
+          {"deformGroup":""},
+
+          ["n6rr","n1r"],
+          ["n6ll","n1l"],
+
+          //weak rigidy things
+          {"beamSpring":201000,"beamDamp":100},
+          ["n1r","n5r"],
+          ["n1","n5"],
+          ["n1l","n5l"],
+
+          //attach
+          {"beamSpring":401000,"beamDamp":100},
+          {"beamDeform":5040,"beamStrength":10680},
+          {"deformGroup":"noselight_R_break","deformationTriggerRatio":0.3},
+          {"breakGroup":"nosecone_R"},
+          ["n1rr","f4rr"],
+          ["n5rr","f6rr"],
+          ["n1r","f4rr"],
+          ["n5r","f6rr"],
+          ["n2rr","f4rr"],
+          ["n4rr","f6rr"],
+
+          {"deformGroup":"noselight_L_break"},
+          {"breakGroup":"nosecone_L"},
+          ["n1ll","f4ll"],
+          ["n5ll","f6ll"],
+          ["n1l","f4ll"],
+          ["n5l","f6ll"],
+          ["n2ll","f4ll"],
+          ["n4ll","f6ll"],
+
+          {"deformGroup":""},
+          {"breakGroup":"nosecone_M"},
+          ["n1","f4r"],
+          ["n1","f4"],
+          ["n1","f4l"],
+          ["n5","f6r"],
+          ["n5","f6"],
+          ["n5","f6l"],
+          ["n1r","f4r"],
+          ["n5r","f6r"],
+          ["n1l","f4l"],
+          ["n5l","f6l"],
+
+          ["n2","f4r"],
+          ["n2","f4"],
+          ["n2","f4l"],
+          ["n4","f6r"],
+          ["n4","f6"],
+          ["n4","f6l"],
+
+          {"breakGroup":""},
+
+          //nosecone support beams
+          {"beamType":"|SUPPORT","beamLongBound":2},
+          {"beamSpring":601000,"beamDamp":100},
+          {"beamDeform":7840,"beamStrength":178000},
+          ["n5rr","f5rr"],
+          ["n5r","c1r"],
+          ["n5","c1"],
+          ["n5l","c1l"],
+          ["n5ll","f5ll"],
+
+          ["n5rr","f4rr"],
+          ["n5r","f4r"],
+          ["n5","f4"],
+          ["n5l","f4l"],
+          ["n5ll","f4ll"],
+
+          ["n6rr","f6r"],
+          ["n6ll","f6l"],
+
+          ["n2r","f4r"],
+          ["n2","f4"],
+          ["n2l","f4l"],
+
+          ["n3r","f6r"],
+          ["n3","f6"],
+          ["n3l","f6l"],
+
+          ["n2rr","f6rr"],
+          ["n2r","f6r"],
+          ["n2","f6"],
+          ["n2l","f6l"],
+          ["n2ll","f6ll"],
+
+          ["n1rr","f4r"],
+          ["n1ll","f4l"],
+          ["n5rr","f6r"],
+          ["n5ll","f6l"],
+
+          //strong
+          {"beamDeform":14560,"beamStrength":178000},
+          ["n1rr","f3rr"],
+          ["n1r","f3r"],
+          ["n1r","c7r"],
+          ["n1","c7"],
+          ["n1l","c7l"],
+          ["n1l","f3l"],
+          ["n1ll","f3ll"],
+
+          ["n2rr","f4rr"],
+          ["n2ll","f4ll"],
+          ["n3rr","f6rr"],
+          ["n3ll","f6ll"],
+
+          //nosecone anti stretch
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.01, "beamShortBound":1.0},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":"FLT_MAX","beamStrength":"FLT_MAX"},
+          {"beamLimitSpring":601000,"beamLimitDamp":150},
+          ["n1rr","n1ll"],
+          ["n2rr","n2ll"],
+          ["n3rr","n3ll"],
+          ["n4rr","n4ll"],
+          ["n5rr","n5ll"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            //nosecone
+            {"groundModel":"plastic"},
+            {"dragCoef":5},
+            {"group":"nosecone"},
+            ["n1rr","n2rr","n2r"{"liftCoef":50}],
+            ["n1rr","n2r","n1r"{"liftCoef":50}],
+            ["n1r","n2r","n2"{"liftCoef":50}],
+            ["n1r","n2","n1"{"liftCoef":50}],
+            ["n1l","n2","n2l"{"liftCoef":50}],
+            ["n1l","n1","n2"{"liftCoef":50}],
+            ["n1ll","n2l","n2ll"{"liftCoef":50}],
+            ["n1ll","n1l","n2l"{"liftCoef":50}],
+
+            ["n2rr","n3rr","n3r"],
+            ["n2rr","n3r","n2r"],
+            ["n2r","n3r","n3"],
+            ["n2r","n3","n2"],
+            ["n2l","n3","n3l"],
+            ["n2l","n2","n3"],
+            ["n2ll","n3l","n3ll"],
+            ["n2ll","n2l","n3l"],
+
+            ["n3rr","n4rr","n4r"],
+            ["n3rr","n4r","n3r"],
+            ["n3r","n4r","n4"],
+            ["n3r","n4","n3"],
+            ["n3l","n4","n4l"],
+            ["n3l","n3","n4"],
+            ["n3ll","n4l","n4ll"],
+            ["n3ll","n3l","n4l"],
+
+            ["n4rr","n5rr","n5r"],
+            ["n4rr","n5r","n4r"],
+            ["n4r","n5r","n5"],
+            ["n4r","n5","n4"],
+            ["n4l","n5","n5l"],
+            ["n4l","n4","n5"],
+            ["n4ll","n5l","n5ll"],
+            ["n4ll","n4l","n5l"],
+
+            ["n1ll","n2ll","n3ll"],
+            ["n1ll","n3ll","n6ll"],
+            ["n6ll","n3ll","n4ll"],
+            ["n6ll","n4ll","n5ll"],
+
+            ["n2rr","n1rr","n3rr"],
+            ["n3rr","n1rr","n6rr"],
+            ["n3rr","n6rr","n4rr"],
+            ["n4rr","n6rr","n5rr"],
+            {"group":""},
+    ],
+    }
+    "super_noseconecrs_b": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"'Corse' Competizione Nosecone",
+            "value":5000,
+        }
+        "slotType" : "super_noseconecrs",
+        "slots": [
+            ["type", "default", "description"]
+            ["super_licenseplatecrs_b_F","", "Front License Plate"],
+            ["super_lipcrs_F","super_lipcrs_F_a", "Front Lip"],
+        ],
+        "flexbodies": [
+             ["mesh", "[group]:", "nonFlexMaterials"],
+             ["super_noseconecrs_b", ["super_nosecone"]],
+             ["super_noseconecrs_b_grille", ["super_nosecone"]],
+        ],
+        "props": [
+            ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+            {
+                "lightInnerAngle":0
+                "lightOuterAngle":150
+                "lightBrightness":0.06
+                "lightRange":25
+                "lightColor":{"r":255, "g":255, "b":0, "a":255}
+                "lightAttenuation":{"x":0, "y":1, "z":1}
+                "lightCastShadows":false
+                "flareName":"vehicleBrakeLightFlare"
+                "flareScale":0.1
+                "cookieName":"art/special/BNG_light_cookie_headlight.png"
+                "texSize":512
+                "shadowSoftness":0.1
+            }
+            //foglights
+            {
+                "lightInnerAngle":0
+                "lightOuterAngle":120
+                "lightBrightness":0.2
+                "lightRange":70
+                "lightColor":{"r":255, "g":255, "b":235, "a":255}
+                "lightAttenuation":{"x":0, "y":1, "z":1}
+                "lightCastShadows":false
+                "flareName":"vehicleHeadLightFlare"
+                "flareScale":0.15
+                "cookieName":"art/special/BNG_light_cookie_headlight.png"
+                "texSize":512
+                "shadowSoftness":0.4
+            }
+        ],
+        "nodes": [
+             ["id", "posX", "posY", "posZ"],
+             {"frictionCoef":0.8},
+             {"nodeMaterial":"|NM_PLASTIC"},
+             //--NOSECONE--
+             {"collision":true}
+             {"selfCollision":true},
+             {"group":"super_nosecone"},
+             {"nodeWeight":0.70},
+             ["n1rr", -0.83000, -1.96000, 0.56000],
+             ["n1r", -0.44000, -2.02000, 0.58000],
+             ["n1", 0.00000, -2.04000, 0.58000],
+             ["n1l", 0.44000, -2.02000, 0.58000],
+             ["n1ll", 0.83000, -1.96000, 0.56000],
+
+             {"nodeWeight":0.83},
+             ["n2rr", -0.79000, -2.14000, 0.49001],
+             ["n2r", -0.43000, -2.20000, 0.51001],
+             ["n2", 0.00000, -2.22000, 0.51001],
+             ["n2l", 0.43000, -2.20000, 0.51001],
+             ["n2ll", 0.79000, -2.14000, 0.49001],
+
+             ["n3rr", -0.79000, -2.14000, 0.39000],
+             ["n3r", -0.43000, -2.20686, 0.39000],
+             ["n3", 0.00000, -2.22686, 0.39000],
+             ["n3l", 0.43000, -2.20686, 0.39000],
+             ["n3ll", 0.79000, -2.14000, 0.39000],
+
+             {"nodeWeight":0.72},
+             ["n4rr", -0.75000, -2.17278, 0.16004],
+             ["n4r", -0.43000, -2.23278, 0.15004],
+             ["n4", 0.00000, -2.25278, 0.15004],
+             ["n4l", 0.43000, -2.23278, 0.15004],
+             ["n4ll", 0.75000, -2.17278, 0.16004],
+
+             ["n5rr", -0.90786, -1.65000, 0.16000],
+             ["n5r", -0.50437, -1.68000, 0.16000],
+             ["n5", 0.00000, -1.69000, 0.16000],
+             ["n5l", 0.50437, -1.68000, 0.16000],
+             ["n5ll", 0.90786, -1.65000, 0.16000],
+
+             ["n6rr", -0.89495, -1.87000, 0.28000],
+             ["n6ll", 0.89495, -1.87000, 0.28000],
+             {"group":""},
+        ],
+        "beams": [
+              ["id1:", "id2:"],
+              //--NOSECONE--
+              {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+              {"beamSpring":501000,"beamDamp":100},
+              {"beamDeform":48440,"beamStrength":"FLT_MAX"},
+              //nosecone main shape
+              {"deformGroup":"noselight_R_break","deformationTriggerRatio":0.03},
+              ["n1rr","n1r"],
+              ["n2rr","n2r"],
+              ["n3rr","n3r"],
+              ["n4rr","n4r"],
+              ["n5rr","n5r"],
+              {"deformGroup":"noselight_L_break"},
+              ["n1ll","n1l"],
+              ["n2ll","n2l"],
+              ["n3ll","n3l"],
+              ["n4ll","n4l"],
+              ["n5ll","n5l"],
+              {"deformGroup":""},
+
+              ["n1r","n1"],
+              ["n1l","n1"],
+              ["n2r","n2"],
+              ["n2l","n2"],
+              ["n3r","n3"],
+              ["n3l","n3"],
+              ["n4r","n4"],
+              ["n4l","n4"],
+              ["n5r","n5"],
+              ["n5l","n5"],
+
+              //length/vertical
+              {"deformGroup":"noselight_R_break"},
+              ["n1rr","n2rr"],
+              ["n1r","n2r"],
+              ["n2rr","n3rr"],
+              ["n2r","n3r"],
+              ["n3rr","n4rr"],
+              ["n3r","n4r"],
+              ["n4rr","n5rr"],
+              ["n4r","n5r"],
+              ["n1rr","n6rr"],
+              ["n5rr","n6rr"],
+              ["n6rr","n3rr"],
+
+              {"deformGroup":"noselight_L_break"},
+              ["n1l","n2l"],
+              ["n1ll","n2ll"],
+              ["n2l","n3l"],
+              ["n2ll","n3ll"],
+              ["n3l","n4l"],
+              ["n3ll","n4ll"],
+              ["n4l","n5l"],
+              ["n4ll","n5ll"],
+              ["n1ll","n6ll"],
+              ["n5ll","n6ll"],
+              ["n6ll","n3ll"],
+              {"deformGroup":""},
+
+              ["n1","n2"],
+              ["n2","n3"],
+              ["n3","n4"],
+              ["n4","n5"],
+
+              //cross
+              {"beamDeform":7560,"beamStrength":49840},
+              {"deformGroup":"noselight_R_break"},
+              ["n1rr","n2r"],
+              ["n1r","n2rr"],
+              ["n2rr","n3r"],
+              ["n2r","n3rr"],
+              ["n3rr","n4r"],
+              ["n3r","n4rr"],
+              ["n4rr","n5r"],
+              ["n4r","n5rr"],
+              ["n4rr","n6rr"],
+              ["n3rr","n5rr"],
+              ["n2rr","n6rr"],
+              ["n1rr","n3rr"],
+              {"deformGroup":"noselight_L_break"},
+              ["n1l","n2ll"],
+              ["n1ll","n2l"],
+              ["n2l","n3ll"],
+              ["n2ll","n3l"],
+              ["n3l","n4ll"],
+              ["n3ll","n4l"],
+              ["n4l","n5ll"],
+              ["n4ll","n5l"],
+              ["n4ll","n6ll"],
+              ["n3ll","n5ll"],
+              ["n2ll","n6ll"],
+              ["n1ll","n3ll"],
+              {"deformGroup":""},
+
+              ["n1r","n2"],
+              ["n1","n2r"],
+              ["n1","n2l"],
+              ["n1l","n2"],
+              ["n2r","n3"],
+              ["n2","n3r"],
+              ["n2","n3l"],
+              ["n2l","n3"],
+              ["n3r","n4"],
+              ["n3","n4r"],
+              ["n3","n4l"],
+              ["n3l","n4"],
+              ["n4r","n5"],
+              ["n4","n5r"],
+              ["n4","n5l"],
+              ["n4l","n5"],
+
+              //rigids widthwise
+              {"beamSpring":301000,"beamDamp":100},
+              {"beamDeform":4760,"beamStrength":49840},
+              {"deformGroup":"noselight_R_break"},
+              ["n2rr","n2"],
+              ["n3rr","n3"],
+              ["n4rr","n4"],
+              {"deformGroup":"noselight_L_break"},
+              ["n2ll","n2"],
+              ["n3ll","n3"],
+              ["n4ll","n4"],
+              {"deformGroup":""},
+
+              ["n1rr","n1"],
+              ["n1r","n1l"],
+              ["n1ll","n1"],
+              ["n2r","n2l"],
+              ["n3r","n3l"],
+              ["n4r","n4l"],
+              ["n5rr","n5"],
+              ["n5r","n5l"],
+              ["n5ll","n5"],
+
+              //vert/length
+              {"deformGroup":"noselight_R_break"},
+              ["n2rr","n4rr"],
+              ["n2r","n4r"],
+              {"deformGroup":"noselight_L_break"},
+              ["n2ll","n4ll"],
+              ["n2l","n4l"],
+              {"deformGroup":""},
+
+              ["n1r","n3r"],
+              ["n1","n3"],
+              ["n1l","n3l"],
+              ["n1rr","n5rr"],
+              ["n1ll","n5ll"],
+              ["n1rr","n4rr"],
+              ["n1r","n4r"],
+              ["n1","n4"],
+              ["n1l","n4l"],
+              ["n1ll","n4ll"],
+              ["n2","n4"],
+
+              //corner
+              {"deformGroup":"noselight_R_break"},
+              ["n5r","n6rr"],
+              {"deformGroup":"noselight_L_break"},
+              ["n5l","n6ll"],
+              {"deformGroup":""},
+
+              ["n6rr","n1r"],
+              ["n6ll","n1l"],
+
+              //weak rigidy things
+              {"beamSpring":201000,"beamDamp":100},
+              ["n1r","n5r"],
+              ["n1","n5"],
+              ["n1l","n5l"],
+
+              //attach
+              {"beamSpring":401000,"beamDamp":100},
+              {"beamDeform":5040,"beamStrength":10680},
+              {"deformGroup":"noselight_R_break","deformationTriggerRatio":0.3},
+              {"breakGroup":"nosecone_R"},
+              ["n1rr","f4rr"],
+              ["n5rr","f6rr"],
+              ["n1r","f4rr"],
+              ["n5r","f6rr"],
+              ["n2rr","f4rr"],
+              ["n4rr","f6rr"],
+
+              {"deformGroup":"noselight_L_break"},
+              {"breakGroup":"nosecone_L"},
+              ["n1ll","f4ll"],
+              ["n5ll","f6ll"],
+              ["n1l","f4ll"],
+              ["n5l","f6ll"],
+              ["n2ll","f4ll"],
+              ["n4ll","f6ll"],
+
+              {"deformGroup":""},
+              {"breakGroup":"nosecone_M"},
+              ["n1","f4r"],
+              ["n1","f4"],
+              ["n1","f4l"],
+              ["n5","f6r"],
+              ["n5","f6"],
+              ["n5","f6l"],
+              ["n1r","f4r"],
+              ["n5r","f6r"],
+              ["n1l","f4l"],
+              ["n5l","f6l"],
+
+              ["n2","f4r"],
+              ["n2","f4"],
+              ["n2","f4l"],
+              ["n4","f6r"],
+              ["n4","f6"],
+              ["n4","f6l"],
+
+              {"breakGroup":""},
+
+              //nosecone support beams
+              {"beamType":"|SUPPORT","beamLongBound":2},
+              {"beamSpring":601000,"beamDamp":100},
+              {"beamDeform":7840,"beamStrength":178000},
+              ["n5rr","f5rr"],
+              ["n5r","c1r"],
+              ["n5","c1"],
+              ["n5l","c1l"],
+              ["n5ll","f5ll"],
+
+              ["n5rr","f4rr"],
+              ["n5r","f4r"],
+              ["n5","f4"],
+              ["n5l","f4l"],
+              ["n5ll","f4ll"],
+
+              ["n6rr","f6r"],
+              ["n6ll","f6l"],
+
+              ["n2r","f4r"],
+              ["n2","f4"],
+              ["n2l","f4l"],
+
+              ["n3r","f6r"],
+              ["n3","f6"],
+              ["n3l","f6l"],
+
+              ["n2rr","f6rr"],
+              ["n2r","f6r"],
+              ["n2","f6"],
+              ["n2l","f6l"],
+              ["n2ll","f6ll"],
+
+              ["n1rr","f4r"],
+              ["n1ll","f4l"],
+              ["n5rr","f6r"],
+              ["n5ll","f6l"],
+
+              //strong
+              {"beamDeform":14560,"beamStrength":178000},
+              ["n1rr","f3rr"],
+              ["n1r","f3r"],
+              ["n1r","c7r"],
+              ["n1","c7"],
+              ["n1l","c7l"],
+              ["n1l","f3l"],
+              ["n1ll","f3ll"],
+
+              ["n2rr","f4rr"],
+              ["n2ll","f4ll"],
+              ["n3rr","f6rr"],
+              ["n3ll","f6ll"],
+
+              //nosecone anti stretch
+              {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.01, "beamShortBound":1.0},
+              {"beamSpring":0,"beamDamp":0,"beamDeform":"FLT_MAX","beamStrength":"FLT_MAX"},
+              {"beamLimitSpring":601000,"beamLimitDamp":150},
+              ["n1rr","n1ll"],
+              ["n2rr","n2ll"],
+              ["n3rr","n3ll"],
+              ["n4rr","n4ll"],
+              ["n5rr","n5ll"],
+              {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        ],
+        "triangles": [
+                ["id1:","id2:","id3:"],
+                //nosecone
+                {"groundModel":"plastic"},
+                {"dragCoef":5},
+                {"group":"nosecone"},
+                ["n1rr","n2rr","n2r"{"liftCoef":50}],
+                ["n1rr","n2r","n1r"{"liftCoef":50}],
+                ["n1r","n2r","n2"{"liftCoef":50}],
+                ["n1r","n2","n1"{"liftCoef":50}],
+                ["n1l","n2","n2l"{"liftCoef":50}],
+                ["n1l","n1","n2"{"liftCoef":50}],
+                ["n1ll","n2l","n2ll"{"liftCoef":50}],
+                ["n1ll","n1l","n2l"{"liftCoef":50}],
+
+                ["n2rr","n3rr","n3r"],
+                ["n2rr","n3r","n2r"],
+                ["n2r","n3r","n3"],
+                ["n2r","n3","n2"],
+                ["n2l","n3","n3l"],
+                ["n2l","n2","n3"],
+                ["n2ll","n3l","n3ll"],
+                ["n2ll","n2l","n3l"],
+
+                ["n3rr","n4rr","n4r"],
+                ["n3rr","n4r","n3r"],
+                ["n3r","n4r","n4"],
+                ["n3r","n4","n3"],
+                ["n3l","n4","n4l"],
+                ["n3l","n3","n4"],
+                ["n3ll","n4l","n4ll"],
+                ["n3ll","n3l","n4l"],
+
+                ["n4rr","n5rr","n5r"],
+                ["n4rr","n5r","n4r"],
+                ["n4r","n5r","n5"],
+                ["n4r","n5","n4"],
+                ["n4l","n5","n5l"],
+                ["n4l","n4","n5"],
+                ["n4ll","n5l","n5ll"],
+                ["n4ll","n4l","n5l"],
+
+                ["n1ll","n2ll","n3ll"],
+                ["n1ll","n3ll","n6ll"],
+                ["n6ll","n3ll","n4ll"],
+                ["n6ll","n4ll","n5ll"],
+
+                ["n2rr","n1rr","n3rr"],
+                ["n3rr","n1rr","n6rr"],
+                ["n3rr","n6rr","n4rr"],
+                ["n4rr","n6rr","n5rr"],
+                {"group":""},
+        ],
+        }
+        "super_lipcrs_F_a": {
+            "information":{
+                "authors":"BeamNG",
+                "name":"Front Lip Style B",
+                "value":500,
+            }
+            "slotType" : "super_lipcrs_F",
+            "flexbodies": [
+                 ["mesh", "[group]:", "nonFlexMaterials"],
+                 ["super_lipcrs_F_a", ["super_nosecone"]],
+                 ],
+                 "nodes": [
+                 {"nodeWeight":0.72},
+                 ["n4rr", -0.75000, -2.19, 0.12167],
+                 ["n4r", -0.43000, -2.26, 0.12167],
+                 ["n4", 0.00000, -2.275, 0.12167],
+                 ["n4l", 0.43000, -2.26, 0.12167],
+                 ["n4ll", 0.75000, -2.19, 0.12167],
+
+                 ["n5rr", -0.90786, -1.65000, 0.12167],
+                 ["n5r", -0.50437, -1.68000, 0.12167],
+                 ["n5", 0.00000, -1.69000, 0.12167],
+                 ["n5l", 0.50437, -1.68000, 0.12167],
+                 ["n5ll", 0.90786, -1.65000, 0.12167],
+                 ],
+}
+"super_lipcrs_F_b": {
+	"information":{
+	"authors":"BeamNG",
+	"name":"Factory Front Lip",
+	"value":200,
+	}
+	"slotType" : "super_lipcrs_F",
+	"flexbodies": [
+		["mesh", "[group]:", "nonFlexMaterials"],
+		["super_lipcrs_F_b", ["super_nosecone"]],
+	],
+},
+
+"super_lipcrs_F_c": {
+	"information":{
+	"authors":"BeamNG",
+	"name":"'Competizione' Splitter",
+	"value":1500,
+	}
+	"slotType" : "super_lipcrs_F",
+	"flexbodies": [
+		["mesh", "[group]:", "nonFlexMaterials"],
+		["super_lipcrs_F_c", ["super_splt"]],
+		["super_lipcrs_F_c_strut", ["super_nosecone","super_splt"]],
+	],
+	"nodes": [
+		["id", "posX", "posY", "posZ"],
+		{"frictionCoef":0.8},
+		{"nodeMaterial":"|NM_PLASTIC"},
+		//--NOSECONE--
+		{"collision":true}
+		{"selfCollision":true},
+		{"group":"super_splt"},
+		{"nodeWeight":0.70},
+		["splt1", 0.00, -2.35, 0.115],
+		["splt1r", -0.45, -2.33, 0.115],
+		["splt1rr", -0.76, -2.22, 0.115],
+		["splt1rrr", -0.88, -1.91, 0.115],
+		["splt1l", 0.45, -2.33, 0.115],
+		["splt1ll", 0.76, -2.22, 0.115],
+		["splt1lll", 0.88, -1.91, 0.115],
+
+		{"nodeWeight":0.72},
+		{"group":["super_nosecone","super_splt"]},
+		["n4rr", -0.75000, -2.17278, 0.17],
+		["n4r", -0.43000, -2.23278, 0.17],
+		["n4", 0.00000, -2.25278, 0.17],
+		["n4l", 0.43000, -2.23278, 0.17],
+		["n4ll", 0.75000, -2.17278, 0.17],
+		{"group":""},
+	],
+	"beams": [
+		["id1:", "id2:"],
+		//--SPLITTER--
+		{"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		{"beamSpring":401000,"beamDamp":80},
+		{"beamDeform":48440,"beamStrength":"FLT_MAX"},
+		//splitter main shape widthwise
+
+		["n5rr","splt1rrr"],
+		["n5ll","splt1lll"],
+		["splt1rrr","splt1rr"],
+		["splt1lll","splt1ll"],
+		["splt1rr","splt1r"],
+		["splt1ll","splt1l"],
+		["splt1r","splt1"],
+		["splt1l","splt1"],
+
+		//lenghtwise
+		["splt1rrr","n4rr"],
+		["splt1lll","n4ll"],
+		["splt1rr","n4rr"],
+		["splt1ll","n4ll"],
+		["splt1r","n4r"],
+		["splt1l","n4l"],
+		["splt1","n4"],
+
+		//crossing
+		["splt1rr","n5rr"],
+		["splt1ll","n5ll"],
+		["splt1rr","n4r"],
+		["splt1ll","n4l"],
+		["splt1r","n4rr"],
+		["splt1l","n4ll"],
+		["splt1r","n4"],
+		["splt1l","n4"],
+		["splt1","n4r"],
+		["splt1","n4l"],
+
+		//rigids
+		["splt1rrr","n3rr"],
+		["splt1lll","n3ll"],
+		["splt1rrr","n5"],
+		["splt1lll","n5"],
+		["splt1rrr","n5r"],
+		["splt1lll","n5l"],
+		["splt1rrr","splt1r"],
+		["splt1lll","splt1l"],
+		["splt1rr","splt1"],
+		["splt1ll","splt1"],
+
+		//support beams
+		{"beamSpring":401000,"beamDamp":100},
+		{"beamDeform":5040,"beamStrength":10680},
+		["splt1","n2r"],
+		["splt1","n2"],
+		["splt1","n2l"],
+		["splt1r","n2"],
+		["splt1l","n2"],
+		["splt1r","n2r"],
+		["splt1l","n2l"],
+		["splt1r","n2rr"],
+		["splt1l","n2ll"],
+		["splt1rr","n2r"],
+		["splt1ll","n2l"],
+		["splt1rr","n2rr"],
+		["splt1ll","n2ll"],
+		["splt1rrr","n1rr"],
+		["splt1lll","n1ll"],
+		["splt1rrr","n2rr"],
+		["splt1lll","n2ll"],
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//nosecone
+			{"groundModel":"plastic"},
+			{"dragCoef":50},
+			{"group":"super_splt"},
+			["splt1", "n2", "n2r"{"liftCoef":150, "stallAngle":0.4}],
+      ["splt1", "n2r", "splt1r"{"liftCoef":150, "stallAngle":0.4}],
+      ["splt1r", "n2r", "n2rr"{"liftCoef":150, "stallAngle":0.4}],
+      ["splt1r", "n2rr", "splt1rr"{"liftCoef":150, "stallAngle":0.4}],
+      ["splt1rr", "n2rr", "splt1rrr"{"liftCoef":150, "stallAngle":0.4}],
+      ["splt1rrr", "n2rr", "n2rr"],
+			["splt1l","n2","splt1"{"liftCoef":150, "stallAngle":0.4}],
+			["splt1l", "n2l", "n2"{"liftCoef":150, "stallAngle":0.4}],
+			["splt1l", "n2ll", "n2l"{"liftCoef":150, "stallAngle":0.4}],
+			["splt1l", "splt1ll", "n2ll"{"liftCoef":150, "stallAngle":0.4}],
+			["splt1ll", "splt1lll", "n2ll"{"liftCoef":150, "stallAngle":0.4}],
+			["n2ll", "splt1lll", "n1ll"],
+	],
+}
+}

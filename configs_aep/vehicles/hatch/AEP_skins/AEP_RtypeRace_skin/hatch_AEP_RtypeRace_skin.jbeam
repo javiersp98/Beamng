@@ -1,0 +1,11 @@
+{
+"hatch_skin_AEPRtypeRace": {
+    "information":{
+        "authors":"Djplopper",
+        "name":"i-TEC Race Livery AEP",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "AEPRtypeRace",
+}
+}

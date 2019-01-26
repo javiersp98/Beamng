@@ -1,0 +1,11 @@
+{
+"hatch_skin_zxi_2": {
+    "information":{
+        "authors":"Godzilla!",
+        "name":"ZXi Factory Graphics (Two-Tone)",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "zxi_2",
+  },
+}

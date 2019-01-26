@@ -1,0 +1,40 @@
+{
+	
+"hatch_driveshaft": {
+    "information":{
+        "authors":"javiersp98",
+        "name":"Rear Driveshaft",
+        "value":200,
+    }
+    "slotType" : "hatch_driveshaft",
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        ["shaft", "driveshaft", "transfercase", 1, {"electricsName":"driveshaft", "friction":2}]		
+    ],
+}	
+	
+"hatch_differential_R_CJD": {
+    "information":{
+        "authors":"javiersp98",
+        "name":"Limited Slip Rear Differential",
+        "value":800,
+    },
+    "slotType" : "hatch_differential_R_CJD",
+    "slots": [
+        ["type", "default", "description"]
+        ["hatch_driveshaft","hatch_driveshaft", "Rear Driveshaft"],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$lsdpreload_R", "range", "N/m", "Differentials", 50, 0, 500, "Rear LSD Preload", "Initial cross torque between left and right wheels"],
+        ["$lsdlockcoef_R", "range", "", "Differentials", 0.20, 0, 0.5, "Rear LSD Forward Locking ", "Locking effect proportional to engine torque", {"minDis":0, "maxDis":100}],
+        ["$lsdlockcoefrev_R", "range", "", "Differentials", 0.10, 0, 0.5, "Rear LSD Reverse Locking", "Locking effect proportional to engine braking", {"minDis":0, "maxDis":100}],
+        ["$finaldrive", "range", ":1", "Differentials", 4.25, 2.0, 6.0, "Final Drive Ratio", "Torque multiplication ratio"]
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],		
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"lsd", "gearRatio":"$finaldrive", "lsdPreload":"$lsdpreload_F", "lsdLockCoef":"$lsdlockcoef_F", "lsdRevLockCoef":"$lsdlockcoefrev_F", "friction":4}],
+    ],
+},
+
+}

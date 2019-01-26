@@ -1,0 +1,41 @@
+{
+"sbr_skin_ds": {
+    "information":{
+        "authors":"MilanKD, welshtoast",
+        "name":"Tailobyte Racing",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "ds",
+}
+
+"sbr_skin_dr": {
+    "information":{
+        "authors":"MilanKD, welshtoast",
+        "name":"Oilex Racing",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "dr",
+}
+
+"sbr_skin_cr": {
+    "information":{
+        "authors":"MilanKD, welshtoast",
+        "name":"Oilex Selecta Racing",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "cr",
+}
+
+"sbr_skin_bw": {
+    "information":{
+        "authors":"MilanKD, welshtoast",
+        "name":"OJ Racing",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "bw",
+}
+}

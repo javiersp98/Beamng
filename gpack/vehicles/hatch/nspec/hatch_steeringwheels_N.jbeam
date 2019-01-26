@@ -1,0 +1,17 @@
+{
+"hatch_steer_N": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Sport Steering Wheel",
+        "value":180,
+    },
+
+    "slotType" : "hatch_steer",
+
+    "props": [
+        ["func",     "mesh",        "idRef:", "idX:", "idY:", "baseRotation",            "rotation",            "translation",         "min", "max", "offset", "multiplier"]
+        //steering wheel
+        ["steering", "pessima_steer", "f1l","f1r","f6l",        {"x":-64, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1],
+    ],
+},
+}

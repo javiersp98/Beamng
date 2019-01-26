@@ -1,0 +1,29 @@
+{
+"Performance Class":"4",
+"Drivetrain":"4WD",
+"Braking G":0.885,
+"Value":4250,
+"Weight":1380,
+"TorquePeakRPM":"2550 - 4500",
+"0-100 mph":33.4,
+"Off-Road Score":41,
+"Configuration":"Classic (M)",
+"0-100 km/h":10.2,
+"Power":132.998,
+"60-100 mph":23.8,
+"0-60 mph":9.6,
+"Config Type":"Factory",
+"100-0 km/h":44.4,
+"Top Speed":48.5345,
+"default_color":"Army Green",
+"Torque":214.797,
+"Description":"A tribute to a classic military vehicle",
+"Transmission":"Manual",
+"Weight/Power":10.4545,
+"60-0 mph":137.4,
+"Years":{
+  "min":1989,
+  "max":2001
+},
+"PowerPeakRPM":4350
+}

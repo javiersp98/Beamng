@@ -1,0 +1,192 @@
+{
+
+"hopper_intake_i4_fi": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Fuel Injection",
+        "value":250,
+    }
+    "slotType" : "hopper_intake_i4",
+	"mainEngine":{
+        "torqueModMult":[
+            ["rpm", "torque"],
+            [0,    1.02],
+            [1000, 1.04],
+            [2000, 1.05],
+			[3000, 1.05],
+			[4000, 1.07],
+            [5000, 1.08],
+			[5500, 1.217],
+            [6000, 1.42],            
+        ],
+        //max rpm physically capable of
+        "maxRPM":6000,
+	},	
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["hopper_intake_i4_carb", ["hopper_engine","hopper_airbox"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"hopper_airbox"},
+         {"engineGroup":"engine_intake"},
+         {"nodeWeight":2},
+         ["airb",-0.30, -1.32, 1.05],
+         {"engineGroup":""},
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":100600,"beamDamp":150},
+          {"beamDeform":12000,"beamStrength":36000},
+          ["airb","e1r"],
+          ["airb","e2r"],
+          ["airb","e3r"],
+          ["airb","e4r"],
+          ["airb","e1l"],
+          ["airb","e2l"],
+          ["airb","e3l"],
+          ["airb","e4l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+"hopper_intake_i6_fi": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Fuel Injection",
+        "value":250,
+    }
+    "slotType" : "hopper_intake_i6",
+	"mainEngine":{
+        "torqueModMult":[
+            ["rpm", "torque"],
+            [0,    1.02],
+            [1000, 1.04],
+            [2000, 1.05],
+			[3000, 1.05],
+			[4000, 1.07],
+            [5000, 1.08],
+			[5500, 1.217],
+            [6000, 1.42],            
+        ],
+        //max rpm physically capable of
+        "maxRPM":6000,
+	},	
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["hopper_intake_i6_carb", ["hopper_engine","hopper_airbox"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"hopper_airbox"},
+         {"engineGroup":"engine_intake"},
+         {"nodeWeight":2},
+         ["airb",-0.30, -1.32, 1.05],
+         {"engineGroup":""},
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":100600,"beamDamp":150},
+          {"beamDeform":12000,"beamStrength":36000},
+          ["airb","e1r"],
+          ["airb","e2r"],
+          ["airb","e3r"],
+          ["airb","e4r"],
+          ["airb","e1l"],
+          ["airb","e2l"],
+          ["airb","e3l"],
+          ["airb","e4l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+"hopper_intake_i6_turbo_offroad": {
+    "information":{
+        "authors":"Hackvi",
+        "name":"Turbocharger",
+        "value":1000,
+    }
+    "slotType" : "hopper_intake_i6",
+    "turbocharger": {
+        "wastegateStart":4,
+        "wastegateLimit":6,
+        "maxExhaustPower": 15000,
+        "backPressureCoef": 0.000055,
+        "frictionCoef": 42.5,
+        "inertia":4.0,
+        "damageThresholdTemperature": 1200,
+        "pressureRatePSI": 40,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -2.5],
+            [30000,     -0.5],
+            [60000,     5],
+            [90000,     10],
+            [150000,    13],
+            [200000,    16],
+            [250000,    19],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.31,    0.0],
+            [650,   0.44,    0.47],
+            [1400,  0.53,    0.65],
+            [2000,  0.62,    0.85],
+            [2500,  0.78,    1.00],
+            [3000,  0.85,    0.95],
+            [4000,  1.0,     0.8],
+            [5000,  1.0,     0.75],
+            [6000,  1.0,     0.6],
+        ],
+    },
+    "mainEngine":{
+        //turbocharger name
+        "turbocharger":"turbocharger",
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["hopper_intake_i6_carb", ["hopper_engine","hopper_airbox"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"hopper_airbox"},
+         {"engineGroup":"engine_intake"},
+         {"nodeWeight":2},
+         ["airb",-0.30, -1.32, 1.05],
+         {"engineGroup":""},
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":100600,"beamDamp":150},
+          {"beamDeform":12000,"beamStrength":36000},
+          ["airb","e1r"],
+          ["airb","e2r"],
+          ["airb","e3r"],
+          ["airb","e4r"],
+          ["airb","e1l"],
+          ["airb","e2l"],
+          ["airb","e3l"],
+          ["airb","e4l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+}

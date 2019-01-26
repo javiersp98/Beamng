@@ -1,0 +1,11 @@
+{
+"sbr_skin_AEPpolizia": {
+    "information":{
+        "authors":"Djplopper",
+        "name":"Polizia AEP",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "AEPpolizia",
+}
+}

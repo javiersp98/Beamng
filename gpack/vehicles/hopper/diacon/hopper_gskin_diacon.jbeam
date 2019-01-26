@@ -1,0 +1,11 @@
+{
+"hopper_skin_diacon": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Diacon",
+        "value":50,
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "diacon",
+  },
+}

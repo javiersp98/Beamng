@@ -1,0 +1,67 @@
+{
+"sixteenta_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"16x8 Gripall Radial T/A",
+        "value":190,
+    }
+    "slotType" : "tire_F_16x8_alt",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["sixteenta", ["wheel_FR","tire_FR"], [], {"pos":{"x":-0.55, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":0.99, "z":0.99}}],
+        ["sixteenta", ["wheel_FL","tire_FL"], [], {"pos":{"x": 0.53, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":0.99, "z":0.99}}],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$tirepressure_F", "range", "psi", "Wheels", 30, 0, 60, "Front Tire Pressure", "Relative to atmospheric pressure"]
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        {"disableMeshBreaking":false,"disableHubMeshBreaking":false},
+        {"hasTire":true},
+        {"enableTireReinfBeams":false},
+        {"enableTireLbeams":true},
+        {"enableTireSideReinfBeams":false},
+        {"enableTreadReinfBeams":true},
+
+        //general settings
+        {"radius":0.37},
+        {"tireWidth":0.205},
+
+
+        //tire options
+        {"wheelSideBeamSpring":100,"wheelSideBeamDamp":50},
+        {"wheelSideBeamSpringExpansion":601000,"wheelSideBeamDampExpansion":30},
+        {"wheelSideTransitionZone":0.1,"wheelSideBeamPrecompression":0.99},
+
+        {"wheelReinfBeamSpring":55000,"wheelReinfBeamDamp":90},
+        {"wheelReinfBeamPrecompression":1.00},
+
+        {"wheelTreadBeamSpring":221000,"wheelTreadBeamDamp":50},
+        {"wheelTreadBeamPrecompression":0.99},
+
+        {"wheelTreadReinfBeamSpring":81000,"wheelTreadReinfBeamDamp":50},
+        {"wheelTreadReinfBeamPrecompression":0.99},
+
+        {"wheelPeripheryBeamSpring":201000,"wheelPeripheryBeamDamp":30},
+        {"wheelPeripheryBeamPrecompression":0.99},
+
+        //general tire values
+        {"nodeWeight":0.18},
+        {"nodeMaterial":"|NM_RUBBER"},
+        {"frictionCoef":1.12},
+        {"triangleCollision":false},
+        {"pressurePSI":"$tirepressure_F"},
+
+        {"dragCoef":5},
+        {"treadCoef":0.6},
+
+        //deform values
+        {"wheelSideBeamDeform":22000,"wheelSideBeamStrength":30000},
+        {"wheelReinfBeamDeform":101000,"wheelReinfBeamStrength":101000},
+        {"wheelTreadBeamDeform":17000,"wheelTreadBeamStrength":22000},
+        {"wheelPeripheryBeamDeform":101000,"wheelPeripheryBeamStrength":101000},
+        {"wheelTreadReinfBeamDeform":17000,"wheelTreadReinfBeamStrength":22000},
+    ],
+}
+}

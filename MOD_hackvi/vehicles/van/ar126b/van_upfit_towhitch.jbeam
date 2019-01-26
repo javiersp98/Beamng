@@ -1,0 +1,67 @@
+{
+"van_boxedtrailer_towhitch": {
+    "information":{
+        "authors":"BeamNG, AR162b",
+        "name":"Regular Tow Hitch",
+        "value":70,
+    }
+    "slotType" : "van_receiver_heavy",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["van_upfit_towhitch", ["van_cargobox_underride","van_flatbed","van_towhitch"],[],{"pos":{"x":0.0, "y":0.0, "z":0.0}}],
+    ],
+    "slots": [
+        ["type", "default", "description"]
+        ["trailer_small","","Small Trailer", {"nodeOffset":{"x":0.0,"y":2.013,"z":0}}],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"collision":true}
+         {"frictionCoef":0.5},
+         {"selfCollision":true}
+         //--TOW HITCH--
+         {"nodeMaterial":"|NM_METAL"},
+         {"group":"van_towhitch"}
+         {"nodeWeight":5},
+         ["tw", 0.0, 4.77, 0.58,{"couplerTag":"tow_hitch","couplerStrength":2001000,"couplerRadius":1}],
+         ["tw2", 0.0, 4.77, 0.49],
+         {"group":""}
+    ],
+
+    "ties":[
+        ["id1:", "maxLen", "rate", "short", "long", "group", "maxforce"],
+        ["tw", 0.75, 1, 1, 1, "van_towhitch", 10000000],
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TOW HITCH--
+          {"beamSpring":1344840,"beamDamp":195},
+          {"beamDeform":129000,"beamStrength":890000},
+          ["tw","cf6r"],
+          ["tw","cf6"],
+          ["tw","cf6l"],
+          ["tw","cf7r"],
+          ["tw","cf7"],
+          ["tw","cf7l"],
+
+          ["tw2","cf6r"],
+          ["tw2","cf6"],
+          ["tw2","cf6l"],
+          ["tw2","cf7r"],
+          ["tw2","cf7"],
+          ["tw2","cf7l"],
+
+          ["tw","tw2"],
+
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            //towhitch
+            {"group":"van_towhitch"},
+            {"group":""},
+
+    ],
+}
+}

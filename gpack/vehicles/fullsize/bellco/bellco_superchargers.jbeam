@@ -1,0 +1,194 @@
+{
+"fullsize_supercharger_bellcopr150": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Bellco PR150 Supercharger",
+        "value":600,
+    }
+    "slotType" : "fullsize_intake",
+    "supercharger": {
+        "whineLoopEvent": "event:>Vehicle>Forced_Induction>Supercharger_02>supercharger"
+        "gearRatio":1.075,
+        "clutchEngageRPM":0,
+        "pressureRatePSI":500,
+        "pressurePSIPer1kRPM":1.5,
+        "crankLossPer1kRPM":0.035,
+        "whineVolumePerPSI": 0.25
+        "whinePitchPer10kRPM": 1.24
+        "type":"roots",
+        "boostController":[
+            //throttle in %, factor
+            [0,     0.2],
+            [100,     1],
+        ],
+    },
+    "mainEngine": {
+        //supercharger name
+        "supercharger":"supercharger",
+        "instantAfterFireCoef": 0.75,
+        "sustainedAfterFireCoef": 0.75
+    },
+    "vehicleController": {
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        {"deformGroup":"intake_break", "deformMaterialBase":"fullsize", "deformMaterialDamaged":"invis"},
+        ["fullsize_supercharger_b", ["fullsize_engine"]],
+        {"deformGroup":""},
+    ],
+}
+"fullsize_supercharger_bellcopr250": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Bellco PR250 Supercharger",
+        "value":1600,
+    }
+    "slotType" : "fullsize_intake",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["fullsize_supercharger_b", ["fullsize_engine"]],
+    ],
+    "supercharger": {
+        "whineLoopEvent": "event:>Vehicle>Forced_Induction>Supercharger_02>supercharger"
+        "gearRatio":1.15,
+        "clutchEngageRPM":0,
+        "pressureRatePSI":500,
+        "pressurePSIPer1kRPM":2.25,
+        "crankLossPer1kRPM":0.04,
+        "type":"roots",
+        "whineVolumePerPSI": 0.35
+        "whinePitchPer10kRPM": 1.24
+        "boostController":[
+            //throttle in %, factor
+            [0,     0.2],
+            [100,     1],
+        ],
+    },
+    "mainEngine": {
+        //supercharger name
+        "supercharger":"supercharger",
+        "instantAfterFireCoef": 1,
+        "sustainedAfterFireCoef": 1,
+    },
+    "vehicleController": {
+        "revMatchThrottle":0.3,
+    },
+}
+"fullsize_supercharger_bellcorp350": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Bellco PR350-GT Supercharger",
+        "value":3200,
+    }
+    "slotType" : "fullsize_intake",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        {"deformGroup":"intake_break", "deformMaterialBase":"fullsize", "deformMaterialDamaged":"invis"},
+        ["fullsize_supercharger_b", ["fullsize_engine"]],
+        {"deformGroup":""},
+    ],
+    "supercharger": {
+        "whineLoopEvent": "event:>Vehicle>Forced_Induction>Supercharger_01>supercharger"
+        "gearRatio":1.4,
+        "clutchEngageRPM":0,
+        "pressureRatePSI":500,
+        "pressurePSIPer1kRPM":3.25,
+        "crankLossPer1kRPM":0.035,
+        "type":"roots",
+        "whineVolumePerPSI": 0.45
+        "whinePitchPer10kRPM": 0.875
+        "boostController":[
+            //throttle in %, factor
+            [0,     0.2],
+            [100,     1],
+        ],
+    },
+    "mainEngine": {
+        //supercharger name
+        "supercharger":"supercharger",
+        "instantAfterFireCoef": 1.25,
+        "sustainedAfterFireCoef": 1.25,
+    },
+    "vehicleController": {
+        "revMatchThrottle":0.25,
+    },
+}
+"fullsize_supercharger_bellcorp500": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Bellco PR500-X Supercharger",
+        "value":3200,
+    }
+    "slotType" : "fullsize_intake",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        {"deformGroup":"intake_break", "deformMaterialBase":"fullsize", "deformMaterialDamaged":"invis"},
+        ["fullsize_supercharger_b", ["fullsize_engine"]],
+        {"deformGroup":""},
+    ],
+    "supercharger": {
+        "whineLoopEvent": "event:>Vehicle>Forced_Induction>Supercharger_01>supercharger"
+        "gearRatio":1.7,
+        "clutchEngageRPM":0,
+        "pressureRatePSI":500,
+        "pressurePSIPer1kRPM":3.8,
+        "crankLossPer1kRPM":0.035,
+        "type":"roots",
+        "whineVolumePerPSI": 0.6
+        "whinePitchPer10kRPM": 0.6
+        "boostController":[
+            //throttle in %, factor
+            [0,     0.2],
+            [100,     1],
+        ],
+    },
+    "mainEngine": {
+        //supercharger name
+        "supercharger":"supercharger",
+        "instantAfterFireCoef": 1.25,
+        "sustainedAfterFireCoef": 1.25,
+    },
+    "vehicleController": {
+        "revMatchThrottle":0.25,
+    },
+}
+"fullsize_supercharger_bellcobahba": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Bellco XP1000 'Bahba' Supercharger",
+        "value":3200,
+    }
+    "slotType" : "fullsize_intake",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        {"deformGroup":"intake_break", "deformMaterialBase":"fullsize", "deformMaterialDamaged":"invis"},
+        ["fullsize_supercharger_b", ["fullsize_engine"]],
+        {"deformGroup":""},
+    ],
+    "supercharger": {
+        "whineLoopEvent": "event:>Vehicle>Forced_Induction>Supercharger_01>supercharger"
+        "gearRatio":2.5,
+        "clutchEngageRPM":0,
+        "pressureRatePSI":500,
+        "pressurePSIPer1kRPM":4.75,
+        "crankLossPer1kRPM":0.035,
+        "type":"roots",
+        "whineVolumePerPSI": 0.8
+        "whinePitchPer10kRPM": 0.575
+        "boostController":[
+            //throttle in %, factor
+            [0,     0.2],
+            [100,     1],
+        ],
+    },
+    "mainEngine": {
+        //supercharger name
+        "supercharger":"supercharger",
+        "instantAfterFireCoef": 1.25,
+        "sustainedAfterFireCoef": 1.25,
+    },
+    "vehicleController": {
+        "revMatchThrottle":0.25,
+    },
+}
+}

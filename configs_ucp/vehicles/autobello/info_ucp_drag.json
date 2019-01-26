@@ -1,0 +1,26 @@
+{
+"Performance Class":"12",
+"Weight":735,
+"Drivetrain":"AWD",
+"Braking G":0.998,
+"60-0 mph":119.9,
+"Value":1500000,
+"0-100 km/h":1.6,
+"Propulsion":"ICE",
+"Description":"Extensively modified for Drag use, with the same engine and powertrain as the Rallycross Autobello. Does wheelies.",
+"Configuration":"Drag (SEQ)",
+"Transmission":"Sequential",
+"Induction Type":"NA",
+"0-60 mph":5,
+"Config Type":"Custom",
+"100-0 km/h":39.4,
+"Top Speed":250,
+"Power":850,
+"Off-Road Score":85,
+"Weight/Power":0.85,
+"Years":{
+  "min":1968,
+  "max":1973
+},
+"Fuel Type":"Gasoline"
+}

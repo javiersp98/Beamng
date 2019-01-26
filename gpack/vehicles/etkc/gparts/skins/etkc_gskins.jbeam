@@ -1,0 +1,11 @@
+{
+"etkc_skin_gstripes": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stripes",
+        "value":300,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "stripes",
+}
+}

@@ -1,0 +1,78 @@
+{
+
+"van_differential_F_LSD_410": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"4.10 Limited Slip Front Differential",
+        "value":450,
+    },
+    "slotType" : "van_differential_F",
+    "slots": [
+        ["type", "default", "description"]
+        ["van_driveshaft_F","van_driveshaft_F","Front Driveshaft"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pickup_diff_F", ["van_framefront","van_framecab","van_lowermounts","van_uppermounts","van_shocktop"]],
+         ["van_halfshaft", ["van_lowermounts","van_hub1_F","van_hub4_F","van_hub5_F","wheelhub_a_FL","wheelhub_a_FR","wheelhub_b_FL","wheelhub_b_FR"]],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        //front diff
+        ["differential", "differential_F", "driveshaft_F", 1, {"diffType":"lsd", "gearRatio":4.10, "lsdPreload":100, "lsdLockCoef":0.2, "lsdRevLockCoef":0.1, "friction":5}]
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--diff weight--
+         {"selfCollision":false},
+         {"collision":false},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"van_diff_F"},
+         {"nodeWeight":15},
+         ["fdiffl", 0.3, -1.463, 0.42],
+         ["fdiffr", -0.3, -1.463, 0.42],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":3001000,"beamDamp":250},
+          {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+          ["fdiffr","fdiffl"],
+          {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+          ["fdiffl", "al1l"],
+          ["fdiffl", "al2l"],
+          ["fdiffl", "fr2l"],
+          ["fdiffl", "fr3l"],
+          ["fdiffl", "fr2"],
+          ["fdiffl", "fr3"],
+          ["fdiffl", "fr6l"],
+          ["fdiffl", "fr7l"],
+
+          ["fdiffr", "al1r"],
+          ["fdiffr", "al2r"],
+          ["fdiffr", "fr2r"],
+          ["fdiffr", "fr3r"],
+          ["fdiffr", "fr2"],
+          ["fdiffr", "fr3"],
+          ["fdiffr", "fr6r"],
+          ["fdiffr", "fr7r"],
+
+          //halfshafts
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.1, "beamShortBound":0.1},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":2000,"beamStrength":4000},
+          {"beamLimitSpring":8001000,"beamLimitDamp":100},
+          {"breakGroupType":1},
+          {"optional":true},
+          {"breakGroup":"wheel_FR"},
+          ["fw1r","fdiffr", {"name":"axle_a_FR"}],
+          {"breakGroup":"wheel_FL"},
+          ["fw1l","fdiffl", {"name":"axle_a_FL"}],
+          {"optional":false},
+          {"breakGroupType":0},
+          {"breakGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+},
+}

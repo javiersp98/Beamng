@@ -1,0 +1,11 @@
+{
+"autobello_skin_pizza": {
+    "information":{
+        "authors":"welshtoast",
+        "name":"Pizza Delivery",
+        "value":100,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "pizza",
+}
+}

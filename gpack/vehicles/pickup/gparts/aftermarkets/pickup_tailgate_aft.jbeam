@@ -1,0 +1,252 @@
+{
+"pickup_tailgate_aft": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Flushed Tailgate",
+        "value":120,
+    }
+    "slotType" : "pickup_tailgate",
+    "slots": [
+        ["type", "default", "description"]
+        ["pickup_lettering","pickup_lettering_v8_4wd","Lettering"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pickup_tailgate_aft", ["pickup_tailgate"],[],{"pos":{"x":0.0, "y":0.0, "z":0.0}}],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         //--TAILGATE--
+         {"collision":true}
+         {"selfCollision":true}
+         {"group":"pickup_tailgate"},
+         {"nodeWeight":3},
+         ["t1rr",-0.82, 2.53, 1.21],
+         ["t1r",-0.42, 2.53, 1.21],
+         ["t1",0.0, 2.53, 1.21],
+         ["t1l",0.42, 2.53, 1.21],
+         ["t1ll",0.82, 2.53, 1.21],
+
+         ["t2rr",-0.82, 2.53, 0.72],
+         ["t2r",-0.42, 2.53, 0.72],
+         ["t2",0.0, 2.53, 0.725],
+         ["t2l",0.42, 2.53, 0.72],
+         ["t2ll",0.82, 2.53, 0.72],
+         //rigidifier
+         {"selfCollision":false}
+         {"collision":false}
+         {"group":""},
+         ["t3",0.0, 2.31, 0.97],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--TAILGATE--
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":1890840,"beamDamp":260},
+          {"beamDeform":30750,"beamStrength":"FLT_MAX"},
+          //tailgate main shape
+          ["t1rr","t1r"],
+          ["t1r","t1"],
+          ["t1","t1l"],
+          ["t1l","t1ll"],
+
+          ["t2rr","t2r"],
+          ["t2r","t2"],
+          ["t2","t2l"],
+          ["t2l","t2ll"],
+
+          ["t1rr","t2rr"],
+          ["t1r","t2r"],
+          ["t1","t2"],
+          ["t1l","t2l"],
+          ["t1ll","t2ll"],
+
+          //surficial crossing
+          {"beamDeform":9750,"beamStrength":"FLT_MAX"},
+          ["t1rr","t2r"],
+          ["t1r","t2rr"],
+          ["t1r","t2"],
+          ["t1","t2r"],
+          ["t1","t2l"],
+          ["t1l","t2"],
+          ["t1l","t2ll"],
+          ["t1ll","t2l"],
+
+          //rigidifier
+          {"beamDeform":4500,"beamStrength":"FLT_MAX"},
+          ["t1rr","t3"],
+          ["t1r","t3"],
+          ["t1","t3"],
+          ["t1l","t3"],
+          ["t1ll","t3"],
+          ["t2rr","t3"],
+          ["t2r","t3"],
+          ["t2","t3"],
+          ["t2l","t3"],
+          ["t2ll","t3"],
+
+          //hinge
+          {"disableTriangleBreaking":true}
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":1890840,"beamDamp":260},
+          {"beamDeform":15000,"beamStrength":42720},
+          {"breakGroup":"tailgatehinge_a"},
+          ["t2rr","b10rr"],
+          ["t2rr","b5rr"],
+          ["t2l","b10ll"],
+          ["t2","b10rr"],
+
+          ["t2rr","b9rr"],
+          ["t2l","b9ll"],
+          ["t2ll","b9ll"],
+
+          {"breakGroup":"tailgatehinge_b"},
+          ["t2","b10ll"],
+          ["t2r","b10rr"],
+          ["t2ll","b10ll"],
+          ["t2ll","b5ll"],
+
+          ["t2","b9ll"],
+          ["t2r","b9rr"],
+          ["t2","b9rr"],
+          {"breakGroup":""},
+
+          //latch
+          {"beamSpring":1890840,"beamDamp":260},
+          {"beamDeform":14250,"beamStrength":25810},
+          {"breakGroup":"tailgatelatch"},
+          /*
+          ["t1rr","b5rr"],
+          ["t1ll","b5ll"],
+          ["t1rr","b4rr"],
+          ["t1ll","b4ll"],
+          ["t2rr","b5rr"],
+          ["t2ll","b5ll"],
+          */
+          {"breakGroup":""},
+
+          //limiter
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.5, "beamShortBound":1.0},
+          {"beamSpring":0,"beamDamp":32.5,"beamDeform":"FLT_MAX","beamStrength":"FLT_MAX"},
+          {"beamLimitSpring":2251000,"beamLimitDamp":200},
+          {"breakGroup":"tailgatehinge_a"},
+          //["t3","fr17"],
+          {"breakGroup":""},
+
+          //--TAILGATE SUPPORT BEAMS--
+          {"beamType":"|SUPPORT","beamLongBound":4},
+          {"beamSpring":1890840,"beamDamp":260},
+          {"beamDeform":3750,"beamStrength":284800},
+          ["t1rr","b4rr"],
+          ["t1r","b4rr"],
+          ["t1l","b4ll"],
+          ["t1ll","b4ll"],
+          ["t1rr","b10rr"],
+          ["t1ll","b10ll"],
+          ["t2r","b10rr"],
+          ["t2l","b10ll"],
+          ["t2rr","b9rr"],
+          ["t2ll","b9ll"],
+          ["t2rr","fr18r"],
+          ["t2r","fr18r"],
+          ["t2","fr18"],
+          ["t2l","fr18l"],
+          ["t2ll","fr18l"],
+          ["t2rr","b14rr"],
+          ["t2ll","b14ll"],
+          ["t2r","fr19r"],
+          ["t2","fr19"],
+          ["t2l","fr19l"],
+          {"beamType":"|SUPPORT","beamLongBound":2},
+          //{"breakGroup":"tailgatelatch"},
+          ["t1rr","b4rr"],
+          ["t1ll","b4ll"],
+          //{"breakGroup":""},
+          {"disableTriangleBreaking":false}
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "hydros": [
+            ["id1:","id2:"],
+            {"beamDeform":10000,"beamStrength":20000},
+            {"beamLimitSpring":305000,"beamLimitDamp":400},
+            {"beamSpring":150000,"beamDamp":1000},
+            {"beamPrecompression":1.0},
+            {"breakGroupType":1},
+            {"breakGroup":"tailgatehinge_a"},
+            {"disableTriangleBreaking":true}
+            ["t1rr","b4rr",{"inputSource":"tailgate","inLimit":0,"outLimit":2.1,"inRate":1,"outRate":1,"inputFactor":1.0}],
+            ["t1ll","b4ll",{"inputSource":"tailgate","inLimit":0,"outLimit":2.1,"inRate":1,"outRate":1,"inputFactor":1.0}],
+            {"disableTriangleBreaking":false}
+            {"beamPrecompression":1.0},
+            {"breakGroupType":0},
+            {"breakGroup":""},
+    ],
+    /*
+    "commands": [
+            ["name", "id1:", "id2:", "inputSource", "inLimit", "outLimit", "inRate", "outRate", "inKey", "outKey"],
+            {"beamDeform":2500,"beamStrength":3000},
+            {"beamLimitSpring":305000,"beamLimitDamp":400},
+            {"beamSpring":305000,"beamDamp":400},
+            {"beamPrecompression":1.0},
+            //{"breakGroupType":1},
+            //{"breakGroup":"tailgatelatch"},
+            ["tg_right", "t1rr", "b4rr", "tailgate", 1.5, 2, 3, 1, 1, 2],
+            ["tg_left",  "t1ll", "b4ll", "tailgate", 1.5, 2, 3, 1, 1, 2],
+            {"beamPrecompression":1.0},
+            //{"breakGroupType":0},
+            //{"breakGroup":""},
+    ],
+    "ropes": [
+        ["name", "id1:", "segments", "length"]
+        //["rope1", "t1rr", 10, 0, {"id2:":"t1ll"}]
+        //["rope1", "t1rr", 300, 10,]
+    ],
+    */
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            //tailgate
+            {"groundModel":"metal"},
+            {"group":"pickup_tailgateouter"},
+            {"dragCoef":6},
+            ["t2rr","t1rr","t2r"],
+            ["t1rr","t1r","t2r"],
+            ["t2r","t1r","t2"],
+            ["t1r","t1","t2"],
+            ["t1l","t2l","t2"],
+            ["t1l","t2","t1"],
+            ["t1ll","t2ll","t2l"],
+            ["t1ll","t2l","t1l"],
+
+            /*
+            {"group":"pickup_tailgateinner"},
+            ["t1rr","t2rr","t2r"],
+            ["t1rr","t2r","t1r"],
+            ["t1r","t2r","t2"],
+            ["t1r","t2","t1"],
+            ["t2l","t1l","t2"],
+            ["t1l","t1","t2"],
+            ["t2ll","t1ll","t2l"],
+            ["t1ll","t1l","t2l"],
+            */
+            {"dragCoef":0},
+            {"breakGroup":["tailgatelatch","tailgatehinge_a","tailgatehinge_b"]},
+            ["b5ll", "b10ll", "t2ll"],
+            ["b5ll", "t2ll", "t1ll"],
+            ["t1rr", "t2rr", "b5rr"],
+            ["b5rr", "t2rr", "b10rr"],
+            {"breakGroup":["tailgatehinge_a","tailgatehinge_b"]},
+            ["t2", "fr20", "t2r"],
+            ["t2r", "fr20", "fr20r"],
+            ["t2r", "fr20r", "t2rr"],
+            ["fr20r", "b10rr", "t2rr"],
+            ["fr20", "t2", "t2l"],
+            ["fr20", "t2l", "fr20l"],
+            ["fr20l", "t2l", "t2ll"],
+            ["b10ll", "fr20l", "t2ll"],
+            {"breakGroup":""},
+            {"dragCoef":0},
+    ],
+}
+}

@@ -1,0 +1,30 @@
+{
+"0-100 km/h":9,
+"Braking G":0.959,
+"Drivetrain":"4WD",
+"Value":9400,
+"Performance Class":"4",
+"TorquePeakRPM":"2050 - 3300",
+"0-100 mph":28.3,
+"Off-Road Score":41,
+"Configuration":"Sapphicon (M)",
+"Weight":1535,
+"default_color":"Brilliant Blue",
+"default_color_2":"Pearl White",
+"60-100 mph":19.8,
+"0-60 mph":8.5,
+"Config Type":"Factory",
+"100-0 km/h":41,
+"Top Speed":50.7312,
+"Transmission":"Manual",
+"Torque":294.584,
+"Description":"Upgraded ZXT-6 with modern touches for hardcore Hopper fans",
+"Power":163.713,
+"Weight/Power":9.41718,
+"60-0 mph":122.1,
+"Years":{
+  "min":1998,
+  "max":2001
+},
+"PowerPeakRPM":"4450 - 5000"
+}

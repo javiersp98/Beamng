@@ -1,0 +1,66 @@
+{
+"hopper_sparewheel_14a_BCGPS": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GP Standard 15x7 Spare Wheel (Body Colored)",
+        "value":75,
+    },
+    "slotType" : "hopper_sparewheel",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["steelwheel_14a_15x7_BC", ["hopper_sparetire"], [], {"pos":{"x":0, "y":1.924, "z":0.8769}, "rot":{"x":0, "y":0, "z":90}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+    "slots": [
+        ["type", "default", "description"]
+        ["hopper_sparetire","hopper_sparetire","Spare Tire"{"coreSlot":true}],
+    ],
+},
+"hopper_sparewheel_14a_black": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GP Standard 15x7 Spare Wheel (Black)",
+        "value":75,
+    },
+    "slotType" : "hopper_sparewheel",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["steelwheel_14a_15x7_black", ["hopper_sparetire"], [], {"pos":{"x":0, "y":1.924, "z":0.8769}, "rot":{"x":0, "y":0, "z":90}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+    "slots": [
+        ["type", "default", "description"]
+        ["hopper_sparetire","hopper_sparetire","Spare Tire"{"coreSlot":true}],
+    ],
+},
+"hopper_sparewheel_5td": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Gavril 5TD 15x7 Spare Wheel",
+        "value":75,
+    },
+    "slotType" : "hopper_sparewheel",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["gavril_5td_18x10", ["hopper_sparetire"], [], {"pos":{"x":0, "y":1.924, "z":0.8769}, "rot":{"x":0, "y":0, "z":90}, "scale":{"x":0.715, "y":0.83, "z":0.83}}],
+    ],
+    "slots": [
+        ["type", "default", "description"]
+        ["hopper_sparetire","hopper_sparetire","Spare Tire"{"coreSlot":true}],
+    ],
+},
+"hopper_sparewheel_svl": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Gavril SVL 15x7 Spare Wheel",
+        "value":75,
+    },
+    "slotType" : "hopper_sparewheel",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["gavril_svl_18x10", ["hopper_sparetire"], [], {"pos":{"x":0, "y":1.924, "z":0.8769}, "rot":{"x":0, "y":0, "z":90}, "scale":{"x":0.715, "y":0.83, "z":0.83}}],
+    ],
+    "slots": [
+        ["type", "default", "description"]
+        ["hopper_sparetire","hopper_sparetire","Spare Tire"{"coreSlot":true}],
+    ],
+},
+}

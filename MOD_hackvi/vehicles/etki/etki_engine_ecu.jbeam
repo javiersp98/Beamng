@@ -1,0 +1,18 @@
+{
+
+"etki_engine_ecu_ttsport": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"TTSport ECU",
+        "value":125,
+    }
+    "slotType" : "etki_engine_ecu",
+    "mainEngine":{
+        "idleRPM":900,
+        "revLimiterRPM":6500,
+        "revLimiterType":"timeBased",
+        "revLimiterCutTime":0.16,
+    },
+},
+
+}

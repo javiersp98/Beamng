@@ -1,0 +1,12 @@
+{
+    "license_plate_GPACK_modname": {
+    "information":{
+        "authors":"Godzilla!",
+        "name":"GPACK Plate Design",
+        "value":50,
+    }
+    "slotType" : "licenseplate_design_2_1",
+    "licenseplate_path" : "vehicles/common/licenseplates/GPACK/modname/GPACK_modname.json",
+    }
+}
+

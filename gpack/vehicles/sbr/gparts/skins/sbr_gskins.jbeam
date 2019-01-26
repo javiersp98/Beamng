@@ -1,0 +1,11 @@
+{
+"sbr_skin_g1": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Design Stripes",
+        "value":3250,
+    },
+    "slotType" : "paint_design",
+    "skinName" : "g1",
+  },
+}

@@ -1,0 +1,639 @@
+{
+"pickup_bed_ef": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Short Bed (Extended Wells)",
+        "value":2500,
+    }
+    "slotType" : "pickup_bed",
+    "slots": [
+        ["type", "default", "description"]
+        ["pickup_tailgate","pickup_tailgate","Tailgate"],
+        ["pickup_taillight","pickup_taillight","Taillights"],
+        ["pickup_fenderflare_R_ef","","Rear Fender Flares"],
+        ["pickup_bedextra","","Bed Accessory"],
+        ["pickup_bedtoolbox_L","","Left Toolbox"],
+        ["pickup_bedtoolbox_R","","Right Toolbox"],
+        ["pickup_trim_bed","","Bed Trim"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pickup_bed_ef", ["pickup_framefront", "pickup_framecab", "pickup_framebed", "pickup_rearshocktop", "pickup_bed"],[],{"pos":{"x":0.0, "y":0.0, "z":0.0}}],
+    ],
+
+    "ties":[
+        ["id1:", "maxLen", "rate", "short", "long", "group", "maxforce"],
+        ["fr16r", 0.75, 1, 1, 1, "pickup_bed", 10000000],
+        ["fr16", 0.75, 1, 1, 1, "pickup_bed", 10000000],
+        ["fr16l", 0.75, 1, 1, 1, "pickup_bed", 10000000],
+        ["fr17r", 0.75, 1, 1, 1, "pickup_bed", 10000000],
+        ["fr17", 0.75, 1, 1, 1, "pickup_bed", 10000000],
+        ["fr17l", 0.75, 1, 1, 1, "pickup_bed", 10000000],
+        ["fr18r", 0.75, 1, 1, 1, "pickup_bed", 10000000],
+        ["fr18", 0.75, 1, 1, 1, "pickup_bed", 10000000],
+        ["fr18l", 0.75, 1, 1, 1, "pickup_bed", 10000000],
+    ],
+
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"nodeWeight":2.5},
+        //--BED--
+        {"nodeMaterial":"|NM_METAL"},
+        {"group":"pickup_bed"},
+        {"frictionCoef":0.5},
+        {"collision":true}
+        {"selfCollision":true}
+        ["b1rr",-0.90, 0.46, 1.21],
+        ["b1",0.0, 0.46, 1.21],
+        ["b1ll",0.90, 0.46, 1.21],
+        ["b2rr",-0.90, 0.99, 1.21],
+        ["b2ll",0.90, 0.99, 1.21],
+        ["b3rr",-0.90, 1.49, 1.21],
+        ["b3ll",0.90, 1.49, 1.21],
+        ["b4rr",-0.90, 1.99, 1.21],
+        ["b4ll",0.90, 1.99, 1.21],
+        ["b5rr",-0.90, 2.49, 1.21],
+        ["b5ll",0.90, 2.49, 1.21],
+
+        //extra wheel well nodes
+        {"nodeWeight":1.65},
+        ["bw1rr",-0.84, 1.15, 0.97],
+        ["bw2rr",-0.84, 1.83, 0.97],
+
+        ["bw1r",-0.62, 1.15, 0.97],
+        ["bw2r",-0.62, 1.83, 0.97],
+
+        ["bw1ll",0.84, 1.15, 0.97],
+        ["bw2ll",0.84, 1.83, 0.97],
+
+        ["bw1l",0.62, 1.15, 0.97],
+        ["bw2l",0.62, 1.83, 0.97],
+
+        {"selfCollision":true}
+        {"nodeWeight":3.5},
+        ["b6rr",-0.95, 0.46, 0.83],
+        ["b6",0.0, 0.46, 0.83],
+        ["b6ll",0.95, 0.46, 0.83],
+        ["b7rr",-0.95, 0.98, 0.83],
+        ["b7ll",0.95, 0.98, 0.83],
+        ["b8rr",-0.97, 1.49, 0.91],
+        ["b8ll",0.97, 1.49, 0.91],
+        ["b9rr",-0.95, 1.92, 0.80],
+        ["b9ll",0.95, 1.92, 0.80],
+        ["b10rr",-0.95, 2.49, 0.80],
+        ["b10ll",0.95, 2.49, 0.80],
+        ["b11rr",-0.83, 0.46, 0.39],
+        ["b11ll",0.83, 0.46, 0.39],
+        ["b12rr",-0.83, 0.93, 0.39],
+        ["b12ll",0.83, 0.93, 0.39],
+        ["b13rr",-0.88, 2.03, 0.46],
+        ["b13ll",0.88, 2.03, 0.46],
+        ["b14rr",-0.90, 2.49, 0.51],
+        ["b14ll",0.90, 2.49, 0.51],
+        {"group":""}
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--BED--
+          {"beamSpring":2646840,"beamDamp":325},
+          {"beamDeform":60750,"beamStrength":"FLT_MAX"},
+          //bed main shape lengthwise
+          ["b1rr","b2rr"],
+          ["b1ll","b2ll"],
+          ["b2rr","b3rr"],
+          ["b2ll","b3ll"],
+          ["b3rr","b4rr"],
+          ["b3ll","b4ll"],
+          {"deformGroup":"taillight_R_break", "deformationTriggerRatio":0.02},
+          ["b4rr","b5rr"],
+          ["b9rr","b10rr"],
+          {"deformGroup":"taillight_L_break", "deformationTriggerRatio":0.02},
+          ["b4ll","b5ll"],
+          ["b9ll","b10ll"],
+          {"deformGroup":""},
+          ["b6rr","b7rr"],
+          ["b6ll","b7ll"],
+          ["b7rr","b8rr"],
+          ["b7ll","b8ll"],
+          ["b8rr","b9rr"],
+          ["b8ll","b9ll"],
+          ["b11rr","b12rr"],
+          ["b11ll","b12ll"],
+          ["b13rr","b14rr"],
+          ["b13ll","b14ll"],
+
+          //bed main shape vertical
+          {"beamDeform":108750,"beamStrength":"FLT_MAX"},
+          ["b1rr","b6rr"],
+          ["b1ll","b6ll"],
+          ["b2rr","b7rr"],
+          ["b2ll","b7ll"],
+          ["b3rr","b8rr"],
+          ["b3ll","b8ll"],
+          ["b4rr","b9rr"],
+          ["b4ll","b9ll"],
+          {"deformGroup":"taillight_R_break", "deformationTriggerRatio":0.02},
+          ["b5rr","b10rr"],
+          {"deformGroup":"taillight_L_break", "deformationTriggerRatio":0.02},
+          ["b5ll","b10ll"],
+          {"deformGroup":""},
+          ["b1","b6"],
+
+          ["b11rr","b6rr"],
+          ["b11ll","b6ll"],
+          ["b12rr","b7rr"],
+          ["b12ll","b7ll"],
+          ["b13rr","b9rr"],
+          ["b13ll","b9ll"],
+          ["b14rr","b10rr"],
+          ["b14ll","b10ll"],
+
+
+          ["b6","fr12"],
+          {"beamDeform":48750,"beamStrength":"FLT_MAX"},
+          //bed main shape widthwise
+          ["b1rr","b1"],
+          ["b1ll","b1"],
+          ["b6rr","b6"],
+          ["b6ll","b6"],
+
+          {"beamDeform":24000,"beamStrength":"FLT_MAX"},
+          //bed surficial crossing
+          ["b1rr","b6"],
+          ["b1ll","b6"],
+          ["b6rr","b1"],
+          ["b6ll","b1"],
+          ["b1rr","b7rr"],
+          ["b1ll","b7ll"],
+          ["b2rr","b6rr"],
+          ["b2ll","b6ll"],
+          ["b3rr","b7rr"],
+          ["b3ll","b7ll"],
+          ["b2rr","b8rr"],
+          ["b2ll","b8ll"],
+          ["b3rr","b9rr"],
+          ["b3ll","b9ll"],
+          ["b4rr","b8rr"],
+          ["b4ll","b8ll"],
+          {"deformGroup":"taillight_R_break", "deformationTriggerRatio":0.02},
+          ["b4rr","b10rr"],
+          ["b5rr","b9rr"],
+          {"deformGroup":"taillight_L_break", "deformationTriggerRatio":0.02},
+          ["b5ll","b9ll"],
+          ["b4ll","b10ll"],
+          {"deformGroup":""},
+
+          ["b6rr","b12rr"],
+          ["b6ll","b12ll"],
+          ["b7rr","b11rr"],
+          ["b7ll","b11ll"],
+
+          ["b9rr","b14rr"],
+          ["b9ll","b14ll"],
+          ["b10rr","b13rr"],
+          ["b10ll","b13ll"],
+
+          //lengthwise rigids
+          {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+          ["b1rr","b3rr"],
+          ["b1ll","b3ll"],
+          ["b2rr","b4rr"],
+          ["b2ll","b4ll"],
+          ["b3rr","b5rr"],
+          ["b3ll","b5ll"],
+          ["b6rr","b8rr"],
+          ["b6ll","b8ll"],
+          ["b7rr","b9rr"],
+          ["b7ll","b9ll"],
+          ["b8rr","b10rr"],
+          ["b8ll","b10ll"],
+
+		  //bed wheel wells
+          {"beamSpring":2646840,"beamDamp":250},
+		  //right
+          {"beamDeform":37500,"beamStrength":"FLT_MAX"},
+		  ["bw1rr","bw2rr"],
+		  ["bw1rr","bw2r"],
+		  ["bw1rr","bw1r"],
+
+		  ["bw2rr","bw2r"],
+		  ["bw2rr","bw1r"],
+
+		  ["bw2r","bw1r"],
+
+		  ["bw2rr","b9rr"],
+		  ["bw2r","fr18r"],
+		  ["bw1r","fr16r"],
+		  ["bw1rr","b7rr"],
+          {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+		  ["bw2rr","fr18r"],
+		  ["bw2r","b9rr"],
+
+		  ["bw1rr","fr16r"],
+		  ["bw1r","b7rr"],
+
+		  ["bw1r","fr17r"],
+		  ["bw2r","fr17r"],
+
+          ["bw2rr","b5rr"],
+          ["bw1rr","b1rr"],
+
+          {"beamDeform":15500,"beamStrength":"FLT_MAX"},
+		  ["bw1rr","b2rr"],
+		  ["bw1rr","b3rr"],
+
+		  ["bw2rr","b3rr"],
+		  ["bw2rr","b4rr"],
+		  //left
+          {"beamDeform":37500,"beamStrength":"FLT_MAX"},
+		  ["bw1ll","bw2ll"],
+		  ["bw1ll","bw2l"],
+		  ["bw1ll","bw1l"],
+
+		  ["bw2ll","bw2l"],
+		  ["bw2ll","bw1l"],
+
+		  ["bw2l","bw1l"],
+
+		  ["bw2ll","b9ll"],
+		  ["bw2l","fr18l"],
+		  ["bw1l","fr16l"],
+		  ["bw1ll","b7ll"],
+          {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+		  ["bw2ll","fr18l"],
+		  ["bw2l","b9ll"],
+
+		  ["bw1ll","fr16l"],
+		  ["bw1l","b7ll"],
+
+		  ["bw1l","fr17l"],
+		  ["bw2l","fr17l"],
+
+          ["bw2ll","b5ll"],
+          ["bw1ll","b1ll"],
+
+          {"beamDeform":15500,"beamStrength":"FLT_MAX"},
+		  ["bw1ll","b2ll"],
+		  ["bw1ll","b3ll"],
+
+		  ["bw2ll","b3ll"],
+		  ["bw2ll","b4ll"],
+
+          //--BED SUPPORT BEAMS--
+          {"beamSpring":1890840,"beamDamp":325},
+          {"beamType":"|SUPPORT", "beamLongBound":4,},
+          {"beamDeform":24750,"beamStrength":356000},
+          {"optional":true},
+          ["b2rr","c4rr"],
+          ["b2ll","c4ll"],
+
+          ["b7rr","c3rr"],
+          ["b7ll","c3ll"],
+
+          ["b12rr","c2rr"],
+          ["b12ll","c2ll"],
+
+          ["b2rr","c3rr"],
+          ["b2ll","c3ll"],
+
+          ["b7rr","c4rr"],
+          ["b7ll","c4ll"],
+          {"optional":false},
+
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.15, "beamShortBound":0.15},
+          {"beamSpring":0,"beamDamp":1.3},
+          {"beamDeform":9750,"beamStrength":56960},
+          //["b1rr","d8r"],
+          //["b1ll","d8l"],
+
+          //["b1","d8r"],
+          //["b1","d8l"],
+
+          //["b6rr","d5r"],
+          //["b6ll","d5l"],
+
+          //["b6","d5r"],
+          //["b6","d5l"],
+
+          //["b11rr","d2r"],
+          //["b11ll","d2l"],
+
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.3, "beamShortBound":0.3},
+          {"beamSpring":0,"beamDamp":1.3},
+          {"beamLimitSpring":2251000,"beamLimitDamp":250},
+          {"beamDeform":17250,"beamStrength":49840},
+          {"optional":true},
+          ["b1rr","c2rr"],
+          ["b1ll","c2ll"],
+
+          ["b1rr","c2rr"],
+          ["b1ll","c2ll"],
+
+          ["b11rr","c4rr"],
+          ["b11ll","c4ll"],
+
+          ["b11rr","c4rr"],
+          ["b11ll","c4ll"],
+          {"optional":false},
+
+          //bed floppy attachment
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":1344840,"beamDamp":520},
+          {"beamDeform":17250,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":""},
+
+          ["b12rr","fr13r"],
+          ["b12rr","fr16r"],
+          ["b12ll","fr13l"],
+          ["b12ll","fr16l"],
+
+          ["b13rr","fr15r"],
+          ["b13rr","fr18r"],
+          ["b13ll","fr15l"],
+          ["b13ll","fr18l"],
+
+          ["b14rr","fr19r"],
+          ["b14rr","fr20r"],
+          ["b14ll","fr19l"],
+          ["b14ll","fr20l"],
+
+          ["b7rr","fr16r"],
+          ["b7ll","fr16l"],
+          ["b8rr","fr17r"],
+          ["b8ll","fr17l"],
+          ["b9rr","fr18r"],
+          ["b9ll","fr18l"],
+          {"deformGroup":"taillight_R_break", "deformationTriggerRatio":0.02},
+          ["b10rr","fr20r"],
+          {"deformGroup":"taillight_L_break", "deformationTriggerRatio":0.02},
+          ["b10ll","fr20l"],
+
+          //corner rigids
+          {"deformGroup":"taillight_R_break", "deformationTriggerRatio":0.02},
+          ["fr20r","b5rr"],
+          {"deformGroup":"taillight_L_break", "deformationTriggerRatio":0.02},
+          ["fr20l","b5ll"],
+          {"deformGroup":""},
+          ["fr18r","b4rr"],
+          ["fr18l","b4ll"],
+          ["fr17r","b3rr"],
+          ["fr17l","b3ll"],
+          ["fr16r","b2rr"],
+          ["fr16l","b2ll"],
+          ["fr16r","b1rr"],
+          ["fr16l","b1ll"],
+
+          ["fr16","b1"],
+
+          ["fr13r","b2rr"],
+          ["fr13l","b2ll"],
+          ["fr13r","b1rr"],
+          ["fr13l","b1ll"],
+
+          ["b11rr","b1rr"],
+          ["b11ll","b1ll"],
+          ["b12rr","b2rr"],
+          ["b12ll","b2ll"],
+          ["b12rr","b3rr"],
+          ["b12ll","b3ll"],
+          ["b13rr","b3rr"],
+          ["b13ll","b3ll"],
+          ["b13rr","b4rr"],
+          ["b13ll","b4ll"],
+          ["b14rr","b5rr"],
+          ["b14ll","b5ll"],
+
+          ["b12rr","b8rr"],
+          ["b12ll","b8ll"],
+          ["b13rr","b8rr"],
+          ["b13ll","b8ll"],
+
+          ["b12rr","fr14r"],
+          ["b12rr","fr17r"],
+          ["b12ll","fr14l"],
+          ["b12ll","fr17l"],
+
+          ["b13rr","fr14r"],
+          ["b13rr","fr17r"],
+          ["b13ll","fr14l"],
+          ["b13ll","fr17l"],
+
+          ["b13rr","fr19r"],
+          ["b13rr","fr20r"],
+          ["b13ll","fr19l"],
+          ["b13ll","fr20l"],
+
+          ["b14rr","fr15r"],
+          ["b14rr","fr18r"],
+          ["b14ll","fr15l"],
+          ["b14ll","fr18l"],
+
+          ["b11rr","fr13r"],
+          ["b11rr","fr16r"],
+          ["b11ll","fr13l"],
+          ["b11ll","fr16l"],
+
+          ["b7rr","fr17r"],
+          ["b7ll","fr17l"],
+          ["b9rr","fr17r"],
+          ["b9ll","fr17l"],
+
+          ["b6","fr16"],
+
+          ["b2rr","b1"],
+          ["b2ll","b1"],
+          ["b7rr","b6"],
+          ["b7ll","b6"],
+          {"deformLimitExpansion":1.1},
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":4200840,"beamDamp":390},
+          {"beamDeform":24000,"beamStrength":"FLT_MAX"},
+          //upbend enticement
+          ["b11rr","b5rr"],
+          ["b11ll","b5ll"],
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            //bed
+            {"groundModel":"metal"},
+            {"dragCoef":10},
+            {"group":"pickup_bedrightside"},
+            ["b1rr","b2rr","b6rr"],
+            ["b2rr","b7rr","b6rr"],
+            ["b2rr","b3rr","b7rr"],
+            ["b3rr","b8rr","b7rr"],
+            ["b3rr","b4rr","b8rr"],
+            ["b4rr","b9rr","b8rr"],
+            ["b4rr","b5rr","b9rr"],
+            ["b5rr","b10rr","b9rr"],
+
+            ["b6rr","b7rr","b11rr"],
+            ["b7rr","b12rr","b11rr"],
+            ["b7rr","b8rr","b12rr"],
+            ["b8rr","b9rr","b13rr"],
+            ["b9rr","b10rr","b13rr"],
+            ["b10rr","b14rr","b13rr"],
+
+            {"group":"pickup_bedleftside"},
+            ["b2ll","b1ll","b6ll"],
+            ["b7ll","b2ll","b6ll"],
+            ["b3ll","b2ll","b7ll"],
+            ["b8ll","b3ll","b7ll"],
+            ["b4ll","b3ll","b8ll"],
+            ["b9ll","b4ll","b8ll"],
+            ["b5ll","b4ll","b9ll"],
+            ["b10ll","b5ll","b9ll"],
+
+            ["b7ll","b6ll","b11ll"],
+            ["b12ll","b7ll","b11ll"],
+            ["b12ll","b8ll","b7ll"],
+            ["b9ll","b8ll","b13ll"],
+            ["b10ll","b9ll","b13ll"],
+            ["b14ll","b10ll","b13ll"],
+
+            {"group":"pickup_bedbottom"},
+            ["b11rr","fr13r","fr10r"],
+            ["b11rr","b12rr","fr13r"],
+            ["b11ll","fr10l","fr13l"],
+            ["b12ll","b11ll","fr13l"],
+
+            ["b13rr","b14rr","fr19r"],
+            ["b13rr","fr19r","fr15r"],
+
+            ["b14ll","b13ll","fr19l"],
+            ["b13ll","fr15l","fr19l"],
+            {"dragCoef":2},
+            {"group":"pickup_bedrear"},
+
+            ["b10rr","fr20r","fr19r"],
+            ["b10rr","fr19r","b14rr"],
+
+            ["b10ll","fr19l","fr20l"],
+            ["b14ll","fr19l","b10ll"],
+
+            {"group":"pickup_bedfloor"},
+            {"dragCoef":10},
+            ["b6rr","fr12r","fr16r"],
+            ["b6rr","fr16r","b7rr"],
+            //["b7rr","fr16r","fr17r"],
+            //["b7rr","fr17r","b9rr"],
+            //["b9rr","fr17r","fr18r"],
+            ["b9rr","fr18r","fr20r"],
+            ["b9rr","fr20r","b10rr"],
+
+            ["b6ll","fr16l","fr12l"],
+            ["b7ll","fr16l","b6ll"],
+            //["b7ll","fr17l","fr16l"],
+            //["b9ll","fr17l","b7ll"],
+            //["b9ll","fr18l","fr17l"],
+            ["b9ll","fr20l","fr18l"],
+            ["b10ll","fr20l","b9ll"],
+
+			//wheel well
+			["fr16r","fr17r","bw1r"],
+			["bw1r","fr17r","bw2r"],
+			["fr17r","fr18r","bw2r"],
+
+			["bw2r","fr18r","bw2rr"],
+			["bw2rr","fr18r","b9rr"],
+
+			["bw1r","bw2r","bw2rr"],
+			["bw1r","bw2rr","bw1rr"],
+
+			["fr16r","bw1r","bw1rr"],
+			["fr16r","bw1rr","b7rr"],
+
+			["b2rr","b7rr","bw1rr"],
+			["b2rr","bw1rr","b3rr"],
+			["b3rr","bw1rr","bw2rr"],
+			["b3rr","bw2rr","b4rr"],
+			["b4rr","bw2rr","b9rr"],
+
+
+			["fr16l","bw1l","fr17l"],
+			["bw1l","bw2l","fr17l"],
+			["fr17l","bw2l","fr18l"],
+
+			["bw2l","bw2ll","fr18l"],
+			["bw2ll","b9ll","fr18l"],
+
+			["bw1l","bw2ll","bw2l"],
+			["bw1l","bw1ll","bw2ll"],
+
+			["fr16l","bw1ll","bw1l"],
+			["fr16l","b7ll","bw1ll"],
+
+			["b2ll","bw1ll","b7ll"],
+			["b2ll","b3ll","bw1ll"],
+			["b3ll","bw2ll","bw1ll"],
+			["b3ll","b4ll","bw2ll"],
+			["b4ll","b9ll","bw2ll"],
+
+            /*
+            {"group":"pickup_bedrightsideinner"},
+            ["b2rr","b1rr","b6rr"],
+            ["b7rr","b2rr","b6rr"],
+            ["b3rr","b2rr","b7rr"],
+            ["b9rr","b3rr","b7rr"],
+            ["b4rr","b3rr","b9rr"],
+            ["b5rr","b4rr","b9rr"],
+            ["b10rr","b5rr","b9rr"],
+
+            {"group":"pickup_bedleftsideinner"},
+
+            ["b1ll","b2ll","b6ll"],
+            ["b2ll","b7ll","b6ll"],
+            ["b2ll","b3ll","b7ll"],
+            ["b3ll","b9ll","b7ll"],
+            ["b3ll","b4ll","b9ll"],
+            ["b4ll","b5ll","b9ll"],
+            ["b5ll","b10ll","b9ll"],
+
+            {"group":"pickup_bedfrontinner"},
+            ["b1rr","b1","b6rr"],
+            ["b6rr","b1","b6"],
+
+            ["b6ll","b1","b1ll"],
+            ["b6ll","b6","b1"],
+
+            ["b6","fr12l","fr12"],
+            ["b6","fr12","fr12r"],
+            ["b6rr","b6","fr12r"],
+            ["b6ll","fr12l","b6"]
+            */
+            {"dragCoef":2},
+            {"group":"pickup_bedfrontouter"},
+            ["b6rr","b1","b1rr"],
+            ["b6rr","b6","b1"],
+
+            ["b1ll","b1","b6ll"],
+            ["b6ll","b1","b6"],
+
+            ["b6rr","b11rr","fr12r"],
+            ["b6","b6rr","fr12r"],
+            ["b6","fr12r","fr12"],
+
+            ["b11ll","b6ll","fr12l"],
+            ["b6ll","b6","fr12l"],
+            ["b6","fr12","fr12l"],
+
+            ["b11rr", "fr10r", "fr12r"],
+            ["fr12l", "fr10l", "b11ll"],
+
+            {"dragCoef":0},
+            {"group":"pickup_bedwheelwells"},
+            ["b8ll", "b12ll", "fr13l"],
+            ["b8ll", "fr13l", "fr14l"],
+            ["b8ll", "fr14l", "fr15l"],
+            ["b8ll", "fr15l", "b13ll"],
+            ["fr13r", "b12rr", "b8rr"],
+            ["b8rr", "fr14r", "fr13r"],
+            ["b8rr", "fr15r", "fr14r"],
+            ["b8rr", "b13rr", "fr15r"],
+            {"dragCoef":0},
+    ],
+}
+}

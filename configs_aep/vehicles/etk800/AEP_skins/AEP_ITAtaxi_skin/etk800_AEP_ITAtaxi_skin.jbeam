@@ -1,0 +1,11 @@
+{
+"etk800_skin_AEPITAtaxi": {
+    "information":{
+        "authors":"Djplopper",
+        "name":"Italian Taxi AEP",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "AEPITAtaxi",
+}
+}

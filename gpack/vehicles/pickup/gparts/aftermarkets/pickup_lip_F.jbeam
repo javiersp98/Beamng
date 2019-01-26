@@ -1,0 +1,108 @@
+{
+"pickup_lip_f_aft": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Body Colored Front Lip",
+        "value":25,
+    }
+    "slotType" : "pickup_lip_F",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pickup_lip_F_colored", ["pickup_lip_F","pickup_bumper_F"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //redefine nodes
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true}
+         {"nodeWeight":0.3},
+         {"frictionCoef":0.5},
+         {"group":"pickup_lip_F"},
+         {"selfCollision":true}
+         ["flp1rrr",-0.88, -1.95, 0.335],
+         ["flp1rr",-0.81, -2.08, 0.335],
+         ["flp1r",-0.41, -2.13, 0.335],
+         ["flp1",0.0, -2.15, 0.335],
+         ["flp1l",0.41, -2.13, 0.335],
+         ["flp1ll",0.81, -2.08, 0.335],
+         ["flp1lll",0.88, -1.95, 0.335],
+
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--lip--
+          {"beamSpring":101000,"beamDamp":25},
+          {"beamDeform":12000,"beamStrength":"FLT_MAX"},
+          //main shape
+          ["flp1rrr","flp1rr"],
+          ["flp1rr","flp1r"],
+          ["flp1r","flp1"],
+          ["flp1l","flp1"],
+          ["flp1ll","flp1l"],
+          ["flp1lll","flp1ll"],
+
+          ["flp1rrr","fb4rr"],
+          ["flp1rr","fb2rr"],
+          ["flp1r","fb2r"],
+          ["flp1","fb2"],
+          ["flp1l","fb2l"],
+          ["flp1ll","fb2ll"],
+          ["flp1lll","fb4ll"],
+
+          //cross
+          {"beamDeform":6750,"beamStrength":15000},
+          ["flp1rrr","fb2rr"],
+          ["flp1lll","fb2ll"],
+          ["flp1rr","fb4rr"],
+          ["flp1ll","fb4ll"],
+          ["flp1r","fb2rr"],
+          ["flp1l","fb2ll"],
+          ["flp1rr","fb2r"],
+          ["flp1ll","fb2l"],
+          ["flp1r","fb2"],
+          ["flp1l","fb2"],
+          ["flp1","fb2r"],
+          ["flp1","fb2l"],
+
+          //rigids
+          {"beamDeform":3750,"beamStrength":15000},
+          ["flp1rrr","flp1r"],
+          ["flp1rr","flp1"],
+          ["flp1r","flp1l"],
+          ["flp1ll","flp1"],
+          ["flp1lll","flp1l"],
+
+          //attachy rigids
+          ["flp1rrr","fb3rr"],
+          ["flp1rr","fb3rr"],
+          ["flp1r","fb3r"],
+          ["flp1","fb3"],
+          ["flp1l","fb3l"],
+          ["flp1ll","fb3ll"],
+          ["flp1lll","fb3ll"],
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            //front bumper
+            {"groundModel":"plastic"},
+            {"dragCoef":5},
+            {"group":"pickup_lip_F"},
+            ["fb4rr","flp1rrr","flp1rr"],
+            ["fb4rr","flp1rr","fb2rr"],
+            ["fb2rr","flp1rr","flp1r"],
+            ["fb2rr","flp1r","fb2r"],
+            ["fb2r","flp1r","flp1"],
+            ["fb2r","flp1","fb2"],
+
+            ["fb4ll","flp1ll","flp1lll"],
+            ["fb2ll","flp1ll","fb4ll"],
+            ["fb2ll","flp1l","flp1ll"],
+            ["fb2l","flp1l","fb2ll"],
+            ["fb2l","flp1","flp1l"],
+            ["fb2","flp1","fb2l"],
+            {"dragCoef":0},
+    ],
+}
+}

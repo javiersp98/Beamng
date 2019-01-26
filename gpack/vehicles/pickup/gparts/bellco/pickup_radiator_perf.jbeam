@@ -1,0 +1,186 @@
+{
+"pickup_radiator_bellcostock": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Radiator w/ Bellco Oil Cooler",
+        "value":100,
+    },
+    "slotType" : "pickup_radiator",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pickup_radiator", ["pickup_framefront", "pickup_cab", "pickup_frontmeat"]],
+    ],
+    "mainEngine":{
+        //cooling system
+        "radiatorArea":0.45,
+        "radiatorEffectiveness":10000,
+        "coolantVolume":13
+        "radiatorFanType":"electric",
+        "radiatorFanTemperature":100
+        "radiatorFanMaxAirSpeed":2,
+        "thermostatTemperature":90
+        "oilRadiatorArea":0.16,
+        "oilRadiatorEffectiveness":1000,
+        "oilThermostatTemperature":110
+    },
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":501000,"beamDamp":50},
+          {"beamDeform":1000,"beamStrength":"FLT_MAX"},
+          //radiator shape
+          {"deformGroup":"radiator_damage","deformationTriggerRatio":0.02},
+          ["f1r","fr5l"],
+          ["f1l","fr5r"],
+          ["f1","fr5"],
+          ["f4r","f4l"],
+          //radiator crush
+          {"deformationTriggerRatio":0.04},
+          ["fr5r","fr6r"],
+          ["fr5l","fr6l"],
+          ["fr5","fr6"],
+          ["f1r","f3r"],
+          ["f1l","f3l"],
+          ["f1","f3"],
+          {"deformGroup":""}
+    ],
+},
+"pickup_radiator_race_bellco": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"High Performance Radiator w/ Bellco Oil Cooler",
+        "value":200,
+    },
+    "slotType" : "pickup_radiator",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pickup_radiator", ["pickup_framefront", "pickup_cab", "pickup_frontmeat"]],
+    ],
+    "mainEngine":{
+        //cooling system
+        "radiatorArea":0.45,
+        "radiatorEffectiveness":17000,
+        "coolantVolume":14
+        "radiatorFanType":"electric",
+        "radiatorFanTemperature":100
+        "radiatorFanMaxAirSpeed":3,
+        "thermostatTemperature":90
+        "oilRadiatorArea":0.16,
+        "oilRadiatorEffectiveness":1000,
+        "oilThermostatTemperature":110
+    },
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":501000,"beamDamp":50},
+          {"beamDeform":1000,"beamStrength":"FLT_MAX"},
+          //radiator shape
+          {"deformGroup":"radiator_damage","deformationTriggerRatio":0.02},
+          ["f1r","fr5l"],
+          ["f1l","fr5r"],
+          ["f1","fr5"],
+          ["f4r","f4l"],
+          //radiator crush
+          {"deformationTriggerRatio":0.04},
+          ["fr5r","fr6r"],
+          ["fr5l","fr6l"],
+          ["fr5","fr6"],
+          ["f1r","f3r"],
+          ["f1l","f3l"],
+          ["f1","f3"],
+          {"deformGroup":""}
+    ],
+},
+"pickup_radiator_heavy_bellco": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Heavy Duty Radiator w/ Bellco Oil Cooler",
+        "value":150,
+    },
+    "slotType" : "pickup_radiator",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pickup_radiator", ["pickup_framefront", "pickup_cab", "pickup_frontmeat"]],
+    ],
+    "mainEngine":{
+        //cooling system
+        "radiatorArea":0.45,
+        "radiatorEffectiveness":15000,
+        "coolantVolume":18
+        "radiatorFanType":"electric",
+        "radiatorFanTemperature":100
+        "radiatorFanMaxAirSpeed":3,
+        "thermostatTemperature":90
+        "oilRadiatorArea":0.16,
+        "oilRadiatorEffectiveness":1000,
+        "oilThermostatTemperature":110
+    },
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":501000,"beamDamp":50},
+          {"beamDeform":1000,"beamStrength":"FLT_MAX"},
+          //radiator shape
+          {"deformGroup":"radiator_damage","deformationTriggerRatio":0.02},
+          ["f1r","fr5l"],
+          ["f1l","fr5r"],
+          ["f1","fr5"],
+          ["f4r","f4l"],
+          //radiator crush
+          {"deformationTriggerRatio":0.04},
+          ["fr5r","fr6r"],
+          ["fr5l","fr6l"],
+          ["fr5","fr6"],
+          ["f1r","f3r"],
+          ["f1l","f3l"],
+          ["f1","f3"],
+          {"deformGroup":""}
+    ],
+},
+"pickup_radiator_race_bellcoperf": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Bellco Performance Supercooler",
+        "value":500,
+    },
+    "slotType" : "pickup_radiator",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pickup_radiator", ["pickup_framefront", "pickup_cab", "pickup_frontmeat"]],
+    ],
+    "mainEngine":{
+        //cooling system
+        "radiatorArea":0.55,
+        "radiatorEffectiveness":20000,
+        "coolantVolume":20
+        "radiatorFanType":"electric",
+        "radiatorFanTemperature":100
+        "radiatorFanMaxAirSpeed":5,
+        "thermostatTemperature":100
+        "oilRadiatorArea":0.18,
+        "oilRadiatorEffectiveness":1200,
+        "oilThermostatTemperature":110
+    },
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":501000,"beamDamp":50},
+          {"beamDeform":1000,"beamStrength":"FLT_MAX"},
+          //radiator shape
+          {"deformGroup":"radiator_damage","deformationTriggerRatio":0.02},
+          ["f1r","fr5l"],
+          ["f1l","fr5r"],
+          ["f1","fr5"],
+          ["f4r","f4l"],
+          //radiator crush
+          {"deformationTriggerRatio":0.04},
+          ["fr5r","fr6r"],
+          ["fr5l","fr6l"],
+          ["fr5","fr6"],
+          ["f1r","f3r"],
+          ["f1l","f3l"],
+          ["f1","f3"],
+          {"deformGroup":""}
+    ],
+},
+}

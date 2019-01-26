@@ -1,0 +1,64 @@
+{
+"coupe_radiator_PF": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Kouki Radiator",
+        "value":90,
+    }
+    "slotType" : "coupe_radiator",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_radiator", ["coupe_body", "coupe_engine_bay", "coupe_rad"]],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        ["radiatorFanSpin"  , "coupe_fan", "f15","f2l","f2r",  {"x":73, "y":98, "z":0}, {"x":0, "y":1, "z":0}    , {"x":0, "y":0, "z":0}, -360, 360, 0, 1 {"deformGroup":["radiator_damage"]}],
+    ],
+    "mainEngine":{
+        "radiatorArea":0.32,
+        "radiatorEffectiveness":7000,
+        "coolantVolume":6.0,
+        "radiatorFanType":"electric",
+        "radiatorFanTemperature":100,
+        "radiatorFanMaxAirSpeed":1.8,
+        "thermostatTemperature":90
+        },
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"coupe_radiator_race_PF": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Kouki High Performance Radiator",
+        "value":180,
+    }
+    "slotType" : "coupe_radiator",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_radiator", ["coupe_body", "coupe_engine_bay", "coupe_rad"]],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        ["radiatorFanSpin"  , "coupe_fan", "f15","f15l","f15r",  {"x":90, "y":0, "z":0}, {"x":0, "y":1, "z":0}    , {"x":0, "y":0, "z":0}, -360, 360, 0, 1 {"deformGroup":["radiator_damage"]}],
+    ],
+    "mainEngine":{
+        "radiatorArea":0.32,
+        "radiatorEffectiveness":13000,
+        "coolantVolume":7.0,
+        "radiatorFanType":"electric",
+        "radiatorFanTemperature":100,
+        "radiatorFanMaxAirSpeed":2.6,
+        "thermostatTemperature":90
+        },
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+}

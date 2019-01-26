@@ -1,0 +1,613 @@
+{
+"hopper_suspension_F_pd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Live Axle Front Suspension",
+        "value":500,
+    },
+    "slotType" : "hopper_suspension_F_pd",
+    "slots": [
+        ["type", "default", "description"]
+        ["hopper_steering_pd","hopper_steering_pd", "Steering"],
+        ["hopper_hub_F","hopper_hub_F_5","Front Wheel Hubs"],
+        ["hopper_wheeldata_F","hopper_wheeldata_F", "Front Spindles",{"coreSlot":true}],
+        ["hopper_spring_F","hopper_spring_F", "Front Springs"],
+        ["hopper_shock_F","hopper_shock_F", "Front Shocks"],
+        ["hopper_swaybar_F","hopper_swaybar_F", "Front Sway Bar"],
+        ["hopper_differential_F","hopper_differential_F", "Front Differential"],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$trackoffset_F", "range", "+m", "Wheels", 0.0, -0.02, 0.05, "Wheel Offset", "Spacing of the wheel from the hub", {"stepDis":0.001,"subCategory":"Front"}]
+        ["$trackbar_F2", "range", "m", "Wheel Alignment", 0, -0.02, 0.02, "Track Bar Adjust", "Adjust the axle lateral position", {"stepDis":0.001,"subCategory":"Front"}]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //front axle
+         ["hopper_diff_F", ["hopper_axle_F"]],
+         ["hopper_axle_F", ["hopper_axle_F"]],
+         ["hopper_hub_F", ["hopper_hub_F"]],
+
+         ["hopper_lowerarm_F", ["hopper_lowerarm_F"]],
+         ["hopper_upperarm_F", ["hopper_upperarm_F"]],
+         ["hopper_trackbar_F", ["hopper_trackbar_F"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--FRONT LIVE AXLE SUSPENSION--
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"nodeWeight":9},
+         {"collision":true},
+         {"selfCollision":true},
+         {"group":"hopper_axle_F"},
+         ["fax1", 0.18, -1.25, 0.19],
+         {"selfCollision":false},
+         ["fax3", 0.18, -0.98, 0.30],
+
+         {"nodeWeight":4.5},
+         {"selfCollision":false},
+         ["fax3r",-0.48, -1.00, 0.34{"group":["hopper_axle_F","hopper_trackbar_F","hopper_steeringshock"]}],
+         ["fax3l", 0.48, -1.00, 0.34],
+
+         {"nodeWeight":2.5},
+         ["faxshr",-0.43, -1.17, 0.33{"group":["hopper_axle_F","hopper_shock_F","hopper_spring_F"]}],
+         ["faxshl", 0.43, -1.17, 0.33{"group":["hopper_axle_F","hopper_shock_F","hopper_spring_F"]}],
+
+         {"nodeWeight":5.5},
+         ["faxs1r",-0.41, -1.12, 0.255{"group":["hopper_axle_F","hopper_lowerarm_F"]}],
+         ["faxs1l", 0.41, -1.12, 0.255{"group":["hopper_axle_F","hopper_lowerarm_F"]}],
+
+         {"nodeWeight":8.5},
+         //slidenodes to top of steering axis rail
+         ["faxs2r",-0.245, -1.19, 0.45{"group":["hopper_axle_F","hopper_upperarm_F"]}],
+         ["faxs2l", 0.245, -1.19, 0.45{"group":["hopper_axle_F","hopper_upperarm_F"]}],
+
+         //trackbar and swaybar mount
+         {"nodeWeight":5.5},
+         ["faxt1r", -0.47, -1.25, 0.32{"group":["hopper_axle_F","hopper_swaybar_F","hopper_trackbar_F","hopper_steeringshock"]}],
+         ["faxt1l",  0.47, -1.25, 0.32{"group":["hopper_axle_F","hopper_swaybar_F"]}],
+
+         //steering axis
+         {"nodeWeight":5.5},
+         //top of steering axis rail
+         ["fax2r",-0.60, -1.19, 0.45{"group":["hopper_axle_F","hopper_hub_F","hopper_tierod_F","hopper_draglink"]}],
+         ["fax2l", 0.60, -1.19, 0.45{"group":["hopper_axle_F","hopper_hub_F","hopper_tierod_F","hopper_draglink"]}],
+         ["fax1r",-0.62, -1.205, 0.17{"group":["hopper_axle_F","hopper_hub_F","hopper_tierod_F","hopper_draglink"]}],
+         ["fax1l", 0.62, -1.205, 0.17{"group":["hopper_axle_F","hopper_hub_F","hopper_tierod_F","hopper_draglink"]}],
+
+         //tie rod end
+         {"nodeWeight":7.5},
+         ["fax5r",-0.65, -1.34, 0.31{"group":["hopper_hub_F","hopper_draglink","hopper_tierod_F"]}],
+         ["fax5l", 0.65, -1.34, 0.31{"group":["hopper_hub_F","hopper_tierod_F"]}],
+
+         //brake node
+         ["fax6r",-0.65, -1.03, 0.30{"group":["hopper_hub_F","hopper_caliper_F"]}],
+         ["fax6l", 0.65, -1.03, 0.30{"group":["hopper_hub_F","hopper_caliper_F"]}],
+
+         //extra collision node
+         {"collision":true},
+         {"nodeWeight":2.5},
+         ["fax7r",-0.15, -1.18, 0.27{"group":""}],
+    ],
+    "rails": {
+        "axle_F":{
+            "links:":["fax2l","fax2r"], "broken:":[], "looped":false, "capped":false
+        },
+    },
+    "slidenodes": [
+        ["id:", "railName", "attached", "fixToRail", "tolerance", "spring", "strength", "capStrength"],
+        ["faxs2l", "axle_F", true, true, 0.0, 10001000, 50000, "FLT_MAX"],
+        ["faxs2r", "axle_F", true, true, 0.0, 10001000, 50000, "FLT_MAX"],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //live axle suspension
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":7501000,"beamDamp":100},
+          {"beamDeform":70000,"beamStrength":"FLT_MAX"},
+          ["fax1", "fax3"],
+          ["fax3", "faxs2l"],
+          ["faxs2l", "fax1"],
+          ["fax2l", "fax1l"],
+          ["fax1l", "fax3l"],
+          ["fax3l", "fax2l"],
+          ["fax2r", "fax1r"],
+          ["fax1r", "fax3r"],
+          ["fax3r", "fax2r"],
+          ["fax3l", "fax3"],
+          ["fax3r", "fax3"],
+          ["fax1l", "fax1"],
+          ["fax1r", "fax1"],
+          ["fax2l", "faxs2l"],
+          //["fax2r", "faxs2l"],
+
+          ["fax1l", "fax3"],
+          ["fax3l", "fax1"],
+          ["fax1r", "fax3"],
+          ["fax3r", "fax1"],
+          ["fax1l", "faxs2l"],
+          ["fax2l", "fax1"],
+          ["fax1r", "faxs2l"],
+          ["fax2r", "fax1"],
+          ["fax2l", "fax3"],
+          ["fax3l", "faxs2l"],
+          ["fax2r", "fax3"],
+          ["fax3r", "faxs2l"],
+
+          //upper link mount
+          ["faxs2r", "faxs2l"],
+          ["faxs2r", "fax1"],
+          ["faxs2r", "fax3"],
+          ["faxs2r", "fax1r"],
+          ["faxs2r", "fax2r"],
+          ["faxs2r", "fax3r"],
+
+          //lower link mount
+          ["faxs1l", "faxs1r"],
+          ["faxs1l", "fax3"],
+          ["faxs1l", "fax1"],
+          ["faxs1l", "faxs2l"],
+          ["faxs1r", "fax3"],
+          ["faxs1r", "fax1"],
+          ["faxs1r", "faxs2l"],
+          ["faxs1r", "faxs2r"],
+          ["faxs1l", "fax3l"],
+          ["faxs1l", "fax2l"],
+          ["faxs1l", "fax1l"],
+          ["faxs1r", "fax3r"],
+          ["faxs1r", "fax1r"],
+          ["faxs1r", "fax2r"],
+
+          //hub
+          ["fax5r","fax1r"],
+          ["fax5r","fax2r"],
+          ["fax5r","fax6r"],
+          ["fax6r","fax1r"],
+          ["fax6r","fax2r"],
+
+          ["fax5l","fax1l"],
+          ["fax5l","fax2l"],
+          ["fax5l","fax6l"],
+          ["fax6l","fax1l"],
+          ["fax6l","fax2l"],
+
+          ["fax2l", "fax2r"],
+          ["fax1l", "fax1r"],
+
+          //attach to wheel
+          {"optional":true},
+          {"beamSpring":8001000,"beamDamp":100},
+          {"beamDeform":81000,"beamStrength":295000},
+          {"breakGroup":"wheel_FR"},
+          ["fw1r","fax2r"{"name":"axle_FR"}],
+          ["fw1r","fax1r"],
+          ["fw1r","fax5r"{"beamSpring":12001000,"beamDamp":20}],
+          ["fw1r","fax6r"],
+          ["fw1rr","fax2r"],
+          ["fw1rr","fax1r"],
+          ["fw1rr","fax5r"{"beamSpring":12001000,"beamDamp":20}],
+          ["fw1rr","fax6r"],
+
+          {"breakGroup":"wheel_FL"},
+          ["fw1l","fax2l"{"name":"axle_FL"}],
+          ["fw1l","fax1l"],
+          ["fw1l","fax5l"{"beamSpring":12001000,"beamDamp":20}],
+          ["fw1l","fax6l"],
+          ["fw1ll","fax2l"],
+          ["fw1ll","fax1l"],
+          ["fw1ll","fax5l"{"beamSpring":12001000,"beamDamp":20}],
+          ["fw1ll","fax6l"],
+          {"breakGroup":""},
+          {"optional":false},
+
+          //shock mounts
+          {"beamSpring":2501000,"beamDamp":100},
+          {"beamDeform":42000,"beamStrength":"FLT_MAX"},
+          ["faxshl", "fax1"],
+          ["faxshl", "fax1l"],
+          ["faxshl", "faxs1l"],
+          ["faxshl", "fax2l"],
+          ["faxshl", "faxs2l"],
+          ["faxshl", "fax3l"],
+          ["faxshl", "fax3"],
+
+          ["faxshr", "fax1"],
+          ["faxshr", "fax1r"],
+          ["faxshr", "faxs1r"],
+          ["faxshr", "fax2r"],
+          ["faxshr", "faxs2r"],
+          ["faxshr", "fax3r"],
+          ["faxshr", "fax3"],
+
+          //trackbar and swaybar mounts
+          {"beamSpring":6001000,"beamDamp":100},
+          ["faxt1r", "fax1r"],
+          ["faxt1r", "fax3r"],
+          ["faxt1r", "fax2r"],
+          ["faxt1r", "fax1"],
+          ["faxt1r", "faxs2l"],
+          ["faxt1r", "fax3"],
+          ["faxs1r", "faxt1r"],
+          ["faxt1r", "faxs2r"],
+
+          ["faxt1l", "fax1l"],
+          ["faxt1l", "fax3l"],
+          ["faxt1l", "fax2l"],
+          ["faxt1l", "fax1"],
+          ["faxt1l", "faxs2r"],
+          ["faxt1l", "fax3"],
+          ["faxs1l", "faxt1l"],
+          ["faxt1l", "faxs2l"],
+
+          ["faxt1r", "faxshr"],
+          ["faxt1l", "faxshl"],
+
+          //extra collision node
+          {"beamSpring":2501000,"beamDamp":150},      
+          ["fax7r", "fax1r"],
+          ["fax7r", "fax2r"],
+          ["fax7r", "fax1"],
+          ["fax7r", "faxs2l"],
+          ["fax7r", "faxs2r"],
+          ["fax7r", "fax3"],
+          ["fax7r", "fax3r"],
+
+          //arms
+          {"beamSpring":15001000,"beamDamp":2500},
+          {"beamDeform":147000,"beamStrength":270000},
+          //lower
+          ["faxs1r","f4rr"{"dampCutoffHz":500}],
+          ["faxs1l","f4ll"{"dampCutoffHz":500}],
+
+          //upper
+          ["faxs2r","fx2r"{"dampCutoffHz":500}],
+          ["faxs2l","fx2l"{"dampCutoffHz":500}],
+
+          //trackbar
+          {"beamDeform":168000,"beamStrength":330000},
+          {"beamSpring":18001000,"beamDamp":2500},
+          ["faxt1r","ftr1l"{"precompressionRange":"$trackbar_F2","beamPrecompressionTime":0.5,"dampCutoffHz":500}],
+
+          //bushing cross damping
+          {"beamSpring":0,"beamDamp":2500},
+          ["fax2r","f4ll"{"dampCutoffHz":500}],
+          ["fax2l","f4ll"{"dampCutoffHz":500}],
+          ["fax1r","fx2l"{"dampCutoffHz":500}],
+          ["fax1l","fx2r"{"dampCutoffHz":500}]
+
+          //front limiters
+          {"beamPrecompression":1, "beamType":"|SUPPORT", "beamLongBound":2},
+          {"beamSpring":5001000,"beamDamp":100,"beamDeform":50000,"beamStrength":"FLT_MAX"},
+          //steering anti-invert
+          {"breakGroupType":1},
+          {"beamPrecompression":0.74}
+          ["fax5r","faxshr"],
+          ["fax5l","faxshl"],
+          ["fax5r","faxs1r"],
+          ["fax5l","faxs1l"],
+          {"beamPrecompression":0.62}
+          ["fax6r","faxshr"],
+          ["fax6l","faxshl"],
+          ["fax6r","faxs1r"],
+          ["fax6l","faxs1l"],
+          {"optional":true},
+
+          {"beamSpring":5001000,"beamDamp":100,"beamDeform":50000,"beamStrength":250000},
+          {"beamPrecompression":0.58}
+          {"breakGroup":"wheel_FR"},
+          ["fw1rr","b1rr"],
+          ["fw1r","b1rr"],
+          ["fw1rr","b6r"],
+          ["fw1r","b6r"],
+          ["fw1rr","fe5r"],
+          ["fw1r","f13rr"],
+          {"breakGroup":"wheel_FL"},
+          ["fw1ll","b1ll"],
+          ["fw1l","b1ll"],
+          ["fw1ll","b6l"],
+          ["fw1l","b6l"],
+          ["fw1ll","fe5l"],
+          ["fw1l","f13ll"],
+          {"breakGroup":""},
+          {"breakGroupType":0},
+          {"optional":false},
+
+          //axle to frame limits
+          {"beamPrecompression":1, "beamType":"|SUPPORT", "beamLongBound":2.5},
+          {"beamSpring":5001000,"beamDamp":100,"beamDeform":50000,"beamStrength":"FLT_MAX"},
+          {"beamPrecompression":0.60}
+          ["fax1l","f14ll"],
+          ["fax1r","f14rr"],
+          ["fax3","f13ll"],
+          {"beamPrecompression":0.40}
+          ["fax3","f13rr"],
+          ["fax2r","f4rr"],
+          ["fax2l","f4ll"],
+          ["fax1l","f13ll"],
+          ["fax1r","f13rr"],
+          {"breakGroupType":0},
+
+          //hard limit
+          {"beamSpring":1001000,"beamDamp":2000,"beamDeform":50000,"beamStrength":250000},
+          {"beamPrecompression":0.56, "beamType":"|SUPPORT", "beamLongBound":2},
+          ["faxs1r","f13rr"],
+          ["faxs1l","f13ll"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"triangleType":"NONCOLLIDABLE"},
+            ["fax1", "fax3", "faxs1l"],
+            ["fax3", "fax3l", "faxs1l"],
+            ["fax3l", "fax1l", "faxs1l"],
+            ["faxs1l", "fax1l", "faxt1l"],
+            ["fax1", "faxs1l", "faxt1l"],
+            ["fax5l", "fax1l", "fax6l"],
+            ["fax6l", "fax2l", "fax5l"],
+            ["faxs2l", "faxshl", "fax2l"],
+
+            ["fax3", "fax1", "faxs1r"],
+            ["fax3r", "fax3", "faxs1r"],
+            ["fax1r", "fax3r", "faxs1r"],
+            ["fax1r", "faxs1r","faxt1r"],
+            ["faxs1r", "fax1", "faxt1r"],
+            ["fax1r", "fax5r", "fax6r"],
+            ["fax2r", "fax6r", "fax5r"],
+            ["faxshr", "faxs2r", "fax2r"],            
+            ["faxs2r", "fax7r", "faxs2l"],
+
+            ["f2ll", "ftr1l", "f3ll"],
+            {"triangleType":"NORMALTYPE"},
+    ],
+    "pressureWheels": [
+            ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+            //cancel out brake properties
+            {"brakeTorque":0},
+            {"parkingTorque":0},
+            {"enableBrakeThermals":false},
+            {"brakeDiameter":false},
+            {"brakeMass":false},
+            {"brakeType":false},
+            {"rotorMaterial":false},
+            {"brakeVentingCoef":false},
+    ],
+},
+"hopper_steering_pd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Steering",
+        "value":200,
+    },
+    "slotType" : "hopper_steering_pd",
+    "slots": [
+        ["type", "default", "description"]
+        ["hopper_power_steering","", "Power Steering"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["hopper_tierod_F_pd", ["hopper_tierod_F"]],
+         ["hopper_draglink_pd", ["hopper_draglink"]],
+         ["hopper_pitman_pd", ["hopper_pitman"]],
+         ["hopper_steeringbox_pd", ["hopper_steeringbox"]],
+         ["hopper_steeringcolumn_b_pd", ["hopper_steeringcolumn_b","hopper_steeringbox"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"nodeWeight":6.0},
+         {"collision":true},
+         {"selfCollision":false},
+         ["st1",-0.333, -1.333, 0.355{"group":["hopper_draglink","hopper_tierod_F"]}],
+         {"nodeWeight":5.0},
+         ["st2", 0.275, -1.32, 0.435{"group":["hopper_draglink","hopper_pitman"]}],
+         {"nodeWeight":4.0},
+         ["st3", 0.275, -1.44, 0.42{"group":["hopper_pitman","hopper_steeringbox"]}],
+         ["st4", 0.275, -1.495, 0.55{"group":["hopper_pitman","hopper_steeringbox"]}],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$toe_F2", "range", "", "Wheel Alignment", 0, 0.01, -0.01, "Toe Adjust", "Adjusts the wheel toe-in angle", {"subCategory":"Front"}]
+        ["$steer_center_F2", "range", "", "Wheel Alignment", -0.0, -0.005, 0.005, "Toe Left/Right Trim", "Fine tunes the centerpoint of the steering", {"subCategory":"Front"}]
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":10001000,"beamDamp":100},
+          {"beamDeform":43000,"beamStrength":225000},
+          ["st2","st3"],
+          ["st2","st4"],
+          ["st3","st4"],
+          //test beam
+          //["fax5r","st2"],
+
+          //tie rod
+          {"beamSpring":18001000,"beamDamp":500},
+          {"beamDeform":93000,"beamStrength":361000},
+          //adds trackbar change to steering to prevent too much shift in steering
+          ["st1","st2"{"precompressionRange":"$=$steer_center_F2+$trackbar_F2*0.95-0.0006","beamPrecompressionTime":0.5}],
+          //toe in meters of tie rod length change, with small offset for default position
+          ["st1","fax5r"{"precompressionRange":"$=$toe_F2-0.0021","beamPrecompressionTime":0.5}],
+          ["st1","fax5l"{"precompressionRange":"$=$toe_F2-0.0021","beamPrecompressionTime":0.5}],
+
+          //attach steeringbox to frame
+          {"beamSpring":5001000,"beamDamp":100},
+          {"beamDeform":35000,"beamStrength":165000},
+          ["st4","f2ll"],
+          ["st3","f2ll"],
+          ["st4","f12ll"],
+          ["st3","f12ll"],
+          ["st4","ftr1l"],
+          ["st3","ftr1l"],
+          ["st4","f2rr"],
+          ["st3","f2rr"],
+          ["st4","f12rr"],
+          ["st3","f12rr"],
+          ["st3","steer"],
+          ["st4","steer"],
+
+          //general steering damping
+          {"beamSpring":0,"beamDeform":58800,"beamStrength":165000},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+          ["fax5r","fax3l",{"beamDampVelocitySplit":0.05,"beamDampFast":800,"beamDampReboundFast":800,"beamDamp":100,"beamDampRebound":100}],
+          ["fax5l","fax3r",{"beamDampVelocitySplit":0.05,"beamDampFast":800,"beamDampReboundFast":800,"beamDamp":100,"beamDampRebound":100}],
+          ["fax6r","fax3l",{"beamDampVelocitySplit":0.05,"beamDampFast":800,"beamDampReboundFast":800,"beamDamp":100,"beamDampRebound":100}],
+          ["fax6l","fax3r",{"beamDampVelocitySplit":0.05,"beamDampFast":800,"beamDampReboundFast":800,"beamDamp":100,"beamDampRebound":100}],
+          {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "rails": {
+        "draglink":{
+            "links:":["fax5r","st2"], "broken:":[], "looped":false, "capped":true
+        },
+    },
+    "slidenodes": [
+        ["id:", "railName", "attached", "fixToRail", "tolerance", "spring", "strength", "capStrength"],
+        ["st1", "draglink", true, true, 0.0, 10001000, "FLT_MAX", "FLT_MAX"],
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"triangleType":"NONCOLLIDABLE"},
+            //steering anti clip
+            ["st4", "st3", "st2"],
+            ["faxt1r", "faxt1l", "st1"],
+            {"triangleType":"NORMALTYPE"},
+    ],
+    "hydros": [
+            ["id1:","id2:"],
+            {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+            {"beamSpring":10001000,"beamDamp":100,"beamDeform":"FLT_MAX","beamStrength":255000},
+            ["steer","st2",{"factor":-0.14,"steeringWheelLock":600,"inRate":1.25,"outRate":1.25}],
+            {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "input": {
+        "FFBcoef":4.5,
+    },
+}
+"hopper_steering_offroad_pd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Quick Ratio Off-Road Steering",
+        "value":500,
+    },
+    "slotType" : "hopper_steering_pd",
+    "slots": [
+        ["type", "default", "description"]
+        ["hopper_power_steering","", "Power Steering"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["hopper_tierod_F_pd", ["hopper_tierod_F"]],
+         ["hopper_draglink_pd", ["hopper_draglink"]],
+         ["hopper_pitman_pd", ["hopper_pitman"]],
+         ["hopper_steeringbox_pd", ["hopper_steeringbox"]],
+         ["hopper_steeringcolumn_b_pd", ["hopper_steeringcolumn_b","hopper_steeringbox"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"nodeWeight":6.0},
+         {"collision":true},
+         {"selfCollision":false},
+         ["st1",-0.333, -1.333, 0.355{"group":["hopper_draglink","hopper_tierod_F"]}],
+         {"nodeWeight":5.0},
+         ["st2", 0.275, -1.32, 0.435{"group":["hopper_draglink","hopper_pitman"]}],
+         {"nodeWeight":4.0},
+         ["st3", 0.275, -1.44, 0.42{"group":["hopper_pitman","hopper_steeringbox"]}],
+         ["st4", 0.275, -1.495, 0.55{"group":["hopper_pitman","hopper_steeringbox"]}],
+         {"group":"hopper_steeringshock"}
+         //steering shock flexbody node
+         {"nodeWeight":2.0},
+         ["st5", -0.1, -1.327, 0.386],
+
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$toe_FR", "range", "", "Wheel Alignment", 0, 0.01, -0.01, "Toe Adjust", "Adjusts the wheel toe-in angle", {"subCategory":"Front"}]
+        ["$steer_center_F", "range", "", "Wheel Alignment", 0, -0.005, 0.005, "Toe Left/Right Trim", "Fine tunes the centerpoint of the steering", {"subCategory":"Front"}]
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":10001000,"beamDamp":100},
+          {"beamDeform":61000,"beamStrength":275000},
+          ["st2","st3"],
+          ["st2","st4"],
+          ["st3","st4"],
+          //test beam
+          //["fax5r","st2"],
+
+          //tie rod
+          {"beamSpring":18001000,"beamDamp":500},
+          {"beamDeform":125000,"beamStrength":395000},
+          //adds trackbar change to steering to prevent too much shift in steering
+          ["st1","st2"{"precompressionRange":"$=$steer_center_F+$trackbar_F2*0.95+0.0002","beamPrecompressionTime":0.5}],
+          //toe in meters of tie rod length change, with small offset for default position
+          ["st1","fax5r"{"precompressionRange":"$=$toe_FR-0.001","beamPrecompressionTime":0.5}],
+          ["st1","fax5l"{"precompressionRange":"$=$toe_FR-0.001","beamPrecompressionTime":0.5}],
+
+          //attach steeringbox to frame
+          {"beamSpring":5001000,"beamDamp":100},
+          {"beamDeform":35000,"beamStrength":165000},
+          ["st4","f2ll"],
+          ["st3","f2ll"],
+          ["st4","f12ll"],
+          ["st3","f12ll"],
+          ["st4","ftr1l"],
+          ["st3","ftr1l"],
+          ["st4","f2rr"],
+          ["st3","f2rr"],
+          ["st4","f12rr"],
+          ["st3","f12rr"],
+          ["st3","steer"],
+          ["st4","steer"],
+
+          {"beamSpring":2501000,"beamDamp":100},
+          //steering shock flexbody
+          ["st5","st1"],
+
+          //steering damper
+          {"beamSpring":0,"beamDeform":78800,"beamStrength":195000},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+          ["fax5r","fax3l",{"beamDampVelocitySplit":0.05,"beamDampFast":1000,"beamDampReboundFast":1000,"beamDamp":250,"beamDampRebound":250}],
+          ["fax5l","fax3r",{"beamDampVelocitySplit":0.05,"beamDampFast":1000,"beamDampReboundFast":1000,"beamDamp":250,"beamDampRebound":250}],
+          ["fax6r","fax3l",{"beamDampVelocitySplit":0.05,"beamDampFast":1000,"beamDampReboundFast":1000,"beamDamp":250,"beamDampRebound":250}],
+          ["fax6l","fax3r",{"beamDampVelocitySplit":0.05,"beamDampFast":1000,"beamDampReboundFast":1000,"beamDamp":250,"beamDampRebound":250}],
+          //steering stabilizer
+          ["st1","faxt1l",{"beamDampVelocitySplit":0.05,"beamDampFast":2000,"beamDampReboundFast":2000,"beamDamp":500,"beamDampRebound":500}],
+          {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "rails": {
+        "draglink":{
+            "links:":["fax5r","st2"], "broken:":[], "looped":false, "capped":true
+        },
+    },
+    "slidenodes": [
+        ["id:", "railName", "attached", "fixToRail", "tolerance", "spring", "strength", "capStrength"],
+        ["st1", "draglink", true, true, 0.0, 15001000, "FLT_MAX", "FLT_MAX"],
+        ["st5", "draglink", true, true, 0.0, 5001000, "FLT_MAX", "FLT_MAX"],
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"triangleType":"NONCOLLIDABLE"},
+            //steering anti clip
+            ["st4", "st3", "st2"],
+            ["faxt1r", "faxt1l", "st1"],
+            ["st1", "faxt1l", "st5"],
+            {"triangleType":"NORMALTYPE"},
+    ],
+    "hydros": [
+            ["id1:","id2:"],
+            {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+            {"beamSpring":10001000,"beamDamp":100,"beamDeform":"FLT_MAX","beamStrength":295000},
+            ["steer","st2",{"factor":-0.14,"steeringWheelLock":450,"inRate":1.25,"outRate":1.25}],
+            {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "input": {
+        "FFBcoef":3.5,
+    },
+},
+}

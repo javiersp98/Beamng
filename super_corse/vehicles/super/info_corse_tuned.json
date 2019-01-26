@@ -1,0 +1,16 @@
+{
+"Configuration":"Corse Tuned (M)",
+"Performance Class":"10",
+"Weight":1305,
+"Config Type":"Custom",
+"Transmission":"Manual",
+"PowerPeakRPM":"6750 - 7850",
+"default_color":"Carbone",
+"Torque":493.341,
+"Power":500,
+"Value":410000,
+"Weight/Power":2.93919,
+"TorquePeakRPM":"4150 - 5450",
+"Drivetrain":"RWD",
+"Description":"Modified 'Corse' with modern turbochargers taken from an Hirochi SBR4, which results in a smoother power delivery"
+}

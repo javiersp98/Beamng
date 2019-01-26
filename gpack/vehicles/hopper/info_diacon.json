@@ -1,0 +1,30 @@
+{
+"0-100 km/h":8.8,
+"Weight":1545,
+"Braking G":0.973,
+"Value":6500,
+"Performance Class":"4",
+"TorquePeakRPM":"1900 - 3800",
+"0-100 mph":27.1,
+"Off-Road Score":50,
+"Configuration":"Diacon (M)",
+"Drivetrain":"4WD",
+"Power":166.548,
+"60-100 mph":18.9,
+"0-60 mph":8.3,
+"Config Type":"Factory",
+"100-0 km/h":40.4,
+"Top Speed":51.2912,
+"default_color":"Pearl White",
+"default_color_2":"Jet Black",
+"Torque":290.806,
+"Description":"Stripped out ZXT-6 model for more affordability while retaining off-road capabilities, only offered in Manual",
+"Transmission":"Manual",
+"Weight/Power":9.30723,
+"60-0 mph":124.2,
+"Years":{
+  "min":1994,
+  "max":2001
+},
+"PowerPeakRPM":"4300 - 5400"
+}

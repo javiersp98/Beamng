@@ -1,0 +1,67 @@
+{
+"tire_R_285_35_17_sportcorse": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"285/35R17 Sport Rear Tires",
+        "value":300,
+    },
+    "slotType" : "tire_R_17x12",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["tire_01a_17x9_25", ["wheel_RR","tire_RR"], [], {"pos":{"x":-0.52, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.22, "y":1, "z":1}}],
+        ["tire_01a_17x9_25", ["wheel_RL","tire_RL"], [], {"pos":{"x": 0.52, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.22, "y":1, "z":1}}],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$tirepressure_R", "range", "psi", "Wheels", 28, 0, 50, "Rear Tire Pressure", "Relative to atmospheric pressure"],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        {"disableMeshBreaking":false,"disableHubMeshBreaking":false},
+        {"hasTire":true},
+        {"enableTireReinfBeams":false},
+        {"enableTireLbeams":true},
+        {"enableTireSideReinfBeams":false},
+        {"enableTreadReinfBeams":true},
+        {"enableTirePeripheryReinfBeams":true},
+
+        //general settings
+        {"radius":0.315},
+        {"tireWidth":0.285},
+
+        //tire options
+        {"wheelSideBeamSpring":100,"wheelSideBeamDamp":20},
+        {"wheelSideBeamSpringExpansion":421000,"wheelSideBeamDampExpansion":20},
+        {"wheelSideTransitionZone":0.1,"wheelSideBeamPrecompression":1.0},
+
+        {"wheelReinfBeamSpring":45000,"wheelReinfBeamDamp":70},
+        {"wheelReinfBeamPrecompression":1.0},
+
+        {"wheelTreadBeamSpring":301000,"wheelTreadBeamDamp":35},
+        {"wheelTreadBeamPrecompression":1.0},
+
+        {"wheelTreadReinfBeamSpring":101000,"wheelTreadReinfBeamDamp":35},
+        {"wheelTreadReinfBeamPrecompression":1.0},
+
+        {"wheelPeripheryBeamSpring":181000,"wheelPeripheryBeamDamp":20},
+        {"wheelPeripheryBeamPrecompression":1.0},
+
+        //general tire values
+        {"nodeWeight":0.18},
+        {"nodeMaterial":"|NM_RUBBER"},
+        {"frictionCoef":1.30},
+        {"triangleCollision":false},
+        {"pressurePSI":"$tirepressure_R"},
+
+        {"dragCoef":5},
+        {"treadCoef":0.5},
+
+        //deform values
+        {"wheelSideBeamDeform":17000,"wheelSideBeamStrength":22000},
+        {"wheelReinfBeamDeform":101000,"wheelReinfBeamStrength":101000},
+        {"wheelTreadBeamDeform":13000,"wheelTreadBeamStrength":17000},
+        {"wheelTreadReinfBeamDeform":13000,"wheelTreadReinfBeamStrength":17000},
+        {"wheelPeripheryBeamDeform":101000,"wheelPeripheryBeamStrength":101000},
+    ],
+},
+}

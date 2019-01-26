@@ -1,0 +1,21 @@
+{
+
+"pickup_differential_R_heavy_LSD_580": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"5.80 Limited Slip Rear Differential",
+        "value":450,
+    },
+    "slotType" : "pickup_differential_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["pickup_driveshaft_R","pickup_driveshaft_R","Rear Driveshaft"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        //rear diff
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"lsd", "gearRatio":5.80, "lsdPreload":250, "lsdLockCoef":0.2, "lsdRevLockCoef":0.2, "friction":5, "uiName":"Rear Differential","defaultVirtualInertia":0.5}]
+    ],
+},
+
+}

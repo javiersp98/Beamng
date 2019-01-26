@@ -1,0 +1,11 @@
+{
+"sbr_skin_sbr_custom99": {
+    "information":{
+        "authors":"Ninetynine",
+        "name":"99 Custom Livery",
+        "value":1500,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "sbr_custom99",
+}
+}

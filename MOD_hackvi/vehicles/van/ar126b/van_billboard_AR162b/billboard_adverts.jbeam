@@ -1,0 +1,21 @@
+{
+"van_skin_billboard_gmwagon": {
+    "information":{
+        "authors":"AR126B",
+        "name":"GM Wagon Advert",
+        "value":100,
+    },
+    "slotType" : "skin_billboard",
+    "skinName" : "gmwagon",
+  },
+
+"van_skin_billboard_gavrilfleet": {
+    "information":{
+        "authors":"AR162B",
+        "name":"Gavril Fleet Advert",
+        "value":100,
+    },
+    "slotType" : "skin_billboard",
+    "skinName" : "gavrilfleet",
+  },
+}

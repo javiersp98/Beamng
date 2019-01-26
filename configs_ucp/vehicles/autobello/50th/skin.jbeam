@@ -1,0 +1,12 @@
+{
+  "50th Anniversary": {
+      "information":{
+          "authors":"Waboll",
+          "name":"50th Anniversary",
+          "value":1500,
+      }
+      "slotType" : "paint_design",
+      "globalSkin" : "50thauto",
+}
+
+}

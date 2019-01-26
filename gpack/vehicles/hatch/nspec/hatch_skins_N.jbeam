@@ -1,0 +1,20 @@
+{
+"hatch_skin_nspec": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"NSPEC",
+        "value":50,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "nspec",
+},
+"hatch_skin_interior_nspec": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"NSPEC Interior",
+        "value":50,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "nspec",
+  },
+}

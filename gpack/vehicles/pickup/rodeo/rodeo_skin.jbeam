@@ -1,0 +1,11 @@
+{
+"pickup_skin_rodeo": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rodeo",
+        "value":50,
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "rodeo",
+  },
+}

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.79.0 commit date:2018-02-21, commit time:10:41, hash:8928d99270f</authoring_tool>
+    </contributor>
+    <created>2018-08-05T13:53:06</created>
+    <modified>2018-08-05T13:53:06</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_cameras>
+    <camera id="Camera-camera" name="Camera">
+      <optics>
+        <technique_common>
+          <perspective>
+            <xfov sid="xfov">49.13434</xfov>
+            <aspect_ratio>1.777778</aspect_ratio>
+            <znear sid="znear">0.1</znear>
+            <zfar sid="zfar">100</zfar>
+          </perspective>
+        </technique_common>
+      </optics>
+      <extra>
+        <technique profile="blender">
+          <shiftx sid="shiftx" type="float">0</shiftx>
+          <shifty sid="shifty" type="float">0</shifty>
+          <YF_dofdist sid="YF_dofdist" type="float">0</YF_dofdist>
+        </technique>
+      </extra>
+    </camera>
+  </library_cameras>
+  <library_lights>
+    <light id="Lamp-light" name="Lamp">
+      <technique_common>
+        <point>
+          <color sid="color">1 1 1</color>
+          <constant_attenuation>1</constant_attenuation>
+          <linear_attenuation>0</linear_attenuation>
+          <quadratic_attenuation>0.00111109</quadratic_attenuation>
+        </point>
+      </technique_common>
+      <extra>
+        <technique profile="blender">
+          <type sid="type" type="int">0</type>
+          <flag sid="flag" type="int">0</flag>
+          <mode sid="mode" type="int">8192</mode>
+          <gamma sid="blender_gamma" type="float">1</gamma>
+          <red sid="red" type="float">1</red>
+          <green sid="green" type="float">1</green>
+          <blue sid="blue" type="float">1</blue>
+          <shadow_r sid="blender_shadow_r" type="float">0</shadow_r>
+          <shadow_g sid="blender_shadow_g" type="float">0</shadow_g>
+          <shadow_b sid="blender_shadow_b" type="float">0</shadow_b>
+          <energy sid="blender_energy" type="float">1</energy>
+          <dist sid="blender_dist" type="float">29.99998</dist>
+          <spotsize sid="spotsize" type="float">75</spotsize>
+          <spotblend sid="spotblend" type="float">0.15</spotblend>
+          <halo_intensity sid="blnder_halo_intensity" type="float">1</halo_intensity>
+          <att1 sid="att1" type="float">0</att1>
+          <att2 sid="att2" type="float">1</att2>
+          <falloff_type sid="falloff_type" type="int">2</falloff_type>
+          <clipsta sid="clipsta" type="float">1.000799</clipsta>
+          <clipend sid="clipend" type="float">30.002</clipend>
+          <bias sid="bias" type="float">1</bias>
+          <soft sid="soft" type="float">3</soft>
+          <compressthresh sid="compressthresh" type="float">0.04999995</compressthresh>
+          <bufsize sid="bufsize" type="int">2880</bufsize>
+          <samp sid="samp" type="int">3</samp>
+          <buffers sid="buffers" type="int">1</buffers>
+          <filtertype sid="filtertype" type="int">0</filtertype>
+          <bufflag sid="bufflag" type="int">0</bufflag>
+          <buftype sid="buftype" type="int">2</buftype>
+          <ray_samp sid="ray_samp" type="int">1</ray_samp>
+          <ray_sampy sid="ray_sampy" type="int">1</ray_sampy>
+          <ray_sampz sid="ray_sampz" type="int">1</ray_sampz>
+          <ray_samp_type sid="ray_samp_type" type="int">0</ray_samp_type>
+          <area_shape sid="area_shape" type="int">1</area_shape>
+          <area_size sid="area_size" type="float">0.1</area_size>
+          <area_sizey sid="area_sizey" type="float">0.1</area_sizey>
+          <area_sizez sid="area_sizez" type="float">1</area_sizez>
+          <adapt_thresh sid="adapt_thresh" type="float">0.000999987</adapt_thresh>
+          <ray_samp_method sid="ray_samp_method" type="int">1</ray_samp_method>
+          <shadhalostep sid="shadhalostep" type="int">0</shadhalostep>
+          <sun_effect_type sid="sun_effect_type" type="int">0</sun_effect_type>
+          <skyblendtype sid="skyblendtype" type="int">1</skyblendtype>
+          <horizon_brightness sid="horizon_brightness" type="float">1</horizon_brightness>
+          <spread sid="spread" type="float">1</spread>
+          <sun_brightness sid="sun_brightness" type="float">1</sun_brightness>
+          <sun_size sid="sun_size" type="float">1</sun_size>
+          <backscattered_light sid="backscattered_light" type="float">1</backscattered_light>
+          <sun_intensity sid="sun_intensity" type="float">1</sun_intensity>
+          <atm_turbidity sid="atm_turbidity" type="float">2</atm_turbidity>
+          <atm_extinction_factor sid="atm_extinction_factor" type="float">1</atm_extinction_factor>
+          <atm_distance_factor sid="atm_distance_factor" type="float">1</atm_distance_factor>
+          <skyblendfac sid="skyblendfac" type="float">1</skyblendfac>
+          <sky_exposure sid="sky_exposure" type="float">1</sky_exposure>
+          <sky_colorspace sid="sky_colorspace" type="int">0</sky_colorspace>
+        </technique>
+      </extra>
+    </light>
+  </library_lights>
+  <library_images/>
+  <library_effects>
+    <effect id="hopper_gauges_modern_metric-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.125 0.125 0.125 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="hopper_gauges_modern_metric-material" name="hopper_gauges_modern_metric">
+      <instance_effect url="#hopper_gauges_modern_metric-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="hopper_gauges_003-mesh" name="hopper_gauges.003">
+      <mesh>
+        <source id="hopper_gauges_003-mesh-positions">
+          <float_array id="hopper_gauges_003-mesh-positions-array" count="12">0.2534635 -0.1283732 1.101794 0.2534989 -0.1460132 1.201513 0.5365006 -0.1460132 1.201513 0.5365073 -0.1283732 1.101794</float_array>
+          <technique_common>
+            <accessor source="#hopper_gauges_003-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="hopper_gauges_003-mesh-normals">
+          <float_array id="hopper_gauges_003-mesh-normals-array" count="6">0 0.9847117 0.1741923 0 0.9847117 0.1741924</float_array>
+          <technique_common>
+            <accessor source="#hopper_gauges_003-mesh-normals-array" count="2" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="hopper_gauges_003-mesh-map-0">
+          <float_array id="hopper_gauges_003-mesh-map-0-array" count="12">0.99558 0.75022 0.006249964 0.05387985 0.9957 0.05387985 0.99558 0.75022 0.006279945 0.75022 0.006249964 0.05387985</float_array>
+          <technique_common>
+            <accessor source="#hopper_gauges_003-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="hopper_gauges_003-mesh-vertices">
+          <input semantic="POSITION" source="#hopper_gauges_003-mesh-positions"/>
+        </vertices>
+        <triangles material="hopper_gauges_modern_metric-material" count="2">
+          <input semantic="VERTEX" source="#hopper_gauges_003-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#hopper_gauges_003-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#hopper_gauges_003-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 3 0 1 0 0 2 1 1 3 2 1 4 3 1 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="hopper_gauges_000-mesh" name="hopper_gauges.000">
+      <mesh>
+        <source id="hopper_gauges_000-mesh-positions">
+          <float_array id="hopper_gauges_000-mesh-positions-array" count="138">0.2534635 -0.1283732 1.101794 0.2534989 -0.1460132 1.201513 0.5365006 -0.1460132 1.201513 0.5365073 -0.1283732 1.101794 0.3482748 -0.1460132 1.201513 0.3949854 -0.1283732 1.101794 0.3482781 -0.1371932 1.151654 0.4375458 -0.1460132 1.201513 0.4842709 -0.1283732 1.101794 0.4307077 -0.1320553 1.122609 0.4375459 -0.1320553 1.122609 0.3482678 -0.1320553 1.122609 0.536503 -0.1397781 1.166267 0.4375458 -0.1397781 1.166266 0.4375458 -0.1364768 1.147604 0.3597429 -0.1364786 1.147614 0.3482771 -0.1397683 1.166211 0.2534798 -0.1364809 1.147627 0.2534863 -0.1397578 1.166152 0.3482767 -0.1364788 1.147615 0.3011422 -0.1460132 1.201513 0.4375458 -0.1381275 1.156935 0.2534708 -0.1320438 1.122545 0.2969986 -0.1320496 1.122577 0.297011 -0.1397631 1.166181 0.5365059 -0.1320465 1.122559 0.4870244 -0.1397781 1.166266 0.4870259 -0.1320509 1.122584 0.4463859 -0.1329055 1.127415 0.5365043 -0.1364377 1.147383 0.4463859 -0.1390761 1.162298 0.4463859 -0.1364384 1.147387 0.4463859 -0.1377573 1.154842 0.4859195 -0.1390761 1.162298 0.4859207 -0.132902 1.127395 0.4859201 -0.1364383 1.147386 0.5183414 -0.1390761 1.162298 0.518341 -0.1328991 1.127379 0.5183413 -0.1364383 1.147386 0.4766322 -0.1410877 1.173669 0.4375458 -0.1410877 1.173669 0.4974163 -0.1410877 1.17367 0.5365025 -0.1410878 1.17367 0.2980296 -0.1413041 1.174892 0.3482766 -0.1412914 1.174821 0.3367586 -0.1412944 1.174838</float_array>
+          <technique_common>
+            <accessor source="#hopper_gauges_000-mesh-positions-array" count="46" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="hopper_gauges_000-mesh-normals">
+          <float_array id="hopper_gauges_000-mesh-normals-array" count="222">1.26324e-6 0.984712 0.1741909 0 0.9847118 0.1741918 -2.47525e-6 0.9847155 0.1741708 -4.7157e-7 0.9847117 0.1741921 0 -1 0 2.7476e-6 0.9847114 0.1741944 1.10441e-6 0.984712 0.1741905 -4.50231e-6 0.9847114 0.1741944 0 0.9847117 0.174192 8.73035e-7 0.9847114 0.1741942 1.68001e-6 0.9847115 0.1741939 0 0.9847118 0.174192 0.7043607 0.7043607 0.08804506 -4.98199e-6 0.9847145 0.1741765 -7.44994e-6 0.9847128 0.1741856 -5.04742e-6 0.9847115 0.1741933 1.55581e-6 0.984708 0.1742136 -4.08654e-6 0.9847127 0.1741868 8.33846e-6 0.9847105 0.1741986 0 0.984712 0.1741911 -5.07896e-6 0.9847128 0.1741856 2.32297e-6 0.9847125 0.1741876 0 0.9847117 0.1741922 0 0.9847125 0.1741879 -2.62763e-7 0.9847103 0.1742004 3.94649e-6 0.9847127 0.1741868 9.66417e-7 0.9847113 0.1741947 1.12439e-6 0.9847126 0.1741874 8.61818e-7 0.984712 0.1741906 0 0.9847118 0.1741921 0 0.9847126 0.174187 0 0.9847112 0.1741951 1.78517e-6 0.9847114 0.174194 0 0.984712 0.1741904 0 0.984712 0.1741905 0 0.9847115 0.1741936 -2.07197e-6 0.9847118 0.1741918 4.17105e-6 0.9847109 0.1741964 0 0.9847114 0.174194 -6.15322e-7 0.9847114 0.1741939 -2.45774e-6 0.9847116 0.1741929 2.6106e-6 0.9847111 0.1741954 0 0.9847117 0.174192 0 0.984715 0.1741735 -1.55562e-6 0.9847128 0.1741861 -5.34792e-6 0.9847129 0.1741858 0 0.9847086 0.1742103 0 0.9847097 0.1742036 0 0.9847072 0.1742179 -8.33843e-6 0.9847126 0.174187 -1.73924e-6 0.9847142 0.1741782 0 0.9847121 0.1741902 8.30098e-6 0.9847122 0.1741897 -2.50046e-6 0.9847081 0.1742131 -4.81624e-7 0.9847104 0.1741994 7.95842e-7 0.9847103 0.1741999 2.03382e-6 0.9847123 0.1741886 -4.04846e-7 0.9847106 0.1741986 0 0.9847123 0.1741893 -1.66999e-6 0.9847118 0.1741914 0 0.9847127 0.1741865 -7.9242e-6 0.9847091 0.1742072 0 0.9847118 0.1741923 -4.38106e-6 0.9847146 0.1741759 -3.55743e-6 0.9847121 0.1741902 6.93568e-6 0.9847095 0.1742049 0 0.9847117 0.1741925 -0.6938412 -0.6938412 -0.1927924 0 0.984712 0.1741909 5.77514e-6 0.984712 0.1741907 -3.49824e-6 0.9847111 0.1741958 0 0.9847111 0.1741955 0 0.984712 0.1741908 3.16944e-6 0.9847084 0.174211</float_array>
+          <technique_common>
+            <accessor source="#hopper_gauges_000-mesh-normals-array" count="74" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="hopper_gauges_000-mesh-map-0">
+          <float_array id="hopper_gauges_000-mesh-map-0-array" count="444">0.1888585 0.4389322 0.4608365 0.3738408 0.1888591 0.5040923 0.5009499 0.1992316 0.4608365 0.3738408 0.2127606 0.1992325 0.4608365 0.3738408 0.5009198 0.3738502 0.5009149 0.40205 0.1888578 0.3737729 0.2127606 0.1992325 0.4608365 0.3738408 0.1888591 0.5040923 0.1888615 0.75022 0.1888596 0.5557869 0.4608365 0.3738408 0.5009149 0.40205 0.5009194 0.5037035 0.5009194 0.5037035 0.1888591 0.5040923 0.4608365 0.3738408 0.5009499 0.1992316 0.5009198 0.3738502 0.4608365 0.3738408 0.1888578 0.3737729 0.1888561 0.1992325 0.2127606 0.1992325 0.5009194 0.5037035 0.50093 0.75022 0.1888591 0.5040923 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.8170893 0.7357782 0.5029959 0.5607535 0.5030052 0.5121007 0.4979138 0.4330942 0.4979138 0.4330942 0.4979138 0.4330942 0.02745711 0.09371823 0.05286175 0.09374374 0.05286079 0.2366255 0.8340051 0.2373317 0.9768036 0.2373324 0.9768036 0.2911923 0.4990965 0.4314239 0.4990965 0.4314239 0.4990966 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.02746176 0.2366255 0.05286079 0.2366255 0.05286026 0.3431158 0.8340051 0.2373317 0.9768033 0.09306025 0.9768036 0.2373324 0.05286079 0.2366255 0.1686261 0.09386008 0.1686285 0.2366253 0.05286026 0.3431158 0.1686285 0.2366253 0.1686303 0.3431153 0.1888585 0.4389322 0.1888578 0.3737729 0.4608365 0.3738408 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.3541042 0.1053716 0.2583703 0.1677365 0.2306275 0.1055843 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.503064 0.210835 0.8171716 0.2104471 0.5030052 0.5121007 0.8171716 0.2104471 0.8170893 0.7357782 0.5030052 0.5121007 0.8170893 0.7357782 0.5030025 0.7361341 0.5029959 0.5607535 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.449026 0.1078022 0.3691524 0.1675997 0.3479156 0.1078022 0.9768036 0.3450525 0.834007 0.3450525 0.9768036 0.2911923 0.834007 0.3450525 0.8340051 0.2373317 0.9768036 0.2911923 0.4990965 0.4314239 0.4990965 0.4314239 0.4990966 0.4314239 0.4990966 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.4990965 0.4314239 0.8340051 0.2373317 0.8340027 0.09291619 0.9768033 0.09306025 0.05286079 0.2366255 0.05286175 0.09374374 0.1686261 0.09386008 0.05286026 0.3431158 0.05286079 0.2366255 0.1686285 0.2366253 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.4979138 0.4330942 0.4979138 0.4330942 0.4979138 0.4330942 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.2583703 0.1677365 0.2306289 0.1676196 0.2306275 0.1055843 0.1888591 0.5040923 0.50093 0.75022 0.1888615 0.75022 0.5009194 0.5037035 0.5009219 0.5638315 0.50093 0.75022 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.3541042 0.1053716 0.351651 0.1681311 0.2583703 0.1677365 0.449026 0.1078022 0.449026 0.1675987 0.3691524 0.1675997 0.5001413 0.4525141 0.5001413 0.4525141 0.5001413 0.4525141 0.4979138 0.4330942 0.4979138 0.4330942 0.4979138 0.4330942</float_array>
+          <technique_common>
+            <accessor source="#hopper_gauges_000-mesh-map-0-array" count="222" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="hopper_gauges_000-mesh-vertices">
+          <input semantic="POSITION" source="#hopper_gauges_000-mesh-positions"/>
+        </vertices>
+        <triangles material="hopper_gauges_modern_metric-material" count="74">
+          <input semantic="VERTEX" source="#hopper_gauges_000-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#hopper_gauges_000-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#hopper_gauges_000-mesh-map-0" offset="2" set="0"/>
+          <p>21 0 0 15 0 1 13 0 2 11 1 3 15 1 4 9 1 5 15 2 6 19 2 7 6 2 8 14 3 9 9 3 10 15 3 11 13 4 12 7 4 13 40 4 14 15 5 15 6 5 16 16 5 17 16 6 18 13 6 19 15 6 20 11 7 21 19 7 22 15 7 23 14 8 24 10 8 25 9 8 26 16 9 27 4 9 28 13 9 29 23 10 30 22 10 31 17 10 32 27 11 33 3 11 34 8 11 35 24 12 36 20 12 37 43 12 38 24 13 39 6 13 40 19 13 41 26 14 42 39 14 43 41 14 44 29 15 45 37 15 46 38 15 47 35 16 48 31 16 49 32 16 50 26 17 51 12 17 52 36 17 53 21 18 54 32 18 55 14 18 56 25 19 57 27 19 58 37 19 59 29 20 60 38 20 61 36 20 62 35 21 63 28 21 64 31 21 65 38 22 66 34 22 67 35 22 68 36 23 69 35 23 70 33 23 71 21 24 72 14 24 73 15 24 74 17 25 75 18 25 76 24 25 77 24 26 78 23 26 79 17 26 80 0 27 81 22 27 82 23 27 83 23 28 84 11 28 85 0 28 86 11 29 87 9 29 88 5 29 89 9 30 90 10 30 91 5 30 92 10 31 93 27 31 94 8 31 95 27 32 96 25 32 97 3 32 98 8 33 99 5 33 100 10 33 101 5 34 102 0 34 103 11 34 104 4 35 105 45 35 106 20 35 107 24 36 108 45 36 109 16 36 110 24 37 111 18 37 112 1 37 113 11 38 114 23 38 115 19 38 116 23 39 117 24 39 118 19 39 119 24 40 120 16 40 121 6 40 122 2 41 123 42 41 124 41 41 125 13 42 126 39 42 127 26 42 128 30 43 129 33 43 130 32 43 131 33 44 132 35 44 133 32 44 134 12 45 135 29 45 136 36 45 137 36 46 138 33 46 139 26 46 140 33 47 141 30 47 142 26 47 143 30 48 144 13 48 145 26 48 146 13 49 147 30 49 148 21 49 149 30 50 150 32 50 151 21 50 152 31 51 153 28 51 154 14 51 155 28 52 156 10 52 157 14 52 158 32 53 159 31 53 160 14 53 161 27 54 162 10 54 163 28 54 164 27 55 165 28 55 166 34 55 167 37 56 168 29 56 169 25 56 170 27 57 171 34 57 172 37 57 173 35 58 174 34 58 175 28 58 176 38 59 177 37 59 178 34 59 179 36 60 180 38 60 181 35 60 182 39 61 183 2 61 184 41 61 185 39 62 186 40 62 187 7 62 188 41 63 189 12 63 190 26 63 191 45 64 192 43 64 193 20 64 194 45 65 195 44 65 196 16 65 197 13 66 198 4 66 199 7 66 200 16 67 201 44 67 202 4 67 203 24 68 204 1 68 205 20 68 206 4 69 207 44 69 208 45 69 209 24 70 210 43 70 211 45 70 212 13 71 213 40 71 214 39 71 215 39 72 216 7 72 217 2 72 218 41 73 219 42 73 220 12 73 221</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Camera" name="Camera" type="NODE">
+        <matrix sid="transform">0.6859207 -0.3240135 0.6515582 7.481132 0.7276763 0.3054208 -0.6141704 -6.50764 0 0.8953956 0.4452714 5.343665 0 0 0 1</matrix>
+        <instance_camera url="#Camera-camera"/>
+      </node>
+      <node id="Lamp" name="Lamp" type="NODE">
+        <matrix sid="transform">-0.2908646 -0.7711008 0.5663932 4.076245 0.9551712 -0.1998834 0.2183912 1.005454 -0.05518906 0.6045247 0.7946723 5.903862 0 0 0 1</matrix>
+        <instance_light url="#Lamp-light"/>
+      </node>
+      <node id="hopper_gauges_modern_metric" name="hopper_gauges_modern_metric" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#hopper_gauges_003-mesh" name="hopper_gauges_modern_metric">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="hopper_gauges_modern_metric-material" target="#hopper_gauges_modern_metric-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="hopper_gauges_basic_metric" name="hopper_gauges_basic_metric" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#hopper_gauges_000-mesh" name="hopper_gauges_basic_metric">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="hopper_gauges_modern_metric-material" target="#hopper_gauges_modern_metric-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

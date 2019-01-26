@@ -1,0 +1,26 @@
+{
+"hatch_strut_bar_N": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Strut Bar",
+        "value":140,
+    },
+    "slotType" : "hatch_strut_bar_N",
+
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["pessima_strut_bar", ["hatch_strutbar"]],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":2301000,"beamDamp":100,"beamDeform":117000,"beamStrength":510000},
+          //rigid beams
+          ["fs1l","fs1r"],
+          ["fx4r","fx4l"],
+          ["fs1r","fx4l"],
+          ["fs1l","fx4r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+}

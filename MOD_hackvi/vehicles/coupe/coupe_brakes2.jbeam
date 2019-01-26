@@ -1,0 +1,78 @@
+{
+
+"coupe_brake_F_4_gtz": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GTz Front Brakes",
+        "value":350,
+    },
+    "slotType" : "coupe_brake_F_4",
+    "slots": [
+        ["type", "default", "description"]
+        ["brakepad_F","brakepad_F_sport", "Front Brake Pads"{"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["coupe_brake_F", ["wheelhub_FR","wheelhub_FL","coupe_hub_F"], [], {"scale":{"x":0.96, "y":1, "z":1}}],
+        //brake discs
+        ["coupe_brakedisc_FR", ["wheel_FR","wheelhub_FR"], [], {"scale":{"x":0.99, "y":1, "z":1}}],
+        ["coupe_brakedisc_FL", ["wheel_FL","wheelhub_FL"], [], {"scale":{"x":0.99, "y":1, "z":1}}],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"ABSthreshold":1.8}
+        {"brakeTorque":2100},
+        {"brakeInputSplit":1},
+        {"brakeSplitCoef":1},
+        {"parkingTorque":0},
+        {"brakeSpring":45},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.28},
+        {"brakeMass":7.0},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":1.0},
+    ],
+},
+"coupe_brake_R_4_gtz": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GTz Rear Brakes",
+        "value":300,
+    }
+    "slotType" : "coupe_brake_R_4",
+    "slots": [
+        ["type", "default", "description"]
+        ["brakepad_R","brakepad_R_sport", "Rear Brake Pads"{"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["coupe_brake_R", ["wheelhub_RL","wheelhub_RR","coupe_hub_R"], [], {"scale":{"x":0.96, "y":1, "z":1}}],
+        //brake discs
+        ["coupe_brakedisc_RR", ["wheel_RR","wheelhub_RR"], [], {"scale":{"x":0.99, "y":1, "z":1}}],
+        ["coupe_brakedisc_RL", ["wheel_RL","wheelhub_RL"], [], {"scale":{"x":0.99, "y":1, "z":1}}],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"ABSthreshold":1.8}
+        {"brakeTorque":950},
+        {"brakeInputSplit":0.5},
+        {"brakeSplitCoef":0.25},
+        {"parkingTorque":2000},
+        {"brakeSpring":45},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.25},
+        {"brakeMass":4.25},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":0.8},
+    ],
+}
+
+}

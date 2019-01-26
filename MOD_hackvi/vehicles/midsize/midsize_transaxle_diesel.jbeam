@@ -1,0 +1,66 @@
+{
+
+"midsize_converter_diesel": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Diesel Locking Torque Converter",
+        "value":160,
+    },
+    "slotType" : "midsize_converter",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter": 0.27,
+        "converterStiffness":12,
+        "couplingAVRatio":0.91,
+        "stallTorqueRatio":1.8,
+        "lockupClutchTorque":250,
+        "additionalEngineInertia":0.16,
+    },
+    "vehicleController": {
+        "torqueConverterLockupRPM":1200
+        "torqueConverterLockupMinGear":2
+    },
+},
+
+"midsize_differential_F_274": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"2.74 Open Front Differential",
+        "value":250,
+    }
+    "slotType" : "midsize_differential_F",
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torsionReactor", "torsionReactorF", "gearbox", 1, {"gearRatio":2.74}]
+        ["differential", "differential_F", "torsionReactorF", 1, {"diffType":"open", "gearRatio": 1, "friction":7, "uiName":"Front Differential","defaultVirtualInertia":0.25}],
+    ],
+    "torsionReactorF": {
+        "torqueReactionNodes:":["e1l","e2l","e4r"],
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["midsize_halfshaft_F", ["midsize_tierod_F","midsize_hub_F","midsize_transmission","wheelhub_FR","wheelhub_FL"]],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":3000600,"beamDamp":150},
+          {"beamDeform":27000,"beamStrength":"FLT_MAX"},
+          //halfshafts
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.05, "beamShortBound":0.05},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":3240,"beamStrength":8550},
+          {"beamLimitSpring":7501000,"beamLimitDamp":300},
+          {"optional":true},
+          {"breakGroupType":1},
+          {"breakGroup":"wheel_FR"},
+          ["fw1r","tra1r", {"name":"axle_FR"}],
+          {"breakGroup":"wheel_FL"},
+          ["fw1l","tra1l", {"name":"axle_FL"}],
+          {"breakGroup":""},
+          {"optional":false},
+          {"breakGroupType":0},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+}

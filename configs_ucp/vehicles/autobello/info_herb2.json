@@ -1,0 +1,30 @@
+{
+"0-100 km/h":16.5,
+"Braking G":1.037,
+"Drivetrain":"RWD",
+"Weight":735,
+"Value":6250,
+"Performance Class":"3",
+"TorquePeakRPM":"1650 - 2450",
+"Off-Road Score":46,
+"Description":"-",
+"Configuration":"Herbie Street Racer (M)",
+"default_color":"Bianco Perla",
+"Induction Type":"NA",
+"Torque":107.505,
+"0-60 mph":15.2,
+"Config Type":"Factory",
+"100-0 km/h":37.9,
+"Top Speed":36.8067,
+"Transmission":"Manual",
+"Propulsion":"ICE",
+"Power":45.02,
+"PowerPeakRPM":"3350 - 4050",
+"Weight/Power":16.3333,
+"60-0 mph":116.1,
+"Years":{
+  "min":1957,
+  "max":1963
+},
+"Fuel Type":"Gasoline"
+}

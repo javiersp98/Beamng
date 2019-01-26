@@ -1,0 +1,240 @@
+{
+
+"pessima_transmission_6M2": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"6-Speed Manual Transmission",
+        "value":250,
+    }
+    "slotType" : "pessima_transmission",
+    "slots": [
+        ["type", "default", "description"],
+        ["pessima_flywheel","pessima_flywheel","Flywheel", {"coreSlot":true}],
+        ["pessima_transfer_case","pessima_transfer_case_AWD", "Transfer Case"{"coreSlot":true}],
+        ["pessima_differential_F","pessima_differential_F", "Front Differential"],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-3.0, 0, 3.65, 2.37, 1.67, 1.28, 1.02, 0.78],
+        "friction": 1,
+        "gearboxNode:":"ta1",
+    },
+    "vehicleController": {
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.33,
+        "lowShiftDownRPM":[0,0,0,1600,1900,1700,1600],
+        "lowShiftUpRPM":[0,0,3400,2800,2700,2600],
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pessima_transmission", ["pessima_engine","pessima_transmission"]],
+         ["pessima_shifter_M", ["pessima_body"]],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        //manual transmission
+        //["gear_M"   ,"pessima_shifter_M", "f7r","f7l","f8r", {"x":85, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0, "z":0.0}, 0, 1, 0, 1],
+        ["clutch", "pessima_clutchpedal", "f1l","f1r","f6l", {"x":5, "y":0, "z":180}, {"x":-25, "y":0, "z":0}, {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"pessima_transmission"},
+         {"nodeWeight":12},
+         ["tra1r",-0.29, -1.29, 0.31],
+         ["tra1l", 0.29, -1.29, 0.31],
+         {"group":""},
+         ["ta1", 0, -1.29, 0.31],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--TRANSMISSION CONE--
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":15001000,"beamDamp":400},
+          {"beamDeform":175000,"beamStrength":"FLT_MAX"},
+          ["tra1l","e2r"],
+          ["tra1l","e4r"],
+          ["tra1l","e2l"],
+          ["tra1l","e4l"],
+          ["tra1r","e1r"],
+          ["tra1r","e3r"],
+          ["tra1r","e1l"],
+          ["tra1r","e3l"],
+          ["tra1r","tra1l"],
+          ["ta1","e1l"],
+          ["ta1","e2l"],
+          ["ta1","e4l"],
+          ["ta1","e3l"],
+          ["ta1","tra1l"],
+          ["ta1","tra1r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+"pessima_transmission_5M_sport": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Sport 5-Speed Manual Transmission",
+        "value":275,
+    }
+    "slotType" : "pessima_transmission",
+    "slots": [
+        ["type", "default", "description"],
+        ["pessima_flywheel","pessima_flywheel","Flywheel", {"coreSlot":true}],
+        ["pessima_transfer_case","pessima_transfer_case_AWD", "Transfer Case"{"coreSlot":true}],
+        ["pessima_differential_F","pessima_differential_F", "Front Differential"],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-3.1, 0, 3.31, 1.95, 1.30, 0.95, 0.71],
+        "friction": 5,
+        "gearboxNode:":["ta1"],
+    },
+    "vehicleController": {
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.33,
+        "lowShiftDownRPM":[0,0,0,1600,1900,1700,1600],
+        "lowShiftUpRPM":[0,0,3400,2800,2700,2600],
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pessima_transmission", ["pessima_engine","pessima_transmission"]],
+         ["pessima_shifter_M", ["pessima_body"]],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        //manual transmission
+        //["gear_M"   ,"pessima_shifter_M", "f7r","f7l","f8r", {"x":85, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0, "z":0.0}, 0, 1, 0, 1],
+        ["clutch", "pessima_clutchpedal", "f1l","f1r","f6l", {"x":5, "y":0, "z":180}, {"x":-25, "y":0, "z":0}, {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"pessima_transmission"},
+         {"nodeWeight":12},
+         ["tra1r",-0.29, -1.29, 0.31],
+         ["tra1l", 0.29, -1.29, 0.31],
+         {"group":""},
+         ["ta1", 0, -1.29, 0.31],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--TRANSMISSION CONE--
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":15001000,"beamDamp":400},
+          {"beamDeform":175000,"beamStrength":"FLT_MAX"},
+          ["tra1l","e2r"],
+          ["tra1l","e4r"],
+          ["tra1l","e2l"],
+          ["tra1l","e4l"],
+          ["tra1r","e1r"],
+          ["tra1r","e3r"],
+          ["tra1r","e1l"],
+          ["tra1r","e3l"],
+          ["tra1r","tra1l"],
+          ["ta1","e1l"],
+          ["ta1","e2l"],
+          ["ta1","e4l"],
+          ["ta1","e3l"],
+          ["ta1","tra1l"],
+          ["ta1","tra1r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+"pessima_transmission_5M_gtz": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GTz 5-Speed Manual Transmission",
+        "value":300,
+    }
+    "slotType" : "pessima_transmission",
+    "slots": [
+        ["type", "default", "description"],
+        ["pessima_flywheel","pessima_flywheel","Flywheel", {"coreSlot":true}],
+        ["pessima_transfer_case","pessima_transfer_case_AWD", "Transfer Case"{"coreSlot":true}],
+        ["pessima_differential_F","pessima_differential_F", "Front Differential"],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-3.0, 0, 3.31, 1.90, 1.30, 0.95, 0.75],
+        "friction": 1,
+        "gearboxNode:":"ta1",
+    },
+    "vehicleController": {
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.33,
+        "lowShiftDownRPM":[0,0,0,1600,1900,1700,1600],
+        "lowShiftUpRPM":[0,0,3400,2800,2700,2600],
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pessima_transmission", ["pessima_engine","pessima_transmission"]],
+         ["pessima_shifter_M", ["pessima_body"]],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        //manual transmission
+        //["gear_M"   ,"pessima_shifter_M", "f7r","f7l","f8r", {"x":85, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0, "z":0.0}, 0, 1, 0, 1],
+        ["clutch", "pessima_clutchpedal", "f1l","f1r","f6l", {"x":5, "y":0, "z":180}, {"x":-25, "y":0, "z":0}, {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"pessima_transmission"},
+         {"nodeWeight":12},
+         ["tra1r",-0.29, -1.29, 0.31],
+         ["tra1l", 0.29, -1.29, 0.31],
+         {"group":""},
+         ["ta1", 0, -1.29, 0.31],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--TRANSMISSION CONE--
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":15001000,"beamDamp":400},
+          {"beamDeform":175000,"beamStrength":"FLT_MAX"},
+          ["tra1l","e2r"],
+          ["tra1l","e4r"],
+          ["tra1l","e2l"],
+          ["tra1l","e4l"],
+          ["tra1r","e1r"],
+          ["tra1r","e3r"],
+          ["tra1r","e1l"],
+          ["tra1r","e3l"],
+          ["tra1r","tra1l"],
+          ["ta1","e1l"],
+          ["ta1","e2l"],
+          ["ta1","e4l"],
+          ["ta1","e3l"],
+          ["ta1","tra1l"],
+          ["ta1","tra1r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+}

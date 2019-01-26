@@ -1,0 +1,16 @@
+{
+"fullsize_engine_v8_ecu_bellco": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Bellco ECU",
+        "value":250,
+    }
+    "slotType" : "fullsize_engine_v8_ecu",
+    "mainEngine":{
+        "idleRPM":900,
+        "revLimiterRPM":6800,
+        "revLimiterType":"rpmDrop",
+        "revLimiterRPMDrop":100,
+    },
+},
+}

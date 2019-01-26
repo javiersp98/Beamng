@@ -1,0 +1,131 @@
+{
+
+"hopper_transmission_5A": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"5-Speed Automatic Transmission",
+        "value":450,
+    }
+    "slotType" : "hopper_transmission",
+    "slots": [
+        ["type", "default", "description"]
+        ["hopper_converter","hopper_converter","Torque Converter", {"coreSlot":true}],
+        ["hopper_transfercase","hopper_transfercase", "Transfer Case"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["automaticGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-3.57, 0, 4.0, 2.33, 1.45, 1.0, 0.78],
+        "parkLockTorque":2500,
+        "oneWayViscousCoef":50,
+        "friction": 10,
+        "gearboxNode:":["tra1"],
+    },
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+    },
+    "vehicleController": {
+        "automaticModes":"PRNDM",
+        "useSmartAggressionCalculation":false,
+        "calculateOptimalLoadShiftPoints": true,
+        "transmissionGearChangeDelay":2
+        "gearboxDecisionSmoothingUp":0.5
+        "gearboxDecisionSmoothingDown":0.5
+        "lowShiftDownRPM":1100,
+        "lowShiftUpRPM":1900,
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["hopper_transmission", ["hopper_engine","hopper_transmission"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false}
+         {"collision":true}
+         //--4 Speed Auto-
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"nodeWeight":35},
+         {"group":"hopper_transmission"},
+         ["tra1", 0.0, -0.08, 0.385],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":12600840,"beamDamp":390},
+          {"beamDeform":99750,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+"hopper_transmission_6M": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"6-Speed Manual Transmission",
+        "value":400,
+    },
+    "slotType" : "hopper_transmission",
+    "slots": [
+        ["type", "default", "description"]
+        ["hopper_flywheel","hopper_flywheel","Flywheel", {"coreSlot":true}],
+        ["hopper_transfercase","hopper_transfercase", "Transfer Case"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-3.58, 0, 3.7, 2.33, 1.52, 1.15, 0.92, 0.74],
+        "friction": 6,
+        "gearboxNode:":["tra1"],
+    },
+    "clutch": {
+    },
+    "vehicleController": {
+        "calculateOptimalLoadShiftPoints": true,
+        "lowShiftDownRPM":[0,0,0,1300,1400,1400,1300],
+        "lowShiftUpRPM":[0,0,3000,2600,2550,2400],
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["hopper_transmission", ["hopper_engine","hopper_transmission"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false}
+         {"collision":true}
+         //--5 Speed Manual-
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"nodeWeight":35},
+         {"group":"hopper_transmission"},
+         ["tra1", 0.0, -0.08, 0.385],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":12600840,"beamDamp":390},
+          {"beamDeform":99750,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+}

@@ -1,0 +1,326 @@
+{
+"van_flatbed_edge": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Edge Rail",
+	}
+    "slotType" : "van_flatbed_edge",
+	"scalenodeWeight":1,
+	"scalebeamSpring":1,
+	"scalebeamDamp":1,
+	"scalebeamDeform":1,
+	"scalebeamStrength":1,
+
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["van_flatbed_edge_R", ["van_flatbed_edge_R"]],
+		 ["van_flatbed_edge_L", ["van_flatbed_edge_L"]],
+		 
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"vnfb_frictionCoef":0.7},
+		 {"collision":true}
+		 {"selfCollision":true}
+		 //--FLOOR/FRAME--
+		 {"group":"van_flatbed_edge_R"}
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":2.0},
+
+
+		 ["vnfb_edge1rr", -1.21, 4.47, 0.89],
+		 ["vnfb_edge2rr", -1.21, 3.47, 0.89],
+		 ["vnfb_edge3rr", -1.21, 2.49, 0.89],
+		 ["vnfb_edge4rr", -1.21, 1.38, 0.89],
+		 ["vnfb_edge5rr", -1.21, 0.11, 0.89],
+
+		 //upper
+		 ["vnfb_edge11rr", -1.22, 4.47, 1.04],
+		 ["vnfb_edge12rr", -1.22, 3.47, 1.04],
+		 ["vnfb_edge13rr", -1.22, 2.49, 1.04], 
+		 ["vnfb_edge14rr", -1.22, 1.38, 1.04],	 
+		 ["vnfb_edge15rr", -1.22, 0.11, 1.04],	 
+
+
+		 {"group":"van_flatbed_edge_L"}
+
+		 ["vnfb_edge1ll", 1.21, 4.47, 0.89],
+		 ["vnfb_edge2ll", 1.21, 3.47, 0.89],
+		 ["vnfb_edge3ll", 1.21, 2.49, 0.89],
+		 ["vnfb_edge4ll", 1.21, 1.38, 0.89],
+		 ["vnfb_edge5ll", 1.21, 0.11, 0.89],
+		 
+		 //upper
+
+		 ["vnfb_edge11ll", 1.22, 4.47, 1.04],
+		 ["vnfb_edge12ll", 1.22, 3.47, 1.04],
+		 ["vnfb_edge13ll", 1.22, 2.49, 1.04],
+		 ["vnfb_edge14ll", 1.22, 1.38, 1.04],
+		 ["vnfb_edge15ll", 1.22, 0.11, 1.04],
+
+		 {"group":""}
+		 
+		 {"collision":true}
+		 {"selfCollision":true}
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  //--FLATBED SIDE EDGES
+		  
+		  
+		  {"beamSpring":1260840,"beamDamp":195},
+		  {"beamDeform":150000,"beamStrength":"FLT_MAX"},
+		  //length
+
+		  ["vnfb_edge1rr","vnfb_edge2rr"],
+		  ["vnfb_edge2rr","vnfb_edge3rr"],
+		  ["vnfb_edge3rr","vnfb_edge4rr"],
+		  ["vnfb_edge4rr","vnfb_edge5rr"],
+
+		  ["vnfb_edge11rr","vnfb_edge12rr"],
+		  ["vnfb_edge12rr","vnfb_edge13rr"],
+		  ["vnfb_edge13rr","vnfb_edge14rr"],
+		  ["vnfb_edge14rr","vnfb_edge15rr"],
+
+		  ["vnfb_edge1ll","vnfb_edge2ll"],
+		  ["vnfb_edge2ll","vnfb_edge3ll"],
+		  ["vnfb_edge3ll","vnfb_edge4ll"],
+		  ["vnfb_edge4ll","vnfb_edge5ll"],
+
+		  ["vnfb_edge11ll","vnfb_edge12ll"],
+		  ["vnfb_edge12ll","vnfb_edge13ll"],
+		  ["vnfb_edge13ll","vnfb_edge14ll"],
+		  ["vnfb_edge14ll","vnfb_edge15ll"],
+
+		  //vertical
+		  {"beamSpring":1596840,"beamDamp":195},
+		  {"beamDeform":150000,"beamStrength":"FLT_MAX"},
+		  ["vnfb_edge1rr","vnfb_edge11rr"],
+		  ["vnfb_edge2rr","vnfb_edge12rr"],
+		  ["vnfb_edge3rr","vnfb_edge13rr"],
+		  ["vnfb_edge4rr","vnfb_edge14rr"],
+		  ["vnfb_edge5rr","vnfb_edge15rr"],
+
+		  ["vnfb_edge1ll","vnfb_edge11ll"],
+		  ["vnfb_edge2ll","vnfb_edge12ll"],
+		  ["vnfb_edge3ll","vnfb_edge13ll"],
+		  ["vnfb_edge4ll","vnfb_edge14ll"],
+		  ["vnfb_edge5ll","vnfb_edge15ll"],
+		  
+		  //cross
+		  {"beamSpring":1008840,"beamDamp":195},
+		  {"beamDeform":82500,"beamStrength":"FLT_MAX"},
+		  ["vnfb_edge1rr","vnfb_edge12rr"],
+		  ["vnfb_edge2rr","vnfb_edge13rr"],
+		  ["vnfb_edge3rr","vnfb_edge14rr"],
+		  ["vnfb_edge4rr","vnfb_edge15rr"],
+
+		  ["vnfb_edge1ll","vnfb_edge12ll"],
+		  ["vnfb_edge2ll","vnfb_edge13ll"],
+		  ["vnfb_edge3ll","vnfb_edge14ll"],
+		  ["vnfb_edge4ll","vnfb_edge15ll"],
+
+		  {"beamSpring":1008840,"beamDamp":247},
+		  {"beamDeform":37500,"beamStrength":"FLT_MAX"},
+		  //rigids
+		  ["vnfb_edge1rr","vnfb_edge3rr"],
+		  ["vnfb_edge2rr","vnfb_edge4rr"],
+		  ["vnfb_edge3rr","vnfb_edge5rr"],
+
+		  ["vnfb_edge11rr","vnfb_edge13rr"],
+		  ["vnfb_edge12rr","vnfb_edge14rr"],
+		  ["vnfb_edge13rr","vnfb_edge15rr"],
+
+		  ["vnfb_edge1ll","vnfb_edge3ll"],
+		  ["vnfb_edge2ll","vnfb_edge4ll"],
+		  ["vnfb_edge3ll","vnfb_edge5ll"],
+
+		  ["vnfb_edge11ll","vnfb_edge13ll"],
+		  ["vnfb_edge12ll","vnfb_edge14ll"],
+		  ["vnfb_edge13ll","vnfb_edge15ll"],
+
+
+		  //attach
+		  {"breakGroupType":0},
+
+		  {"breakGroup":"van_flatbed_edge_R1"},
+		  {"beamSpring":924840,"beamDamp":130},
+		  {"beamDeform":22500,"beamStrength":53400},
+		  ["vnfb_edge11rr","cf11r"],
+		  {"beamSpring":1344840,"beamDamp":130},
+		  {"beamDeform":45000,"beamStrength":53400},
+		  ["vnfb_edge1rr","cf11rr"],
+		  ["vnfb_edge1rr","cf11r"],
+		  ["vnfb_edge1rr","cf1rr"],
+		  ["vnfb_edge1rr","cf1r"],
+		  ["vnfb_edge1rr","cf12rr"],
+
+		  {"breakGroup":"van_flatbed_edge_R2"},
+		  {"beamSpring":924840,"beamDamp":130},
+		  {"beamDeform":22500,"beamStrength":53400},
+		  ["vnfb_edge12rr","cf12r"],
+		  {"beamSpring":1344840,"beamDamp":130},
+		  {"beamDeform":45000,"beamStrength":53400},
+		  ["vnfb_edge2rr","cf12rr"],
+		  ["vnfb_edge2rr","cf12r"],
+		  ["vnfb_edge2rr","cf2r"],
+		  ["vnfb_edge2rr","cf11rr"],
+		  ["vnfb_edge2rr","cf13rr"],
+
+		  {"breakGroup":"van_flatbed_edge_R3"},
+		  {"beamSpring":924840,"beamDamp":130},
+		  {"beamDeform":22500,"beamStrength":53400},
+		  ["vnfb_edge13rr","cf13r"],
+		  {"beamSpring":1344840,"beamDamp":130},
+		  {"beamDeform":45000,"beamStrength":53400},
+		  ["vnfb_edge3rr","cf13rr"],
+		  ["vnfb_edge3rr","cf13r"],
+		  ["vnfb_edge3rr","cf3r"],
+		  ["vnfb_edge3rr","cf12rr"],
+		  ["vnfb_edge3rr","cf14rr"],
+
+		  {"breakGroup":"van_flatbed_edge_R4"},
+		  {"beamSpring":924840,"beamDamp":130},
+		  {"beamDeform":22500,"beamStrength":53400},
+		  ["vnfb_edge14rr","cf14r"],
+		  {"beamSpring":1344840,"beamDamp":130},
+		  {"beamDeform":45000,"beamStrength":53400},
+		  ["vnfb_edge4rr","cf14rr"],
+		  ["vnfb_edge4rr","cf14r"],
+		  ["vnfb_edge4rr","cf4r"],
+		  ["vnfb_edge4rr","cf13rr"],
+		  ["vnfb_edge4rr","cf15rr"],
+
+		  {"breakGroup":"van_flatbed_edge_R5"},
+		  {"beamSpring":924840,"beamDamp":130},
+		  {"beamDeform":22500,"beamStrength":53400},
+		  ["vnfb_edge15rr","cf15r"],
+		  {"beamSpring":1344840,"beamDamp":130},
+		  {"beamDeform":45000,"beamStrength":53400},
+		  ["vnfb_edge5rr","cf15rr"],
+		  ["vnfb_edge5rr","cf15r"],
+		  ["vnfb_edge5rr","cf5r"],
+		  ["vnfb_edge5rr","cf14rr"],
+		  ["vnfb_edge5rr","cf16rr"],
+
+
+		  {"breakGroup":"van_flatbed_edge_L1"},
+		  {"beamSpring":924840,"beamDamp":130},
+		  {"beamDeform":22500,"beamStrength":53400},
+		  ["vnfb_edge11ll","cf11l"],
+		  {"beamSpring":1344840,"beamDamp":130},
+		  {"beamDeform":45000,"beamStrength":53400},
+		  ["vnfb_edge1ll","cf11ll"],
+		  ["vnfb_edge1ll","cf11l"],
+		  ["vnfb_edge1ll","cf1ll"],
+		  ["vnfb_edge1ll","cf1l"],
+		  ["vnfb_edge1ll","cf12ll"],
+
+		  {"breakGroup":"van_flatbed_edge_L2"},
+		  {"beamSpring":924840,"beamDamp":130},
+		  {"beamDeform":22500,"beamStrength":53400},
+		  ["vnfb_edge12ll","cf12l"],
+		  {"beamSpring":1344840,"beamDamp":130},
+		  {"beamDeform":45000,"beamStrength":53400},
+		  ["vnfb_edge2ll","cf12ll"],
+		  ["vnfb_edge2ll","cf12l"],
+		  ["vnfb_edge2ll","cf2l"],
+		  ["vnfb_edge2ll","cf11ll"],
+		  ["vnfb_edge2ll","cf13ll"],
+
+		  {"breakGroup":"van_flatbed_edge_L3"},
+		  {"beamSpring":924840,"beamDamp":130},
+		  {"beamDeform":22500,"beamStrength":53400},
+		  ["vnfb_edge13ll","cf13l"],
+		  {"beamSpring":1344840,"beamDamp":130},
+		  {"beamDeform":45000,"beamStrength":53400},
+		  ["vnfb_edge3ll","cf13ll"],
+		  ["vnfb_edge3ll","cf13l"],
+		  ["vnfb_edge3ll","cf3l"],
+		  ["vnfb_edge3ll","cf12ll"],
+		  ["vnfb_edge3ll","cf14ll"],
+
+		  {"breakGroup":"van_flatbed_edge_L4"},
+		  {"beamSpring":924840,"beamDamp":130},
+		  {"beamDeform":22500,"beamStrength":53400},
+		  ["vnfb_edge14ll","cf14l"],
+		  {"beamSpring":1344840,"beamDamp":130},
+		  {"beamDeform":45000,"beamStrength":53400},
+		  ["vnfb_edge4ll","cf14ll"],
+		  ["vnfb_edge4ll","cf14l"],
+		  ["vnfb_edge4ll","cf4l"],
+		  ["vnfb_edge4ll","cf13ll"],
+		  ["vnfb_edge4ll","cf15ll"],
+
+		  {"breakGroup":"van_flatbed_edge_L5"},
+		  {"beamSpring":924840,"beamDamp":130},
+		  {"beamDeform":22500,"beamStrength":53400},
+		  ["vnfb_edge15ll","cf15l"],
+		  {"beamSpring":1344840,"beamDamp":130},
+		  {"beamDeform":45000,"beamStrength":53400},
+		  ["vnfb_edge5ll","cf15ll"],
+		  ["vnfb_edge5ll","cf15l"],
+		  ["vnfb_edge5ll","cf5l"],
+		  ["vnfb_edge5ll","cf14ll"],
+		  ["vnfb_edge5ll","cf16ll"],
+
+		  
+		  {"breakGroup":""},
+		  
+	  
+		  
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"groundModel":"metal"},
+			//inner
+			{"group":"van_flatbed_edge_R"},
+
+			["vnfb_edge5rr","vnfb_edge14rr","vnfb_edge15rr"],
+			["vnfb_edge5rr","vnfb_edge4rr","vnfb_edge14rr"],
+			["vnfb_edge4rr","vnfb_edge13rr","vnfb_edge14rr"],
+			["vnfb_edge4rr","vnfb_edge3rr","vnfb_edge13rr"],
+			["vnfb_edge3rr","vnfb_edge12rr","vnfb_edge13rr"],
+			["vnfb_edge3rr","vnfb_edge2rr","vnfb_edge12rr"],
+			["vnfb_edge2rr","vnfb_edge11rr","vnfb_edge12rr"],
+			["vnfb_edge2rr","vnfb_edge1rr","vnfb_edge11rr"],
+
+
+			{"group":"van_flatbed_edge_L"},
+
+			["vnfb_edge5ll","vnfb_edge15ll","vnfb_edge14ll"],
+			["vnfb_edge5ll","vnfb_edge14ll","vnfb_edge4ll"],
+			["vnfb_edge4ll","vnfb_edge14ll","vnfb_edge13ll"],
+			["vnfb_edge4ll","vnfb_edge13ll","vnfb_edge3ll"],
+			["vnfb_edge3ll","vnfb_edge13ll","vnfb_edge12ll"],
+			["vnfb_edge3ll","vnfb_edge12ll","vnfb_edge2ll"],
+			["vnfb_edge2ll","vnfb_edge12ll","vnfb_edge11ll"],
+			["vnfb_edge2ll","vnfb_edge11ll","vnfb_edge1ll"],
+			
+			//outer
+			/*
+			{"group":"van_flatbed_edge_R"},
+			
+			["vnfb_edge15rr","vnfb_edge13rr","vnfb_edge5rr"],
+			["vnfb_edge13rr","vnfb_edge5rr","vnfb_edge3rr"],
+			["vnfb_edge13rr","vnfb_edge11rr","vnfb_edge3rr"],
+			["vnfb_edge11rr","vnfb_edge3rr","vnfb_edge1rr"],
+
+
+
+			{"group":"van_flatbed_edge_L"},
+
+			["vnfb_edge15ll","vnfb_edge5ll","vnfb_edge13ll"],
+			["vnfb_edge13ll","vnfb_edge3ll","vnfb_edge5ll"],
+			["vnfb_edge13ll","vnfb_edge3ll","vnfb_edge11ll"],
+			["vnfb_edge11ll","vnfb_edge1ll","vnfb_edge3ll"],
+
+			*/
+			{"group":""},
+			
+	],
+}
+}

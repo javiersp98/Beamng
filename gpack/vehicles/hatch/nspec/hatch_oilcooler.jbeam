@@ -1,0 +1,19 @@
+{
+"pessima_oilcooler": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Oil Cooler",
+        "value":110,
+    },
+    "slotType" : "hatch_bumperbar_F_N",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pessima_oilcooler", ["hatch_body"]],
+    ],
+    "mainEngine":{
+        "oilRadiatorArea":0.16,
+        "oilRadiatorEffectiveness":1000,
+        "oilThermostatTemperature":110
+    },
+},
+}

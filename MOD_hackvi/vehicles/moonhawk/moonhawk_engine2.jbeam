@@ -1,0 +1,427 @@
+{
+
+"moonhawk_engine_v8_454": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"454 CUI V8 Engine",
+        "value":1300,
+    }
+    "slotType" : "moonhawk_engine",
+    "slots": [
+        ["type", "default", "description"]
+        ["moonhawk_exhaust_R","moonhawk_exhaust_R", "Right Exhaust"],
+        ["moonhawk_exhaust_L","moonhawk_exhaust_L", "Left Exhaust"],
+        ["moonhawk_transmission","moonhawk_transmission_4M", "Transmission"],
+        ["moonhawk_intake_v8_454","moonhawk_intake_v8_454", "Intake",{"coreSlot":true}],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["combustionEngine", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine":{
+        "torque":[
+            ["rpm", "torque"]
+            [0, 0],
+            [500, 330],
+            [1000, 524],
+            [2000, 682],
+            [2500, 687],
+            [3000, 680],
+            [4000, 668],
+            [5000, 572],
+            [6000, 417],
+            [7000, 255],
+            [8000, 136],
+        ],
+
+        "idleRPM":700,
+        "maxRPM":5000,
+        "revLimiterRPMDrop":0,
+        "inertia":0.26,
+        "friction":20
+        "dynamicFriction":0.027
+        "burnEfficiency":0.21
+        "torqueReactionNodes:":["e1l","e2l","e4r"]
+        "particulates":0.08
+        "energyStorage": "mainTank",
+        "requiredEnergyType":"gasoline",
+
+        //cooling and oil system
+        "thermalsEnabled":true
+        "engineBlockMaterial":"aluminum"
+        "oilVolume":8
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":140
+        "headGasketDamageThreshold":1500000
+        "pistonRingDamageThreshold":1500000
+        "connectingRodDamageThreshold":2000000
+
+        //node beam interface
+        "waterDamage": {"[engineGroup]:":["engine_intake"]}
+        "radiator": {"[engineGroup]:":["radiator"]}
+        "engineBlock": {"[engineGroup]:":["engine_block"]}
+        "breakTriggerBeam":"engine",
+		
+		"soundConfig": "soundConfig",
+    },
+    "soundConfig": {
+     "sampleName": "V8_2",
+        "mainGain": -5,
+        "maxLoadMix": 0.6,
+        "minLoadMix": 0,
+        "onLoadGain":1,
+        "offLoadGain":0.65,
+        "eqLowGain": -5,
+        "eqLowFreq": 150,
+        //"eqLowWidth": 0,
+        "eqHighGain": -5,
+        "eqHighFreq": 6000,
+        //"eqHighWidth": 0,
+        //"eqFundamentalGain": -15,
+    	
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":1500,
+        "clutchLaunchTargetRPM":2000,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":[0,0,0,1800,2400,2600,2600,2600]
+        //**highShiftUp can be overwritten by intake modifications**
+        "highShiftUpRPM":4800
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["moonhawk_engine_v8", ["moonhawk_engine"]],
+        ["moonhawk_header_v8", ["moonhawk_engine","moonhawk_exhaust_L","moonhawk_exhaust_R"]],
+        {"deformGroup":"radtube_break", "deformMaterialBase":"moonhawk", "deformMaterialDamaged":"invis"},
+        ["moonhawk_radtube_v8", ["moonhawk_radiator","moonhawk_radsupport","moonhawk_engine"]],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        ["rpmspin"  , "moonhawk_coolingfan_v8", "e2r","e2l","e4r",  {"x":0, "y":0, "z":0}, {"x":0, "y":1, "z":0}    , {"x":0, "y":0, "z":0}, -360, 360, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //6.2L V8 Engine
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":true},
+         {"collision":true}
+         {"group":"moonhawk_engine"},
+         {"engineGroup":"engine_block"}
+         {"nodeWeight":39},
+         {"chemEnergy":2000,"burnRate":0.39,"flashPoint":1000,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":900,"baseTemp":"thermals","conductionRadius":0.13}
+         ["e1r", -0.13, -1.08, 0.32],
+         ["e1l", 0.13, -1.08, 0.32],
+         {"chemEnergy":2000,"burnRate":0.39,"flashPoint":1000,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":900,"baseTemp":"thermals","conductionRadius":0.2}
+         ["e2r", -0.13, -1.60, 0.32],
+         ["e2l", 0.13, -1.60, 0.32],
+         {"chemEnergy":false,"burnRate":false,"flashPoint":false, "specHeat": false,"selfIgnitionCoef":false,"smokePoint":false,"baseTemp":false,"conductionRadius":false},
+         {"selfCollision":false},
+         {"engineGroup":["engine_block","engine_intake"]}
+         ["e3r", -0.32, -1.08, 0.78],
+         ["e3l", 0.32, -1.08, 0.78],
+         ["e4r", -0.32, -1.60, 0.78{"isExhaust":true}],
+         ["e4l", 0.32, -1.60, 0.78],
+         {"engineGroup":""}
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":9130830,"beamDamp":168},
+          {"beamDeform":359100,"beamStrength":"FLT_MAX"},
+          //engine
+          ["e1r","e1l"],
+          ["e2r","e2l"],
+          ["e3r","e3l"],
+          ["e4r","e4l"],
+
+          ["e1r","e2r"],
+          ["e1l","e2l"],
+          ["e3r","e4r"],
+          ["e3l","e4l"],
+
+          ["e1r","e3r"],
+          ["e1l","e3l"],
+          ["e2r","e4r"],
+          ["e2l","e4l"],
+
+          ["e2r","e3r"],
+          ["e2l","e3l"],
+          ["e2r","e3l"],
+          ["e2l","e3r"],
+
+          ["e1r","e4r"{"isExhaust":true}],
+          ["e1l","e4l"],
+          ["e1r","e4l"],
+          ["e1l","e4r"],
+
+          ["e1r","e2l"],
+          ["e1l","e2r"],
+          ["e3r","e4l"],
+          ["e3l","e4r"],
+
+          ["e1r","e3l"],
+          ["e1l","e3r"],
+          ["e2r","e4l"],
+          ["e2l","e4r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+"moonhawk_intake_454_4bbl": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Four-Barrel Carburetors",
+        "value":300,
+    }
+    "slotType" : "moonhawk_intake_v8_454",
+    "mainEngine":{
+        "burnEfficiency":0.27
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["moonhawk_intake_v8", ["moonhawk_engine"]],
+    ],
+}
+
+"moonhawk_supercharger_stage1_454": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stage 1 Supercharger",
+        "value":1000,
+    }
+    "slotType" : "moonhawk_intake_v8_454",
+    "supercharger": {
+        "gearRatio":1.60,
+        "clutchEngageRPM":0,
+        "pressureRatePSI":500,
+        "pressurePSIPer1kRPM":3.0,
+        "crankLossPer1kRPM":0.04,
+        "type":"roots",
+        "lobes":3,
+        "twistedLobes":false,
+        "boostController":[
+            //throttle in %, factor
+            [0,     0.2],
+            [100,     1],
+        ],
+    },
+    "mainEngine":{
+        "idleRPM":700,
+        "maxRPM":5100,
+        "burnEfficiency":0.25
+        //supercharger name
+        "supercharger":"supercharger",
+    },
+    "vehicleController": {
+        "highShiftUpRPM":4700
+        "revMatchThrottle":0.35
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["moonhawk_supercharger_stage1", ["moonhawk_engine"]],
+    ],
+}
+"moonhawk_supercharger_stage2_454": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stage 2 Supercharger",
+        "value":1800,
+    }
+    "slotType" : "moonhawk_intake_v8_454",
+    "supercharger": {
+        "gearRatio":1.90,
+        "clutchEngageRPM":0,
+        "pressureRatePSI":500,
+        "pressurePSIPer1kRPM":4.8,
+        "crankLossPer1kRPM":0.04,
+        "type":"roots",
+        "lobes":3,
+        "twistedLobes":false,
+        "boostController":[
+            //throttle in %, factor
+            [0,     0.2],
+            [100,     1],
+        ],
+    },
+    "mainEngine":{
+        "idleRPM":700,
+        "maxRPM":6000,
+        "burnEfficiency":0.24
+        //supercharger name
+        "supercharger":"supercharger",
+    },
+    "vehicleController": {
+        "revMatchThrottle":0.25
+        "highShiftUpRPM":5100
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["moonhawk_supercharger_stage1", ["moonhawk_engine"]],
+    ],
+}
+
+"moonhawk_supercharger_stage3_454": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stage 3 Supercharger",
+        "value":3000,
+    }
+    "slotType" : "moonhawk_intake_v8_454",
+    "supercharger": {
+        "gearRatio":1,
+        "clutchEngageRPM":0,
+        "pressureRatePSI":500,
+        "pressurePSIPer1kRPM":2.0,
+        "crankLossPer1kRPM":0.04,
+        "type":"roots",
+        "lobes":4,
+        "twistedLobes":true,
+        "boostController":[
+            //throttle in %, factor
+            [0,     0.2],
+            [100,     1],
+        ],
+    },
+    "mainEngine":{
+        "idleRPM":750,
+        "maxRPM":5500,
+        "burnEfficiency":0.21
+        "cylinderWallTemperatureDamageThreshold":180
+        //supercharger name
+        "supercharger":"supercharger",
+    },
+    "vehicleController": {
+        "highShiftUpRPM":5600
+        "revMatchThrottle":0.25
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["moonhawk_supercharger_stage2", ["moonhawk_engine"]],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        ["throttle"     ,"moonhawk_supercharger_throttle", "sch1r","sch1l","sch2r",  {"x":90, "y":0, "z":0} , {"x":-90, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":true},
+         {"collision":true}
+         {"nodeWeight":5.34},
+         ["sch1r",-0.18, -1.57, 1.12],
+         ["sch1l", 0.18, -1.57, 1.12],
+         ["sch2r",-0.18, -1.13, 1.12],
+         ["sch2l", 0.18, -1.13, 1.12],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":1660830,"beamDamp":168},
+          {"beamDeform":51870,"beamStrength":"FLT_MAX"},
+          //supercharger
+          ["sch1r","sch1l"],
+          ["sch2r","sch2l"],
+          ["sch1r","sch2r"],
+          ["sch1l","sch2l"],
+          ["sch2r","sch1l"],
+          ["sch2l","sch1r"],
+
+          {"beamDeform":35910,"beamStrength":"FLT_MAX"},
+          //attach to engine
+          ["sch1r","e3r"],
+          ["sch1r","e3l"],
+          ["sch1r","e4r"],
+          ["sch1r","e4l"],
+          ["sch1l","e3r"],
+          ["sch1l","e3l"],
+          ["sch1l","e4r"],
+          ["sch1l","e4l"],
+          ["sch2r","e3r"],
+          ["sch2r","e3l"],
+          ["sch2r","e4r"],
+          ["sch2r","e4l"],
+          ["sch2l","e3r"],
+          ["sch2l","e3l"],
+          ["sch2l","e4r"],
+          ["sch2l","e4l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"groundModel":"metal"},
+            {"group":"moonhawk_supercharger"},
+            ["sch1r","sch1l","sch2l"],
+            ["sch1r","sch2l","sch2r"],
+            {"group":""},
+    ],
+}
+
+"moonhawk_transmission_5A_2": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"5-Speed Automatic Transmission",
+        "value":400,
+    }
+    "slotType" : "moonhawk_transmission",
+    "slots": [
+        ["type", "default", "description"]
+        ["moonhawk_converter","moonhawk_converter","Torque Converter", {"coreSlot":true}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["automaticGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "gearbox": {
+        "gearRatios":[-2.71, 0, 2.67, 1.84, 1.33, 1.0, 0.81]
+        "parkLockTorque":2500,
+        "oneWayViscousCoef":15,
+        "friction": 10,
+    },
+    "vehicleController": {
+        "automaticModes":"PRND21",
+        "useSmartAggressionCalculation":false,
+        "calculateOptimalLoadShiftPoints": true,
+        "transmissionGearChangeDelay":2
+        "gearboxDecisionSmoothingUp":0.5
+        "gearboxDecisionSmoothingDown":0.5
+        "lowShiftDownRPM":1000,
+        "lowShiftUpRPM":[0,0,1700,1500]
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["moonhawk_transmission", ["moonhawk_engine","moonhawk_transmission"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--3 Speed Automatic--
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true}
+         {"group":"moonhawk_transmission"},
+         {"nodeWeight":33},
+         ["tra1", 0.0, -0.38, 0.32],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":9130830,"beamDamp":168},
+          {"beamDeform":359100,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+}

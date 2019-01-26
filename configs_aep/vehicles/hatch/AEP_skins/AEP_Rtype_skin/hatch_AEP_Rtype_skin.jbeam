@@ -1,0 +1,11 @@
+{
+"hatch_skin_AEPRtype": {
+    "information":{
+        "authors":"Djplopper",
+        "name":"R-Type Livery AEP",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "AEPRtype",
+}
+}

@@ -1,0 +1,25 @@
+{
+      "name" : "GPACK_modname",
+        "version" : 1,
+        "data" : {
+            "size" : {"x" : 512, "y": 256},
+            "text" : { "x" : 0.5, "y" : 0.65, "scale" : 0, "color" : "rgb(255, 255, 255)", "limit" : 0},
+            "diffuse" : {
+                "spriteImg" : "vehicles/common/licenseplates/default/platefont_d.png",
+                "backgroundImg" : "vehicles/common/licenseplates/GPACK/modname/user_license_plate_background_d.png",
+                "fillStyle" : "black"
+            },
+ 
+            "bump" : {
+                "spriteImg" : "vehicles/common/licenseplates/default/platefont_n.png",
+                "backgroundImg" : "vehicles/common/licenseplates/GPACK/modname/user_license_plate_background_n.png",
+                "fillStyle" : "rgb(0,0,255)"
+            },
+ 
+            "specular" : {
+                "spriteImg" : "vehicles/common/licenseplates/default/platefont_s.png",
+                "fillStyle" : "rgb(233,233,233)"
+            }
+        }
+  }
+  

@@ -1,0 +1,29 @@
+{
+"sunburst_skin_interior_ss": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"HSI Interior",
+        "value":100,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "HSI",
+  },
+"sunburst_skin_interior_b": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Black Interior",
+        "value":100,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "black",
+  },
+"sunburst_skin_interior_be": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Brown Interior",
+        "value":100,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "beige",
+  },
+}

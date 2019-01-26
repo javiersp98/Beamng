@@ -1,0 +1,1105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.79.0 commit date:2018-02-21, commit time:10:41, hash:8928d99270f</authoring_tool>
+    </contributor>
+    <created>2018-08-05T19:01:39</created>
+    <modified>2018-08-05T19:01:39</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="etki_d_alt_dds" name="etki_d_alt_dds">
+      <init_from>/C:/Users/BenJamin%20Miller/Documents/beamngcars/etki/etki_d_alt.dds</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="etki-effect">
+      <profile_COMMON>
+        <newparam sid="etki_d_alt_dds-surface">
+          <surface type="2D">
+            <init_from>etki_d_alt_dds</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="etki_d_alt_dds-sampler">
+          <sampler2D>
+            <source>etki_d_alt_dds-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="etki_d_alt_dds-sampler"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.06198345 0.06198345 0.06198345 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="etki_glass-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.04652356 0.150763 0.3074945 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 0.5166667</color>
+            </transparent>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="etki_headlight-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="etki_brakelight-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="etki_taillight-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="etki_signal_L-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="etki_reverselight-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="etki_signal_R-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="etki_lights-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="black_004-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.0417743 0.0417743 0.0417743 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.125 0.125 0.125 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="paint-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">1 0 0 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="bare-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.02484314 0 0.1679486 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="chrome-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0 0.6399997 0.8 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="leather-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0 0.8 0 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="underbody-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.04397501 0.04397501 0.04397501 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="enginebay-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.2078387 0.2078387 0.2078387 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="pakoputki-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="frontsusp-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="bodytrim-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.2134096 0.1781988 0.07256643 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="radiator-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.3074996 0.3074996 0.3074996 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="rearsusp-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.219065 0.219065 0.219065 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="drivetrain-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="fueltanketc-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_0___Default-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_2___Default-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_3___Default-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_1___Default-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.8 0.8 0.8 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_7___Default-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.25 0.25 0.25 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="etki-material" name="etki">
+      <instance_effect url="#etki-effect"/>
+    </material>
+    <material id="etki_glass-material" name="etki_glass">
+      <instance_effect url="#etki_glass-effect"/>
+    </material>
+    <material id="etki_headlight-material" name="etki_headlight">
+      <instance_effect url="#etki_headlight-effect"/>
+    </material>
+    <material id="etki_brakelight-material" name="etki_brakelight">
+      <instance_effect url="#etki_brakelight-effect"/>
+    </material>
+    <material id="etki_taillight-material" name="etki_taillight">
+      <instance_effect url="#etki_taillight-effect"/>
+    </material>
+    <material id="etki_signal_L-material" name="etki_signal_L">
+      <instance_effect url="#etki_signal_L-effect"/>
+    </material>
+    <material id="etki_reverselight-material" name="etki_reverselight">
+      <instance_effect url="#etki_reverselight-effect"/>
+    </material>
+    <material id="etki_signal_R-material" name="etki_signal_R">
+      <instance_effect url="#etki_signal_R-effect"/>
+    </material>
+    <material id="etki_lights-material" name="etki_lights">
+      <instance_effect url="#etki_lights-effect"/>
+    </material>
+    <material id="black_004-material" name="black_004">
+      <instance_effect url="#black_004-effect"/>
+    </material>
+    <material id="paint-material" name="paint">
+      <instance_effect url="#paint-effect"/>
+    </material>
+    <material id="bare-material" name="bare">
+      <instance_effect url="#bare-effect"/>
+    </material>
+    <material id="chrome-material" name="chrome">
+      <instance_effect url="#chrome-effect"/>
+    </material>
+    <material id="leather-material" name="leather">
+      <instance_effect url="#leather-effect"/>
+    </material>
+    <material id="underbody-material" name="underbody">
+      <instance_effect url="#underbody-effect"/>
+    </material>
+    <material id="enginebay-material" name="enginebay">
+      <instance_effect url="#enginebay-effect"/>
+    </material>
+    <material id="pakoputki-material" name="pakoputki">
+      <instance_effect url="#pakoputki-effect"/>
+    </material>
+    <material id="frontsusp-material" name="frontsusp">
+      <instance_effect url="#frontsusp-effect"/>
+    </material>
+    <material id="bodytrim-material" name="bodytrim">
+      <instance_effect url="#bodytrim-effect"/>
+    </material>
+    <material id="radiator-material" name="radiator">
+      <instance_effect url="#radiator-effect"/>
+    </material>
+    <material id="rearsusp-material" name="rearsusp">
+      <instance_effect url="#rearsusp-effect"/>
+    </material>
+    <material id="drivetrain-material" name="drivetrain">
+      <instance_effect url="#drivetrain-effect"/>
+    </material>
+    <material id="fueltanketc-material" name="fueltanketc">
+      <instance_effect url="#fueltanketc-effect"/>
+    </material>
+    <material id="_0___Default-material" name="_0___Default">
+      <instance_effect url="#_0___Default-effect"/>
+    </material>
+    <material id="_2___Default-material" name="_2___Default">
+      <instance_effect url="#_2___Default-effect"/>
+    </material>
+    <material id="_3___Default-material" name="_3___Default">
+      <instance_effect url="#_3___Default-effect"/>
+    </material>
+    <material id="_1___Default-material" name="_1___Default">
+      <instance_effect url="#_1___Default-effect"/>
+    </material>
+    <material id="_7___Default-material" name="_7___Default">
+      <instance_effect url="#_7___Default-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="german_044-mesh" name="german.044">
+      <mesh>
+        <source id="german_044-mesh-positions">
+          <float_array id="german_044-mesh-positions-array" count="141">-0.4994472 2.236507 0.7221531 -0.6206918 2.231503 0.7218647 -0.6226369 2.255148 0.6488509 -0.4999982 2.260042 0.6499478 -0.2890217 2.240029 0.7223565 -0.2896472 2.263543 0.6507374 -0.6870087 2.224785 0.7213436 -0.7198487 2.213801 0.7207425 -0.7244989 2.236243 0.6468092 -0.6890942 2.248694 0.6474636 -0.7368398 2.194658 0.7198104 -0.7425799 2.215595 0.6464115 -0.2897958 2.283162 0.5793695 -0.6234257 2.274394 0.5793616 -0.5001108 2.279513 0.5793654 -0.7260947 2.254711 0.5793426 -0.6902708 2.267688 0.5793545 -0.7450558 2.231111 0.5793195 -0.7677528 2.106032 0.5928096 -0.7633295 2.119435 0.6430864 -0.7673447 2.106393 0.6034415 -0.7535107 2.183588 0.6453647 -0.7530528 2.142379 0.7035856 -0.7665367 2.119878 0.5813696 -0.7557697 2.197746 0.5793015 -0.7467517 2.169086 0.7176256 -0.7490817 2.155875 0.7157655 -0.7509677 2.148166 0.7115015 -0.7674728 2.111142 0.5845665 -0.3818296 2.238514 0.7222691 -0.3824034 2.262036 0.6503975 -0.3825269 2.281592 0.5793677 -0.2841117 2.240109 0.7223615 -0.2890217 2.240029 0.7223565 -0.2896472 2.263543 0.6507374 -0.2847381 2.263622 0.6507554 -0.2897958 2.283162 0.5793695 -0.2848867 2.283245 0.5793695 -0.2806449 2.257601 0.6508744 -0.2682107 2.239226 0.6513621 -0.2682107 2.219177 0.7185616 -0.2795618 2.234125 0.7212666 -0.2810357 2.277244 0.5805115 -0.2682107 2.257264 0.5843136 -0.2847381 2.263622 0.6507554 -0.2848867 2.283245 0.5793695 -0.2841117 2.240109 0.7223615</float_array>
+          <technique_common>
+            <accessor source="#german_044-mesh-positions-array" count="47" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="german_044-mesh-normals">
+          <float_array id="german_044-mesh-normals-array" count="135">-0.2080495 0.9296765 0.3040019 -0.550206 0.7967121 0.2500464 -0.5481579 0.7901763 0.2741248 -0.8549488 0.4888343 0.1735045 -0.8528664 0.483001 0.1983155 -0.9862508 0.1477423 0.07403898 -0.9786242 0.164162 0.1238768 -0.966118 0.2337776 0.109381 -0.9586049 0.2482423 0.1394723 -0.01678568 0.9573969 0.2882872 -0.02847462 0.9502547 0.3101696 -0.01635807 0.9501736 0.3112922 -0.976901 0.170477 0.1288496 -0.9787601 0.1621806 0.1254045 -0.01629716 0.9573237 0.2885583 -0.01577842 0.9499416 0.3120287 -0.2126889 0.9345617 0.2852333 -0.02881008 0.9572033 0.2879789 -0.06921702 0.9484689 0.3092183 -0.06946206 0.9550124 0.2883166 -0.06824004 0.9613428 0.266765 -0.5475717 0.8034124 0.233867 -0.8581746 0.4903244 0.1520475 -0.988555 0.1427088 0.04892265 -0.9775667 0.2084169 0.03042781 -0.9891851 0.1357489 0.05554473 -0.967959 0.2356417 0.08676713 -0.028566 0.9636154 0.2657618 -0.9903677 0.1283623 0.05191254 -0.2114649 0.9406818 0.2653307 -0.01675504 0.964011 0.2653342 -0.01632761 0.9640945 0.2650573 -0.01648014 0.9572845 0.2886777 -0.01577824 0.9499327 0.3120563 -0.01574778 0.9499332 0.3120564 0.8004145 0.5732331 0.17533 0.8139108 0.5576734 0.1629408 0.8147457 0.5566127 0.1623937 0.799465 0.5734052 0.1790594 -0.01648026 0.9573208 0.2885574 0.799293 0.5758633 0.1717915 0.8147664 0.5569112 0.1612625 0.8184971 0.5545662 0.1500633 0.8186786 0.5541989 0.1504293 0.8187353 0.5540739 0.1505811</float_array>
+          <technique_common>
+            <accessor source="#german_044-mesh-normals-array" count="45" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="german_044-mesh-map-0">
+          <float_array id="german_044-mesh-map-0-array" count="294">0.0469166 0.8848584 0.08190745 0.6939141 0.08390218 0.8838415 0.08390218 0.8838415 0.1260378 0.6939141 0.1284423 0.8815955 0.2605323 0.6939141 0.2176083 0.8587 0.1734491 0.6939141 0.1284423 0.8815955 0.1734491 0.6939141 0.1837394 0.8818593 0.6096159 0.3487534 0.4825448 0.4653058 0.6101279 0.4654569 0.1734491 0.6939141 0.2102112 0.8719049 0.200432 0.8789452 0.1734491 0.6939141 0.2176083 0.8587 0.2102112 0.8719049 0.1734491 0.6939141 0.200432 0.8789452 0.1837394 0.8818593 0.3207703 0.3532341 0.609757 0.4656987 0.3232538 0.4658361 0.0469166 0.8848584 0.02859067 0.6939141 0.08190745 0.6939141 0.08390218 0.8838415 0.08190745 0.6939141 0.1260378 0.6939141 0.1284423 0.8815955 0.1260378 0.6939141 0.1734491 0.6939141 0.6096159 0.3487534 0.482085 0.3487534 0.4825448 0.4653058 0.3207703 0.3532341 0.6090639 0.3526996 0.609757 0.4656987 0.482085 0.3487534 0.3224834 0.464845 0.4825448 0.4653058 0.6096788 0.3489874 0.3222635 0.4654729 0.6099388 0.4661114 0.482085 0.3487534 0.3207296 0.3487534 0.3224834 0.464845 0.6096788 0.3489874 0.3205543 0.3489874 0.3222635 0.4654729 0.482085 0.3487534 0.3203628 0.2437695 0.3207296 0.3487534 0.02859067 0.6939141 0.07957696 0.5146566 0.08190745 0.6939141 0.08190745 0.6939141 0.1192672 0.5145961 0.1260378 0.6939141 0.2921452 0.5439261 0.2915621 0.5718739 0.2605323 0.6939141 0.2748107 0.5134986 0.1734491 0.6939141 0.1799928 0.5139293 0.1260378 0.6939141 0.1799928 0.5139293 0.1734491 0.6939141 0.6096159 0.3487534 0.4820771 0.2437757 0.482085 0.3487534 0.2857956 0.5221234 0.2605323 0.6939141 0.2748107 0.5134986 0.2921452 0.5439261 0.2605323 0.6939141 0.2857956 0.5221234 0.6096788 0.3489874 0.3202502 0.24306 0.3205543 0.3489874 0.482085 0.3487534 0.4820771 0.2437757 0.3203628 0.2437695 0.02859067 0.6939141 0.02086663 0.5146886 0.07957696 0.5146566 0.08190745 0.6939141 0.07957696 0.5146566 0.1192672 0.5145961 0.2748107 0.5134986 0.2605323 0.6939141 0.1734491 0.6939141 0.1260378 0.6939141 0.1194796 0.5151137 0.1799928 0.5139293 0.6096159 0.3487534 0.6095938 0.2437787 0.4820771 0.2437757 0.6096788 0.3489874 0.6093099 0.2430697 0.3202502 0.24306 0.3207703 0.3532341 0.6094155 0.2410242 0.6090639 0.3526996 0.3207703 0.3532341 0.320418 0.2410271 0.6094155 0.2410242 0.8732414 0.1270955 0.7970935 0.2376851 0.8750824 0.2376909 0.9547259 0.2379649 0.9900262 0.1278027 0.9515425 0.1272342 0.9515425 0.1272342 0.8750824 0.2376909 0.9547259 0.2379649 0.8732414 0.1270955 0.796805 0.1270745 0.7970935 0.2376851 0.9547259 0.2379649 0.9900262 0.2379122 0.9900262 0.1278027 0.9515425 0.1272342 0.8732414 0.1270955 0.8750824 0.2376909 0.8732414 0.1270955 0.7971433 0.02683305 0.796805 0.1270745 0.9515425 0.1272342 0.9900262 0.04189729 0.950394 0.02816414 0.950394 0.02816414 0.8732414 0.1270955 0.9515425 0.1272342 0.8732414 0.1270955 0.8728044 0.02683305 0.7971433 0.02683305 0.9515425 0.1272342 0.9900262 0.1278027 0.9900262 0.04189729 0.950394 0.02816414 0.8728044 0.02683305 0.8732414 0.1270955</float_array>
+          <technique_common>
+            <accessor source="#german_044-mesh-map-0-array" count="147" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="german_044-mesh-map-1">
+          <float_array id="german_044-mesh-map-1-array" count="294">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</float_array>
+          <technique_common>
+            <accessor source="#german_044-mesh-map-1-array" count="147" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="german_044-mesh-colors-Col" name="Col">
+          <float_array id="german_044-mesh-colors-Col-array" count="441">1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</float_array>
+          <technique_common>
+            <accessor source="#german_044-mesh-colors-Col-array" count="147" stride="3">
+              <param name="R" type="float"/>
+              <param name="G" type="float"/>
+              <param name="B" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="german_044-mesh-vertices">
+          <input semantic="POSITION" source="#german_044-mesh-positions"/>
+        </vertices>
+        <triangles material="etki_brakelight-material" count="8">
+          <input semantic="VERTEX" source="#german_044-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#german_044-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#german_044-mesh-map-0" offset="2" set="0"/>
+          <input semantic="TEXCOORD" source="#german_044-mesh-map-1" offset="2" set="1"/>
+          <input semantic="COLOR" source="#german_044-mesh-colors-Col" offset="3" set="0"/>
+          <p>30 9 12 12 0 10 13 13 29 11 14 14 30 9 36 36 3 17 37 37 0 10 38 38 3 17 42 42 1 18 43 43 0 10 44 44 3 17 48 48 2 19 49 49 1 18 50 50 3 17 54 54 13 20 55 55 2 19 56 56 30 9 72 72 14 27 73 73 3 17 74 74 3 17 84 84 14 27 85 85 13 20 86 86 30 9 99 99 31 30 100 100 14 27 101 101</p>
+        </triangles>
+        <triangles material="etki_taillight-material" count="8">
+          <input semantic="VERTEX" source="#german_044-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#german_044-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#german_044-mesh-map-0" offset="2" set="0"/>
+          <input semantic="TEXCOORD" source="#german_044-mesh-map-1" offset="2" set="1"/>
+          <input semantic="COLOR" source="#german_044-mesh-colors-Col" offset="3" set="0"/>
+          <p>5 14 24 24 29 11 25 25 4 15 26 26 5 14 39 39 30 9 40 40 29 11 41 41 2 19 45 45 6 0 46 46 1 18 47 47 2 19 51 51 9 16 52 52 6 0 53 53 2 19 81 81 16 29 82 82 9 16 83 83 2 19 102 102 13 20 103 103 16 29 104 104 5 14 105 105 31 30 106 106 30 9 107 107 5 14 108 108 12 31 109 109 31 30 110 110</p>
+        </triangles>
+        <triangles material="etki_reverselight-material" count="12">
+          <input semantic="VERTEX" source="#german_044-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#german_044-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#german_044-mesh-map-0" offset="2" set="0"/>
+          <input semantic="TEXCOORD" source="#german_044-mesh-map-1" offset="2" set="1"/>
+          <input semantic="COLOR" source="#german_044-mesh-colors-Col" offset="3" set="0"/>
+          <p>44 32 111 111 33 33 112 112 46 34 113 113 41 35 114 114 39 36 115 115 38 37 116 116 38 37 117 117 32 38 118 118 41 35 119 119 44 32 120 120 34 39 121 121 33 33 122 122 41 35 123 123 40 40 124 124 39 36 125 125 38 37 126 126 35 41 127 127 32 38 128 128 44 32 129 129 36 31 130 130 34 39 131 131 38 37 132 132 43 42 133 133 42 43 134 134 42 43 135 135 35 41 136 136 38 37 137 137 44 32 138 138 45 31 139 139 36 31 140 140 38 37 141 141 39 36 142 142 43 42 143 143 42 43 144 144 37 44 145 145 35 41 146 146</p>
+        </triangles>
+        <triangles material="etki_signal_R-material" count="21">
+          <input semantic="VERTEX" source="#german_044-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#german_044-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#german_044-mesh-map-0" offset="2" set="0"/>
+          <input semantic="TEXCOORD" source="#german_044-mesh-map-1" offset="2" set="1"/>
+          <input semantic="COLOR" source="#german_044-mesh-colors-Col" offset="3" set="0"/>
+          <p>6 0 0 0 8 1 1 1 7 2 2 2 7 2 3 3 11 3 4 4 10 4 5 5 19 5 6 6 22 6 7 7 21 7 8 8 10 4 9 9 21 7 10 10 25 8 11 11 21 7 15 15 27 12 16 16 26 13 17 17 21 7 18 18 22 6 19 19 27 12 20 20 21 7 21 21 26 13 22 22 25 8 23 23 6 0 27 27 9 16 28 28 8 1 29 29 7 2 30 30 8 1 31 31 11 3 32 32 10 4 33 33 11 3 34 34 21 7 35 35 9 16 57 57 15 21 58 58 8 1 59 59 8 1 60 60 17 22 61 61 11 3 62 62 18 23 63 63 20 24 64 64 19 5 65 65 23 25 66 66 21 7 67 67 24 26 68 68 11 3 69 69 24 26 70 70 21 7 71 71 28 28 75 75 19 5 76 76 23 25 77 77 18 23 78 78 19 5 79 79 28 28 80 80 9 16 87 87 16 29 88 88 15 21 89 89 8 1 90 90 15 21 91 91 17 22 92 92 23 25 93 93 19 5 94 94 21 7 95 95 11 3 96 96 17 22 97 97 24 26 98 98</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="german_018-mesh" name="german.018">
+      <mesh>
+        <source id="german_018-mesh-positions">
+          <float_array id="german_018-mesh-positions-array" count="141">0.4994472 2.236507 0.7221531 0.6206918 2.231503 0.7218647 0.6226369 2.255148 0.6488509 0.4999982 2.260042 0.6499478 0.2890217 2.240029 0.7223565 0.2896472 2.263543 0.6507374 0.6870087 2.224785 0.7213436 0.7198487 2.213801 0.7207425 0.7244989 2.236243 0.6468092 0.6890942 2.248694 0.6474636 0.7368398 2.194658 0.7198104 0.7425799 2.215595 0.6464115 0.2897958 2.283162 0.5793695 0.6234257 2.274394 0.5793616 0.5001108 2.279513 0.5793654 0.7260947 2.254711 0.5793426 0.6902708 2.267688 0.5793545 0.7450558 2.231111 0.5793195 0.7677528 2.106032 0.5928096 0.7633295 2.119435 0.6430864 0.7673447 2.106393 0.6034415 0.7535107 2.183588 0.6453647 0.7530528 2.142379 0.7035856 0.7665367 2.119878 0.5813696 0.7557697 2.197746 0.5793015 0.7467517 2.169086 0.7176256 0.7490817 2.155875 0.7157655 0.7509677 2.148166 0.7115015 0.7674728 2.111142 0.5845665 0.3818296 2.238514 0.7222691 0.3824034 2.262036 0.6503975 0.3825269 2.281592 0.5793677 0.2841117 2.240109 0.7223615 0.2890217 2.240029 0.7223565 0.2896472 2.263543 0.6507374 0.2847381 2.263622 0.6507554 0.2897958 2.283162 0.5793695 0.2848867 2.283245 0.5793695 0.2806449 2.257601 0.6508744 0.2682107 2.239226 0.6513621 0.2682107 2.219177 0.7185616 0.2795618 2.234125 0.7212666 0.2810357 2.277244 0.5805115 0.2682107 2.257264 0.5843136 0.2847381 2.263622 0.6507554 0.2848867 2.283245 0.5793695 0.2841117 2.240109 0.7223615</float_array>
+          <technique_common>
+            <accessor source="#german_018-mesh-positions-array" count="47" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="german_018-mesh-normals">
+          <float_array id="german_018-mesh-normals-array" count="135">0.2080495 0.9296765 0.3040019 0.5481579 0.7901763 0.2741248 0.550206 0.7967121 0.2500464 0.8528664 0.483001 0.1983155 0.8549488 0.4888343 0.1735045 0.9862508 0.1477423 0.07403898 0.966118 0.2337776 0.109381 0.9786242 0.164162 0.1238768 0.9586049 0.2482423 0.1394723 0.01678568 0.9573969 0.2882872 0.01635807 0.9501736 0.3112922 0.02847462 0.9502547 0.3101696 0.9787601 0.1621806 0.1254045 0.976901 0.170477 0.1288496 0.01629716 0.9573237 0.2885583 0.01577842 0.9499416 0.3120287 0.2126889 0.9345617 0.2852333 0.02881008 0.9572033 0.2879789 0.06921702 0.9484689 0.3092183 0.06946206 0.9550124 0.2883166 0.06824004 0.9613428 0.266765 0.5475717 0.8034124 0.233867 0.8581746 0.4903244 0.1520475 0.988555 0.1427088 0.04892265 0.9775667 0.2084169 0.03042781 0.9891851 0.1357489 0.05554473 0.967959 0.2356417 0.08676713 0.028566 0.9636154 0.2657618 0.9903677 0.1283623 0.05191254 0.2114649 0.9406818 0.2653307 0.01675504 0.964011 0.2653342 0.01632761 0.9640945 0.2650573 0.01648014 0.9572845 0.2886777 0.01574778 0.9499332 0.3120564 0.01577824 0.9499327 0.3120563 -0.8004145 0.5732331 0.17533 -0.8147457 0.5566127 0.1623937 -0.8139108 0.5576734 0.1629408 -0.799465 0.5734052 0.1790594 0.01648026 0.9573208 0.2885574 -0.799293 0.5758633 0.1717915 -0.8147664 0.5569112 0.1612625 -0.8186786 0.5541989 0.1504293 -0.8184971 0.5545662 0.1500633 -0.8187353 0.5540739 0.1505811</float_array>
+          <technique_common>
+            <accessor source="#german_018-mesh-normals-array" count="45" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="german_018-mesh-map-0">
+          <float_array id="german_018-mesh-map-0-array" count="294">0.0469166 0.8848584 0.08390218 0.8838415 0.08190745 0.6939141 0.08390218 0.8838415 0.1284423 0.8815955 0.1260378 0.6939141 0.2605323 0.6939141 0.1734491 0.6939141 0.2176083 0.8587 0.1284423 0.8815955 0.1837394 0.8818593 0.1734491 0.6939141 0.6096159 0.3487534 0.6101279 0.4654569 0.4825448 0.4653058 0.1734491 0.6939141 0.200432 0.8789452 0.2102112 0.8719049 0.1734491 0.6939141 0.2102112 0.8719049 0.2176083 0.8587 0.1734491 0.6939141 0.1837394 0.8818593 0.200432 0.8789452 0.3207703 0.3532341 0.3232538 0.4658361 0.609757 0.4656987 0.0469166 0.8848584 0.08190745 0.6939141 0.02859067 0.6939141 0.08390218 0.8838415 0.1260378 0.6939141 0.08190745 0.6939141 0.1284423 0.8815955 0.1734491 0.6939141 0.1260378 0.6939141 0.6096159 0.3487534 0.4825448 0.4653058 0.482085 0.3487534 0.3207703 0.3532341 0.609757 0.4656987 0.6090639 0.3526996 0.482085 0.3487534 0.4825448 0.4653058 0.3224834 0.464845 0.6096788 0.3489874 0.6099388 0.4661114 0.3222635 0.4654729 0.482085 0.3487534 0.3224834 0.464845 0.3207296 0.3487534 0.6096788 0.3489874 0.3222635 0.4654729 0.3205543 0.3489874 0.482085 0.3487534 0.3207296 0.3487534 0.3203628 0.2437695 0.02859067 0.6939141 0.08190745 0.6939141 0.07957696 0.5146566 0.08190745 0.6939141 0.1260378 0.6939141 0.1192672 0.5145961 0.2921452 0.5439261 0.2605323 0.6939141 0.2915621 0.5718739 0.2748107 0.5134986 0.1799928 0.5139293 0.1734491 0.6939141 0.1260378 0.6939141 0.1734491 0.6939141 0.1799928 0.5139293 0.6096159 0.3487534 0.482085 0.3487534 0.4820771 0.2437757 0.2857956 0.5221234 0.2748107 0.5134986 0.2605323 0.6939141 0.2921452 0.5439261 0.2857956 0.5221234 0.2605323 0.6939141 0.6096788 0.3489874 0.3205543 0.3489874 0.3202502 0.24306 0.482085 0.3487534 0.3203628 0.2437695 0.4820771 0.2437757 0.02859067 0.6939141 0.07957696 0.5146566 0.02086663 0.5146886 0.08190745 0.6939141 0.1192672 0.5145961 0.07957696 0.5146566 0.2748107 0.5134986 0.1734491 0.6939141 0.2605323 0.6939141 0.1260378 0.6939141 0.1799928 0.5139293 0.1194796 0.5151137 0.6096159 0.3487534 0.4820771 0.2437757 0.6095938 0.2437787 0.6096788 0.3489874 0.3202502 0.24306 0.6093099 0.2430697 0.3207703 0.3532341 0.6090639 0.3526996 0.6094155 0.2410242 0.3207703 0.3532341 0.6094155 0.2410242 0.320418 0.2410271 0.8732414 0.1270955 0.8750824 0.2376909 0.7970935 0.2376851 0.9547259 0.2379649 0.9515425 0.1272342 0.9900262 0.1278027 0.9515425 0.1272342 0.9547259 0.2379649 0.8750824 0.2376909 0.8732414 0.1270955 0.7970935 0.2376851 0.796805 0.1270745 0.9547259 0.2379649 0.9900262 0.1278027 0.9900262 0.2379122 0.9515425 0.1272342 0.8750824 0.2376909 0.8732414 0.1270955 0.8732414 0.1270955 0.796805 0.1270745 0.7971433 0.02683305 0.9515425 0.1272342 0.950394 0.02816414 0.9900262 0.04189729 0.950394 0.02816414 0.9515425 0.1272342 0.8732414 0.1270955 0.8732414 0.1270955 0.7971433 0.02683305 0.8728044 0.02683305 0.9515425 0.1272342 0.9900262 0.04189729 0.9900262 0.1278027 0.950394 0.02816414 0.8732414 0.1270955 0.8728044 0.02683305</float_array>
+          <technique_common>
+            <accessor source="#german_018-mesh-map-0-array" count="147" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="german_018-mesh-map-1">
+          <float_array id="german_018-mesh-map-1-array" count="294">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</float_array>
+          <technique_common>
+            <accessor source="#german_018-mesh-map-1-array" count="147" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="german_018-mesh-colors-Col" name="Col">
+          <float_array id="german_018-mesh-colors-Col-array" count="441">1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</float_array>
+          <technique_common>
+            <accessor source="#german_018-mesh-colors-Col-array" count="147" stride="3">
+              <param name="R" type="float"/>
+              <param name="G" type="float"/>
+              <param name="B" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="german_018-mesh-vertices">
+          <input semantic="POSITION" source="#german_018-mesh-positions"/>
+        </vertices>
+        <triangles material="etki_brakelight-material" count="8">
+          <input semantic="VERTEX" source="#german_018-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#german_018-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#german_018-mesh-map-0" offset="2" set="0"/>
+          <input semantic="TEXCOORD" source="#german_018-mesh-map-1" offset="2" set="1"/>
+          <input semantic="COLOR" source="#german_018-mesh-colors-Col" offset="3" set="0"/>
+          <p>30 9 12 12 29 10 13 13 0 11 14 14 30 9 36 36 0 11 37 37 3 17 38 38 3 17 42 42 0 11 43 43 1 18 44 44 3 17 48 48 1 18 49 49 2 19 50 50 3 17 54 54 2 19 55 55 13 20 56 56 30 9 72 72 3 17 73 73 14 27 74 74 3 17 84 84 13 20 85 85 14 27 86 86 30 9 99 99 14 27 100 100 31 30 101 101</p>
+        </triangles>
+        <triangles material="etki_taillight-material" count="8">
+          <input semantic="VERTEX" source="#german_018-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#german_018-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#german_018-mesh-map-0" offset="2" set="0"/>
+          <input semantic="TEXCOORD" source="#german_018-mesh-map-1" offset="2" set="1"/>
+          <input semantic="COLOR" source="#german_018-mesh-colors-Col" offset="3" set="0"/>
+          <p>5 14 24 24 4 15 25 25 29 10 26 26 5 14 39 39 29 10 40 40 30 9 41 41 2 19 45 45 1 18 46 46 6 0 47 47 2 19 51 51 6 0 52 52 9 16 53 53 2 19 81 81 9 16 82 82 16 29 83 83 2 19 102 102 16 29 103 103 13 20 104 104 5 14 105 105 30 9 106 106 31 30 107 107 5 14 108 108 31 30 109 109 12 31 110 110</p>
+        </triangles>
+        <triangles material="etki_signal_L-material" count="21">
+          <input semantic="VERTEX" source="#german_018-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#german_018-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#german_018-mesh-map-0" offset="2" set="0"/>
+          <input semantic="TEXCOORD" source="#german_018-mesh-map-1" offset="2" set="1"/>
+          <input semantic="COLOR" source="#german_018-mesh-colors-Col" offset="3" set="0"/>
+          <p>6 0 0 0 7 1 1 1 8 2 2 2 7 1 3 3 10 3 4 4 11 4 5 5 19 5 6 6 21 6 7 7 22 7 8 8 10 3 9 9 25 8 10 10 21 6 11 11 21 6 15 15 26 12 16 16 27 13 17 17 21 6 18 18 27 13 19 19 22 7 20 20 21 6 21 21 25 8 22 22 26 12 23 23 6 0 27 27 8 2 28 28 9 16 29 29 7 1 30 30 11 4 31 31 8 2 32 32 10 3 33 33 21 6 34 34 11 4 35 35 9 16 57 57 8 2 58 58 15 21 59 59 8 2 60 60 11 4 61 61 17 22 62 62 18 23 63 63 19 5 64 64 20 24 65 65 23 25 66 66 24 26 67 67 21 6 68 68 11 4 69 69 21 6 70 70 24 26 71 71 28 28 75 75 23 25 76 76 19 5 77 77 18 23 78 78 28 28 79 79 19 5 80 80 9 16 87 87 15 21 88 88 16 29 89 89 8 2 90 90 17 22 91 91 15 21 92 92 23 25 93 93 21 6 94 94 19 5 95 95 11 4 96 96 24 26 97 97 17 22 98 98</p>
+        </triangles>
+        <triangles material="etki_reverselight-material" count="12">
+          <input semantic="VERTEX" source="#german_018-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#german_018-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#german_018-mesh-map-0" offset="2" set="0"/>
+          <input semantic="TEXCOORD" source="#german_018-mesh-map-1" offset="2" set="1"/>
+          <input semantic="COLOR" source="#german_018-mesh-colors-Col" offset="3" set="0"/>
+          <p>44 32 111 111 46 33 112 112 33 34 113 113 41 35 114 114 38 36 115 115 39 37 116 116 38 36 117 117 41 35 118 118 32 38 119 119 44 32 120 120 33 34 121 121 34 39 122 122 41 35 123 123 39 37 124 124 40 40 125 125 38 36 126 126 32 38 127 127 35 41 128 128 44 32 129 129 34 39 130 130 36 31 131 131 38 36 132 132 42 42 133 133 43 43 134 134 42 42 135 135 38 36 136 136 35 41 137 137 44 32 138 138 36 31 139 139 45 31 140 140 38 36 141 141 43 43 142 142 39 37 143 143 42 42 144 144 35 41 145 145 37 44 146 146</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="etki_taillight_R_aft1" name="etki_taillight_R_aft1" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#german_044-mesh" name="etki_taillight_R_aft1">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="etki-material" target="#etki-material"/>
+              <instance_material symbol="etki_glass-material" target="#etki_glass-material"/>
+              <instance_material symbol="etki_headlight-material" target="#etki_headlight-material"/>
+              <instance_material symbol="etki_brakelight-material" target="#etki_brakelight-material"/>
+              <instance_material symbol="etki_taillight-material" target="#etki_taillight-material"/>
+              <instance_material symbol="etki_signal_L-material" target="#etki_signal_L-material"/>
+              <instance_material symbol="etki_reverselight-material" target="#etki_reverselight-material"/>
+              <instance_material symbol="etki_signal_R-material" target="#etki_signal_R-material"/>
+              <instance_material symbol="etki_lights-material" target="#etki_lights-material"/>
+              <instance_material symbol="black_004-material" target="#black_004-material"/>
+              <instance_material symbol="paint-material" target="#paint-material"/>
+              <instance_material symbol="bare-material" target="#bare-material"/>
+              <instance_material symbol="chrome-material" target="#chrome-material"/>
+              <instance_material symbol="leather-material" target="#leather-material"/>
+              <instance_material symbol="underbody-material" target="#underbody-material"/>
+              <instance_material symbol="enginebay-material" target="#enginebay-material"/>
+              <instance_material symbol="pakoputki-material" target="#pakoputki-material"/>
+              <instance_material symbol="frontsusp-material" target="#frontsusp-material"/>
+              <instance_material symbol="bodytrim-material" target="#bodytrim-material"/>
+              <instance_material symbol="radiator-material" target="#radiator-material"/>
+              <instance_material symbol="rearsusp-material" target="#rearsusp-material"/>
+              <instance_material symbol="drivetrain-material" target="#drivetrain-material"/>
+              <instance_material symbol="fueltanketc-material" target="#fueltanketc-material"/>
+              <instance_material symbol="_0___Default-material" target="#_0___Default-material"/>
+              <instance_material symbol="_2___Default-material" target="#_2___Default-material"/>
+              <instance_material symbol="_3___Default-material" target="#_3___Default-material"/>
+              <instance_material symbol="_1___Default-material" target="#_1___Default-material"/>
+              <instance_material symbol="_7___Default-material" target="#_7___Default-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="etki_taillight_L_aft1" name="etki_taillight_L_aft1" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#german_018-mesh" name="etki_taillight_L_aft1">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="etki-material" target="#etki-material"/>
+              <instance_material symbol="etki_glass-material" target="#etki_glass-material"/>
+              <instance_material symbol="etki_headlight-material" target="#etki_headlight-material"/>
+              <instance_material symbol="etki_brakelight-material" target="#etki_brakelight-material"/>
+              <instance_material symbol="etki_taillight-material" target="#etki_taillight-material"/>
+              <instance_material symbol="etki_signal_L-material" target="#etki_signal_L-material"/>
+              <instance_material symbol="etki_reverselight-material" target="#etki_reverselight-material"/>
+              <instance_material symbol="etki_signal_R-material" target="#etki_signal_R-material"/>
+              <instance_material symbol="etki_lights-material" target="#etki_lights-material"/>
+              <instance_material symbol="black_004-material" target="#black_004-material"/>
+              <instance_material symbol="paint-material" target="#paint-material"/>
+              <instance_material symbol="bare-material" target="#bare-material"/>
+              <instance_material symbol="chrome-material" target="#chrome-material"/>
+              <instance_material symbol="leather-material" target="#leather-material"/>
+              <instance_material symbol="underbody-material" target="#underbody-material"/>
+              <instance_material symbol="enginebay-material" target="#enginebay-material"/>
+              <instance_material symbol="pakoputki-material" target="#pakoputki-material"/>
+              <instance_material symbol="frontsusp-material" target="#frontsusp-material"/>
+              <instance_material symbol="bodytrim-material" target="#bodytrim-material"/>
+              <instance_material symbol="radiator-material" target="#radiator-material"/>
+              <instance_material symbol="rearsusp-material" target="#rearsusp-material"/>
+              <instance_material symbol="drivetrain-material" target="#drivetrain-material"/>
+              <instance_material symbol="fueltanketc-material" target="#fueltanketc-material"/>
+              <instance_material symbol="_0___Default-material" target="#_0___Default-material"/>
+              <instance_material symbol="_2___Default-material" target="#_2___Default-material"/>
+              <instance_material symbol="_3___Default-material" target="#_3___Default-material"/>
+              <instance_material symbol="_1___Default-material" target="#_1___Default-material"/>
+              <instance_material symbol="_7___Default-material" target="#_7___Default-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

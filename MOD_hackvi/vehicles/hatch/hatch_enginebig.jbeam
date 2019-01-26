@@ -1,0 +1,481 @@
+{
+
+"hatch_engine_dohc_2.0_2": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"2.0L DOHC I4 Engine",
+        "value":1000,
+    },
+
+    "slotType" : "hatch_engine",
+
+    "slots": [
+        ["hatch_intake","hatch_intake", "Intake",{"coreSlot":true}],
+        ["hatch_exhaust","hatch_exhaust", "Exhaust"],
+        ["hatch_engine_internals","hatch_engine_internals", "Engine Long Block",{"coreSlot":true}],
+        ["n2o_system","", "Nitrous Oxide System"],
+        ["hatch_engine_ecu","hatch_engine_ecu", "Engine Management",{"coreSlot":true}],
+        ["hatch_transmission","hatch_transmission_5M", "Transmission"],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["combustionEngine", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine": {
+        "torque":[
+            ["rpm", "torque"]
+            [0,       0],
+            [500,   122],
+            [1000,  146],
+            [1500,  158],
+            [2000,  177],
+            [3000,  216],
+            [4000,  236],
+            [5000,  240],
+            [6000,  234],
+            [7000,  212],
+            [7500,  193],
+            [8000,  151],
+            [9000,  116],
+        ],
+
+        "idleRPM":800,
+        "maxRPM":7200,
+        "revLimiterType":"timeBased",
+        "revLimiterCutTime":0.13,
+        "inertia":0.08,
+        "friction":12
+        "dynamicFriction":0.025,
+        //"burnEfficiency":0.31
+        "burnEfficiency":[
+            [0, 0.12],
+            [0.05, 0.26],
+            [0.4, 0.42],
+            [0.7, 0.47],
+            [1, 0.35],
+        ],
+        "torqueReactionNodes:":["e1l","e2l","e4r"]
+        "energyStorage": "mainTank",
+        "requiredEnergyType":"gasoline",
+
+        //exhaust
+        "particulates":0.03
+        "instantAfterFireCoef": 0.75,
+        "sustainedAfterFireCoef": 0.5,
+
+        //cooling and oil system
+        "thermalsEnabled":true
+        "engineBlockMaterial":"aluminum"
+        "oilVolume":3.8
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":130
+        "headGasketDamageThreshold":1500000
+        "pistonRingDamageThreshold":1500000
+        "connectingRodDamageThreshold":2000000
+
+        "maxTorqueRating": 220,
+        "maxOverTorqueDamage": 330,
+
+        //node beam interface
+        "waterDamage": {"[engineGroup]:":["engine_intake"]},
+        "radiator": {"[engineGroup]:":["radiator"]},
+        "engineBlock": {"[engineGroup]:":["engine_block"]},
+        "breakTriggerBeam":"engine",
+        "uiName":"Engine",
+
+        "soundConfig": "soundConfig",
+    },
+    "soundConfig": {
+        "sampleName": "I4",
+        "mainGain": -18,
+        "maxLoadMix": 0.65,
+        "minLoadMix": 0,
+        "onLoadGain":1,
+        "offLoadGain":0.7,
+        "eqLowGain": 10,
+        "eqLowFreq": 400,
+        //"eqLowWidth": 0,
+        "eqHighGain": -5,
+        "eqHighFreq": 6000,
+        //"eqHighWidth": 0.5,
+        "lowCutFreq":80,
+        "fundamentalFrequencyCylinderCount":4
+        "eqFundamentalGain": 10
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":1700,
+        "clutchLaunchTargetRPM":2300,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":[0,0,0,2700,3350,3600,3800,3800]
+        //**highShiftUp can be overwritten by intake modifications**
+        "highShiftUpRPM":6200
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["hatch_engine_dohc", ["hatch_engine"]],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        //--1.5L I4 Engine--
+        {"selfCollision":false},
+        {"collision":true}
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.5},
+        {"group":"hatch_engine"},
+        {"nodeWeight":14},
+        {"engineGroup":"engine_block"}
+        ["e1r", 0.12, -1.62, 0.30,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+        ["e2r", -0.37, -1.62, 0.30,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+        ["e1l", 0.12, -1.31, 0.30,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+        ["e2l", -0.37, -1.31, 0.30,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+        {"chemEnergy":false,"burnRate":false,"flashPoint":false, "specHeat": false,"selfIgnitionCoef":false,"smokePoint":false,"baseTemp":false,"conductionRadius":false},
+        {"engineGroup":["engine_block","engine_intake"]}
+        ["e3r", 0.12, -1.62, 0.74,{"isExhaust":"mainEngine"}],
+        ["e3l", 0.12, -1.2, 0.74],
+        ["e4r", -0.37, -1.62, 0.74],
+        ["e4l", -0.37, -1.2, 0.74],
+        {"engineGroup":""},
+        {"group":""},
+        //["tc1", 0.0, -1.62, 0.35{"nodeWeight":16}],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":15001000,"beamDamp":400},
+          {"beamDeform":250000,"beamStrength":"FLT_MAX"},
+          //engine
+          ["e1r","e1l"],
+          ["e2r","e2l"],
+          ["e3r","e3l"],
+          ["e4r","e4l"],
+          ["e1r","e2r"],
+          ["e1l","e2l"],
+          ["e3r","e4r"],
+          ["e3l","e4l"],
+          ["e1r","e3r"{"isExhaust":"mainEngine"}],
+          ["e1l","e3l"],
+          ["e2r","e4r"],
+          ["e2l","e4l"],
+          ["e2r","e3r"],
+          ["e2l","e3l"],
+          ["e2r","e3l"],
+          ["e2l","e3r"],
+          ["e1r","e4r"],
+          ["e1l","e4l"],
+          ["e1r","e4l"],
+          ["e1l","e4r"],
+          ["e1r","e2l"],
+          ["e1l","e2r"],
+          ["e3r","e4l"],
+          ["e3l","e4r"],
+          ["e1r","e3l"],
+          ["e1l","e3r"],
+          ["e2r","e4l"],
+          //["e2l","e4r"],
+          //["tc1","e3l"],
+          //["tc1","e3r"],
+          //["tc1","e4l"],
+          //["tc1","e4r"],
+          //["tc1","e1l"],
+          //["tc1","e1r"],
+          {"disableMeshBreaking":true},
+          {"beamDeform":90000,"beamStrength":90000}
+          //["tc1","e2l"{"name":"driveshaft"}],
+          //["tc1","e2r"{"name":"driveshaft"}],
+          {"disableMeshBreaking":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+"hatch_engine_dohc_1.8_2": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"1.8L DOHC I4 Engine",
+        "value":950,
+    },
+
+    "slotType" : "hatch_engine",
+
+    "slots": [
+        ["type", "default", "description"]
+        ["hatch_intake","hatch_intake", "Intake",{"coreSlot":true}],
+        ["hatch_exhaust","hatch_exhaust", "Exhaust"],
+        ["hatch_engine_internals","hatch_engine_internals", "Engine Long Block",{"coreSlot":true}],
+        ["n2o_system","", "Nitrous Oxide System"],
+        ["hatch_engine_ecu","hatch_engine_ecu", "Engine Management",{"coreSlot":true}],
+        ["hatch_transmission","hatch_transmission_4M", "Transmission"],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["combustionEngine", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine": {
+        "torque":[
+            ["rpm", "torque"]
+            [0, 0],
+            [500,  104],
+            [1000, 124],
+			[1500, 134],
+            [2000, 150],
+            [3000, 184],
+            [4000, 201],            
+            [5000, 204],            
+            [6000, 199],
+            [7000, 180],
+			[7500, 164],
+            [8000, 128],
+			[9000,  99],
+        ],
+
+        "idleRPM":800,
+        "maxRPM":7200,
+        "revLimiterType":"timeBased",
+        "revLimiterCutTime":0.13,
+        "inertia":0.08,
+        "friction":12,
+        "dynamicFriction":0.022,
+        //"burnEfficiency":0.30
+        "burnEfficiency":[
+            [0, 0.12],
+            [0.05, 0.26],
+            [0.4, 0.42],
+            [0.7, 0.47],
+            [1, 0.35],
+        ],
+        "torqueReactionNodes:":["e1l","e2l","e4r"]
+        "energyStorage": "mainTank",
+        "requiredEnergyType":"gasoline",
+
+        //exhaust
+        "particulates":0.03
+        "instantAfterFireCoef": 0.6,
+        "sustainedAfterFireCoef": 0.5,
+
+        //cooling and oil system
+        "thermalsEnabled":true
+        "engineBlockMaterial":"aluminum"
+        "oilVolume":3.5
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":130
+        "headGasketDamageThreshold":1500000
+        "pistonRingDamageThreshold":1500000
+        "connectingRodDamageThreshold":2000000
+
+        "maxTorqueRating": 200,
+        "maxOverTorqueDamage": 310,
+
+        //node beam interface
+        "waterDamage": {"[engineGroup]:":["engine_intake"]},
+        "radiator": {"[engineGroup]:":["radiator"]},
+        "engineBlock": {"[engineGroup]:":["engine_block"]},
+        "breakTriggerBeam":"engine",
+        "uiName":"Engine",
+
+        "soundConfig": "soundConfig",
+    },
+    "soundConfig": {
+        "sampleName": "I4",
+        "mainGain": -18,
+        "maxLoadMix": 0.65,
+        "minLoadMix": 0,
+        "onLoadGain":1,
+        "offLoadGain":0.7,
+        "eqLowGain": 10,
+        "eqLowFreq": 400,
+        //"eqLowWidth": 0,
+        "eqHighGain": -5,
+        "eqHighFreq": 6000,
+        //"eqHighWidth": 0.5,
+        "lowCutFreq":80,
+        "fundamentalFrequencyCylinderCount":4
+        "eqFundamentalGain": 10
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":1700,
+        "clutchLaunchTargetRPM":2400,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":[0,0,0,2700,3350,3600,3800,3800]
+        //**highShiftUp can be overwritten by intake modifications**
+        "highShiftUpRPM":6200
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["hatch_engine_dohc", ["hatch_engine"]],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        //--1.5L I4 Engine--
+        {"selfCollision":false},
+        {"collision":true}
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.5},
+        {"group":"hatch_engine"},
+        {"nodeWeight":14},
+        {"engineGroup":"engine_block"}
+        ["e1r", 0.12, -1.62, 0.30,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+        ["e2r", -0.37, -1.62, 0.30,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+        ["e1l", 0.12, -1.31, 0.30,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+        ["e2l", -0.37, -1.31, 0.30,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+        {"chemEnergy":false,"burnRate":false,"flashPoint":false, "specHeat": false,"selfIgnitionCoef":false,"smokePoint":false,"baseTemp":false,"conductionRadius":false},
+        {"engineGroup":["engine_block","engine_intake"]}
+        ["e3r", 0.12, -1.62, 0.74,{"isExhaust":"mainEngine"}],
+        ["e3l", 0.12, -1.2, 0.74],
+        ["e4r", -0.37, -1.62, 0.74],
+        ["e4l", -0.37, -1.2, 0.74],
+        {"engineGroup":""},
+        {"group":""},
+        //["tc1", 0.0, -1.62, 0.35{"nodeWeight":16}],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":15001000,"beamDamp":400},
+          {"beamDeform":250000,"beamStrength":"FLT_MAX"},
+          //engine
+          ["e1r","e1l"],
+          ["e2r","e2l"],
+          ["e3r","e3l"],
+          ["e4r","e4l"],
+          ["e1r","e2r"],
+          ["e1l","e2l"],
+          ["e3r","e4r"],
+          ["e3l","e4l"],
+          ["e1r","e3r"{"isExhaust":"mainEngine"}],
+          ["e1l","e3l"],
+          ["e2r","e4r"],
+          ["e2l","e4l"],
+          ["e2r","e3r"],
+          ["e2l","e3l"],
+          ["e2r","e3l"],
+          ["e2l","e3r"],
+          ["e1r","e4r"],
+          ["e1l","e4l"],
+          ["e1r","e4l"],
+          ["e1l","e4r"],
+          ["e1r","e2l"],
+          ["e1l","e2r"],
+          ["e3r","e4l"],
+          ["e3l","e4r"],
+          ["e1r","e3l"],
+          ["e1l","e3r"],
+          ["e2r","e4l"],
+          //["e2l","e4r"],
+          //["tc1","e3l"],
+          //["tc1","e3r"],
+          //["tc1","e4l"],
+          //["tc1","e4r"],
+          //["tc1","e1l"],
+          //["tc1","e1r"],
+          {"disableMeshBreaking":true},
+          {"beamDeform":90000,"beamStrength":90000}
+          //["tc1","e2l"{"name":"driveshaft"}],
+          //["tc1","e2r"{"name":"driveshaft"}],
+          {"disableMeshBreaking":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+"hatch_transmission_6M_sequential2": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race 6-Speed Sequential Transmission",
+        "value":3200,
+    },
+
+    "slotType" : "hatch_transmission",
+    "slots": [
+        ["type", "default","description"]
+        ["hatch_flywheel","hatch_flywheel_race","Flywheel", {"coreSlot":true}],
+        ["hatch_differential_F","hatch_differential_F", "Front Differential"],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$gear_R", "range", ":1", "Transmission", -3.58, -5.0, -0.5, "Reverse Gear Ratio", "Torque multiplication ratio"]
+        ["$gear_1", "range", ":1", "Transmission", 3.27, 0.5, 5.0, "1st Gear Ratio", "Torque multiplication ratio"]
+        ["$gear_2", "range", ":1", "Transmission", 2.13, 0.5, 5.0, "2nd Gear Ratio", "Torque multiplication ratio"]
+        ["$gear_3", "range", ":1", "Transmission", 1.52, 0.5, 5.0, "3rd Gear Ratio", "Torque multiplication ratio"]
+        ["$gear_4", "range", ":1", "Transmission", 1.15, 0.5, 5.0, "4th Gear Ratio", "Torque multiplication ratio"]
+        ["$gear_5", "range", ":1", "Transmission", 0.92,  0.5, 5.0, "5th Gear Ratio", "Torque multiplication ratio"]
+        ["$gear_6", "range", ":1", "Transmission", 0.74, 0.5, 5.0, "6th Gear Ratio", "Torque multiplication ratio"]
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["sequentialGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":["$gear_R", 0, "$gear_1", "$gear_2", "$gear_3", "$gear_4", "$gear_5", "$gear_6"]
+        "friction": 1,
+        "gearboxNode:":"tra1",
+    },
+    "clutch": {
+        "uiName":"Clutch",
+    },
+    "vehicleController": {
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.17,
+        //"aggressionSmoothingDown":0.05
+        "aggressionHoldOffThrottleDelay":3,
+        //"lowShiftDownRPM":[0,0,0,1600,1900,1800,1600,1500],
+        //"lowShiftUpRPM":[0,0,3500,3300,3150,3000,2900],
+        "lowShiftDownRPM":[0,0,0,2000,2600,2600,2600,2600],
+        "lowShiftUpRPM":[0,0,4200,4200,4050,3850,3700],
+        //"wheelSlipUpThreshold":100,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["hatch_transmission", ["hatch_engine","hatch_transmission"]],
+        ["hatch_shifterbase_M", ["hatch_body"]],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        //manual transmission
+        ["gear_M"   ,"hatch_shifter_M", "f7r","f7l","f8r", {"x":85, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0, "z":0.0}, 0, 1, 0, 1],
+        ["parkingbrake"     ,"hatch_parkingbrake", "f7r","f7l","f8r",  {"x":90, "y":0, "z":0} , {"x":-35, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+        ["clutch"     ,"hatch_clutchpedal", "f1l","f1r","f6l", {"x":0, "y":0, "z":180}, {"x":-25, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        //--6 Speed Manual--
+        {"selfCollision":false},
+        {"collision":true},
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.5},
+        {"group":"hatch_transmission"},
+        {"nodeWeight":7},
+        ["tra1", 0.37, -1.43, 0.39],
+        {"group":"hatch_differential"},
+        ["tra2", 0.25, -1.25, 0.325],
+        ["tra3", 0.0, -1.25, 0.325{"nodeWeight":16}],
+        {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--TRANSMISSION CONE--
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":8001000,"beamDamp":250},
+          {"beamDeform":250000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          ["tra1","tra2"],
+          ["tra1","tra3"],
+          ["tra2","tra3"],
+          ["tra2","e2l"],
+          ["tra3","e2l"],
+          ["tra2","e1l"],
+          ["tra3","e1l"],
+          ["tra2","e3l"],
+          ["tra3","e3l"],
+          ["tra2","e4l"],
+          ["tra3","e4l"],
+          ["tra3","e1l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+}

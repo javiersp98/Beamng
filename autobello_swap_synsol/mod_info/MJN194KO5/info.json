@@ -1,0 +1,91 @@
+{
+    "attachments": [
+
+    ],
+    "resource_id": 6884,
+    "current_version_id": 14248,
+    "download_count": 0,
+    "resource_version_id": 14278,
+    "version_string": "0.2",
+    "last_update": 1545325672,
+    "rating_avg": 5,
+    "rating_count": 0,
+    "rating_sum": 0,
+    "resource_category_id": 7,
+    "resource_date": 1545325672,
+    "review_count": 11,
+    "tag_line": "315hp, rwd, 810kg , lsd",
+    "update_count": 0,
+    "path": "MJN194KO5\/14248\/",
+    "filename": "autobello_swap_synsol.zip",
+    "title": "Autobello Piccolina SBR engine swap",
+    "user_id": 4733,
+    "username": "synsol",
+    "tagid": "MJN194KO5",
+    "message": "This is a simple mod that port the Sbr 2.5 Boxer engine in the new Piccolina !\n\n[IMG]http:\/\/media-cdn.beamng.com\/YjDPmPrL4ZlgtxHF\/BeamNG.drive.x64_2018-12-20_16-52-37.jpg[\/IMG] \n\nThis engine is water cooled, then have two custom radiators.\n\n[IMG]https:\/\/media.beamng.com\/JfSJIdGxeBKVYGe4\/BeamNG.drive.x64_2018-12-20_16-58-13.png[\/IMG] \n\nIt is light and fast !\n\n[IMG]https:\/\/media.beamng.com\/5gGANQr3J2f4ZzL5\/BeamNG.drive.x64_2018-12-20_16-45-21.jpg[\/IMG]",
+    "category_title": "",
+    "prefix_title": "Beta",
+    "via": "packed by repo on Fri, 21 Dec 2018 15:30:02 GMT",
+    "hashes": [
+        [
+            "vehicles\/autobello\/baja_swap.pc",
+            "5bc4dfb0db09477c"
+        ],
+        [
+            "vehicles\/autobello\/info_baja_swap.json",
+            "c6e91e576abeb94f"
+        ],
+        [
+            "vehicles\/autobello\/drag_swap.png",
+            "f4a44904c8194739"
+        ],
+        [
+            "vehicles\/autobello\/info_sbr_swap.json",
+            "70cde415a8d616c4"
+        ],
+        [
+            "vehicles\/autobello\/drag_swap.pc",
+            "0afeff51a22eb3e4"
+        ],
+        [
+            "vehicles\/autobello\/sbr_swap.pc",
+            "2fec0fd1ba440c15"
+        ],
+        [
+            "vehicles\/autobello\/baja_swap.png",
+            "546629780203e9f6"
+        ],
+        [
+            "vehicles\/autobello\/sbr_swap.png",
+            "afdacccf06751e76"
+        ],
+        [
+            "vehicles\/autobello\/info_drag_swap.json",
+            "5c9bc2f0edf084c4"
+        ],
+        [
+            "vehicles\/autobello\/sbr_swap\/materials.cs",
+            "5ebaaf09d1a8a49a"
+        ],
+        [
+            "vehicles\/autobello\/sbr_swap\/sbr_swap.dae",
+            "a36272109fe89a34"
+        ],
+        [
+            "vehicles\/autobello\/sbr_swap\/sbr_radiator_synsol.jbeam",
+            "258fdbed210bc729"
+        ],
+        [
+            "vehicles\/autobello\/sbr_swap\/sbr_engine_synsol.jbeam",
+            "655dfe527b891e60"
+        ],
+        [
+            "vehicles\/autobello\/sbr_swap\/sbr_muffler_synsol.jbeam",
+            "8882168ca54a933e"
+        ],
+        [
+            "vehicles\/autobello\/sbr_swap\/sbr_transaxle_synsol.jbeam",
+            "629da956a03f05bd"
+        ]
+    ]
+}

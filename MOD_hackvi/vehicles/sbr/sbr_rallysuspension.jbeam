@@ -1,0 +1,136 @@
+{
+
+"sbr_coilover_F_rally1": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rally Front Coilovers",
+        "value":1900,
+    }
+    "slotType" : "sbr_coilover_F",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sbr_coilover_F", ["sbr_shockbottom_F","sbr_shocktop_F"]],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$springheight_F", "range", "+m", "Suspension", 0, -0.04, 0.06, "Spring Height", "Raise or lower the suspension height", {"stepDis":0.005, "subCategory":"Front"}]
+        ["$spring_F", "range", "N/m", "Suspension", 35000, 10000, 80000, "Spring Rate", "Spring stiffness", {"stepDis":500,"subCategory":"Front"}]
+        ["$damp_bump_F", "range", "N/m/s", "Suspension", 5000, 500, 10000, "Bump Damping", "Damper rate in slow compression", {"stepDis":100, "subCategory":"Front"}]
+        ["$damp_bump_F_fast", "range", "N/m/s", "Suspension", 12000, 500, 20000, "Fast Bump Damping", "Damper rate in fast compression", {"stepDis":100, "subCategory":"Front"}]
+        ["$damp_rebound_F", "range", "N/m/s", "Suspension", 4300, 500, 10000, "Rebound Damping", "Damper rate in extension", {"stepDis":100,"subCategory":"Front"}]
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //front springs - non progressive
+          {"beamType":"|NORMAL"},
+          {"beamDeform":40500,"beamStrength":97500},
+          {"beamSpring":"$spring_F","beamDamp":0},
+          //{"beamSpring":0,"beamDamp":0},
+          //IMPORTANT: if precompressionRange is ~= nil then it supersedes beamPrecompression.
+          //The case() is for backwards compatibility for old configs containing the "rideheight_F" variable.
+          //To change the base ride height, edit the springheight_F offset in the expression.
+          ["fh2r","fs1r",{"beamPrecompression":"$=$rideheight_F", "precompressionRange":"$=case($rideheight_F == nil, ($springheight_F + 0.015)*0.65, '')",
+              "soundFile":"art/sound/spring_creak1c.ogg","volumeFactor":4,"decayMode":0,"decayFactor":3,"pitchFactor":1,"maxStress":17000}],
+          ["fh2l","fs1l",{"beamPrecompression":"$=$rideheight_F", "precompressionRange":"$=case($rideheight_F == nil, ($springheight_F + 0.015)*0.65, '')",
+              "soundFile":"art/sound/spring_compress2.ogg","volumeFactor":0.8,"decayMode":1,"decayFactor":5,"pitchFactor":1,"maxStress":2000}],
+          //damper
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED","beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":0,"beamDamp":"$damp_bump_F"},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          ["fh1r","fs1r"{"beamDampFast":"$=$damp_bump_F/3","beamDampRebound":"$damp_rebound_F","beamDampReboundFast":"$=$damp_rebound_F/3","beamDampVelocitySplit":0.2,"dampCutoffHz":500}],
+          ["fh1l","fs1l"{"beamDampFast":"$=$damp_bump_F/3","beamDampRebound":"$damp_rebound_F","beamDampReboundFast":"$=$damp_rebound_F/3","beamDampVelocitySplit":0.2,"dampCutoffHz":500}],
+          //shock and suspension friction
+          {"beamSpring":0,"beamDamp":200000},
+          ["fh1r","fs1r",{"beamDampFast":0,"beamDampRebound":200000,"beamDampReboundFast":0,"beamDampVelocitySplit":0.0001}],
+          ["fh1l","fs1l",{"beamDampFast":0,"beamDampRebound":200000,"beamDampReboundFast":0,"beamDampVelocitySplit":0.0001}],
+          //soft bump stop
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamDeform":137500,"beamStrength":212500},
+          {"beamSpring":0,"beamDamp":0},
+          {"beamLimitSpring":151000,"beamLimitDamp":2000},
+          ["fh1r","fs1r"{"longBoundRange":0.02,"shortBoundRange":0.05,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          ["fh1l","fs1l"{"longBoundRange":0.02,"shortBoundRange":0.05,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          //hard bump stop
+          {"beamLimitSpring":501000,"beamLimitDamp":2000},
+          ["fh1r","fs1r"{"longBoundRange":0.04,"shortBoundRange":0.07,"boundZone":0.02,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          ["fh1l","fs1l"{"longBoundRange":0.04,"shortBoundRange":0.07,"boundZone":0.02,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+"sbr_coilover_R_rally1": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rally Rear Coilovers",
+        "value":1500,
+    }
+    "slotType" : "sbr_coilover_R",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sbr_coilover_RR", ["sbr_coilover_RR","sbr_coilover_R"]],
+         ["sbr_coilover_RL", ["sbr_coilover_RL","sbr_coilover_R"]],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$springheight_R", "range", "+m", "Suspension", 0, -0.04, 0.06, "Spring Height", "Raise or lower the suspension height", {"stepDis":0.005, "subCategory":"Rear"}]
+        ["$spring_R", "range", "N/m", "Suspension", 31000, 10000, 160000, "Spring Rate", "Spring stiffness"{"stepDis":500 ,"subCategory":"Rear"}]
+        ["$damp_bump_R", "range", "N/m/s", "Suspension", 4500, 500, 10000, "Bump Damping", "Damper rate in slow compression", {"stepDis":100, "subCategory":"Rear"}]
+        ["$damp_bump_R_fast", "range", "N/m/s", "Suspension", 10000, 500, 20000, "Fast Bump Damping", "Damper rate in fast compression", {"stepDis":100, "subCategory":"Rear"}]
+        ["$damp_rebound_R", "range", "N/m/s", "Suspension", 3800, 500, 10000, "Rebound Damping", "Damper rate in extension", {"stepDis":100, "subCategory":"Rear"}]
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--REAR INDEPENDENT SUSPENSION--
+         {"collision":true},
+         {"selfCollision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         //rear hub relocate to change toe curve
+         {"nodeWeight":4.25},
+         {"group":"sbr_lowerarm_R_a"},
+         //["rh1r",-0.66, 1.37, 0.13],
+         //["rh1l", 0.66, 1.37, 0.13],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //rear springs - doubled, non progressive
+          {"beamType":"|NORMAL"},
+          {"beamDeform":22500,"beamStrength":107500},
+          {"beamSpring":"$=$spring_R/2","beamDamp":0},
+          //{"beamSpring":0,"beamDamp":0},
+          //IMPORTANT: if precompressionRange is ~= nil then it supersedes beamPrecompression.
+          //The case() is for backwards compatibility for old configs containing the "rideheight_R" variable.
+          //To change the base ride height, edit the springheight_R offset in the expression.
+          ["psh7r","psh5r"{"beamPrecompression":"$=$rideheight_R","precompressionRange":"$=case($rideheight_R == nil, ($springheight_R + 0.04)*0.45, '')",
+              "soundFile":"art/sound/spring_compress2.ogg","volumeFactor":0.8,"decayMode":1,"decayFactor":5,"pitchFactor":2,"maxStress":4300}],
+          ["psh7l","psh6l"{"beamPrecompression":"$=$rideheight_R","precompressionRange":"$=case($rideheight_R == nil, ($springheight_R + 0.04)*0.45, '')",
+              "soundFile":"art/sound/spring_creak1c.ogg","volumeFactor":4,"decayMode":0,"decayFactor":3,"pitchFactor":1,"maxStress":15000}],
+          ["psh7l","psh5l", {"beamPrecompression":"$=$rideheight_R","precompressionRange":"$=case($rideheight_R == nil, ($springheight_R + 0.04)*0.45, '')"}],
+          ["psh7r","psh6r", {"beamPrecompression":"$=$rideheight_R","precompressionRange":"$=case($rideheight_R == nil, ($springheight_R + 0.04)*0.45, '')"}],
+          //damper
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":0,"beamDamp":"$damp_bump_R"},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          ["rh2r","r1rr",{"beamDampFast":"$=$damp_bump_R/3","beamDampRebound":"$damp_rebound_R","beamDampReboundFast":"$=$damp_rebound_R/3","beamDampVelocitySplit":0.2,"dampCutoffHz":500}],
+          ["rh2l","r1ll",{"beamDampFast":"$=$damp_bump_R/3","beamDampRebound":"$damp_rebound_R","beamDampReboundFast":"$=$damp_rebound_R/3","beamDampVelocitySplit":0.2,"dampCutoffHz":500}],
+          //shock and suspension friction
+          {"beamSpring":0,"beamDamp":250000},
+          ["rh2r","r1rr",{"beamDampFast":0,"beamDampRebound":250000,"beamDampReboundFast":0,"beamDampVelocitySplit":0.0001}],
+          ["rh2l","r1ll",{"beamDampFast":0,"beamDampRebound":250000,"beamDampReboundFast":0,"beamDampVelocitySplit":0.0001}],
+          //soft bumpstop
+          {"beamDeform":72500,"beamStrength":127500},
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":0,"beamDamp":0},
+          {"beamLimitSpring":151000,"beamLimitDamp":2000},
+          ["rh2r","r1rr"{"longBoundRange":0.01,"shortBoundRange":0.06,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          ["rh2l","r1ll"{"longBoundRange":0.01,"shortBoundRange":0.06,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          //hard bumpstop
+          {"beamLimitSpring":501000,"beamLimitDamp":2000},
+          ["rh2r","r1rr"{"longBoundRange":0.03,"shortBoundRange":0.08,"boundZone":0.02,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          ["rh2l","r1ll"{"longBoundRange":0.03,"shortBoundRange":0.08,"boundZone":0.02,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+}

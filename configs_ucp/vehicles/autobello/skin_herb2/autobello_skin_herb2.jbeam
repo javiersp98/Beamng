@@ -1,0 +1,11 @@
+{
+"autobello_skin_herb2": {
+    "information":{
+        "authors":"welshtoast",
+        "name":"Herbie Street Racer",
+        "value":100,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "herb2",
+}
+}

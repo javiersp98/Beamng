@@ -1,0 +1,29 @@
+{
+"hopper_skin_interior_red": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Red Interior",
+        "value":50,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "red",
+  },
+"hopper_skin_interior_camo": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Will's Interior",
+        "value":50,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "camo",
+  },
+"hopper_skin_interior_white": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"White Interior",
+        "value":50,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "white",
+},
+}

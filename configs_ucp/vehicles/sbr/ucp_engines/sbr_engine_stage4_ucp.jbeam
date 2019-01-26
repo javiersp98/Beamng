@@ -1,0 +1,176 @@
+{
+"sbr_twinturbo_stage4_ucp": {
+    "information":{
+        "authors":"BeamNG, BombBoy4",
+        "name":"Stage 4 Twin Turbochargers",
+        "value":13000,
+    }
+    "slotType" : "sbr_intake",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sbr_intake_TT", ["sbr_body","sbr_engine"]],
+         ["sbr_exhaust_TT", ["sbr_engine","sbr_twinturbo","sbr_exhaust"]],
+    ],
+    "turbocharger": {
+        "wastegateStart":21.5,
+        "wastegateLimit":55,
+        "maxExhaustPower": 400000,
+        "backPressureCoef": 0.00040,
+        "frictionCoef": 48.1,
+        "inertia":42,
+        "pressureRatePSI": 225,
+        "bovSoundVolumeCoef":0.5,
+        "damageThresholdTemperature": 720,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -0.8],
+            [20000,     11],
+            [30000,     17],
+            [60000,     21],
+            [90000,     28],
+            [150000,    31],
+            [200000,    34],
+            [250000,    37],
+			[300000,    41],
+			[350000,    44],
+			[400000,    49],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.0,    0.0],
+            [650,   0.29,    0.03],
+            [1400,  0.34,    0.05],
+            [2000,  0.79,   0.25],
+            [2500,  0.92,    0.6],
+            [3000,  0.95,    0.72],
+            [4000,  0.82,    0.85],
+            [5000,  0.84,    1.0],
+            [6000,  0.93,    1.0],
+            [7000,  1.0,   1.0],
+            [8000,  1.2,   1.0],
+            [9000,  1.4,    1.0],
+        ],
+    },
+    "mainEngine":{
+        "maxRPM":8500,
+        "revMatchThrottle":0.2,
+        //"burnEfficiency":0.32,
+        "cylinderWallTemperatureDamageThreshold":180
+        //turbocharger name
+        "turbocharger":"turbocharger",
+        "instantAfterFireCoef": 1.5,
+        "sustainedAfterFireCoef": 1.0,
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":4000,
+        "clutchLaunchTargetRPM":2000,
+        "highShiftUpRPM":8300
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sbr_intake_TT", ["sbr_engine"]],
+         ["sbr_exhaust_TT", ["sbr_twinturbo","sbr_exhaust"]],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"selfCollision":true}
+        {"collision":true}
+        //--exhaust
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+        {"nodeWeight":4.2},
+        {"group":"sbr_exhaust"},
+        ["exh1r",-0.54, 1.78, 0.21],
+        ["exh1l", 0.54, 1.78, 0.21],
+        ["exh1rr",-0.34, 1.46, 0.2],
+        ["exh1ll", 0.34, 1.46, 0.2],
+        ["exh2",0.0, 1.93, 0.21],
+        ["exh3",0.0, 1.93, 0.4],
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"deformLimitExpansion":1.1},
+        {"beamSpring":1201000,"beamDamp":75},
+        {"beamDeform":20000,"beamStrength":"FLT_MAX"},
+        ["exh2","exh3"],
+        ["exh1r","exh2"],
+        ["exh1r","exh3"],
+        ["exh1l","exh2"],
+        ["exh1l","exh3"],
+
+        ["exh1ll", "exh1l"{"isExhaust":"mainEngine"}],
+        ["exh1rr", "exh1r"{"isExhaust":"mainEngine"}],
+        ["exh1ll", "exh1rr"],
+        ["exh1ll", "exh1r"],
+        ["exh1l", "exh1rr"],
+
+        {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+        ["exh1ll", "exh2"],
+        ["exh1ll", "exh3"],
+        ["exh1rr", "exh2"],
+        ["exh1rr", "exh3"],
+
+        {"beamDeform":1000,"beamStrength":"FLT_MAX"},
+        ["exh1r", "exh1l"],
+
+        //attach to engine
+        {"beamSpring":1001000,"beamDamp":50},
+        {"beamDeform":10000,"beamStrength":30000},
+        {"breakGroup":"exhaust_engine_R"},
+        ["exh1rr", "e1r"{"isExhaust":"mainEngine"}],
+        ["exh1rr", "e2r"],
+        ["exh1rr", "e3r"],
+        ["exh1rr", "e4r"],
+        ["exh1rr", "e1l"],
+        ["exh1rr", "e2l"],
+
+        ["exh1r", "e2r"],
+        ["exh1r", "e4r"],
+        ["exh1r", "e3r"],
+        ["exh1r", "e1r"],
+
+        {"breakGroup":"exhaust_engine_L"},
+        ["exh1ll", "e1l"{"isExhaust":"mainEngine"}],
+        ["exh1ll", "e2l"],
+        ["exh1ll", "e3l"],
+        ["exh1ll", "e4l"],
+        ["exh1ll", "e1r"],
+        ["exh1ll", "e2r"],
+
+        ["exh1l", "e2l"],
+        ["exh1l", "e4l"],
+        ["exh1l", "e3l"],
+        ["exh1l", "e1l"],
+
+        //attach to body
+        {"beamSpring":501000,"beamDamp":100},
+        {"beamDeform":5000,"beamStrength":15000},
+        {"breakGroup":"exhaust_body_center"},
+        ["exh2", "r6"],
+        ["exh2", "r6ll"],
+        ["exh2", "r6rr"],
+        ["exh2", "r1"],
+        {"breakGroup":""},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"group":"sbr_exhaust"},
+            {"groundModel":"metal"},
+            {"dragCoef":6},
+            //exh shape
+            {"triangleType":"NONCOLLIDABLE"},
+            ["e2l", "e1l", "e1r"],
+            ["e1r", "e2r", "e2l"],
+            ["e2r", "exh3", "exh2"],
+            ["e2l", "exh2", "exh3"],
+            ["e4r", "exh1r", "e2r"],
+            ["e4l", "e2l", "exh1l"],
+            ["e2l", "e2r", "exh2"],
+            {"triangleType":"NORMALTYPE"},
+            {"group":""},
+    ],
+},
+}

@@ -1,0 +1,59 @@
+{
+
+"barstow_differential_R_LSD_355": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"3.55 Limited Slip Rear Differential",
+        "value":800,
+    }
+    "slotType" : "barstow_differential_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["barstow_driveshaft","barstow_driveshaft", "Driveshaft"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        //rear diff
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"lsd", "gearRatio":3.55, "lsdPreload":150, "lsdLockCoef":0.3, "lsdRevLockCoef":0.15, "friction":8}]
+    ],
+},
+
+
+"barstow_differential_R_LSD_264": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"2.64 Limited Slip Rear Differential",
+        "value":800,
+    }
+    "slotType" : "barstow_differential_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["barstow_driveshaft","barstow_driveshaft", "Driveshaft"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        //rear diff
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"lsd", "gearRatio":2.64, "lsdPreload":150, "lsdLockCoef":0.3, "lsdRevLockCoef":0.15, "friction":8}]
+    ],
+},
+
+"barstow_differential_R_LSD_283": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"2.83 Limited Slip Rear Differential",
+        "value":800,
+    }
+    "slotType" : "barstow_differential_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["barstow_driveshaft","barstow_driveshaft", "Driveshaft"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        //rear diff
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"lsd", "gearRatio":2.83, "lsdPreload":150, "lsdLockCoef":0.3, "lsdRevLockCoef":0.15, "friction":8}]
+    ],
+},
+
+
+}

@@ -1,0 +1,20 @@
+{
+"hopper_skin_softtop_red": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Red Soft Top/Roll Bar Padding",
+        "value":50,
+    },
+    "slotType" : "skin_softtop",
+    "skinName" : "red",
+  },
+"hopper_skin_softtop_green": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Green Soft Top/Roll Bar Padding",
+        "value":50,
+    },
+    "slotType" : "skin_softtop",
+    "skinName" : "green",
+  },
+}

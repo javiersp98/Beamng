@@ -1,0 +1,11 @@
+{
+"pickup_skin_AEPv10sw": {
+    "information":{
+        "authors":"Djplopper",
+        "name":"V10 Super Wagon Livery AEP",
+        "value":50,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "AEPv10sw",
+}
+}

@@ -1,0 +1,30 @@
+{
+"Performance Class":"5",
+"Weight":1715,
+"default_color_3":"Chrome",
+"0-100 km/h":10.2,
+"Value":9400,
+"Drivetrain":"RWD",
+"TorquePeakRPM":"1950 - 3500",
+"Braking G":0.956,
+"Description":"The Detective Special is equipped with heavy-duty suspension, a limited-slip differential, 4-barrel carburetors, dog dish hubcaps, a widened track, and a red beacon light",
+"Configuration":"Detective Special (A)",
+"Off-Road Score":35,
+"Power":208.491,
+"60-100 mph":15.7,
+"0-60 mph":9.7,
+"Config Type":"Service",
+"100-0 km/h":41.1,
+"PowerPeakRPM":4050,
+"default_color":"Pure Black",
+"Torque":393.89,
+"Transmission":"Automatic",
+"Top Speed":54.8219,
+"Weight/Power":8.24519,
+"60-0 mph":122.4,
+"Years":{
+  "min":1976,
+  "max":1978
+},
+"0-100 mph":25.3
+}

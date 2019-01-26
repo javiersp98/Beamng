@@ -1,0 +1,161 @@
+{
+
+"super_transaxle_6M_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race 6-Speed Manual Transaxle",
+        "value":13000,
+    }
+    "slotType" : "super_transaxle",
+    "slots": [
+        ["type", "default", "description"],
+        ["super_flywheel","super_flywheel_race","Flywheel", {"coreSlot":true}],
+        ["super_differential_R","super_differential_R_race", "Rear Differential"],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$gear_R", "range", ":1", "Transmission", 2.95, 0.5, 6.0, "Reverse Gear Ratio", "Torque multiplication ratio"]
+        ["$gear_1", "range", ":1", "Transmission", 3.05, 0.5, 6.0, "1st Gear Ratio", "Torque multiplication ratio"]
+        ["$gear_2", "range", ":1", "Transmission", 2.21, 0.5, 6.0, "2nd Gear Ratio", "Torque multiplication ratio"]
+        ["$gear_3", "range", ":1", "Transmission", 1.64, 0.5, 6.0, "3rd Gear Ratio", "Torque multiplication ratio"]
+        ["$gear_4", "range", ":1", "Transmission", 1.31, 0.5, 6.0, "4th Gear Ratio", "Torque multiplication ratio"]
+        ["$gear_5", "range", ":1", "Transmission", 1.04, 0.5, 6.0, "5th Gear Ratio", "Torque multiplication ratio"]
+        ["$gear_6", "range", ":1", "Transmission", 0.82, 0.5, 6.0, "6th Gear Ratio", "Torque multiplication ratio"]
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":["$=-$gear_R", 0, "$gear_1", "$gear_2", "$gear_3", "$gear_4", "$gear_5", "$gear_6"]
+        "friction": 6,
+    },
+    "vehicleController": {
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.15,
+        "transmissionShiftDelay":0.15,
+        //"aggressionSmoothingDown":0.05
+        "aggressionHoldOffThrottleDelay":3,
+        "lowShiftDownRPM":[0,0,0,2200,2400,2300,2250,2250],
+        "lowShiftUpRPM":[0,0,4500,4300,4100,3900,3900],
+        //"wheelSlipUpThreshold":100,
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["super_transaxle", ["super_engine","super_transaxle"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true}
+         //transaxle
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"group":"super_transaxle"},
+         {"nodeWeight":17},
+         ["tra1r", -0.13000, 1.27000, 0.38500],
+         ["tra1l", 0.13000, 1.27000, 0.38500],
+         ["tra2", 0.00000, 1.37000, 0.42500],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //transaxle
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":11200800,"beamDamp":258},
+          {"beamDeform":1120000,"beamStrength":"FLT_MAX"},
+          ["tra1r","e2r"],
+          ["tra1l","e2l"],
+          ["tra1r","e4r"],
+          ["tra1l","e4l"],
+
+          ["tra1r","e2l"],
+          ["tra1l","e2r"],
+          ["tra1r","e4l"],
+          ["tra1l","e4r"],
+
+          ["tra2","e2l"],
+          ["tra2","e2r"],
+          ["tra2","e4l"],
+          ["tra2","e4r"],
+
+          ["tra1r","tra2"],
+          ["tra1l","tra2"],
+          ["tra1r","tra1l"],
+
+         //transmission mounts
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":801000,"beamDamp":2500},
+        {"beamDeform":12000,"beamStrength":35000},
+        ["tra2", "k3"{"dampCutoffHz":500}],
+        {"beamSpring":4001000,"beamDamp":2500},
+        ["tra1r", "rx4r"{"dampCutoffHz":500}],
+        ["tra1l", "rx4l"{"dampCutoffHz":500}],
+        ["tra1r", "rx2r"{"dampCutoffHz":500}],
+        ["tra1l", "rx2l"{"dampCutoffHz":500}],
+		
+		
+        ["tra2", "k2l"{"dampCutoffHz":500}],
+        ["tra2", "k2r"{"dampCutoffHz":500}],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+   ],
+}
+
+"super_flywheel_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Ultra Light Flywheel",
+        "value":400,
+    },
+    "slotType" : "super_flywheel",
+    "clutch": {
+        "uiName":"Clutch",
+        "additionalEngineInertia":0.02,
+        "clutchMass":3.3,
+    },
+},
+
+"super_differential_R_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Limited Slip Rear Differential",
+        "value":1850,
+    }
+    "slotType" : "super_differential_R",
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$lsdpreload_R", "range", "N/m", "Differentials", 175, 0, 500, "Pre-load Torque", "Initial locking torque between left and right wheels"]
+        ["$lsdlockcoef_R", "range", "", "Differentials", 0.15, 0, 0.5, "Power Lock Rate", "Additional locking torque proportional to engine torque", {"minDis":0, "maxDis":100}]
+        ["$lsdlockcoefrev_R", "range", "", "Differentials", 0.075, 0, 0.5, "Coast Lock Rate", "Additional locking torque proportional to engine braking", {"minDis":0, "maxDis":100}]
+        ["$finaldrive", "range", ":1", "Differentials", 3.45, 2.0, 6.0, "Axle Gear Ratio", "Torque multiplication ratio"]
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        ["differential", "differential_R", "gearbox", 1, {"diffType":"lsd", "gearRatio":"$finaldrive", "lsdPreload":"$lsdpreload_R", "lsdLockCoef":"$lsdlockcoef_R", "lsdRevLockCoef":"$lsdlockcoefrev_R", "friction":8, "uiName":"Rear Differential","defaultVirtualInertia":0.25}]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["super_halfshaft_R", ["super_transaxle","super_upperarm_R","super_lowerarm_R"]],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //halfshafts
+		  {"disableMeshBreaking":false}		  
+          {"beamType":"|BOUNDED", "beamLongBound":0.03, "beamShortBound":0.03},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":3500,"beamStrength":7000},
+          {"beamLimitSpring":5001000,"beamLimitDamp":250},
+          {"breakGroupType":1},
+          {"optional":true},
+          {"breakGroup":"wheel_RR"},
+          ["rw1r","tra1r", {"name":"axle_RR"}],
+          {"breakGroup":"wheel_RL"},
+          ["rw1l","tra1l", {"name":"axle_RL"}],
+          {"optional":false},
+          {"breakGroup":""},
+          {"breakGroupType":0},
+          {"beamPrecompression":1.0,"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+}

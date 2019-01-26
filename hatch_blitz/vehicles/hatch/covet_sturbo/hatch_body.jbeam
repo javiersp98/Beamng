@@ -1,0 +1,17 @@
+{
+"hatch_skirts_blitz": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Blitz Sideskirts",
+        "value":200,
+    }
+    "slotType" : "hatch_bodykit",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["hatch_skirt_st_R", ["hatch_body","hatch_sideskirt_R"]],
+        ["hatch_skirt_st_L", ["hatch_body","hatch_sideskirt_L"]],
+        ["hatch_skirtclip_st_L", ["hatch_fender_L"]],
+        ["hatch_skirtclip_st_R", ["hatch_fender_R"]],
+    ],
+}
+}

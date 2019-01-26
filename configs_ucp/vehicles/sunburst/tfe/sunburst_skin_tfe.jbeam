@@ -1,0 +1,13 @@
+{
+
+"sunburst_skin_tfe": {
+    "information":{
+        "authors":"welshtoast",
+        "name":"Special Rallye Edition",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "tfe",
+}
+
+}

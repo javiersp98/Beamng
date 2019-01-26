@@ -1,0 +1,27 @@
+{
+"hatch_lettering_blitz": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Blitz Tailgate Lettering",
+        "value":30,
+    }
+    "slotType" : "hatch_lettering",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["hatch_lettering_ibishu", ["hatch_tailgate"]],
+         ["hatch_lettering_blitz", ["hatch_tailgate"]],
+    ],
+}
+"hatch_logo_F_grille_blitz": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Blitz Badge",
+        "value":30,
+    }
+    "slotType" : "hatch_logo_F_grille_sturbo",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["hatch_logo_F_grille_sturbo", ["hatch_fascia"]],
+    ],
+}
+}

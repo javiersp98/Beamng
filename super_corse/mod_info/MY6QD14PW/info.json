@@ -1,0 +1,278 @@
+{
+    "attachments": [
+        {
+            "data_filename": "339639.png",
+            "original_filename": "screenshot_00065.png",
+            "thumb_filename": "thumbs\/339639.jpg"
+        },
+        {
+            "data_filename": "339641.png",
+            "original_filename": "screenshot_00068.png",
+            "thumb_filename": "thumbs\/339641.jpg"
+        },
+        {
+            "data_filename": "339640.png",
+            "original_filename": "screenshot_00066.png",
+            "thumb_filename": "thumbs\/339640.jpg"
+        },
+        {
+            "data_filename": "339642.png",
+            "original_filename": "screenshot_00069.png",
+            "thumb_filename": "thumbs\/339642.jpg"
+        }
+    ],
+    "resource_id": 2903,
+    "current_version_id": 7693,
+    "download_count": 0,
+    "resource_version_id": 7698,
+    "version_string": "1.01",
+    "last_update": 1508449973,
+    "rating_avg": 0,
+    "rating_count": 0,
+    "rating_sum": 0,
+    "resource_category_id": 3,
+    "resource_date": 1508449973,
+    "review_count": 0,
+    "tag_line": "The twin-turbocharged legend has arrived",
+    "update_count": 0,
+    "path": "MY6QD14PW\/7693\/",
+    "filename": "bolidecorse.zip",
+    "title": "Civetta Bolide 'Corse'",
+    "user_id": 143371,
+    "username": "NinetyNine!",
+    "tagid": "MY6QD14PW",
+    "message": "[CENTER][ATTACH]339639[\/ATTACH]\n[SIZE=7][B]CIVETTA BOLIDE [COLOR=#b30000]CORSE[\/COLOR][\/B][\/SIZE]\n[HR][\/HR]\n[MEDIA=youtube]LDE2Y4O5tHU[\/MEDIA]\n[HR][\/HR][\/CENTER]\n\nThe Bolide Corse is a (obviously) Ferrari F40 Inspired Version for the well-known Bolide we already have.\nTons of power, hard to handle and mean looking.\n\n[ATTACH]339640[\/ATTACH]\n\nIt comes in 4 Versions (+1 [I]special[\/I]), with each being expensive as hell.\n\n[HR][\/HR]\n\nTogether with the Mod you'll also receive two new wheels usable for any car.\n(Yes, they are center-lock wheels at the 5-lug slots, but no other way to make them compatible for a wide range of cars  \u00af\\_(\u30c4)_\/\u00af )\n\n[ATTACH]339641[\/ATTACH]\n4 color options : Silver, Light-gold, Black, Full Black\n\n[ATTACH]339642[\/ATTACH]\n2 Sizes and 3 Color Options : Silver, White, Black\n[HR][\/HR]\n\nHave fun! :)\n\n[I]Also, if you experience the bug that a wheel falls off at stress situations, its not mod related. Same issue is present on the Group4 Bolide[\/I]",
+    "category_title": "",
+    "prefix_title": "",
+    "via": "packed by repo on Fri, 20 Oct 2017 12:00:08 GMT",
+    "hashes": [
+        [
+            "vehicles\/common\/bolcorsetyres\/tires_R_25.jbeam",
+            "bb43e2f01e8ea9c6"
+        ],
+        [
+            "vehicles\/common\/bolcorsewheels\/materials.cs",
+            "b50d830874518f7e"
+        ],
+        [
+            "vehicles\/common\/bolcorsewheels\/wheelf40_s.dds",
+            "299f4a00c65dbf45"
+        ],
+        [
+            "vehicles\/common\/bolcorsewheels\/wheelf40_d.dds",
+            "70ea1ed70b6a42f2"
+        ],
+        [
+            "vehicles\/common\/bolcorsewheels\/wheels_R_5.jbeam",
+            "fa147458b8eb0855"
+        ],
+        [
+            "vehicles\/common\/bolcorsewheels\/wheelf40c_d.dds",
+            "e96626fe6d793cbd"
+        ],
+        [
+            "vehicles\/common\/bolcorsewheels\/wheelrace_s.dds",
+            "153b94ab4d8b3593"
+        ],
+        [
+            "vehicles\/common\/bolcorsewheels\/bolcorsewheels.dae",
+            "8fdae150d9828d41"
+        ],
+        [
+            "vehicles\/common\/bolcorsewheels\/wheelrace_n.dds",
+            "ebe4f713c174f298"
+        ],
+        [
+            "vehicles\/common\/bolcorsewheels\/wheelrace_b_d.dds",
+            "b84cf04616ab69d0"
+        ],
+        [
+            "vehicles\/common\/bolcorsewheels\/wheels_F_5.jbeam",
+            "fa98338dc9841d99"
+        ],
+        [
+            "vehicles\/common\/bolcorsewheels\/wheelf40b_d.dds",
+            "94db7c0b10b16c3b"
+        ],
+        [
+            "vehicles\/common\/bolcorsewheels\/wheelrace_d.dds",
+            "1618a9b24bc31484"
+        ],
+        [
+            "vehicles\/common\/bolcorsewheels\/wheelrace_c_d.dds",
+            "3693c6e1f051a90e"
+        ],
+        [
+            "vehicles\/common\/bolcorsewheels\/wheelf40_n.dds",
+            "f8da11ecb392475d"
+        ],
+        [
+            "vehicles\/common\/bolcorsewheels\/wheelf40d_d.dds",
+            "7a06e73852694ea8"
+        ],
+        [
+            "vehicles\/super\/corse_mule_garage_side.png",
+            "932511a080057d8f"
+        ],
+        [
+            "vehicles\/super\/corse_competizione_garage_side.png",
+            "02986da2cfa6c8e8"
+        ],
+        [
+            "vehicles\/super\/bolcorse\/materials.cs",
+            "ba23251c781b33a0"
+        ],
+        [
+            "vehicles\/super\/bolcorse\/super_licenseplate.jbeam",
+            "9fd7990a7db1242e"
+        ],
+        [
+            "vehicles\/super\/bolcorse\/corse_skin_gt_palette_uv1.dds",
+            "70c3522460dfd451"
+        ],
+        [
+            "vehicles\/super\/bolcorse\/super_body.jbeam",
+            "c9dc07bfa751518b"
+        ],
+        [
+            "vehicles\/super\/bolcorse\/super_glass_yellow_d.dds",
+            "ef47be3ba108159f"
+        ],
+        [
+            "vehicles\/super\/bolcorse\/eng_s.dds",
+            "30684d124b0a1e41"
+        ],
+        [
+            "vehicles\/super\/bolcorse\/super_hood.jbeam",
+            "c05e00a596f37b70"
+        ],
+        [
+            "vehicles\/super\/bolcorse\/super_glass.jbeam",
+            "d26ae8dbbfe931d0"
+        ],
+        [
+            "vehicles\/super\/bolcorse\/skins.jbeam",
+            "41fbf0a7ea151639"
+        ],
+        [
+            "vehicles\/super\/bolcorse\/super_doors.jbeam",
+            "5c3b8e86eb141457"
+        ],
+        [
+            "vehicles\/super\/bolcorse\/super_tailcone.jbeam",
+            "3bd5430b9ae6bce1"
+        ],
+        [
+            "vehicles\/super\/bolcorse\/eng_n.dds",
+            "7a6ea05d0c9ccb21"
+        ],
+        [
+            "vehicles\/super\/bolcorse\/super_fenders.jbeam",
+            "1edbf7ec758e0817"
+        ],
+        [
+            "vehicles\/super\/bolcorse\/bolide40.dae",
+            "500269b993c526de"
+        ],
+        [
+            "vehicles\/super\/bolcorse\/eng_d.dds",
+            "a43029e90c684729"
+        ],
+        [
+            "vehicles\/super\/bolcorse\/corse_skin_race_palette_uv1.dds",
+            "0727d6a22fbc541c"
+        ],
+        [
+            "vehicles\/super\/bolcorse\/corse_skin_gt.dds",
+            "c42874313e61aad0"
+        ],
+        [
+            "vehicles\/super\/bolcorse\/super_engine.jbeam",
+            "f1d51762b564c8ab"
+        ],
+        [
+            "vehicles\/super\/bolcorse\/super_headlights.jbeam",
+            "711ce467cf15fad4"
+        ],
+        [
+            "vehicles\/super\/bolcorse\/super_nosecone.jbeam",
+            "5bcedcccca02ef25"
+        ],
+        [
+            "vehicles\/super\/bolcorse\/corse_skin_race.dds",
+            "e82f7b853f9cedb3"
+        ],
+        [
+            "vehicles\/super\/info_corse_competizione.json",
+            "5eb64b9d4910be7c"
+        ],
+        [
+            "vehicles\/super\/corse_mule.png",
+            "cb589287e64f05c2"
+        ],
+        [
+            "vehicles\/super\/corse_gt.png",
+            "8a7af2607c431002"
+        ],
+        [
+            "vehicles\/super\/corse.png",
+            "8d54b391313048fb"
+        ],
+        [
+            "vehicles\/super\/info_corse_mule.json",
+            "fe4a3bd7568850b2"
+        ],
+        [
+            "vehicles\/super\/corse_nospoiler_garage_side.png",
+            "7681623bfec65921"
+        ],
+        [
+            "vehicles\/super\/corse.pc",
+            "01c7381c30cc1e8b"
+        ],
+        [
+            "vehicles\/super\/corse_competizione.png",
+            "6f6457c4965eb7f3"
+        ],
+        [
+            "vehicles\/super\/info_corse.json",
+            "f3e45002614e5605"
+        ],
+        [
+            "vehicles\/super\/corse_gt_garage_side.png",
+            "ed1f17de9c0107f4"
+        ],
+        [
+            "vehicles\/super\/corse_mule.pc",
+            "3a41dd87de7ff2e8"
+        ],
+        [
+            "vehicles\/super\/corse_gt.pc",
+            "1b34e3c9041dad1f"
+        ],
+        [
+            "vehicles\/super\/corse_competizione.pc",
+            "069b87d923ec6b3f"
+        ],
+        [
+            "vehicles\/super\/corse_nospoiler.pc",
+            "e2526d02f258e090"
+        ],
+        [
+            "vehicles\/super\/info_corse_gt.json",
+            "4e0aed30966bb854"
+        ],
+        [
+            "vehicles\/super\/info_corse_nospoiler.json",
+            "cfde0bc0ab29a2e8"
+        ],
+        [
+            "vehicles\/super\/corse_garage_side.png",
+            "91541f33e91ed982"
+        ],
+        [
+            "vehicles\/super\/corse_nospoiler.png",
+            "b5e870a584f7dc3c"
+        ]
+    ]
+}

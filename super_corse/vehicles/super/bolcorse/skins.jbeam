@@ -1,0 +1,21 @@
+{
+"super_skin_corserace": {
+    "information":{
+        "authors":"Ninetynine",
+        "name":"Corse Race Livery #44",
+        "value":5000,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "corserace",
+
+    }
+    "super_skin_corsegt": {
+        "information":{
+            "authors":"Ninetynine",
+            "name":"Corse GT Stripe",
+            "value":3000,
+        }
+        "slotType" : "paint_design",
+        "globalSkin" : "corsegt",
+},
+}

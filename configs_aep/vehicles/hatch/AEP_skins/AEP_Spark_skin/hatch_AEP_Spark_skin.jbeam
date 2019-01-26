@@ -1,0 +1,11 @@
+{
+"hatch_skin_AEPSpark": {
+    "information":{
+        "authors":"Djplopper",
+        "name":"Spark Sports Livery AEP",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "AEPSpark",
+}
+}

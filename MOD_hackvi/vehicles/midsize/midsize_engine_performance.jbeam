@@ -1,0 +1,33 @@
+{
+
+"midsize_engine_internals_ims": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"iMS Performance Long Block",
+        "value":2400,
+    }
+    "slotType" : "midsize_engine_v6_internals",
+    "mainEngine":{
+        "torqueModMult":[
+            ["rpm", "torque"],
+            [0,    1],
+            [1000, 1],
+            [4000, 1.17],
+            [5000, 1.17],
+            [6000, 1.17],
+            [7000, 1.18],
+            [7500, 1.21],
+            [8000, 1.32],
+            [8500, 1.33],
+            [9000, 1.4],
+        ],
+        //max rpm physically capable of
+        "maxRPM":7200,
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":160,
+        "maxTorqueRating": 520,
+        "maxOverTorqueDamage": 250,
+    },
+},
+
+}

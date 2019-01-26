@@ -1,0 +1,726 @@
+{
+"hatch_engine_sohc_10_blitz": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"1.0L SOHC I4 Engine",
+        "value":700,
+    },
+
+    "slotType" : "hatch_engine",
+
+    "slots": [
+        ["type", "default", "description"]
+        ["hatch_exhaust","hatch_exhaust", "Exhaust"],
+        ["hatch_transmission","hatch_transmission_5M", "Transmission"],
+        ["hatch_blitz_turbo","hatch_turbo_stock_blitz", "Turbocharger",{"coreSlot":false}],
+		["hatch_blitz_sc","hatch_sc_stock", "Supercharger",{"coreSlot":false}],
+		["n2o_system","", "Nitrous Oxide System"],
+		
+		["hatch_engine_ecu","hatch_engine_ecu", "Engine Management",{"coreSlot":true}],
+		["hatch_engine_internals","hatch_engine_internals", "Engine Long Block",{"coreSlot":true}],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["combustionEngine", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine": {
+        "torque":[
+            ["rpm", "torque"]
+            [0, 0],
+            [500,  59],
+            [1000, 71],
+            [1500, 77],
+            [2000, 86],
+            [3000, 106],
+            [4000, 116],            
+            [5000, 117],
+            [6000, 114],
+            [7000, 104],
+            [7500, 94],
+            [8000, 74],
+            [9000, 57],
+        ],
+
+        "idleRPM":800,
+        "maxRPM":7000,
+        "revLimiterRPMDrop":150,
+        "inertia":0.06,
+        "friction":10
+        "dynamicFriction":0.020,
+        "burnEfficiency":0.39
+        "torqueReactionNodes:":["e1l","e2l","e4r"]
+        "particulates":0.03
+        "energyStorage": "mainTank",
+        "requiredEnergyType":"gasoline",
+
+        //cooling and oil system
+        "thermalsEnabled":true
+        "engineBlockMaterial":"aluminum"
+        "oilVolume":3
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":130
+        "headGasketDamageThreshold":1500000
+        "pistonRingDamageThreshold":1500000
+        "connectingRodDamageThreshold":2000000
+
+		"maxTorqueRating": 250,
+        "maxOverTorqueDamage": 600,
+		
+        //node beam interface
+        "waterDamage": {"[engineGroup]:":["engine_intake"]},
+        "radiator": {"[engineGroup]:":["radiator"]},
+        "engineBlock": {"[engineGroup]:":["engine_block"]},
+        "breakTriggerBeam":"engine",
+		"uiName":"Engine",
+
+        "soundConfig": "soundConfig",
+    },
+    "soundConfig": {
+        "sampleName": "I4",
+        "mainGain": -18,
+        "maxLoadMix": 0.65,
+        "minLoadMix": 0,
+        "onLoadGain":1,
+        "offLoadGain":0.7,
+        "eqLowGain": 10,
+        "eqLowFreq": 400,
+        //"eqLowWidth": 0,
+        "eqHighGain": -2,
+        "eqHighFreq": 6000,
+        //"eqHighWidth": 0.5,
+        "lowCutFreq":80,
+        "fundamentalFrequencyCylinderCount":4
+        "eqFundamentalGain": 10
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":1700,
+        "clutchLaunchTargetRPM":2200,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":[0,0,0,2700,3350,3600,3800,3800]
+        //**highShiftUp can be overwritten by intake modifications**
+        "highShiftUpRPM":6400
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["hatch_engine_sohc", ["hatch_engine"]],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        //--1.5L I4 Engine--
+        {"selfCollision":false},
+        {"collision":true}
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.5},
+        {"group":"hatch_engine"},
+        {"nodeWeight":8},
+        {"engineGroup":"engine_block"}
+        ["e1r", 0.12, -1.62, 0.30,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+        ["e2r", -0.37, -1.62, 0.30,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+        ["e1l", 0.12, -1.31, 0.30,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+        ["e2l", -0.37, -1.31, 0.30,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+        {"chemEnergy":false,"burnRate":false,"flashPoint":false, "specHeat": false,"selfIgnitionCoef":false,"smokePoint":false,"baseTemp":false,"conductionRadius":false},
+        {"engineGroup":["engine_block","engine_intake"]}
+        ["e3r", 0.12, -1.62, 0.74,{"isExhaust":"mainEngine"}],
+        ["e3l", 0.12, -1.2, 0.74],
+        ["e4r", -0.37, -1.62, 0.74],
+        ["e4l", -0.37, -1.2, 0.74],
+        {"engineGroup":""},
+        {"group":""},
+        //["tc1", 0.0, -1.62, 0.35{"nodeWeight":16}],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":6440460,"beamDamp":145},
+          {"beamDeform":780000,"beamStrength":"FLT_MAX"},
+          //engine
+          ["e1r","e1l"],
+          ["e2r","e2l"],
+          ["e3r","e3l"],
+          ["e4r","e4l"],
+          ["e1r","e2r"],
+          ["e1l","e2l"],
+          ["e3r","e4r"],
+          ["e3l","e4l"],
+          ["e1r","e3r"{"isExhaust":"mainEngine"}],
+          ["e1l","e3l"],
+          ["e2r","e4r"],
+          ["e2l","e4l"],
+          ["e2r","e3r"],
+          ["e2l","e3l"],
+          ["e2r","e3l"],
+          ["e2l","e3r"],
+          ["e1r","e4r"],
+          ["e1l","e4l"],
+          ["e1r","e4l"],
+          ["e1l","e4r"],
+          ["e1r","e2l"],
+          ["e1l","e2r"],
+          ["e3r","e4l"],
+          ["e3l","e4r"],
+          ["e1r","e3l"],
+          ["e1l","e3r"],
+          ["e2r","e4l"],
+          ["e2l","e4r"],
+          //["tc1","e3l"],
+          //["tc1","e3r"],
+          //["tc1","e4l"],
+          //["tc1","e4r"],
+          //["tc1","e1l"],
+          //["tc1","e1r"],
+          {"disableMeshBreaking":true},
+          {"beamDeform":90000,"beamStrength":90000}
+          //["tc1","e2l"{"name":"driveshaft"}],
+          //["tc1","e2r"{"name":"driveshaft"}],
+          {"disableMeshBreaking":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+
+"hatch_sc_stock": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Supercharger",
+        "value":1150,
+    },
+
+    "slotType" : "hatch_blitz_sc",    
+        
+        "supercharger": {
+            "gearRatio":2.5,
+            "clutchEngageRPM":0,
+            "clutchDisengageRPM":4010,
+            "pressureRatePSI":700,
+            "pressurePSIPer1kRPM":0.9,
+            "crankLossPer1kRPM":0.025,
+            "type":"roots",
+            "boostController":[
+                //throttle in %, factor
+                [0,     0.0],
+                [70,     0.5],
+                [100,     1],
+            ],
+    },
+    "mainEngine": {
+        //supercharger name
+        "supercharger":"supercharger",
+    },
+    "vehicleController": {
+        "highShiftUpRPM":6800
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["hatch_icpipe_intake_sturbo", ["hatch_engine","hatch_intercooler","hatch_rad"]],
+        ["hatch_icpipe_turbo_sturbo", ["hatch_engine","hatch_intercooler","hatch_rad"]],
+        ["hatch_turbo_sturbo", ["hatch_engine"]],
+        ["hatch_stsupercharger", ["hatch_engine"]],
+        ["hatch_intercooler_sturbo", ["hatch_engine"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"hatch_intercooler"},
+         {"nodeWeight":7},
+         ["interc", 0.0, -1.81, 0.45],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":301000,"beamDamp":60},
+          {"beamDeform":3000,"beamStrength":6000},
+          ["interc","s4r"],
+          ["interc","s4"],
+          ["interc","s4l"],
+          ["interc","s5r"],
+          ["interc","s5"],
+          ["interc","s5l"],
+          ["interc","s6"],
+
+          ["interc","e2r"],
+          ["interc","e1r"],
+          ["interc","e3r"],
+          ["interc","e4r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+
+"hatch_sc_unlocked": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Supercharger (Unlocked)",
+        "value":1150,
+    },
+
+    "slotType" : "hatch_blitz_sc",    
+        
+        "supercharger": {
+            "gearRatio":3,
+            "clutchEngageRPM":0,
+            //"clutchDisengageRPM":4030,
+            "pressureRatePSI":700,
+            "pressurePSIPer1kRPM":1.0,
+            "crankLossPer1kRPM":0.025,
+            "type":"roots",
+            "boostController":[
+                //throttle in %, factor
+                [0,     0.0],
+                [50,     0.5],
+                [100,     1],
+            ],
+    },
+    "mainEngine": {        
+        //supercharger name
+        "supercharger":"supercharger",
+    },
+    "vehicleController": {
+        "highShiftUpRPM":6800
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["hatch_icpipe_intake_sturbo", ["hatch_engine","hatch_intercooler","hatch_rad"]],
+        ["hatch_icpipe_turbo_sturbo", ["hatch_engine","hatch_intercooler","hatch_rad"]],
+        ["hatch_turbo_sturbo", ["hatch_engine"]],
+        ["hatch_stsupercharger", ["hatch_engine"]],
+        ["hatch_intercooler_sturbo", ["hatch_engine"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"hatch_intercooler"},
+         {"nodeWeight":7},
+         ["interc", 0.0, -1.81, 0.45],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":301000,"beamDamp":60},
+          {"beamDeform":3000,"beamStrength":6000},
+          ["interc","s4r"],
+          ["interc","s4"],
+          ["interc","s4l"],
+          ["interc","s5r"],
+          ["interc","s5"],
+          ["interc","s5l"],
+          ["interc","s6"],
+
+          ["interc","e2r"],
+          ["interc","e1r"],
+          ["interc","e3r"],
+          ["interc","e4r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+"hatch_sc_stage1": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stage 1 Supercharger",
+        "value":1400,
+    },
+
+    "slotType" : "hatch_blitz_sc",    
+        
+        "supercharger": {
+            "gearRatio":3,
+            "clutchEngageRPM":0,
+            "clutchDisengageRPM":4010,
+            "pressureRatePSI":700,
+            "pressurePSIPer1kRPM":1.2,
+            "crankLossPer1kRPM":0.025,
+            "type":"roots",
+            "boostController":[
+                //throttle in %, factor
+                [0,     0.0],
+                [70,     0.7],
+                [100,     1],
+            ],
+    },
+    "mainEngine": {
+        //supercharger name
+        "supercharger":"supercharger",
+    },
+    "vehicleController": {
+        "highShiftUpRPM":6800
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["hatch_icpipe_intake_sturbo", ["hatch_engine","hatch_intercooler","hatch_rad"]],
+        ["hatch_icpipe_turbo_sturbo", ["hatch_engine","hatch_intercooler","hatch_rad"]],
+        ["hatch_turbo_sturbo", ["hatch_engine"]],
+        ["hatch_stsupercharger", ["hatch_engine"]],
+        ["hatch_intercooler_sturbo", ["hatch_engine"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"hatch_intercooler"},
+         {"nodeWeight":7},
+         ["interc", 0.0, -1.81, 0.45],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":301000,"beamDamp":60},
+          {"beamDeform":3000,"beamStrength":6000},
+          ["interc","s4r"],
+          ["interc","s4"],
+          ["interc","s4l"],
+          ["interc","s5r"],
+          ["interc","s5"],
+          ["interc","s5l"],
+          ["interc","s6"],
+
+          ["interc","e2r"],
+          ["interc","e1r"],
+          ["interc","e3r"],
+          ["interc","e4r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+
+"hatch_turbo_stock_blitz": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Turbocharger",
+        "value":1150,
+    },
+
+    "slotType" : "hatch_blitz_turbo",
+    "turbocharger": {
+        "volumePer10kRPM":0.07
+        "wastegateStart":5.5,
+        "wastegateLimit":7.5,
+        "maxExhaustPower": 8000,
+        "backPressureCoef": 0.000035,
+        "frictionCoef": 15.4,
+        "inertia":2.0,
+        "damageThresholdTemperature": 610,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -3.5],
+            [30000,     -1.5],
+            [60000,     5],
+            [90000,     8],
+            [150000,    10],
+            [200000,    12],
+            [250000,    14],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.0,    0.0],
+            [650,   0.0,   0.0],
+            [1400,  0.0,   0.0],
+            [2000,  0.0,    0.0],
+            [2500,  0.0,    0.0],
+            [3000,  0.0,    0.0],
+            [4000,  0.2,    0.4],
+            [4300,  0.9,    0.8],
+            [5000,  1.1,    0.9],
+            [6000,  1.2,    1.0],
+            [7000,  1.05,    1.0],
+            [8000,  0.95,    1.0],
+
+        ],
+        },
+        
+    "mainEngine": {        
+        //turbocharger name
+        "turbocharger":"turbocharger",
+		"instantAfterFireCoef": 1,
+        "sustainedAfterFireCoef": 0.75,
+        
+    },
+    "vehicleController": {
+        "highShiftUpRPM":6800
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["hatch_icpipe_intake_sturbo", ["hatch_engine","hatch_intercooler","hatch_rad"]],
+        ["hatch_icpipe_turbo_sturbo", ["hatch_engine","hatch_intercooler","hatch_rad"]],
+        ["hatch_turbo_sturbo", ["hatch_engine"]],
+        ["hatch_stsupercharger", ["hatch_engine"]],
+        ["hatch_intercooler_sturbo", ["hatch_engine"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"hatch_intercooler"},
+         {"nodeWeight":7},
+         ["interc", 0.0, -1.81, 0.45],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":301000,"beamDamp":60},
+          {"beamDeform":3000,"beamStrength":6000},
+          ["interc","s4r"],
+          ["interc","s4"],
+          ["interc","s4l"],
+          ["interc","s5r"],
+          ["interc","s5"],
+          ["interc","s5l"],
+          ["interc","s6"],
+
+          ["interc","e2r"],
+          ["interc","e1r"],
+          ["interc","e3r"],
+          ["interc","e4r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    },
+	
+"hatch_turbo_stage1_blitz": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stage 1 Turbocharger",
+        "value":1150,
+    },
+
+    "slotType" : "hatch_blitz_turbo",
+
+    "turbocharger": {
+                "volumePer10kRPM":0.09
+                "wastegateStart":8,
+                "wastegateLimit":10,
+                "maxExhaustPower": 25000,
+                "backPressureCoef": 0.000035,
+                "frictionCoef": 15.4,
+                "inertia":2.0,
+                "damageThresholdTemperature": 610,
+                "pressurePSI":[
+                //turbineRPM, pressure(PSI)
+                [0,         -3.5],
+                [30000,     -0.5],
+                [60000,     5],
+                [90000,     8],
+                [150000,    11],
+                [200000,    14],
+                [250000,    17],
+                ],
+                "engineDef":[
+                    //engineRPM, efficiency, exhaustFactor
+                    [0,     0.0,    0.0],
+                    [650,   0.0,   0.0],
+                    [1400,  0.0,   0.0],
+                    [2000,  0.0,    0.0],
+                    [2500,  0.0,    0.0],
+                    [3000,  0.0,    0.0],
+                    [4000,  0.2,    0.1],
+                    [4300,  0.9,    0.8],
+                    [5000,  1.2,    0.9],
+                    [6000,  1.2,    1.0],
+                    [7000,  1.1,    1.0],
+                    [8000,  0.95,    1.0],
+
+                ],
+    },
+        
+    "mainEngine": {        
+        //turbocharger name
+        "turbocharger":"turbocharger",
+		"instantAfterFireCoef": 1,
+        "sustainedAfterFireCoef": 1,
+        
+    },
+    "vehicleController": {
+        "highShiftUpRPM":6800
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["hatch_icpipe_intake_sturbo", ["hatch_engine","hatch_intercooler","hatch_rad"]],
+        ["hatch_icpipe_turbo_sturbo", ["hatch_engine","hatch_intercooler","hatch_rad"]],
+        ["hatch_turbo_sturbo", ["hatch_engine"]],
+        ["hatch_stsupercharger", ["hatch_engine"]],
+        ["hatch_intercooler_sturbo", ["hatch_engine"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"hatch_intercooler"},
+         {"nodeWeight":7},
+         ["interc", 0.0, -1.81, 0.45],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":301000,"beamDamp":60},
+          {"beamDeform":3000,"beamStrength":6000},
+          ["interc","s4r"],
+          ["interc","s4"],
+          ["interc","s4l"],
+          ["interc","s5r"],
+          ["interc","s5"],
+          ["interc","s5l"],
+          ["interc","s6"],
+
+          ["interc","e2r"],
+          ["interc","e1r"],
+          ["interc","e3r"],
+          ["interc","e4r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+"hatch_turbo_stage2_blitz": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stage 2 Turbocharger",
+        "value":1300,
+    },
+
+    "slotType" : "hatch_blitz_turbo",
+
+    "turbocharger": {
+                "volumePer10kRPM":0.09
+                "wastegateStart":12,
+                "wastegateLimit":14,
+                "maxExhaustPower": 25000,
+                "backPressureCoef": 0.000035,
+                "frictionCoef": 150,
+                "inertia":2.0,
+                "damageThresholdTemperature": 610,
+                "pressurePSI":[
+                //turbineRPM, pressure(PSI)
+                [0,         -3.5],
+                [30000,     -0.5],
+                [60000,     5],
+                [90000,     8],
+                [150000,    11],
+                [200000,    14],
+                [250000,    17],
+                ],
+                "engineDef":[
+                    //engineRPM, efficiency, exhaustFactor
+                    [0,     0.0,    0.0],
+                    [650,   0.0,   0.0],
+                    [1400,  0.0,   0.0],
+                    [2000,  0.0,    0.0],
+                    [2500,  0.0,    0.0],
+                    [3000,  0.0,    0.0],
+                    [4000,  0.2,    0.1],
+                    [4300,  0.9,    0.8],
+                    [5000,  1.2,    0.9],
+                    [6000,  1.2,    1.0],
+                    [7000,  1.1,    1.0],
+                    [8000,  0.95,    1.0],
+
+                ],
+    },
+        
+    "mainEngine": {        
+        //turbocharger name
+        "turbocharger":"turbocharger",
+		"instantAfterFireCoef": 1,
+        "sustainedAfterFireCoef": 1,
+        
+    },
+    "vehicleController": {
+        "highShiftUpRPM":6800
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["hatch_icpipe_intake_sturbo", ["hatch_engine","hatch_intercooler","hatch_rad"]],
+        ["hatch_icpipe_turbo_sturbo", ["hatch_engine","hatch_intercooler","hatch_rad"]],
+        ["hatch_turbo_sturbo", ["hatch_engine"]],
+        ["hatch_stsupercharger", ["hatch_engine"]],
+        ["hatch_intercooler_sturbo", ["hatch_engine"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"hatch_intercooler"},
+         {"nodeWeight":7},
+         ["interc", 0.0, -1.81, 0.45],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":301000,"beamDamp":60},
+          {"beamDeform":3000,"beamStrength":6000},
+          ["interc","s4r"],
+          ["interc","s4"],
+          ["interc","s4l"],
+          ["interc","s5r"],
+          ["interc","s5"],
+          ["interc","s5l"],
+          ["interc","s6"],
+
+          ["interc","e2r"],
+          ["interc","e1r"],
+          ["interc","e3r"],
+          ["interc","e4r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+"hatch_intake_blitz": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Naturally Aspirated",
+        "value":100,
+    }
+    "slotType" : "hatch_blitz_turbo",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["hatch_airbox", ["hatch_engine","hatch_airbox"]],
+        ["hatch_header", ["hatch_engine"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"hatch_airbox"},
+         {"nodeWeight":1},
+         ["airb", 0.56, -1.52, 0.73],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":50600,"beamDamp":120},
+          {"beamDeform":2500,"beamStrength":"FLT_MAX"},
+          ["airb","e2r"],
+          ["airb","e4r"],
+          ["airb","e1l"],
+          ["airb","e2l"],
+          ["airb","e4l"],
+
+          {"beamDeform":2000,"beamStrength":10000},
+          ["airb","e1r"],
+          ["airb","e3r"],
+          ["airb","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+}

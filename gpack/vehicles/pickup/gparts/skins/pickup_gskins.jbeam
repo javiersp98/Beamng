@@ -1,0 +1,11 @@
+{
+"pickup_skin_tg": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Generic Tailgate Brand Decal",
+        "value":100,
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "tg",
+  },
+}

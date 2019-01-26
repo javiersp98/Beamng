@@ -1,0 +1,11 @@
+{
+"autobello_skin_rc": {
+    "information":{
+        "authors":"MilanKD",
+        "name":"RC",
+        "value":100,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "rc",
+}
+}

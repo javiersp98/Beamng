@@ -1,0 +1,310 @@
+{
+"van_gooseneck_towhitch": {
+	"information":{
+		"authors":"BeamNG, modded by AR162b",
+		"name":"Gooseneck",
+	}
+    "slotType" : "van_tractor_towhitch"
+
+	"slots": [
+		["type", "default", "description"]
+		["trailer_gooseneck","","Gooseneck Trailer", {"nodeOffset":{"x":0.0, "y":0.0, "z":0.0}}], 
+	],
+
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["van_gooseneck_towhitch", ["van_framerear","van_gooseneck_towhitch"], [], {"pos":{"x":0.0, "y":0.0, "z":0.0}}],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true}
+		 {"frictionCoef":0.7},
+		 {"selfCollision":true}
+		 //--TOW HITCH--
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"van_gooseneck_towhitch"}
+		 {"nodeWeight":4},
+		 {"nodeOffset":{"x":0,"y":0,"z":0}},
+		 ["gntw", 0.0, 3.0, 0.78,{"couplerTag":"gooseneck","couplerStrength":3001000,"couplerRadius":1}],
+         	 {"group":""},
+         	 {"selfCollision":false}
+         
+    ],
+	"beams": [
+		  ["id1:", "id2:"],
+        	  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--GOOSENECK TOW HITCH--
+		  {"beamSpring":1344840,"beamDamp":195},
+		  {"beamDeform":24000,"beamStrength":890000},
+		  ["gntw","fr16r"],
+		  ["gntw","fr16"],
+		  ["gntw","fr16l"],
+		  ["gntw","fr17r"],
+		  ["gntw","fr17"],
+		  ["gntw","fr17l"],
+		  ["gntw","fr18r"],
+		  ["gntw","fr18"],
+		  ["gntw","fr18l"],
+		  ["gntw","fr14r"],
+		  ["gntw","fr14"],
+		  ["gntw","fr14l"],
+		  //["gntw","cf12r"],
+		  //["gntw","cf12l"],
+		  //["gntw","cf13r"],
+		  //["gntw","cf13l"],
+		  //["gntw","cf2r"],
+		  //["gntw","cf2l"],
+	
+    ],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//towhitch
+			{"group":""},
+			
+	],
+}
+
+"van_fifthwheel": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Fifth Wheel",
+        "value":1250,
+    }
+    "slotType" : "van_tractor_towhitch",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["van_semi_fifthwheelbase", ["van_fifthwheelframe","semi_fifthwheelaxis"], [], {"pos":{"x":0, "y":0.30, "z":-0.10}}],
+         ["van_semi_fifthwheel", ["semi_fifthwheel","semi_fifthwheelaxis"], [], {"pos":{"x":0, "y":0.30, "z":-0.10}}],
+         ["van_fifthwheelframe", ["van_fifthwheelframe","van_frame"], [], {"pos":{"x":0, "y":0.0, "z":0.0}}],
+
+          ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true}
+         {"collision":true}
+         //--FIFTH WHEEL--
+         {"frictionCoef":0.0},
+         {"nodeMaterial":"|NM_METAL"},
+         {"group":"semi_fifthwheelaxis"},
+         {"nodeOffset":{"x":0,"y":0.30,"z":-0.10}},
+         {"nodeWeight":25},
+         //axis
+         ["ffthwa1rr",-0.41, 2.125, 1.025],
+         ["ffthwa1ll", 0.41, 2.125, 1.025],
+         {"nodeWeight":15.3},
+         {"group":"semi_fifthwheel"},
+         //kingpin axis
+         ["ffthwk1", 0.0, 2.12, 1.13{"couplerTag":"fifthwheel","couplerStrength":1001000,"couplerRadius":1}],
+         ["ffthwk2", 0.0, 2.12, 1.06],
+         //main structure
+         ["ffthw1r",-0.25, 1.75, 1.13],
+         ["ffthw1l", 0.25, 1.75, 1.13],
+         ["ffthw2r",-0.41, 2.225, 1.13],
+         ["ffthw2l", 0.41, 2.225, 1.13],
+         {"nodeWeight":30.6},
+         ["ffthw3r",-0.27, 2.53, 1.05],
+         ["ffthw3l", 0.27, 2.53, 1.05],
+         {"nodeWeight":12.24},
+         //lower
+         {"group":""},
+         {"nodeOffset":{"x":0,"y":0.0,"z":0}},
+
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"group":"van_fifthwheelframe"},
+         {"selfCollision":true}
+         {"collision":true}
+         {"nodeWeight":15},
+         //axis
+         ["ffthwfr1r",-0.41, 1.99, 0.79],
+         ["ffthwfr2r",-0.41, 2.53, 0.79],
+         ["ffthwfr3r",-0.41, 3.07, 0.79],
+         ["ffthwfr1l", 0.41, 1.99, 0.79],
+         ["ffthwfr2l", 0.41, 2.53, 0.79],
+         ["ffthwfr3l", 0.41, 3.07, 0.79],
+         {"selfCollision":false}
+         {"collision":false}
+    ],
+    "beams": [
+          ["id1:", "id2:", "options"],
+          //--FIFTH WHEEL--
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":14001000,"beamDamp":160},
+          {"beamDeform":2000000,"beamStrength":"FLT_MAX"},
+          //main shape perimeter
+          ["ffthw1r","ffthw1l"],
+          ["ffthw1r","ffthw2r"],
+          ["ffthw2r","ffthw3r"],
+          ["ffthw3r","ffthwk1"],
+          ["ffthw3l","ffthwk1"],
+          ["ffthw2l","ffthw3l"],
+          ["ffthw1l","ffthw2l"],
+
+          //vertical
+          ["ffthw2r","ffthwa1rr"],
+          ["ffthw2l","ffthwa1ll"],
+
+          //width
+          ["ffthw3r","ffthw3l"],
+
+          //surf cross
+          ["ffthw1r","ffthwa1rr"],
+          ["ffthw1l","ffthwa1ll"],
+          ["ffthwa1rr","ffthw3r"],
+          ["ffthwa1ll","ffthw3l"],
+
+          //attach to kingpin axis
+          ["ffthw1r","ffthwk1"],
+          ["ffthw2r","ffthwk1"],
+          ["ffthw3r","ffthwk1"],
+          ["ffthwa1rr","ffthwk1"],
+
+          ["ffthw1r","ffthwk2"],
+          ["ffthw2r","ffthwk2"],
+          ["ffthw3r","ffthwk2"],
+          ["ffthwa1rr","ffthwk2"],
+
+          ["ffthw1l","ffthwk1"],
+          ["ffthw2l","ffthwk1"],
+          ["ffthw3l","ffthwk1"],
+          ["ffthwa1ll","ffthwk1"],
+
+          ["ffthw1l","ffthwk2"],
+          ["ffthw2l","ffthwk2"],
+          ["ffthw3l","ffthwk2"],
+          ["ffthwa1ll","ffthwk2"],
+          ["ffthwk1","ffthwk2"],
+
+          {"beamSpring":6001000,"beamDamp":200},
+          //attach to frame
+          ["ffthwa1rr","ffthwfr1r"],
+          ["ffthwa1rr","ffthwfr2r"],
+          ["ffthwa1rr","ffthwfr3r"],
+          ["ffthwa1rr","ffthwfr1l"],
+          ["ffthwa1rr","ffthwfr2l"],
+          ["ffthwa1rr","ffthwfr3l"],
+          ["ffthwa1rr","fr18r"],
+          ["ffthwa1rr","fr17r"],
+          ["ffthwa1rr","fr16r"],
+          ["ffthwa1rr","fr17"],
+
+          ["ffthwa1ll","ffthwfr1l"],
+          ["ffthwa1ll","ffthwfr2l"],
+          ["ffthwa1ll","ffthwfr3l"],
+          ["ffthwa1ll","ffthwfr1r"],
+          ["ffthwa1ll","ffthwfr2r"],
+          ["ffthwa1ll","ffthwfr3r"],
+          ["ffthwa1ll","fr18l"],
+          ["ffthwa1ll","fr17l"],
+          ["ffthwa1ll","fr16l"],
+          ["ffthwa1ll","fr17"],
+
+          //damper
+          {"beamSpring":0,"beamDamp":500},
+          {"beamDeform":20000,"beamStrength":30000},
+          ["ffthw3l","fr19l"],
+          ["ffthw3r","fr19r"],
+
+          {"beamSpring":4001000,"beamDamp":200},
+          {"beamDeform":200000,"beamStrength":"FLT_MAX"},
+          //attach to frame
+          ["ffthwfr1r","fr13r"],
+          ["ffthwfr1r","fr14r"],
+          ["ffthwfr1r","fr16r"],
+          ["ffthwfr1r","fr17r"],
+          ["ffthwfr1r","fr13"],
+          ["ffthwfr1r","fr16"],
+
+          ["ffthwfr2r","fr13r"],
+          ["ffthwfr2r","fr14r"],
+          ["ffthwfr2r","fr15r"],
+          ["ffthwfr2r","fr17r"],
+          ["ffthwfr2r","fr18r"],
+          ["ffthwfr2r","fr14"],
+          ["ffthwfr2r","fr17"],
+
+          ["ffthwfr3r","fr14r"],
+          ["ffthwfr3r","fr15r"],
+          ["ffthwfr3r","fr17r"],
+          ["ffthwfr3r","fr18r"],
+          ["ffthwfr3r","fr15"],
+          ["ffthwfr3r","fr18"],
+
+          ["ffthwfr1l","fr13l"],
+          ["ffthwfr1l","fr14l"],
+          ["ffthwfr1l","fr16l"],
+          ["ffthwfr1l","fr17l"],
+          ["ffthwfr1l","fr13"],
+          ["ffthwfr1l","fr16"],
+
+          ["ffthwfr2l","fr13l"],
+          ["ffthwfr2l","fr14l"],
+          ["ffthwfr2l","fr15l"],
+          ["ffthwfr2l","fr17l"],
+          ["ffthwfr2l","fr18l"],
+          ["ffthwfr2l","fr14"],
+          ["ffthwfr2l","fr17"],
+
+          ["ffthwfr3l","fr14l"],
+          ["ffthwfr3l","fr15l"],
+          ["ffthwfr3l","fr17l"],
+          ["ffthwfr3l","fr18l"],
+          ["ffthwfr3l","fr15"],
+          ["ffthwfr3l","fr18"],
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"dragCoef":3},
+            {"group":"semi_fifthwheel"},
+            {"groundModel":"metal"}
+            ["ffthw1l","ffthw2l","ffthwk1"],
+            ["ffthw1l","ffthwk1","ffthw1r"],
+            ["ffthw1r","ffthwk1","ffthw2r"],
+            ["ffthw2l","ffthw3l","ffthwk1"],
+            ["ffthwk1","ffthw3l","ffthw3r"],
+            ["ffthwk1","ffthw3r","ffthw2r"],
+
+            //outer side
+            ["ffthw1l","ffthwa1ll","ffthw2l"],
+            ["ffthw2l","ffthwa1ll","ffthw3l"],
+
+            ["ffthw2r","ffthwa1rr","ffthw1r"],
+            ["ffthw3r","ffthwa1rr","ffthw2r"],
+
+            //["f7l","f8l","f8r"],
+            //["f7l","f8r","f7r"],
+
+            //["f8l","f9l","f9r"],
+            //["f8l","f9r","f8r"],
+
+            {"group":"fifthwheelframe"},
+            {"groundModel":"metal"}
+            ["ffthwfr1r","ffthwfr1l","ffthwfr2l"],
+            ["ffthwfr1r","ffthwfr2l","ffthwfr2r"],
+            ["ffthwfr2r","ffthwfr2l","ffthwfr3l"],
+            ["ffthwfr2r","ffthwfr3l","ffthwfr3r"],
+
+            ["fr16r","fr16","ffthwfr1r"],
+            ["fr16l","ffthwfr1l","fr16"],
+            ["ffthwfr1r","fr16","ffthwfr1l"],
+
+            ["fr18r","ffthwfr3r","fr18"],
+            ["fr18l","fr18","ffthwfr3l"],
+            ["ffthwfr3r","ffthwfr3l","fr18"],
+
+            ["fr16r","ffthwfr1r","ffthwfr2r"],
+            ["fr16r","ffthwfr2r","fr17r"],
+            ["fr17r","ffthwfr2r","ffthwfr3r"],
+            ["fr17r","ffthwfr3r","fr18r"],
+
+            ["fr16l","ffthwfr2l","ffthwfr1l"],
+            ["fr16l","fr17l","ffthwfr2l"],
+            ["fr17l","ffthwfr3l","ffthwfr2l"],
+            ["fr17l","fr18l","ffthwfr3l"],
+            {"group":""},
+    ],
+}
+}

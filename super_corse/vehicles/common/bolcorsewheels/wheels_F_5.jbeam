@@ -1,0 +1,762 @@
+
+{
+"wheelf40a_17x10_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Civetta Corse V40 17x10 Front Wheels (Silver)",
+        "value":1500,
+    }
+    "slotType" : "wheel_F_5",
+
+    "slots": [
+        ["type", "default", "description"]
+        ["tire_F_17x10","tire_F_265_40_17_race", "Front Tires"],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        //wheels
+        ["wheelf40a_17x9", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.50, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1.11, "y":1, "z":1}}],
+        ["wheelf40a_17x9", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x": 0.50, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.11, "y":1, "z":1}}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"collision":true},
+        {"selfCollision":true},
+        //front wheels
+        {"nodeWeight":5.0},
+        {"nodeMaterial":"|NM_METAL"},
+        {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+        {"frictionCoef":0.5},
+        {"group":"wheelhub_FR"},
+        ["fw1r", -0.33, 0.0, 0.0],
+        {"group":"wheelhub_FR"},
+        ["fw1rr", -0.60, 0.0, 0.0],
+        {"group":"wheelhub_FL"},
+        ["fw1l", 0.33, 0.0, 0.0],
+        {"group":"wheelhub_FL"},
+        ["fw1ll", 0.60, 0.0, 0.0],
+        {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"breakGroup":""},
+        {"beamDeform":78500,"beamStrength":434000},
+        {"beamSpring":801000,"beamDamp":6},
+        //front wheel
+        ["fw1r","fw1rr"],
+        ["fw1l","fw1ll"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        {"disableMeshBreaking":true,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+
+        //general settings
+        {"hubRadius":0.225},
+        {"wheelOffset":-0.035},
+        {"hubWidth":0.265},
+        {"numRays":16},
+
+        //hub options
+        {"hubTreadBeamSpring":1035900, "hubTreadBeamDamp":10},
+        {"hubPeripheryBeamSpring":1035900, "hubPeripheryBeamDamp":10},
+        {"hubSideBeamSpring":1601000, "hubSideBeamDamp":10},
+        {"hubNodeWeight":0.46},
+        {"hubNodeMaterial":"|NM_METAL"},
+        {"hubFrictionCoef":0.5},
+        {"hubBeamDeform":68600, "hubBeamStrength":76000},
+    ],
+    }
+    "wheelf40c_17x10_F": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Civetta Corse V40 17x10 Front Wheels (Black)",
+            "value":1500,
+        }
+        "slotType" : "wheel_F_5",
+
+        "slots": [
+            ["type", "default", "description"]
+            ["tire_F_17x10","tire_F_265_40_17_race", "Front Tires"],
+        ],
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            //wheels
+            ["wheelf40c_17x9", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.50, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1.11, "y":1, "z":1}}],
+            ["wheelf40c_17x9", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x": 0.50, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.11, "y":1, "z":1}}],
+        ],
+        "nodes": [
+            ["id", "posX", "posY", "posZ"],
+            {"collision":true},
+            {"selfCollision":true},
+            //front wheels
+            {"nodeWeight":5.0},
+            {"nodeMaterial":"|NM_METAL"},
+            {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+            {"frictionCoef":0.5},
+            {"group":"wheelhub_FR"},
+            ["fw1r", -0.33, 0.0, 0.0],
+            {"group":"wheelhub_FR"},
+            ["fw1rr", -0.60, 0.0, 0.0],
+            {"group":"wheelhub_FL"},
+            ["fw1l", 0.33, 0.0, 0.0],
+            {"group":"wheelhub_FL"},
+            ["fw1ll", 0.60, 0.0, 0.0],
+            {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+            {"group":""},
+        ],
+        "beams": [
+            ["id1:", "id2:"],
+            {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+            {"breakGroup":""},
+            {"beamDeform":78500,"beamStrength":434000},
+            {"beamSpring":801000,"beamDamp":6},
+            //front wheel
+            ["fw1r","fw1rr"],
+            ["fw1l","fw1ll"],
+            {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        ],
+        "pressureWheels": [
+            ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+            {"disableMeshBreaking":true,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+
+            //general settings
+            {"hubRadius":0.225},
+            {"wheelOffset":-0.035},
+            {"hubWidth":0.265},
+            {"numRays":16},
+
+            //hub options
+            {"hubTreadBeamSpring":1035900, "hubTreadBeamDamp":10},
+            {"hubPeripheryBeamSpring":1035900, "hubPeripheryBeamDamp":10},
+            {"hubSideBeamSpring":1601000, "hubSideBeamDamp":10},
+            {"hubNodeWeight":0.46},
+            {"hubNodeMaterial":"|NM_METAL"},
+            {"hubFrictionCoef":0.5},
+            {"hubBeamDeform":68600, "hubBeamStrength":76000},
+        ],
+        }
+        "wheelf40b_17x10_F": {
+            "information":{
+                "authors":"BeamNG",
+                "name":"Civetta Corse V40 17x10 Front Wheels (Gold)",
+                "value":1500,
+            }
+            "slotType" : "wheel_F_5",
+
+            "slots": [
+                ["type", "default", "description"]
+                ["tire_F_17x10","tire_F_265_40_17_race", "Front Tires"],
+            ],
+            "flexbodies": [
+                ["mesh", "[group]:", "nonFlexMaterials"],
+                //wheels
+                ["wheelf40b_17x9", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.50, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1.11, "y":1, "z":1}}],
+                ["wheelf40b_17x9", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x": 0.50, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.11, "y":1, "z":1}}],
+            ],
+            "nodes": [
+                ["id", "posX", "posY", "posZ"],
+                {"collision":true},
+                {"selfCollision":true},
+                //front wheels
+                {"nodeWeight":5.0},
+                {"nodeMaterial":"|NM_METAL"},
+                {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+                {"frictionCoef":0.5},
+                {"group":"wheelhub_FR"},
+                ["fw1r", -0.33, 0.0, 0.0],
+                {"group":"wheelhub_FR"},
+                ["fw1rr", -0.60, 0.0, 0.0],
+                {"group":"wheelhub_FL"},
+                ["fw1l", 0.33, 0.0, 0.0],
+                {"group":"wheelhub_FL"},
+                ["fw1ll", 0.60, 0.0, 0.0],
+                {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+                {"group":""},
+            ],
+            "beams": [
+                ["id1:", "id2:"],
+                {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                {"breakGroup":""},
+                {"beamDeform":78500,"beamStrength":434000},
+                {"beamSpring":801000,"beamDamp":6},
+                //front wheel
+                ["fw1r","fw1rr"],
+                ["fw1l","fw1ll"],
+                {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+            ],
+            "pressureWheels": [
+                ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+                {"disableMeshBreaking":true,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+
+                //general settings
+                {"hubRadius":0.225},
+                {"wheelOffset":-0.035},
+                {"hubWidth":0.265},
+                {"numRays":16},
+
+                //hub options
+                {"hubTreadBeamSpring":1035900, "hubTreadBeamDamp":10},
+                {"hubPeripheryBeamSpring":1035900, "hubPeripheryBeamDamp":10},
+                {"hubSideBeamSpring":1601000, "hubSideBeamDamp":10},
+                {"hubNodeWeight":0.46},
+                {"hubNodeMaterial":"|NM_METAL"},
+                {"hubFrictionCoef":0.5},
+                {"hubBeamDeform":68600, "hubBeamStrength":76000},
+            ],
+            }
+            "wheelf40c_17x10_F": {
+                "information":{
+                    "authors":"BeamNG",
+                    "name":"Civetta Corse V40 17x10 Front Wheels (Black)",
+                    "value":1500,
+                }
+                "slotType" : "wheel_F_5",
+
+                "slots": [
+                    ["type", "default", "description"]
+                    ["tire_F_17x10","tire_F_265_40_17_race", "Front Tires"],
+                ],
+                "flexbodies": [
+                    ["mesh", "[group]:", "nonFlexMaterials"],
+                    //wheels
+                    ["wheelf40c_17x9", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.50, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1.11, "y":1, "z":1}}],
+                    ["wheelf40c_17x9", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x": 0.50, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.11, "y":1, "z":1}}],
+                ],
+                "nodes": [
+                    ["id", "posX", "posY", "posZ"],
+                    {"collision":true},
+                    {"selfCollision":true},
+                    //front wheels
+                    {"nodeWeight":5.0},
+                    {"nodeMaterial":"|NM_METAL"},
+                    {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+                    {"frictionCoef":0.5},
+                    {"group":"wheelhub_FR"},
+                    ["fw1r", -0.33, 0.0, 0.0],
+                    {"group":"wheelhub_FR"},
+                    ["fw1rr", -0.60, 0.0, 0.0],
+                    {"group":"wheelhub_FL"},
+                    ["fw1l", 0.33, 0.0, 0.0],
+                    {"group":"wheelhub_FL"},
+                    ["fw1ll", 0.60, 0.0, 0.0],
+                    {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+                    {"group":""},
+                ],
+                "beams": [
+                    ["id1:", "id2:"],
+                    {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                    {"breakGroup":""},
+                    {"beamDeform":78500,"beamStrength":434000},
+                    {"beamSpring":801000,"beamDamp":6},
+                    //front wheel
+                    ["fw1r","fw1rr"],
+                    ["fw1l","fw1ll"],
+                    {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                ],
+                "pressureWheels": [
+                    ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+                    {"disableMeshBreaking":true,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+
+                    //general settings
+                    {"hubRadius":0.225},
+                    {"wheelOffset":-0.035},
+                    {"hubWidth":0.265},
+                    {"numRays":16},
+
+                    //hub options
+                    {"hubTreadBeamSpring":1035900, "hubTreadBeamDamp":10},
+                    {"hubPeripheryBeamSpring":1035900, "hubPeripheryBeamDamp":10},
+                    {"hubSideBeamSpring":1601000, "hubSideBeamDamp":10},
+                    {"hubNodeWeight":0.46},
+                    {"hubNodeMaterial":"|NM_METAL"},
+                    {"hubFrictionCoef":0.5},
+                    {"hubBeamDeform":68600, "hubBeamStrength":76000},
+                ],
+                }
+                "wheelf40d_17x10_F": {
+                    "information":{
+                        "authors":"BeamNG",
+                        "name":"Civetta Corse V40 17x10 Front Wheels (Full Black)",
+                        "value":1500,
+                    }
+                    "slotType" : "wheel_F_5",
+
+                    "slots": [
+                        ["type", "default", "description"]
+                        ["tire_F_17x10","tire_F_265_40_17_race", "Front Tires"],
+                    ],
+                    "flexbodies": [
+                        ["mesh", "[group]:", "nonFlexMaterials"],
+                        //wheels
+                        ["wheelf40d_17x9", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.50, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1.11, "y":1, "z":1}}],
+                        ["wheelf40d_17x9", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x": 0.50, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.11, "y":1, "z":1}}],
+                    ],
+                    "nodes": [
+                        ["id", "posX", "posY", "posZ"],
+                        {"collision":true},
+                        {"selfCollision":true},
+                        //front wheels
+                        {"nodeWeight":5.0},
+                        {"nodeMaterial":"|NM_METAL"},
+                        {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+                        {"frictionCoef":0.5},
+                        {"group":"wheelhub_FR"},
+                        ["fw1r", -0.33, 0.0, 0.0],
+                        {"group":"wheelhub_FR"},
+                        ["fw1rr", -0.60, 0.0, 0.0],
+                        {"group":"wheelhub_FL"},
+                        ["fw1l", 0.33, 0.0, 0.0],
+                        {"group":"wheelhub_FL"},
+                        ["fw1ll", 0.60, 0.0, 0.0],
+                        {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+                        {"group":""},
+                    ],
+                    "beams": [
+                        ["id1:", "id2:"],
+                        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                        {"breakGroup":""},
+                        {"beamDeform":78500,"beamStrength":434000},
+                        {"beamSpring":801000,"beamDamp":6},
+                        //front wheel
+                        ["fw1r","fw1rr"],
+                        ["fw1l","fw1ll"],
+                        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                    ],
+                    "pressureWheels": [
+                        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+                        {"disableMeshBreaking":true,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+
+                        //general settings
+                        {"hubRadius":0.225},
+                        {"wheelOffset":-0.035},
+                        {"hubWidth":0.265},
+                        {"numRays":16},
+
+                        //hub options
+                        {"hubTreadBeamSpring":1035900, "hubTreadBeamDamp":10},
+                        {"hubPeripheryBeamSpring":1035900, "hubPeripheryBeamDamp":10},
+                        {"hubSideBeamSpring":1601000, "hubSideBeamDamp":10},
+                        {"hubNodeWeight":0.46},
+                        {"hubNodeMaterial":"|NM_METAL"},
+                        {"hubFrictionCoef":0.5},
+                        {"hubBeamDeform":68600, "hubBeamStrength":76000},
+                    ],
+                    }
+                    "wheelf40lma_18x9_F": {
+                        "information":{
+                            "authors":"BeamNG",
+                            "name":"Dreid LM-X 18x9 Front Wheels (Silver)",
+                            "value":2500,
+                        }
+                        "slotType" : "wheel_F_5",
+
+                        "slots": [
+                            ["type", "default", "description"]
+                            ["tire_F_18x9","tire_F_225_45_18_sport", "Front Tires"],
+                        ],
+                        "flexbodies": [
+                            ["mesh", "[group]:", "nonFlexMaterials"],
+                            //alloy wheels
+                            ["wheelf40lma_18x9", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.51, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+                            ["wheelf40lma_18x9", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x": 0.51, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+                        ],
+                        "nodes": [
+                            ["id", "posX", "posY", "posZ"],
+                            {"collision":true},
+                            {"selfCollision":true},
+                            //front wheels
+                            {"nodeWeight":5.0},
+                            {"nodeMaterial":"|NM_METAL"},
+                            {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+                            {"frictionCoef":0.5},
+                            {"group":"wheelhub_FR"},
+                            ["fw1r", -0.33, 0.0, 0.0],
+                            {"group":"wheelhub_FR"},
+                            ["fw1rr", -0.60, 0.0, 0.0],
+                            {"group":"wheelhub_FL"},
+                            ["fw1l", 0.33, 0.0, 0.0],
+                            {"group":"wheelhub_FL"},
+                            ["fw1ll", 0.60, 0.0, 0.0],
+                            {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+                            {"group":""},
+                        ],
+                        "beams": [
+                            ["id1:", "id2:"],
+                            {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                            {"breakGroup":""},
+                            {"beamDeform":78500,"beamStrength":434000},
+                            {"beamSpring":801000,"beamDamp":6},
+                            //front wheel
+                            ["fw1r","fw1rr"],
+                            ["fw1l","fw1ll"],
+                            {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                        ],
+                        "pressureWheels": [
+                            ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+                            {"disableMeshBreaking":false,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+
+                            //general settings
+                            {"hubRadius":0.240},
+                            {"wheelOffset":-0.045},
+                            {"hubWidth":0.255},
+                            {"numRays":16},
+
+                            //hub options
+                            {"hubTreadBeamSpring":1035900, "hubTreadBeamDamp":10},
+                            {"hubPeripheryBeamSpring":1035900, "hubPeripheryBeamDamp":10},
+                            {"hubSideBeamSpring":1651000, "hubSideBeamDamp":10},
+                            {"hubNodeWeight":0.47},
+                            {"hubNodeMaterial":"|NM_METAL"},
+                            {"hubFrictionCoef":0.5},
+                            {"hubBeamDeform":68600, "hubBeamStrength":76000},
+                        ],
+                        }
+                        "wheelf40lmb_18x9_F": {
+                            "information":{
+                                "authors":"BeamNG",
+                                "name":"Dreid LM-X 18x9 Front Wheels (White)",
+                                "value":2500,
+                            }
+                            "slotType" : "wheel_F_5",
+
+                            "slots": [
+                                ["type", "default", "description"]
+                                ["tire_F_18x9","tire_F_225_45_18_sport", "Front Tires"],
+                            ],
+                            "flexbodies": [
+                                ["mesh", "[group]:", "nonFlexMaterials"],
+                                //alloy wheels
+                                ["wheelf40lmb_18x9", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.51, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+                                ["wheelf40lmb_18x9", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x": 0.51, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+                            ],
+                            "nodes": [
+                                ["id", "posX", "posY", "posZ"],
+                                {"collision":true},
+                                {"selfCollision":true},
+                                //front wheels
+                                {"nodeWeight":5.0},
+                                {"nodeMaterial":"|NM_METAL"},
+                                {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+                                {"frictionCoef":0.5},
+                                {"group":"wheelhub_FR"},
+                                ["fw1r", -0.33, 0.0, 0.0],
+                                {"group":"wheelhub_FR"},
+                                ["fw1rr", -0.60, 0.0, 0.0],
+                                {"group":"wheelhub_FL"},
+                                ["fw1l", 0.33, 0.0, 0.0],
+                                {"group":"wheelhub_FL"},
+                                ["fw1ll", 0.60, 0.0, 0.0],
+                                {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+                                {"group":""},
+                            ],
+                            "beams": [
+                                ["id1:", "id2:"],
+                                {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                                {"breakGroup":""},
+                                {"beamDeform":78500,"beamStrength":434000},
+                                {"beamSpring":801000,"beamDamp":6},
+                                //front wheel
+                                ["fw1r","fw1rr"],
+                                ["fw1l","fw1ll"],
+                                {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                            ],
+                            "pressureWheels": [
+                                ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+                                {"disableMeshBreaking":false,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+
+                                //general settings
+                                {"hubRadius":0.240},
+                                {"wheelOffset":-0.045},
+                                {"hubWidth":0.255},
+                                {"numRays":16},
+
+                                //hub options
+                                {"hubTreadBeamSpring":1035900, "hubTreadBeamDamp":10},
+                                {"hubPeripheryBeamSpring":1035900, "hubPeripheryBeamDamp":10},
+                                {"hubSideBeamSpring":1651000, "hubSideBeamDamp":10},
+                                {"hubNodeWeight":0.47},
+                                {"hubNodeMaterial":"|NM_METAL"},
+                                {"hubFrictionCoef":0.5},
+                                {"hubBeamDeform":68600, "hubBeamStrength":76000},
+                            ],
+                            }
+                            "wheelf40lmc_18x9_F": {
+                                "information":{
+                                    "authors":"BeamNG",
+                                    "name":"Dreid LM-X 18x9 Front Wheels (Black)",
+                                    "value":2500,
+                                }
+                                "slotType" : "wheel_F_5",
+
+                                "slots": [
+                                    ["type", "default", "description"]
+                                    ["tire_F_18x9","tire_F_225_45_18_sport", "Front Tires"],
+                                ],
+                                "flexbodies": [
+                                    ["mesh", "[group]:", "nonFlexMaterials"],
+                                    //alloy wheels
+                                    ["wheelf40lmc_18x9", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.51, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+                                    ["wheelf40lmc_18x9", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x": 0.51, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+                                ],
+                                "nodes": [
+                                    ["id", "posX", "posY", "posZ"],
+                                    {"collision":true},
+                                    {"selfCollision":true},
+                                    //front wheels
+                                    {"nodeWeight":5.0},
+                                    {"nodeMaterial":"|NM_METAL"},
+                                    {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+                                    {"frictionCoef":0.5},
+                                    {"group":"wheelhub_FR"},
+                                    ["fw1r", -0.33, 0.0, 0.0],
+                                    {"group":"wheelhub_FR"},
+                                    ["fw1rr", -0.60, 0.0, 0.0],
+                                    {"group":"wheelhub_FL"},
+                                    ["fw1l", 0.33, 0.0, 0.0],
+                                    {"group":"wheelhub_FL"},
+                                    ["fw1ll", 0.60, 0.0, 0.0],
+                                    {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+                                    {"group":""},
+                                ],
+                                "beams": [
+                                    ["id1:", "id2:"],
+                                    {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                                    {"breakGroup":""},
+                                    {"beamDeform":78500,"beamStrength":434000},
+                                    {"beamSpring":801000,"beamDamp":6},
+                                    //front wheel
+                                    ["fw1r","fw1rr"],
+                                    ["fw1l","fw1ll"],
+                                    {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                                ],
+                                "pressureWheels": [
+                                    ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+                                    {"disableMeshBreaking":false,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+
+                                    //general settings
+                                    {"hubRadius":0.240},
+                                    {"wheelOffset":-0.045},
+                                    {"hubWidth":0.255},
+                                    {"numRays":16},
+
+                                    //hub options
+                                    {"hubTreadBeamSpring":1035900, "hubTreadBeamDamp":10},
+                                    {"hubPeripheryBeamSpring":1035900, "hubPeripheryBeamDamp":10},
+                                    {"hubSideBeamSpring":1651000, "hubSideBeamDamp":10},
+                                    {"hubNodeWeight":0.47},
+                                    {"hubNodeMaterial":"|NM_METAL"},
+                                    {"hubFrictionCoef":0.5},
+                                    {"hubBeamDeform":68600, "hubBeamStrength":76000},
+                                ],
+                                }
+                                "wheelf40lma_17x10_F": {
+                                    "information":{
+                                        "authors":"BeamNG",
+                                        "name":"Dreid LM-X 17x10 Front Wheels (Silver)",
+                                        "value":2650,
+                                    }
+                                    "slotType" : "wheel_F_5",
+
+                                    "slots": [
+                                        ["type", "default", "description"]
+                                        ["tire_F_17x10","tire_F_265_40_17_race", "Front Tires"],
+                                    ],
+                                    "flexbodies": [
+                                        ["mesh", "[group]:", "nonFlexMaterials"],
+                                        //wheels
+                                        ["wheelf40lma_17x9", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.50, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1.11, "y":1, "z":1}}],
+                                        ["wheelf40lma_17x9", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x": 0.50, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.11, "y":1, "z":1}}],
+                                    ],
+                                    "nodes": [
+                                        ["id", "posX", "posY", "posZ"],
+                                        {"collision":true},
+                                        {"selfCollision":true},
+                                        //front wheels
+                                        {"nodeWeight":5.0},
+                                        {"nodeMaterial":"|NM_METAL"},
+                                        {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+                                        {"frictionCoef":0.5},
+                                        {"group":"wheelhub_FR"},
+                                        ["fw1r", -0.33, 0.0, 0.0],
+                                        {"group":"wheelhub_FR"},
+                                        ["fw1rr", -0.60, 0.0, 0.0],
+                                        {"group":"wheelhub_FL"},
+                                        ["fw1l", 0.33, 0.0, 0.0],
+                                        {"group":"wheelhub_FL"},
+                                        ["fw1ll", 0.60, 0.0, 0.0],
+                                        {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+                                        {"group":""},
+                                    ],
+                                    "beams": [
+                                        ["id1:", "id2:"],
+                                        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                                        {"breakGroup":""},
+                                        {"beamDeform":78500,"beamStrength":434000},
+                                        {"beamSpring":801000,"beamDamp":6},
+                                        //front wheel
+                                        ["fw1r","fw1rr"],
+                                        ["fw1l","fw1ll"],
+                                        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                                    ],
+                                    "pressureWheels": [
+                                        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+                                        {"disableMeshBreaking":true,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+
+                                        //general settings
+                                        {"hubRadius":0.225},
+                                        {"wheelOffset":-0.035},
+                                        {"hubWidth":0.265},
+                                        {"numRays":16},
+
+                                        //hub options
+                                        {"hubTreadBeamSpring":1035900, "hubTreadBeamDamp":10},
+                                        {"hubPeripheryBeamSpring":1035900, "hubPeripheryBeamDamp":10},
+                                        {"hubSideBeamSpring":1601000, "hubSideBeamDamp":10},
+                                        {"hubNodeWeight":0.46},
+                                        {"hubNodeMaterial":"|NM_METAL"},
+                                        {"hubFrictionCoef":0.5},
+                                        {"hubBeamDeform":68600, "hubBeamStrength":76000},
+                                    ],
+                                    }
+                                    "wheelf40lmb_17x10_F": {
+                                        "information":{
+                                            "authors":"BeamNG",
+                                            "name":"Dreid LM-X 17x10 Front Wheels (White)",
+                                            "value":2650,
+                                        }
+                                        "slotType" : "wheel_F_5",
+
+                                        "slots": [
+                                            ["type", "default", "description"]
+                                            ["tire_F_17x10","tire_F_265_40_17_race", "Front Tires"],
+                                        ],
+                                        "flexbodies": [
+                                            ["mesh", "[group]:", "nonFlexMaterials"],
+                                            //wheels
+                                            ["wheelf40lmb_17x9", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.50, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1.11, "y":1, "z":1}}],
+                                            ["wheelf40lmb_17x9", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x": 0.50, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.11, "y":1, "z":1}}],
+                                        ],
+                                        "nodes": [
+                                            ["id", "posX", "posY", "posZ"],
+                                            {"collision":true},
+                                            {"selfCollision":true},
+                                            //front wheels
+                                            {"nodeWeight":5.0},
+                                            {"nodeMaterial":"|NM_METAL"},
+                                            {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+                                            {"frictionCoef":0.5},
+                                            {"group":"wheelhub_FR"},
+                                            ["fw1r", -0.33, 0.0, 0.0],
+                                            {"group":"wheelhub_FR"},
+                                            ["fw1rr", -0.60, 0.0, 0.0],
+                                            {"group":"wheelhub_FL"},
+                                            ["fw1l", 0.33, 0.0, 0.0],
+                                            {"group":"wheelhub_FL"},
+                                            ["fw1ll", 0.60, 0.0, 0.0],
+                                            {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+                                            {"group":""},
+                                        ],
+                                        "beams": [
+                                            ["id1:", "id2:"],
+                                            {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                                            {"breakGroup":""},
+                                            {"beamDeform":78500,"beamStrength":434000},
+                                            {"beamSpring":801000,"beamDamp":6},
+                                            //front wheel
+                                            ["fw1r","fw1rr"],
+                                            ["fw1l","fw1ll"],
+                                            {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                                        ],
+                                        "pressureWheels": [
+                                            ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+                                            {"disableMeshBreaking":true,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+
+                                            //general settings
+                                            {"hubRadius":0.225},
+                                            {"wheelOffset":-0.035},
+                                            {"hubWidth":0.265},
+                                            {"numRays":16},
+
+                                            //hub options
+                                            {"hubTreadBeamSpring":1035900, "hubTreadBeamDamp":10},
+                                            {"hubPeripheryBeamSpring":1035900, "hubPeripheryBeamDamp":10},
+                                            {"hubSideBeamSpring":1601000, "hubSideBeamDamp":10},
+                                            {"hubNodeWeight":0.46},
+                                            {"hubNodeMaterial":"|NM_METAL"},
+                                            {"hubFrictionCoef":0.5},
+                                            {"hubBeamDeform":68600, "hubBeamStrength":76000},
+                                        ],
+                                        }
+                                        "wheelf40lmc_17x10_F": {
+                                            "information":{
+                                                "authors":"BeamNG",
+                                                "name":"Dreid LM-X 17x10 Front Wheels (Black)",
+                                                "value":2650,
+                                            }
+                                            "slotType" : "wheel_F_5",
+
+                                            "slots": [
+                                                ["type", "default", "description"]
+                                                ["tire_F_17x10","tire_F_265_40_17_race", "Front Tires"],
+                                            ],
+                                            "flexbodies": [
+                                                ["mesh", "[group]:", "nonFlexMaterials"],
+                                                //wheels
+                                                ["wheelf40lmc_17x9", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.50, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1.11, "y":1, "z":1}}],
+                                                ["wheelf40lmc_17x9", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x": 0.50, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.11, "y":1, "z":1}}],
+                                            ],
+                                            "nodes": [
+                                                ["id", "posX", "posY", "posZ"],
+                                                {"collision":true},
+                                                {"selfCollision":true},
+                                                //front wheels
+                                                {"nodeWeight":5.0},
+                                                {"nodeMaterial":"|NM_METAL"},
+                                                {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+                                                {"frictionCoef":0.5},
+                                                {"group":"wheelhub_FR"},
+                                                ["fw1r", -0.33, 0.0, 0.0],
+                                                {"group":"wheelhub_FR"},
+                                                ["fw1rr", -0.60, 0.0, 0.0],
+                                                {"group":"wheelhub_FL"},
+                                                ["fw1l", 0.33, 0.0, 0.0],
+                                                {"group":"wheelhub_FL"},
+                                                ["fw1ll", 0.60, 0.0, 0.0],
+                                                {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+                                                {"group":""},
+                                            ],
+                                            "beams": [
+                                                ["id1:", "id2:"],
+                                                {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                                                {"breakGroup":""},
+                                                {"beamDeform":78500,"beamStrength":434000},
+                                                {"beamSpring":801000,"beamDamp":6},
+                                                //front wheel
+                                                ["fw1r","fw1rr"],
+                                                ["fw1l","fw1ll"],
+                                                {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                                            ],
+                                            "pressureWheels": [
+                                                ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+                                                {"disableMeshBreaking":true,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+
+                                                //general settings
+                                                {"hubRadius":0.225},
+                                                {"wheelOffset":-0.035},
+                                                {"hubWidth":0.265},
+                                                {"numRays":16},
+
+                                                //hub options
+                                                {"hubTreadBeamSpring":1035900, "hubTreadBeamDamp":10},
+                                                {"hubPeripheryBeamSpring":1035900, "hubPeripheryBeamDamp":10},
+                                                {"hubSideBeamSpring":1601000, "hubSideBeamDamp":10},
+                                                {"hubNodeWeight":0.46},
+                                                {"hubNodeMaterial":"|NM_METAL"},
+                                                {"hubFrictionCoef":0.5},
+                                                {"hubBeamDeform":68600, "hubBeamStrength":76000},
+                                            ],
+}
+}

@@ -1,0 +1,11 @@
+{
+"hopper_skin_sapphicon": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Sapphicon",
+        "value":50,
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "sapphicon",
+  },
+}

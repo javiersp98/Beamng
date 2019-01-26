@@ -1,0 +1,17 @@
+{
+"pickup_lettering_rodeo": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rodeo Lettering",
+        "value":11,
+    }
+    "slotType" : "pickup_lettering",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pickup_lettering_gavril", ["pickup_tailgate"], [],{"pos":{"x":0,"y":0,"z":0}}],
+         ["pickup_lettering_v8", ["pickup_tailgate"], [],{"pos":{"x":0,"y":0,"z":0}}],
+         ["pickup_lettering_4wd", ["pickup_tailgate"], [],{"pos":{"x":0,"y":0,"z":0}}],
+         ["rodeo_badge_tailgate", ["pickup_tailgate"], [],{"pos":{"x":0,"y":0,"z":0}}],
+    ],
+}
+}

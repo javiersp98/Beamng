@@ -1,0 +1,14 @@
+{
+"citybus_licenseplateEU_R_AEP": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear EU License Plate AEP",
+        "value":0,
+    }
+    "slotType" : "citybus_licenseplate_R",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate-52-11", ["citybus_enginedoor"],[],{"pos":{"x":0.0, "y":6.280, "z":0.908}, "rot":{"x":5, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+}
+}

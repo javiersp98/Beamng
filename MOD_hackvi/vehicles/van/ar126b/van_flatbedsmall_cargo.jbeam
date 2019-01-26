@@ -1,0 +1,1772 @@
+{
+"van_flatbedsmall_sparewheels": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Off-Road Sparewheels",
+	}
+    "slotType" : "van_flatbedsmall_options",
+
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["offroadwheel_02a_17x9", ["van_flatbedsmall_sparewheel_R"], [], {"pos":{"x":-0.45, "y":0.28, "z":1.45}, "rot":{"x":0, "y":0, "z":270}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["offroadtire_01a_17x9_35", ["van_flatbedsmall_sparewheel_R"], [], {"pos":{"x":-0.45, "y":0.28, "z":1.45}, "rot":{"x":0, "y":0, "z":270}, "scale":{"x":1, "y":1, "z":1}}],
+
+		 ["offroadwheel_02a_17x9", ["van_flatbedsmall_sparewheel_L"], [], {"pos":{"x": 0.45, "y":0.28, "z":1.45}, "rot":{"x":0, "y":0, "z":270}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["offroadtire_01a_17x9_35", ["van_flatbedsmall_sparewheel_L"], [], {"pos":{"x": 0.45, "y":0.28, "z":1.45}, "rot":{"x":0, "y":0, "z":270}, "scale":{"x":1, "y":1, "z":1}}],
+
+		 ["van_flatbedsmall_tireholder", ["van_flatbedsmall_tireholder", "van_flatbedsmall"], [], {"pos":{"x": 0.0, "y":0.0, "z":0.0}}],
+		 ["van_flatbedsmall_tirenuts", ["van_flatbedsmall_tireholder"], [], {"pos":{"x": 0.0, "y":0.0, "z":0.0}}],
+
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"nodeWeight":2.5},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_RUBBER"},
+		 {"group":"van_flatbedsmall_sparewheel_R"},
+
+		 ["spwhlr01f",-0.45, 0.16, 1.89],
+		 ["spwhlr01r",-0.45, 0.40, 1.89],
+		 ["spwhlr02f",-0.02, 0.16, 1.45],
+		 ["spwhlr02r",-0.02, 0.40, 1.45],
+		 ["spwhlr03f",-0.45, 0.16, 1.03],
+		 ["spwhlr03r",-0.45, 0.40, 1.03],
+		 ["spwhlr04f",-0.89, 0.16, 1.45],
+		 ["spwhlr04r",-0.89, 0.40, 1.45],
+
+		 {"group":"van_flatbedsmall_sparewheel_L"},
+		 ["spwhll01f", 0.45, 0.16, 1.89],
+		 ["spwhll01r", 0.45, 0.40, 1.89],
+		 ["spwhll02f", 0.02, 0.16, 1.45],
+		 ["spwhll02r", 0.02, 0.40, 1.45],
+		 ["spwhll03f", 0.45, 0.16, 1.03],
+		 ["spwhll03r", 0.45, 0.40, 1.03],
+		 ["spwhll04f", 0.89, 0.16, 1.45],
+		 ["spwhll04r", 0.89, 0.40, 1.45],
+
+		 {"nodeWeight":1.5},
+		 {"frictionCoef":0.5},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"van_flatbedsmall_tireholder"},
+		 ["spwhl05",0.00, 0.12, 1.35],
+		 ["spwhl06",0.00, 0.40, 1.35],
+
+		 {"selfCollision":false}
+		 ["spwhl05r",-0.36, 0.12, 1.0],
+		 ["spwhl06r",-0.36, 0.40, 1.0],
+		 ["spwhl05l", 0.36, 0.12, 1.0],
+		 ["spwhl06l", 0.36, 0.40, 1.0],
+
+		 ["spwhl07r",-0.45, 0.14, 1.44],
+		 ["spwhl07l", 0.45, 0.14, 1.44],
+
+
+		 {"group":""},
+
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":42000,"beamDamp":52},
+		  {"beamDeform":90000,"beamStrength":"FLT_MAX"},
+
+		  //wheel r
+		  ["spwhlr01f","spwhlr01r"],
+		  ["spwhlr02f","spwhlr02r"],
+		  ["spwhlr03f","spwhlr03r"],
+		  ["spwhlr04f","spwhlr04r"],
+
+		  ["spwhlr01f","spwhlr02f"],
+		  ["spwhlr02f","spwhlr03f"],
+		  ["spwhlr03f","spwhlr04f"],
+		  ["spwhlr04f","spwhlr01f"],
+
+		  ["spwhlr01f","spwhlr03f"],
+		  ["spwhlr02f","spwhlr04f"],
+
+		  ["spwhlr01r","spwhlr02r"],
+		  ["spwhlr02r","spwhlr03r"],
+		  ["spwhlr03r","spwhlr04r"],
+		  ["spwhlr04r","spwhlr01r"],
+
+		  ["spwhlr01r","spwhlr03r"],
+		  ["spwhlr02r","spwhlr04r"],
+
+		  ["spwhlr01r","spwhlr02f"],
+		  ["spwhlr02r","spwhlr03f"],
+		  ["spwhlr03r","spwhlr04f"],
+		  ["spwhlr04r","spwhlr01f"],
+
+		  ["spwhlr01r","spwhlr03f"],
+		  ["spwhlr02r","spwhlr04f"],
+
+		  ["spwhlr01f","spwhlr03r"],
+		  ["spwhlr02f","spwhlr04r"],
+
+		  //wheel l
+		  ["spwhll01f","spwhll01r"],
+		  ["spwhll02f","spwhll02r"],
+		  ["spwhll03f","spwhll03r"],
+		  ["spwhll04f","spwhll04r"],
+
+		  ["spwhll01f","spwhll02f"],
+		  ["spwhll02f","spwhll03f"],
+		  ["spwhll03f","spwhll04f"],
+		  ["spwhll04f","spwhll01f"],
+
+		  ["spwhll01f","spwhll03f"],
+		  ["spwhll02f","spwhll04f"],
+
+		  ["spwhll01r","spwhll02r"],
+		  ["spwhll02r","spwhll03r"],
+		  ["spwhll03r","spwhll04r"],
+		  ["spwhll04r","spwhll01r"],
+
+		  ["spwhll01r","spwhll03r"],
+		  ["spwhll02r","spwhll04r"],
+
+		  ["spwhll01r","spwhll02f"],
+		  ["spwhll02r","spwhll03f"],
+		  ["spwhll03r","spwhll04f"],
+		  ["spwhll04r","spwhll01f"],
+
+		  ["spwhll01r","spwhll03f"],
+		  ["spwhll02r","spwhll04f"],
+
+		  ["spwhll01f","spwhll03r"],
+		  ["spwhll02f","spwhll04r"],
+
+		  {"beamSpring":900000,"beamDamp":130},
+		  {"beamDeform":90000,"beamStrength":"FLT_MAX"},
+
+		  //wheelholder
+
+		  ["spwhl05","spwhl05r"],
+		  ["spwhl05","spwhl05l"],
+		  ["spwhl05r","spwhl05l"],
+		  ["spwhl06","spwhl06r"],
+		  ["spwhl06","spwhl06l"],
+		  ["spwhl06r","spwhl06l"],
+
+		  ["spwhl05","spwhl06"],
+		  ["spwhl05","spwhl06r"],
+		  ["spwhl05","spwhl06l"],
+
+		  ["spwhl05","spwhl06l"],
+		  ["spwhl05l","spwhl06"],
+		  ["spwhl05","spwhl06r"],
+		  ["spwhl05r","spwhl06"],
+		  ["spwhl05r","spwhl06l"],
+		  ["spwhl05l","spwhl06r"],
+
+
+
+
+		  ["spwhl05","vsfb01r"],
+		  ["spwhl05","vsfb01l"],
+		  ["spwhl06","vsfb01r"],
+		  ["spwhl06","vsfb01l"],
+
+		  ["spwhl05r","vsfb01r"],
+		  ["spwhl05r","vsfb01l"],
+		  ["spwhl06r","vsfb01r"],
+		  ["spwhl06r","vsfb01l"],
+
+		  ["spwhl05l","vsfb01r"],
+		  ["spwhl05l","vsfb01l"],
+		  ["spwhl06l","vsfb01r"],
+		  ["spwhl06l","vsfb01l"],
+
+		  ["spwhl05","vsfb02r"],
+		  ["spwhl05","vsfb02l"],
+		  ["spwhl06","vsfb02r"],
+		  ["spwhl06","vsfb02l"],
+
+		  ["spwhl06r","vsfb02r"],
+		  ["spwhl06l","vsfb02l"],
+
+		  {"beamSpring":750000,"beamDamp":80},
+		  {"beamDeform":35000,"beamStrength":"FLT_MAX"},
+		  ["spwhl05","spwhl07r"],
+		  ["spwhl05r","spwhl07r"],
+		  ["spwhl05","spwhl07l"],
+		  ["spwhl05l","spwhl07l"],
+
+		  {"beamSpring":350000,"beamDamp":50},
+		  {"beamDeform":20000,"beamStrength":"FLT_MAX"},
+		  ["spwhl06","spwhl07r"],
+		  ["spwhl06r","spwhl07r"],
+		  ["spwhl06","spwhl07l"],
+		  ["spwhl06l","spwhl07l"],
+
+		  {"breakGroupType":1},
+		  {"beamSpring":400000,"beamDamp":80},
+		  {"beamDeform":40000,"beamStrength":"FLT_MAX"},
+		  //extra attached to frame
+		  {"breakGroup":"van_flatbedsmall_FR"},
+		  ["spwhl06r","fr9r"],
+		  ["spwhl06r","fr10r"],
+		  ["spwhl06r","fr9"],
+		  ["spwhl06r","fr10"],
+		  ["spwhl05r","fr9r"],
+		  ["spwhl05r","fr10r"],
+		  ["spwhl05r","fr9"],
+		  ["spwhl05r","fr10"],
+
+		  {"breakGroup":"van_flatbedsmall_FL"},
+		  ["spwhl06l","fr9l"],
+		  ["spwhl06l","fr10l"],
+		  ["spwhl06l","fr9"],
+		  ["spwhl06l","fr10"],
+		  ["spwhl05l","fr9l"],
+		  ["spwhl05l","fr10l"],
+		  ["spwhl05l","fr9"],
+		  ["spwhl05l","fr10"],
+		  {"breakGroup":""},
+		  {"breakGroupType":0},
+
+
+		  //attachment
+		  {"breakGroup":"van_flatbedsmall_tire_R"},
+
+		  {"beamSpring":125000,"beamDamp":30},
+		  {"beamDeform":5500,"beamStrength":10000},
+
+		  ["spwhlr02f","spwhl05"],
+		  ["spwhlr02r","spwhl06"],
+		  ["spwhlr03f","spwhl05r"],
+		  ["spwhlr03r","spwhl06r"],
+
+		  ["spwhlr02f","spwhl06"],
+		  ["spwhlr02r","spwhl05"],
+		  ["spwhlr03f","spwhl06r"],
+		  ["spwhlr03r","spwhl05r"],
+
+		  ["spwhlr02f","spwhl06r"],
+		  ["spwhlr02r","spwhl05r"],
+		  ["spwhlr03f","spwhl06"],
+		  ["spwhlr03r","spwhl05"],
+
+		  {"breakGroup":"van_flatbedsmall_tire_L"},
+
+		  ["spwhll02f","spwhl05"],
+		  ["spwhll02r","spwhl06"],
+		  ["spwhll03f","spwhl05l"],
+		  ["spwhll03r","spwhl06l"],
+
+		  ["spwhll02f","spwhl06"],
+		  ["spwhll02r","spwhl05"],
+		  ["spwhll03f","spwhl06l"],
+		  ["spwhll03r","spwhl05l"],
+
+		  ["spwhll02f","spwhl06l"],
+		  ["spwhll02r","spwhl05l"],
+		  ["spwhll03f","spwhl06"],
+		  ["spwhll03r","spwhl05"],
+
+		  {"beamSpring":400000,"beamDamp":100},
+		  {"beamDeform":13500,"beamStrength":10000},
+
+		  {"breakGroup":"van_flatbedsmall_tire_R"},
+		  ["spwhlr01r","spwhl07r"],
+		  ["spwhlr02r","spwhl07r"],
+		  ["spwhlr03r","spwhl07r"],
+		  ["spwhlr04r","spwhl07r"],
+		  ["spwhlr01f","spwhl07r"],
+		  ["spwhlr02f","spwhl07r"],
+		  ["spwhlr03f","spwhl07r"],
+		  ["spwhlr04f","spwhl07r"],
+
+		  {"breakGroup":"van_flatbedsmall_tire_L"},
+		  ["spwhll01r","spwhl07l"],
+		  ["spwhll02r","spwhl07l"],
+		  ["spwhll03r","spwhl07l"],
+		  ["spwhll04r","spwhl07l"],
+		  ["spwhll01f","spwhl07l"],
+		  ["spwhll02f","spwhl07l"],
+		  ["spwhll03f","spwhl07l"],
+		  ["spwhll04f","spwhl07l"],
+
+		  {"breakGroup":""},
+
+	],
+
+
+
+	"triangles": [
+			["id1:","id2:","id3:"],
+            		{"group":"van_flatbedsmall_sparewheel_L"},
+            		{"dragCoef":10},
+			["spwhll01r","spwhll04r","spwhll03r"],
+			["spwhll01r","spwhll03r","spwhll02r"],
+
+			["spwhll01f","spwhll03f","spwhll04f"],
+			["spwhll01f","spwhll02f","spwhll03f"],
+
+			["spwhll01f","spwhll01r","spwhll02r"],
+			["spwhll01f","spwhll02r","spwhll02f"],
+			["spwhll02f","spwhll02r","spwhll03r"],
+			["spwhll02f","spwhll03r","spwhll03f"],
+			["spwhll03f","spwhll03r","spwhll04r"],
+			["spwhll03f","spwhll04r","spwhll04f"],
+			["spwhll04f","spwhll04r","spwhll01r"],
+			["spwhll04f","spwhll01r","spwhll01f"],
+
+            		{"group":"van_flatbedsmall_sparewheel_R"},
+			["spwhlr01r","spwhlr03r","spwhlr04r"],
+			["spwhlr01r","spwhlr02r","spwhlr03r"],
+
+			["spwhlr01f","spwhlr04f","spwhlr03f"],
+			["spwhlr01f","spwhlr03f","spwhlr02f"],
+
+			["spwhlr01f","spwhlr02r","spwhlr01r"],
+			["spwhlr01f","spwhlr02f","spwhlr02r"],
+			["spwhlr02f","spwhlr03r","spwhlr02r"],
+			["spwhlr02f","spwhlr03f","spwhlr03r"],
+			["spwhlr03f","spwhlr04r","spwhlr03r"],
+			["spwhlr03f","spwhlr04f","spwhlr04r"],
+			["spwhlr04f","spwhlr01r","spwhlr04r"],
+			["spwhlr04f","spwhlr01f","spwhlr01r"],
+
+            		{"group":"van_flatbedsmall_tireholder"},
+			["spwhl05","spwhl06","spwhl06r"],
+			["spwhl05","spwhl06r","spwhl05r"],
+			["spwhl05","spwhl06l","spwhl06"],
+			["spwhl05","spwhl05l","spwhl06l"],
+
+			["spwhl05","spwhl05r","spwhl05l"],
+			["spwhl06","spwhl06l","spwhl06r"],
+
+            		{"group":""},
+
+
+	],
+}
+
+"van_flatbedsmall_6boxes": {
+	"information":{
+		"authors":"AR162b",
+		"name":"6x 400kg Metal Boxes",
+	}
+    "slotType" : "van_flatbedsmall_options",
+
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["metal_box_simple", ["van_metal_box_FR"], [], {"pos":{"x":-0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_B", ["van_metal_box_FR"], [], {"pos":{"x":-0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_F", ["van_metal_box_FR"], [], {"pos":{"x":-0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_L", ["van_metal_box_FR"], [], {"pos":{"x":-0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_R", ["van_metal_box_FR"], [], {"pos":{"x":-0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+		 ["metal_box_simple", ["van_metal_box_FL"], [], {"pos":{"x": 0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_B", ["van_metal_box_FL"], [], {"pos":{"x": 0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_F", ["van_metal_box_FL"], [], {"pos":{"x": 0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_L", ["van_metal_box_FL"], [], {"pos":{"x": 0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_R", ["van_metal_box_FL"], [], {"pos":{"x": 0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+
+		 ["metal_box_simple", ["van_metal_box_MR"], [], {"pos":{"x":-0.52, "y":1.75, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_B", ["van_metal_box_MR"], [], {"pos":{"x":-0.52, "y":1.75, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_F", ["van_metal_box_MR"], [], {"pos":{"x":-0.52, "y":1.75, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_L", ["van_metal_box_MR"], [], {"pos":{"x":-0.52, "y":1.75, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_R", ["van_metal_box_MR"], [], {"pos":{"x":-0.52, "y":1.75, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+		 ["metal_box_simple", ["van_metal_box_ML"], [], {"pos":{"x": 0.52, "y":1.75, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_B", ["van_metal_box_ML"], [], {"pos":{"x": 0.52, "y":1.75, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_F", ["van_metal_box_ML"], [], {"pos":{"x": 0.52, "y":1.75, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_L", ["van_metal_box_ML"], [], {"pos":{"x": 0.52, "y":1.75, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_R", ["van_metal_box_ML"], [], {"pos":{"x": 0.52, "y":1.75, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+
+		 ["metal_box_simple", ["van_metal_box_RR"], [], {"pos":{"x":-0.52, "y":2.85, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_B", ["van_metal_box_RR"], [], {"pos":{"x":-0.52, "y":2.85, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_F", ["van_metal_box_RR"], [], {"pos":{"x":-0.52, "y":2.85, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_L", ["van_metal_box_RR"], [], {"pos":{"x":-0.52, "y":2.85, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_R", ["van_metal_box_RR"], [], {"pos":{"x":-0.52, "y":2.85, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+		 ["metal_box_simple", ["van_metal_box_RL"], [], {"pos":{"x": 0.52, "y":2.85, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_B", ["van_metal_box_RL"], [], {"pos":{"x": 0.52, "y":2.85, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_F", ["van_metal_box_RL"], [], {"pos":{"x": 0.52, "y":2.85, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_L", ["van_metal_box_RL"], [], {"pos":{"x": 0.52, "y":2.85, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_R", ["van_metal_box_RL"], [], {"pos":{"x": 0.52, "y":2.85, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+		 ["van_flatbedsmall_rope_F", ["van_flatbedsmall_rope_F"], [], {"pos":{"x": 0.0, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["van_flatbedsmall_rope_F", ["van_flatbedsmall_rope_M"], [], {"pos":{"x": 0.0, "y":1.1, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["van_flatbedsmall_rope_F", ["van_flatbedsmall_rope_R"], [], {"pos":{"x": 0.0, "y":2.2, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"nodeWeight":50},
+		 {"frictionCoef":0.5},
+		 {"nodeMaterial":"|NM_METAL"},
+
+		 {"group":"van_metal_box_FR"},
+		 ["boxFR_1r",-0.99, 0.16, 1.98],
+		 ["boxFR_1l",-0.04, 0.16, 1.98],
+		 ["boxFR_2r",-0.99, 1.11, 1.98],
+		 ["boxFR_2l",-0.04, 1.11, 1.98],
+		 ["boxFR_3r",-0.99, 0.16, 1.03],
+		 ["boxFR_3l",-0.04, 0.16, 1.03],
+		 ["boxFR_4r",-0.99, 1.11, 1.03],
+		 ["boxFR_4l",-0.04, 1.11, 1.03],
+		 {"group":"van_metal_box_FL"},
+		 ["boxFL_1r", 0.99, 0.16, 1.98],
+		 ["boxFL_1l", 0.04, 0.16, 1.98],
+		 ["boxFL_2r", 0.99, 1.11, 1.98],
+		 ["boxFL_2l", 0.04, 1.11, 1.98],
+		 ["boxFL_3r", 0.99, 0.16, 1.03],
+		 ["boxFL_3l", 0.04, 0.16, 1.03],
+		 ["boxFL_4r", 0.99, 1.11, 1.03],
+		 ["boxFL_4l", 0.04, 1.11, 1.03],
+
+		 {"group":"van_metal_box_MR"},
+		 ["boxMR_1r",-0.99, 1.26, 1.98],
+		 ["boxMR_1l",-0.04, 1.26, 1.98],
+		 ["boxMR_2r",-0.99, 2.21, 1.98],
+		 ["boxMR_2l",-0.04, 2.21, 1.98],
+		 ["boxMR_3r",-0.99, 1.26, 1.03],
+		 ["boxMR_3l",-0.04, 1.26, 1.03],
+		 ["boxMR_4r",-0.99, 2.21, 1.03],
+		 ["boxMR_4l",-0.04, 2.21, 1.03],
+		 {"group":"van_metal_box_ML"},
+		 ["boxML_1r", 0.99, 1.26, 1.98],
+		 ["boxML_1l", 0.04, 1.26, 1.98],
+		 ["boxML_2r", 0.99, 2.21, 1.98],
+		 ["boxML_2l", 0.04, 2.21, 1.98],
+		 ["boxML_3r", 0.99, 1.26, 1.03],
+		 ["boxML_3l", 0.04, 1.26, 1.03],
+		 ["boxML_4r", 0.99, 2.21, 1.03],
+		 ["boxML_4l", 0.04, 2.21, 1.03],
+
+		 {"group":"van_metal_box_RR"},
+		 ["boxRR_1r",-0.99, 2.36, 1.98],
+		 ["boxRR_1l",-0.04, 2.36, 1.98],
+		 ["boxRR_2r",-0.99, 3.31, 1.98],
+		 ["boxRR_2l",-0.04, 3.31, 1.98],
+		 ["boxRR_3r",-0.99, 2.36, 1.03],
+		 ["boxRR_3l",-0.04, 2.36, 1.03],
+		 ["boxRR_4r",-0.99, 3.31, 1.03],
+		 ["boxRR_4l",-0.04, 3.31, 1.03],
+		 {"group":"van_metal_box_RL"},
+		 ["boxRL_1r", 0.99, 2.36, 1.98],
+		 ["boxRL_1l", 0.04, 2.36, 1.98],
+		 ["boxRL_2r", 0.99, 3.31, 1.98],
+		 ["boxRL_2l", 0.04, 3.31, 1.98],
+		 ["boxRL_3r", 0.99, 2.36, 1.03],
+		 ["boxRL_3l", 0.04, 2.36, 1.03],
+		 ["boxRL_4r", 0.99, 3.31, 1.03],
+		 ["boxRL_4l", 0.04, 3.31, 1.03],
+
+		 {"frictionCoef":0.5},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"collision":true}
+		 {"selfCollision":false}
+		 {"nodeWeight":0.5},
+
+		 {"group":"van_flatbedsmall_rope_F"},
+		 ["box_ropeF_ll", 1.1, 0.62, 1.07],
+		 ["box_ropeF_l", 1.02, 0.62, 2.01],
+		 ["box_ropeF_c", 0.0, 0.62, 2.01],
+		 ["box_ropeF_r",-1.02, 0.62, 2.01],
+		 ["box_ropeF_rr",-1.1, 0.62, 1.07],
+
+		 {"group":"van_flatbedsmall_rope_M"},
+		 ["box_ropeM_ll", 1.1, 1.72, 1.07],
+		 ["box_ropeM_l", 1.02, 1.72, 2.01],
+		 ["box_ropeM_c", 0.0, 1.72, 2.01],
+		 ["box_ropeM_r",-1.02, 1.72, 2.01],
+		 ["box_ropeM_rr",-1.1, 1.72, 1.07],
+
+		 {"group":"van_flatbedsmall_rope_R"},
+		 ["box_ropeR_ll", 1.1, 2.82, 1.07],
+		 ["box_ropeR_l", 1.02, 2.82, 2.01],
+		 ["box_ropeR_c", 0.0, 2.82, 2.01],
+		 ["box_ropeR_r",-1.02, 2.82, 2.01],
+		 ["box_ropeR_rr",-1.1, 2.82, 1.07],
+        	 {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":50000,"beamDamp":40},
+        {"beamDeform":75000,"beamStrength":"FLT_MAX"},
+        ["box_ropeF_ll","box_ropeF_l"],
+        ["box_ropeF_l","box_ropeF_c"],
+        ["box_ropeF_c","box_ropeF_r"],
+        ["box_ropeF_r","box_ropeF_rr"],
+
+        ["box_ropeM_ll","box_ropeM_l"],
+        ["box_ropeM_l","box_ropeM_c"],
+        ["box_ropeM_c","box_ropeM_r"],
+        ["box_ropeM_r","box_ropeM_rr"],
+
+        ["box_ropeR_ll","box_ropeR_l"],
+        ["box_ropeR_l","box_ropeR_c"],
+        ["box_ropeR_c","box_ropeR_r"],
+        ["box_ropeR_r","box_ropeR_rr"],
+
+
+        {"beamSpring":601000,"beamDamp":1500},
+        {"beamDeform":75000,"beamStrength":"FLT_MAX"},
+	// Box FR straight
+        ["boxFR_1r","boxFR_1l"],
+        ["boxFR_2r","boxFR_2l"],
+        ["boxFR_3r","boxFR_3l"],
+        ["boxFR_4r","boxFR_4l"],
+        ["boxFR_1r","boxFR_2r"],
+        ["boxFR_1l","boxFR_2l"],
+        ["boxFR_3r","boxFR_4r"],
+        ["boxFR_3l","boxFR_4l"],
+        ["boxFR_1r","boxFR_3r"],
+        ["boxFR_1l","boxFR_3l"],
+        ["boxFR_2r","boxFR_4r"],
+        ["boxFR_2l","boxFR_4l"],
+	// Box FR diagonal
+        ["boxFR_1r","boxFR_2l"],
+        ["boxFR_2r","boxFR_1l"],
+        ["boxFR_3r","boxFR_4l"],
+        ["boxFR_4r","boxFR_3l"],
+        ["boxFR_1r","boxFR_4r"],
+        ["boxFR_1l","boxFR_4l"],
+        ["boxFR_3r","boxFR_2r"],
+        ["boxFR_3l","boxFR_2l"],
+        ["boxFR_1r","boxFR_3l"],
+        ["boxFR_2r","boxFR_4l"],
+        ["boxFR_3r","boxFR_1l"],
+        ["boxFR_4r","boxFR_2l"],
+
+	// Box FL straight
+        ["boxFL_1r","boxFL_1l"],
+        ["boxFL_2r","boxFL_2l"],
+        ["boxFL_3r","boxFL_3l"],
+        ["boxFL_4r","boxFL_4l"],
+        ["boxFL_1r","boxFL_2r"],
+        ["boxFL_1l","boxFL_2l"],
+        ["boxFL_3r","boxFL_4r"],
+        ["boxFL_3l","boxFL_4l"],
+        ["boxFL_1r","boxFL_3r"],
+        ["boxFL_1l","boxFL_3l"],
+        ["boxFL_2r","boxFL_4r"],
+        ["boxFL_2l","boxFL_4l"],
+	// Box FL diagonal
+        ["boxFL_1r","boxFL_2l"],
+        ["boxFL_2r","boxFL_1l"],
+        ["boxFL_3r","boxFL_4l"],
+        ["boxFL_4r","boxFL_3l"],
+        ["boxFL_1r","boxFL_4r"],
+        ["boxFL_1l","boxFL_4l"],
+        ["boxFL_3r","boxFL_2r"],
+        ["boxFL_3l","boxFL_2l"],
+        ["boxFL_1r","boxFL_3l"],
+        ["boxFL_2r","boxFL_4l"],
+        ["boxFL_3r","boxFL_1l"],
+        ["boxFL_4r","boxFL_2l"],
+
+	// Box MR straight
+        ["boxMR_1r","boxMR_1l"],
+        ["boxMR_2r","boxMR_2l"],
+        ["boxMR_3r","boxMR_3l"],
+        ["boxMR_4r","boxMR_4l"],
+        ["boxMR_1r","boxMR_2r"],
+        ["boxMR_1l","boxMR_2l"],
+        ["boxMR_3r","boxMR_4r"],
+        ["boxMR_3l","boxMR_4l"],
+        ["boxMR_1r","boxMR_3r"],
+        ["boxMR_1l","boxMR_3l"],
+        ["boxMR_2r","boxMR_4r"],
+        ["boxMR_2l","boxMR_4l"],
+	// Box MR diagonal
+        ["boxMR_1r","boxMR_2l"],
+        ["boxMR_2r","boxMR_1l"],
+        ["boxMR_3r","boxMR_4l"],
+        ["boxMR_4r","boxMR_3l"],
+        ["boxMR_1r","boxMR_4r"],
+        ["boxMR_1l","boxMR_4l"],
+        ["boxMR_3r","boxMR_2r"],
+        ["boxMR_3l","boxMR_2l"],
+        ["boxMR_1r","boxMR_3l"],
+        ["boxMR_2r","boxMR_4l"],
+        ["boxMR_3r","boxMR_1l"],
+        ["boxMR_4r","boxMR_2l"],
+
+	// Box ML straight
+        ["boxML_1r","boxML_1l"],
+        ["boxML_2r","boxML_2l"],
+        ["boxML_3r","boxML_3l"],
+        ["boxML_4r","boxML_4l"],
+        ["boxML_1r","boxML_2r"],
+        ["boxML_1l","boxML_2l"],
+        ["boxML_3r","boxML_4r"],
+        ["boxML_3l","boxML_4l"],
+        ["boxML_1r","boxML_3r"],
+        ["boxML_1l","boxML_3l"],
+        ["boxML_2r","boxML_4r"],
+        ["boxML_2l","boxML_4l"],
+	// Box ML diagonal
+        ["boxML_1r","boxML_2l"],
+        ["boxML_2r","boxML_1l"],
+        ["boxML_3r","boxML_4l"],
+        ["boxML_4r","boxML_3l"],
+        ["boxML_1r","boxML_4r"],
+        ["boxML_1l","boxML_4l"],
+        ["boxML_3r","boxML_2r"],
+        ["boxML_3l","boxML_2l"],
+        ["boxML_1r","boxML_3l"],
+        ["boxML_2r","boxML_4l"],
+        ["boxML_3r","boxML_1l"],
+        ["boxML_4r","boxML_2l"],
+
+	// Box RR straight
+        ["boxRR_1r","boxRR_1l"],
+        ["boxRR_2r","boxRR_2l"],
+        ["boxRR_3r","boxRR_3l"],
+        ["boxRR_4r","boxRR_4l"],
+        ["boxRR_1r","boxRR_2r"],
+        ["boxRR_1l","boxRR_2l"],
+        ["boxRR_3r","boxRR_4r"],
+        ["boxRR_3l","boxRR_4l"],
+        ["boxRR_1r","boxRR_3r"],
+        ["boxRR_1l","boxRR_3l"],
+        ["boxRR_2r","boxRR_4r"],
+        ["boxRR_2l","boxRR_4l"],
+	// Box RR diagonal
+        ["boxRR_1r","boxRR_2l"],
+        ["boxRR_2r","boxRR_1l"],
+        ["boxRR_3r","boxRR_4l"],
+        ["boxRR_4r","boxRR_3l"],
+        ["boxRR_1r","boxRR_4r"],
+        ["boxRR_1l","boxRR_4l"],
+        ["boxRR_3r","boxRR_2r"],
+        ["boxRR_3l","boxRR_2l"],
+        ["boxRR_1r","boxRR_3l"],
+        ["boxRR_2r","boxRR_4l"],
+        ["boxRR_3r","boxRR_1l"],
+        ["boxRR_4r","boxRR_2l"],
+
+	// Box RL straight
+        ["boxRL_1r","boxRL_1l"],
+        ["boxRL_2r","boxRL_2l"],
+        ["boxRL_3r","boxRL_3l"],
+        ["boxRL_4r","boxRL_4l"],
+        ["boxRL_1r","boxRL_2r"],
+        ["boxRL_1l","boxRL_2l"],
+        ["boxRL_3r","boxRL_4r"],
+        ["boxRL_3l","boxRL_4l"],
+        ["boxRL_1r","boxRL_3r"],
+        ["boxRL_1l","boxRL_3l"],
+        ["boxRL_2r","boxRL_4r"],
+        ["boxRL_2l","boxRL_4l"],
+	// Box RL diagonal
+        ["boxRL_1r","boxRL_2l"],
+        ["boxRL_2r","boxRL_1l"],
+        ["boxRL_3r","boxRL_4l"],
+        ["boxRL_4r","boxRL_3l"],
+        ["boxRL_1r","boxRL_4r"],
+        ["boxRL_1l","boxRL_4l"],
+        ["boxRL_3r","boxRL_2r"],
+        ["boxRL_3l","boxRL_2l"],
+        ["boxRL_1r","boxRL_3l"],
+        ["boxRL_2r","boxRL_4l"],
+        ["boxRL_3r","boxRL_1l"],
+        ["boxRL_4r","boxRL_2l"],
+
+        //attachment
+        {"breakGroupType":0},
+        {"beamSpring":67200,"beamDamp":130},
+        {"beamDeform":13500,"beamStrength":"6000"},
+        {"breakGroup":"van_metal_box_F"},
+        ["boxFR_1r","vsfb01rr"],
+        ["boxFR_1l","vsfb01l"],
+        ["boxFR_2r","vsfb03rr"],
+        ["boxFR_2l","vsfb03l"],
+        ["boxFR_3r","vsfb01r"],
+        ["boxFR_3l","vsfb01rr"],
+        ["boxFR_4r","vsfb03r"],
+        ["boxFR_4l","vsfb03rr"],
+        ["boxFR_3r","vsfb02rr"],
+        ["boxFR_3l","vsfb02r"],
+        ["boxFR_4r","vsfb02rr"],
+        ["boxFR_4l","vsfb02r"],
+
+        ["boxFL_1r","vsfb01ll"],
+        ["boxFL_1l","vsfb01r"],
+        ["boxFL_2r","vsfb03ll"],
+        ["boxFL_2l","vsfb03r"],
+        ["boxFL_3r","vsfb01l"],
+        ["boxFL_3l","vsfb01ll"],
+        ["boxFL_4r","vsfb03l"],
+        ["boxFL_4l","vsfb03ll"],
+        ["boxFL_3r","vsfb02ll"],
+        ["boxFL_3l","vsfb02l"],
+        ["boxFL_4r","vsfb02ll"],
+        ["boxFL_4l","vsfb02l"],
+
+        {"breakGroup":"van_metal_box_M"},
+        ["boxMR_1r","vsfb02rr"],
+        ["boxMR_1l","vsfb02l"],
+        ["boxMR_2r","vsfb04rr"],
+        ["boxMR_2l","vsfb04l"],
+        ["boxMR_3r","vsfb03r"],
+        ["boxMR_3l","vsfb03rr"],
+        ["boxMR_4r","vsfb04r"],
+        ["boxMR_4l","vsfb04rr"],
+        ["boxMR_3r","vsfb03rr"],
+        ["boxMR_3l","vsfb03r"],
+        ["boxMR_4r","vsfb03rr"],
+        ["boxMR_4l","vsfb03r"],
+
+        ["boxML_1r","vsfb02ll"],
+        ["boxML_1l","vsfb02r"],
+        ["boxML_2r","vsfb04ll"],
+        ["boxML_2l","vsfb04r"],
+        ["boxML_3r","vsfb03l"],
+        ["boxML_3l","vsfb03ll"],
+        ["boxML_4r","vsfb04l"],
+        ["boxML_4l","vsfb04ll"],
+        ["boxML_3r","vsfb03ll"],
+        ["boxML_3l","vsfb03l"],
+        ["boxML_4r","vsfb03ll"],
+        ["boxML_4l","vsfb03l"],
+
+        {"breakGroup":"van_metal_box_R"},
+        ["boxRR_1r","vsfb03rr"],
+        ["boxRR_1l","vsfb03l"],
+        ["boxRR_2r","vsfb05rr"],
+        ["boxRR_2l","vsfb05l"],
+        ["boxRR_3r","vsfb03r"],
+        ["boxRR_3l","vsfb03rr"],
+        ["boxRR_4r","vsfb04r"],
+        ["boxRR_4l","vsfb04rr"],
+        ["boxRR_3r","vsfb03rr"],
+        ["boxRR_3l","vsfb03r"],
+        ["boxRR_4r","vsfb03rr"],
+        ["boxRR_4l","vsfb03r"],
+
+        ["boxRL_1r","vsfb03ll"],
+        ["boxRL_1l","vsfb03r"],
+        ["boxRL_2r","vsfb05ll"],
+        ["boxRL_2l","vsfb05r"],
+        ["boxRL_3r","vsfb03l"],
+        ["boxRL_3l","vsfb03ll"],
+        ["boxRL_4r","vsfb04l"],
+        ["boxRL_4l","vsfb04ll"],
+        ["boxRL_3r","vsfb03ll"],
+        ["boxRL_3l","vsfb03l"],
+        ["boxRL_4r","vsfb03ll"],
+        ["boxRL_4l","vsfb03l"],
+
+        {"breakGroupType":0},
+        {"beamSpring":50200,"beamDamp":40},
+        {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+        {"breakGroup":"van_metal_box_F"},
+        ["vsfb01rr","box_ropeF_rr"],
+        ["vsfb11r","box_ropeF_rr"],
+        ["vsfb02rr","box_ropeF_rr"],
+        ["vsfb12r","box_ropeF_rr"],
+
+        ["vsfb01ll","box_ropeF_ll"],
+        ["vsfb11l","box_ropeF_ll"],
+        ["vsfb02ll","box_ropeF_ll"],
+        ["vsfb12l","box_ropeF_ll"],
+
+        ["boxFL_1l","box_ropeF_l"],
+        ["boxFL_1r","box_ropeF_l"],
+        ["boxFL_2r","box_ropeF_l"],
+        ["boxFL_2l","box_ropeF_l"],
+        ["boxFL_3l","box_ropeF_l"],
+        ["boxFL_4l","box_ropeF_l"],
+
+        ["boxFR_1r","box_ropeF_r"],
+        ["boxFR_1l","box_ropeF_r"],
+        ["boxFR_2l","box_ropeF_r"],
+        ["boxFR_2r","box_ropeF_r"],
+        ["boxFR_3r","box_ropeF_r"],
+        ["boxFR_4r","box_ropeF_r"],
+
+        ["boxFL_1r","box_ropeF_c"],
+        ["boxFL_2r","box_ropeF_c"],
+        ["boxFL_3r","box_ropeF_c"],
+        ["boxFL_4r","box_ropeF_c"],
+        ["boxFR_1l","box_ropeF_c"],
+        ["boxFR_2l","box_ropeF_c"],
+        ["boxFR_3l","box_ropeF_c"],
+        ["boxFR_4l","box_ropeF_c"],
+
+        ["vsfb02r","box_ropeF_rr"],
+        ["vsfb02l","box_ropeF_ll"],
+
+        {"breakGroup":"van_metal_box_M"},
+        ["vsfb02rr","box_ropeM_rr"],
+        ["vsfb12r","box_ropeM_rr"],
+        ["vsfb03rr","box_ropeM_rr"],
+        ["vsfb13r","box_ropeM_rr"],
+
+        ["vsfb02ll","box_ropeM_ll"],
+        ["vsfb12l","box_ropeM_ll"],
+        ["vsfb03ll","box_ropeM_ll"],
+        ["vsfb13l","box_ropeM_ll"],
+
+        ["boxML_1l","box_ropeM_l"],
+        ["boxML_1r","box_ropeM_l"],
+        ["boxML_2r","box_ropeM_l"],
+        ["boxML_2l","box_ropeM_l"],
+        ["boxML_3l","box_ropeM_l"],
+        ["boxML_4l","box_ropeM_l"],
+
+        ["boxMR_1r","box_ropeM_r"],
+        ["boxMR_1l","box_ropeM_r"],
+        ["boxMR_2l","box_ropeM_r"],
+        ["boxMR_2r","box_ropeM_r"],
+        ["boxMR_3r","box_ropeM_r"],
+        ["boxMR_4r","box_ropeM_r"],
+
+        ["boxML_1r","box_ropeM_c"],
+        ["boxML_2r","box_ropeM_c"],
+        ["boxML_3r","box_ropeM_c"],
+        ["boxML_4r","box_ropeM_c"],
+        ["boxMR_1l","box_ropeM_c"],
+        ["boxMR_2l","box_ropeM_c"],
+        ["boxMR_3l","box_ropeM_c"],
+        ["boxMR_4l","box_ropeM_c"],
+
+        ["vsfb03r","box_ropeM_rr"],
+        ["vsfb03l","box_ropeM_ll"],
+
+        {"breakGroup":"van_metal_box_R"},
+        ["vsfb04rr","box_ropeR_rr"],
+        ["vsfb14r","box_ropeR_rr"],
+        ["vsfb05rr","box_ropeR_rr"],
+        ["vsfb15r","box_ropeR_rr"],
+
+        ["vsfb04ll","box_ropeR_ll"],
+        ["vsfb14l","box_ropeR_ll"],
+        ["vsfb05ll","box_ropeR_ll"],
+        ["vsfb15l","box_ropeR_ll"],
+
+        ["boxRL_1l","box_ropeR_l"],
+        ["boxRL_1r","box_ropeR_l"],
+        ["boxRL_2r","box_ropeR_l"],
+        ["boxRL_2l","box_ropeR_l"],
+        ["boxRL_3l","box_ropeR_l"],
+        ["boxRL_4l","box_ropeR_l"],
+
+        ["boxRR_1r","box_ropeR_r"],
+        ["boxRR_1l","box_ropeR_r"],
+        ["boxRR_2l","box_ropeR_r"],
+        ["boxRR_2r","box_ropeR_r"],
+        ["boxRR_3r","box_ropeR_r"],
+        ["boxRR_4r","box_ropeR_r"],
+
+        ["boxRL_1r","box_ropeR_c"],
+        ["boxRL_2r","box_ropeR_c"],
+        ["boxRL_3r","box_ropeR_c"],
+        ["boxRL_4r","box_ropeR_c"],
+        ["boxRR_1l","box_ropeR_c"],
+        ["boxRR_2l","box_ropeR_c"],
+        ["boxRR_3l","box_ropeR_c"],
+        ["boxRR_4l","box_ropeR_c"],
+
+        ["vsfb04r","box_ropeR_rr"],
+        ["vsfb04l","box_ropeR_ll"],
+
+        {"breakGroup":""},
+
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+	],
+
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"dragCoef":10},
+
+            {"group":"van_metal_box_FR"},
+            ["boxFR_1r","boxFR_1l","boxFR_2l"],
+            ["boxFR_1r","boxFR_2l","boxFR_2r"],
+            ["boxFR_3r","boxFR_4l","boxFR_3l"],
+            ["boxFR_3r","boxFR_4r","boxFR_4l"],
+
+            ["boxFR_1r","boxFR_2r","boxFR_4r"],
+            ["boxFR_1r","boxFR_4r","boxFR_3r"],
+            ["boxFR_1l","boxFR_4l","boxFR_2l"],
+            ["boxFR_1l","boxFR_3l","boxFR_4l"],
+
+            ["boxFR_1r","boxFR_3r","boxFR_3l"],
+            ["boxFR_1r","boxFR_3l","boxFR_1l"],
+            ["boxFR_2r","boxFR_4l","boxFR_4r"],
+            ["boxFR_2r","boxFR_2l","boxFR_4l"],
+
+            {"group":"van_metal_box_FL"},
+            ["boxFL_1r","boxFL_2l","boxFL_1l"],
+            ["boxFL_1r","boxFL_2r","boxFL_2l"],
+            ["boxFL_3r","boxFL_3l","boxFL_4l"],
+            ["boxFL_3r","boxFL_4l","boxFL_4r"],
+
+            ["boxFL_1r","boxFL_4r","boxFL_2r"],
+            ["boxFL_1r","boxFL_3r","boxFL_4r"],
+            ["boxFL_1l","boxFL_2l","boxFL_4l"],
+            ["boxFL_1l","boxFL_4l","boxFL_3l"],
+
+            ["boxFL_1r","boxFL_3l","boxFL_3r"],
+            ["boxFL_1r","boxFL_1l","boxFL_3l"],
+            ["boxFL_2r","boxFL_4r","boxFL_4l"],
+            ["boxFL_2r","boxFL_4l","boxFL_2l"],
+
+            {"group":"van_metal_box_MR"},
+            ["boxMR_1r","boxMR_1l","boxMR_2l"],
+            ["boxMR_1r","boxMR_2l","boxMR_2r"],
+            ["boxMR_3r","boxMR_4l","boxMR_3l"],
+            ["boxMR_3r","boxMR_4r","boxMR_4l"],
+
+            ["boxMR_1r","boxMR_2r","boxMR_4r"],
+            ["boxMR_1r","boxMR_4r","boxMR_3r"],
+            ["boxMR_1l","boxMR_4l","boxMR_2l"],
+            ["boxMR_1l","boxMR_3l","boxMR_4l"],
+
+            ["boxMR_1r","boxMR_3r","boxMR_3l"],
+            ["boxMR_1r","boxMR_3l","boxMR_1l"],
+            ["boxMR_2r","boxMR_4l","boxMR_4r"],
+            ["boxMR_2r","boxMR_2l","boxMR_4l"],
+
+            {"group":"van_metal_box_ML"},
+            ["boxML_1r","boxML_2l","boxML_1l"],
+            ["boxML_1r","boxML_2r","boxML_2l"],
+            ["boxML_3r","boxML_3l","boxML_4l"],
+            ["boxML_3r","boxML_4l","boxML_4r"],
+
+            ["boxML_1r","boxML_4r","boxML_2r"],
+            ["boxML_1r","boxML_3r","boxML_4r"],
+            ["boxML_1l","boxML_2l","boxML_4l"],
+            ["boxML_1l","boxML_4l","boxML_3l"],
+
+            ["boxML_1r","boxML_3l","boxML_3r"],
+            ["boxML_1r","boxML_1l","boxML_3l"],
+            ["boxML_2r","boxML_4r","boxML_4l"],
+            ["boxML_2r","boxML_4l","boxML_2l"],
+
+            {"group":"van_metal_box_RR"},
+            ["boxRR_1r","boxRR_1l","boxRR_2l"],
+            ["boxRR_1r","boxRR_2l","boxRR_2r"],
+            ["boxRR_3r","boxRR_4l","boxRR_3l"],
+            ["boxRR_3r","boxRR_4r","boxRR_4l"],
+
+            ["boxRR_1r","boxRR_2r","boxRR_4r"],
+            ["boxRR_1r","boxRR_4r","boxRR_3r"],
+            ["boxRR_1l","boxRR_4l","boxRR_2l"],
+            ["boxRR_1l","boxRR_3l","boxRR_4l"],
+
+            ["boxRR_1r","boxRR_3r","boxRR_3l"],
+            ["boxRR_1r","boxRR_3l","boxRR_1l"],
+            ["boxRR_2r","boxRR_4l","boxRR_4r"],
+            ["boxRR_2r","boxRR_2l","boxRR_4l"],
+
+            {"group":"van_metal_box_RL"},
+            ["boxRL_1r","boxRL_2l","boxRL_1l"],
+            ["boxRL_1r","boxRL_2r","boxRL_2l"],
+            ["boxRL_3r","boxRL_3l","boxRL_4l"],
+            ["boxRL_3r","boxRL_4l","boxRL_4r"],
+
+            ["boxRL_1r","boxRL_4r","boxRL_2r"],
+            ["boxRL_1r","boxRL_3r","boxRL_4r"],
+            ["boxRL_1l","boxRL_2l","boxRL_4l"],
+            ["boxRL_1l","boxRL_4l","boxRL_3l"],
+
+            ["boxRL_1r","boxRL_3l","boxRL_3r"],
+            ["boxRL_1r","boxRL_1l","boxRL_3l"],
+            ["boxRL_2r","boxRL_4r","boxRL_4l"],
+            ["boxRL_2r","boxRL_4l","boxRL_2l"],
+
+            {"group":""},
+	],
+}
+
+"van_flatbedsmall_4boxes": {
+	"information":{
+		"authors":"AR162b",
+		"name":"4x 400kg Metal Boxes",
+	}
+    "slotType" : "van_flatbedsmall_options",
+
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["metal_box_simple", ["van_metal_box_FR"], [], {"pos":{"x":-0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_B", ["van_metal_box_FR"], [], {"pos":{"x":-0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_F", ["van_metal_box_FR"], [], {"pos":{"x":-0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_L", ["van_metal_box_FR"], [], {"pos":{"x":-0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_R", ["van_metal_box_FR"], [], {"pos":{"x":-0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+		 ["metal_box_simple", ["van_metal_box_FL"], [], {"pos":{"x": 0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_B", ["van_metal_box_FL"], [], {"pos":{"x": 0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_F", ["van_metal_box_FL"], [], {"pos":{"x": 0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_L", ["van_metal_box_FL"], [], {"pos":{"x": 0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_R", ["van_metal_box_FL"], [], {"pos":{"x": 0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+
+		 ["metal_box_simple", ["van_metal_box_MR"], [], {"pos":{"x":-0.52, "y":1.75, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_B", ["van_metal_box_MR"], [], {"pos":{"x":-0.52, "y":1.75, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_F", ["van_metal_box_MR"], [], {"pos":{"x":-0.52, "y":1.75, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_L", ["van_metal_box_MR"], [], {"pos":{"x":-0.52, "y":1.75, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_R", ["van_metal_box_MR"], [], {"pos":{"x":-0.52, "y":1.75, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+		 ["metal_box_simple", ["van_metal_box_ML"], [], {"pos":{"x": 0.52, "y":1.75, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_B", ["van_metal_box_ML"], [], {"pos":{"x": 0.52, "y":1.75, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_F", ["van_metal_box_ML"], [], {"pos":{"x": 0.52, "y":1.75, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_L", ["van_metal_box_ML"], [], {"pos":{"x": 0.52, "y":1.75, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_R", ["van_metal_box_ML"], [], {"pos":{"x": 0.52, "y":1.75, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+		 ["van_flatbedsmall_rope_F", ["van_flatbedsmall_rope_F"], [], {"pos":{"x": 0.0, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["van_flatbedsmall_rope_F", ["van_flatbedsmall_rope_M"], [], {"pos":{"x": 0.0, "y":1.1, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"nodeWeight":50},
+		 {"frictionCoef":0.5},
+		 {"nodeMaterial":"|NM_METAL"},
+
+		 {"group":"van_metal_box_FR"},
+		 ["boxFR_1r",-0.99, 0.16, 1.98],
+		 ["boxFR_1l",-0.04, 0.16, 1.98],
+		 ["boxFR_2r",-0.99, 1.11, 1.98],
+		 ["boxFR_2l",-0.04, 1.11, 1.98],
+		 ["boxFR_3r",-0.99, 0.16, 1.03],
+		 ["boxFR_3l",-0.04, 0.16, 1.03],
+		 ["boxFR_4r",-0.99, 1.11, 1.03],
+		 ["boxFR_4l",-0.04, 1.11, 1.03],
+		 {"group":"van_metal_box_FL"},
+		 ["boxFL_1r", 0.99, 0.16, 1.98],
+		 ["boxFL_1l", 0.04, 0.16, 1.98],
+		 ["boxFL_2r", 0.99, 1.11, 1.98],
+		 ["boxFL_2l", 0.04, 1.11, 1.98],
+		 ["boxFL_3r", 0.99, 0.16, 1.03],
+		 ["boxFL_3l", 0.04, 0.16, 1.03],
+		 ["boxFL_4r", 0.99, 1.11, 1.03],
+		 ["boxFL_4l", 0.04, 1.11, 1.03],
+
+		 {"group":"van_metal_box_MR"},
+		 ["boxMR_1r",-0.99, 1.26, 1.98],
+		 ["boxMR_1l",-0.04, 1.26, 1.98],
+		 ["boxMR_2r",-0.99, 2.21, 1.98],
+		 ["boxMR_2l",-0.04, 2.21, 1.98],
+		 ["boxMR_3r",-0.99, 1.26, 1.03],
+		 ["boxMR_3l",-0.04, 1.26, 1.03],
+		 ["boxMR_4r",-0.99, 2.21, 1.03],
+		 ["boxMR_4l",-0.04, 2.21, 1.03],
+		 {"group":"van_metal_box_ML"},
+		 ["boxML_1r", 0.99, 1.26, 1.98],
+		 ["boxML_1l", 0.04, 1.26, 1.98],
+		 ["boxML_2r", 0.99, 2.21, 1.98],
+		 ["boxML_2l", 0.04, 2.21, 1.98],
+		 ["boxML_3r", 0.99, 1.26, 1.03],
+		 ["boxML_3l", 0.04, 1.26, 1.03],
+		 ["boxML_4r", 0.99, 2.21, 1.03],
+		 ["boxML_4l", 0.04, 2.21, 1.03],
+
+
+
+		 {"frictionCoef":0.5},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"collision":true}
+		 {"selfCollision":false}
+		 {"nodeWeight":0.5},
+
+		 {"group":"van_flatbedsmall_rope_F"},
+		 ["box_ropeF_ll", 1.1, 0.62, 1.07],
+		 ["box_ropeF_l", 1.02, 0.62, 2.01],
+		 ["box_ropeF_c", 0.0, 0.62, 2.01],
+		 ["box_ropeF_r",-1.02, 0.62, 2.01],
+		 ["box_ropeF_rr",-1.1, 0.62, 1.07],
+
+		 {"group":"van_flatbedsmall_rope_M"},
+		 ["box_ropeM_ll", 1.1, 1.72, 1.07],
+		 ["box_ropeM_l", 1.02, 1.72, 2.01],
+		 ["box_ropeM_c", 0.0, 1.72, 2.01],
+		 ["box_ropeM_r",-1.02, 1.72, 2.01],
+		 ["box_ropeM_rr",-1.1, 1.72, 1.07],
+
+        	 {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":50000,"beamDamp":40},
+        {"beamDeform":75000,"beamStrength":"FLT_MAX"},
+        ["box_ropeF_ll","box_ropeF_l"],
+        ["box_ropeF_l","box_ropeF_c"],
+        ["box_ropeF_c","box_ropeF_r"],
+        ["box_ropeF_r","box_ropeF_rr"],
+
+        ["box_ropeM_ll","box_ropeM_l"],
+        ["box_ropeM_l","box_ropeM_c"],
+        ["box_ropeM_c","box_ropeM_r"],
+        ["box_ropeM_r","box_ropeM_rr"],
+
+
+        {"beamSpring":601000,"beamDamp":1500},
+        {"beamDeform":75000,"beamStrength":"FLT_MAX"},
+	// Box FR straight
+        ["boxFR_1r","boxFR_1l"],
+        ["boxFR_2r","boxFR_2l"],
+        ["boxFR_3r","boxFR_3l"],
+        ["boxFR_4r","boxFR_4l"],
+        ["boxFR_1r","boxFR_2r"],
+        ["boxFR_1l","boxFR_2l"],
+        ["boxFR_3r","boxFR_4r"],
+        ["boxFR_3l","boxFR_4l"],
+        ["boxFR_1r","boxFR_3r"],
+        ["boxFR_1l","boxFR_3l"],
+        ["boxFR_2r","boxFR_4r"],
+        ["boxFR_2l","boxFR_4l"],
+	// Box FR diagonal
+        ["boxFR_1r","boxFR_2l"],
+        ["boxFR_2r","boxFR_1l"],
+        ["boxFR_3r","boxFR_4l"],
+        ["boxFR_4r","boxFR_3l"],
+        ["boxFR_1r","boxFR_4r"],
+        ["boxFR_1l","boxFR_4l"],
+        ["boxFR_3r","boxFR_2r"],
+        ["boxFR_3l","boxFR_2l"],
+        ["boxFR_1r","boxFR_3l"],
+        ["boxFR_2r","boxFR_4l"],
+        ["boxFR_3r","boxFR_1l"],
+        ["boxFR_4r","boxFR_2l"],
+
+	// Box FL straight
+        ["boxFL_1r","boxFL_1l"],
+        ["boxFL_2r","boxFL_2l"],
+        ["boxFL_3r","boxFL_3l"],
+        ["boxFL_4r","boxFL_4l"],
+        ["boxFL_1r","boxFL_2r"],
+        ["boxFL_1l","boxFL_2l"],
+        ["boxFL_3r","boxFL_4r"],
+        ["boxFL_3l","boxFL_4l"],
+        ["boxFL_1r","boxFL_3r"],
+        ["boxFL_1l","boxFL_3l"],
+        ["boxFL_2r","boxFL_4r"],
+        ["boxFL_2l","boxFL_4l"],
+	// Box FL diagonal
+        ["boxFL_1r","boxFL_2l"],
+        ["boxFL_2r","boxFL_1l"],
+        ["boxFL_3r","boxFL_4l"],
+        ["boxFL_4r","boxFL_3l"],
+        ["boxFL_1r","boxFL_4r"],
+        ["boxFL_1l","boxFL_4l"],
+        ["boxFL_3r","boxFL_2r"],
+        ["boxFL_3l","boxFL_2l"],
+        ["boxFL_1r","boxFL_3l"],
+        ["boxFL_2r","boxFL_4l"],
+        ["boxFL_3r","boxFL_1l"],
+        ["boxFL_4r","boxFL_2l"],
+
+	// Box MR straight
+        ["boxMR_1r","boxMR_1l"],
+        ["boxMR_2r","boxMR_2l"],
+        ["boxMR_3r","boxMR_3l"],
+        ["boxMR_4r","boxMR_4l"],
+        ["boxMR_1r","boxMR_2r"],
+        ["boxMR_1l","boxMR_2l"],
+        ["boxMR_3r","boxMR_4r"],
+        ["boxMR_3l","boxMR_4l"],
+        ["boxMR_1r","boxMR_3r"],
+        ["boxMR_1l","boxMR_3l"],
+        ["boxMR_2r","boxMR_4r"],
+        ["boxMR_2l","boxMR_4l"],
+	// Box MR diagonal
+        ["boxMR_1r","boxMR_2l"],
+        ["boxMR_2r","boxMR_1l"],
+        ["boxMR_3r","boxMR_4l"],
+        ["boxMR_4r","boxMR_3l"],
+        ["boxMR_1r","boxMR_4r"],
+        ["boxMR_1l","boxMR_4l"],
+        ["boxMR_3r","boxMR_2r"],
+        ["boxMR_3l","boxMR_2l"],
+        ["boxMR_1r","boxMR_3l"],
+        ["boxMR_2r","boxMR_4l"],
+        ["boxMR_3r","boxMR_1l"],
+        ["boxMR_4r","boxMR_2l"],
+
+	// Box ML straight
+        ["boxML_1r","boxML_1l"],
+        ["boxML_2r","boxML_2l"],
+        ["boxML_3r","boxML_3l"],
+        ["boxML_4r","boxML_4l"],
+        ["boxML_1r","boxML_2r"],
+        ["boxML_1l","boxML_2l"],
+        ["boxML_3r","boxML_4r"],
+        ["boxML_3l","boxML_4l"],
+        ["boxML_1r","boxML_3r"],
+        ["boxML_1l","boxML_3l"],
+        ["boxML_2r","boxML_4r"],
+        ["boxML_2l","boxML_4l"],
+	// Box ML diagonal
+        ["boxML_1r","boxML_2l"],
+        ["boxML_2r","boxML_1l"],
+        ["boxML_3r","boxML_4l"],
+        ["boxML_4r","boxML_3l"],
+        ["boxML_1r","boxML_4r"],
+        ["boxML_1l","boxML_4l"],
+        ["boxML_3r","boxML_2r"],
+        ["boxML_3l","boxML_2l"],
+        ["boxML_1r","boxML_3l"],
+        ["boxML_2r","boxML_4l"],
+        ["boxML_3r","boxML_1l"],
+        ["boxML_4r","boxML_2l"],
+
+
+
+        //attachment
+        {"breakGroupType":0},
+        {"beamSpring":67200,"beamDamp":130},
+        {"beamDeform":13500,"beamStrength":"6000"},
+        {"breakGroup":"van_metal_box_F"},
+        ["boxFR_1r","vsfb01rr"],
+        ["boxFR_1l","vsfb01l"],
+        ["boxFR_2r","vsfb03rr"],
+        ["boxFR_2l","vsfb03l"],
+        ["boxFR_3r","vsfb01r"],
+        ["boxFR_3l","vsfb01rr"],
+        ["boxFR_4r","vsfb03r"],
+        ["boxFR_4l","vsfb03rr"],
+        ["boxFR_3r","vsfb02rr"],
+        ["boxFR_3l","vsfb02r"],
+        ["boxFR_4r","vsfb02rr"],
+        ["boxFR_4l","vsfb02r"],
+
+        ["boxFL_1r","vsfb01ll"],
+        ["boxFL_1l","vsfb01r"],
+        ["boxFL_2r","vsfb03ll"],
+        ["boxFL_2l","vsfb03r"],
+        ["boxFL_3r","vsfb01l"],
+        ["boxFL_3l","vsfb01ll"],
+        ["boxFL_4r","vsfb03l"],
+        ["boxFL_4l","vsfb03ll"],
+        ["boxFL_3r","vsfb02ll"],
+        ["boxFL_3l","vsfb02l"],
+        ["boxFL_4r","vsfb02ll"],
+        ["boxFL_4l","vsfb02l"],
+
+        {"breakGroup":"van_metal_box_M"},
+        ["boxMR_1r","vsfb02rr"],
+        ["boxMR_1l","vsfb02l"],
+        ["boxMR_2r","vsfb04rr"],
+        ["boxMR_2l","vsfb04l"],
+        ["boxMR_3r","vsfb03r"],
+        ["boxMR_3l","vsfb03rr"],
+        ["boxMR_4r","vsfb04r"],
+        ["boxMR_4l","vsfb04rr"],
+        ["boxMR_3r","vsfb03rr"],
+        ["boxMR_3l","vsfb03r"],
+        ["boxMR_4r","vsfb03rr"],
+        ["boxMR_4l","vsfb03r"],
+
+        ["boxML_1r","vsfb02ll"],
+        ["boxML_1l","vsfb02r"],
+        ["boxML_2r","vsfb04ll"],
+        ["boxML_2l","vsfb04r"],
+        ["boxML_3r","vsfb03l"],
+        ["boxML_3l","vsfb03ll"],
+        ["boxML_4r","vsfb04l"],
+        ["boxML_4l","vsfb04ll"],
+        ["boxML_3r","vsfb03ll"],
+        ["boxML_3l","vsfb03l"],
+        ["boxML_4r","vsfb03ll"],
+        ["boxML_4l","vsfb03l"],
+
+
+
+        {"breakGroupType":0},
+        {"beamSpring":50200,"beamDamp":40},
+        {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+        {"breakGroup":"van_metal_box_F"},
+        ["vsfb01rr","box_ropeF_rr"],
+        ["vsfb11r","box_ropeF_rr"],
+        ["vsfb02rr","box_ropeF_rr"],
+        ["vsfb12r","box_ropeF_rr"],
+
+        ["vsfb01ll","box_ropeF_ll"],
+        ["vsfb11l","box_ropeF_ll"],
+        ["vsfb02ll","box_ropeF_ll"],
+        ["vsfb12l","box_ropeF_ll"],
+
+        ["boxFL_1l","box_ropeF_l"],
+        ["boxFL_1r","box_ropeF_l"],
+        ["boxFL_2r","box_ropeF_l"],
+        ["boxFL_2l","box_ropeF_l"],
+        ["boxFL_3l","box_ropeF_l"],
+        ["boxFL_4l","box_ropeF_l"],
+
+        ["boxFR_1r","box_ropeF_r"],
+        ["boxFR_1l","box_ropeF_r"],
+        ["boxFR_2l","box_ropeF_r"],
+        ["boxFR_2r","box_ropeF_r"],
+        ["boxFR_3r","box_ropeF_r"],
+        ["boxFR_4r","box_ropeF_r"],
+
+        ["boxFL_1r","box_ropeF_c"],
+        ["boxFL_2r","box_ropeF_c"],
+        ["boxFL_3r","box_ropeF_c"],
+        ["boxFL_4r","box_ropeF_c"],
+        ["boxFR_1l","box_ropeF_c"],
+        ["boxFR_2l","box_ropeF_c"],
+        ["boxFR_3l","box_ropeF_c"],
+        ["boxFR_4l","box_ropeF_c"],
+
+        ["vsfb02r","box_ropeF_rr"],
+        ["vsfb02l","box_ropeF_ll"],
+
+        {"breakGroup":"van_metal_box_M"},
+        ["vsfb02rr","box_ropeM_rr"],
+        ["vsfb12r","box_ropeM_rr"],
+        ["vsfb03rr","box_ropeM_rr"],
+        ["vsfb13r","box_ropeM_rr"],
+
+        ["vsfb02ll","box_ropeM_ll"],
+        ["vsfb12l","box_ropeM_ll"],
+        ["vsfb03ll","box_ropeM_ll"],
+        ["vsfb13l","box_ropeM_ll"],
+
+        ["boxML_1l","box_ropeM_l"],
+        ["boxML_1r","box_ropeM_l"],
+        ["boxML_2r","box_ropeM_l"],
+        ["boxML_2l","box_ropeM_l"],
+        ["boxML_3l","box_ropeM_l"],
+        ["boxML_4l","box_ropeM_l"],
+
+        ["boxMR_1r","box_ropeM_r"],
+        ["boxMR_1l","box_ropeM_r"],
+        ["boxMR_2l","box_ropeM_r"],
+        ["boxMR_2r","box_ropeM_r"],
+        ["boxMR_3r","box_ropeM_r"],
+        ["boxMR_4r","box_ropeM_r"],
+
+        ["boxML_1r","box_ropeM_c"],
+        ["boxML_2r","box_ropeM_c"],
+        ["boxML_3r","box_ropeM_c"],
+        ["boxML_4r","box_ropeM_c"],
+        ["boxMR_1l","box_ropeM_c"],
+        ["boxMR_2l","box_ropeM_c"],
+        ["boxMR_3l","box_ropeM_c"],
+        ["boxMR_4l","box_ropeM_c"],
+
+        ["vsfb03r","box_ropeM_rr"],
+        ["vsfb03l","box_ropeM_ll"],
+
+
+        {"breakGroup":""},
+
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+	],
+
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"dragCoef":10},
+
+            {"group":"van_metal_box_FR"},
+            ["boxFR_1r","boxFR_1l","boxFR_2l"],
+            ["boxFR_1r","boxFR_2l","boxFR_2r"],
+            ["boxFR_3r","boxFR_4l","boxFR_3l"],
+            ["boxFR_3r","boxFR_4r","boxFR_4l"],
+
+            ["boxFR_1r","boxFR_2r","boxFR_4r"],
+            ["boxFR_1r","boxFR_4r","boxFR_3r"],
+            ["boxFR_1l","boxFR_4l","boxFR_2l"],
+            ["boxFR_1l","boxFR_3l","boxFR_4l"],
+
+            ["boxFR_1r","boxFR_3r","boxFR_3l"],
+            ["boxFR_1r","boxFR_3l","boxFR_1l"],
+            ["boxFR_2r","boxFR_4l","boxFR_4r"],
+            ["boxFR_2r","boxFR_2l","boxFR_4l"],
+
+            {"group":"van_metal_box_FL"},
+            ["boxFL_1r","boxFL_2l","boxFL_1l"],
+            ["boxFL_1r","boxFL_2r","boxFL_2l"],
+            ["boxFL_3r","boxFL_3l","boxFL_4l"],
+            ["boxFL_3r","boxFL_4l","boxFL_4r"],
+
+            ["boxFL_1r","boxFL_4r","boxFL_2r"],
+            ["boxFL_1r","boxFL_3r","boxFL_4r"],
+            ["boxFL_1l","boxFL_2l","boxFL_4l"],
+            ["boxFL_1l","boxFL_4l","boxFL_3l"],
+
+            ["boxFL_1r","boxFL_3l","boxFL_3r"],
+            ["boxFL_1r","boxFL_1l","boxFL_3l"],
+            ["boxFL_2r","boxFL_4r","boxFL_4l"],
+            ["boxFL_2r","boxFL_4l","boxFL_2l"],
+
+            {"group":"van_metal_box_MR"},
+            ["boxMR_1r","boxMR_1l","boxMR_2l"],
+            ["boxMR_1r","boxMR_2l","boxMR_2r"],
+            ["boxMR_3r","boxMR_4l","boxMR_3l"],
+            ["boxMR_3r","boxMR_4r","boxMR_4l"],
+
+            ["boxMR_1r","boxMR_2r","boxMR_4r"],
+            ["boxMR_1r","boxMR_4r","boxMR_3r"],
+            ["boxMR_1l","boxMR_4l","boxMR_2l"],
+            ["boxMR_1l","boxMR_3l","boxMR_4l"],
+
+            ["boxMR_1r","boxMR_3r","boxMR_3l"],
+            ["boxMR_1r","boxMR_3l","boxMR_1l"],
+            ["boxMR_2r","boxMR_4l","boxMR_4r"],
+            ["boxMR_2r","boxMR_2l","boxMR_4l"],
+
+            {"group":"van_metal_box_ML"},
+            ["boxML_1r","boxML_2l","boxML_1l"],
+            ["boxML_1r","boxML_2r","boxML_2l"],
+            ["boxML_3r","boxML_3l","boxML_4l"],
+            ["boxML_3r","boxML_4l","boxML_4r"],
+
+            ["boxML_1r","boxML_4r","boxML_2r"],
+            ["boxML_1r","boxML_3r","boxML_4r"],
+            ["boxML_1l","boxML_2l","boxML_4l"],
+            ["boxML_1l","boxML_4l","boxML_3l"],
+
+            ["boxML_1r","boxML_3l","boxML_3r"],
+            ["boxML_1r","boxML_1l","boxML_3l"],
+            ["boxML_2r","boxML_4r","boxML_4l"],
+            ["boxML_2r","boxML_4l","boxML_2l"],
+
+            {"group":""},
+	],
+}
+
+"van_flatbedsmall_2boxes": {
+	"information":{
+		"authors":"AR162b",
+		"name":"2x 400kg Metal Boxes",
+	}
+    "slotType" : "van_flatbedsmall_options",
+
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["metal_box_simple", ["van_metal_box_FR"], [], {"pos":{"x":-0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_B", ["van_metal_box_FR"], [], {"pos":{"x":-0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_F", ["van_metal_box_FR"], [], {"pos":{"x":-0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_L", ["van_metal_box_FR"], [], {"pos":{"x":-0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_R", ["van_metal_box_FR"], [], {"pos":{"x":-0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+		 ["metal_box_simple", ["van_metal_box_FL"], [], {"pos":{"x": 0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_B", ["van_metal_box_FL"], [], {"pos":{"x": 0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_F", ["van_metal_box_FL"], [], {"pos":{"x": 0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_L", ["van_metal_box_FL"], [], {"pos":{"x": 0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["metal_box_decal_R", ["van_metal_box_FL"], [], {"pos":{"x": 0.52, "y":0.65, "z":1.00}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+
+		 ["van_flatbedsmall_rope_F", ["van_flatbedsmall_rope_F"], [], {"pos":{"x": 0.0, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"nodeWeight":50},
+		 {"frictionCoef":0.5},
+		 {"nodeMaterial":"|NM_METAL"},
+
+		 {"group":"van_metal_box_FR"},
+		 ["boxFR_1r",-0.99, 0.16, 1.98],
+		 ["boxFR_1l",-0.04, 0.16, 1.98],
+		 ["boxFR_2r",-0.99, 1.11, 1.98],
+		 ["boxFR_2l",-0.04, 1.11, 1.98],
+		 ["boxFR_3r",-0.99, 0.16, 1.03],
+		 ["boxFR_3l",-0.04, 0.16, 1.03],
+		 ["boxFR_4r",-0.99, 1.11, 1.03],
+		 ["boxFR_4l",-0.04, 1.11, 1.03],
+		 {"group":"van_metal_box_FL"},
+		 ["boxFL_1r", 0.99, 0.16, 1.98],
+		 ["boxFL_1l", 0.04, 0.16, 1.98],
+		 ["boxFL_2r", 0.99, 1.11, 1.98],
+		 ["boxFL_2l", 0.04, 1.11, 1.98],
+		 ["boxFL_3r", 0.99, 0.16, 1.03],
+		 ["boxFL_3l", 0.04, 0.16, 1.03],
+		 ["boxFL_4r", 0.99, 1.11, 1.03],
+		 ["boxFL_4l", 0.04, 1.11, 1.03],
+
+
+		 {"frictionCoef":0.5},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"collision":true}
+		 {"selfCollision":false}
+		 {"nodeWeight":0.5},
+
+		 {"group":"van_flatbedsmall_rope_F"},
+		 ["box_ropeF_ll", 1.1, 0.62, 1.07],
+		 ["box_ropeF_l", 1.02, 0.62, 2.01],
+		 ["box_ropeF_c", 0.0, 0.62, 2.01],
+		 ["box_ropeF_r",-1.02, 0.62, 2.01],
+		 ["box_ropeF_rr",-1.1, 0.62, 1.07],
+
+        	 {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":50000,"beamDamp":40},
+        {"beamDeform":75000,"beamStrength":"FLT_MAX"},
+        ["box_ropeF_ll","box_ropeF_l"],
+        ["box_ropeF_l","box_ropeF_c"],
+        ["box_ropeF_c","box_ropeF_r"],
+        ["box_ropeF_r","box_ropeF_rr"],
+
+
+
+        {"beamSpring":601000,"beamDamp":1500},
+        {"beamDeform":75000,"beamStrength":"FLT_MAX"},
+	// Box FR straight
+        ["boxFR_1r","boxFR_1l"],
+        ["boxFR_2r","boxFR_2l"],
+        ["boxFR_3r","boxFR_3l"],
+        ["boxFR_4r","boxFR_4l"],
+        ["boxFR_1r","boxFR_2r"],
+        ["boxFR_1l","boxFR_2l"],
+        ["boxFR_3r","boxFR_4r"],
+        ["boxFR_3l","boxFR_4l"],
+        ["boxFR_1r","boxFR_3r"],
+        ["boxFR_1l","boxFR_3l"],
+        ["boxFR_2r","boxFR_4r"],
+        ["boxFR_2l","boxFR_4l"],
+	// Box FR diagonal
+        ["boxFR_1r","boxFR_2l"],
+        ["boxFR_2r","boxFR_1l"],
+        ["boxFR_3r","boxFR_4l"],
+        ["boxFR_4r","boxFR_3l"],
+        ["boxFR_1r","boxFR_4r"],
+        ["boxFR_1l","boxFR_4l"],
+        ["boxFR_3r","boxFR_2r"],
+        ["boxFR_3l","boxFR_2l"],
+        ["boxFR_1r","boxFR_3l"],
+        ["boxFR_2r","boxFR_4l"],
+        ["boxFR_3r","boxFR_1l"],
+        ["boxFR_4r","boxFR_2l"],
+
+	// Box FL straight
+        ["boxFL_1r","boxFL_1l"],
+        ["boxFL_2r","boxFL_2l"],
+        ["boxFL_3r","boxFL_3l"],
+        ["boxFL_4r","boxFL_4l"],
+        ["boxFL_1r","boxFL_2r"],
+        ["boxFL_1l","boxFL_2l"],
+        ["boxFL_3r","boxFL_4r"],
+        ["boxFL_3l","boxFL_4l"],
+        ["boxFL_1r","boxFL_3r"],
+        ["boxFL_1l","boxFL_3l"],
+        ["boxFL_2r","boxFL_4r"],
+        ["boxFL_2l","boxFL_4l"],
+	// Box FL diagonal
+        ["boxFL_1r","boxFL_2l"],
+        ["boxFL_2r","boxFL_1l"],
+        ["boxFL_3r","boxFL_4l"],
+        ["boxFL_4r","boxFL_3l"],
+        ["boxFL_1r","boxFL_4r"],
+        ["boxFL_1l","boxFL_4l"],
+        ["boxFL_3r","boxFL_2r"],
+        ["boxFL_3l","boxFL_2l"],
+        ["boxFL_1r","boxFL_3l"],
+        ["boxFL_2r","boxFL_4l"],
+        ["boxFL_3r","boxFL_1l"],
+        ["boxFL_4r","boxFL_2l"],
+
+        //attachment
+        {"breakGroupType":0},
+        {"beamSpring":67200,"beamDamp":130},
+        {"beamDeform":13500,"beamStrength":"6000"},
+        {"breakGroup":"van_metal_box_F"},
+        ["boxFR_1r","vsfb01rr"],
+        ["boxFR_1l","vsfb01l"],
+        ["boxFR_2r","vsfb03rr"],
+        ["boxFR_2l","vsfb03l"],
+        ["boxFR_3r","vsfb01r"],
+        ["boxFR_3l","vsfb01rr"],
+        ["boxFR_4r","vsfb03r"],
+        ["boxFR_4l","vsfb03rr"],
+        ["boxFR_3r","vsfb02rr"],
+        ["boxFR_3l","vsfb02r"],
+        ["boxFR_4r","vsfb02rr"],
+        ["boxFR_4l","vsfb02r"],
+
+        ["boxFL_1r","vsfb01ll"],
+        ["boxFL_1l","vsfb01r"],
+        ["boxFL_2r","vsfb03ll"],
+        ["boxFL_2l","vsfb03r"],
+        ["boxFL_3r","vsfb01l"],
+        ["boxFL_3l","vsfb01ll"],
+        ["boxFL_4r","vsfb03l"],
+        ["boxFL_4l","vsfb03ll"],
+        ["boxFL_3r","vsfb02ll"],
+        ["boxFL_3l","vsfb02l"],
+        ["boxFL_4r","vsfb02ll"],
+        ["boxFL_4l","vsfb02l"],
+
+
+        {"breakGroupType":0},
+        {"beamSpring":50200,"beamDamp":40},
+        {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+        {"breakGroup":"van_metal_box_F"},
+        ["vsfb01rr","box_ropeF_rr"],
+        ["vsfb11r","box_ropeF_rr"],
+        ["vsfb02rr","box_ropeF_rr"],
+        ["vsfb12r","box_ropeF_rr"],
+
+        ["vsfb01ll","box_ropeF_ll"],
+        ["vsfb11l","box_ropeF_ll"],
+        ["vsfb02ll","box_ropeF_ll"],
+        ["vsfb12l","box_ropeF_ll"],
+
+        ["boxFL_1l","box_ropeF_l"],
+        ["boxFL_1r","box_ropeF_l"],
+        ["boxFL_2r","box_ropeF_l"],
+        ["boxFL_2l","box_ropeF_l"],
+        ["boxFL_3l","box_ropeF_l"],
+        ["boxFL_4l","box_ropeF_l"],
+
+        ["boxFR_1r","box_ropeF_r"],
+        ["boxFR_1l","box_ropeF_r"],
+        ["boxFR_2l","box_ropeF_r"],
+        ["boxFR_2r","box_ropeF_r"],
+        ["boxFR_3r","box_ropeF_r"],
+        ["boxFR_4r","box_ropeF_r"],
+
+        ["boxFL_1r","box_ropeF_c"],
+        ["boxFL_2r","box_ropeF_c"],
+        ["boxFL_3r","box_ropeF_c"],
+        ["boxFL_4r","box_ropeF_c"],
+        ["boxFR_1l","box_ropeF_c"],
+        ["boxFR_2l","box_ropeF_c"],
+        ["boxFR_3l","box_ropeF_c"],
+        ["boxFR_4l","box_ropeF_c"],
+
+        ["vsfb02r","box_ropeF_rr"],
+        ["vsfb02l","box_ropeF_ll"],
+
+
+        {"breakGroup":""},
+
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+	],
+
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"dragCoef":10},
+
+            {"group":"van_metal_box_FR"},
+            ["boxFR_1r","boxFR_1l","boxFR_2l"],
+            ["boxFR_1r","boxFR_2l","boxFR_2r"],
+            ["boxFR_3r","boxFR_4l","boxFR_3l"],
+            ["boxFR_3r","boxFR_4r","boxFR_4l"],
+
+            ["boxFR_1r","boxFR_2r","boxFR_4r"],
+            ["boxFR_1r","boxFR_4r","boxFR_3r"],
+            ["boxFR_1l","boxFR_4l","boxFR_2l"],
+            ["boxFR_1l","boxFR_3l","boxFR_4l"],
+
+            ["boxFR_1r","boxFR_3r","boxFR_3l"],
+            ["boxFR_1r","boxFR_3l","boxFR_1l"],
+            ["boxFR_2r","boxFR_4l","boxFR_4r"],
+            ["boxFR_2r","boxFR_2l","boxFR_4l"],
+
+            {"group":"van_metal_box_FL"},
+            ["boxFL_1r","boxFL_2l","boxFL_1l"],
+            ["boxFL_1r","boxFL_2r","boxFL_2l"],
+            ["boxFL_3r","boxFL_3l","boxFL_4l"],
+            ["boxFL_3r","boxFL_4l","boxFL_4r"],
+
+            ["boxFL_1r","boxFL_4r","boxFL_2r"],
+            ["boxFL_1r","boxFL_3r","boxFL_4r"],
+            ["boxFL_1l","boxFL_2l","boxFL_4l"],
+            ["boxFL_1l","boxFL_4l","boxFL_3l"],
+
+            ["boxFL_1r","boxFL_3l","boxFL_3r"],
+            ["boxFL_1r","boxFL_1l","boxFL_3l"],
+            ["boxFL_2r","boxFL_4r","boxFL_4l"],
+            ["boxFL_2r","boxFL_4l","boxFL_2l"],
+
+
+
+            {"group":""},
+	],
+}
+
+"van_smallflatbed_receiver_heavy": {
+	"information":{
+		"authors":"BeamNG, modded by AR162b",
+		"name":"Heavy Duty Tow Hitch Receiver",
+	}
+    "slotType" : "van_flatbedsmall_options",
+
+	"slots": [
+		 ["type", "default", "description"],
+		 ["van_heavy_trailer", "", "Heavy Trailer"{"nodeOffset":{"x":0.0,"y":-1.15,"z":0.0}}],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["van_smallflatbed_receiver_heavy", ["van_flatbedsmall","van_receiver"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true}
+		 {"frictionCoef":0.7},
+		 {"selfCollision":true}
+		 //--TOW HITCH--
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"van_receiver"}
+		 {"nodeWeight":8},
+		 ["tw", 0.0, 3.20, 0.58],
+		 {"group":""}
+	],
+	
+	"ties":[
+		["id1:", "maxLen", "rate", "short", "long", "group", "maxforce"],
+		["tw", 0.75, 1, 1, 1, "van_receiver", 10000000],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //--TOW HITCH--
+		  {"beamSpring":1848840,"beamDamp":195},
+		  {"beamDeform":120000,"beamStrength":"FLT_MAX"},
+
+		  ["tw","vsfb25r"],
+		  ["tw","vsfb25l"],
+		  ["tw","vsfb05r"],
+		  ["tw","vsfb05l"],,
+		  ["tw","vsfb25rr"],
+		  ["tw","vsfb25ll"],
+		  ["tw","vsfb04r"],
+		  ["tw","vsfb04l"],
+		  ["tw","vsfb03r"],
+		  ["tw","vsfb03l"],
+
+          {"breakGroupType":1},
+          {"breakGroup":"van_flatbedsmall_RR"},
+		  ["tw","fr20r"],
+		  ["tw","fr18r"],
+          {"breakGroup":"van_flatbedsmall_RL"},
+		  ["tw","fr20l"],
+		  ["tw","fr18l"],
+          {"breakGroup":""},
+
+          {"breakGroupType":0},
+		  
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//towhitch
+			{"group":"van_towhitch"},
+			{"group":""},
+			
+	],
+}
+
+}

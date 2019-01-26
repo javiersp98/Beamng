@@ -1,0 +1,69 @@
+{
+
+"etk800_differential_R_short": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Open Short Rear Differential",
+        "value":800,
+    }
+    "slotType" : "etk800_differential_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["etk800_driveshaft_R","etk800_driveshaft_R", "Rear Driveshaft"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"open", "gearRatio": 3.90, "friction":8, "uiName":"Rear Differential","defaultVirtualInertia":0.25}]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["etk800_diff", ["etk800_subframe_R","etk800_body"]],
+         ["etk800_halfshaft_R", ["etk800_hub_R","etk800_lowerarm_R","etk800_diff_R"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--diff weight--
+         {"selfCollision":false},
+         {"collision":false}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"etk800_diff_R"},
+         {"nodeWeight":45},
+         ["rdiff", 0, 1.41, 0.26],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //differential node
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":4800600,"beamDamp":138},
+          {"beamDeform":27000,"beamStrength":"FLT_MAX"},
+          //["rdiff","r2"],
+          ["rdiff","rx1"],
+          ["rdiff","r1"],
+          ["rdiff","rx2r"],
+          ["rdiff","rx2l"],
+          ["rdiff","rx1r"],
+          ["rdiff","rx1l"],
+          ["rdiff","rx4r"],
+          ["rdiff","rx4l"],
+          ["rdiff","rx5r"],
+          ["rdiff","rx5l"],
+          //halfshafts
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.02, "beamShortBound":0.02},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":3600,"beamStrength":9500},
+          {"beamLimitSpring":7501000,"beamLimitDamp":230},
+          {"breakGroupType":1},
+          {"optional":true},
+          {"breakGroup":"wheel_RR"},
+          ["rw1r","rdiff", {"name":"axle_RR"}],
+          {"breakGroup":"wheel_RL"},
+          ["rw1l","rdiff", {"name":"axle_RL"}],
+          {"breakGroup":""},
+          {"optional":false},
+          {"breakGroupType":0},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+}
