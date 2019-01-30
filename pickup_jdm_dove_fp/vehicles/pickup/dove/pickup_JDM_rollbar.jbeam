@@ -1,0 +1,1195 @@
+{
+"pickup_jdm_rollbar": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Dove Off-Road Roll Bar",
+        "value":800,
+    }
+    "slotType" : "pickup_bedextra",
+	"slots": [
+		["type", "default", "description"],
+        ["pickup_jdm_rollbar_innerlights","pickup_jdm_rollbar_innerlights", "Inner Lights"],
+        ["pickup_jdm_rollbar_outerlights","pickup_jdm_rollbar_outerlights", "Outer Lights"],
+	],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pickup_rollbar", ["pickup_rollbar"], [],{"pos":{"x":0,"y":0,"z":0}}],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"nodeWeight":3.0},
+         {"frictionCoef":0.5},
+         {"group":"pickup_rollbar"},
+         {"selfCollision":true}
+         ["ro1r",-0.69, 0.53, 1.78],
+         ["ro1", 0.0, 0.53, 1.81],
+         ["ro1l", 0.69, 0.53, 1.78],
+         ["ro2r", -0.86, 0.55, 1.34],
+         ["ro2l", 0.86, 0.55, 1.34],
+         ["ro3r", -0.76, 0.57, 0.70],
+         ["ro3l", 0.76, 0.57, 0.70],
+
+         ["ro4r",-0.76, 1.49, 1.22],
+         ["ro4l", 0.76, 1.49, 1.22],
+         ["ro5r",-0.76, 1.49, 1],
+         ["ro5l", 0.76, 1.49, 1],
+
+         {"selfCollision":false}
+         {"collision":false}
+         //rigidifier
+         {"group":""},
+         ["ro6", 0.0, 1.0, 1.12],
+
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          //--ROLLBAR--
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":5001000,"beamDamp":150},
+          {"beamDeform":150000,"beamStrength":"FLT_MAX"},
+          //main shape
+          ["ro1r","ro1"],
+          ["ro1l","ro1"],
+          ["ro1r","ro2r"],
+          ["ro1l","ro2l"],
+          ["ro2r","ro3r"],
+          ["ro2l","ro3l"],
+          ["ro1r","ro4r"],
+          ["ro1l","ro4l"],
+          ["ro5r","ro4r"],
+          ["ro5l","ro4l"],
+
+          //corners
+          {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+          ["ro1r","ro1l"],
+          ["ro1r","ro3r"],
+          ["ro1l","ro3l"],
+          ["ro5r","ro1r"],
+          ["ro5l","ro1l"],
+          {"deformLimitExpansion":""},
+          {"beamDeform":35000,"beamStrength":"FLT_MAX"},
+          ["ro1","ro2r"],
+          ["ro1","ro2l"],
+          ["ro4r","ro1"],
+          ["ro4l","ro1"],
+          {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+          ["ro4r","ro3r"],
+          ["ro4l","ro3l"],
+          ["ro4r","ro2r"],
+          ["ro4l","ro2l"],
+
+          //rigidifier
+          {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+          ["ro1r","ro6"],
+          ["ro1","ro6"],
+          ["ro1l","ro6"],
+          ["ro2r","ro6"],
+          ["ro2l","ro6"],
+          ["ro3r","ro6"],
+          ["ro3l","ro6"],
+          ["ro4r","ro6"],
+          ["ro4l","ro6"],
+          ["ro5r","ro6"],
+          ["ro5l","ro6"],
+          {"deformLimitExpansion":1.1},
+          
+          //attach
+          {"beamSpring":4001000,"beamDamp":250},
+          {"beamDeform":30000,"beamStrength":75000},
+          {"breakGroup":"rollbar_a_R"},
+          //r1
+          ["ro4r","fr17r"],
+          ["ro5r","fr17r"],
+          ["ro5r","b7rr"],
+          ["ro4r","b8rr"],
+          ["ro5r","b8rr"],
+          ["ro5r","b9rr"],
+
+          {"breakGroup":"rollbar_b_R"},
+          //r2
+          ["ro2r","fr16r"],
+          ["ro3r","fr16r"],
+          ["ro2r","fr12r"],
+          ["ro3r","fr12r"],
+          ["ro2r","b6rr"],
+          ["ro3r","b6rr"],
+          ["ro3r","b7rr"],
+
+          {"breakGroup":"rollbar_a_L"},
+          //l1
+          ["ro4l","fr17l"],
+          ["ro5l","fr17l"],
+          ["ro5l","b7ll"],
+          ["ro4l","b8ll"],
+          ["ro5l","b8ll"],
+          ["ro5l","b9ll"],
+
+          {"breakGroup":"rollbar_b_L"},
+          //l2
+          ["ro2l","fr16l"],
+          ["ro3l","fr16l"],
+          ["ro2l","fr12l"],
+          ["ro3l","fr12l"],
+          ["ro2l","b6ll"],
+          ["ro3l","b6ll"],
+          ["ro3l","b7ll"],
+          {"breakGroup":""},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"group":"pickup_rollbar"},
+            {"groundModel":"metal"},
+            {"dragCoef":6},
+            ["ro1","ro1l","ro4l"],
+            ["ro1","ro4r","ro1r"],
+
+            ["ro1l","ro2l","ro4l"],
+            ["ro2l","ro3l","ro4l"],
+            ["ro4l","ro3l","ro5l"],
+            ["ro2r","ro1r","ro4r"],
+            ["ro3r","ro2r","ro4r"],
+            ["ro3r","ro4r","ro5r"],
+
+            ["ro1r","ro2r","ro1"],
+            ["ro2l","ro1l","ro1"],
+            ["ro2r","ro2l","ro1"],
+            ["ro2r","ro3r","ro3l"],
+            ["ro2r","ro3l","ro2l"],
+            {"dragCoef":0},
+    ],
+},
+"pickup_jdm_rollbar_innerlights": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Inner Lights",
+        "value":800,
+    }
+    "slotType" : "pickup_jdm_rollbar_innerlights",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["roundlight", ["rollbar_light_R"], [],{"pos":{"x":-0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+         ["roundlight", ["rollbar_light_L"], [],{"pos":{"x":0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+
+         {"deformGroup":"rollbar_light_R_break", "deformMaterialBase":"light_generic", "deformMaterialDamaged":"light_generic_dmg"}
+         ["roundlight_inner", ["rollbar_light_R"], [],{"pos":{"x":-0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+
+         {"deformGroup":"rollbar_light_L_break", "deformMaterialBase":"light_generic", "deformMaterialDamaged":"light_generic_dmg"}
+         ["roundlight_inner", ["rollbar_light_L"], [],{"pos":{"x":0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+
+         {"deformGroup":"roolbar_light_R_break", "deformMaterialBase":"pickup_glass", "deformMaterialDamaged":"pickup_glass_dmg"}
+         ["roundlight_glass", ["rollbar_light_R"], [],{"pos":{"x":-0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}"deformSound":"GlassBreakSound4", "deformVolume":0.5}],
+
+         {"deformGroup":"roofrack_light_L_break", "deformMaterialBase":"pickup_glass", "deformMaterialDamaged":"pickup_glass_dmg"}
+         ["roundlight_glass", ["rollbar_light_L"], [],{"pos":{"x":0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}"deformSound":"GlassBreakSound3", "deformVolume":0.5}],
+         {"deformGroup":""}
+    ],
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":0
+            "lightOuterAngle":120
+            "lightBrightness":0.35
+            "lightRange":150
+            "lightColor":{"r":255, "g":255, "b":200, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.2
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        ["highbeam"    , "SPOTLIGHT"        , "rblb_l1l", "rblb_l2l", "rblb_l4l", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":0.02},"deformGroup":"rollbar_light_L_break"}],,
+        ["highbeam"    , "SPOTLIGHT"        , "rblb_l1r", "rblb_l2r", "rblb_l4r", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":-0.02},"deformGroup":"rollbar_light_R_break"}],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"nodeMaterial":"|NM_METAL"},
+		 {"collision":true}
+         {"frictionCoef":0.5},
+         {"selfCollision":true}
+         {"nodeWeight":1.4},
+		 {"group":"rollbar_light_L"}
+         ["rblb_l1l",0.28, 0.5, 1.83],
+         ["rblb_l2l",0.11, 0.5, 1.83],
+         ["rblb_l3l",0.28, 0.5, 2.00],
+         ["rblb_l4l",0.11, 0.5, 2.00],
+         ["rblb_l5l",0.20, 0.59, 1.92],
+         {"group":"rollbar_light_R"}
+         ["rblb_l1r",-0.28, 0.5, 1.83],
+         ["rblb_l2r",-0.11, 0.5, 1.83],
+         ["rblb_l3r",-0.28, 0.5, 2.00],
+         ["rblb_l4r",-0.11, 0.5, 2.00],
+         ["rblb_l5r",-0.20, 0.59, 1.92],
+		 {"group":""},
+	],
+	"beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":1176840,"beamDamp":78},
+          {"beamDeform":36750,"beamStrength":"FLT_MAX"},
+          //left_light
+          {"deformationTriggerRatio":0.05}
+          {"deformGroup":"rollbar_light_L_break"},
+          ["rblb_l1l","rblb_l2l"],
+          ["rblb_l3l","rblb_l4l"],
+          ["rblb_l1l","rblb_l3l"],
+          ["rblb_l2l","rblb_l4l"],
+
+          ["rblb_l1l","rblb_l4l"],
+          ["rblb_l2l","rblb_l3l"],
+
+          ["rblb_l1l","rblb_l5l"],
+          ["rblb_l2l","rblb_l5l"],
+          ["rblb_l3l","rblb_l5l"],
+          ["rblb_l4l","rblb_l5l"],
+		  
+		  //right_light
+          {"deformationTriggerRatio":0.05}
+          {"deformGroup":"rollbar_light_R_break"},
+          ["rblb_l1r","rblb_l2r"],
+          ["rblb_l3r","rblb_l4r"],
+          ["rblb_l1r","rblb_l3r"],
+          ["rblb_l2r","rblb_l4r"],
+
+          ["rblb_l1r","rblb_l4r"],
+          ["rblb_l2r","rblb_l3r"],
+
+          ["rblb_l1r","rblb_l5r"],
+          ["rblb_l2r","rblb_l5r"],
+          ["rblb_l3r","rblb_l5r"],
+          ["rblb_l4r","rblb_l5r"],
+		  
+		  //attach
+          {"beamSpring":252840,"beamDamp":130},
+          {"beamDeform":8250,"beamStrength":7120},
+          {"deformGroup":"rollbar_light_L_break"},
+          {"breakGroup":"rollbar_light_L_attach"},
+          ["rblb_l1l","ro1l"],
+          ["rblb_l1l","ro3l"],
+          ["rblb_l1l","ro4l"],
+
+          ["rblb_l2l","ro1"],
+          ["rblb_l2l","ro6"],
+          ["rblb_l2l","ro3r"],
+
+          ["rblb_l3l","ro6"],
+          ["rblb_l3l","ro4l"],
+          ["rblb_l3l","ro5l"],
+
+          ["rblb_l4l","ro6"],
+          ["rblb_l4l","ro4l"],
+          ["rblb_l4l","ro5l"],
+
+          ["rblb_l5l","ro6"],
+          ["rblb_l5l","ro5r"],
+          ["rblb_l5l","ro5l"],
+		  
+		  {"deformGroup":"rollbar_light_R_break"},
+          {"breakGroup":"rollbar_light_R_attach"},
+          ["rblb_l1r","ro1r"],
+          ["rblb_l1r","ro3r"],
+          ["rblb_l1r","ro4r"],
+
+          ["rblb_l2r","ro1"],
+          ["rblb_l2r","ro6"],
+          ["rblb_l2r","ro3l"],
+
+          ["rblb_l3r","ro6"],
+          ["rblb_l3r","ro4r"],
+          ["rblb_l3r","ro5r"],
+
+          ["rblb_l4r","ro6"],
+          ["rblb_l4r","ro4r"],
+          ["rblb_l4r","ro5r"],
+
+          ["rblb_l5r","ro6"],
+          ["rblb_l5r","ro5l"],
+          ["rblb_l5r","ro5r"],
+          {"breakGroup":""},
+          {"deformGroup":""},
+	],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"dragCoef":6},
+            {"triangleType":"NONCOLLIDABLE"},
+            ["rblb_l4r", "rblb_l5r", "rblb_l3r"],
+            ["rblb_l5r", "rblb_l1r", "rblb_l3r"],
+            ["rblb_l5r", "rblb_l2r", "rblb_l1r"],
+            ["rblb_l5r", "rblb_l4r", "rblb_l2r"],
+
+            ["rblb_l5l", "rblb_l4l", "rblb_l3l"],
+            ["rblb_l1l", "rblb_l5l", "rblb_l3l"],
+            ["rblb_l2l", "rblb_l5l", "rblb_l1l"],
+            ["rblb_l4l", "rblb_l5l", "rblb_l2l"],
+            {"triangleType":"NORMALTYPE"},
+    ],
+    "quads": [
+           ["id1:","id2:","id3:", "id4:"],
+           {"dragCoef":12},
+           ["rblb_l1l","rblb_l3l","rblb_l4l", "rblb_l2l"],
+           ["rblb_l1r","rblb_l2r","rblb_l4r", "rblb_l3r"],
+           {"dragCoef":0},
+           {"group":""},
+    ],
+},
+"pickup_jdm_rollbar_innerlights_grille": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Inner Lights with Grille",
+        "value":800,
+    }
+    "slotType" : "pickup_jdm_rollbar_innerlights",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["roundlight", ["rollbar_light_R"], [],{"pos":{"x":-0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+         ["roundlight", ["rollbar_light_L"], [],{"pos":{"x":0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+         ["roundlight_grille", ["rollbar_light_R"], [],{"pos":{"x":-0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+         ["roundlight_grille", ["rollbar_light_L"], [],{"pos":{"x":0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+
+         {"deformGroup":"rollbar_light_R_break", "deformMaterialBase":"light_generic", "deformMaterialDamaged":"light_generic_dmg"}
+         ["roundlight_inner", ["rollbar_light_R"], [],{"pos":{"x":-0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+
+         {"deformGroup":"rollbar_light_L_break", "deformMaterialBase":"light_generic", "deformMaterialDamaged":"light_generic_dmg"}
+         ["roundlight_inner", ["rollbar_light_L"], [],{"pos":{"x":0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+
+         {"deformGroup":"roolbar_light_R_break", "deformMaterialBase":"pickup_glass", "deformMaterialDamaged":"pickup_glass_dmg"}
+         ["roundlight_glass", ["rollbar_light_R"], [],{"pos":{"x":-0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}"deformSound":"GlassBreakSound4", "deformVolume":0.5}],
+
+         {"deformGroup":"roofrack_light_L_break", "deformMaterialBase":"pickup_glass", "deformMaterialDamaged":"pickup_glass_dmg"}
+         ["roundlight_glass", ["rollbar_light_L"], [],{"pos":{"x":0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}"deformSound":"GlassBreakSound3", "deformVolume":0.5}],
+         {"deformGroup":""}
+    ],
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":0
+            "lightOuterAngle":120
+            "lightBrightness":0.35
+            "lightRange":150
+            "lightColor":{"r":255, "g":255, "b":200, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.2
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        ["highbeam"    , "SPOTLIGHT"        , "rblb_l1l", "rblb_l2l", "rblb_l4l", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":0.02},"deformGroup":"rollbar_light_L_break"}],,
+        ["highbeam"    , "SPOTLIGHT"        , "rblb_l1r", "rblb_l2r", "rblb_l4r", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":-0.02},"deformGroup":"rollbar_light_R_break"}],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"nodeMaterial":"|NM_METAL"},
+		 {"collision":true}
+         {"frictionCoef":0.5},
+         {"selfCollision":true}
+         {"nodeWeight":1.4},
+		 {"group":"rollbar_light_L"}
+         ["rblb_l1l",0.28, 0.5, 1.83],
+         ["rblb_l2l",0.11, 0.5, 1.83],
+         ["rblb_l3l",0.28, 0.5, 2.00],
+         ["rblb_l4l",0.11, 0.5, 2.00],
+         ["rblb_l5l",0.20, 0.59, 1.92],
+         {"group":"rollbar_light_R"}
+         ["rblb_l1r",-0.28, 0.5, 1.83],
+         ["rblb_l2r",-0.11, 0.5, 1.83],
+         ["rblb_l3r",-0.28, 0.5, 2.00],
+         ["rblb_l4r",-0.11, 0.5, 2.00],
+         ["rblb_l5r",-0.20, 0.59, 1.92],
+		 {"group":""},
+	],
+	"beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":1176840,"beamDamp":78},
+          {"beamDeform":36750,"beamStrength":"FLT_MAX"},
+          //left_light
+          {"deformationTriggerRatio":0.05}
+          {"deformGroup":"rollbar_light_L_break"},
+          ["rblb_l1l","rblb_l2l"],
+          ["rblb_l3l","rblb_l4l"],
+          ["rblb_l1l","rblb_l3l"],
+          ["rblb_l2l","rblb_l4l"],
+
+          ["rblb_l1l","rblb_l4l"],
+          ["rblb_l2l","rblb_l3l"],
+
+          ["rblb_l1l","rblb_l5l"],
+          ["rblb_l2l","rblb_l5l"],
+          ["rblb_l3l","rblb_l5l"],
+          ["rblb_l4l","rblb_l5l"],
+		  
+		  //right_light
+          {"deformationTriggerRatio":0.05}
+          {"deformGroup":"rollbar_light_R_break"},
+          ["rblb_l1r","rblb_l2r"],
+          ["rblb_l3r","rblb_l4r"],
+          ["rblb_l1r","rblb_l3r"],
+          ["rblb_l2r","rblb_l4r"],
+
+          ["rblb_l1r","rblb_l4r"],
+          ["rblb_l2r","rblb_l3r"],
+
+          ["rblb_l1r","rblb_l5r"],
+          ["rblb_l2r","rblb_l5r"],
+          ["rblb_l3r","rblb_l5r"],
+          ["rblb_l4r","rblb_l5r"],
+		  
+		  //attach
+          {"beamSpring":252840,"beamDamp":130},
+          {"beamDeform":8250,"beamStrength":7120},
+          {"deformGroup":"rollbar_light_L_break"},
+          {"breakGroup":"rollbar_light_L_attach"},
+          ["rblb_l1l","ro1l"],
+          ["rblb_l1l","ro3l"],
+          ["rblb_l1l","ro4l"],
+
+          ["rblb_l2l","ro1"],
+          ["rblb_l2l","ro6"],
+          ["rblb_l2l","ro3r"],
+
+          ["rblb_l3l","ro6"],
+          ["rblb_l3l","ro4l"],
+          ["rblb_l3l","ro5l"],
+
+          ["rblb_l4l","ro6"],
+          ["rblb_l4l","ro4l"],
+          ["rblb_l4l","ro5l"],
+
+          ["rblb_l5l","ro6"],
+          ["rblb_l5l","ro5r"],
+          ["rblb_l5l","ro5l"],
+		  
+		  {"deformGroup":"rollbar_light_R_break"},
+          {"breakGroup":"rollbar_light_R_attach"},
+          ["rblb_l1r","ro1r"],
+          ["rblb_l1r","ro3r"],
+          ["rblb_l1r","ro4r"],
+
+          ["rblb_l2r","ro1"],
+          ["rblb_l2r","ro6"],
+          ["rblb_l2r","ro3l"],
+
+          ["rblb_l3r","ro6"],
+          ["rblb_l3r","ro4r"],
+          ["rblb_l3r","ro5r"],
+
+          ["rblb_l4r","ro6"],
+          ["rblb_l4r","ro4r"],
+          ["rblb_l4r","ro5r"],
+
+          ["rblb_l5r","ro6"],
+          ["rblb_l5r","ro5l"],
+          ["rblb_l5r","ro5r"],
+          {"breakGroup":""},
+          {"deformGroup":""},
+	],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"dragCoef":6},
+            {"triangleType":"NONCOLLIDABLE"},
+            ["rblb_l4r", "rblb_l5r", "rblb_l3r"],
+            ["rblb_l5r", "rblb_l1r", "rblb_l3r"],
+            ["rblb_l5r", "rblb_l2r", "rblb_l1r"],
+            ["rblb_l5r", "rblb_l4r", "rblb_l2r"],
+
+            ["rblb_l5l", "rblb_l4l", "rblb_l3l"],
+            ["rblb_l1l", "rblb_l5l", "rblb_l3l"],
+            ["rblb_l2l", "rblb_l5l", "rblb_l1l"],
+            ["rblb_l4l", "rblb_l5l", "rblb_l2l"],
+            {"triangleType":"NORMALTYPE"},
+    ],
+    "quads": [
+           ["id1:","id2:","id3:", "id4:"],
+           {"dragCoef":12},
+           ["rblb_l1l","rblb_l3l","rblb_l4l", "rblb_l2l"],
+           ["rblb_l1r","rblb_l2r","rblb_l4r", "rblb_l3r"],
+           {"dragCoef":0},
+           {"group":""},
+    ],
+},
+"pickup_jdm_rollbar_innerlights_cover": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Inner Lights with Cover",
+        "value":800,
+    }
+    "slotType" : "pickup_jdm_rollbar_innerlights",
+	"slots": [
+        ["type", "default", "description"]
+        ["skin_roundlights","roundlights_skin_blank","Cover Design"{"coreSlot":true}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["roundlight", ["rollbar_light_R"], [],{"pos":{"x":-0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+         ["roundlight", ["rollbar_light_L"], [],{"pos":{"x":0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+         ["roundlight_cover", ["rollbar_light_R"], [],{"pos":{"x":-0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+         ["roundlight_cover", ["rollbar_light_L"], [],{"pos":{"x":0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+
+         {"deformGroup":"rollbar_light_R_break", "deformMaterialBase":"light_generic", "deformMaterialDamaged":"light_generic_dmg"}
+         ["roundlight_inner", ["rollbar_light_R"], [],{"pos":{"x":-0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+
+         {"deformGroup":"rollbar_light_L_break", "deformMaterialBase":"light_generic", "deformMaterialDamaged":"light_generic_dmg"}
+         ["roundlight_inner", ["rollbar_light_L"], [],{"pos":{"x":0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+
+         {"deformGroup":"roolbar_light_R_break", "deformMaterialBase":"pickup_glass", "deformMaterialDamaged":"pickup_glass_dmg"}
+         ["roundlight_glass", ["rollbar_light_R"], [],{"pos":{"x":-0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}"deformSound":"GlassBreakSound4", "deformVolume":0.5}],
+
+         {"deformGroup":"roofrack_light_L_break", "deformMaterialBase":"pickup_glass", "deformMaterialDamaged":"pickup_glass_dmg"}
+         ["roundlight_glass", ["rollbar_light_L"], [],{"pos":{"x":0.20,"y":0.535,"z":1.92}, "scale":{"x":1.2,"y":1.2,"z":1.2}"deformSound":"GlassBreakSound3", "deformVolume":0.5}],
+         {"deformGroup":""}
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"nodeMaterial":"|NM_METAL"},
+		 {"collision":true}
+         {"frictionCoef":0.5},
+         {"selfCollision":true}
+         {"nodeWeight":1.4},
+		 {"group":"rollbar_light_L"}
+         ["rblb_l1l",0.28, 0.5, 1.83],
+         ["rblb_l2l",0.11, 0.5, 1.83],
+         ["rblb_l3l",0.28, 0.5, 2.00],
+         ["rblb_l4l",0.11, 0.5, 2.00],
+         ["rblb_l5l",0.20, 0.59, 1.92],
+         {"group":"rollbar_light_R"}
+         ["rblb_l1r",-0.28, 0.5, 1.83],
+         ["rblb_l2r",-0.11, 0.5, 1.83],
+         ["rblb_l3r",-0.28, 0.5, 2.00],
+         ["rblb_l4r",-0.11, 0.5, 2.00],
+         ["rblb_l5r",-0.20, 0.59, 1.92],
+		 {"group":""},
+	],
+	"beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":1176840,"beamDamp":78},
+          {"beamDeform":36750,"beamStrength":"FLT_MAX"},
+          //left_light
+          {"deformationTriggerRatio":0.05}
+          {"deformGroup":"rollbar_light_L_break"},
+          ["rblb_l1l","rblb_l2l"],
+          ["rblb_l3l","rblb_l4l"],
+          ["rblb_l1l","rblb_l3l"],
+          ["rblb_l2l","rblb_l4l"],
+
+          ["rblb_l1l","rblb_l4l"],
+          ["rblb_l2l","rblb_l3l"],
+
+          ["rblb_l1l","rblb_l5l"],
+          ["rblb_l2l","rblb_l5l"],
+          ["rblb_l3l","rblb_l5l"],
+          ["rblb_l4l","rblb_l5l"],
+		  
+		  //right_light
+          {"deformationTriggerRatio":0.05}
+          {"deformGroup":"rollbar_light_R_break"},
+          ["rblb_l1r","rblb_l2r"],
+          ["rblb_l3r","rblb_l4r"],
+          ["rblb_l1r","rblb_l3r"],
+          ["rblb_l2r","rblb_l4r"],
+
+          ["rblb_l1r","rblb_l4r"],
+          ["rblb_l2r","rblb_l3r"],
+
+          ["rblb_l1r","rblb_l5r"],
+          ["rblb_l2r","rblb_l5r"],
+          ["rblb_l3r","rblb_l5r"],
+          ["rblb_l4r","rblb_l5r"],
+		  
+		  //attach
+          {"beamSpring":252840,"beamDamp":130},
+          {"beamDeform":8250,"beamStrength":7120},
+          {"deformGroup":"rollbar_light_L_break"},
+          {"breakGroup":"rollbar_light_L_attach"},
+          ["rblb_l1l","ro1l"],
+          ["rblb_l1l","ro3l"],
+          ["rblb_l1l","ro4l"],
+
+          ["rblb_l2l","ro1"],
+          ["rblb_l2l","ro6"],
+          ["rblb_l2l","ro3r"],
+
+          ["rblb_l3l","ro6"],
+          ["rblb_l3l","ro4l"],
+          ["rblb_l3l","ro5l"],
+
+          ["rblb_l4l","ro6"],
+          ["rblb_l4l","ro4l"],
+          ["rblb_l4l","ro5l"],
+
+          ["rblb_l5l","ro6"],
+          ["rblb_l5l","ro5r"],
+          ["rblb_l5l","ro5l"],
+		  
+		  {"deformGroup":"rollbar_light_R_break"},
+          {"breakGroup":"rollbar_light_R_attach"},
+          ["rblb_l1r","ro1r"],
+          ["rblb_l1r","ro3r"],
+          ["rblb_l1r","ro4r"],
+
+          ["rblb_l2r","ro1"],
+          ["rblb_l2r","ro6"],
+          ["rblb_l2r","ro3l"],
+
+          ["rblb_l3r","ro6"],
+          ["rblb_l3r","ro4r"],
+          ["rblb_l3r","ro5r"],
+
+          ["rblb_l4r","ro6"],
+          ["rblb_l4r","ro4r"],
+          ["rblb_l4r","ro5r"],
+
+          ["rblb_l5r","ro6"],
+          ["rblb_l5r","ro5l"],
+          ["rblb_l5r","ro5r"],
+          {"breakGroup":""},
+          {"deformGroup":""},
+	],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"dragCoef":6},
+            {"triangleType":"NONCOLLIDABLE"},
+            ["rblb_l4r", "rblb_l5r", "rblb_l3r"],
+            ["rblb_l5r", "rblb_l1r", "rblb_l3r"],
+            ["rblb_l5r", "rblb_l2r", "rblb_l1r"],
+            ["rblb_l5r", "rblb_l4r", "rblb_l2r"],
+
+            ["rblb_l5l", "rblb_l4l", "rblb_l3l"],
+            ["rblb_l1l", "rblb_l5l", "rblb_l3l"],
+            ["rblb_l2l", "rblb_l5l", "rblb_l1l"],
+            ["rblb_l4l", "rblb_l5l", "rblb_l2l"],
+            {"triangleType":"NORMALTYPE"},
+    ],
+    "quads": [
+           ["id1:","id2:","id3:", "id4:"],
+           {"dragCoef":12},
+           ["rblb_l1l","rblb_l3l","rblb_l4l", "rblb_l2l"],
+           ["rblb_l1r","rblb_l2r","rblb_l4r", "rblb_l3r"],
+           {"dragCoef":0},
+           {"group":""},
+    ],
+},
+"pickup_jdm_rollbar_outerlights": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Outer Lights",
+        "value":800,
+    }
+    "slotType" : "pickup_jdm_rollbar_outerlights",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["roundlight", ["rollbar_light_RR"], [],{"pos":{"x":-0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+         ["roundlight", ["rollbar_light_LL"], [],{"pos":{"x":0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+
+         {"deformGroup":"rollbar_light_RR_break", "deformMaterialBase":"light_generic", "deformMaterialDamaged":"light_generic_dmg"}
+         ["roundlight_inner", ["rollbar_light_RR"], [],{"pos":{"x":-0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+
+         {"deformGroup":"rollbar_light_LL_break", "deformMaterialBase":"light_generic", "deformMaterialDamaged":"light_generic_dmg"}
+         ["roundlight_inner", ["rollbar_light_LL"], [],{"pos":{"x":0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+
+         {"deformGroup":"roolbar_light_RR_break", "deformMaterialBase":"pickup_glass", "deformMaterialDamaged":"pickup_glass_dmg"}
+         ["roundlight_glass", ["rollbar_light_RR"], [],{"pos":{"x":-0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}"deformSound":"GlassBreakSound4", "deformVolume":0.5}],
+
+         {"deformGroup":"roofrack_light_LL_break", "deformMaterialBase":"pickup_glass", "deformMaterialDamaged":"pickup_glass_dmg"}
+         ["roundlight_glass", ["rollbar_light_LL"], [],{"pos":{"x":0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}"deformSound":"GlassBreakSound3", "deformVolume":0.5}],
+         {"deformGroup":""}
+    ],
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":0
+            "lightOuterAngle":120
+            "lightBrightness":0.35
+            "lightRange":150
+            "lightColor":{"r":255, "g":255, "b":200, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.2
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        ["highbeam"    , "SPOTLIGHT"        , "rblb_l1ll", "rblb_l2ll", "rblb_l4ll", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":0.02},"deformGroup":"rollbar_light_LL_break"}],,
+        ["highbeam"    , "SPOTLIGHT"        , "rblb_l1rr", "rblb_l2rr", "rblb_l4rr", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":-0.02},"deformGroup":"rollbar_light_RR_break"}],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"nodeMaterial":"|NM_METAL"},
+		 {"collision":true}
+         {"frictionCoef":0.5},
+         {"selfCollision":true}
+         {"nodeWeight":1.4},
+		 {"group":"rollbar_light_LL"}
+         ["rblb_l1ll",0.65, 0.5, 1.83],
+         ["rblb_l2ll",0.48, 0.5, 1.83],
+         ["rblb_l3ll",0.65, 0.5, 2.00],
+         ["rblb_l4ll",0.48, 0.5, 2.00],
+         ["rblb_l5ll",0.57, 0.59, 1.92],
+         
+		 {"group":"rollbar_light_RR"}
+         ["rblb_l1rr",-0.65, 0.5, 1.83],
+         ["rblb_l2rr",-0.48, 0.5, 1.83],
+         ["rblb_l3rr",-0.65, 0.5, 2.00],
+         ["rblb_l4rr",-0.48, 0.5, 2.00],
+         ["rblb_l5rr",-0.57, 0.59, 1.92],
+		 {"group":""},
+	],
+	"beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":1176840,"beamDamp":78},
+          {"beamDeform":36750,"beamStrength":"FLT_MAX"},
+          //left_light
+          {"deformationTriggerRatio":0.05}
+          {"deformGroup":"roollbar_light_LL_break"},
+          ["rblb_l1ll","rblb_l2ll"],
+          ["rblb_l3ll","rblb_l4ll"],
+          ["rblb_l1ll","rblb_l3ll"],
+          ["rblb_l2ll","rblb_l4ll"],
+
+          ["rblb_l1ll","rblb_l4ll"],
+          ["rblb_l2ll","rblb_l3ll"],
+
+          ["rblb_l1ll","rblb_l5ll"],
+          ["rblb_l2ll","rblb_l5ll"],
+          ["rblb_l3ll","rblb_l5ll"],
+          ["rblb_l4ll","rblb_l5ll"],
+		  
+		  //right_light
+          {"deformationTriggerRatio":0.05}
+          {"deformGroup":"rollbar_light_LL_break"},
+          ["rblb_l1rr","rblb_l2rr"],
+          ["rblb_l3rr","rblb_l4rr"],
+          ["rblb_l1rr","rblb_l3rr"],
+          ["rblb_l2rr","rblb_l4rr"],
+
+          ["rblb_l1rr","rblb_l4rr"],
+          ["rblb_l2rr","rblb_l3rr"],
+
+          ["rblb_l1rr","rblb_l5rr"],
+          ["rblb_l2rr","rblb_l5rr"],
+          ["rblb_l3rr","rblb_l5rr"],
+          ["rblb_l4rr","rblb_l5rr"],
+		  
+		  //attach
+          {"beamSpring":252840,"beamDamp":130},
+          {"beamDeform":8250,"beamStrength":7120},
+          {"deformGroup":"rollbar_light_LL_break"},
+          {"breakGroup":"rollbar_light_LL_attach"},
+          ["rblb_l1ll","ro1l"],
+          ["rblb_l1ll","ro3l"],
+          ["rblb_l1ll","ro4l"],
+
+          ["rblb_l2ll","ro1"],
+          ["rblb_l2ll","ro6"],
+          ["rblb_l2ll","ro3r"],
+
+          ["rblb_l3ll","ro6"],
+          ["rblb_l3ll","ro4l"],
+          ["rblb_l3ll","ro5l"],
+
+          ["rblb_l4ll","ro6"],
+          ["rblb_l4ll","ro4l"],
+          ["rblb_l4ll","ro5l"],
+
+          ["rblb_l5ll","ro6"],
+          ["rblb_l5ll","ro5r"],
+          ["rblb_l5ll","ro5l"],
+		  
+		  {"deformGroup":"rollbar_light_RR_break"},
+          {"breakGroup":"rollbar_light_RR_attach"},
+          ["rblb_l1rr","ro1r"],
+          ["rblb_l1rr","ro3r"],
+          ["rblb_l1rr","ro4r"],
+
+          ["rblb_l2rr","ro1"],
+          ["rblb_l2rr","ro6"],
+          ["rblb_l2rr","ro3l"],
+
+          ["rblb_l3rr","ro6"],
+          ["rblb_l3rr","ro4r"],
+          ["rblb_l3rr","ro5r"],
+
+          ["rblb_l4rr","ro6"],
+          ["rblb_l4rr","ro4r"],
+          ["rblb_l4rr","ro5r"],
+
+          ["rblb_l5rr","ro6"],
+          ["rblb_l5rr","ro5l"],
+          ["rblb_l5rr","ro5r"],
+          {"breakGroup":""},
+          {"deformGroup":""},
+	],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"dragCoef":6},
+            {"triangleType":"NONCOLLIDABLE"},
+            ["rblb_l4rr", "rblb_l5rr", "rblb_l3rr"],
+            ["rblb_l5rr", "rblb_l1rr", "rblb_l3rr"],
+            ["rblb_l5rr", "rblb_l2rr", "rblb_l1rr"],
+            ["rblb_l5rr", "rblb_l4rr", "rblb_l2rr"],
+
+            ["rblb_l5ll", "rblb_l4ll", "rblb_l3ll"],
+            ["rblb_l1ll", "rblb_l5ll", "rblb_l3ll"],
+            ["rblb_l2ll", "rblb_l5ll", "rblb_l1ll"],
+            ["rblb_l4ll", "rblb_l5ll", "rblb_l2ll"],
+            {"triangleType":"NORMALTYPE"},
+    ],
+    "quads": [
+           ["id1:","id2:","id3:", "id4:"],
+           {"dragCoef":12},
+           ["rblb_l1ll","rblb_l3ll","rblb_l4ll", "rblb_l2ll"],
+           ["rblb_l1rr","rblb_l2rr","rblb_l4rr", "rblb_l3rr"],
+           {"dragCoef":0},
+           {"group":""},
+	],
+},
+"pickup_jdm_rollbar_outerlights_grille": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Outer Lights with Grille",
+        "value":800,
+    }
+    "slotType" : "pickup_jdm_rollbar_outerlights",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["roundlight", ["rollbar_light_RR"], [],{"pos":{"x":-0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+         ["roundlight", ["rollbar_light_LL"], [],{"pos":{"x":0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+         ["roundlight_grille", ["rollbar_light_RR"], [],{"pos":{"x":-0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+         ["roundlight_grille", ["rollbar_light_LL"], [],{"pos":{"x":0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+
+         {"deformGroup":"rollbar_light_RR_break", "deformMaterialBase":"light_generic", "deformMaterialDamaged":"light_generic_dmg"}
+         ["roundlight_inner", ["rollbar_light_RR"], [],{"pos":{"x":-0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+
+         {"deformGroup":"rollbar_light_LL_break", "deformMaterialBase":"light_generic", "deformMaterialDamaged":"light_generic_dmg"}
+         ["roundlight_inner", ["rollbar_light_LL"], [],{"pos":{"x":0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+
+         {"deformGroup":"roolbar_light_RR_break", "deformMaterialBase":"pickup_glass", "deformMaterialDamaged":"pickup_glass_dmg"}
+         ["roundlight_glass", ["rollbar_light_RR"], [],{"pos":{"x":-0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}"deformSound":"GlassBreakSound4", "deformVolume":0.5}],
+
+         {"deformGroup":"roofrack_light_LL_break", "deformMaterialBase":"pickup_glass", "deformMaterialDamaged":"pickup_glass_dmg"}
+         ["roundlight_glass", ["rollbar_light_LL"], [],{"pos":{"x":0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}"deformSound":"GlassBreakSound3", "deformVolume":0.5}],
+         {"deformGroup":""}
+    ],
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":0
+            "lightOuterAngle":120
+            "lightBrightness":0.35
+            "lightRange":150
+            "lightColor":{"r":255, "g":255, "b":200, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.2
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        ["highbeam"    , "SPOTLIGHT"        , "rblb_l1ll", "rblb_l2ll", "rblb_l4ll", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":0.02},"deformGroup":"rollbar_light_LL_break"}],,
+        ["highbeam"    , "SPOTLIGHT"        , "rblb_l1rr", "rblb_l2rr", "rblb_l4rr", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":-0.02},"deformGroup":"rollbar_light_RR_break"}],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"nodeMaterial":"|NM_METAL"},
+		 {"collision":true}
+         {"frictionCoef":0.5},
+         {"selfCollision":true}
+         {"nodeWeight":1.4},
+		 {"group":"rollbar_light_LL"}
+         ["rblb_l1ll",0.65, 0.5, 1.83],
+         ["rblb_l2ll",0.48, 0.5, 1.83],
+         ["rblb_l3ll",0.65, 0.5, 2.00],
+         ["rblb_l4ll",0.48, 0.5, 2.00],
+         ["rblb_l5ll",0.57, 0.59, 1.92],
+         
+		 {"group":"rollbar_light_RR"}
+         ["rblb_l1rr",-0.65, 0.5, 1.83],
+         ["rblb_l2rr",-0.48, 0.5, 1.83],
+         ["rblb_l3rr",-0.65, 0.5, 2.00],
+         ["rblb_l4rr",-0.48, 0.5, 2.00],
+         ["rblb_l5rr",-0.57, 0.59, 1.92],
+		 {"group":""},
+	],
+	"beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":1176840,"beamDamp":78},
+          {"beamDeform":36750,"beamStrength":"FLT_MAX"},
+          //left_light
+          {"deformationTriggerRatio":0.05}
+          {"deformGroup":"roollbar_light_LL_break"},
+          ["rblb_l1ll","rblb_l2ll"],
+          ["rblb_l3ll","rblb_l4ll"],
+          ["rblb_l1ll","rblb_l3ll"],
+          ["rblb_l2ll","rblb_l4ll"],
+
+          ["rblb_l1ll","rblb_l4ll"],
+          ["rblb_l2ll","rblb_l3ll"],
+
+          ["rblb_l1ll","rblb_l5ll"],
+          ["rblb_l2ll","rblb_l5ll"],
+          ["rblb_l3ll","rblb_l5ll"],
+          ["rblb_l4ll","rblb_l5ll"],
+		  
+		  //right_light
+          {"deformationTriggerRatio":0.05}
+          {"deformGroup":"rollbar_light_LL_break"},
+          ["rblb_l1rr","rblb_l2rr"],
+          ["rblb_l3rr","rblb_l4rr"],
+          ["rblb_l1rr","rblb_l3rr"],
+          ["rblb_l2rr","rblb_l4rr"],
+
+          ["rblb_l1rr","rblb_l4rr"],
+          ["rblb_l2rr","rblb_l3rr"],
+
+          ["rblb_l1rr","rblb_l5rr"],
+          ["rblb_l2rr","rblb_l5rr"],
+          ["rblb_l3rr","rblb_l5rr"],
+          ["rblb_l4rr","rblb_l5rr"],
+		  
+		  //attach
+          {"beamSpring":252840,"beamDamp":130},
+          {"beamDeform":8250,"beamStrength":7120},
+          {"deformGroup":"rollbar_light_LL_break"},
+          {"breakGroup":"rollbar_light_LL_attach"},
+          ["rblb_l1ll","ro1l"],
+          ["rblb_l1ll","ro3l"],
+          ["rblb_l1ll","ro4l"],
+
+          ["rblb_l2ll","ro1"],
+          ["rblb_l2ll","ro6"],
+          ["rblb_l2ll","ro3r"],
+
+          ["rblb_l3ll","ro6"],
+          ["rblb_l3ll","ro4l"],
+          ["rblb_l3ll","ro5l"],
+
+          ["rblb_l4ll","ro6"],
+          ["rblb_l4ll","ro4l"],
+          ["rblb_l4ll","ro5l"],
+
+          ["rblb_l5ll","ro6"],
+          ["rblb_l5ll","ro5r"],
+          ["rblb_l5ll","ro5l"],
+		  
+		  {"deformGroup":"rollbar_light_RR_break"},
+          {"breakGroup":"rollbar_light_RR_attach"},
+          ["rblb_l1rr","ro1r"],
+          ["rblb_l1rr","ro3r"],
+          ["rblb_l1rr","ro4r"],
+
+          ["rblb_l2rr","ro1"],
+          ["rblb_l2rr","ro6"],
+          ["rblb_l2rr","ro3l"],
+
+          ["rblb_l3rr","ro6"],
+          ["rblb_l3rr","ro4r"],
+          ["rblb_l3rr","ro5r"],
+
+          ["rblb_l4rr","ro6"],
+          ["rblb_l4rr","ro4r"],
+          ["rblb_l4rr","ro5r"],
+
+          ["rblb_l5rr","ro6"],
+          ["rblb_l5rr","ro5l"],
+          ["rblb_l5rr","ro5r"],
+          {"breakGroup":""},
+          {"deformGroup":""},
+	],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"dragCoef":6},
+            {"triangleType":"NONCOLLIDABLE"},
+            ["rblb_l4rr", "rblb_l5rr", "rblb_l3rr"],
+            ["rblb_l5rr", "rblb_l1rr", "rblb_l3rr"],
+            ["rblb_l5rr", "rblb_l2rr", "rblb_l1rr"],
+            ["rblb_l5rr", "rblb_l4rr", "rblb_l2rr"],
+
+            ["rblb_l5ll", "rblb_l4ll", "rblb_l3ll"],
+            ["rblb_l1ll", "rblb_l5ll", "rblb_l3ll"],
+            ["rblb_l2ll", "rblb_l5ll", "rblb_l1ll"],
+            ["rblb_l4ll", "rblb_l5ll", "rblb_l2ll"],
+            {"triangleType":"NORMALTYPE"},
+    ],
+    "quads": [
+           ["id1:","id2:","id3:", "id4:"],
+           {"dragCoef":12},
+           ["rblb_l1ll","rblb_l3ll","rblb_l4ll", "rblb_l2ll"],
+           ["rblb_l1rr","rblb_l2rr","rblb_l4rr", "rblb_l3rr"],
+           {"dragCoef":0},
+           {"group":""},
+	],
+},
+"pickup_jdm_rollbar_outerlights_cover": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Outer Lights with Cover",
+        "value":800,
+    }
+    "slotType" : "pickup_jdm_rollbar_outerlights",
+	"slots": [
+        ["type", "default", "description"]
+        ["skin_roundlights","roundlights_skin_blank","Cover Design"{"coreSlot":true}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["roundlight", ["rollbar_light_RR"], [],{"pos":{"x":-0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+         ["roundlight", ["rollbar_light_LL"], [],{"pos":{"x":0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+         ["roundlight_cover", ["rollbar_light_RR"], [],{"pos":{"x":-0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+         ["roundlight_cover", ["rollbar_light_LL"], [],{"pos":{"x":0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+
+         {"deformGroup":"rollbar_light_RR_break", "deformMaterialBase":"light_generic", "deformMaterialDamaged":"light_generic_dmg"}
+         ["roundlight_inner", ["rollbar_light_RR"], [],{"pos":{"x":-0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+
+         {"deformGroup":"rollbar_light_LL_break", "deformMaterialBase":"light_generic", "deformMaterialDamaged":"light_generic_dmg"}
+         ["roundlight_inner", ["rollbar_light_LL"], [],{"pos":{"x":0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}}],
+
+         {"deformGroup":"roolbar_light_RR_break", "deformMaterialBase":"pickup_glass", "deformMaterialDamaged":"pickup_glass_dmg"}
+         ["roundlight_glass", ["rollbar_light_RR"], [],{"pos":{"x":-0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}"deformSound":"GlassBreakSound4", "deformVolume":0.5}],
+
+         {"deformGroup":"roofrack_light_LL_break", "deformMaterialBase":"pickup_glass", "deformMaterialDamaged":"pickup_glass_dmg"}
+         ["roundlight_glass", ["rollbar_light_LL"], [],{"pos":{"x":0.57,"y":0.535,"z":1.905}, "scale":{"x":1.2,"y":1.2,"z":1.2}"deformSound":"GlassBreakSound3", "deformVolume":0.5}],
+         {"deformGroup":""}
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"nodeMaterial":"|NM_METAL"},
+		 {"collision":true}
+         {"frictionCoef":0.5},
+         {"selfCollision":true}
+         {"nodeWeight":1.4},
+		 {"group":"rollbar_light_LL"}
+         ["rblb_l1ll",0.65, 0.5, 1.83],
+         ["rblb_l2ll",0.48, 0.5, 1.83],
+         ["rblb_l3ll",0.65, 0.5, 2.00],
+         ["rblb_l4ll",0.48, 0.5, 2.00],
+         ["rblb_l5ll",0.57, 0.59, 1.92],
+         
+		 {"group":"rollbar_light_RR"}
+         ["rblb_l1rr",-0.65, 0.5, 1.83],
+         ["rblb_l2rr",-0.48, 0.5, 1.83],
+         ["rblb_l3rr",-0.65, 0.5, 2.00],
+         ["rblb_l4rr",-0.48, 0.5, 2.00],
+         ["rblb_l5rr",-0.57, 0.59, 1.92],
+		 {"group":""},
+	],
+	"beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":1176840,"beamDamp":78},
+          {"beamDeform":36750,"beamStrength":"FLT_MAX"},
+          //left_light
+          {"deformationTriggerRatio":0.05}
+          {"deformGroup":"roollbar_light_LL_break"},
+          ["rblb_l1ll","rblb_l2ll"],
+          ["rblb_l3ll","rblb_l4ll"],
+          ["rblb_l1ll","rblb_l3ll"],
+          ["rblb_l2ll","rblb_l4ll"],
+
+          ["rblb_l1ll","rblb_l4ll"],
+          ["rblb_l2ll","rblb_l3ll"],
+
+          ["rblb_l1ll","rblb_l5ll"],
+          ["rblb_l2ll","rblb_l5ll"],
+          ["rblb_l3ll","rblb_l5ll"],
+          ["rblb_l4ll","rblb_l5ll"],
+		  
+		  //right_light
+          {"deformationTriggerRatio":0.05}
+          {"deformGroup":"rollbar_light_LL_break"},
+          ["rblb_l1rr","rblb_l2rr"],
+          ["rblb_l3rr","rblb_l4rr"],
+          ["rblb_l1rr","rblb_l3rr"],
+          ["rblb_l2rr","rblb_l4rr"],
+
+          ["rblb_l1rr","rblb_l4rr"],
+          ["rblb_l2rr","rblb_l3rr"],
+
+          ["rblb_l1rr","rblb_l5rr"],
+          ["rblb_l2rr","rblb_l5rr"],
+          ["rblb_l3rr","rblb_l5rr"],
+          ["rblb_l4rr","rblb_l5rr"],
+		  
+		  //attach
+          {"beamSpring":252840,"beamDamp":130},
+          {"beamDeform":8250,"beamStrength":7120},
+          {"deformGroup":"rollbar_light_LL_break"},
+          {"breakGroup":"rollbar_light_LL_attach"},
+          ["rblb_l1ll","ro1l"],
+          ["rblb_l1ll","ro3l"],
+          ["rblb_l1ll","ro4l"],
+
+          ["rblb_l2ll","ro1"],
+          ["rblb_l2ll","ro6"],
+          ["rblb_l2ll","ro3r"],
+
+          ["rblb_l3ll","ro6"],
+          ["rblb_l3ll","ro4l"],
+          ["rblb_l3ll","ro5l"],
+
+          ["rblb_l4ll","ro6"],
+          ["rblb_l4ll","ro4l"],
+          ["rblb_l4ll","ro5l"],
+
+          ["rblb_l5ll","ro6"],
+          ["rblb_l5ll","ro5r"],
+          ["rblb_l5ll","ro5l"],
+		  
+		  {"deformGroup":"rollbar_light_RR_break"},
+          {"breakGroup":"rollbar_light_RR_attach"},
+          ["rblb_l1rr","ro1r"],
+          ["rblb_l1rr","ro3r"],
+          ["rblb_l1rr","ro4r"],
+
+          ["rblb_l2rr","ro1"],
+          ["rblb_l2rr","ro6"],
+          ["rblb_l2rr","ro3l"],
+
+          ["rblb_l3rr","ro6"],
+          ["rblb_l3rr","ro4r"],
+          ["rblb_l3rr","ro5r"],
+
+          ["rblb_l4rr","ro6"],
+          ["rblb_l4rr","ro4r"],
+          ["rblb_l4rr","ro5r"],
+
+          ["rblb_l5rr","ro6"],
+          ["rblb_l5rr","ro5l"],
+          ["rblb_l5rr","ro5r"],
+          {"breakGroup":""},
+          {"deformGroup":""},
+	],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"dragCoef":6},
+            {"triangleType":"NONCOLLIDABLE"},
+            ["rblb_l4rr", "rblb_l5rr", "rblb_l3rr"],
+            ["rblb_l5rr", "rblb_l1rr", "rblb_l3rr"],
+            ["rblb_l5rr", "rblb_l2rr", "rblb_l1rr"],
+            ["rblb_l5rr", "rblb_l4rr", "rblb_l2rr"],
+
+            ["rblb_l5ll", "rblb_l4ll", "rblb_l3ll"],
+            ["rblb_l1ll", "rblb_l5ll", "rblb_l3ll"],
+            ["rblb_l2ll", "rblb_l5ll", "rblb_l1ll"],
+            ["rblb_l4ll", "rblb_l5ll", "rblb_l2ll"],
+            {"triangleType":"NORMALTYPE"},
+    ],
+    "quads": [
+           ["id1:","id2:","id3:", "id4:"],
+           {"dragCoef":12},
+           ["rblb_l1ll","rblb_l3ll","rblb_l4ll", "rblb_l2ll"],
+           ["rblb_l1rr","rblb_l2rr","rblb_l4rr", "rblb_l3rr"],
+           {"dragCoef":0},
+           {"group":""},
+	],
+}
+}

@@ -1,0 +1,322 @@
+{
+"prefacelift_mudflap_FR_JDM": {
+	"information":{
+		"authors":"BeamNG & Firepower",
+		"name":"Front Right Mud Flap",
+	}
+    "slotType" : "prefacelift_mudflap_FR_JDM",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["prefacelift_mudflap_FR", ["pickup_JDM_mudflap_FR"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--FENDER--
+		 {"collision":true}
+		 {"frictionCoef":0.5},
+		 {"nodeMateriar":"|NM_PLASTIC"},
+		 {"nodeWeight":0.5},
+		 {"group":"pickup_JDM_mudflap_FR"}
+		 {"selfCollision":false}
+		 ["fmf1r", -0.90, -1.0, 0.53],
+		 ["fmf1rr",-0.97, -0.99, 0.48],
+		 ["fmf2r", -0.70, -0.99, 0.44],
+		 {"selfCollision":true}
+		 ["fmf3r", -0.97, -0.99, 0.40],
+		 ["fmf4r", -0.70, -0.96, 0.21],
+		 ["fmf5r", -0.97, -0.96, 0.21],
+		 {"group":""}
+	],
+	"beams": [
+		 ["id1:", "id2:"],
+		 {"beamSpring":501000,"beamDamp":80},
+		 {"beamDeform":100500,"beamStrength":"FLT_MAX"},
+		 //mudflaps main shape
+		 ["fmf1r","fmf1rr"],
+		 ["fmf1r","fmf2r"],
+		 ["fmf1r","fmf3r"],
+		 ["fmf1rr","fmf2r"],
+		 ["fmf1rr","fmf3r"],
+		 ["fmf2r","fmf3r"],
+		 ["fmf4r","fmf5r"],
+		 ["fmf3r","fmf5r"],
+		 ["fmf2r","fmf4r"],
+		 
+		 //crossing
+		 ["fmf2r","fmf5r"],
+		 ["fmf3r","fmf4r"],
+		 
+		 //attach
+         {"beamSpring":800000,"beamDamp":80},
+         {"beamDeform":150000,"beamStrength":10000},
+         {"breakGroup":"front_right_JDM_mudflap"},
+		 ["fmf1r","fe1r"],
+		 ["fmf1r","fe2r"],
+		 ["fmf1r","fe3r"],
+		 ["fmf1rr","fe1r"],
+		 ["fmf1rr","fe2r"],
+		 ["fmf1rr","fe3r"],
+		 ["fmf2r","fe1r"],
+		 ["fmf2r","fe2r"],
+		 ["fmf2r","fe3r"],
+		 ["fmf3r","fe1r"],
+		 ["fmf3r","fe2r"],
+		 ["fmf3r","fe3r"],
+		 
+		 //support beams
+		 {"beamType":"|SUPPORT","beamLongBound":4},
+         {"beamSpring":200,"beamDamp":4},
+         {"beamDeform":3750,"beamStrength":"FLT_MAX"},
+		 ["fmf4r","fe5r"],
+		 ["fmf4r","c1rr"],
+		 ["fmf5r","fe5r"],
+		 ["fmf5r","c1rr"],
+		 {"breakGroup":""},
+		 {"beamPrecompression":1, "beamType":"|NORMAr", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+			//right mud flap
+			{"group":"pickup_JDM_mudflap_FR"},
+            {"dragCoef":5},
+            {"triangleType":"NONCOLLIDABLE"},
+			["fmf4r", "fmf2r", "fmf3r"],
+            ["fmf4r", "fmf3r", "fmf5r"],
+            ["fmf2r", "fmf1rr", "fmf3r"],
+            ["fmf2r", "fmf1r", "fmf1rr"],
+            {"triangleType":"NORMALTYPE"},
+            {"dragCoef":0},
+	],
+}
+"prefacelift_mudflap_FL_JDM": {
+	"information":{
+		"authors":"BeamNG & Firepower",
+		"name":"Front Left Mud Flap",
+	}
+    "slotType" : "prefacelift_mudflap_FL_JDM",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["prefacelift_mudflap_FL", ["pickup_JDM_mudflap_FL"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--FENDER--
+		 {"collision":true}
+		 {"frictionCoef":0.5},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"nodeWeight":0.5},
+		 {"group":"pickup_JDM_mudflap_FL"}
+		 {"selfCollision":false}
+		 ["fmf1l", 0.90, -1.0, 0.53],
+		 ["fmf1ll",0.97, -0.99, 0.48],
+		 ["fmf2l", 0.70, -0.98, 0.44],
+		 {"selfCollision":true}
+		 ["fmf3l", 0.97, -0.98, 0.40],
+		 ["fmf4l", 0.70, -0.96, 0.22],
+		 ["fmf5l", 0.97, -0.96, 0.22],
+		 {"group":""}
+	],
+	"beams": [
+		 ["id1:", "id2:"],
+		 {"beamSpring":501000,"beamDamp":80},
+		 {"beamDeform":100500,"beamStrength":"FLT_MAX"},
+		 //mudflaps main shape
+		 ["fmf1l","fmf1ll"],
+		 ["fmf1l","fmf2l"],
+		 ["fmf1l","fmf3l"],
+		 ["fmf1ll","fmf2l"],
+		 ["fmf1ll","fmf3l"],
+		 ["fmf2l","fmf3l"],
+		 ["fmf4l","fmf5l"],
+		 ["fmf3l","fmf5l"],
+		 ["fmf2l","fmf4l"],
+		 
+		 //crossing
+		 ["fmf2l","fmf5l"],
+		 ["fmf3l","fmf4l"],
+		 
+		 //attach
+         {"beamSpring":800000,"beamDamp":80},
+         {"beamDeform":150000,"beamStrength":10000},
+         {"breakGroup":"front_left_JDM_mudflap"},
+		 ["fmf1l","fe1l"],
+		 ["fmf1l","fe2l"],
+		 ["fmf1l","fe3l"],
+		 ["fmf1ll","fe1l"],
+		 ["fmf1ll","fe2l"],
+		 ["fmf1ll","fe3l"],
+		 ["fmf2l","fe1l"],
+		 ["fmf2l","fe2l"],
+		 ["fmf2l","fe3l"],
+		 ["fmf3l","fe1l"],
+		 ["fmf3l","fe2l"],
+		 ["fmf3l","fe3l"],
+		 
+		 //support beams
+		 {"beamType":"|SUPPORT","beamLongBound":4},
+         {"beamSpring":200,"beamDamp":4},
+         {"beamDeform":3750,"beamStrength":"FLT_MAX"},
+		 ["fmf4l","fe5l"],
+		 ["fmf4l","c1ll"],
+		 ["fmf5l","fe5l"],
+		 ["fmf5l","c1ll"],
+		 {"breakGroup":""},
+		 {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+			//left mud flap
+			{"group":"pickup_JDM_mudflap_FL"},
+            {"dragCoef":5},
+            {"triangleType":"NONCOLLIDABLE"},
+			["fmf4l", "fmf5l", "fmf3l"],
+            ["fmf4l", "fmf3l", "fmf2l"],
+            ["fmf2l", "fmf3l", "fmf1ll"],
+            ["fmf2l", "fmf1ll", "fmf1l"],
+            {"triangleType":"NORMALTYPE"},
+			{"dragCoef":0},
+	],
+},
+"prefacelift_mudflap_R_JDM": {
+	"information":{
+		"authors":"BeamNG & Firepower",
+		"name":"Rear Mudflaps",
+	}
+    "slotType" : "prefacelift_mudflap_R_JDM",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["prefacelift_mudflap_RL", ["pickup_JDM_mudflap_RL"]],
+		 ["prefacelift_mudflap_RR", ["pickup_JDM_mudflap_RR"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--BED--
+		 {"collision":true}
+		 {"frictionCoef":0.5},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"nodeWeight":0.5},
+		 {"group":"pickup_JDM_mudflap_RL"}
+		 {"selfCollision":false}
+		 ["rmf1l", 0.70, 1.95, 0.67],
+		 ["rmf2l", 0.90, 1.95, 0.67],
+		 {"selfCollision":true}
+		 ["rmf3l", 0.70, 1.97, 0.44],
+		 ["rmf4l", 0.97, 1.97, 0.46],
+		 ["rmf5l", 0.70, 1.99, 0.21],
+		 ["rmf6l", 0.97, 1.99, 0.21],
+		 {"group":"pickup_JDM_mudflap_RR"}
+		 {"selfCollision":false}
+		 ["rmf1r", -0.70, 1.95, 0.67],
+		 ["rmf2r", -0.90, 1.95, 0.67],
+		 {"selfCollision":true}
+		 ["rmf3r", -0.70, 1.97, 0.44],
+		 ["rmf4r", -0.97, 1.97, 0.46],
+		 ["rmf5r", -0.70, 1.99, 0.21],
+		 ["rmf6r", -0.97, 1.99, 0.21],
+         {"group":""}
+	],
+	"beams": [
+		 ["id1:", "id2:"],
+		 {"beamSpring":501000,"beamDamp":80},
+		 {"beamDeform":100500,"beamStrength":"FLT_MAX"},
+		 //mudflaps main shape
+		 ["rmf1l","rmf2l"],
+		 ["rmf1l","rmf3l"],
+		 ["rmf2l","rmf4l"],
+		 ["rmf3l","rmf4l"],
+		 ["rmf5l","rmf6l"],
+		 ["rmf4l","rmf6l"],
+		 ["rmf3l","rmf5l"],
+		 
+		 ["rmf1r","rmf2r"],
+		 ["rmf1r","rmf3r"],
+		 ["rmf2r","rmf4r"],
+		 ["rmf3r","rmf4r"],
+		 ["rmf5r","rmf6r"],
+		 ["rmf4r","rmf6r"],
+		 ["rmf3r","rmf5r"],
+		 //crossing
+		 ["rmf1l","rmf4l"],
+		 ["rmf2l","rmf3l"],
+		 ["rmf3l","rmf6l"],
+		 ["rmf4l","rmf5l"],
+		 
+		 ["rmf1r","rmf4r"],
+		 ["rmf2r","rmf3r"],
+		 ["rmf3r","rmf6r"],
+		 ["rmf4r","rmf5r"],
+		 
+		 //attach
+         {"beamSpring":800000,"beamDamp":80},
+         {"beamDeform":150000,"beamStrength":10000},
+         {"breakGroup":"rear_left_JDM_mudflap"},
+		 ["rmf1l","b9ll"],
+		 ["rmf1l","b10ll"],
+		 ["rmf1l","b13ll"],
+		 ["rmf2l","b9ll"],
+		 ["rmf2l","b10ll"],
+		 ["rmf2l","b13ll"],
+		 ["rmf3l","b9ll"],
+		 ["rmf3l","b10ll"],
+		 ["rmf3l","b13ll"],
+		 ["rmf4l","b9ll"],
+		 ["rmf4l","b10ll"],
+		 ["rmf4l","b13ll"],
+		 
+		 {"breakGroup":"rear_right_JDM_mudflap"},
+		 ["rmf1r","b9rr"],
+		 ["rmf1r","b10rr"],
+		 ["rmf1r","b13rr"],
+		 ["rmf2r","b9rr"],
+		 ["rmf2r","b10rr"],
+		 ["rmf2r","b13rr"],
+		 ["rmf3r","b9rr"],
+		 ["rmf3r","b10rr"],
+		 ["rmf3r","b13rr"],
+		 ["rmf4r","b9rr"],
+		 ["rmf4r","b10rr"],
+		 ["rmf4r","b13rr"],
+		 
+		 //support beams
+		 {"beamType":"|SUPPORT","beamLongBound":4},
+         {"beamSpring":300,"beamDamp":4},
+         {"beamDeform":3750,"beamStrength":"FLT_MAX"},
+         {"breakGroup":"rear_left_JDM_mudflap"},
+		 ["rmf5l","b7ll"],
+		 ["rmf5l","b10ll"],
+		 ["rmf6l","b7ll"],
+		 ["rmf6l","b10ll"],
+		 
+		 {"breakGroup":"rear_right_JDM_mudflap"},
+		 ["rmf5r","b7rr"],
+		 ["rmf5r","b10rr"],
+		 ["rmf6r","b7rr"],
+		 ["rmf6r","b10rr"],
+		 {"breakGroup":""},
+		 {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+			//right mud flap
+			{"group":"pickup_JDM_mudflap_RL"},
+            {"dragCoef":5},
+            {"triangleType":"NONCOLLIDABLE"},
+			["rmf5l", "rmf6l", "rmf4l"],
+            ["rmf5l", "rmf4l", "rmf3l"],
+            ["rmf3l", "rmf4l", "rmf2l"],
+            ["rmf3l", "rmf2l", "rmf1l"],
+			
+			
+			{"group":"pickup_JDM_mudflap_RR"},
+			["rmf5r", "rmf3r", "rmf4r"],
+            ["rmf5r", "rmf4r", "rmf6r"],
+            ["rmf3r", "rmf1r", "rmf2r"],
+            ["rmf3r", "rmf2r", "rmf4r"],
+            {"triangleType":"NORMALTYPE"},
+            {"dragCoef":0},
+	],
+}
+}

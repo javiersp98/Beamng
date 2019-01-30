@@ -1,0 +1,229 @@
+{
+    "attachments": [
+        {
+            "data_filename": "321249.png",
+            "original_filename": "screenshot_00462.png",
+            "thumb_filename": "thumbs\/321249.jpg"
+        },
+        {
+            "data_filename": "321382.png",
+            "original_filename": "screenshot_00463.png",
+            "thumb_filename": "thumbs\/321382.jpg"
+        },
+        {
+            "data_filename": "321383.png",
+            "original_filename": "screenshot_00464.png",
+            "thumb_filename": "thumbs\/321383.jpg"
+        }
+    ],
+    "resource_id": 2722,
+    "current_version_id": 12417,
+    "download_count": 0,
+    "resource_version_id": 14611,
+    "version_string": "2.1.0",
+    "last_update": 1536131175,
+    "rating_avg": 4.8586955070496,
+    "rating_count": 0,
+    "rating_sum": 0,
+    "resource_category_id": 3,
+    "resource_date": 1503926236,
+    "review_count": 106,
+    "tag_line": "a budget orientated D-Series for non US markets",
+    "update_count": 4,
+    "path": "MZHBKE6PA\/12417\/",
+    "filename": "pickup_JDM_dove_FP.zip",
+    "title": "JDM D-Series \"Ibishu Dove\"",
+    "user_id": 130012,
+    "username": "Firepower",
+    "tagid": "MZHBKE6PA",
+    "message": "After a long time being outdated and (almost) forgotten, the Ibishu Dove add-on for the Gavril D-Series is back !\nIt has been completely reworked to be compatible with the latest version of BeamNG.drive, while being as close to the original mod as possible.\n\nDescription :\n\nGavril and Ibishu are forming a partnership with Ibishu to bring you the D-Series that has been rebadged as the Dove for the JDM and other RHD markets.\nIbishu agreed on selling some Gavril D-Series under their brand, much in the same way as the Ford-Mazda or Chevrolet-Toyota partnerships were.\n\nFeatures :\n[LIST]\n[*]No ABS\n[*]2.2l i4 engine, optional supercharger in higher trim (aftermarket turbo included for the offroader and just for the insanity - superturbo too). Versus a v8, horrendously underpowered, but still lugs a trailered covet up JRI.\n[*]Wheels have been replaced by ibishu models (enlarged 6 lug pigeon steelies and enlarged '96 pessima wheels).\n[*]Ibishu badges on hood and tailgate.\n[*]Trim badges on fenders.\n[*]Right hand drive.\n[\/LIST]\nAbout [USER=99519]@mike94[\/USER]'s mod : we know it has the same name, but we all agreed that the car is different enough so that we can still call it the Ibishu Dove. And before you criticize the name, please keep in mind that this mod originally came out before the other one ;)\n\nScreenshots :\n\n[ATTACH]321249[\/ATTACH][ATTACH]321382[\/ATTACH] [ATTACH]321383[\/ATTACH]\n\nCredits :\n[USER=130012]@Firepower[\/USER] - Updating the mod, skin UVs and reworking every .jbeam files\n[USER=1530]@Atomix[\/USER] - Mesh and original mod (used with permission)\n[USER=24801]@SixSixSevenSeven[\/USER] - Original .jbeam\n[USER=3581]@NismoR35[\/USER] - Testing and suggestions",
+    "category_title": "",
+    "prefix_title": "",
+    "via": "packed by repo on Fri, 04 Jan 2019 12:30:03 GMT",
+    "hashes": [
+        [
+            "vehicles\/common\/dovewheels\/materials.cs",
+            "cb617fecd0ac81a5"
+        ],
+        [
+            "vehicles\/common\/dovewheels\/steelwheel_13a_6_d.dds",
+            "e1c6f721315b0d68"
+        ],
+        [
+            "vehicles\/common\/dovewheels\/dovewheels.dae",
+            "2fa90012c13f76b8"
+        ],
+        [
+            "vehicles\/common\/dovewheels\/pickup_JDM_wheels.jbeam",
+            "30b630e9f8d7077f"
+        ],
+        [
+            "vehicles\/pickup\/dove_4x4.pc",
+            "276b98a02849291f"
+        ],
+        [
+            "vehicles\/pickup\/info_dove_4x4.json",
+            "34a638ba35ba1a86"
+        ],
+        [
+            "vehicles\/pickup\/dove_200.pc",
+            "0d175e9eeeb3c776"
+        ],
+        [
+            "vehicles\/pickup\/dove_200.png",
+            "fa5a89c177d2cee1"
+        ],
+        [
+            "vehicles\/pickup\/dove_l.png",
+            "4e01bc76f212d1c2"
+        ],
+        [
+            "vehicles\/pickup\/info_dove_custom.json",
+            "f40386813df75a2c"
+        ],
+        [
+            "vehicles\/pickup\/info_dove_200.json",
+            "dfe6c73bc2c1e15e"
+        ],
+        [
+            "vehicles\/pickup\/dove_ls.png",
+            "9c52b8c85fa6c18f"
+        ],
+        [
+            "vehicles\/pickup\/info_dove_offroad.json",
+            "45ce8b1ebad60480"
+        ],
+        [
+            "vehicles\/pickup\/dove_ls_awd.pc",
+            "a1c4b95ff26b9006"
+        ],
+        [
+            "vehicles\/pickup\/dove_l.pc",
+            "a9bc33f2de59ca37"
+        ],
+        [
+            "vehicles\/pickup\/dove_offroad.pc",
+            "b8607503ba824929"
+        ],
+        [
+            "vehicles\/pickup\/dove\/materials.cs",
+            "9b93108514e22057"
+        ],
+        [
+            "vehicles\/pickup\/dove\/pickup_JDM_rollbar.jbeam",
+            "53b8e22a60595748"
+        ],
+        [
+            "vehicles\/pickup\/dove\/prefacelift_lettering_d.dds",
+            "10a37b203b6bdc53"
+        ],
+        [
+            "vehicles\/pickup\/dove\/pickup_JDM_mudflaps.jbeam",
+            "2e087d8156504a8a"
+        ],
+        [
+            "vehicles\/pickup\/dove\/pickup_JDM_engine_petrol.jbeam",
+            "5c0adeec3afc7097"
+        ],
+        [
+            "vehicles\/pickup\/dove\/pickup_skin_dove_200_uv1.dds",
+            "7b7db58fd0b82f0e"
+        ],
+        [
+            "vehicles\/pickup\/dove\/pickup_JDM_fascia.jbeam",
+            "85d3a32db375b1d1"
+        ],
+        [
+            "vehicles\/pickup\/dove\/prefacelift_lettering_n.dds",
+            "f51cacb6fd3cb64a"
+        ],
+        [
+            "vehicles\/pickup\/dove\/prefacelift_lettering_s.dds",
+            "231e874688af6bbe"
+        ],
+        [
+            "vehicles\/pickup\/dove\/prefacelift.dae",
+            "e2995225745608ad"
+        ],
+        [
+            "vehicles\/pickup\/dove\/pickup_JDM_shiftlight.jbeam",
+            "c06a4abe5877a020"
+        ],
+        [
+            "vehicles\/pickup\/dove\/pickup_skin_dove4x4_uv1.dds",
+            "02fc80a678032ff4"
+        ],
+        [
+            "vehicles\/pickup\/dove\/pickup_JDM_body.jbeam",
+            "491ad7c163f16a72"
+        ],
+        [
+            "vehicles\/pickup\/dove\/pickup_JDM_suspension.jbeam",
+            "b6117a9bebc7e883"
+        ],
+        [
+            "vehicles\/pickup\/dove\/pickup_skin_dove4x4_alt_uv1.dds",
+            "295a1a4e3328040d"
+        ],
+        [
+            "vehicles\/pickup\/dove\/pickup_JDM_load.jbeam",
+            "a49a8b6a233afb44"
+        ],
+        [
+            "vehicles\/pickup\/dove\/pickup_JDM_bumper_R.jbeam",
+            "1550af77f2507403"
+        ],
+        [
+            "vehicles\/pickup\/dove\/pickup_JDM_fenders.jbeam",
+            "f4605b50af076979"
+        ],
+        [
+            "vehicles\/pickup\/dove\/van_prefacelift_skin_dirty.dds",
+            "35e61c528428924a"
+        ],
+        [
+            "vehicles\/pickup\/dove\/pickup_JDM_bumper_F.jbeam",
+            "52c4c45715bd41f6"
+        ],
+        [
+            "vehicles\/pickup\/dove\/pickup_JDM_hood.jbeam",
+            "7dc47ce1a112c2b9"
+        ],
+        [
+            "vehicles\/pickup\/dove_4x4.png",
+            "3ae1c57fee4ee800"
+        ],
+        [
+            "vehicles\/pickup\/info_dove_ls.json",
+            "963bfef1d8ba3e56"
+        ],
+        [
+            "vehicles\/pickup\/dove_ls_awd.png",
+            "ddbce897c06402bd"
+        ],
+        [
+            "vehicles\/pickup\/dove_custom.pc",
+            "c6a6d478346e6077"
+        ],
+        [
+            "vehicles\/pickup\/info_dove_ls_awd.json",
+            "454eb525cf460f93"
+        ],
+        [
+            "vehicles\/pickup\/dove_offroad.png",
+            "cc5a81687c3bb0a1"
+        ],
+        [
+            "vehicles\/pickup\/dove_custom.png",
+            "add1b976b5665e3b"
+        ],
+        [
+            "vehicles\/pickup\/dove_ls.pc",
+            "ac918c45fbc8fea4"
+        ],
+        [
+            "vehicles\/pickup\/info_dove_l.json",
+            "e517eab746c33e0c"
+        ]
+    ]
+}

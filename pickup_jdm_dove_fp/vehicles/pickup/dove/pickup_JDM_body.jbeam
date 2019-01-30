@@ -1,0 +1,1430 @@
+{
+"pickup_body_JDM": {
+	"information":{
+		"authors":"BeamNG & Firepower",
+		"name":"JDM Cab",
+	}
+    "slotType" : "pickup_body",
+	"slots": [
+		["type", "default", "description"],
+		//interior
+		["pickup_shifter_rhd","pickup_shifter_M_RHD","Shifter"],
+        ["skin_interior","pickup_skin_interior", "Interior Color"{"coreSlot":true}],
+		["pickup_JDM_shiftlight","","Shift Light"],
+		["pickup_steer_rhd","pickup_steer_RHD","Steering Wheel"],
+        ["pickup_trim","","Trim"],
+        ["gps","","Navigation Unit"{"nodeOffset":{"x":-0.15,"y":-0.72,"z":1.31}}],
+		//bodywork
+        ["pickup_roofrack","","Roof Accessory"],
+		["pickup_radiator","pickup_radiator","Radiator"],
+        ["pickup_runningboard","","Running Boards"],
+		["pickup_glass_JDM","pickup_glass_JDM","Glass"],
+		["pickup_gauges_JDM","pickup_gauges_JDM","Gauges"{"coreSlot":true}],
+		["pickup_fascia_jdm","pickup_fascia_JDM","Front Fascia"],
+		["pickup_door_R","pickup_door_R","Right Front Door"],
+		["pickup_door_L","pickup_door_L","Left Front Door"],
+		["prefacelift_mudflap_R_JDM","","Rear Mudflaps"],
+        ["pickup_spotlight_L","", "Left Spotlight"],
+        ["pickup_spotlight_R","", "Right Spotlight"],
+        ["pickup_snorkel","", "Snorkel"],
+		["pickup_fender_R_jdm","pickup_fender_R_JDM","Right Fender"],
+		["pickup_fender_L_jdm","pickup_fender_L_JDM","Left Fender"],
+		["pickup_hood_jdm","pickup_hood_JDM","Hood"],
+		["pickup_lightbar","","Light Bar"],
+		//
+        ["soundscape_horn", "soundscape_horn_3", "Horn"],
+	],
+	"soundscape": [
+        ["name", "src"],
+        //indicator8
+        {"node:":"f3r"},
+        ["indicatorStart", "event:>Vehicle>Interior>Indicator>SUB_On"],
+        ["indicatorStop", "event:>Vehicle>Interior>Indicator>SUB_Off"],
+        ["indLoop1", "event:>Vehicle>Interior>Indicator>SUB_Click"],
+        ["indLoop2", "event:>Vehicle>Interior>Indicator>SUB_Clack"],
+        //lights1
+        ["LightOn", "event:>Vehicle>Interior>Light>AU3_On"],
+        ["LightOff", "event:>Vehicle>Interior>Light>AU3_Off"],
+        //handbrake2
+        {"node:":"f6rr"},
+        ["handbrakeDisengaged","event:>Vehicle>Interior>Handbrake_Pedal>Pedal_01_Unlock"],
+        ["handbrakeEngaging","event:>Vehicle>Interior>Handbrake_Pedal>Pedal_01_Lock"],
+        //affects horn location because horn soundscape is loaded after
+        {"node:":"f1"},
+    ]
+    "camerasInternal":[
+        ["type", "x", "y", "z", "fov", "id1:", "id2:", "id3:", "id4:", "id5:", "id6:"],
+        {"nodeWeight":2.5},
+        {"rightHandCamera":true}
+        {"selfCollision":false}
+        {"collision":false}
+        {"beamSpring":84000,"beamDamp":650},
+        //hood cam
+        ["hood", 0.0, -0.6, 1.65, 65, "f3rr","f3ll","f2rr","f2ll","f6rr","f6ll"{"beamDeform":4000800,"beamStrength":"FLT_MAX"}],
+        //fender cam
+        //["fender", -1.33, 0.2, 1.02, 65, "f3rr","f6rr","f3r","f6r","f2rr","f5rr"{"beamDeform":4000800,"beamStrength":"FLT_MAX"}],
+        {"beamSpring":550, "beamDamp":75},
+        {"selfCollision":true},
+        {"collision":true},
+        //dash cam
+        ["dash", -0.462, 0.16, 1.525, 55, "c1rr","fr1r","fr13","c3rr","fr11r","fr13r"{"beamDeform":4000800,"beamStrength":"FLT_MAX"}],
+        //debug cam
+        //[0.0, 1.45, 0.5, 55, "fr10l","fr10r","fr20l","fr20r","fr17"],
+	],
+    "camerasRelative":[
+        ["type", "x", "y", "z", "fov"],
+        ["dash", -0.462, 0.16, 1.565, 55, {"posoffset": true, "fovoffset": true}],
+        ["hood", 0.0, -0.6, 1.65, 65, {"rot": [0, 10, 0]}],
+        ["debug", 0.0, 1.45, 0.5, 55],
+    ],
+	"props": [
+        ["func",       "mesh",                  "idRef:","idX:","idY:", "baseRotation",           "rotation",                  "translation",        "min", "max", "offset", "multiplier"]
+        //pedals
+        ["brake",      "pickup_brakepedal_rhd",     "fr8","fr8l","fr11",    {"x":90, "y":0, "z":0},   {"x":-25, "y":0, "z":0},     {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+        ["throttle",   "pickup_gaspedal_rhd",       "fr8","fr8l","fr11",    {"x":90, "y":0, "z":0},   {"x":-25, "y":0, "z":0},     {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+        ["parkingbrake", "pickup_parkingbrake_rhd", "fr8","fr8l","fr11",    {"x":90, "y":0, "z":0},   {"x":-25, "y":0, "z":0},     {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+		//turn signal stalk
+        ["turnsignal", "pickup_signalstalk_rhd" ,   "f6l","f6","f3l",       {"x":-65 "y":0, "z":180}, {"x":0, "y":0, "z":-15},     {"x":0, "y":0, "z":0},   -1, 1, 0, 1],
+    ],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+         //bodywork
+         ["pickup_body", ["pickup_framefront", "pickup_cab", "pickup_firewall", "pickup_frontmeat", "pickup_lowermounts", "pickup_uppermounts", "pickup_shocktop"]],
+         ["pickup_tubs", ["pickup_framefront", "pickup_cab", "pickup_firewall", "pickup_frontmeat", "pickup_lowermounts", "pickup_uppermounts", "pickup_shocktop"]],
+		 ["pickup_engbay_rhd", ["pickup_cab", "pickup_firewall", "pickup_frontmeat","pickup_engine"]],
+		 //interior
+		 ["pickup_dash_rhd", ["pickup_firewall"]],
+		 ["pickup_dash_rhdstuff1", ["pickup_firewall"]],
+		 ["pickup_decals_gauges_rhd", ["pickup_firewall"]],
+		 ["pickup_bench", ["pickup_framecab","pickup_cab"],],
+		 //lights
+		 {"deformGroup":"pickup_backlight_break", "deformMaterialBase":"pickup_lights", "deformMaterialDamaged":"pickup_lights_dmg"}
+		 ["pickup_chmsl", ["pickup_cab"]],
+		 {"deformGroup":""}
+	],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--FRONT END MEAT--
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true}
+         {"selfCollision":true}
+         {"group":"pickup_frontmeat"},
+         {"nodeWeight":4.5},
+         ["f1rr", -0.88, -1.99, 1.11],
+         {"engineGroup":"radiator"}
+         ["f1r", -0.45, -2.06, 1.11],
+         //["f1", 0.0, -2.07, 1.11{"couplerTag":"pickup_hoodlatch","couplerStrength":101000,"couplerRadius":1,"couplerStartRadius":0.5}],
+         ["f1", 0.0, -2.07, 1.11],
+         ["f1l", 0.45, -2.06, 1.11],
+         {"engineGroup":""}
+         ["f1ll", 0.88, -1.99, 1.11],
+         ["f2rr", -0.88, -1.46, 1.17],
+         ["f2ll", 0.88, -1.46, 1.17],
+
+         {"group":"pickup_firewall"},
+         {"nodeWeight":5.9},
+         ["f3rr", -0.88, -0.87, 1.19{"group":["pickup_firewall","pickup_windshield","gps"]}],
+         ["f3r", -0.45, -0.90, 1.21{"group":["pickup_firewall","pickup_windshield","gps"]}],
+         ["f3", 0.0, -0.90, 1.22{"group":["pickup_firewall","pickup_windshield","gps"]}],
+         ["f3l", 0.45, -0.90, 1.21{"group":["pickup_firewall","pickup_windshield","gps"]}],
+         ["f3ll", 0.88, -0.87, 1.19{"group":["pickup_firewall","pickup_windshield","gps"]}],
+
+         {"group":"pickup_frontmeat"},
+         {"nodeWeight":3.9},
+         ["f4rr", -0.87, -1.99, 0.86],
+         {"engineGroup":"radiator"}
+         ["f4r", -0.45, -2.08, 0.86],
+         ["f4", 0.0, -2.09, 0.86],
+         ["f4l", 0.45, -2.08, 0.86],
+         {"engineGroup":""}
+         ["f4ll", 0.87, -1.99, 0.86],
+         ["f5rr", -0.89, -1.46, 0.96],
+         ["f5ll", 0.89, -1.46, 0.96],
+
+         {"group":"pickup_firewall"},
+         ["f6rr", -0.89, -0.88, 0.84],
+         {"collision":false}
+         {"selfCollision":false}
+         ["f6r", -0.45, -0.90, 0.84],
+         ["f6", 0.0, -0.90, 0.84],
+         ["f6l", 0.45, -0.90, 0.84],
+         {"collision":true}
+         {"selfCollision":true}
+         ["f6ll", 0.89, -0.88, 0.84],
+
+         {"group":"pickup_frontmeat"},
+         ["f7rr", -0.86, -2.01, 0.59],
+         ["f7ll", 0.86, -2.01, 0.59],
+         {"group":["pickup_firewall","pickup_framecab"]},
+         ["f8rr", -0.82, -0.88, 0.40],
+         ["f8ll", 0.82, -0.88, 0.40],
+
+         //--CAB--
+         {"nodeMaterial":"|NM_METAL"},
+         {"group":["pickup_cab","pickup_framecab"]},
+         {"nodeWeight":3.9},
+         ["c1rr", -0.83, -0.24, 0.39],
+         ["c1ll", 0.83, -0.24, 0.39],
+         ["c2rr", -0.83, 0.42, 0.39],
+         ["c2ll", 0.83, 0.42, 0.39],
+         {"group":"pickup_cab"},
+         ["c3rr", -0.95, 0.42, 0.83],
+         ["c3", 0.0, 0.42, 0.83{"group":""}],
+         ["c3ll", 0.95, 0.42, 0.83],
+         {"nodeWeight":3.9},
+         ["c4rr", -0.92, 0.42, 1.13],
+         ["c4", 0.0, 0.42, 1.13{"group":""}],
+         ["c4ll", 0.92, 0.42, 1.13],
+         {"nodeWeight":2},
+         ["c5rr", -0.5, 0.22, 1.25],
+         ["c5ll", 0.5, 0.22, 1.25],
+
+         //-ROOF--
+         {"nodeWeight":4.2},
+         ["r1rr", -0.80, -0.61, 1.48{"group":["pickup_cab","pickup_windshield","gps"]}],
+         ["r1ll", 0.80, -0.61, 1.48{"group":["pickup_cab","pickup_windshield","gps"]}],
+         ["r2rr", -0.69, -0.33, 1.72{"group":["pickup_cab","pickup_windshield","gps"]}],
+         ["r2r", -0.37, -0.37, 1.74{"group":["pickup_cab","pickup_windshield","gps"]}],
+         ["r2", 0.0, -0.38, 1.75{"nodeWeight":3.8,"group":["pickup_cab","pickup_windshield","gps"]}],
+         ["r2l", 0.37, -0.37, 1.74{"group":["pickup_cab","pickup_windshield","gps"]}],
+         ["r2ll", 0.69, -0.33, 1.72{"group":["pickup_cab","pickup_windshield","gps"]}],
+         ["r3rr", -0.69, 0.37, 1.72],
+         ["r3r", -0.37, 0.38, 1.74],
+         ["r3", 0.0, 0.39, 1.75{"nodeWeight":3.8}],
+         ["r3l", 0.37, 0.38, 1.74],
+         ["r3ll", 0.69, 0.37, 1.72],
+         ["r4rr", -0.82, 0.40, 1.47],
+         ["r4ll", 0.82, 0.40, 1.47],
+         {"group":""}
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--EXPANSION DEFORM LIMIT DEFAULT--
+          {"deformLimitExpansion":1.1},
+          //--ROOF--
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":1680840,"beamDamp":260},
+          {"beamDeform":36000,"beamStrength":"FLT_MAX"},
+          //roof main shape lengthwise
+          {"deformGroup":"windshield_break","deformationTriggerRatio":0.05}
+          ["r1rr","f3rr"],
+          ["r1ll","f3ll"],
+          ["r1rr","r2rr"],
+          ["r1ll","r2ll"],
+          {"deformGroup":"rooflights_break"},
+          ["r2rr","r3rr"],
+          ["r2r","r3r"],
+          ["r2","r3"],
+          ["r2l","r3l"],
+          ["r2ll","r3ll"],
+          ["r3rr","r4rr"],
+          //["r3","r4"],
+          ["r3ll","r4ll"],
+          ["r4rr","c4rr"],
+          ["r4ll","c4ll"],
+
+          //widthwise
+          {"deformGroup":"windshield_break"}
+          ["r2rr","r2r"],
+          ["r2","r2r"],
+          ["r2","r2l"],
+          ["r2ll","r2l"],
+          {"deformGroup":"rooflights_break"},
+          ["r3rr","r3r"],
+          ["r3","r3r"],
+          ["r3","r3l"],
+          ["r3ll","r3l"],
+          //["r4rr","r4"],
+          //["r4ll","r4"],
+
+          //corner rigids
+          {"beamSpring":1176840,"beamDamp":260},
+          {"beamDeform":4800,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"windshield_break"}
+          {"deformLimitExpansion":""},
+          ["r1rr","f3r"],
+          ["r1ll","f3l"],
+
+          ["r1rr","r3rr"],
+          ["r1rr","r3r"],
+          ["r1ll","r3l"],
+          ["r1ll","r3ll"],
+
+          //length
+          {"beamDeform":2400,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"rooflights_break"},
+          ["r2rr","r4rr"],
+          //["r2r","r4"],
+          //["r2","r4"],
+          //["r2l","r4"],
+          ["r2ll","r4ll"],
+          {"deformGroup":""},
+
+          //breakable beams
+          {"beamDeform":6000,"beamStrength":8500},
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"deformGroup":"windshield_break","deformationTriggerRatio":0.2},
+          ["r1rr","c2rr"],
+          ["r1ll","c2ll"],
+          {"beamDeform":5000,"beamStrength":7500},
+          ["r2rr","c2rr"],
+          ["r2ll","c2ll"],
+          {"deformGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+
+          //more rigids
+          {"beamDeform":15200,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"rooflights_break","deformationTriggerRatio":0.1},
+          ["f3rr","r2rr"{"deformLimitExpansion":1.1}],
+          ["f3ll","r2ll"{"deformLimitExpansion":1.1}],
+          {"beamDeform":3200,"beamStrength":"FLT_MAX"},
+          ["f3r","r2rr"],
+          ["f3r","r2r"],
+          ["f3l","r2l"],
+          ["f3l","r2ll"],
+
+          ["r1rr","r2"],
+          ["r1ll","r2"],
+
+          {"deformGroup":"backlight_break", "deformationTriggerRatio":0.05}
+          ["c4rr","r3r"],
+          ["c4ll","r3l"],
+
+          ["c3rr","r4rr"],
+          ["c3ll","r4ll"],
+
+          ["c4rr","r2rr"],
+          ["c4rr","r2r"],
+          ["c4ll","r2l"],
+          ["c4ll","r2ll"],
+          {"deformLimitExpansion":1.1},
+          ["c4rr","r3rr"],
+          ["c4ll","r3ll"],
+
+          //widthwise
+          {"deformGroup":"windshield_break"}
+          {"beamDeform":3200,"beamStrength":"FLT_MAX"},
+          ["r2rr","r2"],
+          ["r2r","r2l"],
+          ["r2ll","r2"],
+          //
+          ["r1rr","f6rr"{"deformLimitExpansion":""}],
+          ["r1ll","f6ll"{"deformLimitExpansion":""}],
+
+          {"deformGroup":"rooflights_break"},
+          ["r3rr","r3"],
+          ["r3","r3ll"],
+          ["r3r","r3l"],
+
+          //surficial crossing
+          {"beamSpring":1680840,"beamDamp":260},
+          {"beamDeform":7800,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"windshield_break"}
+          ["r1rr","r2r"],
+          ["r1ll","r2l"],
+          {"deformGroup":"rooflights_break"},
+          ["r2rr","r3r"],
+          ["r2ll","r3l"],
+          ["r3rr","r2r"],
+          ["r3ll","r2l"],
+          ["r2r","r3"],
+          ["r2l","r3"],
+          ["r3r","r2"],
+          ["r3l","r2"],
+          {"deformLimitExpansion":""}
+          ["r4rr","r3r"],
+          ["r4ll","r3l"],
+          ["r4rr","r3"],
+          ["r4ll","r3"],
+
+          ["r4rr","c4"],
+          ["r4ll","c4"],
+          {"deformLimitExpansion":1.1}
+          {"deformGroup":""},
+
+          //--CAB--
+          {"beamSpring":2352840,"beamDamp":312},
+          {"beamDeform":28800,"beamStrength":"FLT_MAX"},
+          //main shape lengthwise floor
+          ["f8rr","c1rr"],
+          ["c1rr","c2rr"],
+          ["f8ll","c1ll"],
+          ["c1ll","c2ll"],
+
+          //main shape vertical
+          {"beamDeform":50400,"beamStrength":"FLT_MAX"},
+          ["c2rr","c3rr"],
+          ["c3rr","c4rr"],
+
+          ["c2ll","c3ll"],
+          ["c3ll","c4ll"],
+
+          ["c3","fr12r"],
+          ["c3","fr12"],
+          ["c3","fr12l"],
+
+          ["c3rr","fr12r"],
+          ["c3ll","fr12l"],
+
+          ["c4","c3"],
+
+          //main shape widthwise
+          {"beamSpring":2016840,"beamDamp":260},
+          {"beamDeform":18000,"beamStrength":"FLT_MAX"},
+          ["c1rr","fr9r"],
+          ["c1rr","fr11r"],
+
+          ["c1ll","fr9l"],
+          ["c1ll","fr11l"],
+
+          {"beamDeform":22800,"beamStrength":"FLT_MAX"},
+          ["c2rr","fr10r"],
+          ["c2rr","fr12r"],
+
+          ["c2ll","fr10l"],
+          ["c2ll","fr12l"],
+
+          ["c3rr","c3"],
+          ["c3ll","c3"],
+          ["c4rr","c4"],
+          ["c4ll","c4"],
+
+          //corner rigids
+          {"beamSpring":802840,"beamDamp":150},
+          {"beamDeform":5000,"beamStrength":"FLT_MAX"},
+          ["c1rr","c3rr"],
+          ["c1ll","c3ll"],
+
+          ["c1rr","c4rr"],
+          ["c1ll","c4ll"],
+
+          ["c4rr","f8rr"],
+          ["c4ll","f8ll"],
+
+          ["c2rr","c4rr"],
+          ["c2ll","c4ll"],
+
+          ["c3","fr11r"],
+          ["c3","fr11"],
+          ["c3","fr11l"],
+          ["c4","fr11"],
+
+          ["c3rr","fr11r"],
+          ["c3ll","fr11l"],
+
+          {"beamDeform":8200,"beamStrength":"FLT_MAX"},
+          ["c1rr","f3rr"],
+          ["c1ll","f3ll"],
+
+          ["fr11r","f3r"],
+          ["fr11","f3"],
+          ["fr11l","f3l"],
+
+          ["c1rr","f6rr"],
+          ["fr11r","f6r"],
+          ["fr11","f6"],
+          ["fr11l","f6l"],
+          ["c1ll","f6ll"],
+
+          //damping cab to frame
+          {"beamSpring":0,"beamDamp":2600},
+          {"beamDeform":600000000,"beamStrength":"FLT_MAX"},
+          ["c4rr","fr16r"],
+          ["c4","fr16"],
+          ["c4ll","fr16l"],
+
+          ["c4rr","fr17r"],
+          ["c4","fr17"],
+          ["c4ll","fr17l"],
+
+          //floorpan surficial crossing
+          {"beamSpring":1008840,"beamDamp":227.5},
+          {"beamDeform":16800,"beamStrength":"FLT_MAX"},
+          ["c1rr","fr4r"],
+          ["c1rr","fr8r"],
+
+          ["c1ll","fr4l"],
+          ["c1ll","fr8l"],
+
+          ["c1rr","fr10r"],
+          ["c1rr","fr12r"],
+
+          ["c1ll","fr10l"],
+          ["c1ll","fr12l"],
+
+          ["c2rr","fr9r"],
+          ["c2rr","fr11r"],
+
+          ["c2ll","fr9l"],
+          ["c2ll","fr11l"],
+
+          ["f8rr","fr9r"],
+          ["f8rr","fr11r"],
+
+          ["f8ll","fr9l"],
+          ["f8ll","fr11l"],
+
+          //rear face surficial crossing
+          ["c4rr","c3"],
+          ["c4ll","c3"],
+          ["c3rr","c4"],
+          ["c3ll","c4"],
+
+          ["c3","c2rr"],
+          ["c3","c2ll"],
+
+          //--FRONT END MEAT--
+          {"beamSpring":5040840,"beamDamp":350},
+          {"beamDeform":13800,"beamStrength":"FLT_MAX"},
+          //main shape widthwise upper
+          ["f1rr","f1r"],
+          ["f1r","f1"],
+          ["f1","f1l"],
+          ["f1l","f1ll"],
+
+          {"deformGroup":"windshield_break", "deformationTriggerRatio":0.05}
+          ["f3rr","f3r"],
+          ["f3r","f3"],
+          ["f3","f3l"],
+          ["f3l","f3ll"],
+          {"deformGroup":""}
+
+          //main shape widthwise middle
+          ["f4rr","f4r"],
+          ["f4r","f4"],
+          ["f4","f4l"],
+          ["f4l","f4ll"],
+
+          ["f6rr","f6r"],
+          ["f6r","f6"],
+          ["f6","f6l"],
+          ["f6l","f6ll"],
+
+          //main shape widthwise bottom
+          ["f7rr","fr1r"],
+          ["f7rr","fr5r"],
+          ["f7ll","fr1l"],
+          ["f7ll","fr5l"],
+          ["f8rr","fr4r"],
+          ["f8rr","fr8r"],
+          ["f8ll","fr4l"],
+          ["f8ll","fr8l"],
+
+          //main shape lengthwise upper
+          {"beamDeform":5400,"beamStrength":"FLT_MAX"},
+          ["f1rr","f2rr"],
+          ["f2rr","f3rr"],
+          ["f1ll","f2ll"],
+          ["f2ll","f3ll"],
+
+          //main shape lengthwise middle
+          {"beamDeform":5400,"beamStrength":"FLT_MAX"},
+          ["f4rr","f5rr"],
+          ["f5rr","f6rr"],
+          ["f4ll","f5ll"],
+          ["f5ll","f6ll"],
+
+          //main shape vertical
+          {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+          ["f1rr","f4rr"],
+          ["f1r","f4r"],
+          ["f1","f4"],
+          ["f1l","f4l"],
+          ["f1ll","f4ll"],
+
+          ["fr5r","f4r"],
+          ["fr5","f4"],
+          ["fr5l","f4l"],
+
+          ["f7rr","f4rr"],
+          ["f7ll","f4ll"],
+
+          ["f2rr","f5rr"],
+          ["f2ll","f5ll"],
+
+          ["f3rr","f6rr"],
+          ["f3ll","f6ll"],
+
+          ["f8rr","f6rr"],
+          ["f8ll","f6ll"],
+
+          {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+          ["f3r","f6r"],
+          ["f3","f6"],
+          ["f3l","f6l"],
+
+          ["fr8r","f6r"],
+          ["fr8","f6"],
+          ["fr8l","f6l"],
+
+          //rigid corners
+          {"beamDeform":7600,"beamStrength":"FLT_MAX"},
+          ["f8rr","fr3r"],
+          ["f8ll","fr3l"],
+          ["f4rr","fr2r"],
+          ["f4ll","fr2l"],
+          ["f6rr","fr3r"],
+          ["f6ll","fr3l"],
+          ["f5rr","fr2r"],
+          ["f5rr","fr3r"],
+          ["f5ll","fr2l"],
+          ["f5ll","fr3l"],
+
+          {"deformGroup":"windshield_break", "deformationTriggerRatio":0.05}
+          ["f3rr","f3"],
+          ["f3r","f3l"],
+          ["f3ll","f3"],
+          {"deformGroup":""}
+
+          ["f7rr","fr2r"],
+          ["f7ll","fr2l"],
+
+          ["f7rr","fr3r"],
+          ["f7ll","fr3l"],
+
+          //front face surficial crossing
+          ["f1rr","f4r"],
+          ["f1r","f4rr"],
+          ["f1r","f4"],
+          ["f1","f4r"],
+          ["f1","f4l"],
+          ["f1l","f4"],
+          ["f1l","f4ll"],
+          ["f1ll","f4l"],
+
+          ["f4rr","fr5r"],
+          ["f4r","f7rr"],
+          ["f4r","fr5"],
+          ["f4","fr5r"],
+          ["f4","fr5l"],
+          ["f4l","fr5"],
+          ["f4l","f7ll"],
+          ["f4ll","fr5l"],
+
+          ["f4r","fr3"],
+          ["f4","fr3r"],
+          ["f4","fr3l"],
+          ["f4l","fr3"],
+
+          ["f4r","fr2"],
+          ["f4","fr2r"],
+          ["f4","fr2l"],
+          ["f4l","fr2"],
+
+          //firewall surficial crossing
+          {"beamDeform":11400,"beamStrength":"FLT_MAX"},
+          ["f3rr","f6r"],
+          ["f3r","f6rr"],
+          ["f3r","f6"],
+          ["f3","f6r"],
+          ["f3","f6l"],
+          ["f3l","f6"],
+          ["f3l","f6ll"],
+          ["f3ll","f6l"],
+
+          ["f6rr","fr8r"],
+          ["f6r","f8rr"],
+          ["f6r","fr8"],
+          ["f6","fr8r"],
+          ["f6","fr8l"],
+          ["f6l","fr8"],
+          ["f6l","f8ll"],
+          ["f6ll","fr8l"],
+
+          //top face surficial crossing
+          {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+          ["f1r","f2rr"],
+          ["f1l","f2ll"],
+
+          ["f2rr","f3r"],
+          ["f2ll","f3l"],
+
+          //middle face surficial crossing
+          ["f4r","f5rr"],
+          ["f4l","f5ll"],
+
+          ["f5rr","f6r"],
+          ["f5ll","f6l"],
+
+          //side/vertical surficial crossing
+          ["f1rr","f5rr"],
+          ["f2rr","f4rr"],
+          ["f2rr","f6rr"],
+          ["f3rr","f5rr"],
+
+          ["f1ll","f5ll"],
+          ["f2ll","f4ll"],
+          ["f2ll","f6ll"],
+          ["f3ll","f5ll"],
+
+          ["f7rr","f5rr"],
+          ["f7ll","f5ll"],
+
+          ["f8rr","f5rr"],
+          ["f8ll","f5ll"],
+
+          {"beamDeform":6000,"beamStrength":"FLT_MAX"},
+          ["f4r","fr2r"],
+          ["f4","fr2"],
+          ["f4l","fr2l"],
+
+          //weak for frame upbend
+          ["f6r","fr3r"],
+          ["f6","fr3"],
+          ["f6l","fr3l"],
+
+          //upbend enticement
+          {"beamSpring":11760840,"beamDamp":650},
+          {"beamDeform":28800,"beamStrength":"FLT_MAX"},
+          ["fr4r","f1rr"],
+          ["fr4r","f1r"],
+          ["fr4","f1"],
+          ["fr4l","f1l"],
+          ["fr4l","f1ll"],
+
+          //seat and rear cab flexbody nodes
+          {"beamSpring":3360840,"beamDamp":650},
+          ["c5rr", "c5ll"],
+          ["c5ll", "c4ll"],
+          ["c5rr", "c4rr"],
+          ["c5rr", "c4"],
+          ["c4", "c5ll"],
+          ["c5rr", "c2rr"],
+          ["c5ll", "c2ll"],
+          //--BLEED DEFORM LIMIT TO OTHER PARTS--
+          {"deformLimitExpansion":1.1},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"dragCoef":4},
+            {"groundModel":"metal"},
+            {"group":"pickup_frontface"},
+            ["f1rr","f4rr","f1r"],
+            ["f1r","f4rr","f4r"],
+            ["f1r","f4r","f1"],
+            ["f1","f4r","f4"],
+
+            ["f4l","f1l","f1"],
+            ["f4","f4l","f1"],
+            ["f4ll","f1ll","f1l"],
+            ["f4l","f4ll","f1l"],
+
+            ["f4r","f4rr","fr5r"],
+            ["f4","f4r","fr5r"],
+            ["f4","fr5r","fr5"],
+            ["f4","fr5","fr5l"],
+            ["f4","fr5l","f4l"],
+            ["f4ll","f4l","fr5l"],
+
+            ["f4rr","f7rr","fr5r"],
+            ["f7ll","f4ll","fr5l"],
+
+            ["f7rr","fr1r","fr5r"],
+            ["f7ll","fr5l","fr1l"],
+
+            {"dragCoef":10},
+            {"group":"pickup_rightside"},
+            ["f1rr","f2rr","f5rr"],
+            ["f1rr","f5rr","f4rr"],
+            ["f5rr","f7rr","f4rr"],
+            ["f2rr","f3rr","f6rr"],
+            ["f2rr","f6rr","f5rr"],
+            ["f6rr","f8rr","f5rr"],
+
+            //["fr6r","fr1r","fr5r"],
+            //["fr2r","fr1r","fr6r"],
+            //["fr2r","fr6r","fr7r"],
+            //["fr3r","fr2r","fr7r"],
+            //["fr3r","fr7r","fr8r"],
+            //["fr4r","fr3r","fr8r"],
+
+            ["fr3r", "fr2r", "sh1r"],
+            ["fr2r", "f7rr", "sh1r"],
+            ["sh1r", "f7rr", "f5rr"],
+            ["sh1r", "f5rr", "f8rr"],
+            ["fr3r", "sh1r", "f8rr"],
+            ["fr4r", "fr3r", "f8rr"],
+            ["fr1r", "f7rr", "fr2r"],
+
+            ["r1rr","r4rr","c4rr"],
+            ["c4rr","f3rr","r1rr"],
+            ["r1rr","r3rr","r4rr"],
+            ["r1rr","r2rr","r3rr"],
+
+            ["f6rr","c1rr","f8rr"],
+            ["f6rr","c3rr","c1rr"],
+            ["c1rr","c3rr","c2rr"],
+            ["f6rr","c4rr","c3rr"],
+            ["f3rr","c4rr","f6rr"],
+
+            {"group":"pickup_leftside"},
+            ["f2ll","f1ll","f5ll"],
+            ["f5ll","f1ll","f4ll"],
+            ["f7ll","f5ll","f4ll"],
+            ["f3ll","f2ll","f6ll"],
+            ["f6ll","f2ll","f5ll"],
+            ["f8ll","f6ll","f5ll"],
+
+            //["fr1l","fr6l","fr5l"],
+            //["fr1l","fr2l","fr6l"],
+            //["fr6l","fr2l","fr7l"],
+            //["fr2l","fr3l","fr7l"],
+            //["fr7l","fr3l","fr8l"],
+            //["fr3l","fr4l","fr8l"],
+
+            ["fr2l", "fr3l", "sh1l"],
+            ["f7ll", "fr2l", "sh1l"],
+            ["f7ll", "sh1l", "f5ll"],
+            ["f5ll", "sh1l", "f8ll"],
+            ["sh1l", "fr3l", "f8ll"],
+            ["fr3l", "fr4l", "f8ll"],
+            ["f7ll", "fr1l", "fr2l"],
+
+            ["r4ll","r1ll","c4ll"],
+            ["f3ll","c4ll","r1ll"],
+            ["r3ll","r1ll","r4ll"],
+            ["r2ll","r1ll","r3ll"],
+
+            ["f8ll","c1ll","f6ll"],
+            ["f6ll","c1ll","c3ll"],
+            ["c1ll","c2ll","c3ll"],
+            ["f6ll","c3ll","c4ll"],
+            ["f6ll","c4ll","f3ll"],
+
+            {"group":"pickup_fronttop"},
+            ["f2rr","f1rr","f1r"],
+            ["f3rr","f2rr","f3r"],
+            ["f1ll","f2ll","f1l"],
+            ["f2ll","f3ll","f3l"],
+
+            ["f3r","f2rr","f1r"],
+            ["f1r","f3","f3r"],
+            ["f1r","f1","f3"],
+
+            ["f1l","f2ll","f3l"],
+            ["f3l","f3","f1l"],
+            ["f1l","f3","f1"],
+
+
+            {"group":"pickup_roof"},
+            ["r2rr","r1rr","f3r"],
+            ["r1rr","f3rr","f3r"],
+            ["r2r","r2rr","f3r"],
+            ["r2r","f3r","f3"],
+            ["r2r","f3","r2"],
+            ["r2l","r2","f3"],
+            ["r2l","f3","f3l"],
+            ["r2l","f3l","r2ll"],
+            ["r1ll","f3l","f3ll"],
+            ["r1ll","r2ll","f3l"],
+
+            ["r2rr","r2r","r3r"],
+            ["r2ll","r3l","r2l"],
+            ["r2rr","r3r","r3rr"],
+            ["r3ll","r3l","r2ll"],
+
+            ["r2r","r2","r3"],
+            ["r2l","r3","r2"],
+            ["r2r","r3","r3r"],
+            ["r3l","r3","r2l"],
+
+            {"group":"pickup_bottom"},
+            //["f8rr","fr3r","fr4r"],
+            //["f8ll","fr3l","fr4l"],
+
+            ["f8rr","fr9r","fr4r"],
+            ["f8ll","fr4l","fr9l"],
+            ["c1rr","fr9r","f8rr"],
+            ["f8ll","fr9l","c1ll"],
+
+            ["c1rr","fr10r","fr9r"],
+            ["c1ll","fr9l","fr10l"],
+            ["c2rr","fr10r","c1rr"],
+            ["c1ll","fr10l","c2ll"],
+
+
+            {"dragCoef":4},
+            {"group":"pickup_cabrear"},
+            ["c2rr","c3rr","c3"],
+            ["c3ll","c2ll","c3"],
+            ["fr10","c2rr","c3"],
+            ["c3","c2ll","fr10"],
+
+
+            ["c3rr","c4rr","c4"],
+            ["c4ll","c3ll","c4"],
+            ["c3","c3rr","c4"],
+            ["c4","c3ll","c3"],
+
+            ["r3ll","r4ll","c4"],
+            ["r4ll","c4ll","c4"],
+            ["r3ll","c4","r3l"],
+            ["r3l","c4","r3"],
+            ["r3r","r3","c4"],
+            ["r3rr","r3r","c4"],
+            ["r4rr","c4","c4rr"],
+            ["r4rr","r3rr","c4"],
+            {"dragCoef":2},
+            {"group":"pickup_firewall"},
+            /*
+            ["f3rr","f6rr","f3r"],
+            ["f6rr","f6r","f3r"],
+            ["f3r","f6r","f3"],
+            ["f6r","f6","f3"],
+
+            ["f6l","f3l","f3"],
+            ["f6l","f3","f6"],
+            ["f6ll","f3ll","f3l"],
+            ["f6ll","f3l","f6l"],
+
+            ["fr8r","f8rr","fr4r"],
+            ["fr4l","f8ll","fr8l"],
+
+            ["f6rr","f8rr","fr8r"],
+            ["f8ll","f6ll","fr8l"],
+
+            ["f6r","f6rr","fr8r"],
+            ["f6ll","f6l","fr8l"],
+
+            ["f6r","fr8r","f6"],
+            ["f6","fr8r","fr8"],
+            ["f6l","f6","fr8l"],
+            ["f6","fr8","fr8l"],
+            */
+            {"dragCoef":0},
+            //rear door to cab coltris
+            {"optional":true}
+            {"breakGroup":["doorhinge_a_L","doorhinge_b_L"]},
+            //["d9l", "d6l", "c4ll"],
+            //["c4ll", "d6l", "c3ll"],
+            //["d6l", "d3l", "c3ll"],
+            //["c3ll", "d3l", "c2ll"],
+            //
+            //["d1l", "f8ll", "c1ll"],
+            //["d1l", "c1ll", "d2l"],
+            //["c1ll", "c2ll", "d2l"],
+            //["d2l", "c2ll", "d3l"],
+            {"breakGroup":["doorhinge_a_R","doorhinge_b_R"]},
+            //["c4rr", "d6r", "d9r"],
+            //["c3rr", "d6r", "c4rr"],
+            //["c3rr", "d3r", "d6r"],
+            //["c2rr", "d3r", "c3rr"],
+            //
+            //["c1rr", "f8rr", "d1r"],
+            //["d2r", "c1rr", "d1r"],
+            //["d2r", "c2rr", "c1rr"],
+            //["d3r", "c2rr", "d2r"],
+            {"optional":false}
+            {"breakGroup":""},
+            {"dragCoef":0},
+    ],
+},
+"pickup_gauges_JDM": {
+	"information":{
+		"authors":"BeamNG & Firepower",
+		"name":"Gauges",
+	}
+    "slotType" : "pickup_gauges_JDM",
+	"glowMap":{
+            "pickup_gauges":{"simpleFunction":{"lowhighbeam":0.6}, "off":"pickup_gauges", "on":"prefacelift_gauges_on"},
+            //gauge lights
+            "signal_L":{"simpleFunction":"signal_L", "off":"invis", "on":"decals_gauges"},
+            "signal_R":{"simpleFunction":"signal_R", "off":"invis", "on":"decals_gauges"},
+            "checkengine":{"simpleFunction":"checkengine", "off":"invis", "on":"decals_gauges"},
+            "hazard":{"simpleFunction":"hazard", "off":"invis", "on":"decals_gauges"},
+            "battery":{"simpleFunction":"battery", "off":"invis", "on":"decals_gauges"},
+            "highbeam":{"simpleFunction":"highbeam", "off":"invis", "on":"decals_gauges"},
+            "parkingbrake":{"simpleFunction":"parkingbrake", "off":"invis", "on":"decals_gauges"},
+            "lowfuel":{"simpleFunction":"lowfuel", "off":"invis", "on":"decals_gauges"},
+            "lowpressure":{"simpleFunction":"lowpressure", "off":"invis", "on":"invis"},
+            "abs":{"simpleFunction":"abs", "off":"invis", "on":"decals_gauges"},
+    }
+	"props": [
+        ["func",       "mesh",                  "idRef:","idX:","idY:", "baseRotation",           "rotation",                  "translation",        "min", "max", "offset", "multiplier"]
+        //speedometer
+        ["wheelspeed", "pickup_needle_speedo_rhd",  "f6l","f6","f3l",       {"x":-80 "y":0, "z":180}, {"x":0, "y":0, "z":-4.15},   {"x":0, "y":0, "z":0},   0, 52, -26.1, 1],
+        //tachometer
+        ["rpm",        "pickup_needle_tacho_rhd",   "f6l","f6","f3l",       {"x":-80 "y":0, "z":180}, {"x":0, "y":0, "z":-0.0305}, {"x":0, "y":0, "z":0},   0, 6000, -3950, 1],
+        //fuel gauge
+        ["fuel",       "pickup_needle_fuel_rhd",    "f6l","f6","f3l",       {"x":-80 "y":0, "z":180}, {"x":0, "y":0, "z":-70},     {"x":0, "y":0, "z":0},   0, 1, -1, 1],
+        //oil temp
+        ["oiltemp",    "pickup_needle_oil_rhd",     "f6l", "f6","f3l",      {"x":-80 "y":0, "z":180}, {"x":0, "y":0, "z":1.5},     {"x":0, "y":0, "z":0},   60, 120, 90, 1],
+        //water temp
+        ["watertemp",  "pickup_needle_water_rhd",   "f6l","f6","f3l",       {"x":-80 "y":0, "z":180}, {"x":0, "y":0, "z":1.5},     {"x":0, "y":0, "z":0},   60, 120, 90, 1],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+         //bodywork
+		 ["pickup_gauges_rhd", ["pickup_firewall"]],
+		 ["pickup_decals_gauges_rhd", ["pickup_firewall"]],
+	],
+},
+"hopper_gauges_JDM": {
+	"information":{
+		"authors":"BeamNG & Firepower",
+		"name":"Hopper Gauges",
+	}
+    "slotType" : "pickup_gauges_JDM",
+	"glowMap":{
+		"prefacelift_hopper_gauges":       {"simpleFunction":{"lowhighbeam":0.6},                                 "off":"prefacelift_hopper_gauges", "on":"prefacelift_hopper_gauges_on"},
+        //gauge lights
+        "signal_L":           {"simpleFunction":"signal_L",      "off":"invis", "on":"decals_gauges"},
+        "signal_R":           {"simpleFunction":"signal_R",      "off":"invis", "on":"decals_gauges"},
+        "checkengine":        {"simpleFunction":"checkengine",   "off":"invis", "on":"decals_gauges"},
+        "hazard":             {"simpleFunction":"hazard",        "off":"invis", "on":"decals_gauges"},
+        "battery":            {"simpleFunction":"battery",       "off":"invis", "on":"decals_gauges"},
+        "highbeam":           {"simpleFunction":"highbeam",      "off":"invis", "on":"decals_gauges"},
+        "parkingbrake":       {"simpleFunction":"parkingbrake",  "off":"invis", "on":"decals_gauges"},
+        "lowfuel":            {"simpleFunction":"lowfuel",       "off":"invis", "on":"decals_gauges"},
+        "lowpressure":        {"simpleFunction":"lowpressure",   "off":"invis", "on":"invis"},
+        "abs":                {"simpleFunction":"abs",           "off":"invis", "on":"decals_gauges"},
+        "light_generic":{"simpleFunction":{"highbeam":0.6}, "off":"light_generic", "on":"light_generic_on", "on_intense":"light_generic_on_intense"},
+    },
+	"props": [
+        ["func",       "mesh",                  "idRef:","idX:","idY:", "baseRotation",           "rotation",                  "translation",        "min", "max", "offset", "multiplier"]
+        //speedometer
+        ["wheelspeed", "prefacelift_hopper_needle_speedo",  "f6l","f6","f3l",       {"x":-80, "y":0, "z":180}, {"x":0, "y":0, "z":-4.57},    {"x":0, "y":0, "z":0},   0, 54, -26.5, 1],
+        //tachometer
+        ["rpm",        "prefacelift_hopper_needle_tacho",   "f6l","f6","f3l",       {"x":-80, "y":0, "z":180}, {"x":0, "y":0, "z":-0.041}, {"x":0, "y":0, "z":0},   0, 6000, -3000, 1],
+        //fuel gauge
+        ["fuel",       "prefacelift_hopper_needle_fuel",    "f6l","f6","f3l",       {"x":-80, "y":0, "z":180}, {"x":0, "y":0, "z":-90},     {"x":0, "y":0, "z":0},   0, 1, -1.6, 1],
+        //oil temp
+        ["oil",        "prefacelift_hopper_needle_oil",     "f6l", "f6","f3l",      {"x":-80, "y":0, "z":180}, {"x":0, "y":0, "z":1.0},     {"x":0, "y":0, "z":0},   0, 80, -80, 1],
+        //water temp
+        ["watertemp",  "prefacelift_hopper_needle_water",   "f6l","f6","f3l",       {"x":-80, "y":0, "z":180}, {"x":0, "y":0, "z":1.5},     {"x":0, "y":0, "z":0},   60, 120, 90, 1],
+		//volts
+        ["volts",      "prefacelift_hopper_needle_volts",   "f6l","f6","f3l",       {"x":-80, "y":0, "z":180}, {"x":0, "y":0, "z":90},     {"x":0, "y":0, "z":0},   0, 1, 0.67, 1],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+         //bodywork
+		 ["prefacelift_hopper_gauges", ["pickup_firewall"]],
+		 ["prefacelift_hopper_decals_gauges", ["pickup_firewall"]],
+	],
+},
+"pessima_gauges_JDM": {
+	"information":{
+		"authors":"BeamNG & Firepower",
+		"name":"Pessima Gauges",
+	}
+    "slotType" : "pickup_gauges_JDM",
+	"glowMap":{
+            "prefacelift_pessima_gauges":{"simpleFunction":{"lowhighbeam":0.6}, "off":"prefacelift_pessima_gauges", "on":"prefacelift_pessima_gauges_on"},
+
+            //gauge lights
+            "signal_L":{"simpleFunction":"signal_L", "off":"invis", "on":"decals_gauges"},
+            "signal_R":{"simpleFunction":"signal_R", "off":"invis", "on":"decals_gauges"},
+            "checkengine":{"simpleFunction":"checkengine", "off":"invis", "on":"decals_gauges"},
+            "battery":{"simpleFunction":"battery", "off":"invis", "on":"decals_gauges"},
+            "highbeam":{"simpleFunction":"highbeam", "off":"invis", "on":"decals_gauges"},
+            "parkingbrake":{"simpleFunction":"parkingbrake", "off":"invis", "on":"decals_gauges"},
+            "lowfuel":{"simpleFunction":"lowfuel", "off":"invis", "on":"decals_gauges"},
+            "lowpressure":{"simpleFunction":"lowpressure", "off":"invis", "on":"invis"},
+            "abs":{"simpleFunction":"abs", "off":"invis", "on":"decals_gauges"},
+
+            "light_generic":{"simpleFunction":{"highbeam":1}, "off":"light_generic", "on":"light_generic_on", "on_intense":"light_generic_on_intense"},
+    },
+	"props": [
+        ["func",       "mesh",                  "idRef:","idX:","idY:", "baseRotation",           "rotation",                  "translation",        "min", "max", "offset", "multiplier"]
+        //speedometer
+        ["wheelspeed", "prefacelift_pessima_needle_speedo",  "f6l","f6","f3l",       {"x":-78, "y":0, "z":180}, {"x":0, "y":0, "z":-4.10},  {"x":0, "y":0, "z":0},   0, 53.5, -26.4, 1],
+        //tachometer
+        ["rpm",        "prefacelift_pessima_needle_tacho",   "f6l","f6","f3l",       {"x":-78, "y":0, "z":180}, {"x":0, "y":0, "z":-0.029}, {"x":0, "y":0, "z":0},   500, 7500, -4000, 1],
+        //fuel gauge
+        ["fuel",       "prefacelift_pessima_needle_fuel",    "f6l","f6","f3l",       {"x":-78, "y":0, "z":180}, {"x":0, "y":0, "z":-100},   {"x":0, "y":0, "z":0},   0, 1, -1.4, 1],
+        //water temp
+        ["watertemp",  "prefacelift_pessima_needle_temp",    "f6l","f6","f3l",       {"x":-78, "y":0, "z":180}, {"x":0, "y":0, "z":1.5},    {"x":0, "y":0, "z":0},   60, 120, 90, 1],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+         //bodywork
+		 ["prefacelift_pessima_gauges", ["pickup_firewall"]],
+		 ["prefacelift_pessima_decals_gauges", ["pickup_firewall"]],
+	],
+},
+"coupe_gauges_JDM": {
+	"information":{
+		"authors":"BeamNG & Firepower",
+		"name":"200BX Gauges",
+	}
+    "slotType" : "pickup_gauges_JDM",
+	"glowMap":{
+            "prefacelift_coupe_gauges":{"simpleFunction":{"lowhighbeam":0.6}, "off":"prefacelift_coupe_gauges", "on":"prefacelift_coupe_gauges_on"},
+
+            //gauge lights
+            "signal_L":{"simpleFunction":"signal_L", "off":"invis", "on":"decals_gauges"},
+            "signal_R":{"simpleFunction":"signal_R", "off":"invis", "on":"decals_gauges"},
+            "checkengine":{"simpleFunction":"checkengine", "off":"invis", "on":"decals_gauges"},
+            "hazard":{"simpleFunction":"hazard", "off":"invis", "on":"decals_gauges"},
+            "battery":{"simpleFunction":"battery", "off":"invis", "on":"decals_gauges"},
+            "highbeam":{"simpleFunction":"highbeam", "off":"invis", "on":"decals_gauges"},
+            "parkingbrake":{"simpleFunction":"parkingbrake", "off":"invis", "on":"decals_gauges"},
+            "lowfuel":{"simpleFunction":"lowfuel", "off":"invis", "on":"decals_gauges"},
+            "lowpressure":{"simpleFunction":"lowpressure", "off":"invis", "on":"invis"},
+            "abs":{"simpleFunction":"abs", "off":"invis", "on":"decals_gauges"},
+
+            "light_generic":{"simpleFunction":{"highbeam":1}, "off":"light_generic", "on":"light_generic_on", "on_intense":"light_generic_on_intense"},
+    },
+	"props": [
+        ["func",       "mesh",                  "idRef:","idX:","idY:", "baseRotation",           "rotation",                  "translation",        "min", "max", "offset", "multiplier"]
+        //speedometer
+        ["wheelspeed", "prefacelift_coupe_needle_speedo",  "f6l","f6","f3l",       {"x":-95, "y":0, "z":180}, {"x":0, "y":0, "z":-3.5}     , {"x":0, "y":0, "z":0}, 0, 63, 19, 1.01],
+        //tachometer
+        ["rpm",        "prefacelift_coupe_needle_tacho",   "f6l","f6","f3l",       {"x":-95, "y":0, "z":180}, {"x":0, "y":0, "z":-0.0275}     , {"x":0, "y":0, "z":0}, 0, 12000, 2500, 1],
+        //fuel gauge
+        ["fuel",       "prefacelift_coupe_needle_fuel",    "f6l","f6","f3l",       {"x":-95, "y":0, "z":180}, {"x":0, "y":0, "z":90}     , {"x":0, "y":0, "z":0}, 0, 50, 0.95, 0.9],
+        //water temp
+        ["watertemp",  "prefacelift_coupe_needle_temp",    "f6l","f6","f3l",       {"x":-95, "y":0, "z":180}, {"x":0, "y":0, "z":-1.5}     , {"x":0, "y":0, "z":0}, 65, 118, -10, 1],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+         //bodywork
+		 ["prefacelift_coupe_gauges", ["pickup_firewall"]],
+		 ["prefacelift_coupe_decals_gauges", ["pickup_firewall"]],
+	],
+},
+"midsize_gauges_JDM": {
+	"information":{
+		"authors":"BeamNG & Firepower",
+		"name":"Late Pessima Gauges",
+	}
+    "slotType" : "pickup_gauges_JDM",
+	"glowMap":{
+            "prefacelift_midsize_gauges":{"simpleFunction":"lowhighbeam", "off":"prefacelift_midsize_gauges", "on":"prefacelift_midsize_gauges_on"},
+
+            //gauge lights
+            "signal_L":{"simpleFunction":"signal_L", "off":"invis", "on":"decals_gauges"},
+            "signal_R":{"simpleFunction":"signal_R", "off":"invis", "on":"decals_gauges"},
+            "checkengine":{"simpleFunction":"checkengine", "off":"invis", "on":"decals_gauges"},
+            "hazard":{"simpleFunction":"hazard", "off":"invis", "on":"decals_gauges"},
+            "battery":{"simpleFunction":"battery", "off":"invis", "on":"decals_gauges"},
+            "highbeam":{"simpleFunction":"highbeam", "off":"invis", "on":"decals_gauges"},
+            "parkingbrake":{"simpleFunction":"parkingbrake", "off":"invis", "on":"decals_gauges"},
+            "lowfuel":{"simpleFunction":"lowfuel", "off":"invis", "on":"decals_gauges"},
+            "lowpressure":{"simpleFunction":"lowpressure", "off":"invis", "on":"invis"},
+            "abs":{"simpleFunction":"abs", "off":"invis", "on":"decals_gauges"},
+    },
+	"props": [
+        ["func",       "mesh",                  "idRef:","idX:","idY:", "baseRotation",           "rotation",                  "translation",        "min", "max", "offset", "multiplier"]
+        //speedometer
+        ["wheelspeed", "prefacelift_midsize_needle_speedo",  "f6l","f6","f3l",       {"x":-85, "y":0, "z":180}, {"x":0, "y":0, "z":-3.5},  {"x":0, "y":0, "z":0}, 0, 70, 16, 1.1],
+        //tachometer
+        ["rpm",        "prefacelift_midsize_needle_tacho",   "f6l","f6","f3l",       {"x":-85, "y":0, "z":180}, {"x":0, "y":0, "z":-0.02}, {"x":0, "y":0, "z":0}, 0, 12000, 2540, 1.6],
+        //fuel gauge
+        ["fuel",       "prefacelift_midsize_needle_fuel",    "f6l","f6","f3l",       {"x":-85, "y":0, "z":180}, {"x":0, "y":0, "z":100},   {"x":0, "y":0, "z":0}, 0, 50, 0.33, 1.15],
+        //water temp
+        ["watertemp",  "prefacelift_midsize_needle_temp",    "f6l","f6","f3l",       {"x":-85, "y":0, "z":180}, {"x":0, "y":0, "z":-1.5},  {"x":0, "y":0, "z":0}, 60, 120, -30, 1],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+         //bodywork
+		 ["prefacelift_midsize_gauges", ["pickup_firewall"]],
+		 ["prefacelift_midsize_decals_gauges", ["pickup_firewall"]],
+	],
+}
+"prefacelift_coupe_steer_RHD": {
+	"information":{
+		"authors":"BeamNG & Firepower",
+		"name":"Ibishu Steering Wheel",
+	}
+    "slotType" : "pickup_steer_rhd",	 
+	"props": [
+		["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+		//steering wheel
+		["steering"    , "prefacelift_coupe_steer"        , "fr8", "fr8l", "fr11", {"x":25, "y":0, "z":0} , {"x":0, "y":0, "z":1}    , {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1],
+	],
+}
+"prefacelift_pickup_steer_RHD": {
+	"information":{
+		"authors":"BeamNG & Firepower",
+		"name":"D-Series Steering Wheel",
+	}
+    "slotType" : "pickup_steer_rhd",	 
+	"props": [
+		["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+		//steering wheel
+		["steering"    , "prefacelift_pickup_steer"        , "fr8", "fr8l", "fr11", {"x":25, "y":0, "z":0} , {"x":0, "y":0, "z":1}    , {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1],
+	 ],
+},
+"prefacelift_steer_01a": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Nomi Mod.301 Racing Wheel",
+        "value":310,
+    },
+    "slotType" : "pickup_steer_rhd",
+    "props": [
+        ["func",     "mesh",      "idRef:","idX:","idY:", "baseRotation",           "rotation",            "translation",         "min", "max", "offset", "multiplier"]
+        //steering wheel
+        ["steering", "steer_01a", "f6l","f6","f3l",       {"x":-65 "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1, {"baseTranslation":{"x":0.91,"y":0.336,"z":-0.45}}],
+     ],
+},
+"prefacelift_steer_02a": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Nomi Mod.307 Racing Wheel",
+        "value":330,
+    },
+    "slotType" : "pickup_steer_rhd",
+    "props": [
+        ["func",     "mesh",      "idRef:","idX:","idY:", "baseRotation",           "rotation",            "translation",         "min", "max", "offset", "multiplier"]
+        //steering wheel
+        ["steering", "steer_02a", "f6l","f6","f3l",       {"x":-65 "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1, {"baseTranslation":{"x":0.91,"y":0.336,"z":-0.45}}],
+     ],
+},
+"prefacelift_steer_02b": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Nomi Mod.307R Racing Wheel",
+        "value":330,
+    },
+    "slotType" : "pickup_steer_rhd",
+    "props": [
+        ["func",     "mesh",      "idRef:","idX:","idY:", "baseRotation",           "rotation",            "translation",         "min", "max", "offset", "multiplier"]
+        //steering wheel
+        ["steering", "steer_02b", "f6l","f6","f3l",       {"x":-65 "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1, {"baseTranslation":{"x":0.91,"y":0.336,"z":-0.45}}],
+     ],
+},
+"prefacelift_steer_02c": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Nomi Mod.207R Drift Wheel",
+        "value":250,
+    },
+    "slotType" : "pickup_steer_rhd",
+    "props": [
+        ["func",     "mesh",      "idRef:","idX:","idY:", "baseRotation",           "rotation",            "translation",         "min", "max", "offset", "multiplier"]
+        //steering wheel
+        ["steering", "steer_02c", "f6l","f6","f3l",       {"x":-65 "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1, {"baseTranslation":{"x":0.91,"y":0.336,"z":-0.45}}],
+     ],
+},
+"prefacelift_steer_03a": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Arnida Sportivo Racing Wheel",
+        "value":370,
+    },
+    "slotType" : "pickup_steer_rhd",
+    "props": [
+        ["func",     "mesh",      "idRef:","idX:","idY:", "baseRotation",           "rotation",            "translation",         "min", "max", "offset", "multiplier"]
+        //steering wheel
+        ["steering", "steer_03a", "f6l","f6","f3l",       {"x":-65 "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1, {"baseTranslation":{"x":0.91,"y":0.336,"z":-0.45}}],
+     ],
+},
+"prefacelift_steer_04a": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Arnida Corsa Racing Wheel",
+        "value":400,
+    },
+    "slotType" : "pickup_steer_rhd",
+    "props": [
+        ["func",     "mesh",      "idRef:","idX:","idY:", "baseRotation",           "rotation",            "translation",         "min", "max", "offset", "multiplier"]
+        //steering wheel
+        ["steering", "steer_04a", "f6l","f6","f3l",       {"x":-65 "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1, {"baseTranslation":{"x":0.91,"y":0.336,"z":-0.45}}],
+     ],
+},
+"prefacelift_steer_05a": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Legno Classico Steering Wheel",
+        "value":440,
+    },
+    "slotType" : "pickup_steer_rhd",
+    "props": [
+        ["func",     "mesh",      "idRef:","idX:","idY:", "baseRotation",           "rotation",            "translation",         "min", "max", "offset", "multiplier"]
+        //steering wheel
+        ["steering", "steer_05a", "f6l","f6","f3l",       {"x":-65 "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1, {"baseTranslation":{"x":0.91,"y":0.336,"z":-0.45}}],
+     ],
+}
+"prefacelift_hopper_steer": {
+	"information":{
+		"authors":"BeamNG & Firepower",
+		"name":"Hopper Steering Wheel",
+	}
+    "slotType" : "pickup_steer_rhd",	 
+	"props": [
+		["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+		//steering wheel
+		["steering"    , "prefacelift_hopper_steer"        , "fr8", "fr8l", "fr11", {"x":25, "y":0, "z":0} , {"x":0, "y":0, "z":1}    , {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1],
+	],
+}
+"pickup_shifter_M_RHD": {
+	"information":{
+		"authors":"BeamNG & Firepower",
+		"name":"Manual Shifter",
+	}
+    "slotType" : "pickup_shifter_rhd",	 
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //cover up the auto shifter numbering
+		 ["pickup_gauges_cover_M_rhd", ["pickup_firewall"]],
+		 ["pickup_shifter_M_rhd", ["pickup_cab"]],
+	],
+}
+"pickup_shifter_A_RHD": {
+	"information":{
+		"authors":"BeamNG & Firepower",
+		"name":"Automatic Shifter",
+	}
+    "slotType" : "pickup_shifter_rhd",
+	"props": [
+		["func"        , "mesh"                , "idRef:", "idX:", "idY:", "baseRotation"      , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+		//automatic transmission
+		["gear_A"      , "pickup_needle_gear_rhd"  , "fr8", "fr8l", "fr11" {"x":10, "y":0, "z":0} , {"x":0, "y":0, "z":0}      , {"x":-0.13, "y":0, "z":0}, 0, 1, 0, 1],
+		
+		//shifter
+		["gear_A"      , "pickup_shifter_A_rhd"    , "fr8", "fr8l", "fr11" {"x":25, "y":0, "z":0} , {"x":0, "y":0, "z":-25}    , {"x":0, "y":0, "z":0}, 0, 1, 0, 1],
+	],
+}
+"pickup_glass_JDM": {
+    "information":{
+        "authors":"BeamNG & Firepower",
+        "name":"Glass",
+    }
+    "slotType" : "pickup_glass_JDM",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //glass
+         {"deformGroup":"windshield_break", "deformMaterialBase":"pickup_glass", "deformMaterialDamaged":"pickup_windshield_dmg"}
+         ["pickup_windshield", ["pickup_windshield"],[]{"deformSound":"GlassBreakSound1", "deformVolume":0.7}],
+         {"deformGroup":"windshield_break", "deformMaterialBase":"pickup_glass_int", "deformMaterialDamaged":"pickup_glass_int"}
+         ["pickup_windshield_int", ["pickup_windshield"]],
+
+         {"deformGroup":"windshield_break", "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_mirror"}
+         ["pickup_windshield_dmg", ["pickup_windshield"]],
+
+         {"deformGroup":"backlight_break", "deformMaterialBase":"pickup_glass", "deformMaterialDamaged":"pickup_glass_dmg"}
+         ["pickup_backlight", ["pickup_framefront", "pickup_cab", "pickup_firewall", "pickup_frontmeat", "pickup_lowermounts", "pickup_uppermounts", "pickup_shocktop"],[]{"deformSound":"GlassBreakSound9", "deformVolume":0.8}],
+         {"deformGroup":"backlight_break", "deformMaterialBase":"pickup_glass_int", "deformMaterialDamaged":"pickup_glass_dmg"}
+         ["pickup_backlight_int", ["pickup_framefront", "pickup_cab", "pickup_firewall", "pickup_frontmeat", "pickup_lowermounts", "pickup_uppermounts", "pickup_shocktop"]],
+         
+         {"deformGroup":""}
+         ["pickup_wipers_rhd", ["pickup_cab", "pickup_firewall", "pickup_frontmeat"]],
+         ["pickup_intmirror_rhd", ["pickup_cab"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true}
+         {"collision":true},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_GLASS"},
+         {"nodeWeight":4.4},
+         {"group":"pickup_windshield"},
+         ["r1", 0.0, -0.67, 1.49],
+         {"group":"pickup_backlight"},
+         ["r4", 0.0, 0.40, 1.47],
+         {"group":""},
+    ],
+    
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":2401000,"beamDamp":200},
+          {"disableMeshBreaking":true},
+          {"deformGroup":"pickup_windshield_break", "deformationTriggerRatio":0.03}
+          {"beamDeform":12000,"beamStrength":"FLT_MAX"},
+          //windshield
+          ["r1","f3"],
+          ["r1","r2"],
+          ["r1rr","r1"],
+          ["r1ll","r1"],
+          ["r1","f3r"],
+          ["r1","f3l"],
+          ["r1","r3"],
+          ["r1","f6"],
+          ["r2rr","r1"],
+          ["r2r","r1"],
+          ["r2l","r1"],
+          ["r2ll","r1"],
+          
+          ["r1","f3rr"],
+          ["r1","f3ll"],
+          
+          {"beamDeform":7000,"beamStrength":13000},
+          ["r1rr","r1ll"],
+          
+          ["f3","r2"],
+          
+          ["r2r","f3rr"],
+          ["r2l","f3ll"],
+          
+          ["r2r","f3"],
+          ["r2l","f3"],
+          
+          ["r2rr","f3r"],
+          ["r2ll","f3l"],
+          
+          ["r2","f3r"],
+          ["r2","f3l"],
+          
+          ["r2rr","r2ll"],
+          
+          {"disableMeshBreaking":true},
+          //backlight
+          {"beamSpring":2401000,"beamDamp":100},
+          {"deformGroup":"pickup_backlight_break", "deformationTriggerRatio":0.02}
+          {"beamDeform":14000,"beamStrength":10000},
+          {"breakGroup":"pickup_backlight"},
+          ["c4","r3r"],
+          ["c4","r3"],
+          ["c4","r3l"],
+          ["c4","r2r"],
+          ["c4","r2"],
+          ["c4","r2l"],
+          ["c3","r4"],
+          
+          ["r3r","r4"],
+          ["r3l","r4"],
+          ["c4rr","r4"],
+          ["c4ll","r4"],
+          {"breakGroup":""},
+          {"disableMeshBreaking":false},
+          {"deformGroup":""},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+    ],
+},
+"pickup_lettering_JDM": {
+	"information":{
+		"authors":"BeamNG & Firepower",
+		"name":"Ibishu Dove Lettering",
+	}
+    "slotType" : "pickup_lettering",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["pickup_lettering_ibishu", ["pickup_tailgate"]],
+		 ["pickup_lettering_dove", ["pickup_tailgate"]],
+	],
+},
+"pickup_skin_dove_200": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Dove 200",
+        "value":100,
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "dove_200",
+}
+"pickup_skin_dove4x4": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Dove 4x4",
+        "value":100,
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "dove4x4",
+},
+"pickup_skin_dove4x4_alt": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Dove 4x4 (Two Tone)",
+        "value":100,
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "dove4x4_alt",
+}
+}

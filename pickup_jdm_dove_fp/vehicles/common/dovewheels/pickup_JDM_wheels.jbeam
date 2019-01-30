@@ -1,0 +1,592 @@
+{
+"pickup_wheel_F_JDM": {
+	"information":{
+		"authors":"BeamNG",
+		"name":"Gavril D-Series Ibishu Front Wheels",
+	}
+    "slotType" : "wheel_F_6",
+	"slots": [
+        ["type", "default", "description"]
+        ["tire_F_16x8_alt","tire_F_225_75_16_standard","Front Tires"],
+    ],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //wheels
+		 ["ibishu_wheel_01a_16x8", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.54, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1,"y":1,"z":1}}],
+		 ["ibishu_wheel_01a_16x8", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x": 0.54, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1,"y":1,"z":1}}],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"frictionCoef":0.5},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"collision":true}
+		 {"selfCollision":false}
+		 {"nodeWeight":5.8},
+		 {"group":"wheelhub_FR"},
+		 ["fw1r", -0.36, 0.0, 0.0],
+         {"group":"wheelhub_FL"},
+         ["fw1l", 0.36, 0.0, 0.0],
+         {"group":"wheelhub_FR"},
+         ["fw1rr", -0.64, 0.0, 0.0],
+         {"group":"wheelhub_FL"},
+         ["fw1ll", 0.64, 0.0, 0.0],
+		 {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+         {"collision":true}
+		 {"group":""}, 
+	],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //hub
+        {"beamSpring":801000,"beamDamp":6},
+        {"beamDeform":110000,"beamStrength":1100000},
+        ["fw1r","fw1rr"],
+        ["fw1l","fw1ll"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        {"disableMeshBreaking":false,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+
+        //general settings
+		{"hubRadius":0.22},
+		{"wheelOffset":-0.04},
+		{"hubWidth":0.205},
+        {"numRays":16},
+
+        //hub options
+        {"hubTreadBeamSpring":1350900, "hubTreadBeamDamp":10},
+        {"hubPeripheryBeamSpring":1350900, "hubPeripheryBeamDamp":10},
+        {"hubSideBeamSpring":2001000, "hubSideBeamDamp":10}
+        {"hubBeamDeform":65000, "hubBeamStrength":95000},
+        {"hubNodeWeight":0.65},
+        {"hubNodeMaterial":"|NM_METAL"},
+        {"hubFrictionCoef":0.5},
+    ],
+}
+
+"pickup_wheel_F_steel_JDM": {
+	"information":{
+		"authors":"BeamNG",
+		"name":"Gavril D-Series Ibishu Front Steel Wheels",
+	}
+    "slotType" : "wheel_F_6",
+	"slots": [
+        ["type", "default", "description"]
+        ["tire_F_16x8_alt","tire_F_225_75_16_standard","Front Tires"],
+    ],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //wheels
+		 ["steelwheel_07a_16x8", ["wheel_FR","wheelhub_a_FR","wheelhub_b_FR"], [], {"pos":{"x":-0.54, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["steelwheel_07a_16x8", ["wheel_FL","wheelhub_a_FL","wheelhub_b_FL"], [], {"pos":{"x": 0.54, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"frictionCoef":0.5},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"collision":true}
+		 {"selfCollision":false}
+		 {"nodeWeight":5.8},
+		 {"group":"wheelhub_FR"},
+		 ["fw1r", -0.36, 0.0, 0.0],
+         {"group":"wheelhub_FL"},
+         ["fw1l", 0.36, 0.0, 0.0],
+         {"group":"wheelhub_FR"},
+         ["fw1rr", -0.64, 0.0, 0.0],
+         {"group":"wheelhub_FL"},
+         ["fw1ll", 0.64, 0.0, 0.0],
+		 {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+         {"collision":true}
+		 {"group":""}, 
+	],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //hub
+        {"beamSpring":801000,"beamDamp":6},
+        {"beamDeform":110000,"beamStrength":1100000},
+        ["fw1r","fw1rr"],
+        ["fw1l","fw1ll"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        {"disableMeshBreaking":false,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+
+        //general settings
+		{"hubRadius":0.20},
+		{"wheelOffset":-0.04},
+		{"hubWidth":0.205},
+        {"numRays":16},
+
+        //hub options
+        {"hubTreadBeamSpring":1350900, "hubTreadBeamDamp":10},
+        {"hubPeripheryBeamSpring":1350900, "hubPeripheryBeamDamp":10},
+        {"hubSideBeamSpring":2001000, "hubSideBeamDamp":10}
+        {"hubBeamDeform":65000, "hubBeamStrength":95000},
+        {"hubNodeWeight":0.65},
+        {"hubNodeMaterial":"|NM_METAL"},
+        {"hubFrictionCoef":0.5},
+    ],
+},
+"steelwheel_13b_6_15x9_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GP Wrestler 15x9 Front Steel Wheels",
+        "value":380,
+    },
+    "slotType" : "wheel_F_6",
+
+    "slots": [
+        ["type", "default", "description"],
+        ["tire_F_15x9","tire_F_29_10_15_offroad", "Front Tires"],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["steelwheel_13b_6_15x9", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.54, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+        ["steelwheel_13b_6_15x9", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x": 0.54, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        //front wheels
+        {"nodeWeight":5.0},
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+        {"selfCollision":true}
+        {"collision":true}
+        {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+        {"group":"wheelhub_FR"},
+        ["fw1r", -0.33, 0.0, 0.0],
+        {"group":"wheelhub_FR"},
+        ["fw1rr", -0.60, 0.0, 0.0],
+        {"group":"wheelhub_FL"},
+        ["fw1l", 0.33, 0.0, 0.0],
+        {"group":"wheelhub_FL"},
+        ["fw1ll", 0.60, 0.0, 0.0],
+        {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamDeform":78500,"beamStrength":434000},
+        {"beamSpring":801000,"beamDamp":6},
+        //front wheel
+        ["fw1r","fw1rr"],
+        ["fw1l","fw1ll"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        {"disableMeshBreaking":false,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+
+        //general settings
+        {"hubRadius":0.20},
+        {"wheelOffset":-0.075},
+        {"hubWidth":0.255},
+        {"numRays":16},
+
+        //hub options
+        {"hubTreadBeamSpring":1035900, "hubTreadBeamDamp":10},
+        {"hubPeripheryBeamSpring":1035900, "hubPeripheryBeamDamp":10},
+        {"hubSideBeamSpring":1751000, "hubSideBeamDamp":10},
+        {"hubNodeWeight":0.55},
+        {"hubNodeMaterial":"|NM_METAL"},
+        {"hubFrictionCoef":0.5},
+        {"hubBeamDeform":68600, "hubBeamStrength":76000},
+    ],
+},
+"steelwheel_13c_6_15x9_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GP Wrestler 15x9 Front Steel Wheels (Black)",
+        "value":380,
+    },
+    "slotType" : "wheel_F_6",
+
+    "slots": [
+        ["type", "default", "description"],
+        ["tire_F_15x9","tire_F_29_10_15_offroad", "Front Tires"],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["steelwheel_13c_6_15x9", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.54, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+        ["steelwheel_13c_6_15x9", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x": 0.54, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        //front wheels
+        {"nodeWeight":5.0},
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+        {"selfCollision":true}
+        {"collision":true}
+        {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+        {"group":"wheelhub_FR"},
+        ["fw1r", -0.33, 0.0, 0.0],
+        {"group":"wheelhub_FR"},
+        ["fw1rr", -0.60, 0.0, 0.0],
+        {"group":"wheelhub_FL"},
+        ["fw1l", 0.33, 0.0, 0.0],
+        {"group":"wheelhub_FL"},
+        ["fw1ll", 0.60, 0.0, 0.0],
+        {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamDeform":78500,"beamStrength":434000},
+        {"beamSpring":801000,"beamDamp":6},
+        //front wheel
+        ["fw1r","fw1rr"],
+        ["fw1l","fw1ll"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        {"disableMeshBreaking":false,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+
+        //general settings
+        {"hubRadius":0.20},
+        {"wheelOffset":-0.075},
+        {"hubWidth":0.255},
+        {"numRays":16},
+
+        //hub options
+        {"hubTreadBeamSpring":1035900, "hubTreadBeamDamp":10},
+        {"hubPeripheryBeamSpring":1035900, "hubPeripheryBeamDamp":10},
+        {"hubSideBeamSpring":1751000, "hubSideBeamDamp":10},
+        {"hubNodeWeight":0.55},
+        {"hubNodeMaterial":"|NM_METAL"},
+        {"hubFrictionCoef":0.5},
+        {"hubBeamDeform":68600, "hubBeamStrength":76000},
+    ],
+},
+
+//REAR
+"pickup_wheel_R_JDM": {
+	"information":{
+		"authors":"BeamNG",
+		"name":"Gavril D-Series Ibishu Rear Wheels",
+	}
+    "slotType" : "wheel_R_6",
+	"slots": [
+        ["type", "default", "description"]
+        ["tire_R_16x8_alt","tire_R_225_75_16_standard","Rear Tires"],
+    ],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //rear wheels
+		 ["ibishu_wheel_01a_16x8", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.54, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["ibishu_wheel_01a_16x8", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x": 0.54, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+	],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        //--REAR WHEELS--
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+		{"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+        {"nodeWeight":5.0},
+        {"selfCollision":true}
+        {"collision":true}
+        {"group":"wheelhub_RR"},
+        ["rw1r", -0.36, 0.0, 0.0],
+        {"group":"wheelhub_RL"},
+        ["rw1l", 0.36, 0.0, 0.0],
+        {"collision":true}
+        //wheel nodes
+        {"group":"wheelhub_RR"},
+        ["rw1rr", -0.64, 0.0, 0.0],
+        {"group":"wheelhub_RL"},
+        ["rw1ll", 0.64, 0.0, 0.0],
+		{"chemEnergy":false,"burnRate":false,"flashPoint":false},
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        //--REAR WHEELS--
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":801000,"beamDamp":6},
+        {"beamDeform":110000,"beamStrength":1100000},
+        ["rw1r","rw1rr"],
+        ["rw1l","rw1ll"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        {"disableMeshBreaking":false,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+
+        //general settings
+		{"hubRadius":0.22},
+		{"wheelOffset":-0.04},
+		{"hubWidth":0.205},
+        {"numRays":16},
+
+        //hub options
+        {"hubTreadBeamSpring":1350900, "hubTreadBeamDamp":10},
+        {"hubPeripheryBeamSpring":1350900, "hubPeripheryBeamDamp":10},
+        {"hubSideBeamSpring":2001000, "hubSideBeamDamp":10}
+        {"hubBeamDeform":65000, "hubBeamStrength":95000},
+        {"hubNodeWeight":0.65},
+        {"hubNodeMaterial":"|NM_METAL"},
+        {"hubFrictionCoef":0.5},
+    ],
+}
+
+"pickup_wheel_R_steel_JDM": {
+	"information":{
+		"authors":"BeamNG",
+		"name":"Gavril D-Series Ibishu Rear Steel Wheels",
+	}
+    "slotType" : "wheel_R_6",
+	"slots": [
+        ["type", "default", "description"]
+        ["tire_R_16x8_alt","tire_R_225_75_16_standard","Rear Tires"],
+    ],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //rear wheels
+		 ["steelwheel_07a_16x8", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.54, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["steelwheel_07a_16x8", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x": 0.54, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+	],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        //--REAR WHEELS--
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+		{"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+        {"nodeWeight":5.0},
+        {"selfCollision":true}
+        {"collision":true}
+        {"group":"wheelhub_RR"},
+        ["rw1r", -0.36, 0.0, 0.0],
+        {"group":"wheelhub_RL"},
+        ["rw1l", 0.36, 0.0, 0.0],
+        {"collision":true}
+        //wheel nodes
+        {"group":"wheelhub_RR"},
+        ["rw1rr", -0.64, 0.0, 0.0],
+        {"group":"wheelhub_RL"},
+        ["rw1ll", 0.64, 0.0, 0.0],
+		{"chemEnergy":false,"burnRate":false,"flashPoint":false},
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        //--REAR WHEELS--
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":801000,"beamDamp":6},
+        {"beamDeform":110000,"beamStrength":1100000},
+        ["rw1r","rw1rr"],
+        ["rw1l","rw1ll"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        {"disableMeshBreaking":false,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+
+        //general settings
+		{"hubRadius":0.20},
+		{"wheelOffset":-0.04},
+		{"hubWidth":0.205},
+        {"numRays":16},
+		
+        //hub options
+        {"hubTreadBeamSpring":1350900, "hubTreadBeamDamp":10},
+        {"hubPeripheryBeamSpring":1350900, "hubPeripheryBeamDamp":10},
+        {"hubSideBeamSpring":2001000, "hubSideBeamDamp":10}
+        {"hubBeamDeform":65000, "hubBeamStrength":95000},
+        {"hubNodeWeight":0.65},
+        {"hubNodeMaterial":"|NM_METAL"},
+        {"hubFrictionCoef":0.5},
+    ],
+},
+"steelwheel_13b_6_15x9_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GP Wrestler 15x9 Rear Steel Wheels",
+        "value":380,
+    },
+    "slotType" : "wheel_R_6",
+
+    "slots": [
+        ["type", "default", "description"],
+        ["tire_R_15x9","tire_R_29_10_15_offroad", "Rear Tires"],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["steelwheel_13b_6_15x9", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.54, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+        ["steelwheel_13b_6_15x9", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x": 0.54, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        //rear wheel nodes
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+        {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+        {"selfCollision":true}
+        {"collision":true}
+        {"nodeWeight":5.0},
+        {"group":"wheelhub_RR"},
+        ["rw1r", -0.33, 0.0, 0.0],
+        {"group":"wheelhub_RL"},
+        ["rw1l", 0.33, 0.0, 0.0],
+        {"selfCollision":true}
+        {"collision":true}
+        {"group":"wheelhub_RR"},
+        ["rw1rr", -0.60, 0.0, 0.0],
+        {"group":"wheelhub_RL"},
+        ["rw1ll", 0.60, 0.0, 0.0],
+        {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //rear wheels
+        {"beamSpring":801000,"beamDamp":6},
+        {"beamDeform":78500,"beamStrength":434000},
+        ["rw1r","rw1rr"],
+        ["rw1l","rw1ll"],
+        {"breakGroup":""},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        {"disableMeshBreaking":false,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+
+        //general settings
+        {"hubRadius":0.20},
+        {"wheelOffset":-0.075},
+        {"hubWidth":0.255},
+        {"numRays":16},
+
+        //hub options
+        {"hubTreadBeamSpring":1035900, "hubTreadBeamDamp":10},
+        {"hubPeripheryBeamSpring":1035900, "hubPeripheryBeamDamp":10},
+        {"hubSideBeamSpring":1751000, "hubSideBeamDamp":10},
+        {"hubNodeWeight":0.55},
+        {"hubNodeMaterial":"|NM_METAL"},
+        {"hubFrictionCoef":0.5},
+        {"hubBeamDeform":68600, "hubBeamStrength":76000},
+    ],
+},
+"steelwheel_13c_6_15x9_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GP Wrestler 15x9 Rear Steel Wheels (Black)",
+        "value":380,
+    },
+    "slotType" : "wheel_R_6",
+
+    "slots": [
+        ["type", "default", "description"],
+        ["tire_R_15x9","tire_R_29_10_15_offroad", "Rear Tires"],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["steelwheel_13c_6_15x9", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.54, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+        ["steelwheel_13c_6_15x9", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x": 0.54, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        //rear wheel nodes
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+        {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+        {"selfCollision":true}
+        {"collision":true}
+        {"nodeWeight":5.0},
+        {"group":"wheelhub_RR"},
+        ["rw1r", -0.33, 0.0, 0.0],
+        {"group":"wheelhub_RL"},
+        ["rw1l", 0.33, 0.0, 0.0],
+        {"selfCollision":true}
+        {"collision":true}
+        {"group":"wheelhub_RR"},
+        ["rw1rr", -0.60, 0.0, 0.0],
+        {"group":"wheelhub_RL"},
+        ["rw1ll", 0.60, 0.0, 0.0],
+        {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //rear wheels
+        {"beamSpring":801000,"beamDamp":6},
+        {"beamDeform":78500,"beamStrength":434000},
+        ["rw1r","rw1rr"],
+        ["rw1l","rw1ll"],
+        {"breakGroup":""},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        {"disableMeshBreaking":false,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+
+        //general settings
+        {"hubRadius":0.20},
+        {"wheelOffset":-0.075},
+        {"hubWidth":0.255},
+        {"numRays":16},
+
+        //hub options
+        {"hubTreadBeamSpring":1035900, "hubTreadBeamDamp":10},
+        {"hubPeripheryBeamSpring":1035900, "hubPeripheryBeamDamp":10},
+        {"hubSideBeamSpring":1751000, "hubSideBeamDamp":10},
+        {"hubNodeWeight":0.55},
+        {"hubNodeMaterial":"|NM_METAL"},
+        {"hubFrictionCoef":0.5},
+        {"hubBeamDeform":68600, "hubBeamStrength":76000},
+    ],
+},
+"pickup_sparetire_JDM": {
+	"information":{
+		"authors":"BeamNG",
+		"name":"Gavril D-Series Ibishu Spare Tire",
+	}
+    "slotType" : "pickup_sparetire",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["steelwheel_07a_16x8", ["pickup_sparetire", "pickup_rearshocktop", "pickup_framebed"], [], {"pos":{"x":0, "y":1.978, "z":0.4471}, "rot":{"x":0, "y":-90, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["tire_01a_16x8_29", ["pickup_sparetire", "pickup_rearshocktop", "pickup_framebed"], [], {"pos":{"x":0, "y":1.978, "z":0.4471}, "rot":{"x":0, "y":-90, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"pickup_sparetire"},
+		 {"collision":false}
+		 {"selfCollision":false}
+		 {"nodeMaterial":"|NM_RUBBER"},
+		 {"frictionCoef":1.2},
+		 {"nodeWeight":14},
+		 ["sp1", 0.0, 1.978, 0.33],
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":2001000,"beamDamp":1200},
+		  {"beamDeform":6500,"beamStrength":"FLT_MAX"},
+		  ["sp1","fr19r"],
+		  ["sp1","fr19"],
+		  ["sp1","fr19l"],
+		  ["sp1","fr15r"],
+		  ["sp1","fr15"],
+		  ["sp1","fr15l"],
+	],
+	"triangles": [
+		  ["id1:","id2:","id3:"],
+		  {"group":"pickup_sparetire"},
+          {"dragCoef":7},
+		  ["sp1","fr19r","fr19l"],
+		  ["sp1","fr19l","fr15l"],
+		  ["sp1","fr15l","fr15r"],
+		  ["sp1","fr15r","fr19r"],
+          {"dragCoef":0},
+	],
+}
+}
