@@ -1,4 +1,5 @@
 {
+/*
 "pickup_coilover_IFS_JDM": {
 	"information":{
 		"authors":"BeamNG & Firepower",
@@ -438,4 +439,5 @@
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
     ],
 }
+*/
 }

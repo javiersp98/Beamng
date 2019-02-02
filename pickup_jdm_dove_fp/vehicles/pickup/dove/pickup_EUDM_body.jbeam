@@ -30,6 +30,7 @@
 		["pickup_fender_L_jdm","pickup_fender_L_JDM","Left Fender"],
 		["pickup_hood_jdm","pickup_hood_JDM","Hood"],
 		["pickup_lightbar","","Light Bar"],
+		["pickup_shifter","pickup_shifter_M","Shifter"],
 		//
         ["soundscape_horn", "soundscape_horn_3", "Horn"],
     ],
