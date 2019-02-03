@@ -1,0 +1,27 @@
+{
+"super_radiator_race2": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Ultra High Performance Radiator",
+        "value":600,
+    }
+    "slotType" : "super_radiator",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["super_radiator", ["super_chassis"]],
+    ],
+    "mainEngine":{
+        "radiatorArea":0.35,
+        "radiatorEffectiveness":20000,
+        "coolantVolume":14,
+        "radiatorFanType":"electric",
+        "radiatorFanTemperature":100,
+        "radiatorFanMaxAirSpeed":4,
+        "thermostatTemperature":95
+    },
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+}

@@ -23,6 +23,7 @@
         ["super_headlightcrs_L","super_headlightcrs_L", "Left Headlight"],
         ["super_doorcrs_L","super_doorcrs_L", "Left Door"],
         ["super_doorcrs_R","super_door_R", "Right Door"],
+		["super_shiftlight","", "Shift Light"],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
