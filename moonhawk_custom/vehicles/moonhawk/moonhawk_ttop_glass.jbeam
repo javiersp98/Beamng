@@ -1,0 +1,350 @@
+{
+"moonhawk_ttop_glass_R": {	
+	"information":{
+		"authors":"AR162b",
+		"name":"Glass T-top Roof Right",
+	}
+    "slotType" : "moonhawk_ttop_R",
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //body
+		 {"deformGroup":"moonhawk_ttop_R_break", "deformMaterialBase":"moonhawk_glass", "deformMaterialDamaged":"moonhawk_glass_dmg"},
+		 ["moonhawk_body_ttop_topglass_R", ["moonhawk_ttop_R"]],
+		 {"deformGroup":"moonhawk_ttop_R_break", "deformMaterialBase":"moonhawk_glass_int", "deformMaterialDamaged":"moonhawk_glass_dmg"},
+		 ["moonhawk_body_ttop_topglass_R_int", ["moonhawk_ttop_R"]],
+		 {"deformGroup":""},
+
+		 //["moonhawk_body_ttop_topglass_R", ["moonhawk_ttop_R"]],
+		 ["moonhawk_body_ttop_topbeam_R", ["moonhawk_ttop_R"]],
+	 ],
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"nodeWeight":1.9},
+		 {"frictionCoef":0.5},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"moonhawk_ttop_R"},
+		 //floor
+		 ["ttop1rr",-0.66, 0.00, 1.32],
+		 ["ttop2rr",-0.66, 0.64, 1.34],
+
+		 ["ttop1r",-0.12, 0.00, 1.38],
+		 ["ttop2r",-0.12, 0.64, 1.39],
+
+		 //dent node
+		 ["ttop3r",-0.34, 0.30, 1.40],
+
+		 {"selfCollision":false}
+		 {"collision":false}
+		 //rigidifier
+		 ["ttop4r",-0.35, 0.30, 0.9],
+
+		 {"selfCollision":true}
+		 {"collision":true}
+
+
+
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+
+
+		  {"beamSpring":2101000,"beamDamp":100},
+		  {"beamDeform":75000,"beamStrength":"FLT_MAX"},
+		  {"deformGroup":"moonhawk_ttop_R_break","deformationTriggerRatio":0.02},
+
+		  ["ttop1rr","ttop2rr"],
+		  ["ttop1r","ttop2r"],
+		  ["ttop1rr","ttop1r"],
+		  ["ttop2rr","ttop2r"],
+
+		  {"beamSpring":801000,"beamDamp":80},
+		  {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+
+		  ["ttop1rr","ttop2r"],
+		  ["ttop1r","ttop2rr"],
+
+		  {"beamSpring":501000,"beamDamp":80},
+		  {"beamDeform":12000,"beamStrength":"FLT_MAX"},
+
+		  ["ttop1rr","ttop3r"],
+		  ["ttop1r","ttop3r"],
+		  ["ttop2rr","ttop3r"],
+		  ["ttop2r","ttop3r"],
+
+		  {"beamSpring":301000,"beamDamp":60},
+		  {"beamDeform":7000,"beamStrength":"FLT_MAX"},
+
+		  ["ttop1rr","ttop4r"],
+		  ["ttop1r","ttop4r"],
+		  ["ttop2rr","ttop4r"],
+		  ["ttop2r","ttop4r"],
+
+		  {"beamSpring":101000,"beamDamp":60},
+		  {"beamDeform":5000,"beamStrength":"FLT_MAX"},
+
+		  ["ttop3r","ttop4r"],
+
+		  {"beamSpring":2101000,"beamDamp":100},
+		  {"beamDeform":28000,"beamStrength":11000},
+
+		  {"breakGroup":"moonhawk_ttop_RR_f"},
+		  {"breakGroupType":0},
+
+		  ["ttop1rr","r1rr"],
+		  ["ttop1rr","r2rr"],
+		  ["ttop1rr","r2r"],
+		  ["ttop1rr","p1r"]
+		  ["ttop1rr","p2r"]
+		  ["ttop4","r2rr"]
+		  ["ttop4","r2r"]
+		  ["ttop4","r3r"]
+
+		  //{"breakGroup":"moonhawk_ttop_RR_f"},
+
+		  ["ttop1r","r1r"],
+		  ["ttop1r","r2r"],
+		  ["ttop1r","r2rr"],
+		  ["ttop1r","r3r"],
+		  ["ttop1r","p1r"]
+		  ["ttop1r","p2r"]
+		  ["ttop4","r2r"]
+		  ["ttop4","r2rr"]
+
+		  {"breakGroup":"moonhawk_ttop_RR_r"},
+
+		  ["ttop2rr","r4rr"],
+		  ["ttop2rr","r3rr"],
+		  ["ttop2rr","r3r"],
+		  ["ttop2rr","p5r"]
+		  ["ttop2rr","p6r"]
+		  ["ttop4","r3rr"]
+		  ["ttop4","r3r"]
+		  ["ttop4","r2r"]
+
+		  //{"breakGroup":"moonhawk_ttop_RR_r"},
+
+		  ["ttop2r","r4r"],
+		  ["ttop2r","r3r"],
+		  ["ttop2r","r3rr"],
+		  ["ttop2r","r2r"],
+		  ["ttop2r","p5r"]
+		  ["ttop2r","p6r"]
+		  ["ttop4","r3r"]
+		  ["ttop4","r3rr"]
+
+		  {"beamType":"|SUPPORT", "beamLongBound":1.4,"beamShortBound":0.3},
+		  {"beamSpring":1000,"beamDamp":10},
+		  {"beamLimitSpring":1000,"beamLimitDamp":100},
+		  {"beamDeform":20500,"beamStrength":460000},
+
+		  {"breakGroup":"moonhawk_ttop_RR_r"},
+		  ["ttop4","b3r"]
+		  ["ttop4","r2r"]
+
+		  {"breakGroup":"moonhawk_ttop_RR_f"},
+		  ["ttop4","b3r"]
+		  ["ttop4","r3r"]
+
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+
+		  {"breakGroup":""},
+		  {"deformgGroup":""},
+		  
+	],
+    "triangles": [
+			["id1:","id2:","id3:"],
+			["ttop1rr","ttop1r","ttop3r"],
+			["ttop1r","ttop2r","ttop3r"],
+			["ttop2r","ttop2rr","ttop3r"],
+			["ttop2rr","ttop1rr","ttop3r"],
+
+			["ttop1rr","ttop2r","ttop1r"],
+			["ttop1rr","ttop2rr","ttop2r"],
+		
+	],
+}
+"moonhawk_ttop_glass_L": {	
+	"information":{
+		"authors":"AR162b",
+		"name":"Glass T-top Roof Left",
+	}
+    "slotType" : "moonhawk_ttop_L",
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //body
+		 {"deformGroup":"moonhawk_ttop_L_break", "deformMaterialBase":"moonhawk_glass", "deformMaterialDamaged":"moonhawk_glass_dmg"},
+		 ["moonhawk_body_ttop_topglass_L", ["moonhawk_ttop_L"]],
+		 {"deformGroup":"moonhawk_ttop_L_break", "deformMaterialBase":"moonhawk_glass_int", "deformMaterialDamaged":"moonhawk_glass_dmg"},
+		 ["moonhawk_body_ttop_topglass_L_int", ["moonhawk_ttop_L"]],
+		 {"deformGroup":""},
+
+		 //["moonhawk_body_ttop_topglass_L", ["moonhawk_ttop_L"]],
+		 ["moonhawk_body_ttop_topbeam_L", ["moonhawk_ttop_L"]],
+	 ],
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"nodeWeight":1.9},
+		 {"frictionCoef":0.5},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"group":"moonhawk_ttop_L"},
+		 //floor
+		 ["ttop1ll",0.66, 0.00, 1.32],
+		 ["ttop2ll",0.66, 0.64, 1.34],
+
+		 ["ttop1l",0.12, 0.00, 1.38],
+		 ["ttop2l",0.12, 0.64, 1.39],
+
+		 //dent node
+		 ["ttop3l",0.34, 0.30, 1.40],
+
+		 {"selfCollision":false}
+		 {"collision":false}
+		 //rigidifier
+		 ["ttop4l",0.35, 0.30, 0.9],
+
+		 {"selfCollision":true}
+		 {"collision":true}
+
+
+
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+
+
+		  {"beamSpring":2101000,"beamDamp":100},
+		  {"beamDeform":75000,"beamStrength":"FLT_MAX"},
+		  {"deformGroup":"moonhawk_ttop_R_break","deformationTriggerRatio":0.02},
+
+		  ["ttop1ll","ttop2ll"],
+		  ["ttop1l","ttop2l"],
+		  ["ttop1ll","ttop1l"],
+		  ["ttop2ll","ttop2l"],
+
+		  {"beamSpring":801000,"beamDamp":80},
+		  {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+
+		  ["ttop1ll","ttop2l"],
+		  ["ttop1l","ttop2ll"],
+
+		  {"beamSpring":501000,"beamDamp":80},
+		  {"beamDeform":12000,"beamStrength":"FLT_MAX"},
+
+		  ["ttop1ll","ttop3l"],
+		  ["ttop1l","ttop3l"],
+		  ["ttop2ll","ttop3l"],
+		  ["ttop2l","ttop3l"],
+
+		  {"beamSpring":301000,"beamDamp":60},
+		  {"beamDeform":7000,"beamStrength":"FLT_MAX"},
+
+		  ["ttop1ll","ttop4l"],
+		  ["ttop1l","ttop4l"],
+		  ["ttop2ll","ttop4l"],
+		  ["ttop2l","ttop4l"],
+
+		  {"beamSpring":101000,"beamDamp":60},
+		  {"beamDeform":5000,"beamStrength":"FLT_MAX"},
+
+		  ["ttop3l","ttop4l"],
+
+		  {"beamSpring":2101000,"beamDamp":100},
+		  {"beamDeform":28000,"beamStrength":11000},
+
+		  {"breakGroup":"moonhawk_ttop_LL_f"},
+		  {"breakGroupType":0},
+
+		  ["ttop1ll","r1ll"],
+		  ["ttop1ll","r2ll"],
+		  ["ttop1ll","r2l"],
+		  ["ttop1ll","p1l"]
+		  ["ttop1ll","p2l"]
+		  ["ttop4","r2ll"]
+		  ["ttop4","r2l"]
+		  ["ttop4","r3l"]
+
+		  //{"breakGroup":"moonhawk_ttop_LL_f"},
+
+		  ["ttop1l","r1l"],
+		  ["ttop1l","r2l"],
+		  ["ttop1l","r2ll"],
+		  ["ttop1l","r3l"],
+		  ["ttop1l","p1l"]
+		  ["ttop1l","p2l"]
+		  ["ttop4","r2l"]
+		  ["ttop4","r2ll"]
+
+		  {"breakGroup":"moonhawk_ttop_LL_r"},
+
+		  ["ttop2ll","r4ll"],
+		  ["ttop2ll","r3ll"],
+		  ["ttop2ll","r3l"],
+		  ["ttop2ll","p5l"]
+		  ["ttop2ll","p6l"]
+		  ["ttop4","r3ll"]
+		  ["ttop4","r3l"]
+		  ["ttop4","r2l"]
+
+		  //{"breakGroup":"moonhawk_ttop_LL_r"},
+
+		  ["ttop2l","r4l"],
+		  ["ttop2l","r3l"],
+		  ["ttop2l","r3ll"],
+		  ["ttop2l","r2l"],
+		  ["ttop2l","p5l"]
+		  ["ttop2l","p6l"]
+		  ["ttop4","r3l"]
+		  ["ttop4","r3ll"]
+
+		  {"beamType":"|SUPPORT", "beamLongBound":1.4,"beamShortBound":0.3},
+		  {"beamSpring":1000,"beamDamp":10},
+		  {"beamLimitSpring":1000,"beamLimitDamp":100},
+		  {"beamDeform":20500,"beamStrength":460000},
+
+		  {"breakGroup":"moonhawk_ttop_LL_r"},
+		  ["ttop4","b3l"]
+		  ["ttop4","r2l"]
+
+		  {"breakGroup":"moonhawk_ttop_LL_f"},
+		  ["ttop4","b3l"]
+		  ["ttop4","r3l"]
+
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+
+		  {"breakGroup":""},
+		  {"deformgGroup":""},
+		  
+	],
+    "triangles": [
+			["id1:","id2:","id3:"],
+			["ttop1ll","ttop3l","ttop1l"],
+			["ttop1l","ttop3l","ttop2l"],
+			["ttop2l","ttop3l","ttop2ll"],
+			["ttop2ll","ttop3l","ttop1ll"],
+
+			["ttop1ll","ttop1l","ttop2l"],
+			["ttop1ll","ttop2l","ttop2ll"],
+		
+	],
+}
+
+
+}

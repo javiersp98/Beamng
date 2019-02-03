@@ -1,0 +1,74 @@
+{
+"moonhawk_station_taillights": {	
+	"information":{
+		"authors":"gabester, modded by AR162b",
+		"name":"Bruckell Moonhawk Station & Ute Taillights",
+	}
+    "slotType" : "moonhawk_station_taillights",
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_station_taillightframe_R", ["moonhawk_body"]],
+		 ["moonhawk_station_taillightframe_L", ["moonhawk_body"]],
+		 {"deformGroup":"moonhawk_taillight_R_break", "deformMaterialBase":"moonhawk_lights", "deformMaterialDamaged":"moonhawk_lights_dmg"},
+		 ["moonhawk_station_taillight_R", ["moonhawk_body"]],
+		 {"deformGroup":"moonhawk_taillight_L_break", "deformMaterialBase":"moonhawk_lights", "deformMaterialDamaged":"moonhawk_lights_dmg"},
+		 ["moonhawk_station_taillight_L", ["moonhawk_body"]],
+		 {"deformGroup":""},
+	 ],	
+	 "props": [
+		["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+		{
+			"lightInnerAngle":0
+			"lightOuterAngle":80
+			"lightBrightness":0.1
+			"lightRange":30
+			"lightColor":{"r":255, "g":255, "b":200, "a":255}
+			"lightAttenuation":{"x":0, "y":1, "z":1}
+			"lightCastShadows":true
+            "flareName":"vehicleReverseLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5       
+		}
+		//reverse lights
+		["reverse" , 		"SPOTLIGHT"        , "q17r", "tb5r", "q18r", {"x":0, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.75, "y":0.30, "z":-0.015},"deformGroup":"moonhawk_taillight_R_break"}],
+		["reverse" , 		"SPOTLIGHT"        , "q17l", "tb5l", "q18l", {"x":180, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.75, "y":0.30, "z":0.015},"deformGroup":"moonhawk_taillight_L_break"}],
+		//taillights
+		{
+			"lightInnerAngle":0
+			"lightOuterAngle":140
+			"lightBrightness":0.06
+			"lightRange":20
+			"lightColor":{"r":255, "g":50, "b":0, "a":255}
+			"lightCastShadows":false
+            "flareName":"vehicleBrakeLightFlare"
+            "flareScale":0.5
+		}
+		//brake lights
+		["brake" , 		"SPOTLIGHT"        , "q17r", "tb5r", "q18r", {"x":0, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.45, "y":0.30, "z":-0.015},"deformGroup":"moonhawk_taillight_R_break"}],
+		["brake" , 		"SPOTLIGHT"        , "q17l", "tb5l", "q18l", {"x":180, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.45, "y":0.30, "z":0.015},"deformGroup":"moonhawk_taillight_L_break"}],
+		//signals
+		["signal_R" , 		"SPOTLIGHT"        , "q17r", "tb5r", "q18r", {"x":0, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.25, "y":0.30, "z":-0.015},"deformGroup":"moonhawk_taillight_R_break"}],
+		["signal_L" , 		"SPOTLIGHT"        , "q17l", "tb5l", "q18l", {"x":180, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.25, "y":0.30, "z":0.015},"deformGroup":"moonhawk_taillight_L_break"}],
+		["lowhighbeam" , 	"SPOTLIGHT"        , "q17r", "tb5r", "q18r", {"x":0, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.25, "y":0.30, "z":-0.015},"deformGroup":"moonhawk_taillight_R_break"}],
+		["lowhighbeam" , 	"SPOTLIGHT"        , "q17l", "tb5l", "q18l", {"x":180, "y":-45, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.25, "y":0.30, "z":0.015},"deformGroup":"moonhawk_taillight_L_break"}],
+	 ],
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+	  
+	]
+    "triangles": [
+			["id1:","id2:","id3:"],
+
+	],
+}
+}

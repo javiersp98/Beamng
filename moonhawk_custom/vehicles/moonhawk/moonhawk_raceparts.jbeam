@@ -1,0 +1,3293 @@
+{
+"moonhawk_frontlip": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Front Lipspoiler",
+	}
+    "slotType" : "moonhawk_frontlip",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_race_frontlip", ["moonhawk_race_frontlip"]],
+
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"nodeWeight":0.9},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"group":"moonhawk_race_frontlip"},
+		["rafrlp01l", 0.88, -1.83, 0.26],
+		["rafrlp02l", 0.93, -1.89, 0.20],
+		["rafrlp03l", 0.86, -2.13, 0.29],
+		["rafrlp04l", 0.89, -2.16, 0.20],
+
+		["rafrlp05", 0.0, -2.19, 0.33],
+		["rafrlp06", 0.0, -2.24, 0.21],
+
+		["rafrlp01r", -0.88, -1.83, 0.26],
+		["rafrlp02r", -0.93, -1.89, 0.20],
+		["rafrlp03r", -0.86, -2.13, 0.29],
+		["rafrlp04r", -0.89, -2.16, 0.20],
+
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //Spoiler lip
+		  {"beamSpring":150000,"beamDamp":150},
+		  {"beamDeform":9000,"beamStrength":"FLT_MAX"},
+
+		  //vertical
+		  ["rafrlp01l","rafrlp02l"],
+		  ["rafrlp03l","rafrlp04l"],
+		  ["rafrlp05","rafrlp06"],
+		  ["rafrlp01r","rafrlp02r"],
+		  ["rafrlp03r","rafrlp04r"],
+
+		  //horizontal
+		  ["rafrlp01l","rafrlp03l"],
+		  ["rafrlp03l","rafrlp05"],
+		  ["rafrlp05","rafrlp03r"],
+		  ["rafrlp03r","rafrlp01r"],
+
+		  ["rafrlp02l","rafrlp04l"],
+		  ["rafrlp04l","rafrlp06"],
+		  ["rafrlp06","rafrlp04r"],
+		  ["rafrlp04r","rafrlp02r"],
+
+		  //diagonal
+		  ["rafrlp01l","rafrlp04l"],
+		  ["rafrlp03l","rafrlp06"],
+		  ["rafrlp01r","rafrlp04r"],
+		  ["rafrlp03r","rafrlp06"],
+
+		  {"beamDeform":3500,"beamStrength":"FLT_MAX"},
+		  //extra
+		  ["rafrlp03l","rafrlp04l"],
+		  ["rafrlp03r","rafrlp04r"],
+
+		  ["rafrlp02l","rafrlp06"],
+		  ["rafrlp02r","rafrlp06"],
+
+		  ["rafrlp02l","rafrlp05"],
+		  ["rafrlp02r","rafrlp05"],
+
+		  ["rafrlp03l","rafrlp03r"],
+		  ["rafrlp04l","rafrlp04r"],
+
+		//attachments
+		  {"beamSpring":290000,"beamDamp":120},
+		 {"beamDeform":3300,"beamStrength":3600},
+
+		  {"breakGroup":"moonhawk_race_frontlip_L"},
+		  ["rafrlp01l","fe13l"],
+		  ["rafrlp01l","fe14l"],
+		  ["rafrlp01l","fe20l"],
+
+		  ["rafrlp03l","fe14l"],
+		  ["rafrlp03l","fe13l"],
+		  ["rafrlp03l","fe20l"],
+
+		  ["rafrlp05","s5"],
+		  ["rafrlp05","s6"],
+
+		 {"beamSpring":50000,"beamDeform":2300},
+		  ["rafrlp02l","fe20l"],
+		  ["rafrlp04l","fe20l"],
+
+		  ["rafrlp05","n13"],
+
+		 {"beamSpring":290000,"beamDeform":3300},
+		  {"breakGroup":"moonhawk_race_frontlip_R"},
+		  ["rafrlp01r","fe13r"],
+		  ["rafrlp01r","fe14r"],
+		  ["rafrlp01r","fe20r"],
+
+		  ["rafrlp03r","fe14r"],
+		  ["rafrlp03r","fe13r"],
+		  ["rafrlp03r","fe20r"],
+
+		  ["rafrlp06","s5"],
+		  ["rafrlp06","s6"],
+
+		 {"beamSpring":50000,"beamDeform":2300},
+		  ["rafrlp02r","fe20r"],
+		  ["rafrlp04r","fe20r"],
+
+		  {"breakGroup":""},
+
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"dragCoef":50},
+			["rafrlp01l","rafrlp03l","rafrlp02l"],
+			["rafrlp03l","rafrlp04l","rafrlp02l"],
+			["rafrlp03l","rafrlp05","rafrlp04l"],
+			["rafrlp05","rafrlp06","rafrlp04l"],
+			["rafrlp04l","rafrlp06","rafrlp02l"],
+
+			["rafrlp01l","rafrlp02r","rafrlp03r"],
+			["rafrlp03l","rafrlp02r","rafrlp04r"],
+			["rafrlp03l","rafrlp04r","rafrlp05"],
+			["rafrlp05","rafrlp04r","rafrlp06"],
+			["rafrlp04l","rafrlp02r","rafrlp06"],
+			{"dragCoef":10},
+	],
+}
+"moonhawk_frontlip_oldstyle": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Front Lipspoiler (No Bumper)",
+	}
+    "slotType" : "moonhawk_frontlip",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_spoilerlip_oldstyle", ["moonhawk_race_frontlip"]],
+
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"nodeWeight":0.9},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"group":"moonhawk_race_frontlip"},
+		 ["rafrlp01rr", -0.62, -2.16, 0.33],
+		 ["rafrlp01r", -0.22, -2.19, 0.33],
+		 ["rafrlp01l", 0.22, -2.19, 0.33],
+		 ["rafrlp01ll", 0.62, -2.16, 0.33],
+
+		 ["rafrlp02rr", -0.57, -2.21, 0.26],
+		 ["rafrlp02r", -0.22, -2.25, 0.23],
+		 ["rafrlp02l", 0.22, -2.25, 0.23],
+		 ["rafrlp02ll", 0.57, -2.21, 0.26],
+
+		 {"selfCollision":false}
+		 ["rafrlp03", 0.0, -2.0, 0.29],
+
+		 {"group":""},
+
+
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //Spoiler lip
+		  {"beamSpring":550000,"beamDamp":120},
+		  {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+
+		  //vertical
+		  ["rafrlp01rr","rafrlp02rr"],
+		  ["rafrlp01r","rafrlp02r"],
+		  ["rafrlp01l","rafrlp02l"],
+		  ["rafrlp01ll","rafrlp02ll"],
+
+
+		  //horizontal
+		  ["rafrlp01rr","rafrlp01r"],
+		  ["rafrlp01r","rafrlp01l"],
+		  ["rafrlp01l","rafrlp01ll"],
+
+		  ["rafrlp02rr","rafrlp02r"],
+		  ["rafrlp02r","rafrlp02l"],
+		  ["rafrlp02l","rafrlp02ll"],
+
+		  {"beamSpring":390000,"beamDamp":120},
+		  {"beamDeform":9000,"beamStrength":"FLT_MAX"},
+
+		  //diagonal
+		  ["rafrlp01rr","rafrlp02r"],
+		  ["rafrlp01r","rafrlp02rr"],
+		  ["rafrlp01r","rafrlp02l"],
+		  ["rafrlp01l","rafrlp02r"],
+		  ["rafrlp01l","rafrlp02ll"],
+		  ["rafrlp01ll","rafrlp02l"],
+
+		  {"beamSpring":190000,"beamDamp":120},
+		  {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+
+		  //rigids
+		  ["rafrlp01rr","rafrlp01l"],
+		  ["rafrlp01r","rafrlp01ll"],
+
+		  ["rafrlp02rr","rafrlp02l"],
+		  ["rafrlp02r","rafrlp02ll"],
+
+		  {"beamSpring":390000,"beamDamp":120},
+		  {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+
+		  ["rafrlp01rr","rafrlp03"],
+		  ["rafrlp01r","rafrlp03"],
+		  ["rafrlp01l","rafrlp03"],
+		  ["rafrlp01ll","rafrlp03"],
+
+		  ["rafrlp02rr","rafrlp03"],
+		  ["rafrlp02r","rafrlp03"],
+		  ["rafrlp02l","rafrlp03"],
+		  ["rafrlp02ll","rafrlp03"],
+
+		//attachments
+		  {"beamSpring":250000,"beamDamp":120},
+		 {"beamDeform":3900,"beamStrength":4000},
+
+		  {"breakGroup":"moonhawk_race_frontlip_L"},
+		  ["rafrlp01ll","n13ll"],
+		  ["rafrlp01ll","n11ll"],
+		  ["rafrlp01ll","n13l"],
+		  ["rafrlp01ll","n12l"],
+		  ["rafrlp02ll","n13ll"],
+		  ["rafrlp02ll","n13l"],
+		  ["rafrlp02ll","n12l"],
+
+		  {"breakGroup":"moonhawk_race_frontlip_C"},
+		  ["rafrlp01l","n13l"],
+		  ["rafrlp01l","n12l"],
+		  ["rafrlp01l","n13"],
+		  ["rafrlp01l","n12"],
+		  ["rafrlp02l","n13l"],
+		  ["rafrlp02l","n12"],
+		  ["rafrlp01r","n13r"],
+		  ["rafrlp01r","n12r"],
+		  ["rafrlp01r","n13"],
+		  ["rafrlp01r","n12"],
+		  ["rafrlp02r","n13r"],
+		  ["rafrlp02r","n12"],
+
+		  ["rafrlp03","n12r"],
+		  ["rafrlp03","n12"],
+		  ["rafrlp03","n12l"],
+
+
+		  {"breakGroup":"moonhawk_race_frontlip_R"},
+		  ["rafrlp01rr","n13rr"],
+		  ["rafrlp01rr","n11rr"],
+		  ["rafrlp01rr","n13r"],
+		  ["rafrlp01rr","n12r"],
+		  ["rafrlp02rr","n13rr"],
+		  ["rafrlp02rr","n13r"],
+		  ["rafrlp02rr","n12r"],
+
+		  {"breakGroup":""},
+
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"dragCoef":30},
+			["rafrlp01rr","rafrlp02r","rafrlp01r"],
+			["rafrlp01rr","rafrlp02rr","rafrlp02r"],
+			["rafrlp01r","rafrlp02l","rafrlp01l"],
+			["rafrlp01r","rafrlp02r","rafrlp02l"],
+			["rafrlp01l","rafrlp02ll","rafrlp01ll"],
+			["rafrlp01l","rafrlp02l","rafrlp02ll"],
+			{"dragCoef":10},
+	],
+}
+
+"moonhawk_frontlip_oldstyle_bumper": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Front Lipspoiler",
+	}
+    "slotType" : "moonhawk_frontlip",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_spoilerlip_oldstyle", ["moonhawk_race_frontlip"], [], {"pos":{"x":0, "y":-0.08, "z":0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"nodeWeight":0.9},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"group":"moonhawk_race_frontlip"},
+		 ["rafrlp01rr", -0.62, -2.24, 0.33],
+		 ["rafrlp01r", -0.22, -2.27, 0.33],
+		 ["rafrlp01l", 0.22, -2.27, 0.33],
+		 ["rafrlp01ll", 0.62, -2.24, 0.33],
+
+		 ["rafrlp02rr", -0.57, -2.29, 0.26],
+		 ["rafrlp02r", -0.22, -2.33, 0.23],
+		 ["rafrlp02l", 0.22, -2.33, 0.23],
+		 ["rafrlp02ll", 0.57, -2.29, 0.26],
+
+		 {"selfCollision":false}
+		 ["rafrlp03", 0.0, -2.08, 0.29],
+
+		 {"group":""},
+
+
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //Spoiler lip
+		  {"beamSpring":220000,"beamDamp":100},
+		  {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+
+		  //vertical
+		  ["rafrlp01rr","rafrlp02rr"],
+		  ["rafrlp01r","rafrlp02r"],
+		  ["rafrlp01l","rafrlp02l"],
+		  ["rafrlp01ll","rafrlp02ll"],
+
+
+		  //horizontal
+		  ["rafrlp01rr","rafrlp01r"],
+		  ["rafrlp01r","rafrlp01l"],
+		  ["rafrlp01l","rafrlp01ll"],
+
+		  ["rafrlp02rr","rafrlp02r"],
+		  ["rafrlp02r","rafrlp02l"],
+		  ["rafrlp02l","rafrlp02ll"],
+
+		  {"beamSpring":190000,"beamDamp":80},
+		  {"beamDeform":9000,"beamStrength":"FLT_MAX"},
+
+		  //diagonal
+		  ["rafrlp01rr","rafrlp02r"],
+		  ["rafrlp01r","rafrlp02rr"],
+		  ["rafrlp01r","rafrlp02l"],
+		  ["rafrlp01l","rafrlp02r"],
+		  ["rafrlp01l","rafrlp02ll"],
+		  ["rafrlp01ll","rafrlp02l"],
+
+		  {"beamSpring":160000,"beamDamp":80},
+		  {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+
+		  //rigids
+		  ["rafrlp01rr","rafrlp01l"],
+		  ["rafrlp01r","rafrlp01ll"],
+
+		  ["rafrlp02rr","rafrlp02l"],
+		  ["rafrlp02r","rafrlp02ll"],
+
+		  {"beamSpring":190000,"beamDamp":80},
+		  {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+
+		  ["rafrlp01rr","rafrlp03"],
+		  ["rafrlp01r","rafrlp03"],
+		  ["rafrlp01l","rafrlp03"],
+		  ["rafrlp01ll","rafrlp03"],
+
+		  ["rafrlp02rr","rafrlp03"],
+		  ["rafrlp02r","rafrlp03"],
+		  ["rafrlp02l","rafrlp03"],
+		  ["rafrlp02ll","rafrlp03"],
+
+		//attachments
+		  {"beamSpring":250000,"beamDamp":80},
+		 {"beamDeform":3900,"beamStrength":4000},
+
+		//attachments
+		  {"beamSpring":80000,"beamDamp":60},
+		 {"beamDeform":3300,"beamStrength":3500},
+
+		  {"breakGroup":"moonhawk_race_frontlip_L"},
+		  ["rafrlp01ll","fb2ll"],
+		  ["rafrlp01ll","fb3l"],
+		  ["rafrlp01ll","fb4ll"],
+		  ["rafrlp01ll","fb4l"],
+		  ["rafrlp02ll","fb2ll"],
+		  ["rafrlp02ll","fb4ll"],
+		  ["rafrlp02ll","fb4l"],
+		  ["rafrlp02ll","fb3l"],
+
+		  {"breakGroup":"moonhawk_race_frontlip_C"},
+		  ["rafrlp01l","fb2l"],
+		  ["rafrlp01l","fb3l"],
+		  ["rafrlp01l","fb4l"],
+		  ["rafrlp01l","fb2"],
+		  ["rafrlp01l","fb3"],
+		  ["rafrlp01l","fb4"],
+		  ["rafrlp02l","fb2l"],
+		  ["rafrlp02l","fb2"],
+		  ["rafrlp01r","fb2r"],
+		  ["rafrlp01r","fb3r"],
+		  ["rafrlp01r","fb4r"],
+		  ["rafrlp01r","fb2"],
+		  ["rafrlp01r","fb3"],
+		  ["rafrlp01r","fb4"],
+		  ["rafrlp02r","fb2r"],
+		  ["rafrlp02r","fb2"],
+		  ["rafrlp02r","fb3"],
+		  ["rafrlp02r","fb3"],
+
+		  ["rafrlp03","fb3r"],
+		  ["rafrlp03","fb3"],
+		  ["rafrlp03","fb3l"],
+		  ["rafrlp03","fb2"],
+		  ["rafrlp03","fb4"],
+
+
+		  {"breakGroup":"moonhawk_race_frontlip_R"},
+		  ["rafrlp01rr","fb2rr"],
+		  ["rafrlp01rr","fb3r"],
+		  ["rafrlp01rr","fb4rr"],
+		  ["rafrlp01rr","fb4r"],
+		  ["rafrlp02rr","fb2rr"],
+		  ["rafrlp02rr","fb4rr"],
+		  ["rafrlp02rr","fb4r"],
+		  ["rafrlp02rr","fb3r"],
+
+		  {"breakGroup":""},
+
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"dragCoef":30},
+			["rafrlp01rr","rafrlp02r","rafrlp01r"],
+			["rafrlp01rr","rafrlp02rr","rafrlp02r"],
+			["rafrlp01r","rafrlp02l","rafrlp01l"],
+			["rafrlp01r","rafrlp02r","rafrlp02l"],
+			["rafrlp01l","rafrlp02ll","rafrlp01ll"],
+			["rafrlp01l","rafrlp02l","rafrlp02ll"],
+			{"dragCoef":10},
+	],
+}
+
+"moonhawk_sedan_trunkspoiler": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Large Plate Spoiler",
+	}
+    "slotType" : "moonhawk_sedan_trunkspoiler",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_race_trunkspoiler", ["moonhawk_race_spoilerL"], [], {"pos":{"x":0, "y":0.13, "z":0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"nodeWeight":0.7},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"group":"moonhawk_race_spoilerL"},
+
+		 //left
+		 ["ratrspl01l", 0.87, 2.78, 0.94],
+		 ["ratrspl02l", 0.90, 2.64, 0.88],
+
+		 ["ratrspl03ll", 0.73, 2.79, 0.97],
+		 ["ratrspl04ll", 0.73, 2.65, 0.93],
+		 ["ratrspl05ll", 0.73, 2.76, 0.84],
+
+		 ["ratrspl03l", 0.39, 2.79, 0.97],
+		 ["ratrspl04l", 0.39, 2.66, 0.95],
+		 ["ratrspl05l", 0.39, 2.78, 0.85],
+
+		 //center
+		 ["ratrspl03", 0.0, 2.82, 0.99],
+		 ["ratrspl04", 0.0, 2.67, 0.95],
+		 ["ratrspl05", 0.0, 2.79, 0.86],
+
+		 //right
+		 ["ratrspl03r", -0.39, 2.79, 0.97],
+		 ["ratrspl04r", -0.39, 2.65, 0.95],
+		 ["ratrspl05r", -0.39, 2.78, 0.85],
+
+		 ["ratrspl03rr", -0.73, 2.79, 0.97],
+		 ["ratrspl04rr", -0.73, 2.65, 0.93],
+		 ["ratrspl05rr", -0.73, 2.76, 0.84],
+
+		 ["ratrspl01r", -0.87, 2.78, 0.94],
+		 ["ratrspl02r", -0.90, 2.64, 0.88],
+
+		 //stiffner
+		 {"collision":false}
+		 {"selfCollision":false}
+		 ["ratrspl06", 0.0, 2.20, 1.30],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //Trunk Spoiler large
+		  {"beamSpring":350000,"beamDamp":150},
+		  {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+
+		  //lengthwise
+		  ["ratrspl01l","ratrspl02l"],
+
+		  ["ratrspl03ll","ratrspl04ll"],
+		  ["ratrspl04ll","ratrspl05ll"],
+		  ["ratrspl05ll","ratrspl03ll"],
+
+		  ["ratrspl03l","ratrspl04l"],
+		  ["ratrspl04l","ratrspl05l"],
+		  ["ratrspl05l","ratrspl03l"],
+
+		  ["ratrspl03","ratrspl04"],
+		  ["ratrspl04","ratrspl05"],
+		  ["ratrspl05","ratrspl03"],
+
+		  ["ratrspl03r","ratrspl04r"],
+		  ["ratrspl04r","ratrspl05r"],
+		  ["ratrspl05r","ratrspl03r"],
+
+		  ["ratrspl03rr","ratrspl04rr"],
+		  ["ratrspl04rr","ratrspl05rr"],
+		  ["ratrspl05rr","ratrspl03rr"],
+
+		  ["ratrspl01r","ratrspl02r"],
+
+		  //widthwise
+		  ["ratrspl01l","ratrspl03ll"],
+		  ["ratrspl03ll","ratrspl03l"],
+		  ["ratrspl03l","ratrspl03"],
+		  ["ratrspl03","ratrspl03r"],
+		  ["ratrspl03r","ratrspl03rr"],
+		  ["ratrspl03rr","ratrspl01r"],
+
+		  ["ratrspl02l","ratrspl04ll"],
+		  ["ratrspl04ll","ratrspl04l"],
+		  ["ratrspl04l","ratrspl04"],
+		  ["ratrspl04","ratrspl04r"],
+		  ["ratrspl04r","ratrspl04rr"],
+		  ["ratrspl04rr","ratrspl02r"],
+
+		  ["ratrspl05ll","ratrspl05l"],
+		  ["ratrspl05l","ratrspl05"],
+		  ["ratrspl05","ratrspl05r"],
+		  ["ratrspl05r","ratrspl05rr"],
+
+		  //diagonal
+		  ["ratrspl01l","ratrspl05ll"],
+		  ["ratrspl03ll","ratrspl08l"],
+		  ["ratrspl03l","ratrspl08"],
+
+		  ["ratrspl01r","ratrspl05rr"],
+		  ["ratrspl03rr","ratrspl08r"],
+		  ["ratrspl03r","ratrspl08"],
+
+		  ["ratrspl02l","ratrspl03ll"],
+		  ["ratrspl04ll","ratrspl06l"],
+		  ["ratrspl04l","ratrspl06"],
+
+		  ["ratrspl02r","ratrspl03rr"],
+		  ["ratrspl04rr","ratrspl06r"],
+		  ["ratrspl04r","ratrspl06"],
+
+		  ["ratrspl02l","ratrspl05ll"],
+		  ["ratrspl04ll","ratrspl08l"],
+		  ["ratrspl04l","ratrspl08"],
+
+		  ["ratrspl02r","ratrspl05rr"],
+		  ["ratrspl04rr","ratrspl08r"],
+		  ["ratrspl04r","ratrspl08"],
+
+		  //extra
+
+		  ["ratrspl03ll","ratrspl05"],
+		  ["ratrspl03rr","ratrspl05"],
+
+		  ["ratrspl02l","ratrspl06"],
+		  ["ratrspl02r","ratrspl06"],
+
+		  ["ratrspl04ll","ratrspl05"],
+		  ["ratrspl04rr","ratrspl05"],
+
+		  ["ratrspl03ll","ratrspl03rr"],
+		  ["ratrspl05ll","ratrspl05rr"],
+		  ["ratrspl04ll","ratrspl04rr"],
+
+		 //stiffner
+
+		  ["ratrspl06","ratrspl01r"],
+		  ["ratrspl06","ratrspl02r"],
+
+		  ["ratrspl06","ratrspl03rr"],
+		  ["ratrspl06","ratrspl05rr"],
+
+		  ["ratrspl06","ratrspl03r"],
+		  ["ratrspl06","ratrspl05r"],
+
+		  ["ratrspl06","ratrspl03"],
+		  ["ratrspl06","ratrspl05"],
+
+		  ["ratrspl06","ratrspl03l"],
+		  ["ratrspl06","ratrspl05l"],
+
+		  ["ratrspl06","ratrspl03ll"],
+		  ["ratrspl06","ratrspl05ll"],
+
+		  ["ratrspl06","ratrspl01l"],
+		  ["ratrspl06","ratrspl02l"],
+
+
+
+		//attachments
+		  {"beamSpring":50000,"beamDamp":100},
+		 {"beamDeform":3200,"beamStrength":3300},
+
+		  {"breakGroup":"moonhawk_race_spoilerL_L"},
+		  //["ratrspl04ll","t3ll"],
+		  ["ratrspl04ll","t4ll"],
+		  ["ratrspl04ll","t4l"],
+		  ["ratrspl04ll","t3l"],
+		  //["ratrspl04ll","t5"],
+
+		  ["ratrspl05ll","t3ll"],
+		  ["ratrspl05ll","t4ll"],
+		  //["ratrspl05ll","t5"],
+		  ["ratrspl05ll","t4l"],
+		  //["ratrspl05ll","t3l"],
+
+		  ["ratrspl03ll","t3ll"],
+		  ["ratrspl03ll","t4ll"],
+		  ["ratrspl03ll","t4l"],
+
+		  ["ratrspl04l","t4l"],
+		  ["ratrspl04l","t3l"],
+		  ["ratrspl05l","t4l"],
+		  ["ratrspl05l","t3l"],
+
+		  {"breakGroup":"moonhawk_race_spoilerL_R"},
+		  //["ratrspl04rr","t3rr"],
+		  ["ratrspl04rr","t4rr"],
+		  ["ratrspl04rr","t4r"],
+		  //["ratrspl04rr","t5"],
+
+		  ["ratrspl05rr","t3rr"],
+		  ["ratrspl05rr","t4rr"],
+		  //["ratrspl05rr","t5"],
+		  ["ratrspl05rr","t4r"],
+		  //["ratrspl05rr","t3r"],
+
+		  ["ratrspl03rr","t3rr"],
+		  ["ratrspl03rr","t4rr"],
+		  ["ratrspl03rr","t4r"],
+
+		  ["ratrspl04r","t4r"],
+		  ["ratrspl04r","t3r"],
+		  ["ratrspl05r","t4r"],
+		  ["ratrspl05r","t3r"],
+
+		  {"breakGroup":"moonhawk_race_spoilerL_C"},
+		  ["ratrspl04","t3"],
+		  ["ratrspl04","t4"],
+		  //["ratrspl04","t5"],
+
+		  ["ratrspl05","t3"],
+		  ["ratrspl05","t4"],
+		  //["ratrspl05","t5"],
+
+		  //["ratrspl03","t3"],
+		  //["ratrspl03","t4"],
+		  //["ratrspl03","t4r"],
+		  //["ratrspl03","t4l"],
+
+		  {"breakGroup":""},
+
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"dragCoef":70},
+			["ratrspl01l","ratrspl03ll","ratrspl02l"],
+			["ratrspl02l","ratrspl03ll","ratrspl04ll"],
+
+			["ratrspl03ll","ratrspl03l","ratrspl04l"],
+			["ratrspl03ll","ratrspl04l","ratrspl04ll"],
+
+			["ratrspl03l","ratrspl03","ratrspl04"],
+			["ratrspl03l","ratrspl04","ratrspl04l"],
+
+			["ratrspl03r","ratrspl04","ratrspl03"],
+			["ratrspl03r","ratrspl04r","ratrspl04"],
+
+			["ratrspl03rr","ratrspl04r","ratrspl03r"],
+			["ratrspl03rr","ratrspl04rr","ratrspl04r"],
+
+			{"dragCoef":10},
+			["ratrspl05ll","ratrspl03l","ratrspl03ll"],
+			["ratrspl05ll","ratrspl05l","ratrspl03l"],
+
+			["ratrspl05l","ratrspl03","ratrspl03l"],
+			["ratrspl05l","ratrspl05","ratrspl03"],
+
+			["ratrspl05r","ratrspl03r","ratrspl03"],
+			["ratrspl05r","ratrspl03","ratrspl05"],
+
+			["ratrspl05rr","ratrspl03rr","ratrspl03r"],
+			["ratrspl05rr","ratrspl03r","ratrspl05r"],
+
+			["ratrspl01r","ratrspl02r","ratrspl03rr"],
+			["ratrspl02r","ratrspl04rr","ratrspl03rr"],
+
+	],
+}
+
+"moonhawk_sedan_trunkspoiler_small": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Small Plate Spoiler",
+	}
+    "slotType" : "moonhawk_sedan_trunkspoiler",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_race_trunkspoilersmall", ["moonhawk_trunk"], [], {"pos":{"x":0, "y":0.13, "z":0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+
+"moonhawk_trunkspoiler": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Bruckell Moonhawk Large Trunk Spoiler",
+	}
+    "slotType" : "moonhawk_trunkspoiler",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_race_trunkspoiler", ["moonhawk_race_spoilerL"]],
+
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"nodeWeight":0.7},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"group":"moonhawk_race_spoilerL"},
+
+		 //left
+		 ["ratrspl01l", 0.87, 2.65, 0.94],
+		 ["ratrspl02l", 0.90, 2.51, 0.88],
+
+		 ["ratrspl03ll", 0.73, 2.66, 0.98],
+		 ["ratrspl04ll", 0.73, 2.52, 0.92],
+		 ["ratrspl05ll", 0.73, 2.63, 0.84],
+
+		 ["ratrspl03l", 0.39, 2.66, 0.99],
+		 ["ratrspl04l", 0.39, 2.53, 0.94],
+		 ["ratrspl05l", 0.39, 2.65, 0.85],
+
+		 //center
+		 ["ratrspl03", 0.0, 2.67, 1.0],
+		 ["ratrspl04", 0.0, 2.54, 0.94],
+		 ["ratrspl05", 0.0, 2.66, 0.86],
+
+		 //right
+		 ["ratrspl03r", -0.39, 2.66, 0.99],
+		 ["ratrspl04r", -0.39, 2.52, 0.94],
+		 ["ratrspl05r", -0.39, 2.65, 0.85],
+
+		 ["ratrspl03rr", -0.73, 2.66, 0.98],
+		 ["ratrspl04rr", -0.73, 2.53, 0.92],
+		 ["ratrspl05rr", -0.73, 2.63, 0.84],
+
+		 ["ratrspl01r", -0.87, 2.65, 0.94],
+		 ["ratrspl02r", -0.90, 2.51, 0.88],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //Trunk Spoiler large
+		  {"beamSpring":350000,"beamDamp":150},
+		  {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+
+		  //lengthwise
+		  ["ratrspl01l","ratrspl02l"],
+
+		  ["ratrspl03ll","ratrspl04ll"],
+		  ["ratrspl04ll","ratrspl05ll"],
+		  ["ratrspl05ll","ratrspl03ll"],
+
+		  ["ratrspl03l","ratrspl04l"],
+		  ["ratrspl04l","ratrspl05l"],
+		  ["ratrspl05l","ratrspl03l"],
+
+		  ["ratrspl03","ratrspl04"],
+		  ["ratrspl04","ratrspl05"],
+		  ["ratrspl05","ratrspl03"],
+
+		  ["ratrspl03r","ratrspl04r"],
+		  ["ratrspl04r","ratrspl05r"],
+		  ["ratrspl05r","ratrspl03r"],
+
+		  ["ratrspl03rr","ratrspl04rr"],
+		  ["ratrspl04rr","ratrspl05rr"],
+		  ["ratrspl05rr","ratrspl03rr"],
+
+		  ["ratrspl01r","ratrspl02r"],
+
+		  //widthwise
+		  ["ratrspl01l","ratrspl03ll"],
+		  ["ratrspl03ll","ratrspl03l"],
+		  ["ratrspl03l","ratrspl03"],
+		  ["ratrspl03","ratrspl03r"],
+		  ["ratrspl03r","ratrspl03rr"],
+		  ["ratrspl03rr","ratrspl01r"],
+
+		  ["ratrspl02l","ratrspl04ll"],
+		  ["ratrspl04ll","ratrspl04l"],
+		  ["ratrspl04l","ratrspl04"],
+		  ["ratrspl04","ratrspl04r"],
+		  ["ratrspl04r","ratrspl04rr"],
+		  ["ratrspl04rr","ratrspl02r"],
+
+		  ["ratrspl05ll","ratrspl05l"],
+		  ["ratrspl05l","ratrspl05"],
+		  ["ratrspl05","ratrspl05r"],
+		  ["ratrspl05r","ratrspl05rr"],
+
+		  //diagonal
+		  ["ratrspl01l","ratrspl05ll"],
+		  ["ratrspl03ll","ratrspl08l"],
+		  ["ratrspl03l","ratrspl08"],
+
+		  ["ratrspl01r","ratrspl05rr"],
+		  ["ratrspl03rr","ratrspl08r"],
+		  ["ratrspl03r","ratrspl08"],
+
+		  ["ratrspl02l","ratrspl03ll"],
+		  ["ratrspl04ll","ratrspl06l"],
+		  ["ratrspl04l","ratrspl06"],
+
+		  ["ratrspl02r","ratrspl03rr"],
+		  ["ratrspl04rr","ratrspl06r"],
+		  ["ratrspl04r","ratrspl06"],
+
+		  ["ratrspl02l","ratrspl05ll"],
+		  ["ratrspl04ll","ratrspl08l"],
+		  ["ratrspl04l","ratrspl08"],
+
+		  ["ratrspl02r","ratrspl05rr"],
+		  ["ratrspl04rr","ratrspl08r"],
+		  ["ratrspl04r","ratrspl08"],
+
+		  //extra
+
+		  ["ratrspl03ll","ratrspl05"],
+		  ["ratrspl03rr","ratrspl05"],
+
+		  ["ratrspl02l","ratrspl06"],
+		  ["ratrspl02r","ratrspl06"],
+
+		  ["ratrspl04ll","ratrspl05"],
+		  ["ratrspl04rr","ratrspl05"],
+
+		  ["ratrspl03ll","ratrspl03rr"],
+		  ["ratrspl05ll","ratrspl05rr"],
+		  ["ratrspl04ll","ratrspl04rr"],
+
+		//attachments
+		  {"beamSpring":50000,"beamDamp":100},
+		 {"beamDeform":3200,"beamStrength":3300},
+
+		  {"breakGroup":"moonhawk_race_spoilerL_L"},
+		  //["ratrspl04ll","t3ll"],
+		  ["ratrspl04ll","t4ll"],
+		  ["ratrspl04ll","t4l"],
+		  ["ratrspl04ll","t3l"],
+		  //["ratrspl04ll","t5"],
+
+		  ["ratrspl05ll","t3ll"],
+		  ["ratrspl05ll","t4ll"],
+		  //["ratrspl05ll","t5"],
+		  ["ratrspl05ll","t4l"],
+		  //["ratrspl05ll","t3l"],
+
+		  ["ratrspl03ll","t3ll"],
+		  ["ratrspl03ll","t4ll"],
+		  ["ratrspl03ll","t4l"],
+
+		  ["ratrspl04l","t4l"],
+		  ["ratrspl04l","t3l"],
+		  ["ratrspl05l","t4l"],
+		  ["ratrspl05l","t3l"],
+
+		  {"breakGroup":"moonhawk_race_spoilerL_R"},
+		  //["ratrspl04rr","t3rr"],
+		  ["ratrspl04rr","t4rr"],
+		  ["ratrspl04rr","t4r"],
+		  //["ratrspl04rr","t5"],
+
+		  ["ratrspl05rr","t3rr"],
+		  ["ratrspl05rr","t4rr"],
+		  //["ratrspl05rr","t5"],
+		  ["ratrspl05rr","t4r"],
+		  //["ratrspl05rr","t3r"],
+
+		  ["ratrspl03rr","t3rr"],
+		  ["ratrspl03rr","t4rr"],
+		  ["ratrspl03rr","t4r"],
+
+		  ["ratrspl04r","t4r"],
+		  ["ratrspl04r","t3r"],
+		  ["ratrspl05r","t4r"],
+		  ["ratrspl05r","t3r"],
+
+		  {"breakGroup":"moonhawk_race_spoilerL_C"},
+		  ["ratrspl04","t3"],
+		  ["ratrspl04","t4"],
+		  //["ratrspl04","t5"],
+
+		  ["ratrspl05","t3"],
+		  ["ratrspl05","t4"],
+		  //["ratrspl05","t5"],
+
+		  //["ratrspl03","t3"],
+		  //["ratrspl03","t4"],
+		  //["ratrspl03","t4r"],
+		  //["ratrspl03","t4l"],
+
+		  {"breakGroup":""},
+
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"dragCoef":70},
+			["ratrspl01l","ratrspl03ll","ratrspl02l"],
+			["ratrspl02l","ratrspl03ll","ratrspl04ll"],
+
+			["ratrspl03ll","ratrspl03l","ratrspl04l"],
+			["ratrspl03ll","ratrspl04l","ratrspl04ll"],
+
+			["ratrspl03l","ratrspl03","ratrspl04"],
+			["ratrspl03l","ratrspl04","ratrspl04l"],
+
+			["ratrspl03r","ratrspl04","ratrspl03"],
+			["ratrspl03r","ratrspl04r","ratrspl04"],
+
+			["ratrspl03rr","ratrspl04r","ratrspl03r"],
+			["ratrspl03rr","ratrspl04rr","ratrspl04r"],
+
+			{"dragCoef":10},
+			["ratrspl05ll","ratrspl03l","ratrspl03ll"],
+			["ratrspl05ll","ratrspl05l","ratrspl03l"],
+
+			["ratrspl05l","ratrspl03","ratrspl03l"],
+			["ratrspl05l","ratrspl05","ratrspl03"],
+
+			["ratrspl05r","ratrspl03r","ratrspl03"],
+			["ratrspl05r","ratrspl03","ratrspl05"],
+
+			["ratrspl05rr","ratrspl03rr","ratrspl03r"],
+			["ratrspl05rr","ratrspl03r","ratrspl05r"],
+
+			["ratrspl01r","ratrspl02r","ratrspl03rr"],
+			["ratrspl02r","ratrspl04rr","ratrspl03rr"],
+
+
+			["ratrspl04ll","ratrspl05l","ratrspl05ll"],
+			["ratrspl04ll","ratrspl04l","ratrspl05l"],
+
+			["ratrspl04l","ratrspl05","ratrspl05l"],
+			["ratrspl04l","ratrspl04","ratrspl05"],
+
+			["ratrspl04r","ratrspl05r","ratrspl05"],
+			["ratrspl04r","ratrspl05","ratrspl04"],
+
+			["ratrspl04rr","ratrspl05rr","ratrspl05r"],
+			["ratrspl04rr","ratrspl05r","ratrspl04r"],
+
+	],
+}
+
+"moonhawk_trunkspoiler_small": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Bruckell Moonhawk Small Trunk Spoiler",
+	}
+    "slotType" : "moonhawk_trunkspoiler",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_race_trunkspoilersmall", ["moonhawk_trunk"]],
+
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+
+"moonhawk_limo_trunkspoiler": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Bruckell Moonhawk Large Trunk Spoiler",
+	}
+    "slotType" : "moonhawk_limo_trunkspoiler",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_race_trunkspoiler", ["moonhawk_race_spoilerL"], [], {"pos":{"x":0, "y":1.03, "z":0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"nodeWeight":0.7},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"group":"moonhawk_race_spoilerL"},
+
+		 //left
+		 ["ratrspl01l", 0.87, 3.68, 0.94],
+		 ["ratrspl02l", 0.90, 3.54, 0.88],
+
+		 ["ratrspl03ll", 0.73, 3.69, 0.97],
+		 ["ratrspl04ll", 0.73, 3.55, 0.93],
+		 ["ratrspl05ll", 0.73, 3.66, 0.84],
+
+		 ["ratrspl03l", 0.39, 3.69, 0.97],
+		 ["ratrspl04l", 0.39, 3.56, 0.95],
+		 ["ratrspl05l", 0.39, 3.68, 0.85],
+
+		 //center
+		 ["ratrspl03", 0.0, 3.72, 0.99],
+		 ["ratrspl04", 0.0, 3.77, 0.95],
+		 ["ratrspl05", 0.0, 3.69, 0.86],
+
+		 //right
+		 ["ratrspl03r", -0.39, 3.69, 0.97],
+		 ["ratrspl04r", -0.39, 3.55, 0.95],
+		 ["ratrspl05r", -0.39, 3.68, 0.85],
+
+		 ["ratrspl03rr", -0.73, 3.69, 0.97],
+		 ["ratrspl04rr", -0.73, 3.55, 0.93],
+		 ["ratrspl05rr", -0.73, 3.66, 0.84],
+
+		 ["ratrspl01r", -0.87, 3.68, 0.94],
+		 ["ratrspl02r", -0.90, 3.54, 0.88],
+
+		 //stiffner
+		 {"collision":false}
+		 {"selfCollision":false}
+		 ["ratrspl06", 0.0, 3.10, 1.30],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //Trunk Spoiler large
+		  {"beamSpring":350000,"beamDamp":150},
+		  {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+
+		  //lengthwise
+		  ["ratrspl01l","ratrspl02l"],
+
+		  ["ratrspl03ll","ratrspl04ll"],
+		  ["ratrspl04ll","ratrspl05ll"],
+		  ["ratrspl05ll","ratrspl03ll"],
+
+		  ["ratrspl03l","ratrspl04l"],
+		  ["ratrspl04l","ratrspl05l"],
+		  ["ratrspl05l","ratrspl03l"],
+
+		  ["ratrspl03","ratrspl04"],
+		  ["ratrspl04","ratrspl05"],
+		  ["ratrspl05","ratrspl03"],
+
+		  ["ratrspl03r","ratrspl04r"],
+		  ["ratrspl04r","ratrspl05r"],
+		  ["ratrspl05r","ratrspl03r"],
+
+		  ["ratrspl03rr","ratrspl04rr"],
+		  ["ratrspl04rr","ratrspl05rr"],
+		  ["ratrspl05rr","ratrspl03rr"],
+
+		  ["ratrspl01r","ratrspl02r"],
+
+		  //widthwise
+		  ["ratrspl01l","ratrspl03ll"],
+		  ["ratrspl03ll","ratrspl03l"],
+		  ["ratrspl03l","ratrspl03"],
+		  ["ratrspl03","ratrspl03r"],
+		  ["ratrspl03r","ratrspl03rr"],
+		  ["ratrspl03rr","ratrspl01r"],
+
+		  ["ratrspl02l","ratrspl04ll"],
+		  ["ratrspl04ll","ratrspl04l"],
+		  ["ratrspl04l","ratrspl04"],
+		  ["ratrspl04","ratrspl04r"],
+		  ["ratrspl04r","ratrspl04rr"],
+		  ["ratrspl04rr","ratrspl02r"],
+
+		  ["ratrspl05ll","ratrspl05l"],
+		  ["ratrspl05l","ratrspl05"],
+		  ["ratrspl05","ratrspl05r"],
+		  ["ratrspl05r","ratrspl05rr"],
+
+		  //diagonal
+		  ["ratrspl01l","ratrspl05ll"],
+		  ["ratrspl03ll","ratrspl08l"],
+		  ["ratrspl03l","ratrspl08"],
+
+		  ["ratrspl01r","ratrspl05rr"],
+		  ["ratrspl03rr","ratrspl08r"],
+		  ["ratrspl03r","ratrspl08"],
+
+		  ["ratrspl02l","ratrspl03ll"],
+		  ["ratrspl04ll","ratrspl06l"],
+		  ["ratrspl04l","ratrspl06"],
+
+		  ["ratrspl02r","ratrspl03rr"],
+		  ["ratrspl04rr","ratrspl06r"],
+		  ["ratrspl04r","ratrspl06"],
+
+		  ["ratrspl02l","ratrspl05ll"],
+		  ["ratrspl04ll","ratrspl08l"],
+		  ["ratrspl04l","ratrspl08"],
+
+		  ["ratrspl02r","ratrspl05rr"],
+		  ["ratrspl04rr","ratrspl08r"],
+		  ["ratrspl04r","ratrspl08"],
+
+		  //extra
+
+		  ["ratrspl03ll","ratrspl05"],
+		  ["ratrspl03rr","ratrspl05"],
+
+		  ["ratrspl02l","ratrspl06"],
+		  ["ratrspl02r","ratrspl06"],
+
+		  ["ratrspl04ll","ratrspl05"],
+		  ["ratrspl04rr","ratrspl05"],
+
+		  ["ratrspl03ll","ratrspl03rr"],
+		  ["ratrspl05ll","ratrspl05rr"],
+		  ["ratrspl04ll","ratrspl04rr"],
+
+		 //stiffner
+
+		  ["ratrspl06","ratrspl01r"],
+		  ["ratrspl06","ratrspl02r"],
+
+		  ["ratrspl06","ratrspl03rr"],
+		  ["ratrspl06","ratrspl05rr"],
+
+		  ["ratrspl06","ratrspl03r"],
+		  ["ratrspl06","ratrspl05r"],
+
+		  ["ratrspl06","ratrspl03"],
+		  ["ratrspl06","ratrspl05"],
+
+		  ["ratrspl06","ratrspl03l"],
+		  ["ratrspl06","ratrspl05l"],
+
+		  ["ratrspl06","ratrspl03ll"],
+		  ["ratrspl06","ratrspl05ll"],
+
+		  ["ratrspl06","ratrspl01l"],
+		  ["ratrspl06","ratrspl02l"],
+
+
+
+		//attachments
+		  {"beamSpring":50000,"beamDamp":100},
+		 {"beamDeform":3200,"beamStrength":3300},
+
+		  {"breakGroup":"moonhawk_race_spoilerL_L"},
+		  //["ratrspl04ll","t3ll"],
+		  ["ratrspl04ll","t4ll"],
+		  ["ratrspl04ll","t4l"],
+		  ["ratrspl04ll","t3l"],
+		  //["ratrspl04ll","t5"],
+
+		  ["ratrspl05ll","t3ll"],
+		  ["ratrspl05ll","t4ll"],
+		  //["ratrspl05ll","t5"],
+		  ["ratrspl05ll","t4l"],
+		  //["ratrspl05ll","t3l"],
+
+		  ["ratrspl03ll","t3ll"],
+		  ["ratrspl03ll","t4ll"],
+		  ["ratrspl03ll","t4l"],
+
+		  ["ratrspl04l","t4l"],
+		  ["ratrspl04l","t3l"],
+		  ["ratrspl05l","t4l"],
+		  ["ratrspl05l","t3l"],
+
+		  {"breakGroup":"moonhawk_race_spoilerL_R"},
+		  //["ratrspl04rr","t3rr"],
+		  ["ratrspl04rr","t4rr"],
+		  ["ratrspl04rr","t4r"],
+		  //["ratrspl04rr","t5"],
+
+		  ["ratrspl05rr","t3rr"],
+		  ["ratrspl05rr","t4rr"],
+		  //["ratrspl05rr","t5"],
+		  ["ratrspl05rr","t4r"],
+		  //["ratrspl05rr","t3r"],
+
+		  ["ratrspl03rr","t3rr"],
+		  ["ratrspl03rr","t4rr"],
+		  ["ratrspl03rr","t4r"],
+
+		  ["ratrspl04r","t4r"],
+		  ["ratrspl04r","t3r"],
+		  ["ratrspl05r","t4r"],
+		  ["ratrspl05r","t3r"],
+
+		  {"breakGroup":"moonhawk_race_spoilerL_C"},
+		  ["ratrspl04","t3"],
+		  ["ratrspl04","t4"],
+		  //["ratrspl04","t5"],
+
+		  ["ratrspl05","t3"],
+		  ["ratrspl05","t4"],
+		  //["ratrspl05","t5"],
+
+		  //["ratrspl03","t3"],
+		  //["ratrspl03","t4"],
+		  //["ratrspl03","t4r"],
+		  //["ratrspl03","t4l"],
+
+		  {"breakGroup":""},
+
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"dragCoef":70},
+			["ratrspl01l","ratrspl03ll","ratrspl02l"],
+			["ratrspl02l","ratrspl03ll","ratrspl04ll"],
+
+			["ratrspl03ll","ratrspl03l","ratrspl04l"],
+			["ratrspl03ll","ratrspl04l","ratrspl04ll"],
+
+			["ratrspl03l","ratrspl03","ratrspl04"],
+			["ratrspl03l","ratrspl04","ratrspl04l"],
+
+			["ratrspl03r","ratrspl04","ratrspl03"],
+			["ratrspl03r","ratrspl04r","ratrspl04"],
+
+			["ratrspl03rr","ratrspl04r","ratrspl03r"],
+			["ratrspl03rr","ratrspl04rr","ratrspl04r"],
+
+			{"dragCoef":10},
+			["ratrspl05ll","ratrspl03l","ratrspl03ll"],
+			["ratrspl05ll","ratrspl05l","ratrspl03l"],
+
+			["ratrspl05l","ratrspl03","ratrspl03l"],
+			["ratrspl05l","ratrspl05","ratrspl03"],
+
+			["ratrspl05r","ratrspl03r","ratrspl03"],
+			["ratrspl05r","ratrspl03","ratrspl05"],
+
+			["ratrspl05rr","ratrspl03rr","ratrspl03r"],
+			["ratrspl05rr","ratrspl03r","ratrspl05r"],
+
+			["ratrspl01r","ratrspl02r","ratrspl03rr"],
+			["ratrspl02r","ratrspl04rr","ratrspl03rr"],
+
+	],
+}
+
+"moonhawk_limo_trunkspoiler_small": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Bruckell Moonhawk Small Trunk Spoiler",
+	}
+    "slotType" : "moonhawk_limo_trunkspoiler",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_race_trunkspoilersmall", ["moonhawk_trunk"], [], {"pos":{"x":0, "y":1.03, "z":0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+
+"moonhawk_louvres": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Bruckell Moonhawk Louvres",
+	}
+    "slotType" : "moonhawk_race_louvres",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_race_louvre_L", ["moonhawk_body"]],
+		 ["moonhawk_race_louvre_R", ["moonhawk_body"]],
+
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+/*
+"moonhawk_rollcage": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Bruckell Moonhawk Rollcage",
+	}
+    "slotType" : "moonhawk_seats_R",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_race_rollcage", ["moonhawk_rollcage","moonhawk_body"]],
+
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":false}
+		 {"collision":true}
+		 //rollcage
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":2.5},
+		 {"group":"moonhawk_rollcage"},
+		 ["rarlcg1r",-0.59, -0.08, 1.29],
+		 ["rarlcg2r",-0.59, 0.73, 1.29],
+		 ["rarlcg3r",-0.78, -0.73, 0.77],
+		 ["rarlcg4r",-0.77, 0.73, 0.74],
+		 //["rarlcg5r",0.15, -0.76, 0.21],
+		 //["rarlcg6r",0.30, -0.76, 0.21],
+
+		 ["rarlcg1l",0.59, -0.08, 1.29],
+		 ["rarlcg2l",0.59, 0.73, 1.29],
+		 ["rarlcg3l",0.78, -0.73, 0.77],
+		 ["rarlcg4l",0.77, 0.73, 0.74],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  //--ROLLCAGE--
+		  {"beamSpring":2401000,"beamDamp":80},
+		  {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+		  //cage own nodes
+		  ["rarlcg1r","rarlcg2r"],
+		  ["rarlcg3r","rarlcg4r"],
+
+		  ["rarlcg1l","rarlcg2l"],
+		  ["rarlcg3l","rarlcg4l"],
+
+		  ["rarlcg1r","rarlcg1l"],
+		  ["rarlcg2r","rarlcg2l"],
+		  ["rarlcg3r","rarlcg3l"],
+		  ["rarlcg4r","rarlcg4l"],
+
+		  ["rarlcg1r","rarlcg2l"],
+		  ["rarlcg1l","rarlcg2r"],
+		  ["rarlcg2r","rarlcg4l"],
+		  ["rarlcg2l","rarlcg4r"],
+
+		  {"beamSpring":1401000,"beamDamp":80},
+		  {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+
+		  //right to car
+		  ["rarlcg1r","r1rr"],
+		  ["rarlcg1r","r1r"],
+		  ["rarlcg1r","r2rr"],
+		  //["rarlcg1r","f12rr"],// removed
+
+		  ["rarlcg1r","b11r"],//new
+		  ["rarlcg1r","p1r"],//new
+		  ["rarlcg1r","p2r"],//new
+
+		  ["rarlcg2r","r3rr"],
+		  ["rarlcg2r","r3r"],
+		  ["rarlcg2r","r2rr"],
+		  ["rarlcg2r","f14rr"],
+		  ["rarlcg2r","f15r"],
+		  ["rarlcg2r","f15l"],
+
+		  ["rarlcg2r","r4rr"],//new
+		  ["rarlcg2r","p3r"],//new
+		  ["rarlcg2r","p4r"],//new
+
+		  ["rarlcg3r","b11rr"],
+		  ["rarlcg3r","b11r"],
+		  //["rarlcg3r","f14rr"],// removed
+		  ["rarlcg3r","f12rr"],
+
+		  ["rarlcg3r","f11r"],//new
+		  ["rarlcg3r","f11rr"],//new
+		  ["rarlcg3r","b1rr"],//new
+		  ["rarlcg3r","b1r"],//new
+		  ["rarlcg3r","b2rr"],//new
+		  ["rarlcg3r","b10rr"],//new
+		  //["rarlcg3r","r1r"],//new
+
+		  ["rarlcg4r","q1r"],
+		  ["rarlcg4r","f15r"],
+		  ["rarlcg4r","f14rr"],
+		  //["rarlcg4r","f12rr"],// removed
+		  //["rarlcg4r","f14ll"],// removed
+
+		  ["rarlcg4r","p7r"],//new
+		  ["rarlcg4r","p8r"],//new
+		  ["rarlcg4r","p9r"],//new
+		  ["rarlcg4r","p10r"],//new
+		  ["rarlcg4r","b4rr"],//new
+		  ["rarlcg4r","b4r"],//new
+		  ["rarlcg4r","b3rr"],//new
+		  ["rarlcg4r","r3r"],//new
+
+		  //left to car
+		  ["rarlcg1l","r1ll"],
+		  ["rarlcg1l","r1l"],
+		  ["rarlcg1l","r2ll"],
+		  //["rarlcg1l","f12ll"],
+
+		  ["rarlcg1l","b11l"],//new
+		  ["rarlcg1l","p1l"],//new
+		  ["rarlcg1l","p2l"],//new
+
+		  ["rarlcg2l","r3ll"],
+		  ["rarlcg2l","r3l"],
+		  ["rarlcg2l","r2ll"],
+		  ["rarlcg2l","f14ll"],
+		  ["rarlcg2l","f15l"],
+		  ["rarlcg2l","f15r"],
+
+		  ["rarlcg2l","r4ll"],//new
+		  ["rarlcg2l","p3l"],//new
+		  ["rarlcg2l","p4l"],//new
+
+		  ["rarlcg3l","b11ll"],
+		  ["rarlcg3l","b11l"],
+		  //["rarlcg3l","f14ll"],
+		  ["rarlcg3l","f12ll"],
+
+		  ["rarlcg3l","f11l"],//new
+		  ["rarlcg3l","f11ll"],//new
+		  ["rarlcg3l","b1ll"],//new
+		  ["rarlcg3l","b1l"],//new
+		  ["rarlcg3l","b2ll"],//new
+		  ["rarlcg3l","b10ll"],//new
+		  //["rarlcg3l","r1l"],//new
+
+		  ["rarlcg4l","q1l"],
+		  ["rarlcg4l","f15l"],
+		  ["rarlcg4l","f14ll"],
+		  //["rarlcg4l","f12ll"],
+		  //["rarlcg4l","f14rr"],
+
+		  ["rarlcg4l","p7l"],//new
+		  ["rarlcg4l","p8l"],//new
+		  ["rarlcg4l","p9l"],//new
+		  ["rarlcg4l","p10l"],//new
+		  ["rarlcg4l","b4ll"],//new
+		  ["rarlcg4l","b4l"],//new
+		  ["rarlcg4l","b3ll"],//new
+		  ["rarlcg4l","r3l"],//new
+
+
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+*/
+"moonhawk_ute_rollcage": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Bruckell Moonhawk Rollcage",
+	}
+    "slotType" : "moonhawk_ute_load",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_ute_race_rollcage", ["moonhawk_rollcage","moonhawk_body"]],
+
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":false}
+		 {"collision":true}
+		 //rollcage
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":2.5},
+		 {"group":"moonhawk_rollcage"},
+		 ["rarlcg1r",-0.59, -0.08, 1.29],
+		 ["rarlcg2r",-0.59, 0.64, 1.29],
+		 ["rarlcg3r",-0.78, -0.73, 0.77],
+		 ["rarlcg4r",-0.77, 0.72, 0.74],
+
+		 ["rarlcg1l",0.59, -0.08, 1.29],
+		 ["rarlcg2l",0.59, 0.64, 1.29],
+		 ["rarlcg3l",0.78, -0.73, 0.77],
+		 ["rarlcg4l",0.77, 0.72, 0.74],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  //--ROLLCAGE--
+		  {"beamSpring":2401000,"beamDamp":80},
+		  {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+		  //cage own nodes
+		  ["rarlcg1r","rarlcg2r"],
+		  ["rarlcg3r","rarlcg4r"],
+
+		  ["rarlcg1l","rarlcg2l"],
+		  ["rarlcg3l","rarlcg4l"],
+
+		  ["rarlcg1r","rarlcg1l"],
+		  ["rarlcg2r","rarlcg2l"],
+		  ["rarlcg3r","rarlcg3l"],
+		  ["rarlcg4r","rarlcg4l"],
+
+		  ["rarlcg1r","rarlcg2l"],
+		  ["rarlcg1l","rarlcg2r"],
+		  ["rarlcg2r","rarlcg4l"],
+		  ["rarlcg2l","rarlcg4r"],
+
+		  {"beamSpring":1401000,"beamDamp":80},
+		  {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+
+		  //right to car
+		  ["rarlcg1r","r1rr"],
+		  ["rarlcg1r","r1r"],
+		  ["rarlcg1r","r2rr"],
+		  //["rarlcg1r","f12rr"],// removed
+
+		  ["rarlcg1r","b11r"],//new
+		  ["rarlcg1r","p1r"],//new
+		  ["rarlcg1r","p2r"],//new
+
+		  ["rarlcg2r","r3rr"],
+		  ["rarlcg2r","r3r"],
+		  ["rarlcg2r","r2rr"],
+		  ["rarlcg2r","f14rr"],
+		  ["rarlcg2r","f15r"],
+		  ["rarlcg2r","f15l"],
+
+		  ["rarlcg2r","r4rr"],//new
+		  ["rarlcg2r","p3r"],//new
+		  ["rarlcg2r","p4r"],//new
+
+		  ["rarlcg2r","b6rr"],//new ute
+		  ["rarlcg2r","pb6"],//new ute
+
+		  ["rarlcg3r","b11rr"],
+		  ["rarlcg3r","b11r"],
+		  //["rarlcg3r","f14rr"],// removed
+		  ["rarlcg3r","f12rr"],
+
+		  ["rarlcg3r","f11r"],//new
+		  ["rarlcg3r","f11rr"],//new
+		  ["rarlcg3r","b1rr"],//new
+		  ["rarlcg3r","b1r"],//new
+		  ["rarlcg3r","b2rr"],//new
+		  ["rarlcg3r","b10rr"],//new
+		  //["rarlcg3r","r1r"],//new
+
+		  ["rarlcg4r","q1r"],
+		  ["rarlcg4r","f15r"],
+		  ["rarlcg4r","f14rr"],
+		  //["rarlcg4r","f12rr"],// removed
+		  //["rarlcg4r","f14ll"],// removed
+
+		  ["rarlcg4r","p7r"],//new
+		  ["rarlcg4r","p8r"],//new
+		  ["rarlcg4r","p9r"],//new
+		  ["rarlcg4r","p10r"],//new
+		  ["rarlcg4r","b4rr"],//new
+		  ["rarlcg4r","b4r"],//new
+		  ["rarlcg4r","b3rr"],//new
+		  ["rarlcg4r","bed1rr"],//new
+		  ["rarlcg4r","r3r"],//new
+
+		  //left to car
+		  ["rarlcg1l","r1ll"],
+		  ["rarlcg1l","r1l"],
+		  ["rarlcg1l","r2ll"],
+		  //["rarlcg1l","f12ll"],
+
+		  ["rarlcg1l","b11l"],//new
+		  ["rarlcg1l","p1l"],//new
+		  ["rarlcg1l","p2l"],//new
+
+		  ["rarlcg2l","r3ll"],
+		  ["rarlcg2l","r3l"],
+		  ["rarlcg2l","r2ll"],
+		  ["rarlcg2l","f14ll"],
+		  ["rarlcg2l","f15l"],
+		  ["rarlcg2l","f15r"],
+
+		  ["rarlcg2l","b6ll"],//new ute
+		  ["rarlcg2l","pb6"],//new ute
+
+		  ["rarlcg2l","r4ll"],//new
+		  ["rarlcg2l","p3l"],//new
+		  ["rarlcg2l","p4l"],//new
+
+		  ["rarlcg3l","b11ll"],
+		  ["rarlcg3l","b11l"],
+		  //["rarlcg3l","f14ll"],
+		  ["rarlcg3l","f12ll"],
+
+		  ["rarlcg3l","f11l"],//new
+		  ["rarlcg3l","f11ll"],//new
+		  ["rarlcg3l","b1ll"],//new
+		  ["rarlcg3l","b1l"],//new
+		  ["rarlcg3l","b2ll"],//new
+		  ["rarlcg3l","b10ll"],//new
+		  //["rarlcg3l","r1l"],//new
+
+		  ["rarlcg4l","q1l"],
+		  ["rarlcg4l","f15l"],
+		  ["rarlcg4l","f14ll"],
+		  //["rarlcg4l","f12ll"],
+		  //["rarlcg4l","f14rr"],
+
+		  ["rarlcg4l","p7l"],//new
+		  ["rarlcg4l","p8l"],//new
+		  ["rarlcg4l","p9l"],//new
+		  ["rarlcg4l","p10l"],//new
+		  ["rarlcg4l","b4ll"],//new
+		  ["rarlcg4l","b4l"],//new
+		  ["rarlcg4l","b3ll"],//new
+		  ["rarlcg4l","bed1ll"],//new
+		  ["rarlcg4l","r3l"],//new
+
+
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+
+			["r3rr","r3r","b6"],
+			["r3r","r3l","b6"],
+			["r3l","r3ll","b6"],
+
+			["r3rr","b6","bed1rr"],
+			["r3ll","bed1ll","b6"],
+	],
+}
+
+"moonhawk_sedan_rollcage": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Bruckell Moonhawk Rollcage",
+	}
+    "slotType" : "moonhawk_sedan_seats_R",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_sedan_race_rollcage", ["moonhawk_rollcage","moonhawk_body"]],
+
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":true}
+		 {"collision":true}
+		 //rollcage
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":2.5},
+		 {"group":"moonhawk_rollcage"},
+		 ["rarlcg1r",-0.59, -0.08, 1.29],
+		 ["rarlcg2r",-0.59, 0.51, 1.29],
+		 ["rarlcg3r",-0.78, -0.73, 0.77],
+		 ["rarlcg4r",-0.77, 0.51, 0.74],
+		 //["rarlcg5r",0.15, -0.76, 0.21],
+		 //["rarlcg6r",0.30, -0.76, 0.21],
+
+		 ["rarlcg1l",0.59, -0.08, 1.29],
+		 ["rarlcg2l",0.59, 0.51, 1.29],
+		 ["rarlcg3l",0.78, -0.73, 0.77],
+		 ["rarlcg4l",0.77, 0.51, 0.74],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  //--ROLLCAGE--
+		  {"beamSpring":2401000,"beamDamp":80},
+		  {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+		  //cage own nodes
+		  ["rarlcg1r","rarlcg2r"],
+		  ["rarlcg3r","rarlcg4r"],
+
+		  ["rarlcg1l","rarlcg2l"],
+		  ["rarlcg3l","rarlcg4l"],
+
+		  ["rarlcg1r","rarlcg1l"],
+		  ["rarlcg2r","rarlcg2l"],
+		  ["rarlcg3r","rarlcg3l"],
+
+		  ["rarlcg1r","rarlcg2l"],
+		  ["rarlcg1l","rarlcg2r"],
+
+		  //["f15rr","f15ll"], removed
+
+		  {"beamSpring":1401000,"beamDamp":80},
+		  {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+
+		  //right to car
+		  ["rarlcg1r","r1rr"],
+		  ["rarlcg1r","r1r"],
+		  ["rarlcg1r","r2rr"],
+		  //["rarlcg1r","f12rr"],// removed
+
+		  ["rarlcg1r","b11r"],//new
+		  ["rarlcg1r","p1r"],//new
+		  ["rarlcg1r","p2r"],//new
+
+		  ["rarlcg2r","r3rr"],
+		  ["rarlcg2r","r3r"],
+		  ["rarlcg2r","r2rr"],
+		  ["rarlcg2r","f14rr"],
+		  ["rarlcg2r","f15r"],
+		  ["rarlcg2r","f15l"],
+
+		  ["rarlcg2r","r3arr"],//new
+		  ["rarlcg2r","p3r"],//new
+		  ["rarlcg2r","p4r"],//new
+
+		  ["rarlcg3r","b11rr"],
+		  ["rarlcg3r","b11r"],
+		  //["rarlcg3r","f14rr"],// removed
+		  ["rarlcg3r","f12rr"],
+
+		  ["rarlcg3r","f11r"],//new
+		  ["rarlcg3r","f11rr"],//new
+		  ["rarlcg3r","b1rr"],//new
+		  ["rarlcg3r","b1r"],//new
+		  ["rarlcg3r","b2rr"],//new
+		  //["rarlcg3r","r1r"],//new
+
+		  ["rarlcg4r","q1r"],
+		  ["rarlcg4r","f15r"],
+		  ["rarlcg4r","f14rr"],
+		  //["rarlcg4r","f12rr"],// removed
+		  //["rarlcg4r","f14ll"],// removed
+
+		  ["rarlcg4r","p7r"],//new
+		  ["rarlcg4r","p8r"],//new
+		  ["rarlcg4r","p9r"],//new
+		  ["rarlcg4r","p10r"],//new
+		  ["rarlcg4r","b4rr"],//new
+		  ["rarlcg4r","b4r"],//new
+		  ["rarlcg4r","b3rr"],//new
+		  ["rarlcg4r","r3r"],//new
+
+		  //left to car
+		  ["rarlcg1l","r1ll"],
+		  ["rarlcg1l","r1l"],
+		  ["rarlcg1l","r2ll"],
+		  //["rarlcg1l","f12ll"],
+
+		  ["rarlcg1l","b11l"],//new
+		  ["rarlcg1l","p1l"],//new
+		  ["rarlcg1l","p2l"],//new
+
+		  ["rarlcg2l","r3ll"],
+		  ["rarlcg2l","r3l"],
+		  ["rarlcg2l","r2ll"],
+		  ["rarlcg2l","f14ll"],
+		  ["rarlcg2l","f15l"],
+		  ["rarlcg2l","f15r"],
+
+		  ["rarlcg2l","r3all"],//new
+		  ["rarlcg2l","p3l"],//new
+		  ["rarlcg2l","p4l"],//new
+
+		  ["rarlcg3l","b11ll"],
+		  ["rarlcg3l","b11l"],
+		  //["rarlcg3l","f14ll"],
+		  ["rarlcg3l","f12ll"],
+
+		  ["rarlcg3l","f11l"],//new
+		  ["rarlcg3l","f11ll"],//new
+		  ["rarlcg3l","b1ll"],//new
+		  ["rarlcg3l","b1l"],//new
+		  ["rarlcg3l","b2ll"],//new
+		  //["rarlcg3l","r1l"],//new
+
+		  ["rarlcg4l","q1l"],
+		  ["rarlcg4l","f15l"],
+		  ["rarlcg4l","f14ll"],
+		  //["rarlcg4l","f12ll"],
+		  //["rarlcg4l","f14rr"],
+
+		  ["rarlcg4l","p7l"],//new
+		  ["rarlcg4l","p8l"],//new
+		  ["rarlcg4l","p9l"],//new
+		  ["rarlcg4l","p10l"],//new
+		  ["rarlcg4l","b4ll"],//new
+		  ["rarlcg4l","b4l"],//new
+		  ["rarlcg4l","b3ll"],//new
+		  ["rarlcg4l","r3l"],//new
+
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+
+"moonhawk_station_rollcage": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Bruckell Moonhawk Rollcage",
+	}
+    "slotType" : "moonhawk_station_seats_R",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_sedan_race_rollcage", ["moonhawk_rollcage","moonhawk_body"]],
+
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":true}
+		 {"collision":true}
+		 //rollcage
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":2.5},
+		 {"group":"moonhawk_rollcage"},
+		 ["rarlcg1r",-0.59, -0.08, 1.29],
+		 ["rarlcg2r",-0.59, 0.51, 1.29],
+		 ["rarlcg3r",-0.78, -0.73, 0.77],
+		 ["rarlcg4r",-0.77, 0.51, 0.74],
+		 //["rarlcg5r",0.15, -0.76, 0.21],
+		 //["rarlcg6r",0.30, -0.76, 0.21],
+
+		 ["rarlcg1l",0.59, -0.08, 1.29],
+		 ["rarlcg2l",0.59, 0.51, 1.29],
+		 ["rarlcg3l",0.78, -0.73, 0.77],
+		 ["rarlcg4l",0.77, 0.51, 0.74],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamSpring":2401000,"beamDamp":80},
+		  {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+		  //cage own nodes
+		  ["rarlcg1r","rarlcg2r"],
+		  ["rarlcg3r","rarlcg4r"],
+
+		  ["rarlcg1l","rarlcg2l"],
+		  ["rarlcg3l","rarlcg4l"],
+
+		  ["rarlcg1r","rarlcg1l"],
+		  ["rarlcg2r","rarlcg2l"],
+		  ["rarlcg3r","rarlcg3l"],
+
+		  ["rarlcg1r","rarlcg2l"],
+		  ["rarlcg1l","rarlcg2r"],
+
+		  //["f15rr","f15ll"], removed
+
+		  {"beamSpring":1401000,"beamDamp":80},
+		  {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+
+		  //right to car
+		  ["rarlcg1r","r1rr"],
+		  ["rarlcg1r","r1r"],
+		  ["rarlcg1r","r2rr"],
+		  //["rarlcg1r","f12rr"],// removed
+
+		  ["rarlcg1r","b11r"],//new
+		  ["rarlcg1r","p1r"],//new
+		  ["rarlcg1r","p2r"],//new
+
+		  ["rarlcg2r","r3rr"],
+		  ["rarlcg2r","r3r"],
+		  ["rarlcg2r","r2rr"],
+		  ["rarlcg2r","f14rr"],
+		  ["rarlcg2r","f15r"],
+		  ["rarlcg2r","f15l"],
+
+		  ["rarlcg2r","r3arr"],//new
+		  ["rarlcg2r","p3r"],//new
+		  ["rarlcg2r","p4r"],//new
+
+		  ["rarlcg3r","b11rr"],
+		  ["rarlcg3r","b11r"],
+		  //["rarlcg3r","f14rr"],// removed
+		  ["rarlcg3r","f12rr"],
+
+		  ["rarlcg3r","f11r"],//new
+		  ["rarlcg3r","f11rr"],//new
+		  ["rarlcg3r","b1rr"],//new
+		  ["rarlcg3r","b1r"],//new
+		  ["rarlcg3r","b2rr"],//new
+		  //["rarlcg3r","r1r"],//new
+
+		  ["rarlcg4r","q1r"],
+		  ["rarlcg4r","f15r"],
+		  ["rarlcg4r","f14rr"],
+		  //["rarlcg4r","f12rr"],// removed
+		  //["rarlcg4r","f14ll"],// removed
+
+		  ["rarlcg4r","p7r"],//new
+		  ["rarlcg4r","p8r"],//new
+		  ["rarlcg4r","p9r"],//new
+		  ["rarlcg4r","p10r"],//new
+		  ["rarlcg4r","b4rr"],//new
+		  ["rarlcg4r","b4r"],//new
+		  ["rarlcg4r","b3rr"],//new
+		  ["rarlcg4r","r3r"],//new
+
+		  //left to car
+		  ["rarlcg1l","r1ll"],
+		  ["rarlcg1l","r1l"],
+		  ["rarlcg1l","r2ll"],
+		  //["rarlcg1l","f12ll"],
+
+		  ["rarlcg1l","b11l"],//new
+		  ["rarlcg1l","p1l"],//new
+		  ["rarlcg1l","p2l"],//new
+
+		  ["rarlcg2l","r3ll"],
+		  ["rarlcg2l","r3l"],
+		  ["rarlcg2l","r2ll"],
+		  ["rarlcg2l","f14ll"],
+		  ["rarlcg2l","f15l"],
+		  ["rarlcg2l","f15r"],
+
+		  ["rarlcg2l","r3all"],//new
+		  ["rarlcg2l","p3l"],//new
+		  ["rarlcg2l","p4l"],//new
+
+		  ["rarlcg3l","b11ll"],
+		  ["rarlcg3l","b11l"],
+		  //["rarlcg3l","f14ll"],
+		  ["rarlcg3l","f12ll"],
+
+		  ["rarlcg3l","f11l"],//new
+		  ["rarlcg3l","f11ll"],//new
+		  ["rarlcg3l","b1ll"],//new
+		  ["rarlcg3l","b1l"],//new
+		  ["rarlcg3l","b2ll"],//new
+		  //["rarlcg3l","r1l"],//new
+
+		  ["rarlcg4l","q1l"],
+		  ["rarlcg4l","f15l"],
+		  ["rarlcg4l","f14ll"],
+		  //["rarlcg4l","f12ll"],
+		  //["rarlcg4l","f14rr"],
+
+		  ["rarlcg4l","p7l"],//new
+		  ["rarlcg4l","p8l"],//new
+		  ["rarlcg4l","p9l"],//new
+		  ["rarlcg4l","p10l"],//new
+		  ["rarlcg4l","b4ll"],//new
+		  ["rarlcg4l","b4l"],//new
+		  ["rarlcg4l","b3ll"],//new
+		  ["rarlcg4l","r3l"],//new
+
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+
+"moonhawk_limo_rollcage": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Bruckell Moonhawk Rollcage",
+	}
+    "slotType" : "moonhawk_limo_seats_R",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_limo_race_rollcage", ["moonhawk_rollcage","moonhawk_body"]],
+
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":true}
+		 {"collision":true}
+		 //rollcage
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":2.5},
+		 {"group":"moonhawk_rollcage"},
+		 ["rarlcg1r",-0.59, -0.08, 1.29],
+		 ["rarlcg2r",-0.59, 0.51, 1.29],
+		 ["rarlcg3r",-0.78, -0.73, 0.77],
+		 ["rarlcg4r",-0.77, 0.51, 0.74],
+		 //["rarlcg5r",0.15, -0.76, 0.21],
+		 //["rarlcg6r",0.30, -0.76, 0.21],
+
+		 ["rarlcg1l",0.59, -0.08, 1.29],
+		 ["rarlcg2l",0.59, 0.51, 1.29],
+		 ["rarlcg3l",0.78, -0.73, 0.77],
+		 ["rarlcg4l",0.77, 0.51, 0.74],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamSpring":2401000,"beamDamp":80},
+		  {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+		  //cage own nodes
+		  ["rarlcg1r","rarlcg2r"],
+		  ["rarlcg3r","rarlcg4r"],
+
+		  ["rarlcg1l","rarlcg2l"],
+		  ["rarlcg3l","rarlcg4l"],
+
+		  ["rarlcg1r","rarlcg1l"],
+		  ["rarlcg2r","rarlcg2l"],
+		  ["rarlcg3r","rarlcg3l"],
+
+		  ["rarlcg1r","rarlcg2l"],
+		  ["rarlcg1l","rarlcg2r"],
+
+		  //["f15rr","f15ll"], removed
+
+		  {"beamSpring":1401000,"beamDamp":80},
+		  {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+
+		  //right to car
+		  ["rarlcg1r","r1rr"],
+		  ["rarlcg1r","r1r"],
+		  ["rarlcg1r","r2rr"],
+		  //["rarlcg1r","f12rr"],// removed
+
+		  ["rarlcg1r","b11r"],//new
+		  ["rarlcg1r","p1r"],//new
+		  ["rarlcg1r","p2r"],//new
+
+		  ["rarlcg2r","r3rr"],
+		  ["rarlcg2r","r3r"],
+		  ["rarlcg2r","r2rr"],
+		  ["rarlcg2r","f14rr"],
+		  ["rarlcg2r","f15r"],
+		  ["rarlcg2r","f15l"],
+
+		  ["rarlcg2r","r3arr"],//new
+		  ["rarlcg2r","p3r"],//new
+		  ["rarlcg2r","p4r"],//new
+
+		  ["rarlcg3r","b11rr"],
+		  ["rarlcg3r","b11r"],
+		  //["rarlcg3r","f14rr"],// removed
+		  ["rarlcg3r","f12rr"],
+
+		  ["rarlcg3r","f11r"],//new
+		  ["rarlcg3r","f11rr"],//new
+		  ["rarlcg3r","b1rr"],//new
+		  ["rarlcg3r","b1r"],//new
+		  ["rarlcg3r","b2rr"],//new
+		  //["rarlcg3r","r1r"],//new
+
+		  ["rarlcg4r","q1r"],
+		  ["rarlcg4r","f15r"],
+		  ["rarlcg4r","f14rr"],
+		  //["rarlcg4r","f12rr"],// removed
+		  //["rarlcg4r","f14ll"],// removed
+
+		  ["rarlcg4r","p7r"],//new
+		  ["rarlcg4r","p8r"],//new
+		  ["rarlcg4r","p9r"],//new
+		  ["rarlcg4r","p10r"],//new
+		  ["rarlcg4r","b4rr"],//new
+		  ["rarlcg4r","b4r"],//new
+		  ["rarlcg4r","b3rr"],//new
+		  ["rarlcg4r","r3r"],//new
+
+		  //left to car
+		  ["rarlcg1l","r1ll"],
+		  ["rarlcg1l","r1l"],
+		  ["rarlcg1l","r2ll"],
+		  //["rarlcg1l","f12ll"],
+
+		  ["rarlcg1l","b11l"],//new
+		  ["rarlcg1l","p1l"],//new
+		  ["rarlcg1l","p2l"],//new
+
+		  ["rarlcg2l","r3ll"],
+		  ["rarlcg2l","r3l"],
+		  ["rarlcg2l","r2ll"],
+		  ["rarlcg2l","f14ll"],
+		  ["rarlcg2l","f15l"],
+		  ["rarlcg2l","f15r"],
+
+		  ["rarlcg2l","r3all"],//new
+		  ["rarlcg2l","p3l"],//new
+		  ["rarlcg2l","p4l"],//new
+
+		  ["rarlcg3l","b11ll"],
+		  ["rarlcg3l","b11l"],
+		  //["rarlcg3l","f14ll"],
+		  ["rarlcg3l","f12ll"],
+
+		  ["rarlcg3l","f11l"],//new
+		  ["rarlcg3l","f11ll"],//new
+		  ["rarlcg3l","b1ll"],//new
+		  ["rarlcg3l","b1l"],//new
+		  ["rarlcg3l","b2ll"],//new
+		  //["rarlcg3l","r1l"],//new
+
+		  ["rarlcg4l","q1l"],
+		  ["rarlcg4l","f15l"],
+		  ["rarlcg4l","f14ll"],
+		  //["rarlcg4l","f12ll"],
+		  //["rarlcg4l","f14rr"],
+
+		  ["rarlcg4l","p7l"],//new
+		  ["rarlcg4l","p8l"],//new
+		  ["rarlcg4l","p9l"],//new
+		  ["rarlcg4l","p10l"],//new
+		  ["rarlcg4l","b4ll"],//new
+		  ["rarlcg4l","b4l"],//new
+		  ["rarlcg4l","b3ll"],//new
+		  ["rarlcg4l","r3l"],//new
+
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+	],
+}
+/*
+"moonhawk_exhaust_side_L": {
+	"information":{
+		"authors":"gabester, modded by AR162b",
+		"name":"Bruckell Moonhawk Left Sidepipe Exhaust",
+	}
+    "slotType" : "moonhawk_exhaust_L",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_exhaust_side_L", ["moonhawk_exhaust_L"]],
+	],
+
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":true}
+		 {"collision":true}
+		 //--Left Side Exhaust-
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":2.5},
+		 {"group":"moonhawk_exhaust_L"},
+		 ["ex1l",0.15, -0.76, 0.21],
+		 ["ex1ll",0.30, -0.76, 0.21],
+
+		 {"nodeWeight":2.0},
+		 ["ex2all",0.92, -0.69, 0.25],
+		 ["ex2bll",0.97, -0.69, 0.18],
+		 ["ex2cll",0.88, -0.69, 0.18],
+
+		 ["ex3all",0.92, 0.21, 0.25],
+		 ["ex3bll",0.97, 0.21, 0.18],
+		 ["ex3cll",0.88, 0.21, 0.18],
+
+		 ["ex4all",0.92, 0.97, 0.25],
+		 ["ex4bll",0.97, 0.97, 0.18],
+		 ["ex4cll",0.88, 0.97, 0.18],
+		
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  //--EXHAUST--
+		  {"beamSpring":1401000,"beamDamp":50},
+		  {"beamDeform":96000,"beamStrength":"FLT_MAX"},
+		  //l
+		  ["ex1l","ex2all"],
+		  ["ex1l","ex2bll"],
+		  ["ex1l","ex2cll"],
+		  ["ex1ll","ex2all"],
+		  ["ex1ll","ex2bll"],
+		  ["ex1ll","ex2cll"],
+		  
+		  ["ex1l","ex1ll"],
+
+		  {"beamSpring":1401000,"beamDamp":50},
+		  {"beamDeform":46000,"beamStrength":"FLT_MAX"},
+
+		  ["ex2all","ex3all"],
+		  ["ex2bll","ex3bll"],
+		  ["ex2cll","ex3cll"],
+
+		  ["ex3all","ex4all"],
+		  ["ex3bll","ex4bll"],
+		  ["ex3cll","ex4cll"],
+
+		  ["ex2all","ex3bll"],
+		  ["ex2bll","ex3cll"],
+		  ["ex2cll","ex3all"],
+
+		  ["ex3all","ex4bll"],
+		  ["ex3bll","ex4cll"],
+		  ["ex3cll","ex4all"],
+
+
+		  {"beamSpring":1801000,"beamDamp":50},
+		  {"beamDeform":96000,"beamStrength":"FLT_MAX"},
+
+		  ["ex2all","ex4all"],
+		  ["ex2bll","ex4bll"],
+		  ["ex2cll","ex4cll"],
+
+		  ["ex2all","ex4bll"],
+		  ["ex2bll","ex4cll"],
+		  ["ex2cll","ex4all"],
+
+		  {"beamSpring":701000,"beamDamp":100},
+		  {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+
+		  ["ex2all","ex2bll"],
+		  ["ex2bll","ex2cll"],
+		  ["ex2cll","ex2all"],
+
+		  ["ex3all","ex3bll"],
+		  ["ex3bll","ex3cll"],
+		  ["ex3cll","ex3all"],
+
+		  ["ex4all","ex4bll"],
+		  ["ex4bll","ex4cll"],
+		  ["ex4cll","ex4all"],
+
+
+		  {"breakGroup":"moonhawk_exhaust_a_L"},
+		  {"beamSpring":601000,"beamDamp":50},
+		  {"beamDeform":16000,"beamStrength":30000},
+		  //attach
+		  //l
+
+		  ["ex1l","exh1l"],
+		  ["ex1ll","exh1l"],
+
+		  ["ex1l","e1l"],
+		  ["ex1l","e2l"],
+		  ["ex1l","e3l"],
+		  ["ex1l","e4l"],
+		  ["ex1ll","e1l"],
+		  ["ex1ll","e2l"],
+		  ["ex1ll","e3l"],
+		  ["ex1ll","e4l"],
+
+		  {"beamSpring":301000,"beamDamp":50},
+		  {"beamDeform":5500,"beamStrength":12000},
+		  {"breakGroup":"moonhawk_exhaust_b_L"},
+		  ["ex2all","f2ll"],
+		  ["ex2all","f3ll"],
+		  ["ex2all","b2ll"],
+		  ["ex2all","fe11l"],
+		  
+		  ["ex2cll","f2ll"],
+		  ["ex2cll","f3ll"],
+		  ["ex2cll","b2ll"],
+		  ["ex2cll","fe11l"],
+
+		  ["ex2bll","f2ll"],
+		  ["ex2bll","f3ll"],
+
+		  {"breakGroup":"moonhawk_exhaust_c_L"},
+		  ["ex3all","f4ll"],
+		  ["ex3all","f5ll"],
+		  ["ex3all","b3ll"],
+		  ["ex3all","b4ll"],
+		  
+		  ["ex3cll","f4ll"],
+		  ["ex3cll","f5ll"],
+		  ["ex3cll","b3ll"],
+		  ["ex3cll","b4ll"],
+
+		  ["ex3bll","f4ll"],
+		  ["ex3bll","f5ll"],
+
+		  {"breakGroup":"moonhawk_exhaust_d_L"},
+		  ["ex4all","f5ll"],
+		  ["ex4all","f6ll"],
+		  ["ex4all","b4ll"],
+		  ["ex4all","b5ll"],
+		  
+		  ["ex4cll","f5ll"],
+		  ["ex4cll","f6ll"],
+		  ["ex4cll","b4ll"],
+		  ["ex4cll","b5ll"],
+
+		  ["ex4bll","f5ll"],
+		  ["ex4bll","f6ll"],
+		  
+		  
+		  {"breakGroup":""},
+
+
+		 
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+
+			["ex2all","ex2cll","ex2bll"],
+
+			["ex2all","ex2bll","ex3all"],
+			["ex2bll","ex3bll","ex3all"],
+
+			["ex2bll","ex2cll","ex3bll"],
+			["ex2cll","ex3cll","ex3bll"],
+
+			["ex2cll","ex2all","ex3cll"],
+			["ex2all","ex3all","ex3cll"],
+			
+
+			["ex3all","ex3bll","ex4all"],
+			["ex3bll","ex4bll","ex4all"],
+
+			["ex3bll","ex3cll","ex4bll"],
+			["ex3cll","ex4cll","ex4bll"],
+
+			["ex3cll","ex3all","ex4cll"],
+			["ex3all","ex4all","ex4cll"],
+
+			["ex4all","ex4bll","ex4cll"],
+			
+	],
+}
+
+
+"moonhawk_exhaust_side_R": {
+	"information":{
+		"authors":"gabester, modded by AR162b",
+		"name":"Bruckell Moonhawk Right Sidepipe Exhaust",
+	}
+    "slotType" : "moonhawk_exhaust_R",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_exhaust_side_R", ["moonhawk_exhaust_R"]],
+	],
+
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":true}
+		 {"collision":true}
+		 //--Right Side Exhaust-
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":2.5},
+		 {"group":"moonhawk_exhaust_R"},
+		 ["ex1r",-0.15, -0.76, 0.21],
+		 ["ex1rr",-0.30, -0.76, 0.21],
+
+		 {"nodeWeight":2.0},
+		 ["ex2arr",-0.92, -0.69, 0.25],
+		 ["ex2brr",-0.97, -0.69, 0.18],
+		 ["ex2crr",-0.88, -0.69, 0.18],
+
+		 ["ex3arr",-0.92, 0.21, 0.25],
+		 ["ex3brr",-0.97, 0.21, 0.18],
+		 ["ex3crr",-0.88, 0.21, 0.18],
+
+		 ["ex4arr",-0.92, 0.97, 0.25],
+		 ["ex4brr",-0.97, 0.97, 0.18],
+		 ["ex4crr",-0.88, 0.97, 0.18],
+		
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  //--EXHAUST--
+		  {"beamSpring":1401000,"beamDamp":50},
+		  {"beamDeform":96000,"beamStrength":"FLT_MAX"},
+		  //r
+		  ["ex1r","ex2arr"],
+		  ["ex1r","ex2brr"],
+		  ["ex1r","ex2crr"],
+		  ["ex1rr","ex2arr"],
+		  ["ex1rr","ex2brr"],
+		  ["ex1rr","ex2crr"],
+		  
+		  ["ex1r","ex1rr"],
+
+		  {"beamSpring":1401000,"beamDamp":50},
+		  {"beamDeform":46000,"beamStrength":"FLT_MAX"},
+
+		  ["ex2arr","ex3arr"],
+		  ["ex2brr","ex3brr"],
+		  ["ex2crr","ex3crr"],
+
+		  ["ex3arr","ex4arr"],
+		  ["ex3brr","ex4brr"],
+		  ["ex3crr","ex4crr"],
+
+		  ["ex2arr","ex3brr"],
+		  ["ex2brr","ex3crr"],
+		  ["ex2crr","ex3arr"],
+
+		  ["ex3arr","ex4brr"],
+		  ["ex3brr","ex4crr"],
+		  ["ex3crr","ex4arr"],
+
+
+		  {"beamSpring":1801000,"beamDamp":50},
+		  {"beamDeform":96000,"beamStrength":"FLT_MAX"},
+
+		  ["ex2arr","ex4arr"],
+		  ["ex2brr","ex4brr"],
+		  ["ex2crr","ex4crr"],
+
+		  ["ex2arr","ex4brr"],
+		  ["ex2brr","ex4crr"],
+		  ["ex2crr","ex4arr"],
+
+		  {"beamSpring":701000,"beamDamp":100},
+		  {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+
+		  ["ex2arr","ex2brr"],
+		  ["ex2brr","ex2crr"],
+		  ["ex2crr","ex2arr"],
+
+		  ["ex3arr","ex3brr"],
+		  ["ex3brr","ex3crr"],
+		  ["ex3crr","ex3arr"],
+
+		  ["ex4arr","ex4brr"],
+		  ["ex4brr","ex4crr"],
+		  ["ex4crr","ex4arr"],
+
+
+		  {"breakGroup":"moonhawk_exhaust_a_R"},
+		  {"beamSpring":601000,"beamDamp":50},
+		  {"beamDeform":16000,"beamStrength":30000},
+		  //attach
+		  //r
+
+		  ["ex1r","exh1r"],
+		  ["ex1rr","exh1r"],
+
+		  ["ex1r","e1r"],
+		  ["ex1r","e2r"],
+		  ["ex1r","e3r"],
+		  ["ex1r","e4r"],
+		  ["ex1rr","e1r"],
+		  ["ex1rr","e2r"],
+		  ["ex1rr","e3r"],
+		  ["ex1rr","e4r"],
+
+		  {"beamSpring":301000,"beamDamp":50},
+		  {"beamDeform":5500,"beamStrength":12000},
+		  {"breakGroup":"moonhawk_exhaust_b_R"},
+		  ["ex2arr","f2rr"],
+		  ["ex2arr","f3rr"],
+		  ["ex2arr","b2rr"],
+		  ["ex2arr","fe11r"],
+		  
+		  ["ex2crr","f2rr"],
+		  ["ex2crr","f3rr"],
+		  ["ex2crr","b2rr"],
+		  ["ex2crr","fe11r"],
+
+		  ["ex2brr","f2rr"],
+		  ["ex2brr","f3rr"],
+
+		  {"breakGroup":"moonhawk_exhaust_c_R"},
+		  ["ex3arr","f4rr"],
+		  ["ex3arr","f5rr"],
+		  ["ex3arr","b3rr"],
+		  ["ex3arr","b4rr"],
+		  
+		  ["ex3crr","f4rr"],
+		  ["ex3crr","f5rr"],
+		  ["ex3crr","b3rr"],
+		  ["ex3crr","b4rr"],
+
+		  ["ex3brr","f4rr"],
+		  ["ex3brr","f5rr"],
+
+		  {"breakGroup":"moonhawk_exhaust_d_R"},
+		  ["ex4arr","f5rr"],
+		  ["ex4arr","f6rr"],
+		  ["ex4arr","b4rr"],
+		  ["ex4arr","b5rr"],
+		  
+		  ["ex4crr","f5rr"],
+		  ["ex4crr","f6rr"],
+		  ["ex4crr","b4rr"],
+		  ["ex4crr","b5rr"],
+
+		  ["ex4brr","f5rr"],
+		  ["ex4brr","f6rr"],
+		  
+		  
+		  {"breakGroup":""},
+
+
+		 
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+
+			["ex2arr","ex2brr","ex2crr"],
+
+			["ex2arr","ex3arr","ex2brr"],
+			["ex2brr","ex3arr","ex3brr"],
+
+			["ex2brr","ex3brr","ex2crr"],
+			["ex2crr","ex3brr","ex3crr"],
+
+			["ex2crr","ex3crr","ex2arr"],
+			["ex2arr","ex3crr","ex3arr"],
+			
+
+			["ex3arr","ex4arr","ex3brr"],
+			["ex3brr","ex4arr","ex4brr"],
+
+			["ex3brr","ex4brr","ex3crr"],
+			["ex3crr","ex4brr","ex4crr"],
+
+			["ex3crr","ex4crr","ex3arr"],
+			["ex3arr","ex4crr","ex4arr"],
+
+			["ex4arr","ex4crr","ex4brr"],
+			
+	],
+}
+
+"moonhawk_exhaust_race_L": {
+	"information":{
+		"authors":"gabester, modded by AR162b",
+		"name":"Bruckell Moonhawk Left Side Race Exhaust",
+	}
+    "slotType" : "moonhawk_exhaust_L",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_race_exhaust_side_L", ["moonhawk_exhaust_L"]],
+	],
+
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":true}
+		 {"collision":true}
+		 //--Left Racing Side Exhaust-
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":2.5},
+		 {"group":"moonhawk_exhaust_L"},
+		 ["ex1l",0.15, -0.76, 0.21],
+		 ["ex1ll",0.30, -0.76, 0.21],
+		 ["ex2ll",0.80, 0.34, 0.19],
+		 ["ex3ll",0.88, 0.28, 0.19],
+		 ["ex4ll",0.84, 0.31, 0.13],
+		
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  //--EXHAUST--
+		  {"beamSpring":1401000,"beamDamp":50},
+		  {"beamDeform":96000,"beamStrength":"FLT_MAX"},
+		  //l
+		  ["ex1l","ex2ll"],
+		  ["ex1l","ex3ll"],
+		  ["ex1l","ex4ll"],
+		  ["ex1ll","ex2ll"],
+		  ["ex1ll","ex3ll"],
+		  ["ex1ll","ex4ll"],
+		  
+		  ["ex1l","ex1ll"],
+
+		  ["ex2ll","ex3ll"],
+		  ["ex3ll","ex4ll"],
+		  ["ex4ll","ex2ll"],
+
+		  {"breakGroup":"moonhawk_exhaust_a_L"},
+		  {"beamSpring":601000,"beamDamp":50},
+		  {"beamDeform":16000,"beamStrength":24000},
+		  //attach
+		  //l
+
+		  ["ex1l","exh1l"],
+		  ["ex1ll","exh1l"],
+
+		  ["ex1l","e1l"],
+		  ["ex1l","e2l"],
+		  ["ex1l","e3l"],
+		  ["ex1l","e4l"],
+		  ["ex1ll","e1l"],
+		  ["ex1ll","e2l"],
+		  ["ex1ll","e3l"],
+		  ["ex1ll","e4l"],
+
+		  {"beamSpring":301000,"beamDamp":50},
+		  {"beamDeform":6500,"beamStrength":12000},
+		  {"breakGroup":"moonhawk_exhaust_b_L"},
+		  ["ex2ll","f4ll"],
+		  ["ex2ll","f5ll"],
+		  ["ex2ll","b3ll"],
+		  ["ex2ll","b4ll"],
+		  
+		  ["ex3ll","f4ll"],
+		  ["ex3ll","f5ll"],
+		  ["ex3ll","b3ll"],
+		  ["ex3ll","b4ll"],
+
+		  ["ex4ll","f4ll"],
+		  ["ex4ll","f5ll"],
+		  
+		  
+		  {"breakGroup":""},
+		  
+		  		  
+		 
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			["ex1l","ex2ll","ex3ll"],
+			["ex3ll","ex4l","ex1l"],
+			["ex2ll","ex1l","ex4ll"],
+			
+			
+	],
+}
+
+
+"moonhawk_exhaust_race_R": {
+	"information":{
+		"authors":"gabester, modded by AR162b",
+		"name":"Bruckell Moonhawk Right Side Race Exhaust",
+	}
+    "slotType" : "moonhawk_exhaust_R",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_race_exhaust_side_R", ["moonhawk_exhaust_R"]],
+	],
+
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":true}
+		 {"collision":true}
+		 //--Right Racing Side Exhaust-
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":2.5},
+		 {"group":"moonhawk_exhaust_R"},
+		 ["ex1r",-0.15, -0.76, 0.21],
+		 ["ex1rr",-0.30, -0.76, 0.21],
+		 ["ex2rr",-0.80, 0.34, 0.19],
+		 ["ex3rr",-0.88, 0.28, 0.19],
+		 ["ex4rr",-0.84, 0.31, 0.13],
+		
+		 {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  //--EXHAUST--
+		  {"beamSpring":1401000,"beamDamp":50},
+		  {"beamDeform":96000,"beamStrength":"FLT_MAX"},
+		  //r
+		  ["ex1r","ex2rr"],
+		  ["ex1r","ex3rr"],
+		  ["ex1r","ex4rr"],
+		  ["ex1rr","ex2rr"],
+		  ["ex1rr","ex3rr"],
+		  ["ex1rr","ex4rr"],
+		  
+		  ["ex1r","ex1rr"],
+
+		  ["ex2rr","ex3rr"],
+		  ["ex3rr","ex4rr"],
+		  ["ex4rr","ex2rr"],
+
+		  {"breakGroup":"moonhawk_exhaust_a_R"},
+		  {"beamSpring":601000,"beamDamp":50},
+		  {"beamDeform":16000,"beamStrength":24000},
+		  //attach
+		  //r
+
+		  ["ex1r","exh1r"],
+		  ["ex1rr","exh1r"],
+
+		  ["ex1r","e1r"],
+		  ["ex1r","e2r"],
+		  ["ex1r","e3r"],
+		  ["ex1r","e4r"],
+		  ["ex1rr","e1r"],
+		  ["ex1rr","e2r"],
+		  ["ex1rr","e3r"],
+		  ["ex1rr","e4r"],
+
+		  {"beamSpring":301000,"beamDamp":50},
+		  {"beamDeform":6500,"beamStrength":12000},
+		  {"breakGroup":"moonhawk_exhaust_b_R"},
+		  ["ex2rr","f4rr"],
+		  ["ex2rr","f5rr"],
+		  ["ex2rr","b3rr"],
+		  ["ex2rr","b4rr"],
+		  
+		  ["ex3rr","f4rr"],
+		  ["ex3rr","f5rr"],
+		  ["ex3rr","b3rr"],
+		  ["ex3rr","b4rr"],
+
+		  ["ex4rr","f4rr"],
+		  ["ex4rr","f5rr"],
+		  
+		  
+		  {"breakGroup":""},
+		  
+		  		  
+		 
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			["ex1r","ex2rr","ex3rr"],
+			["ex3rr","ex4r","ex1r"],
+			["ex2rr","ex1r","ex4rr"],
+			
+			
+	],
+}
+*/
+"moonhawk_race_fuelcell": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Race Fuel Cell",
+	}
+    "slotType" : "moonhawk_fueltank",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_race_fuelcell", ["moonhawk_floor","moonhawk_race_fuelcell"]],
+	],		 
+	"engine":{
+		"fuelTankBeams":["moonhawk_fueltank_a","moonhawk_fueltank_b","moonhawk_fueltank_c"]
+		"fuelCapacity":20
+	}, 
+
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":false}
+		 {"collision":true}
+		 //--Race Fuel Cell
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":1.5},
+		 {"group":"moonhawk_race_fuelcell"},
+		 ["rfcl1r",-0.19, 1.80, 0.74],
+		 ["rfcl1l",0.19, 1.80, 0.74],
+		 ["rfcl2r",-0.19, 2.13, 0.74],
+		 ["rfcl2l",0.19, 2.13, 0.74],
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //fuel tank beam
+	      {"beamSpring":101000,"beamDamp":20},
+		  {"beamDeform":7000,"beamStrength":42000},
+		  {"disableMeshBreaking":true},
+		  ["f8rr","f8ll",{"name":"moonhawk_fueltank_a"}],
+		  ["f18","f19",{"name":"moonhawk_fueltank_b"}],
+		  ["f9rr","f9ll",{"name":"moonhawk_fueltank_c"}],
+		  {"disableMeshBreaking":false},
+
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  //--FUEL CELL
+		  {"beamSpring":1701000,"beamDamp":110},
+		  {"beamDeform":106000,"beamStrength":"FLT_MAX"},
+		  //r
+		  ["rfcl1r","rfcl2r"],
+		  ["rfcl1l","rfcl2l"],
+		  ["rfcl1r","rfcl1l"],
+		  ["rfcl2r","rfcl2l"],
+		  ["rfcl1r","rfcl2l"],
+		  ["rfcl1l","rfcl2r"],
+
+		  ["rfcl1r","f17rr"],
+		  ["rfcl1r","f17ll"],
+		  ["rfcl1r","f18rr"],
+		  ["rfcl1r","b7"],
+
+		  ["rfcl1l","f17ll"],
+		  ["rfcl1l","f17rr"],
+		  ["rfcl1l","f18ll"],
+		  ["rfcl1l","b7"],
+
+		  ["rfcl2r","f18rr"],
+		  ["rfcl2r","f18ll"],
+		  ["rfcl2r","f17rr"],
+		  ["rfcl2r","b8"],
+
+		  ["rfcl2l","f18ll"],
+		  ["rfcl2l","f18rr"],
+		  ["rfcl2l","f17ll"],
+		  ["rfcl2l","b8"],
+	],
+}
+
+"moonhawk_sedan_race_fuelcell": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Race Fuel Cell",
+	}
+    "slotType" : "moonhawk_sedan_fueltank",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_race_fuelcell", ["moonhawk_floor","moonhawk_race_fuelcell"], [], {"pos":{"x":0, "y":0.13, "z":0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+	],		 
+	"engine":{
+		"fuelTankBeams":["moonhawk_fueltank_a","moonhawk_fueltank_b","moonhawk_fueltank_c"]
+		"fuelCapacity":20
+	}, 
+
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":false}
+		 {"collision":true}
+		 //--Race Fuel Cell
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":1.5},
+		 {"group":"moonhawk_race_fuelcell"},
+		 ["rfcl1r",-0.19, 1.93, 0.74],
+		 ["rfcl1l",0.19, 1.93, 0.74],
+		 ["rfcl2r",-0.19, 2.26, 0.74],
+		 ["rfcl2l",0.19, 2.26, 0.74],
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //fuel tank beam
+	      {"beamSpring":101000,"beamDamp":20},
+		  {"beamDeform":7000,"beamStrength":42000},
+		  {"disableMeshBreaking":true},
+		  ["f8rr","f8ll",{"name":"moonhawk_fueltank_a"}],
+		  ["f18","f19",{"name":"moonhawk_fueltank_b"}],
+		  ["f9rr","f9ll",{"name":"moonhawk_fueltank_c"}],
+		  {"disableMeshBreaking":false},
+
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  //--FUEL CELL
+		  {"beamSpring":1701000,"beamDamp":110},
+		  {"beamDeform":106000,"beamStrength":"FLT_MAX"},
+		  //r
+		  ["rfcl1r","rfcl2r"],
+		  ["rfcl1l","rfcl2l"],
+		  ["rfcl1r","rfcl1l"],
+		  ["rfcl2r","rfcl2l"],
+		  ["rfcl1r","rfcl2l"],
+		  ["rfcl1l","rfcl2r"],
+
+		  ["rfcl1r","f17rr"],
+		  ["rfcl1r","f17ll"],
+		  ["rfcl1r","f18rr"],
+		  ["rfcl1r","b7"],
+
+		  ["rfcl1l","f17ll"],
+		  ["rfcl1l","f17rr"],
+		  ["rfcl1l","f18ll"],
+		  ["rfcl1l","b7"],
+
+		  ["rfcl2r","f18rr"],
+		  ["rfcl2r","f18ll"],
+		  ["rfcl2r","f17rr"],
+		  ["rfcl2r","b8"],
+
+		  ["rfcl2l","f18ll"],
+		  ["rfcl2l","f18rr"],
+		  ["rfcl2l","f17ll"],
+		  ["rfcl2l","b8"],
+	],
+}
+
+"moonhawk_limo_race_fuelcell": {
+	"information":{
+		"authors":"gabester",
+		"name":"Bruckell Moonhawk Race Fuel Cell",
+	}
+    "slotType" : "moonhawk_limo_fueltank",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_race_fuelcell", ["moonhawk_floor","moonhawk_race_fuelcell"], [], {"pos":{"x":0, "y":1.03, "z":0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+	],		 
+	"engine":{
+		"fuelTankBeams":["moonhawk_fueltank_a","moonhawk_fueltank_b","moonhawk_fueltank_c"]
+		"fuelCapacity":20
+	}, 
+
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":false}
+		 {"collision":true}
+		 //--Race Fuel Cell
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 {"nodeWeight":1.5},
+		 {"group":"moonhawk_race_fuelcell"},
+		 ["rfcl1r",-0.19, 2.83, 0.74],
+		 ["rfcl1l",0.19, 2.83, 0.74],
+		 ["rfcl2r",-0.19, 3.16, 0.74],
+		 ["rfcl2l",0.19, 3.16, 0.74],
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //fuel tank beam
+	      {"beamSpring":101000,"beamDamp":20},
+		  {"beamDeform":7000,"beamStrength":42000},
+		  {"disableMeshBreaking":true},
+		  ["f8rr","f8ll",{"name":"moonhawk_fueltank_a"}],
+		  ["f18","f19",{"name":"moonhawk_fueltank_b"}],
+		  ["f9rr","f9ll",{"name":"moonhawk_fueltank_c"}],
+		  {"disableMeshBreaking":false},
+
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  //--FUEL CELL
+		  {"beamSpring":1701000,"beamDamp":110},
+		  {"beamDeform":106000,"beamStrength":"FLT_MAX"},
+		  //r
+		  ["rfcl1r","rfcl2r"],
+		  ["rfcl1l","rfcl2l"],
+		  ["rfcl1r","rfcl1l"],
+		  ["rfcl2r","rfcl2l"],
+		  ["rfcl1r","rfcl2l"],
+		  ["rfcl1l","rfcl2r"],
+
+		  ["rfcl1r","f17rr"],
+		  ["rfcl1r","f17ll"],
+		  ["rfcl1r","f18rr"],
+		  ["rfcl1r","b7"],
+
+		  ["rfcl1l","f17ll"],
+		  ["rfcl1l","f17rr"],
+		  ["rfcl1l","f18ll"],
+		  ["rfcl1l","b7"],
+
+		  ["rfcl2r","f18rr"],
+		  ["rfcl2r","f18ll"],
+		  ["rfcl2r","f17rr"],
+		  ["rfcl2r","b8"],
+
+		  ["rfcl2l","f18ll"],
+		  ["rfcl2l","f18rr"],
+		  ["rfcl2l","f17ll"],
+		  ["rfcl2l","b8"],
+	],
+}
+/*
+"moonhawk_derby_roofsign": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Bruckell Moonhawk Derby Roofsign",
+	}
+    "slotType" : "moonhawk_siren",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //light bar frame
+		 ["moonhawk_derby_roofsign", ["moonhawk_derby_roofsign"]],
+
+		 {"deformGroup":""},
+	],	
+
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"nodeWeight":0.9},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"group":"moonhawk_derby_roofsign"},
+		["drbrf01r", -0.03, 0.05, 1.64],
+		["drbrf02r", -0.03, 0.51, 1.64],
+		["drbrf03r", -0.1, 0.05, 1.44],
+		["drbrf04r", -0.1, 0.51, 1.44],
+
+		["drbrf01l", 0.03, 0.05, 1.64],
+		["drbrf02l", 0.03, 0.51, 1.64],
+		["drbrf03l", 0.1, 0.05, 1.44],
+		["drbrf04l", 0.1, 0.51, 1.44],
+
+
+
+
+		 {"group":""},
+
+
+
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //derby sign
+		  {"beamSpring":250000,"beamDamp":180},
+		  {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+		  ["drbrf01r","drbrf02r"],
+		  ["drbrf02r","drbrf04r"],
+		  ["drbrf01r","drbrf03r"],
+		  ["drbrf03r","drbrf04r"],
+
+		  ["drbrf01l","drbrf02l"],
+		  ["drbrf02l","drbrf04l"],
+		  ["drbrf01l","drbrf03l"],
+		  ["drbrf03l","drbrf04l"],
+
+		  ["drbrf01r","drbrf01l"],
+		  ["drbrf02r","drbrf02l"],
+
+		  ["drbrf01r","drbrf02l"],
+		  ["drbrf02r","drbrf01l"],
+
+		  ["drbrf01r","drbrf04r"],
+		  ["drbrf02r","drbrf03r"],
+
+		  ["drbrf01l","drbrf04l"],
+		  ["drbrf02l","drbrf03l"],
+
+		  {"beamSpring":110000,"beamDamp":50},
+		  {"beamDeform":3000,"beamStrength":6000},
+
+		  ["drbrf01l","drbrf03r"],
+		  ["drbrf02l","drbrf04r"],
+		  ["drbrf01r","drbrf03l"],
+		  ["drbrf02r","drbrf04l"],
+
+		  ["drbrf01r","drbrf04l"],
+		  ["drbrf02r","drbrf03l"],
+		  ["drbrf01l","drbrf04r"],
+		  ["drbrf02l","drbrf03r"],
+
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":1.3, "beamShortBound":0.25},
+		  {"beamLimitSpring":250000,"beamLimitDamp":100},
+		  {"beamSpring":30000,"beamDamp":50,"beamDeform":90000,"beamStrength":"FLT_MAX"},
+
+		  ["drbrf03l","drbrf03r"],
+		  ["drbrf04l","drbrf04r"],
+
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+
+		//attachments
+		  {"beamSpring":500000,"beamDamp":130},
+		 {"beamDeform":3800,"beamStrength":4000},
+
+		  {"breakGroup":"moonhawk_derby_roofsign"},
+		  ["drbrf01r","r1l"],
+		  ["drbrf01r","r1r"],
+		  ["drbrf01r","r2l"],
+		  ["drbrf01r","r2r"],
+
+		  ["drbrf02r","r2l"],
+		  ["drbrf02r","r2r"],
+		  ["drbrf02r","r3l"],
+		  ["drbrf02r","r3r"],
+
+		  ["drbrf03r","r1l"],
+		  ["drbrf03r","r1r"],
+		  ["drbrf03r","r1rr"],
+		  ["drbrf03r","r2l"],
+		  ["drbrf03r","r2r"],
+		  ["drbrf03r","r2rr"],
+
+		  ["drbrf04r","r2l"],
+		  ["drbrf04r","r2r"],
+		  ["drbrf04r","r2rr"],
+		  ["drbrf04r","r3l"],
+		  ["drbrf04r","r3r"],
+		  ["drbrf04r","r3rr"],
+
+
+		  ["drbrf01l","r1r"],
+		  ["drbrf01l","r1l"],
+		  ["drbrf01l","r2r"],
+		  ["drbrf01l","r2l"],
+
+		  ["drbrf02l","r2r"],
+		  ["drbrf02l","r2l"],
+		  ["drbrf02l","r3r"],
+		  ["drbrf02l","r3l"],
+
+		  ["drbrf03l","r1r"],
+		  ["drbrf03l","r1l"],
+		  ["drbrf03l","r1ll"],
+		  ["drbrf03l","r2r"],
+		  ["drbrf03l","r2l"],
+		  ["drbrf03l","r2ll"],
+
+		  ["drbrf04l","r2r"],
+		  ["drbrf04l","r2l"],
+		  ["drbrf04l","r2ll"],
+		  ["drbrf04l","r3r"],
+		  ["drbrf04l","r3l"],
+		  ["drbrf04l","r3ll"],
+
+		  {"breakGroup":""},
+
+
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+
+			{"group":"moonhawk_derby_roofsign"},
+			//front
+			["drbrf01r","drbrf03r","drbrf01l"],
+			["drbrf01l","drbrf03r","drbrf03l"],
+			//rear
+			["drbrf02r","drbrf02l","drbrf04r"],
+			["drbrf02l","drbrf04l","drbrf04r"],
+			//right side
+			["drbrf01r","drbrf02r","drbrf04r"],
+			["drbrf01r","drbrf04r","drbrf03r"],
+			//left side
+			["drbrf01l","drbrf04l","drbrf02l"],
+			["drbrf01l","drbrf03l","drbrf04l"],
+			//top
+			["drbrf01l","drbrf02l","drbrf01r"],
+			["drbrf01r","drbrf02l","drbrf02r"],
+			//bottom
+			["drbrf03l","drbrf03r","drbrf04l"],
+			["drbrf03r","drbrf04r","drbrf04l"],
+
+			{"group":""},
+
+
+
+
+	],
+
+}*/
+
+}

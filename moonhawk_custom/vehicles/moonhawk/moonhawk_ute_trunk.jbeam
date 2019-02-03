@@ -1,0 +1,246 @@
+{
+"moonhawk_ute_trunk": {
+	"information":{
+		"authors":"AR162b, Gabester's Moonhawk Left Door as bases",
+		"name":"Bruckell Moonhawk Ute Trunk",
+	}
+    "slotType" : "moonhawk_ute_trunk",
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_ute_trunk", ["moonhawk_ute_trunk"]],
+		 ["moonhawk_ute_chrome_trunk", ["moonhawk_ute_trunk"]],
+
+	],
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 //--DOOR--
+		 {"collision":true},
+		 {"selfCollision":true},
+		 {"group":"moonhawk_ute_trunk"},
+		 {"nodeWeight":2.6},
+		 ["utetr3l", 0.64,2.87, 1.0],
+		 ["utetr3", 0.0, 2.89, 1.0],
+		 ["utetr3r", -0.64, 2.87, 1.0],
+		 
+		 ["utetr2l", 0.64,2.93, 0.82],
+		 ["utetr2", 0.0,2.95, 0.82],
+		 ["utetr2r", -0.64,2.93, 0.82],
+		 
+		 ["utetr1l", 0.64,2.97, 0.60],
+		 ["utetr1", 0.0,2.98, 0.60],
+		 ["utetr1r", -0.64,2.97, 0.60],
+
+		 ["utetr4l", 0.64,2.89, 0.67],
+		 ["utetr4", 0.0,2.89, 0.67],
+		 ["utetr4r", -0.64,2.89, 0.67],
+		 
+		 //rigidifier
+		 {"selfCollision":false},
+		 {"collision":false}
+		 {"nodeWeight":2.4},
+		 ["utetr5", 0.0, 2.2, 0.82],
+		 {"group":""},
+		 //hinge node
+
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":110000,"beamStrength":"FLT_MAX"},
+	      {"beamSpring":1701000,"beamDamp":150}, //beamspring was 2201000, deform 140000
+		  //door main shape
+		  ["utetr1l","utetr1"],
+		  ["utetr1","utetr1r"],
+		  ["utetr2l","utetr2"],
+		  ["utetr2","utetr2r"],
+		  ["utetr3l","utetr3"],
+		  ["utetr3","utetr3r"],
+		  ["utetr5l","utetr5"],
+		  ["utetr5","utetr5r"],
+		  
+		  ["utetr1l","utetr2l"],
+		  ["utetr1","utetr2"],
+		  ["utetr1r","utetr2r"],
+		  ["utetr2l","utetr3l"],
+		  ["utetr2","utetr3"],
+		  ["utetr2r","utetr3r"],
+		  ["utetr3l","utetr4l"],
+		  ["utetr3","utetr4"],
+		  ["utetr3r","utetr4r"],
+		  ["utetr4l","utetr1l"],
+		  ["utetr4","utetr1"],
+		  ["utetr4r","utetr1r"],
+		  {"beamDeform":16000,"beamStrength":"FLT_MAX"},
+		  //corner rigids
+		  ["utetr1l","utetr3l"],
+		  ["utetr1","utetr3"],
+		  ["utetr1r","utetr3r"],
+		  
+		  
+		  //lengthwise
+		  ["utetr1l","utetr1r"],
+		  ["utetr2l","utetr2r"],
+		  ["utetr3l","utetr3r"],
+		  ["utetr4l","utetr4r"],
+
+		  ["utetr2l","utetr4l"],
+		  ["utetr2","utetr4"],
+		  ["utetr2r","utetr4r"],
+
+		  ["utetr1l","utetr3l"],
+		  ["utetr1","utetr3"],
+		  ["utetr1r","utetr3r"],
+		  
+		  {"beamDeform":21000,"beamStrength":"FLT_MAX"},		  
+		  //surficial crossing
+		  ["utetr1l","utetr2"],
+		  ["utetr1","utetr2l"],
+		  ["utetr1","utetr2r"],
+		  ["utetr1r","utetr2"],
+		  ["utetr2l","utetr3"],
+		  ["utetr2","utetr3l"],
+		  ["utetr2","utetr3r"],
+		  ["utetr2r","utetr3"],
+		  ["utetr3l","utetr4"],
+		  ["utetr3","utetr4l"],
+		  ["utetr3","utetr4r"],
+		  ["utetr3r","utetr4"],
+		  ["utetr4l","utetr1"],
+		  ["utetr4","utetr1l"],
+		  ["utetr4","utetr1r"],
+		  ["utetr4r","utetr1"],
+		  
+		  
+		  //rigidifier
+		  {"beamDeform":9000,"beamStrength":"FLT_MAX"},
+		  ["utetr1l","utetr5"],
+		  ["utetr1","utetr5"],
+		  ["utetr1r","utetr5"],
+		  ["utetr2l","utetr5"],
+		  ["utetr2","utetr5"],
+		  ["utetr2r","utetr5"],
+		  ["utetr3l","utetr5"],
+		  ["utetr3","utetr5"],
+		  ["utetr3r","utetr5"],
+		  ["utetr4l","utetr5"],
+		  ["utetr4","utetr5"],
+		  ["utetr4r","utetr5"],
+		  
+		  //hinge
+
+		  
+		  //door support beams
+		  {"beamLimitSpring":1801000,"beamLimitDamp":150},//spring was 22
+		  {"beamType":"|SUPPORT","beamLongBound":8},
+		  {"beamDeform":64000,"beamStrength":400000},
+
+		  {"breakGroupType":1},
+		  {"breakGroup":"moonhawk_ute_trunkhinge_R"},		  
+		  ["utetr3r","tb4rr"],
+		  ["utetr2r","q18r"],
+		  ["utetr3r","tb3r"],
+		  {"breakGroup":"moonhawk_ute_trunkhinge_L"},
+		  ["utetr3l","tb4ll"],
+		  ["utetr2l","q18l"],
+		  ["utetr3l","tb3l"],
+
+		  {"beamType":"|BOUNDED", "beamLongBound":1.75, "beamShortBound":0.95},
+		  {"beamSpring":0,"beamDamp":20},
+		  {"beamLimitSpring":901000,"beamLimitDamp":100},
+		  {"beamDeform":"30000","beamStrength":50000},
+		  {"breakGroupType":1},
+		  {"breakGroup":"moonhawk_ute_trunkhinge_R"},
+		  ["utetr3r","tb3r"],
+		  {"breakGroup":"moonhawk_ute_trunkhinge_L"},
+		  ["utetr3l","tb3l"],
+		  
+		  {"breakGroupType":0},
+		  //door hinge
+		  {"beamSpring":1701000,"beamDamp":150},//spr was 22
+		  {"beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":56000,"beamStrength":72000},
+		  {"breakGroup":"moonhawk_ute_trunkhinge_L"},
+
+		  ["utetr1l","tb4l"],
+		  ["utetr1l","tb5l"],
+		  ["utetr1l","tb5"],
+		  ["utetr1l","b12ll"],
+		  ["utetr1l","b12"],
+		  ["utetr1l","bed5l"],
+		  ["utetr1l","bed5"],
+		 
+
+		  {"breakGroup":"moonhawk_ute_trunkhinge_R"},
+		  ["utetr1r","tb4r"],
+		  ["utetr1r","tb5r"],
+		  ["utetr1r","tb5"],
+		  ["utetr1r","b12rr"],
+		  ["utetr1r","b12"],
+		  ["utetr1r","bed5r"],
+		  ["utetr1r","bed5"],
+		  
+		  
+		  {"breakGroup":"moonhawk_ute_trunklatch_r"},
+		  //--TEMPORARY DOOR LATCH--
+		  {"beamDeform":46000,"beamStrength":15000},
+		  ["utetr3r","tb4rr"],
+		  ["utetr3r","tb3r"],
+		  ["utetr3r","bed5"],
+		  ["utetr3r","bed5r"],
+
+		  {"breakGroup":"moonhawk_ute_trunklatch_l"},
+		  //--TEMPORARY DOOR LATCH--
+		  {"beamDeform":46000,"beamStrength":15000},
+		  ["utetr3l","tb4ll"],
+		  ["utetr3l","tb3l"],
+		  ["utetr3l","bed5"],
+		  ["utetr3l","bed5l"],
+
+		  {"breakGroup":""},
+	]
+    "triangles": [
+			["id1:","id2:","id3:"],
+			{"group":"moonhawk_ute_trunk"},
+			["utetr1r","utetr4","utetr4r"],
+			["utetr4","utetr1r","utetr1"],
+			["utetr4","utetr1","utetr4l"],
+			["utetr4l","utetr1","utetr1l"],
+
+			["utetr4r","utetr3","utetr3r"],
+			["utetr3","utetr4r","utetr4"],
+			["utetr3","utetr4","utetr3l"],
+			["utetr3l","utetr4","utetr4l"],
+
+			["utetr3r","utetr2","utetr2r"],
+			["utetr2","utetr3r","utetr3"],
+			["utetr2","utetr3","utetr2l"],
+			["utetr2l","utetr3","utetr3l"],
+
+			["utetr1r","utetr2r","utetr1"],
+			["utetr1","utetr2r","utetr2"],
+			["utetr1","utetr2","utetr1l"],
+			["utetr1l","utetr2","utetr2l"],
+
+			["utetr3r","utetr2r","utetr4r"],
+			["utetr2r","utetr1r","utetr4r"],
+
+			["utetr3l","utetr4l","utetr1l"],
+			["utetr2l","utetr4l","utetr1l"],
+
+
+			{"group":""},
+	],
+}
+
+
+}

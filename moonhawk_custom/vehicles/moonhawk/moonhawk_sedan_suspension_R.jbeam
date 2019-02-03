@@ -1,0 +1,733 @@
+{
+"moonhawk_sedan_suspension_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Displaced Live Axle Rear Suspension",
+        "value":800,
+    }
+    "slotType" : "moonhawk_sedan_suspension_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["moonhawk_brake_R","moonhawk_brake_R", "Rear Brakes"],
+        ["wheel_R_5","steelwheel_03a_15x7_R", "Rear Wheels", {"nodeOffset":{"x":"$trackwidth_R", "y":1.56, "z":0.32}}],
+        ["moonhawk_wheeldata_R","moonhawk_wheeldata_R", "Rear Spindles"{"coreSlot":true}],
+        ["moonhawk_spring_R","moonhawk_spring_R", "Rear Springs"],
+        ["moonhawk_shock_R","moonhawk_shock_R", "Rear Shocks"],
+        ["moonhawk_swaybar_R","", "Rear Sway Bar"],
+        ["moonhawk_differential_R","moonhawk_differential_R_A", "Rear Differential"],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$trackwidth_R", "range", "m", "Wheels", 0.30, 0.30, 0.35, "Rear Track Width", "Widen or narrow the wheel track"{"stepDis":0.005}]
+        ["$preload_RR", "range", "", "Alignment", 1, 0.98, 1.02, "Rear Right Link Preload", "Percentage of adjustment range"]
+        ["$preload_RL", "range", "", "Alignment", 1, 0.98, 1.02, "Rear Left Link Preload", "Percentage of adjustment range"]
+    ],
+    "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //running gear		 
+		 ["moonhawk_lowerarm_R", ["moonhawk_lowermounts_RR","moonhawk_lowermounts_RL","moonhawk_axle","moonhawk_shockbottom_R"], [], {"pos":{"x":0, "y":0.13, "z":0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["moonhawk_upperarm_RL", ["moonhawk_uppermounts_RL","moonhawk_axle"], [], {"pos":{"x":0, "y":0.13, "z":0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["moonhawk_upperarm_RR", ["moonhawk_uppermounts_RR","moonhawk_axle"], [], {"pos":{"x":0, "y":0.13, "z":0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 
+		 ["moonhawk_axle", ["moonhawk_axle","moonhawk_shockbottom_R","moonhawk_springbottom_R"], [], {"pos":{"x":0, "y":0.13, "z":0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 
+	],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //live axle rear suspension
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":true}
+         {"collision":true}
+         {"nodeWeight":4.75},
+         {"group":"moonhawk_axle"},
+         ["ax1r", -0.71, 1.60, 0.22],
+         ["ax1l", 0.71, 1.60, 0.22],
+         {"selfCollision":false}
+         ["ax2r", -0.71, 1.43, 0.47],
+         ["ax2l", 0.71, 1.43, 0.47],
+         {"selfCollision":true}
+         ["ax3r", -0.71, 1.26, 0.22],
+         ["ax3l", 0.71, 1.26, 0.22],
+         {"nodeWeight":18},
+         ["ax1", 0.0, 1.50, 0.2],
+         {"nodeWeight":18},
+         ["ax3", 0.0, 1.13, 0.32{"group":["moonhawk_axle","moonhawk_upperlinks"]}],
+         {"nodeWeight":7},
+         ["ax4r", -0.08, 1.47, 0.5{"selfCollision":false,"group":["moonhawk_axle","moonhawk_upperlinks"]}],
+         ["ax4l", 0.08, 1.47, 0.5{"selfCollision":false,"group":["moonhawk_axle","moonhawk_upperlinks"]}],
+         {"nodeWeight":6.25},
+         //shock mounting nodes
+         {"group":"moonhawk_shockbottom_R"},
+         {"nodeWeight":7},
+         ["axshr", -0.59, 1.46, 0.23],
+         ["axshl", 0.59, 1.46, 0.23],
+         //spring mounting nodes
+         {"group":"moonhawk_springbottom_R"},
+         {"nodeWeight":2.75},
+         {"selfCollision":false}
+         ["axsr", -0.46, 1.41, 0.37],
+         ["axsl", 0.46, 1.41, 0.37],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //live axle suspension
+          {"beamSpring":10001000,"beamDamp":150},
+          {"beamDeform":150000,"beamStrength":620000},
+          ["ax1r","ax1"],
+          ["ax1l","ax1"],
+          ["ax2r","ax4r"],
+          ["ax2l","ax4l"],
+          ["ax3r","ax3"],
+          ["ax3l","ax3"],
+          ["ax4r","ax4l"],
+          //
+          ["ax1","ax4r"],
+          ["ax1","ax4l"],
+          ["ax1","ax3"],
+          ["ax3","ax4r"],
+          ["ax3","ax4l"],
+          ["ax2r","ax3r"],
+          ["ax2l","ax3l"],
+          ["ax1r","ax3r"],
+          ["ax1l","ax3l"],
+          ["ax1r","ax2r"],
+          ["ax1l","ax2l"],
+          //crossing
+          ["ax2r","ax1"],
+          ["ax2l","ax1"],
+          ["ax3r","ax1"],
+          ["ax3l","ax1"],
+          ["ax3r","ax4r"],
+          ["ax3l","ax4l"],
+          ["ax2r","ax3"],
+          ["ax2l","ax3"],
+          ["ax1r","ax3"],
+          ["ax1l","ax3"],
+          ["ax1r","ax4r"],
+          ["ax1l","ax4l"],
+
+          {"beamSpring":8001000,"beamDamp":150},
+          ["ax2r", "ax2l"],
+          ["ax3r", "ax3l"],
+          ["ax1r", "ax1l"],
+
+          //wheel detach
+          {"optional":true},
+          {"beamSpring":7501000,"beamDamp":100},
+          {"beamDeform":75000,"beamStrength":275000},
+          {"breakGroup":"wheel_RR"},
+          ["ax1r","rw1rr"],
+          ["ax2r","rw1rr"],
+          ["ax3r","rw1rr"],
+          ["rw1r","ax3"],
+          ["rw1r","ax4r"],
+          ["rw1r","axshr"],
+          ["rw1r","ax1", {"name":"axle_RR"}],
+          ["rw1r","ax1r"],
+          ["rw1r","ax2r"],
+          ["rw1r","ax3r"],
+          {"breakGroup":"wheel_RL"},
+          ["ax1l","rw1ll"],
+          ["ax2l","rw1ll"],
+          ["ax3l","rw1ll"],
+          ["rw1l","ax3"],
+          ["rw1l","ax4l"],
+          ["rw1l","axshl"],
+          ["rw1l","ax1", {"name":"axle_RL"}],
+          ["rw1l","ax1l"],
+          ["rw1l","ax2l"],
+          ["rw1l","ax3l"],
+          {"optional":false},
+          {"breakGroup":""},
+
+          //shock mounts
+          {"beamSpring":8001000,"beamDamp":100},
+          {"beamDeform":95000,"beamStrength":356000},
+          ["axshr","ax1r"],
+          ["axshr","ax2r"],
+          ["axshr","ax3r"],
+          ["axshl","ax1l"],
+          ["axshl","ax2l"],
+          ["axshl","ax3l"],
+          
+          {"beamSpring":6001000,"beamDamp":100},
+          ["axshr","ax1"],
+          ["axshr","ax4r"],
+          ["axshr","ax3"],
+          ["axshl","ax1"],
+          ["axshl","ax4l"],
+          ["axshl","ax3"],
+          //spring mounts
+          {"beamSpring":3001000,"beamDamp":100},
+          ["axsl","ax1l"],
+          ["axsl","ax2l"],
+          ["axsl","ax3l"],
+          ["axsl","ax1"],
+          ["axsl","ax4l"],
+          ["axsl","ax3"],
+          ["axsr","ax1r"],
+          ["axsr","ax2r"],
+          ["axsr","ax3r"],
+          ["axsr","ax1"],
+          ["axsr","ax4r"],
+          ["axsr","ax3"],
+
+          ["axshr","axsr"],
+          ["axshl","axsl"],
+
+          //anti shake fore aft
+          {"beamSpring":0,"beamDamp":500},
+          {"optional":true},
+          ["rw1rr","f14rr",{"breakGroup":"wheel_RR","beamDampVelocitySplit":0.05,"beamDampFast":500,"beamDampReboundFast":500,"beamDamp":50,"beamDampRebound":50}],
+          ["rw1ll","f14ll",{"breakGroup":"wheel_RL","beamDampVelocitySplit":0.05,"beamDampFast":500,"beamDampReboundFast":500,"beamDamp":50,"beamDampRebound":50}],
+          ["rw1r","f14rr",{"breakGroup":"wheel_RR","beamDampVelocitySplit":0.05,"beamDampFast":500,"beamDampReboundFast":500,"beamDamp":50,"beamDampRebound":50}],
+          ["rw1l","f14ll",{"breakGroup":"wheel_RL","beamDampVelocitySplit":0.05,"beamDampFast":500,"beamDampReboundFast":500,"beamDamp":50,"beamDampRebound":50}],
+          {"optional":false},
+
+          //locater arms
+          {"beamSpring":20001000,"beamDamp":5000},
+          {"beamDeform":125000,"beamStrength":340300},
+          ["axshr","rx1r"{"beamPrecompression":"$preload_RR","beamPrecompressionTime":0.5,"dampCutoffHz":500}],
+          ["axshl","rx1l"{"beamPrecompression":"$preload_RL","beamPrecompressionTime":0.5,"dampCutoffHz":500}],
+          //upper
+          {"beamSpring":10001000,"beamDamp":5000},
+          ["ax4r","f6r",{"dampCutoffHz":500}],
+          ["ax4l","f6l",{"dampCutoffHz":500}],
+
+          //hard travel limit
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.2, "beamShortBound":0.18},
+          {"beamDeform":125910,"beamStrength":273900},
+          {"beamSpring":0,"beamDamp":0},
+          {"beamLimitSpring":5001000,"beamLimitDamp":5000},
+          ["axshr","rs1r"{"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          ["axshl","rs1l"{"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          ["ax3r","rs1r"{"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          ["ax3l","rs1l"{"beamLimitDampRebound":0,"dampCutoffHz":500}],
+
+          //rear limiters
+          {"optional":true},
+          {"beamPrecompression":1, "beamType":"|SUPPORT", "beamLongBound":1.0},
+          {"beamSpring":2001000,"beamDamp":200},
+          {"beamPrecompression":0.7},
+          {"breakGroupType":1},
+          {"breakGroup":"wheel_RR"},
+          ["rw1rr","q13r"],
+          ["rw1rr","q10r"],
+          {"beamPrecompression":0.8},
+          ["rw1rr","q7r"],
+          ["rw1rr","b4rr"],
+
+          {"breakGroup":"wheel_RL"},
+          {"beamPrecompression":0.7},
+          ["rw1ll","q13l"],
+          ["rw1ll","q10l"],
+          {"beamPrecompression":0.8},
+          ["rw1ll","q7l"],
+          ["rw1ll","b4ll"],
+          {"breakGroup":""},
+          {"breakGroupType":0},
+          {"optional":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            //suspension shape
+            {"triangleType":"NONCOLLIDABLE"},
+            ["ax3r", "ax2r", "ax1r"],
+            ["ax3r", "ax1r", "axshr"],
+            ["ax1", "axshr", "ax1r"],
+            ["ax3", "ax3r", "ax1"],
+            ["axshr", "ax1", "ax3r"],
+            ["axshr", "ax3r", "axsr"],
+
+            ["ax2l", "ax3l", "ax1l"],
+            ["ax1l", "ax3l", "axshl"],
+            ["axshl", "ax1", "ax1l"],
+            ["ax3l", "ax3", "ax1"],
+            ["ax1", "axshl", "ax3l"],
+            ["ax3l", "axshl", "axsl"],
+            ["ax1", "ax3", "ax4r"],
+            ["ax1", "ax3", "ax4l"],
+            {"triangleType":"NORMALTYPE"},
+    ],
+    "pressureWheels": [
+            ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+            //cancel out brake properties
+            {"brakeTorque":0},
+            {"parkingTorque":0},
+            {"enableBrakeThermals":false},
+            {"brakeDiameter":false},
+            {"brakeMass":false},
+            {"brakeType":false},
+            {"rotorMaterial":false},
+            {"brakeVentingCoef":false},
+    ],
+}
+"moonhawk_wheeldata_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Spindles",
+        "value":0,
+    }
+    "slotType" : "moonhawk_wheeldata_R",
+
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //rear
+        {"selfCollision":false}
+        {"collision":true}
+        {"hubcapBreakGroup":"hubcap_RR"},
+        {"hubcapGroup":"hubcap_RR"},
+        {"axleBeams":["axle_RR"]}
+        ["RR", "wheel_RR", "tire_RR", "rw1rr", "rw1r", 9999, "ax3r", 1, {"torqueCoupling:":"ax1", "torqueArm:":"ax3"}],
+        {"hubcapBreakGroup":"hubcap_RL"},
+        {"hubcapGroup":"hubcap_RL"},
+        {"axleBeams":["axle_RL"]}
+        ["RL", "wheel_RL", "tire_RL", "rw1ll", "rw1l", 9999, "ax3l",-1, {"torqueCoupling:":"ax1", "torqueArm:":"ax3"}]
+        {"selfCollision":true}
+        {"axleBeams":[]},{"disableMeshBreaking":false,"disableTriangleBreaking":false}
+        {"enableABS":false}
+        {"hubcapBreakGroup":""},
+        {"hubcapGroup":""},
+        {"enableHubcaps":false},
+        {"enableTireLbeams":false},
+        {"enableTireSideReinfBeams":false},
+        {"enableTireReinfBeams":false},
+        {"enableTreadReinfBeams":false},
+        {"enableTirePeripheryReinfBeams":false},
+        {"loadSensitivitySlope":""},
+        {"noLoadCoef":""},
+        {"fullLoadCoef":""},
+        {"frictionCoef":""},
+        {"slidingFrictionCoef":""},
+        {"softnessCoef":0.5},
+        {"treadCoef":1.0},
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["shaft", "wheelaxleRL", "differential_R", 1, {"connectedWheel":"RL", "breakTriggerBeam":"axle_RL", "uiName":"Rear Left Axle", "friction":2.5}],
+        ["shaft", "wheelaxleRR", "differential_R", 2, {"connectedWheel":"RR", "breakTriggerBeam":"axle_RR", "uiName":"Rear Right Axle", "friction":2.5}],
+    ],
+}
+"moonhawk_spring_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Springs",
+        "value":180,
+    }
+    "slotType" : "moonhawk_spring_R",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["moonhawk_spring_R", ["moonhawk_shocktop_R","moonhawk_springbottom_R"],[],{"pos":{"x":0,"y":0,"z":0}}],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //rear springs
+          {"beamPrecompression":1.49, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamDeform":129426,"beamStrength":208330},
+          {"beamSpring":25000,"beamDamp":0},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          ["axsl","rs1l",{"soundFile":"art/sound/spring_creak.ogg","volumeFactor":5,"decayMode":0,"decayFactor":2,"pitchFactor":1,"maxStress":14500}],
+          ["axsr","rs1r",{"soundFile":"art/sound/spring_compress2.ogg","volumeFactor":0.7,"decayMode":1,"decayFactor":5,"pitchFactor":4,"maxStress":2300}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"moonhawk_spring_R_heavy": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Heavy Duty Rear Springs",
+        "value":220,
+    }
+    "slotType" : "moonhawk_spring_R",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["moonhawk_spring_R", ["moonhawk_shocktop_R","moonhawk_springbottom_R"],[],{"pos":{"x":0,"y":0,"z":0}}],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //rear springs
+          {"beamPrecompression":1.36, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamDeform":129426,"beamStrength":208330},
+          {"beamSpring":32000,"beamDamp":0},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          ["axsl","rs1l",{"soundFile":"art/sound/spring_creak.ogg","volumeFactor":5,"decayMode":0,"decayFactor":2,"pitchFactor":1,"maxStress":16500}],
+          ["axsr","rs1r",{"soundFile":"art/sound/spring_compress2.ogg","volumeFactor":0.7,"decayMode":1,"decayFactor":5,"pitchFactor":4,"maxStress":2500}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"moonhawk_spring_R_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Rear Springs",
+        "value":400,
+    }
+    "slotType" : "moonhawk_spring_R",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["moonhawk_spring_R", ["moonhawk_shocktop_R","moonhawk_springbottom_R"],[],{"pos":{"x":0,"y":0,"z":0}}],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$rideheight_RL", "range", "", "Suspension", 1.12, 1.0, 1.65, "Rear Left Ride Height", "Percentage of adjustment range"]
+        ["$rideheight_RR", "range", "", "Suspension", 1.12, 1.0, 1.65, "Rear Right Ride Height", "Percentage of adjustment range"]
+        ["$spring_RL", "range", "N/m", "Suspension", 61000, 15000, 200000, "Rear Left Spring Rate", "Spring stiffness"{"stepDis":500}]
+        ["$spring_RR", "range", "N/m", "Suspension", 61000, 15000, 200000, "Rear Right Spring Rate", "Spring stiffness"{"stepDis":500}]
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //rear springs
+          {"beamPrecompression":"$rideheight_RL", "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamDeform":129426,"beamStrength":208330},
+          {"beamSpring":"$spring_RL","beamDamp":0},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          ["axsl","rs1l",{"soundFile":"art/sound/spring_creak.ogg","volumeFactor":5,"decayMode":0,"decayFactor":2,"pitchFactor":1,"maxStress":18500}],
+          {"beamSpring":"$spring_RR","beamDamp":0},
+          {"beamPrecompression":"$rideheight_RR"}, 
+          ["axsr","rs1r",{"soundFile":"art/sound/spring_compress2.ogg","volumeFactor":0.7,"decayMode":1,"decayFactor":5,"pitchFactor":4,"maxStress":3700}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"moonhawk_shock_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Shocks",
+        "value":250,
+    }
+    "slotType" : "moonhawk_shock_R",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["moonhawk_shock_R", ["moonhawk_shocktop_R","moonhawk_shockbottom_R"],[],{"pos":{"x":0,"y":0,"z":0}}],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //rear shocks
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamDeform":70470,"beamStrength":175700},
+          {"beamSpring":10,"beamDamp":2500},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          ["axshr","rs1r",{"beamDampFast":1300,"beamDampRebound":4000,"beamDampReboundFast":2000,"beamDampVelocitySplit":0.1,"soundFile":"art/sound/spring_compress.ogg","volumeFactor":1,"minStress":10,"maxStress":50}],
+          ["axshl","rs1l",{"beamDampFast":1300,"beamDampRebound":4000,"beamDampReboundFast":2000,"beamDampVelocitySplit":0.1,"soundFile":"art/sound/spring_compress2.ogg","volumeFactor":1,"minStress":10,"maxStress":50}],
+          //shock and suspension friction
+          {"beamSpring":0,"beamDamp":800000},
+          ["axshr","rs1r",{"beamDampFast":0,"beamDampRebound":800000,"beamDampReboundFast":0,"beamDampVelocitySplit":0.0001}],
+          ["axshl","rs1l",{"beamDampFast":0,"beamDampRebound":800000,"beamDampReboundFast":0,"beamDampVelocitySplit":0.0001}],
+          //bumpstops
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":0.2, "beamShortBound":0.14},
+          {"beamSpring":0,"beamDamp":0},
+          {"beamLimitSpring":3001000,"beamLimitDamp":10000},
+          ["axshr","rs1r"{"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          ["axshl","rs1l"{"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"moonhawk_shock_R_heavy": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Heavy Duty Rear Shocks",
+        "value":300,
+    }
+    "slotType" : "moonhawk_shock_R",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["moonhawk_shock_R", ["moonhawk_shocktop_R","moonhawk_shockbottom_R"],[],{"pos":{"x":0,"y":0,"z":0}}],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //rear shocks
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamDeform":70470,"beamStrength":175700},
+          {"beamSpring":10,"beamDamp":3200},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          ["axshr","rs1r",{"beamDampFast":1600,"beamDampRebound":5000,"beamDampReboundFast":2500,"beamDampVelocitySplit":0.07,"soundFile":"art/sound/spring_compress.ogg","volumeFactor":1,"minStress":10,"maxStress":50}],
+          ["axshl","rs1l",{"beamDampFast":1600,"beamDampRebound":5000,"beamDampReboundFast":2500,"beamDampVelocitySplit":0.07,"soundFile":"art/sound/spring_compress2.ogg","volumeFactor":1,"minStress":10,"maxStress":50}],
+          //shock and suspension friction
+          {"beamSpring":0,"beamDamp":800000},
+          ["axshr","rs1r",{"beamDampFast":0,"beamDampRebound":800000,"beamDampReboundFast":0,"beamDampVelocitySplit":0.0001}],
+          ["axshl","rs1l",{"beamDampFast":0,"beamDampRebound":800000,"beamDampReboundFast":0,"beamDampVelocitySplit":0.0001}],
+          //bumpstops
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":0.2, "beamShortBound":0.18},
+          {"beamSpring":0,"beamDamp":0},
+          {"beamLimitSpring":2001000,"beamLimitDamp":20000},
+          ["axshr","rs1r"{"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          ["axshl","rs1l"{"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"moonhawk_shock_R_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Rear Shocks",
+        "value":500,
+    }
+    "slotType" : "moonhawk_shock_R",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["moonhawk_shock_R", ["moonhawk_shocktop_R","moonhawk_shockbottom_R"],[],{"pos":{"x":0,"y":0,"z":0}}],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$damp_bump_R", "range", "N/m/s", "Suspension", 4900, 500, 15000, "Rear Bump Damping", "Shock stiffness in slow compression"{"stepDis":100}],
+        ["$damp_bump_R_fast", "range", "N/m/s", "Suspension", 1600, 500, 7500, "Rear Fast Bump Damping", "Shock stiffness in fast compression"{"stepDis":100}],
+        ["$damp_rebound_R", "range", "N/m/s", "Suspension", 10000, 500, 20000, "Rear Rebound Damping", "Shock stiffness in slow extension"{"stepDis":100}],
+        ["$damp_rebound_R_fast", "range", "N/m/s", "Suspension", 3300, 500, 10000, "Rear Fast Rebound Damping", "Shock stiffness in fast extension"{"stepDis":100}],
+        ["$damp_knee_R", "range", "m/s", "Suspension", 0.2, 0.0, 0.5, "Rear Damping Knee", "Threshold at which shock transitions between slow and fast damping"],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //rear shocks
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamDeform":69426,"beamStrength":208330},
+          {"beamSpring":0,"beamDamp":"$damp_bump_R"},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          ["axshr","rs1r",{"beamDampRebound":"$damp_rebound_R","beamDampVelocitySplit":"$damp_knee_R","beamDampFast":"$damp_bump_R_fast","beamDampReboundFast":"$damp_rebound_R_fast","dampCutoffHz":500}],
+          ["axshl","rs1l",{"beamDampRebound":"$damp_rebound_R","beamDampVelocitySplit":"$damp_knee_R","beamDampFast":"$damp_bump_R_fast","beamDampReboundFast":"$damp_rebound_R_fast","dampCutoffHz":500}],
+          //shock and suspension friction
+          {"beamSpring":0,"beamDamp":400000},
+          ["axshr","rs1r",{"beamDampFast":0,"beamDampRebound":400000,"beamDampReboundFast":0,"beamDampVelocitySplit":0.0001}],
+          ["axshl","rs1l",{"beamDampFast":0,"beamDampRebound":400000,"beamDampReboundFast":0,"beamDampVelocitySplit":0.0001}],
+          //hard bumpstop
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":0.2, "beamShortBound":0.13},
+          {"beamDeform":69426,"beamStrength":208330},
+          {"beamSpring":0,"beamDamp":0},
+          {"beamLimitSpring":3001000,"beamLimitDamp":20000},
+          ["axshr","rs1r"{"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          ["axshl","rs1l"{"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"moonhawk_swaybar_R_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Rear Sway Bar",
+        "value":550,
+    },
+
+    "slotType" : "moonhawk_swaybar_R",
+
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        //["barstow_swaybar_R", ["barstow_axle_R","barstow_swaybar_R"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //anti-roll
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":""},
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeWeight":2.5},
+         //rear anti-roll
+         ["arbrr", -0.54, 1.45, 0.37],
+         ["arbrl", 0.54, 1.45, 0.37],
+         ["arbr", 0.0, 1.26, 0.5],
+         {"group":""},
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$arb_R", "range", "", "Suspension", 1000000, 250000, 3000000, "Rear Anti-Roll Stiffness", "Torsional spring rate of the sway bar"{"minDis":0}]
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--ANTI-ROLL--
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":5001000,"beamDamp":100},
+          {"beamDeform":52000,"beamStrength":712000},
+          //end links
+          ["arbrr","axshr"],
+          ["arbrl","axshl"],
+          //rigids
+          ["arbrr","f6rr"],
+          ["arbrl","f6ll"],
+          ["arbrr","f6ll"],
+          ["arbrl","f6rr"],
+          ["arbrr","arbrl"],
+          {"beamSpring":"$arb_R","beamDamp":10},
+          //anti-roll
+          ["arbr", "f6rr"],
+          ["arbr", "f6ll"],
+          ["arbr", "arbrr"],
+          ["arbr", "arbrl"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"moonhawk_differential_R_M": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"3.08 Open Rear Differential",
+        "value":350,
+    }
+    "slotType" : "moonhawk_differential_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["moonhawk_driveshaft","moonhawk_driveshaft", "Driveshaft"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        //rear diff
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"open", "gearRatio":3.08, "friction":9, "uiName":"Rear Differential","defaultVirtualInertia":0.25}]
+    ],
+}
+"moonhawk_differential_R_i6": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"2.83 Open Rear Differential",
+        "value":350,
+    }
+    "slotType" : "moonhawk_differential_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["moonhawk_driveshaft","moonhawk_driveshaft", "Driveshaft"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        //rear diff
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"open", "gearRatio":2.83, "friction":9, "uiName":"Rear Differential","defaultVirtualInertia":0.25}]
+    ],
+}
+"moonhawk_differential_R_A": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"2.64 Open Rear Differential",
+        "value":350,
+    }
+    "slotType" : "moonhawk_differential_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["moonhawk_driveshaft","moonhawk_driveshaft", "Driveshaft"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        //rear diff
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"open", "gearRatio":2.64, "friction":9, "uiName":"Rear Differential","defaultVirtualInertia":0.25}]
+    ],
+}
+"moonhawk_differential_R_A_LSD": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"2.83 PlusTrak Limited Slip Rear Differential",
+        "value":600,
+    }
+    "slotType" : "moonhawk_differential_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["moonhawk_driveshaft","moonhawk_driveshaft", "Driveshaft"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        //rear diff
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"lsd", "gearRatio":2.83, "lsdPreload":150, "lsdLockCoef":0.3, "lsdRevLockCoef":0.15, "friction":9, "uiName":"Rear Differential","defaultVirtualInertia":0.25}]
+    ],
+}
+"moonhawk_differential_R_M_LSD": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"3.08 PlusTrak Limited Slip Rear Differential",
+        "value":600,
+    }
+    "slotType" : "moonhawk_differential_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["moonhawk_driveshaft","moonhawk_driveshaft", "Driveshaft"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        //rear diff
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"lsd", "gearRatio":3.08, "lsdPreload":150, "lsdLockCoef":0.3, "lsdRevLockCoef":0.15, "friction":9, "uiName":"Rear Differential","defaultVirtualInertia":0.25}]
+    ],
+}
+"moonhawk_differential_R_welded": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"3.08 Welded Rear Differential",
+        "value":350,
+    }
+    "slotType" : "moonhawk_differential_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["moonhawk_driveshaft","moonhawk_driveshaft", "Driveshaft"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        //rear diff
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"locked", "gearRatio":3.08, "lockTorque":20000, "friction":9, "uiName":"Rear Differential","defaultVirtualInertia":0.25}]
+    ],
+}
+"moonhawk_differential_R_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Limited Slip Rear Differential",
+        "value":350,
+    }
+    "slotType" : "moonhawk_differential_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["moonhawk_driveshaft","moonhawk_driveshaft", "Driveshaft"],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$finaldrive", "range", ":1", "Differentials", 3.08, 2.0, 6.0, "Final Drive Ratio", "Torque multiplication ratio"]
+        ["$lsdpreload_R", "range", "N/m", "Differentials", 150, 0, 500, "Rear LSD Preload", "Initial cross torque between left and right wheels"]
+        ["$lsdlockcoef_R", "range", "", "Differentials", 0.175, 0, 0.5, "Rear LSD Forward Locking", "Locking effect proportional to engine torque", {"minDis":0, "maxDis":100}]
+        ["$lsdlockcoefrev_R", "range", "", "Differentials", 0.175, 0, 0.5, "Rear LSD Reverse Locking", "Locking effect proportional to engine braking", {"minDis":0, "maxDis":100}]
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"lsd", "gearRatio":"$finaldrive", "lsdPreload":"$lsdpreload_R", "lsdLockCoef":"$lsdlockcoef_R", "lsdRevLockCoef":"$lsdlockcoefrev_R", "friction":9, "uiName":"Rear Differential","defaultVirtualInertia":0.25}]
+    ],
+}
+"moonhawk_differential_R_locked": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Locked Rear Differential",
+        "value":350,
+    }
+    "slotType" : "moonhawk_differential_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["moonhawk_driveshaft","moonhawk_driveshaft", "Driveshaft"],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$finaldrive", "range", ":1", "Differentials", 3.08, 2.0, 6.0, "Final Drive Ratio", "Torque multiplication ratio"]
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"locked", "gearRatio":"$finaldrive", "lockTorque":20000, "friction":9, "uiName":"Rear Differential","defaultVirtualInertia":0.25}]
+    ],
+}
+"moonhawk_driveshaft": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Driveshaft",
+        "value":250,
+    }
+    "slotType" : "moonhawk_driveshaft",
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        //rear driveshaft
+        ["torsionReactor", "torsionReactorR", "gearbox", 1, {}]
+        ["shaft", "driveshaft", "torsionReactorR", 1, {"breakTriggerBeam":"driveshaft", "uiName":"Rear Driveshaft", "electricsName":"driveshaft", "friction":1}]
+    ],
+    "torsionReactorR": {
+        "torqueReactionNodes:":["e1l","e2l","e4r"],
+    },
+    "props": [
+        ["func"      , "mesh"               , "idRef:", "idX:", "idY:", "baseRotation"           , "rotation"            , "translation"        , "min", "max", "offset", "multiplier"],
+        ["driveshaft", "moonhawk_driveshaft", "ax3r"  , "ax3l", "tra1", {"x":-86.5, "y":0, "z":0}, {"x":0, "y":1, "z":0} , {"x":0, "y":0, "z":0}, -360 , 360  , 0       , 1           ,{"breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //driveshaft
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.02, "beamShortBound":0.02},
+          {"beamDeform":6000,"beamStrength":7500},
+          {"beamSpring":0,"beamDamp":0},
+          {"beamLimitSpring":5001000,"beamLimitDamp":500},
+          ["ax3","tra1", {"name":"driveshaft","optional":true,"breakGroup":"driveshaft","deformGroup":"driveshaft"}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+}
+}

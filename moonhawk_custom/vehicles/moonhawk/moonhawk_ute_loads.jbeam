@@ -1,0 +1,1100 @@
+{
+"moonhawk_ute_load_carparts": {	
+	"information":{
+		"authors":"AR162b",
+		"name":"Bruckell Moonhawk Ute Bedload Carparts",
+	}
+    "slotType" : "moonhawk_ute_load",
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //body
+		 ["moonhawk_ute_load_enginepallet", ["moonhawk_spareenginecrate"]],
+		 ["moonhawk_ute_load_engine_v8", ["moonhawk_spareengine"]],
+		 ["moonhawk_ute_load_enginerope", ["moonhawk_spareenginerope"]],
+		 ["moonhawk_ute_load_rimrope", ["moonhawk_sparerimrope"]],
+		 //["wheel_04a_15x9", ["moonhawk_body"], [], {"pos":{"x":0.619, "y":2.2, "z":0.745}, "rot":{"x":0, "y":90, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["wheel_04a_15x9", ["moonhawk_sparerimL"], [], {"pos":{"x":0.206, "y":2.2, "z":0.745}, "rot":{"x":0, "y":270, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["wheel_04a_15x9", ["moonhawk_sparerimR"], [], {"pos":{"x":-0.204, "y":2.2, "z":0.745}, "rot":{"x":0, "y":270, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 //["wheel_04a_15x9", ["moonhawk_body"], [], {"pos":{"x":-0.615, "y":2.2, "z":0.745}, "rot":{"x":0, "y":90, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+	 ],
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"nodeWeight":2.5},
+		 {"frictionCoef":0.7},
+
+		 {"nodeWeight":20},
+		 {"group":"moonhawk_spareengine"},
+
+		 {"nodeMaterial":"|NM_METAL"},
+		 ["uteldeng1r", -0.22, 1.29, 0.76],
+
+		 ["uteldeng1l", -0.22, 1.00, 0.76],
+
+		 ["uteldeng2r", 0.22, 1.18, 0.81],
+
+		 ["uteldeng2l", 0.22, 1.01, 0.81],
+
+		 ["uteldeng3r", -0.23, 1.41, 1.21],
+		 ["uteldeng3l", -0.23, 0.78, 1.21],
+
+
+		 ["uteldeng4r", 0.21, 1.41, 1.21],
+
+		 ["uteldeng4l", 0.23, 0.78, 1.21],
+		 ["uteldeng5", -0.01, 1.09, 1.39],
+
+
+
+
+
+		 {"nodeWeight":1.1},
+		 {"group":"moonhawk_spareenginerope"},
+
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"selfCollision":false}
+
+		 ["uteldengrp1", 0.84, 1.10, 0.65],
+
+
+
+
+		 ["uteldengrp2r", 0.45, 1.17, 0.99],
+
+
+
+
+		 ["uteldengrp2l", 0.45, 1.03, 0.99],
+
+
+
+
+
+
+
+
+		 ["uteldengrp3r", -0.45, 1.17, 0.99],
+
+
+
+
+		 ["uteldengrp3l", -0.45, 1.03, 0.99],
+
+
+
+
+		 ["uteldengrp4", -0.84, 1.10, 0.65],
+
+
+
+
+
+		 {"nodeWeight":1.5},
+		 {"group":"moonhawk_spareenginecrate"},
+
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"selfCollision":true}
+
+		 ["uteldengct1", -0.38, 0.74, 0.73],
+
+
+
+
+		 ["uteldengct2", 0.30, 0.74, 0.73],
+
+
+
+
+		 ["uteldengct3", 0.30, 1.43, 0.73],
+
+
+
+
+		 ["uteldengct4", -0.38, 1.43, 0.73],
+
+
+
+
+
+
+
+
+		 ["uteldengct11", -0.38, 0.74, 0.68],
+
+
+
+
+		 ["uteldengct12", 0.30, 0.74, 0.68],
+
+
+
+
+		 ["uteldengct13", 0.30, 1.43, 0.68],
+
+
+
+
+		 ["uteldengct14", -0.38, 1.43, 0.68],
+
+		 {"nodeWeight":0.8},
+		 {"group":"moonhawk_sparerimrope"},
+
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"selfCollision":false}
+
+		 ["uteldrimrp1", 0.82, 2.22, 0.65],
+
+
+
+
+		 ["uteldrimrp2", 0.41, 2.17, 0.87],
+
+
+
+
+		 ["uteldrimrp3", 0.0, 2.23, 0.88],
+
+
+
+
+		 ["uteldrimrp4", -0.41, 2.17, 0.87],
+
+
+
+
+		 ["uteldrimrp5", -0.82, 2.22, 0.65],
+		 //stupid extra VY node
+		 ["uteldrimrp6", 0.0, -2.0, 0.45],
+
+		 {"selfCollision":true}
+		 {"nodeWeight":2},
+
+
+		 {"group":"moonhawk_sparerimR"},
+
+		 {"nodeMaterial":"|NM_METAL"},
+		 ["uteldriml_1", -0.21, 2.0, 0.85],
+
+		 ["uteldriml_2", -0.02, 2.2, 0.85],
+
+		 ["uteldriml_3", -0.21, 2.4, 0.85],
+
+		 ["uteldriml_4", -0.41, 2.2, 0.85],
+
+		 ["uteldriml_11", -0.21, 2.0, 0.68],
+
+		 ["uteldriml_12", -0.02, 2.2, 0.68],
+
+		 ["uteldriml_13", -0.21, 2.4, 0.68],
+
+		 ["uteldriml_14", -0.41, 2.2, 0.68],
+
+
+		 {"group":"moonhawk_sparerimL"},
+
+		 {"nodeMaterial":"|NM_METAL"},
+		 ["uteldrimr_1", 0.21, 2.0, 0.85],
+
+		 ["uteldrimr_2", 0.02, 2.2, 0.85],
+
+		 ["uteldrimr_3", 0.21, 2.4, 0.85],
+
+		 ["uteldrimr_4", 0.41, 2.2, 0.85],
+
+		 ["uteldrimr_11", 0.21, 2.0, 0.68],
+
+		 ["uteldrimr_12", 0.02, 2.2, 0.68],
+
+		 ["uteldrimr_13", 0.21, 2.4, 0.68],
+
+		 ["uteldrimr_14", 0.41, 2.2, 0.68],
+
+
+
+		 {"group":""},
+
+
+	
+
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamSpring":2801000,"beamDamp":80},
+		  {"beamDeform":95000,"beamStrength":"FLT_MAX"},
+		  ["uteldeng1r","uteldeng1l"],
+		  ["uteldeng2r","uteldeng2l"],
+		  ["uteldeng3r","uteldeng3l"],
+		  ["uteldeng4r","uteldeng4l"],
+
+		  ["uteldeng1r","uteldeng2r"],
+		  ["uteldeng2r","uteldeng3r"],
+		  ["uteldeng3r","uteldeng4r"],
+		  ["uteldeng4r","uteldeng1r"],
+
+		  ["uteldeng1r","uteldeng3r"],
+		  ["uteldeng2r","uteldeng4r"],
+
+		  ["uteldeng1l","uteldeng2l"],
+		  ["uteldeng2l","uteldeng3l"],
+		  ["uteldeng3l","uteldeng4l"],
+		  ["uteldeng4l","uteldeng1l"],
+
+		  ["uteldeng1l","uteldeng3l"],
+		  ["uteldeng2l","uteldeng4l"],
+
+
+		  ["uteldeng1r","uteldeng2l"],
+		  ["uteldeng2r","uteldeng3l"],
+		  ["uteldeng3r","uteldeng4l"],
+		  ["uteldeng4r","uteldeng1l"],
+
+		  ["uteldeng2r","uteldeng1l"],
+		  ["uteldeng3r","uteldeng2l"],
+		  ["uteldeng4r","uteldeng3l"],
+		  ["uteldeng1r","uteldeng4l"],
+
+		  {"beamSpring":801000,"beamDamp":80},
+		  {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+		  ["uteldeng1r","uteldeng5"],
+		  ["uteldeng2r","uteldeng5"],
+		  ["uteldeng3r","uteldeng5"],
+		  ["uteldeng4r","uteldeng5"],
+		  ["uteldeng1l","uteldeng5"],
+		  ["uteldeng2l","uteldeng5"],
+		  ["uteldeng3l","uteldeng5"],
+		  ["uteldeng4l","uteldeng5"],
+
+		  {"beamSpring":201000,"beamDamp":80},
+		  {"beamDeform":60000,"beamStrength":"FLT_MAX"},
+
+		  ["uteldeng4r","uteldengrp2r"],
+		  ["uteldeng4l","uteldengrp2l"],
+		  ["uteldeng3r","uteldengrp3r"],
+		  ["uteldeng3l","uteldengrp3l"],
+		  ["uteldengrp2r","uteldengrp1"],
+		  ["uteldengrp2l","uteldengrp1"],
+		  ["uteldengrp3r","uteldengrp4"],
+		  ["uteldengrp3l","uteldengrp4"],
+
+		  {"beamSpring":41000,"beamDamp":30},
+		  {"beamDeform":60000,"beamStrength":"FLT_MAX"},
+
+		  ["uteldeng4r","uteldengrp2l"],
+		  ["uteldeng4l","uteldengrp2r"],
+		  ["uteldeng3r","uteldengrp3l"],
+		  ["uteldeng3l","uteldengrp3r"],
+		  ["uteldeng2r","uteldengrp2r"],
+		  ["uteldeng2l","uteldengrp2l"],
+		  ["uteldeng1r","uteldengrp3r"],
+		  ["uteldeng1l","uteldengrp3l"],
+
+		  {"beamSpring":1201000,"beamDamp":80},
+		  {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+		  ["uteldengct1","uteldengct2"],
+		  ["uteldengct2","uteldengct3"],
+		  ["uteldengct3","uteldengct4"],
+		  ["uteldengct4","uteldengct1"],
+
+		  ["uteldengct11","uteldengct12"],
+		  ["uteldengct12","uteldengct13"],
+		  ["uteldengct13","uteldengct14"],
+		  ["uteldengct14","uteldengct11"],
+
+		  ["uteldengct1","uteldengct11"],
+		  ["uteldengct2","uteldengct12"],
+		  ["uteldengct3","uteldengct13"],
+		  ["uteldengct4","uteldengct14"],
+
+		  ["uteldengct1","uteldengct12"],
+		  ["uteldengct2","uteldengct13"],
+		  ["uteldengct3","uteldengct14"],
+		  ["uteldengct4","uteldengct11"],
+
+		  ["uteldengct1","uteldengct14"],
+		  ["uteldengct2","uteldengct11"],
+		  ["uteldengct3","uteldengct12"],
+		  ["uteldengct4","uteldengct13"],
+
+		  {"beamSpring":801000,"beamDamp":80},
+		  {"beamDeform":9000,"beamStrength":"FLT_MAX"},
+		  ["uteldengct1","uteldengct3"],
+		  ["uteldengct2","uteldengct4"],
+		  ["uteldengct11","uteldengct13"],
+		  ["uteldengct12","uteldengct14"],
+
+		  {"beamSpring":1201000,"beamDamp":120},
+		  {"beamDeform":29000,"beamStrength":18000},//st 14000
+		  {"breakGroup":"moonhawk_spareengine"},
+		  {"breakGroupType":0},
+		  //["uteldengct1","bed2rr"],
+		  //["uteldengct1","bed2"],
+		  ["uteldengct1","b6rr"],
+		  ["uteldengct1","b6"],
+		  ["uteldengct1","b5rr"],
+		  ["uteldengct1","b5"],
+		  ["uteldengct4","bed2rr"],
+		  ["uteldengct4","bed2"],
+		  //["uteldengct4","b6rr"],
+		  //["uteldengct4","b6"],
+		  ["uteldengct2","bed2ll"],
+		  ["uteldengct2","bed5ll"],
+		  ["uteldengct2","bed5"],
+		  //["uteldengct2","bed2"],
+		  //["uteldengct2","b6ll"],
+		  ["uteldengct2","b6"],
+		  ["uteldengct3","bed2ll"],
+		  //["uteldengct3","bed2"],
+		  //["uteldengct3","b6ll"],
+		  ["uteldengct3","b6"],
+
+		  ["uteldengct11","bed2rr"],
+		  ["uteldengct11","bed2"],
+		  ["uteldengct11","b5rr"],
+		  ["uteldengct11","b5"],
+		  ["uteldengct14","bed2rr"],
+		  ["uteldengct14","bed2"],
+		  ["uteldengct14","b5rr"],
+		  ["uteldengct14","b5"],
+		  ["uteldengct12","bed2ll"],
+		  ["uteldengct12","bed2"],
+		  ["uteldengct12","b5ll"],
+		  ["uteldengct12","b5"],
+		  ["uteldengct13","bed2ll"],
+		  ["uteldengct13","bed2"],
+		  ["uteldengct13","b5ll"],
+		  ["uteldengct13","b5"],
+
+		  {"beamSpring":201000,"beamDamp":50},
+		  {"beamDeform":10000,"beamStrength":20000},
+
+		  //["uteldeng1r","bed2rr"],
+		  //["uteldeng1r","bed2"],
+		  ["uteldeng1r","b6rr"],
+		  ["uteldeng1r","b6"],
+		  //["uteldeng1l","bed2rr"],
+		  //["uteldeng1l","bed2"],
+		  ["uteldeng1l","b6rr"],
+		  ["uteldeng1l","b6"],
+		  //["uteldeng2r","bed2ll"],
+		  //["uteldeng2r","bed2"],
+		  ["uteldeng2r","b6ll"],
+		  ["uteldeng2r","b6"],
+		  //["uteldeng2l","bed2ll"],
+		  //["uteldeng2l","bed2"],
+		  ["uteldeng2l","b6ll"],
+		  ["uteldeng2l","b6"],
+
+		  ["uteldeng1r","uteldengct11"],
+		  ["uteldeng1r","uteldengct12"],
+		  ["uteldeng1r","uteldengct13"],
+		  ["uteldeng1r","uteldengct14"],
+		  ["uteldeng1l","uteldengct11"],
+		  ["uteldeng1l","uteldengct12"],
+		  ["uteldeng1l","uteldengct13"],
+		  ["uteldeng1l","uteldengct14"],
+		  ["uteldeng2r","uteldengct11"],
+		  ["uteldeng2r","uteldengct12"],
+		  ["uteldeng2r","uteldengct13"],
+		  ["uteldeng2r","uteldengct14"],
+		  ["uteldeng1l","uteldengct11"],
+		  ["uteldeng1l","uteldengct12"],
+		  ["uteldeng1l","uteldengct13"],
+		  ["uteldeng1l","uteldengct14"],
+
+		  ["uteldengrp1","bed2ll"],
+		  ["uteldengrp1","b6ll"],
+		  ["uteldengrp1","b5ll"],
+		  ["uteldengrp1","q8lll"],//!
+		  ["uteldengrp1","56ll"],//!
+		  ["uteldengrp4","bed2rr"],
+		  ["uteldengrp4","b6rr"],
+		  ["uteldengrp5","b5rr"],
+		  ["uteldengrp4","q8rr"],//!
+		  ["uteldengrp4","56rr"],//!
+
+		  {"beamSpring":701000,"beamDamp":80},
+		  {"beamDeform":14000,"beamStrength":15000},
+
+		  ["uteldeng3r","bed2rr"],
+		  ["uteldeng3r","bed2"],
+		  ["uteldeng3r","b6rr"],
+		  ["uteldeng3l","bed2rr"],
+		  ["uteldeng3l","bed2"],
+		  ["uteldeng3l","b6rr"],
+		  ["uteldeng4r","bed2ll"],
+		  ["uteldeng4r","bed2"],
+		  ["uteldeng4r","b6ll"],
+		  ["uteldeng4l","bed2ll"],
+		  ["uteldeng4l","bed2"],
+		  ["uteldeng4l","b6ll"],
+
+
+		  {"beamSpring":1201000,"beamDamp":90},
+		  {"beamDeform":29000,"beamStrength":"FLT_MAX"},
+		  {"breakGroup":""},
+		  ["uteldrimrr_1","uteldrimrr_2"],
+		  ["uteldrimrr_2","uteldrimrr_3"],
+		  ["uteldrimrr_3","uteldrimrr_4"],
+		  ["uteldrimrr_4","uteldrimrr_1"],
+		  ["uteldrimrr_11","uteldrimrr_12"],
+		  ["uteldrimrr_12","uteldrimrr_13"],
+		  ["uteldrimrr_13","uteldrimrr_14"],
+		  ["uteldrimrr_14","uteldrimrr_11"],
+
+		  ["uteldrimrr_1","uteldrimrr_11"],
+		  ["uteldrimrr_2","uteldrimrr_12"],
+		  ["uteldrimrr_3","uteldrimrr_13"],
+		  ["uteldrimrr_4","uteldrimrr_14"],
+
+		  ["uteldrimrr_1","uteldrimrr_12"],
+		  ["uteldrimrr_2","uteldrimrr_13"],
+		  ["uteldrimrr_3","uteldrimrr_14"],
+		  ["uteldrimrr_4","uteldrimrr_11"],
+
+		  ["uteldrimrr_2","uteldrimrr_11"],
+		  ["uteldrimrr_3","uteldrimrr_12"],
+		  ["uteldrimrr_4","uteldrimrr_13"],
+		  ["uteldrimrr_1","uteldrimrr_14"],
+
+		  ["uteldrimrr_1","uteldrimrr_3"],
+		  ["uteldrimrr_2","uteldrimrr_4"],
+		  ["uteldrimrr_11","uteldrimrr_13"],
+		  ["uteldrimrr_12","uteldrimrr_14"],
+
+
+		  ["uteldrimr_1","uteldrimr_2"],
+		  ["uteldrimr_2","uteldrimr_3"],
+		  ["uteldrimr_3","uteldrimr_4"],
+		  ["uteldrimr_4","uteldrimr_1"],
+		  ["uteldrimr_11","uteldrimr_12"],
+		  ["uteldrimr_12","uteldrimr_13"],
+		  ["uteldrimr_13","uteldrimr_14"],
+		  ["uteldrimr_14","uteldrimr_11"],
+
+		  ["uteldrimr_1","uteldrimr_11"],
+		  ["uteldrimr_2","uteldrimr_12"],
+		  ["uteldrimr_3","uteldrimr_13"],
+		  ["uteldrimr_4","uteldrimr_14"],
+
+		  ["uteldrimr_1","uteldrimr_12"],
+		  ["uteldrimr_2","uteldrimr_13"],
+		  ["uteldrimr_3","uteldrimr_14"],
+		  ["uteldrimr_4","uteldrimr_11"],
+
+		  ["uteldrimr_2","uteldrimr_11"],
+		  ["uteldrimr_3","uteldrimr_12"],
+		  ["uteldrimr_4","uteldrimr_13"],
+		  ["uteldrimr_1","uteldrimr_14"],
+
+		  ["uteldrimr_1","uteldrimr_3"],
+		  ["uteldrimr_2","uteldrimr_4"],
+		  ["uteldrimr_11","uteldrimr_13"],
+		  ["uteldrimr_12","uteldrimr_14"],
+
+
+		  ["uteldriml_1","uteldriml_2"],
+		  ["uteldriml_2","uteldriml_3"],
+		  ["uteldriml_3","uteldriml_4"],
+		  ["uteldriml_4","uteldriml_1"],
+		  ["uteldriml_11","uteldriml_12"],
+		  ["uteldriml_12","uteldriml_13"],
+		  ["uteldriml_13","uteldriml_14"],
+		  ["uteldriml_14","uteldriml_11"],
+
+		  ["uteldriml_1","uteldriml_11"],
+		  ["uteldriml_2","uteldriml_12"],
+		  ["uteldriml_3","uteldriml_13"],
+		  ["uteldriml_4","uteldriml_14"],
+
+		  ["uteldriml_1","uteldriml_12"],
+		  ["uteldriml_2","uteldriml_13"],
+		  ["uteldriml_3","uteldriml_14"],
+		  ["uteldriml_4","uteldriml_11"],
+
+		  ["uteldriml_2","uteldriml_11"],
+		  ["uteldriml_3","uteldriml_12"],
+		  ["uteldriml_4","uteldriml_13"],
+		  ["uteldriml_1","uteldriml_14"],
+
+		  ["uteldriml_1","uteldriml_3"],
+		  ["uteldriml_2","uteldriml_4"],
+		  ["uteldriml_11","uteldriml_13"],
+		  ["uteldriml_12","uteldriml_14"],
+
+
+		  ["uteldrimll_1","uteldrimll_2"],
+		  ["uteldrimll_2","uteldrimll_3"],
+		  ["uteldrimll_3","uteldrimll_4"],
+		  ["uteldrimll_4","uteldrimll_1"],
+		  ["uteldrimll_11","uteldrimll_12"],
+		  ["uteldrimll_12","uteldrimll_13"],
+		  ["uteldrimll_13","uteldrimll_14"],
+		  ["uteldrimll_14","uteldrimll_11"],
+
+		  ["uteldrimll_1","uteldrimll_11"],
+		  ["uteldrimll_2","uteldrimll_12"],
+		  ["uteldrimll_3","uteldrimll_13"],
+		  ["uteldrimll_4","uteldrimll_14"],
+
+		  ["uteldrimll_1","uteldrimll_12"],
+		  ["uteldrimll_2","uteldrimll_13"],
+		  ["uteldrimll_3","uteldrimll_14"],
+		  ["uteldrimll_4","uteldrimll_11"],
+
+		  ["uteldrimll_2","uteldrimll_11"],
+		  ["uteldrimll_3","uteldrimll_12"],
+		  ["uteldrimll_4","uteldrimll_13"],
+		  ["uteldrimll_1","uteldrimll_14"],
+
+		  ["uteldrimll_1","uteldrimll_3"],
+		  ["uteldrimll_2","uteldrimll_4"],
+		  ["uteldrimll_11","uteldrimll_13"],
+		  ["uteldrimll_12","uteldrimll_14"],
+
+		  {"beamSpring":701000,"beamDamp":50},
+		  {"beamDeform":29000,"beamStrength":"FLT_MAX"},
+		  {"breakGroup":""},
+		  ["uteldrimrp1","uteldrimrp2"],
+		  ["uteldrimrp2","uteldrimrp3"],
+		  ["uteldrimrp3","uteldrimrp4"],
+		  ["uteldrimrp4","uteldrimrp5"],
+
+		  ["uteldrimrp6","f22r"],
+		  ["uteldrimrp6","f22l"],
+		  ["uteldrimrp6","f23r"],
+		  ["uteldrimrp6","f23l"],
+
+
+
+		  {"beamSpring":501000,"beamDamp":80},
+		  {"beamDeform":27000,"beamStrength":"3600"},
+		  {"breakGroup":"moonhawk_sparerims"},
+		  {"breakGroupType":0},
+
+
+		  ["uteldrimr_1","b8rr"],
+		  ["uteldrimr_1","b8"],
+		  //["uteldrimr_11","b8rr"],
+		  //["uteldrimr_11","b8"],
+		  ["uteldrimr_1","b7rr"],
+		  ["uteldrimr_1","b7"],
+
+
+		  ["uteldrimr_2","b8rr"],
+		  ["uteldrimr_2","b8"],
+		  ["uteldrimr_2","b7rr"],
+		  ["uteldrimr_2","b7"],
+
+		  ["uteldrimr_3","b8rr"],
+		  ["uteldrimr_3","b8"],
+		  ["uteldrimr_3","b7rr"],
+		  ["uteldrimr_3","b7"],
+
+		  ["uteldrimr_4","b8rr"],
+		  ["uteldrimr_4","b8"],
+		  ["uteldrimr_4","b7rr"],
+		  ["uteldrimr_4","b7"],
+
+
+
+
+
+		  {"beamStrength":"3600"},
+		  ["uteldriml_1","b8ll"],
+		  ["uteldriml_1","b8"],
+		  //["uteldriml_11","b8ll"],
+		  //["uteldriml_11","b8"],
+		  ["uteldriml_1","b7ll"],
+		  ["uteldriml_1","b7"],
+
+		  ["uteldriml_2","b8ll"],
+		  ["uteldriml_2","b8"],
+		  ["uteldriml_2","b7ll"],
+		  ["uteldriml_2","b7"],
+
+		  ["uteldriml_3","b8ll"],
+		  ["uteldriml_3","b8"],
+		  ["uteldriml_3","b7ll"],
+		  ["uteldriml_3","b7"],
+
+		  ["uteldriml_4","b8ll"],
+		  ["uteldriml_4","b8"],
+		  ["uteldriml_4","b7ll"],
+		  ["uteldriml_4","b7"],
+
+
+		  {"beamSpring":101000,"beamDamp":50},
+		  {"breakGroupType":1},
+		  ["uteldrimrp5","bed3rr"],
+		  ["uteldrimrp5","bed3"],
+		  //["uteldrimrp5","bed3rr"],
+		  ["uteldrimrp5","b8rr"],//!
+
+		  ["uteldrimrp1","bed3ll"],
+		  ["uteldrimrp1","bed3"],
+		  //["uteldrimrp1","bed3ll"],
+		  ["uteldrimrp1","b8ll"],//!
+
+		  ["uteldrimrp2","uteldriml_11"],
+		  ["uteldrimrp2","uteldriml_13"],
+		  ["uteldrimrp2","uteldriml_1"],
+		  ["uteldrimrp2","uteldriml_4"],
+
+		  ["uteldrimrp4","uteldrimr_11"],
+		  ["uteldrimrp4","uteldrimr_13"],
+		  ["uteldrimrp4","uteldrimr_1"],
+		  ["uteldrimrp4","uteldrimr_4"],
+
+		  ["uteldrimrp3","uteldrimr_11"],
+		  ["uteldrimrp3","uteldrimr_12"],
+		  ["uteldrimrp3","uteldrimr_13"],
+		  ["uteldrimrp3","uteldrimr_14"],
+
+		  ["uteldrimrp3","uteldriml_11"],
+		  ["uteldrimrp3","uteldriml_12"],
+		  ["uteldrimrp3","uteldriml_13"],
+		  ["uteldrimrp3","uteldriml_14"],
+
+		  {"breakGroup":""},
+
+		  
+	]
+    "triangles": [
+			["id1:","id2:","id3:"],
+			{"group":"moonhawk_spareengine"},
+			["uteldeng1r","uteldeng3r","uteldeng2r"],
+			["uteldeng2r","uteldeng3r","uteldeng4r"],
+			["uteldeng1r","uteldeng2r","uteldeng1l"],
+			["uteldeng1l","uteldeng2r","uteldeng2l"],
+			["uteldeng1l","uteldeng2l","uteldeng3l"],
+			["uteldeng2l","uteldeng4l","uteldeng3l"],
+			["uteldeng1l","uteldeng3l","uteldeng3r"],
+			["uteldeng1l","uteldeng3r","uteldeng1r"],
+			["uteldeng2r","uteldeng4r","uteldeng4l"],
+			["uteldeng2r","uteldeng4l","uteldeng2l"],
+			["uteldeng3r","uteldeng3l","uteldeng5"],
+			["uteldeng3l","uteldeng4l","uteldeng5"],
+			["uteldeng4l","uteldeng4r","uteldeng5"],
+			["uteldeng4r","uteldeng3r","uteldeng5"],
+
+			{"group":"moonhawk_spareenginecrate"},
+			["uteldengct1","uteldengct2","uteldengct4"],
+			["uteldengct2","uteldengct3","uteldengct4"],
+			["uteldengct11","uteldengct14","uteldengct12"],
+			["uteldengct12","uteldengct14","uteldengct13"],
+
+			["uteldengct1","uteldengct12","uteldengct2"],
+			["uteldengct1","uteldengct11","uteldengct12"],
+			["uteldengct2","uteldengct13","uteldengct3"],
+			["uteldengct2","uteldengct12","uteldengct13"],
+			["uteldengct3","uteldengct14","uteldengct4"],
+			["uteldengct3","uteldengct13","uteldengct14"],
+			["uteldengct4","uteldengct11","uteldengct1"],
+			["uteldengct4","uteldengct14","uteldengct11"],
+
+
+
+
+			{"group":"moonhawk_sparerimL"},
+			["uteldriml_1","uteldriml_2","uteldriml_4"],
+			["uteldriml_2","uteldriml_3","uteldriml_4"],
+			["uteldriml_11","uteldriml_14","uteldriml_12"],
+			["uteldriml_12","uteldriml_14","uteldriml_13"],
+
+			["uteldriml_1","uteldriml_12","uteldriml_2"],
+			["uteldriml_1","uteldriml_11","uteldriml_12"],
+			["uteldriml_2","uteldriml_13","uteldriml_3"],
+			["uteldriml_2","uteldriml_12","uteldriml_13"],
+			["uteldriml_3","uteldriml_14","uteldriml_4"],
+			["uteldriml_3","uteldriml_13","uteldriml_14"],
+			["uteldriml_4","uteldriml_11","uteldriml_1"],
+			["uteldriml_4","uteldriml_14","uteldriml_11"],
+
+			{"group":"moonhawk_sparerimR"},
+			["uteldrimr_1","uteldrimr_4","uteldrimr_2"],
+			["uteldrimr_2","uteldrimr_4","uteldrimr_3"],
+			["uteldrimr_11","uteldrimr_12","uteldrimr_14"],
+			["uteldrimr_12","uteldrimr_13","uteldrimr_14"],
+
+			["uteldrimr_1","uteldrimr_2","uteldrimr_12"],
+			["uteldrimr_1","uteldrimr_12","uteldrimr_11"],
+			["uteldrimr_2","uteldrimr_3","uteldrimr_13"],
+			["uteldrimr_2","uteldrimr_13","uteldrimr_12"],
+			["uteldrimr_3","uteldrimr_4","uteldrimr_14"],
+			["uteldrimr_3","uteldrimr_14","uteldrimr_13"],
+			["uteldrimr_4","uteldrimr_1","uteldrimr_11"],
+			["uteldrimr_4","uteldrimr_11","uteldrimr_14"],
+
+
+
+			{"group":""},
+
+		
+	],
+}
+
+"moonhawk_ute_load_surfboard": {	
+	"information":{
+		"authors":"AR162b",
+		"name":"Bruckell Moonhawk Ute Bedload Surfboard",
+	}
+    "slotType" : "moonhawk_ute_load",
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //body
+		 ["moonhawk_ute_load_surfboard", ["moonhawk_ute_surfboard"]],
+		 ["moonhawk_ute_load_surfboardfin", ["moonhawk_ute_surfboard"]],
+		 ["moonhawk_ute_load_surfboardrope1", ["moonhawk_ute_surfboardrope1","moonhawk_ute_surfboard"]],
+		 ["moonhawk_ute_load_surfboardrope2", ["moonhawk_ute_surfboardrope2","moonhawk_ute_surfboard"]],
+
+	 ],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"collision":true}
+		 {"selfCollision":true}
+		 {"nodeWeight":0.4},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"group":"moonhawk_ute_surfboard"},
+
+		 ["utesb01", -0.39, 0.81, 0.70],
+
+		 ["utesb02u", -0.08, 1.35, 0.71],
+		 ["utesb02d", -0.08, 1.35, 0.68],
+		 ["utesb02r", -0.21, 1.44, 0.70],
+		 ["utesb02l", 0.05, 1.28, 0.69],
+
+		 ["utesb03u", 0.17, 1.81, 0.72],
+		 ["utesb03d", 0.17, 1.81, 0.68],
+		 ["utesb03l", 0.42, 1.75, 0.69],
+		 ["utesb03r", 0.02, 1.94, 0.69],
+
+		 ["utesb04u", 0.48, 2.35, 0.71],
+		 ["utesb04d", 0.48, 2.35, 0.68],
+		 ["utesb04l", 0.65, 2.27, 0.69],
+		 ["utesb04r", 0.33, 2.45, 0.69],
+
+		 ["utesb05", 0.63, 2.61, 0.68],
+		 //fin
+		 ["utesb06", 0.58, 2.52, 0.76],
+
+		 //stiffner
+		 {"collision":false}
+		 {"selfCollision":false}
+		 ["utesb08", 0.17, 1.81, 1.5],
+		 ["utesb09", 0.17, 1.81, 0.1],
+
+
+		 {"collision":true}
+		 {"selfCollision":false}
+
+		 {"group":"moonhawk_ute_surfboardrope1"},
+
+		 ["utesbrp1rr", -0.84, 1.17, 0.64],
+		 ["utesbrp1r", -0.17, 1.17, 0.70],
+		 ["utesbrp1l", 0.40, 1.17, 0.66],
+		 ["utesbrp1ll", 0.84, 1.17, 0.64],
+
+		 {"group":"moonhawk_ute_surfboardrope2"},
+
+		 ["utesbrp2rr", -0.84, 2.03, 0.64],
+		 ["utesbrp2r", -0.39, 2.03, 0.70],
+		 ["utesbrp2l", 0.30, 2.03, 0.66],
+		 ["utesbrp2ll", 0.84, 2.03, 0.64],
+
+		 {"group":""},
+
+
+
+
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamlongBound":1.0, "beamShortBound":1.0},
+		  //surfboard
+		  {"beamSpring":120000,"beamDamp":100},//was300000
+		  {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+
+		  //length
+		  ["utesb01","utesb02u"],
+		  ["utesb01","utesb02d"],
+		  ["utesb01","utesb02l"],
+		  ["utesb01","utesb02r"],
+
+		  ["utesb02u","utesb03u"],
+		  ["utesb02d","utesb03d"],
+		  ["utesb02l","utesb03l"],
+		  ["utesb02r","utesb03r"],
+
+		  ["utesb03u","utesb04u"],
+		  ["utesb03d","utesb04d"],
+		  ["utesb03l","utesb04l"],
+		  ["utesb03r","utesb04r"],
+
+		  ["utesb04u","utesb05"],
+		  ["utesb04d","utesb05"],
+		  ["utesb04l","utesb05"],
+		  ["utesb04r","utesb05"],
+
+		  ["utesb01","utesb03u"],
+		  ["utesb01","utesb03d"],
+		  ["utesb01","utesb03l"],
+		  ["utesb01","utesb03r"],
+
+		  ["utesb03u","utesb05"],
+		  ["utesb03d","utesb05"],
+		  ["utesb03l","utesb05"],
+		  ["utesb03r","utesb05"],
+
+		  ["utesb01","utesb05"],
+
+		  //width
+		  ["utesb02u","utesb02l"],
+		  ["utesb02u","utesb02r"],
+		  ["utesb02d","utesb02l"],
+		  ["utesb02d","utesb02r"],
+
+		  ["utesb03u","utesb03l"],
+		  ["utesb03u","utesb03r"],
+		  ["utesb03d","utesb03l"],
+		  ["utesb03d","utesb03r"],
+
+
+		  ["utesb04u","utesb04l"],
+		  ["utesb04u","utesb04r"],
+		  ["utesb04d","utesb04l"],
+		  ["utesb04d","utesb04r"],
+
+		  //inner
+		  ["utesb02u","utesb02d"],
+		  ["utesb02l","utesb02r"],
+		  ["utesb03u","utesb03d"],
+		  ["utesb03l","utesb03r"],
+		  ["utesb04u","utesb04d"],
+		  ["utesb04l","utesb04r"],
+
+		  //diagonal
+		  ["utesb02r","utesb03u"],
+		  ["utesb02u","utesb03l"],
+		  ["utesb02l","utesb03d"],
+		  ["utesb02d","utesb03r"],
+
+		  ["utesb03r","utesb04u"],
+		  ["utesb03u","utesb04l"],
+		  ["utesb03l","utesb04d"],
+		  ["utesb03d","utesb04r"],
+
+		  //fin
+		  ["utesb06","utesb04u"],
+		  ["utesb06","utesb04l"],
+		  ["utesb06","utesb04d"],
+		  ["utesb06","utesb05"],
+
+		 //stiffner
+
+		  {"beamSpring":150000,"beamDamp":100},
+		  ["utesb08","utesb01"],
+		  ["utesb08","utesb02l"],
+		  ["utesb08","utesb02u"],
+		  ["utesb08","utesb02r"],
+		  ["utesb08","utesb03l"],
+		  ["utesb08","utesb03u"],
+		  ["utesb08","utesb03r"],
+		  ["utesb08","utesb04l"],
+		  ["utesb08","utesb04u"],
+		  ["utesb08","utesb04r"],
+		  ["utesb08","utesb05"],
+
+		  ["utesb09","utesb01"],
+		  ["utesb09","utesb02l"],
+		  ["utesb09","utesb02d"],
+		  ["utesb09","utesb02r"],
+		  ["utesb09","utesb03l"],
+		  ["utesb09","utesb03d"],
+		  ["utesb09","utesb03r"],
+		  ["utesb09","utesb04l"],
+		  ["utesb09","utesb04d"],
+		  ["utesb09","utesb04r"],
+		  ["utesb09","utesb05"],
+
+		  //surfboardrope
+		  {"beamSpring":80000,"beamDamp":80},//was300000
+		  {"beamDeform":26000,"beamStrength":"FLT_MAX"},
+
+		  ["utesbrp1rr","utesbrp1r"],
+		  ["utesbrp1r","utesbrp1l"],
+		  ["utesbrp1l","utesbrp1ll"],
+
+		  ["utesbrp2rr","utesbrp2r"],
+		  ["utesbrp2r","utesbrp2l"],
+		  ["utesbrp2l","utesbrp2ll"],
+
+		  ["utesbrp1r","utesb02u"],
+		  ["utesbrp2l","utesb04u"],
+
+
+
+		//attachments
+		  {"beamSpring":110000,"beamDamp":100},//was 250000
+		 {"beamDeform":1800,"beamStrength":2000},
+		  {"breakGroupType":0},
+		  {"breakGroup":"moonhawk_ute_surfboard_F"},
+
+
+		  ["utesb02u","b6r"],
+		  ["utesb02u","b6"],
+		  //["utesb02u","bed2r"],
+		  //["utesb02u","bed2rr"],
+
+		  ["utesb02d","b6"],
+
+		  ["utesb02r","b6rr"],
+
+		  ["utesb02d","b5r"],//?
+		  ["utesb02d","b5rr"],
+		  //["utesb02d","bed2r"],
+
+		  ["utesb02l","b5r"],//?
+		  ["utesb02l","b5rr"],
+
+		  ["utesb02r","b5r"],
+		  ["utesb02r","b5rr"],
+		  ["utesb02r","b6rr"],
+
+		 {"beamStrength":4500},
+		  {"breakGroupType":1},
+
+		  ["utesbrp1rr","b6rr"],
+		  //["utesbrp1rr","bed2rr"],
+		  ["utesbrp1rr","q8r"],//?
+		  ["utesbrp1rr","b5rr"],
+
+		  ["utesbrp1ll","b6ll"],
+		  //["utesbrp1ll","bed2ll"],
+		  ["utesbrp1ll","q8l"],//?
+		  ["utesbrp1ll","b5ll"],
+
+		  ["utesbrp1r","utesb02r"],
+		  ["utesbrp1r","utesb02u"],
+		  ["utesbrp1r","utesb02l"],
+		  ["utesbrp1r","utesb01"],
+
+
+		  {"beamSpring":50000,"beamDamp":30},//was 250000
+
+		  ["utesbrp1l","utesb02l"],
+		  ["utesbrp1l","utesb02u"],
+		  ["utesbrp1l","utesb02d"],
+		  ["utesbrp1l","utesb01"],
+		  ["utesbrp1l","tb2l"],//?
+	
+
+
+		  {"beamSpring":110000,"beamDamp":100},//was 250000
+		  {"beamDeform":1800,"beamStrength":2000},
+		  {"breakGroup":"moonhawk_ute_surfboard_R"},
+		  {"breakGroupType":0},
+		  ["utesb04u","b7"],
+		  ["utesb04u","b7l"],
+		  ["utesb04u","b8"],
+		  ["utesb04u","b8l"],
+
+
+		  ["utesb04d","b7"],
+		  ["utesb04d","b7l"],
+		  ["utesb04d","b8"],
+		  ["utesb04d","b8l"],
+		  //["utesb04d","bed4"],
+		  //["utesb04d","bed4l"],
+
+		  //["utesb04d","bed3"],
+		  //["utesb04d","bed3l"],
+
+		  ["utesb04l","b7"],
+		  ["utesb04l","b7l"],
+		  ["utesb04l","b8l"],
+
+		  ["utesb04r","b7l"],
+		  ["utesb04r","b7"],
+		  ["utesb04r","b8"],
+
+		 {"beamStrength":4500},
+		  {"breakGroupType":1},
+
+		  ["utesbrp2rr","b7"],
+		  //["utesbrp2rr","bed4rr"],
+		  ["utesbrp2rr","b7rr"],
+		  ["utesbrp2rr","q10r"],
+
+		  //["utesbrp2ll","bed5"],
+		  //["utesbrp2ll","bed5ll"],
+		  ["utesbrp2ll","b7ll"],
+		  ["utesbrp2ll","q10l"],
+
+		  ["utesbrp2l","utesb04r"],
+		  ["utesbrp2l","utesb04u"],
+		  ["utesbrp2l","utesb04d"],
+		  ["utesbrp2l","utesb04l"],
+		  ["utesbrp2l","utesb05"],
+
+		  {"beamSpring":50000,"beamDamp":30},//was 250000
+
+		  ["utesbrp2r","utesb04r"],
+		  ["utesbrp2r","utesb04u"],
+		  ["utesbrp2r","utesb05"],
+		  ["utesbrp2r","b7"],//?
+		  {"breakGroupType":0},
+
+		  {"breakGroup":""},
+
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			
+			["utesb01","utesb02u","utesb02r"],
+			["utesb01","utesb02l","utesb02u"],
+			["utesb01","utesb02d","utesb02l"],
+			["utesb01","utesb02r","utesb02d"],
+
+			["utesb02u","utesb03u","utesb03r"],
+			["utesb02u","utesb03r","utesb02r"],
+			["utesb02u","utesb02l","utesb03l"],
+			["utesb02u","utesb03l","utesb03u"],
+
+			["utesb02d","utesb03r","utesb03d"],
+			["utesb02d","utesb02r","utesb03r"],
+			["utesb02d","utesb03l","utesb02l"],
+			["utesb02d","utesb03d","utesb03l"],
+
+			["utesb04d","utesb03d","utesb03r"],//
+			["utesb04d","utesb03r","utesb04r"],//
+			["utesb04d","utesb03l","utesb03d"],//
+			["utesb04d","utesb04l","utesb03l"],//
+
+			["utesb04u","utesb03r","utesb03u"],//
+			["utesb04u","utesb04r","utesb03r"],//
+			["utesb04u","utesb03u","utesb03l"],//
+			["utesb04u","utesb03l","utesb04l"],//
+
+			["utesb04u","utesb05","utesb04r"],
+			["utesb04u","utesb04l","utesb05"],
+			["utesb04r","utesb05","utesb04d"],
+			["utesb04l","utesb04d","utesb05"],
+			
+	],
+}
+
+}

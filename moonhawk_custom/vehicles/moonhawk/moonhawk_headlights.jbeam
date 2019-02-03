@@ -1,0 +1,279 @@
+{
+"moonhawk_noseconeR_lights": {	
+	"information":{
+		"authors":"gabester, modded by AR162b",
+		"name":"Bruckell Moonhawk Front Headlights",
+	}
+    "slotType" : "moonhawk_noseconeR_lights",
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+
+		 ["moonhawk_headlightframe_R", ["moonhawk_nosecone"]],
+		 ["moonhawk_headlightframe_L", ["moonhawk_nosecone"]],
+		 {"deformGroup":"moonhawk_headlightglass_R_break", "deformMaterialBase":"moonhawk_lights", "deformMaterialDamaged":"moonhawk_lights_dmg"},
+		 ["moonhawk_headlight_R", ["moonhawk_nosecone"]],
+		 {"deformGroup":"moonhawk_headlightglass_L_break", "deformMaterialBase":"moonhawk_lights", "deformMaterialDamaged":"moonhawk_lights_dmg"},
+		 ["moonhawk_headlight_L", ["moonhawk_nosecone"]],
+		 
+		 {"deformGroup":"moonhawk_headlightglass_R_break", "deformMaterialBase":"moonhawk_glass", "deformMaterialDamaged":"moonhawk_glass_dmg"},
+		 ["moonhawk_headlightglass_R", ["moonhawk_nosecone"]],
+		 {"deformGroup":"moonhawk_headlightglass_L_break", "deformMaterialBase":"moonhawk_glass", "deformMaterialDamaged":"moonhawk_glass_dmg"},
+		 ["moonhawk_headlightglass_L", ["moonhawk_nosecone"]],
+		 {"deformGroup":""},
+	 ],	
+	 "props": [
+		["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+		{
+			"lightInnerAngle":0
+			"lightOuterAngle":120
+			"lightBrightness":0.15
+			"lightRange":70
+			"lightColor":{"r":255, "g":255, "b":180, "a":255}
+			"lightAttenuation":{"x":0, "y":1, "z":1}
+			"lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.5
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+		}
+		//low beams angled right slightly to avoid blinding oncoming traffic
+		["lowhighbeam"    , "SPOTLIGHT"        , "n3rr", "n3r", "n2rr", {"x":180, "y":45, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.2, "z":0.0},"deformGroup":"moonhawk_headlightglass_R_break"}],
+		["lowhighbeam"    , "SPOTLIGHT"        , "n3ll", "n3l", "n2ll", {"x":0, "y":40, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.2, "z":0.0},"lightOuterAngle":75,"deformGroup":"moonhawk_headlightglass_L_break"}],
+		//high beams
+		["highbeam" , 		"SPOTLIGHT"        , "n3rr", "n3r", "n2rr", {"x":180, "y":45, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.7, "z":0.0},"lightRange":100,"deformGroup":"moonhawk_headlightglass_R_break"}],
+		["highbeam" , 		"SPOTLIGHT"        , "n3ll", "n3l", "n2ll", {"x":0, "y":45, "z":-10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.7, "z":0.0},"lightRange":100,"deformGroup":"moonhawk_headlightglass_L_break"}],
+	 ],
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"moonhawk_nosecone"},
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"nodeWeight":1.5},
+		 {"frictionCoef":0.5},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":140000,"beamStrength":250000},
+	      {"beamSpring":1501000,"beamDamp":140},
+		  //nose cone main shape widthwise
+
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	]
+    "triangles": [
+			["id1:","id2:","id3:"],
+
+	],
+}
+"moonhawk_noseconeR_lights_race": {	
+	"information":{
+		"authors":"gabester, modded by AR162b",
+		"name":"Bruckell Moonhawk Front Headlight Race Covers",
+	}
+    "slotType" : "moonhawk_noseconeR_lights",
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+
+		 ["moonhawk_race_headlightcover_R", ["moonhawk_nosecone"]],
+		 ["moonhawk_race_headlightcover_L", ["moonhawk_nosecone"]],
+		 
+	 ],	
+
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"moonhawk_nosecone"},
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"nodeWeight":1.5},
+		 {"frictionCoef":0.5},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":140000,"beamStrength":250000},
+	      {"beamSpring":1501000,"beamDamp":140},
+		  //nose cone main shape widthwise
+
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	]
+    "triangles": [
+			["id1:","id2:","id3:"],
+
+	],
+}
+"moonhawk_noseconeO_lights": {	
+	"information":{
+		"authors":"gabester, modded by AR162b",
+		"name":"Bruckell Moonhawk Front Headlights",
+	}
+    "slotType" : "moonhawk_noseconeO_lights",
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+
+		 ["moonhawk_headlightframe_R_oldstyle", ["moonhawk_nosecone"]],
+		 ["moonhawk_headlightframe_L_oldstyle", ["moonhawk_nosecone"]],
+		 {"deformGroup":"moonhawk_headlightglass_R_break", "deformMaterialBase":"moonhawk_lights", "deformMaterialDamaged":"moonhawk_lights_dmg"},
+		 ["moonhawk_headlight_R_oldstyle", ["moonhawk_nosecone"]],
+		 {"deformGroup":"moonhawk_headlightglass_L_break", "deformMaterialBase":"moonhawk_lights", "deformMaterialDamaged":"moonhawk_lights_dmg"},
+		 ["moonhawk_headlight_L_oldstyle", ["moonhawk_nosecone"]],
+		 
+		 {"deformGroup":"moonhawk_headlightglass_R_break", "deformMaterialBase":"moonhawk_glass", "deformMaterialDamaged":"moonhawk_glass_dmg"},
+		 ["moonhawk_headlightglass_R_oldstyle", ["moonhawk_nosecone"]],
+		 {"deformGroup":"moonhawk_headlightglass_L_break", "deformMaterialBase":"moonhawk_glass", "deformMaterialDamaged":"moonhawk_glass_dmg"},
+		 ["moonhawk_headlightglass_L_oldstyle", ["moonhawk_nosecone"]],
+		 {"deformGroup":""},
+	 ],	
+	 "props": [
+		["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+		{
+			"lightInnerAngle":0
+			"lightOuterAngle":120
+			"lightBrightness":0.15
+			"lightRange":70
+			"lightColor":{"r":255, "g":255, "b":180, "a":255}
+			"lightAttenuation":{"x":0, "y":1, "z":1}
+			"lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.5
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+		}
+		//low beams angled right slightly to avoid blinding oncoming traffic
+		["lowhighbeam"    , "SPOTLIGHT"        , "n3rr", "n3r", "n2rr", {"x":180, "y":45, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.65, "z":0.0},"deformGroup":"moonhawk_headlightglass_R_break"}],
+		["lowhighbeam"    , "SPOTLIGHT"        , "n3ll", "n3l", "n2ll", {"x":0, "y":40, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.65, "z":0.0},"lightOuterAngle":75,"deformGroup":"moonhawk_headlightglass_L_break"}],
+		//high beams
+		["highbeam" , 		"SPOTLIGHT"        , "n3rr", "n3r", "n2rr", {"x":180, "y":45, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.60, "z":0.0},"lightRange":100,"deformGroup":"moonhawk_headlightglass_R_break"}],
+		["highbeam" , 		"SPOTLIGHT"        , "n3ll", "n3l", "n2ll", {"x":0, "y":45, "z":-10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.60, "z":0.0},"lightRange":100,"deformGroup":"moonhawk_headlightglass_L_break"}],
+	 ],
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"moonhawk_nosecone"},
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"nodeWeight":1.5},
+		 {"frictionCoef":0.5},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":140000,"beamStrength":250000},
+	      {"beamSpring":1501000,"beamDamp":140},
+		  //nose cone main shape widthwise
+
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	]
+    "triangles": [
+			["id1:","id2:","id3:"],
+
+	],
+}
+"moonhawk_noseconeN_lights": {	
+	"information":{
+		"authors":"gabester, modded by AR162b",
+		"name":"Bruckell Moonhawk Front Headlights",
+	}
+    "slotType" : "moonhawk_noseconeN_lights",
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+
+		 ["moonhawk_headlightframe_R_alt", ["moonhawk_nosecone_N"]],
+		 ["moonhawk_headlightframe_L_alt", ["moonhawk_nosecone_N"]],
+		 {"deformGroup":"moonhawk_headlightglass_R_break", "deformMaterialBase":"moonhawk_lights", "deformMaterialDamaged":"moonhawk_lights_dmg"},
+		 ["moonhawk_headlight_R_alt", ["moonhawk_nosecone_N"]],
+		 {"deformGroup":"moonhawk_headlightglass_L_break", "deformMaterialBase":"moonhawk_lights", "deformMaterialDamaged":"moonhawk_lights_dmg"},
+		 ["moonhawk_headlight_L_alt", ["moonhawk_nosecone_N"]],
+		 
+		 {"deformGroup":"moonhawk_headlightglass_R_break", "deformMaterialBase":"moonhawk_glass", "deformMaterialDamaged":"moonhawk_glass_dmg"},
+		 ["moonhawk_headlightglass_R_alt", ["moonhawk_nosecone_N"]],
+		 {"deformGroup":"moonhawk_headlightglass_L_break", "deformMaterialBase":"moonhawk_glass", "deformMaterialDamaged":"moonhawk_glass_dmg"},
+		 ["moonhawk_headlightglass_L_alt", ["moonhawk_nosecone_N"]],
+		 {"deformGroup":""},
+	 ],	
+	 "props": [
+		["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+		{
+			"lightInnerAngle":0
+			"lightOuterAngle":120
+			"lightBrightness":0.15
+			"lightRange":70
+			"lightColor":{"r":255, "g":255, "b":180, "a":255}
+			"lightAttenuation":{"x":0, "y":1, "z":1}
+			"lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.5
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+		}
+		//low beams angled right slightly to avoid blinding oncoming traffic
+		["lowhighbeam"    , "SPOTLIGHT"        , "n3rr", "n3r", "n2rr", {"x":180, "y":45, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.65, "z":0.0},"deformGroup":"moonhawk_headlightglass_R_break"}],
+		["lowhighbeam"    , "SPOTLIGHT"        , "n3ll", "n3l", "n2ll", {"x":0, "y":40, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.65, "z":0.0},"lightOuterAngle":75,"deformGroup":"moonhawk_headlightglass_L_break"}],
+		//high beams
+		["highbeam" , 		"SPOTLIGHT"        , "n3rr", "n3r", "n2rr", {"x":180, "y":45, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.78, "y":0.65, "z":0.0},"lightRange":100,"deformGroup":"moonhawk_headlightglass_R_break"}],
+		["highbeam" , 		"SPOTLIGHT"        , "n3ll", "n3l", "n2ll", {"x":0, "y":45, "z":-10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.78, "y":0.65, "z":0.0},"lightRange":100,"deformGroup":"moonhawk_headlightglass_L_break"}],
+	 ],
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"moonhawk_nosecone"},
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"nodeWeight":1.5},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":140000,"beamStrength":250000},
+	      {"beamSpring":1501000,"beamDamp":140},
+		  //nose cone main shape widthwise
+
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	]
+    "triangles": [
+			["id1:","id2:","id3:"],
+
+	],
+}
+}

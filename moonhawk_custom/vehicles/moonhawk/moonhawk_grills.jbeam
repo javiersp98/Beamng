@@ -1,0 +1,198 @@
+{
+"moonhawk_noseconeR_grill": {	
+	"information":{
+		"authors":"gabester, modded by AR162b",
+		"name":"Bruckell Moonhawk Regular Grill",
+	}
+    "slotType" : "moonhawk_noseconeR_grill",
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_grille", ["moonhawk_nosecone"]],
+		 ["moonhawk_grillefill", ["moonhawk_nosecone"]],
+	],
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"moonhawk_nosecone"},
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"nodeWeight":1.5},
+		 {"frictionCoef":0.5},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":140000,"beamStrength":250000},
+	      {"beamSpring":1501000,"beamDamp":140},
+		  //nose cone main shape widthwise
+
+
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	]
+    "triangles": [
+			["id1:","id2:","id3:"],
+
+	],
+}
+"moonhawk_noseconeR_grill_old": {	
+	"information":{
+		"authors":"gabester, modded by AR162b",
+		"name":"Bruckell Moonhawk Oldstyle Grill",
+	}
+    "slotType" : "moonhawk_noseconeR_grill",
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_grille_sport", ["moonhawk_nosecone"]],
+		 ["moonhawk_race_grillefill", ["moonhawk_nosecone"]],
+		 ["moonhawk_grille_sport_lightholders", ["moonhawk_nosecone"]],
+
+		 {"deformGroup":"moonhawk_headlightglass_R_break", "deformMaterialBase":"moonhawk_lights", "deformMaterialDamaged":"moonhawk_lights_dmg"},
+		 ["moonhawk_grille_sport_light_R", ["moonhawk_nosecone"]],
+		 {"deformGroup":"moonhawk_headlightglass_L_break", "deformMaterialBase":"moonhawk_lights", "deformMaterialDamaged":"moonhawk_lights_dmg"},
+		 ["moonhawk_grille_sport_light_L", ["moonhawk_nosecone"]],
+		 {"deformGroup":""},
+
+	],
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"moonhawk_nosecone"},
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"nodeWeight":1.5},
+		 {"frictionCoef":0.5},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":140000,"beamStrength":250000},
+	      {"beamSpring":1501000,"beamDamp":140},
+		  //nose cone main shape widthwise
+
+		  //welded nosecone
+		  {"beamDeform":80000,"beamStrength":"53000"},
+		  {"beamSpring":501000,"beamDamp":90},
+
+		  ["n4ll","fe14l"],
+		  ["n4ll","fe10l"],
+
+		  ["n1ll","fe5l"],
+		  ["n1ll","fe10l"],
+
+		  ["n4rr","fe14r"],
+		  ["n4rr","fe10r"],
+
+		  ["n1rr","fe5r"],
+		  ["n1rr","fe10r"],
+
+
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	]
+    "triangles": [
+			["id1:","id2:","id3:"],
+
+	],
+}
+"moonhawk_noseconeR_grill_race": {	
+	"information":{
+		"authors":"gabester, modded by AR162b",
+		"name":"Bruckell Moonhawk Race Grill",
+	}
+    "slotType" : "moonhawk_noseconeR_grill",
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //["moonhawk_race_grille", ["moonhawk_nosecone"]],
+		 ["moonhawk_race_grillefill", ["moonhawk_nosecone"]],
+	],
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"moonhawk_nosecone"},
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"nodeWeight":1.5},
+		 {"frictionCoef":0.5},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":140000,"beamStrength":250000},
+	      {"beamSpring":1501000,"beamDamp":140},
+		  //nose cone main shape widthwise
+
+
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	]
+    "triangles": [
+			["id1:","id2:","id3:"],
+
+	],
+}
+"moonhawk_noseconeN_grill": {	
+	"information":{
+		"authors":"gabester, modded by AR162b",
+		"name":"Bruckell Moonhawk Facelifted Grill",
+	}
+    "slotType" : "moonhawk_noseconeN_grill",
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["moonhawk_grille_alt", ["moonhawk_nosecone_N"]],
+		 ["moonhawk_grillefill_alt", ["moonhawk_nosecone_N"]],
+	],
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"moonhawk_nosecone"},
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"nodeWeight":1.5},
+		 {"frictionCoef":0.5},
+		 {"nodeMaterial":"|NM_PLASTIC"},
+
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":140000,"beamStrength":250000},
+	      {"beamSpring":1501000,"beamDamp":140},
+		  //nose cone main shape widthwise
+
+
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	]
+    "triangles": [
+			["id1:","id2:","id3:"],
+
+	],
+}
+}

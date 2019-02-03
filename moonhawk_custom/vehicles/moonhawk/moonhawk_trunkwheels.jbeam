@@ -1,0 +1,826 @@
+{
+"moonhawk_trunk_wheels": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Sparewheels",
+	}
+    "slotType" : "moonhawk_trunk",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.05,
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //wheels
+		 ["steelwheel_05a_15x8", ["moonhawk_sparewheel_R"], [], {"pos":{"x":-0.126, "y":2.18, "z":0.923}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["steelwheel_05a_15x8", ["moonhawk_sparewheel_L"], [], {"pos":{"x":0.126, "y":2.18, "z":0.923}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["offroadtire_01a_15x8_29", ["moonhawk_sparewheel_R"], [], {"pos":{"x":-0.126, "y":2.18, "z":0.923}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["offroadtire_01a_15x8_29", ["moonhawk_sparewheel_L"], [], {"pos":{"x":0.126, "y":2.18, "z":0.923}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["moonhawk_sparewheelrope", ["moonhawk_sparewheelrope"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--trunk--
+		 {"nodeMaterial":"|NM_RUBBER"},
+		 {"frictionCoef":0.7},
+		 {"collision":true}
+		 {"selfCollision":true},
+		 {"group":"moonhawk_sparewheel_R"},
+		 {"nodeWeight":2.0},
+		 ["sptr01rr",-0.22, 2.18, 1.23],
+		 ["sptr02rr",-0.22, 2.49, 0.92],
+		 ["sptr03rr",-0.22, 2.18, 0.61],
+		 ["sptr04rr",-0.22, 1.86, 0.92],
+		 
+		 ["sptr01r",-0.03, 2.18, 1.23],
+		 ["sptr02r",-0.03, 2.49, 0.92],
+		 ["sptr03r",-0.03, 2.18, 0.61],
+		 ["sptr04r",-0.03, 1.86, 0.92],
+		 
+		 {"group":"moonhawk_sparewheel_L"},
+		 ["sptr01ll",0.22, 2.18, 1.23],
+		 ["sptr02ll",0.22, 2.49, 0.92],
+		 ["sptr03ll",0.22, 2.18, 0.61],
+		 ["sptr04ll",0.22, 1.86, 0.92],
+		 
+		 ["sptr01l",0.03, 2.18, 1.23],
+		 ["sptr02l",0.03, 2.49, 0.92],
+		 ["sptr03l",0.03, 2.18, 0.61],
+		 ["sptr04l",0.03, 1.86, 0.92],
+
+		 {"selfCollision":false},
+		 {"group":"moonhawk_sparewheelrope"},
+		 {"nodeWeight":0.6},
+		 ["sptr10r",-0.47, 2.37, 0.92],
+		 ["sptr10",0.0, 2.45, 1.16],
+		 ["sptr10l",0.47, 2.37, 0.92],
+
+		 ["sptr11r",-0.47, 2.03, 0.93],
+		 ["sptr11",0.0, 1.90, 1.16],
+		 ["sptr11l",0.47, 2.03, 0.93],
+		 
+
+		 {"selfCollision":true},
+
+		 {"group":""},
+
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+		  {"beamSpring":601000,"beamDamp":50},
+		  {"beamDeform":101500,"beamStrength":"FLT_MAX"},
+		  //wheels main shape
+		  ["sptr01rr","sptr01r"],
+		  ["sptr02rr","sptr02r"],
+		  ["sptr03rr","sptr03r"],
+		  ["sptr04rr","sptr04r"],
+
+		  ["sptr01rr","sptr02rr"],
+		  ["sptr02rr","sptr03rr"],
+		  ["sptr03rr","sptr04rr"],
+		  ["sptr04rr","sptr01rr"],
+
+		  ["sptr01rr","sptr02r"],
+		  ["sptr01r","sptr02rr"],
+		  ["sptr02rr","sptr03r"],
+		  ["sptr02r","sptr03rr"],
+		  ["sptr03rr","sptr04r"],
+		  ["sptr03r","sptr04rr"],
+		  ["sptr04rr","sptr01r"],
+		  ["sptr04r","sptr01rr"],
+
+		  ["sptr01rr","sptr03rr"],
+		  ["sptr02r","sptr04r"],
+
+
+		  ["sptr01ll","sptr01l"],
+		  ["sptr02ll","sptr02l"],
+		  ["sptr03ll","sptr03l"],
+		  ["sptr04ll","sptr04l"],
+
+		  ["sptr01ll","sptr02ll"],
+		  ["sptr02ll","sptr03ll"],
+		  ["sptr03ll","sptr04ll"],
+		  ["sptr04ll","sptr01ll"],
+
+		  ["sptr01ll","sptr02l"],
+		  ["sptr01l","sptr02ll"],
+		  ["sptr02ll","sptr03l"],
+		  ["sptr02l","sptr03ll"],
+		  ["sptr03ll","sptr04l"],
+		  ["sptr03l","sptr04ll"],
+		  ["sptr04ll","sptr01l"],
+		  ["sptr04l","sptr01ll"],
+
+		  ["sptr01ll","sptr03ll"],
+		  ["sptr02l","sptr04l"],
+		  
+		  
+		  {"beamSpring":601000,"beamDamp":50},
+		  {"beamDeform":101500,"beamStrength":"FLT_MAX"},
+		  //wheelrope main shape
+		  
+		  {"beamPrecompression":0.95, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},		  
+		  ["sptr10r","sptr10"],
+		  ["sptr10","sptr10l"],
+		  ["sptr11r","sptr11"],
+		  ["sptr11","sptr11l"],
+
+		  ["sptr10r","q11r"],
+		  ["sptr10r","q14r"],
+		  ["sptr10l","q11l"],
+		  ["sptr10l","q14l"],
+
+		  ["sptr11r","q11r"],
+		  ["sptr11r","q14r"],
+		  ["sptr11l","q11l"],
+		  ["sptr11l","q14l"],
+
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},		  
+
+		  {"beamSpring":601000,"beamDamp":50},
+		  {"beamDeform":101500,"beamStrength":"FLT_MAX"},
+		  //wheelrope anti swing beams
+		  
+		  {"breakGroupType":0},
+		  {"breakGroup":"sparewheels"},
+		  
+		  {"beamSpring":201000,"beamDamp":50},
+		  {"beamDeform":101500,"beamStrength":"12000"},
+		  //wheelrope anti swing beams
+
+		  ["sptr10r","q10r"],
+		  ["sptr10r","q12r"],
+		  ["sptr10l","q10l"],
+		  ["sptr10l","q12l"],
+
+		  ["sptr11r","q10r"],
+		  ["sptr11r","q12r"],
+		  ["sptr11l","q10l"],
+		  ["sptr11l","q12l"],
+
+		  {"beamSpring":601000,"beamDamp":80},
+		  {"beamDeform":80000,"beamStrength":"9000"},
+		  //wheel group
+
+		  ["sptr02r","b8"],
+		  ["sptr02rr","b8r"],
+		  ["sptr03r","b8"],
+		  ["sptr03rr","b8"],
+		  ["sptr03r","b8r"],
+		  ["sptr03rr","b8r"],
+
+		  ["sptr04r","b7"],
+		  ["sptr04rr","b7r"],
+
+		  ["sptr03rr","b9r"],
+		  ["sptr02rr","b9r"],
+		  ["sptr02r","b9"],
+
+		  ["sptr04r","tb4"],
+		  ["sptr04rr","tb4"],
+		  ["sptr04rr","tb4r"],
+
+		  ["sptr02r","tb2"],
+		  ["sptr02rr","tb2"],
+		  ["sptr02rr","tb2r"],
+
+		  ["sptr01r","sptr10"],
+		  ["sptr01rr","sptr10"],
+		  ["sptr01r","sptr11"],
+		  ["sptr01rr","sptr11"],
+
+
+		  ["sptr02l","b8"],
+		  ["sptr02ll","b8l"],
+		  ["sptr03l","b8"],
+		  ["sptr03ll","b8"],
+		  ["sptr03l","b8l"],
+		  ["sptr03ll","b8l"],
+
+		  ["sptr04l","b7"],
+		  ["sptr04ll","b7l"],
+
+		  ["sptr03ll","b9l"],
+		  ["sptr02ll","b9l"],
+		  ["sptr02l","b9"],
+
+		  ["sptr04l","tb4"],
+		  ["sptr04ll","tb4"],
+		  ["sptr04ll","tb4l"],
+
+		  ["sptr02l","tb2"],
+		  ["sptr02ll","tb2"],
+		  ["sptr02ll","tb2l"],
+
+		  ["sptr01l","sptr10"],
+		  ["sptr01ll","sptr10"],
+		  ["sptr01l","sptr11"],
+		  ["sptr01ll","sptr11"],
+
+		  {"breakGroup":""},
+
+
+
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//trunk
+			{"group":"moonhawk_sparewheel_R"},
+			["sptr01rr","sptr02rr","sptr03rr"],
+			["sptr01rr","sptr03rr","sptr04rr"],
+			["sptr01r","sptr03r","sptr02r"],
+			["sptr01r","sptr04r","sptr03r"],
+
+			["sptr01rr","sptr01r","sptr02r"],
+			["sptr01rr","sptr02rr","sptr02r"],
+			["sptr02rr","sptr02r","sptr03r"],
+			["sptr02rr","sptr03rr","sptr03r"],
+			["sptr03rr","sptr03r","sptr04r"],
+			["sptr03rr","sptr04rr","sptr04r"],
+			["sptr04rr","sptr04r","sptr01r"],
+			["sptr04rr","sptr01rr","sptr01r"],
+			
+			{"group":"moonhawk_sparewheel_L"},
+			["sptr01l","sptr02l","sptr03l"],
+			["sptr01l","sptr03l","sptr04l"],
+			["sptr01ll","sptr03ll","sptr02ll"],
+			["sptr01ll","sptr04ll","sptr03ll"],
+
+			["sptr01ll","sptr02l","sptr01l"],
+			["sptr01ll","sptr02l","sptr02ll"],
+			["sptr02ll","sptr03l","sptr02l"],
+			["sptr02ll","sptr03l","sptr03ll"],
+			["sptr03ll","sptr04l","sptr03l"],
+			["sptr03ll","sptr04l","sptr04ll"],
+			["sptr04ll","sptr01l","sptr04l"],
+			["sptr04ll","sptr01l","sptr01ll"],
+			
+			
+			
+			{"group":""},
+			
+			
+	],
+}
+
+"moonhawk_limo_trunk_wheels": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Bruckell Moonhawk Trunk Sparewheels WIP",
+	}
+    "slotType" : "moonhawk_limo_trunk",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.05,
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //wheels
+		 ["steelwheel_05a_15x8", ["moonhawk_sparewheel_R"], [], {"pos":{"x":-0.126, "y":3.21, "z":0.923}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["steelwheel_05a_15x8", ["moonhawk_sparewheel_L"], [], {"pos":{"x":0.126, "y":3.21, "z":0.923}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["offroadtire_01a_15x8_29", ["moonhawk_sparewheel_R"], [], {"pos":{"x":-0.126, "y":3.21, "z":0.923}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["offroadtire_01a_15x8_29", ["moonhawk_sparewheel_L"], [], {"pos":{"x":0.126, "y":3.21, "z":0.923}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["moonhawk_sparewheelrope", ["moonhawk_sparewheelrope"], [], {"pos":{"x":0, "y":1.03, "z":0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--trunk--
+		 {"nodeMaterial":"|NM_RUBBER"},
+		 {"frictionCoef":0.7},
+		 {"collision":true}
+		 {"selfCollision":true},
+		 {"group":"moonhawk_sparewheel_R"},
+		 {"nodeWeight":2.0},
+		 ["sptr01rr",-0.22, 3.21, 1.23],
+		 ["sptr02rr",-0.22, 3.52, 0.92],
+		 ["sptr03rr",-0.22, 3.21, 0.61],
+		 ["sptr04rr",-0.22, 2.89, 0.92],
+		 
+		 ["sptr01r",-0.03, 3.21, 1.23],
+		 ["sptr02r",-0.03, 3.52, 0.92],
+		 ["sptr03r",-0.03, 3.21, 0.61],
+		 ["sptr04r",-0.03, 2.89, 0.92],
+		 
+		 {"group":"moonhawk_sparewheel_L"},
+		 ["sptr01ll",0.22, 3.21, 1.23],
+		 ["sptr02ll",0.22, 3.52, 0.92],
+		 ["sptr03ll",0.22, 3.21, 0.61],
+		 ["sptr04ll",0.22, 2.89, 0.92],
+		 
+		 ["sptr01l",0.03, 3.21, 1.23],
+		 ["sptr02l",0.03, 3.52, 0.92],
+		 ["sptr03l",0.03, 3.21, 0.61],
+		 ["sptr04l",0.03, 2.89, 0.92],
+
+		 {"selfCollision":false},
+		 {"group":"moonhawk_sparewheelrope"},
+		 {"nodeWeight":0.6},
+		 ["sptr10r",-0.47, 3.40, 0.92],
+		 ["sptr10",0.0, 3.48, 1.16],
+		 ["sptr10l",0.47, 3.40, 0.92],
+
+		 ["sptr11r",-0.47, 3.06, 0.93],
+		 ["sptr11",0.0, 2.93, 1.16],
+		 ["sptr11l",0.47, 3.06, 0.93],
+		 
+
+		 {"selfCollision":true},
+
+		 {"group":""},
+
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+		  {"beamSpring":601000,"beamDamp":50},
+		  {"beamDeform":101500,"beamStrength":"FLT_MAX"},
+		  //wheels main shape
+		  ["sptr01rr","sptr01r"],
+		  ["sptr02rr","sptr02r"],
+		  ["sptr03rr","sptr03r"],
+		  ["sptr04rr","sptr04r"],
+
+		  ["sptr01rr","sptr02rr"],
+		  ["sptr02rr","sptr03rr"],
+		  ["sptr03rr","sptr04rr"],
+		  ["sptr04rr","sptr01rr"],
+
+		  ["sptr01rr","sptr02r"],
+		  ["sptr01r","sptr02rr"],
+		  ["sptr02rr","sptr03r"],
+		  ["sptr02r","sptr03rr"],
+		  ["sptr03rr","sptr04r"],
+		  ["sptr03r","sptr04rr"],
+		  ["sptr04rr","sptr01r"],
+		  ["sptr04r","sptr01rr"],
+
+		  ["sptr01rr","sptr03rr"],
+		  ["sptr02r","sptr04r"],
+
+
+		  ["sptr01ll","sptr01l"],
+		  ["sptr02ll","sptr02l"],
+		  ["sptr03ll","sptr03l"],
+		  ["sptr04ll","sptr04l"],
+
+		  ["sptr01ll","sptr02ll"],
+		  ["sptr02ll","sptr03ll"],
+		  ["sptr03ll","sptr04ll"],
+		  ["sptr04ll","sptr01ll"],
+
+		  ["sptr01ll","sptr02l"],
+		  ["sptr01l","sptr02ll"],
+		  ["sptr02ll","sptr03l"],
+		  ["sptr02l","sptr03ll"],
+		  ["sptr03ll","sptr04l"],
+		  ["sptr03l","sptr04ll"],
+		  ["sptr04ll","sptr01l"],
+		  ["sptr04l","sptr01ll"],
+
+		  ["sptr01ll","sptr03ll"],
+		  ["sptr02l","sptr04l"],
+		  
+		  
+		  {"beamSpring":601000,"beamDamp":50},
+		  {"beamDeform":101500,"beamStrength":"FLT_MAX"},
+		  //wheelrope main shape
+		  
+		  {"beamPrecompression":0.95, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},		  
+		  ["sptr10r","sptr10"],
+		  ["sptr10","sptr10l"],
+		  ["sptr11r","sptr11"],
+		  ["sptr11","sptr11l"],
+
+		  ["sptr10r","q11r"],
+		  ["sptr10r","q14r"],
+		  ["sptr10l","q11l"],
+		  ["sptr10l","q14l"],
+
+		  ["sptr11r","q11r"],
+		  ["sptr11r","q14r"],
+		  ["sptr11l","q11l"],
+		  ["sptr11l","q14l"],
+
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},		  
+
+		  {"beamSpring":601000,"beamDamp":50},
+		  {"beamDeform":101500,"beamStrength":"FLT_MAX"},
+		  //wheelrope anti swing beams
+		  
+		  {"breakGroupType":0},
+		  {"breakGroup":"sparewheels"},
+		  
+		  {"beamSpring":201000,"beamDamp":50},
+		  {"beamDeform":101500,"beamStrength":"12000"},
+		  //wheelrope anti swing beams
+
+		  ["sptr10r","q10r"],
+		  ["sptr10r","q12r"],
+		  ["sptr10l","q10l"],
+		  ["sptr10l","q12l"],
+
+		  ["sptr11r","q10r"],
+		  ["sptr11r","q12r"],
+		  ["sptr11l","q10l"],
+		  ["sptr11l","q12l"],
+
+		  {"beamSpring":601000,"beamDamp":80},
+		  {"beamDeform":80000,"beamStrength":"9000"},
+		  //wheel group
+
+		  ["sptr02r","b8"],
+		  ["sptr02rr","b8r"],
+		  ["sptr03r","b8"],
+		  ["sptr03rr","b8"],
+		  ["sptr03r","b8r"],
+		  ["sptr03rr","b8r"],
+
+		  ["sptr04r","b7"],
+		  ["sptr04rr","b7r"],
+
+		  ["sptr03rr","b9r"],
+		  ["sptr02rr","b9r"],
+		  ["sptr02r","b9"],
+
+		  ["sptr04r","tb4"],
+		  ["sptr04rr","tb4"],
+		  ["sptr04rr","tb4r"],
+
+		  ["sptr02r","tb2"],
+		  ["sptr02rr","tb2"],
+		  ["sptr02rr","tb2r"],
+
+		  ["sptr01r","sptr10"],
+		  ["sptr01rr","sptr10"],
+		  ["sptr01r","sptr11"],
+		  ["sptr01rr","sptr11"],
+
+
+		  ["sptr02l","b8"],
+		  ["sptr02ll","b8l"],
+		  ["sptr03l","b8"],
+		  ["sptr03ll","b8"],
+		  ["sptr03l","b8l"],
+		  ["sptr03ll","b8l"],
+
+		  ["sptr04l","b7"],
+		  ["sptr04ll","b7l"],
+
+		  ["sptr03ll","b9l"],
+		  ["sptr02ll","b9l"],
+		  ["sptr02l","b9"],
+
+		  ["sptr04l","tb4"],
+		  ["sptr04ll","tb4"],
+		  ["sptr04ll","tb4l"],
+
+		  ["sptr02l","tb2"],
+		  ["sptr02ll","tb2"],
+		  ["sptr02ll","tb2l"],
+
+		  ["sptr01l","sptr10"],
+		  ["sptr01ll","sptr10"],
+		  ["sptr01l","sptr11"],
+		  ["sptr01ll","sptr11"],
+
+		  {"breakGroup":""},
+
+
+
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//trunk
+			{"group":"moonhawk_sparewheel_R"},
+			["sptr01rr","sptr02rr","sptr03rr"],
+			["sptr01rr","sptr03rr","sptr04rr"],
+			["sptr01r","sptr03r","sptr02r"],
+			["sptr01r","sptr04r","sptr03r"],
+
+			["sptr01rr","sptr01r","sptr02r"],
+			["sptr01rr","sptr02rr","sptr02r"],
+			["sptr02rr","sptr02r","sptr03r"],
+			["sptr02rr","sptr03rr","sptr03r"],
+			["sptr03rr","sptr03r","sptr04r"],
+			["sptr03rr","sptr04rr","sptr04r"],
+			["sptr04rr","sptr04r","sptr01r"],
+			["sptr04rr","sptr01rr","sptr01r"],
+			
+			{"group":"moonhawk_sparewheel_L"},
+			["sptr01l","sptr02l","sptr03l"],
+			["sptr01l","sptr03l","sptr04l"],
+			["sptr01ll","sptr03ll","sptr02ll"],
+			["sptr01ll","sptr04ll","sptr03ll"],
+
+			["sptr01ll","sptr02l","sptr01l"],
+			["sptr01ll","sptr02l","sptr02ll"],
+			["sptr02ll","sptr03l","sptr02l"],
+			["sptr02ll","sptr03l","sptr03ll"],
+			["sptr03ll","sptr04l","sptr03l"],
+			["sptr03ll","sptr04l","sptr04ll"],
+			["sptr04ll","sptr01l","sptr04l"],
+			["sptr04ll","sptr01l","sptr01ll"],
+			
+			
+			
+			{"group":""},
+			
+			
+	],
+}
+
+"moonhawk_sedan_trunk_wheels": {
+	"information":{
+		"authors":"AR162b",
+		"name":"Bruckell Moonhawk Trunk Sparewheels WIP",
+	}
+    "slotType" : "moonhawk_sedan_trunk",
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.05,
+	"scalenodeWeight":0.89,
+	"scalebeamSpring":0.83,
+	"scalebeamDamp":0.84,
+	"scalebeamDeform":0.6,
+	"scalebeamStrength":0.84,
+
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //wheels
+		 ["steelwheel_05a_15x8", ["moonhawk_sparewheel_R"], [], {"pos":{"x":-0.126, "y":2.31, "z":0.923}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["steelwheel_05a_15x8", ["moonhawk_sparewheel_L"], [], {"pos":{"x":0.126, "y":2.31, "z":0.923}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["offroadtire_01a_15x8_29", ["moonhawk_sparewheel_R"], [], {"pos":{"x":-0.126, "y":2.31, "z":0.923}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["offroadtire_01a_15x8_29", ["moonhawk_sparewheel_L"], [], {"pos":{"x":0.126, "y":2.31, "z":0.923}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+		 ["moonhawk_sparewheelrope", ["moonhawk_sparewheelrope"], [], {"pos":{"x":0, "y":0.13, "z":0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--trunk--
+		 {"nodeMaterial":"|NM_RUBBER"},
+		 {"frictionCoef":0.7},
+		 {"collision":true}
+		 {"selfCollision":true},
+		 {"group":"moonhawk_sparewheel_R"},
+		 {"nodeWeight":2.0},
+		 ["sptr01rr",-0.22, 2.31, 1.23],
+		 ["sptr02rr",-0.22, 2.62, 0.92],
+		 ["sptr03rr",-0.22, 2.31, 0.61],
+		 ["sptr04rr",-0.22, 1.99, 0.92],
+		 
+		 ["sptr01r",-0.03, 2.31, 1.23],
+		 ["sptr02r",-0.03, 2.62, 0.92],
+		 ["sptr03r",-0.03, 2.31, 0.61],
+		 ["sptr04r",-0.03, 1.99, 0.92],
+		 
+		 {"group":"moonhawk_sparewheel_L"},
+		 ["sptr01ll",0.22, 2.31, 1.23],
+		 ["sptr02ll",0.22, 2.62, 0.92],
+		 ["sptr03ll",0.22, 2.31, 0.61],
+		 ["sptr04ll",0.22, 1.99, 0.92],
+		 
+		 ["sptr01l",0.03, 2.31, 1.23],
+		 ["sptr02l",0.03, 2.62, 0.92],
+		 ["sptr03l",0.03, 2.31, 0.61],
+		 ["sptr04l",0.03, 1.99, 0.92],
+
+		 {"selfCollision":false},
+		 {"group":"moonhawk_sparewheelrope"},
+		 {"nodeWeight":0.6},
+		 ["sptr10r",-0.47, 2.50, 0.92],
+		 ["sptr10",0.0, 2.58, 1.16],
+		 ["sptr10l",0.47, 2.50, 0.92],
+
+		 ["sptr11r",-0.47, 2.16, 0.93],
+		 ["sptr11",0.0, 2.03, 1.16],
+		 ["sptr11l",0.47, 2.16, 0.93],
+		 
+
+		 {"selfCollision":true},
+
+		 {"group":""},
+
+		 
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+		  {"beamSpring":601000,"beamDamp":50},
+		  {"beamDeform":101500,"beamStrength":"FLT_MAX"},
+		  //wheels main shape
+		  ["sptr01rr","sptr01r"],
+		  ["sptr02rr","sptr02r"],
+		  ["sptr03rr","sptr03r"],
+		  ["sptr04rr","sptr04r"],
+
+		  ["sptr01rr","sptr02rr"],
+		  ["sptr02rr","sptr03rr"],
+		  ["sptr03rr","sptr04rr"],
+		  ["sptr04rr","sptr01rr"],
+
+		  ["sptr01rr","sptr02r"],
+		  ["sptr01r","sptr02rr"],
+		  ["sptr02rr","sptr03r"],
+		  ["sptr02r","sptr03rr"],
+		  ["sptr03rr","sptr04r"],
+		  ["sptr03r","sptr04rr"],
+		  ["sptr04rr","sptr01r"],
+		  ["sptr04r","sptr01rr"],
+
+		  ["sptr01rr","sptr03rr"],
+		  ["sptr02r","sptr04r"],
+
+
+		  ["sptr01ll","sptr01l"],
+		  ["sptr02ll","sptr02l"],
+		  ["sptr03ll","sptr03l"],
+		  ["sptr04ll","sptr04l"],
+
+		  ["sptr01ll","sptr02ll"],
+		  ["sptr02ll","sptr03ll"],
+		  ["sptr03ll","sptr04ll"],
+		  ["sptr04ll","sptr01ll"],
+
+		  ["sptr01ll","sptr02l"],
+		  ["sptr01l","sptr02ll"],
+		  ["sptr02ll","sptr03l"],
+		  ["sptr02l","sptr03ll"],
+		  ["sptr03ll","sptr04l"],
+		  ["sptr03l","sptr04ll"],
+		  ["sptr04ll","sptr01l"],
+		  ["sptr04l","sptr01ll"],
+
+		  ["sptr01ll","sptr03ll"],
+		  ["sptr02l","sptr04l"],
+		  
+		  
+		  {"beamSpring":601000,"beamDamp":50},
+		  {"beamDeform":101500,"beamStrength":"FLT_MAX"},
+		  //wheelrope main shape
+		  
+		  {"beamPrecompression":0.95, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},		  
+		  ["sptr10r","sptr10"],
+		  ["sptr10","sptr10l"],
+		  ["sptr11r","sptr11"],
+		  ["sptr11","sptr11l"],
+
+		  ["sptr10r","q11r"],
+		  ["sptr10r","q14r"],
+		  ["sptr10l","q11l"],
+		  ["sptr10l","q14l"],
+
+		  ["sptr11r","q11r"],
+		  ["sptr11r","q14r"],
+		  ["sptr11l","q11l"],
+		  ["sptr11l","q14l"],
+
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},		  
+
+		  {"beamSpring":601000,"beamDamp":50},
+		  {"beamDeform":101500,"beamStrength":"FLT_MAX"},
+		  //wheelrope anti swing beams
+		  
+		  {"breakGroupType":0},
+		  {"breakGroup":"sparewheels"},
+		  
+		  {"beamSpring":201000,"beamDamp":50},
+		  {"beamDeform":101500,"beamStrength":"12000"},
+		  //wheelrope anti swing beams
+
+		  ["sptr10r","q10r"],
+		  ["sptr10r","q12r"],
+		  ["sptr10l","q10l"],
+		  ["sptr10l","q12l"],
+
+		  ["sptr11r","q10r"],
+		  ["sptr11r","q12r"],
+		  ["sptr11l","q10l"],
+		  ["sptr11l","q12l"],
+
+		  {"beamSpring":601000,"beamDamp":80},
+		  {"beamDeform":80000,"beamStrength":"9000"},
+		  //wheel group
+
+		  ["sptr02r","b8"],
+		  ["sptr02rr","b8r"],
+		  ["sptr03r","b8"],
+		  ["sptr03rr","b8"],
+		  ["sptr03r","b8r"],
+		  ["sptr03rr","b8r"],
+
+		  ["sptr04r","b7"],
+		  ["sptr04rr","b7r"],
+
+		  ["sptr03rr","b9r"],
+		  ["sptr02rr","b9r"],
+		  ["sptr02r","b9"],
+
+		  ["sptr04r","tb4"],
+		  ["sptr04rr","tb4"],
+		  ["sptr04rr","tb4r"],
+
+		  ["sptr02r","tb2"],
+		  ["sptr02rr","tb2"],
+		  ["sptr02rr","tb2r"],
+
+		  ["sptr01r","sptr10"],
+		  ["sptr01rr","sptr10"],
+		  ["sptr01r","sptr11"],
+		  ["sptr01rr","sptr11"],
+
+
+		  ["sptr02l","b8"],
+		  ["sptr02ll","b8l"],
+		  ["sptr03l","b8"],
+		  ["sptr03ll","b8"],
+		  ["sptr03l","b8l"],
+		  ["sptr03ll","b8l"],
+
+		  ["sptr04l","b7"],
+		  ["sptr04ll","b7l"],
+
+		  ["sptr03ll","b9l"],
+		  ["sptr02ll","b9l"],
+		  ["sptr02l","b9"],
+
+		  ["sptr04l","tb4"],
+		  ["sptr04ll","tb4"],
+		  ["sptr04ll","tb4l"],
+
+		  ["sptr02l","tb2"],
+		  ["sptr02ll","tb2"],
+		  ["sptr02ll","tb2l"],
+
+		  ["sptr01l","sptr10"],
+		  ["sptr01ll","sptr10"],
+		  ["sptr01l","sptr11"],
+		  ["sptr01ll","sptr11"],
+
+		  {"breakGroup":""},
+
+
+
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			//trunk
+			{"group":"moonhawk_sparewheel_R"},
+			["sptr01rr","sptr02rr","sptr03rr"],
+			["sptr01rr","sptr03rr","sptr04rr"],
+			["sptr01r","sptr03r","sptr02r"],
+			["sptr01r","sptr04r","sptr03r"],
+
+			["sptr01rr","sptr01r","sptr02r"],
+			["sptr01rr","sptr02rr","sptr02r"],
+			["sptr02rr","sptr02r","sptr03r"],
+			["sptr02rr","sptr03rr","sptr03r"],
+			["sptr03rr","sptr03r","sptr04r"],
+			["sptr03rr","sptr04rr","sptr04r"],
+			["sptr04rr","sptr04r","sptr01r"],
+			["sptr04rr","sptr01rr","sptr01r"],
+			
+			{"group":"moonhawk_sparewheel_L"},
+			["sptr01l","sptr02l","sptr03l"],
+			["sptr01l","sptr03l","sptr04l"],
+			["sptr01ll","sptr03ll","sptr02ll"],
+			["sptr01ll","sptr04ll","sptr03ll"],
+
+			["sptr01ll","sptr02l","sptr01l"],
+			["sptr01ll","sptr02l","sptr02ll"],
+			["sptr02ll","sptr03l","sptr02l"],
+			["sptr02ll","sptr03l","sptr03ll"],
+			["sptr03ll","sptr04l","sptr03l"],
+			["sptr03ll","sptr04l","sptr04ll"],
+			["sptr04ll","sptr01l","sptr04l"],
+			["sptr04ll","sptr01l","sptr01ll"],
+			
+			
+			
+			{"group":""},
+			
+			
+	],
+}
+}

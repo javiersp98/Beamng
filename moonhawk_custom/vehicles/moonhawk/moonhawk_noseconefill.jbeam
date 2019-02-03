@@ -1,0 +1,476 @@
+{
+"moonhawk_noseconefill": {	
+	"information":{
+		"authors":"AR162b",
+		"name":"Bruckell Moonhawk Nosecone fill",
+	}
+    "slotType" : "moonhawk_bumper_F",
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	"slots": [
+		["type", "default", "description"]
+		["moonhawk_pushbar_F_oldstyle", "", "Bruckell Moonhawk Police Pushbar"],
+        	["moonhawk_licenseplate_F_oldstyle","", "Bruckell Moonhawk Front License Plate"],
+	],
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //body
+		 ["moonhawk_noseconefill", ["moonhawk_noseconefill"]],
+
+	 ],
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"moonhawk_noseconefill"},
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"nodeWeight":1.9},
+		 {"frictionCoef":0.5},
+
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 //nose cone
+		 ["n11rr",-0.86, -2.21, 0.50],
+		 ["n11r",-0.38, -2.28, 0.50],
+		 ["n11", 0.0, -2.36, 0.50],
+		 ["n11l", 0.38, -2.28, 0.50],
+		 ["n11ll", 0.86, -2.21, 0.50],
+
+
+		 ["n12r",-0.37, -2.22, 0.40],
+		 ["n12", 0.0, -2.32, 0.40],
+		 ["n12l", 0.37, -2.22, 0.40],
+
+		 
+		 ["n13rr",-0.81, -2.17, 0.34],
+		 ["n13r",-0.37, -2.21, 0.34],
+		 ["n13", 0.0, -2.23, 0.34],
+		 ["n13l", 0.37, -2.21, 0.34],
+		 ["n13ll", 0.81, -2.17, 0.34],
+		 
+		 
+		 {"selfCollision":false}
+		 ["n15",0.0, -2.0, 0.40],
+
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":34000,"beamStrength":"FLT_MAX"},
+	    	  {"beamSpring":1101000,"beamDamp":140},
+		  //nose cone fill main shape widthwise
+		  {"disableMeshBreaking":true},
+		  ["n11rr","n11r"],
+		  ["n11r","n11"],
+		  ["n11","n11l"],
+		  ["n11l","n11ll"],
+
+		  ["n12r","n12"],
+		  ["n12","n12l"],
+
+		  ["n13rr","n13r"],
+		  ["n13r","n13"],
+		  ["n13","n13l"],
+		  ["n13l","n13ll"],
+
+		  
+		  //vertical
+
+		  ["n11rr","n13rr"],
+		  ["n11r","n12r"],
+		  ["n12r","n13r"],
+		  ["n11","n12"],
+		  ["n12","n13"],
+		  ["n11l","n12l"],
+		  ["n12l","n13l"],
+		  ["n11ll","n13ll"],
+
+		  
+		  
+		  //crossing
+		  {"beamDeform":9000,"beamStrength":250000},
+
+		  ["n11rr","n12r"],
+		  ["n12r","n13rr"],
+		  ["n11r","n12"],
+		  ["n12","n13r"],
+		  ["n11","n12r"],
+		  ["n12r","n13"],
+
+		  ["n11ll","n12l"],
+		  ["n12lr","n13ll"],
+		  ["n11l","n12"],
+		  ["n12","n13l"],
+		  ["n11","n12l"],
+		  ["n12l","n13"],
+		  
+		  
+		  //rigids
+		  {"beamDeform":5000,"beamStrength":140000},
+
+		  ["n11rr","n11"],
+		  ["n13rr","n13"],
+
+		  ["n11","n11ll"],
+		  ["n13","n13ll"],
+
+		  ["n11r","n11l"],
+		  ["n12r","n12l"],
+		  ["n13r","n13l"],
+		  
+		  //vertical
+
+		  ["n11","n13"],
+		  ["n11r","n13r"],
+		  ["n11l","n13l"],
+		  ["n3r","n11"],
+		  ["n3l","n11"],
+		  
+		  
+		  
+		  //rigidifiers
+		  {"beamDeform":2500,"beamStrength":140000},
+
+		  ["n15","n11rr"],
+		  ["n15","n13rr"],
+		  ["n15","n11r"],
+		  ["n15","n12r"],
+		  ["n15","n13r"],
+		  ["n15","n11ll"],
+		  ["n15","n13ll"],
+		  ["n15","n11l"],
+		  ["n15","n12l"],
+		  ["n15","n13l"],
+		  ["n15","n11"],
+		  ["n15","n12"],
+		  ["n15","n13"],
+		  
+		  
+		  {"optional":true},
+		  //attach
+
+		  {"beamDeform":14000,"beamStrength":250000},
+	    	  {"beamSpring":501000,"beamDamp":140},
+		  //nose cone fill main shape widthwise
+
+		  ["n11rr","n3rr"],
+		  ["n11ll","n3ll"],
+		  ["n13rr","n4rr"],
+		  ["n13ll","n4ll"],
+
+		  //vertical
+
+		  ["n11r","n3r"],
+		  ["n11","n3"],
+		  ["n11l","n3l"],
+
+		  //crossing
+		  {"beamDeform":12000,"beamStrength":250000},
+
+		  ["n11rr","n3r"],
+		  ["n11r","n3"],
+		  ["n11r","n3rr"],
+		  ["n11","n3r"],
+		  ["n11ll","n3l"],
+		  ["n11l","n3"],
+		  ["n11l","n3ll"],
+		  ["n11","n3l"],
+
+		  ["n13rr","n3rr"],
+		  ["n11rr","n4rr"],
+		  ["n13ll","n3ll"],
+		  ["n11ll","n4ll"],
+
+		  //rigids
+		  {"beamDeform":7000,"beamStrength":140000},
+
+		  ["n11r","n3rr"],
+		  ["n11l","n3ll"],
+		  ["n13r","n4rr"],
+		  ["n13l","n4ll"],
+
+		  ["n12r","n3r"],
+		  ["n12","n3"],
+		  ["n12l","n3l"],
+
+		  ["n11rr","n2rr"],
+		  ["n11r","n2r"],
+		  ["n11","n2"],
+		  ["n11l","n2l"],
+		  ["n11ll","n2ll"],
+
+		  
+		  //anti stretch
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":1000000,"beamStrength":10000000},
+		  {"beamLimitSpring":1401000,"beamLimitDamp":120},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.05, "beamShortBound":1.0},
+		  //["n11rr","n11ll"],
+		  //["n12rr","n12ll"],
+		  //["n13rr","n13ll"],
+
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"disableMeshBreaking":false},
+		  
+	]
+    "triangles": [
+			["id1:","id2:","id3:"],
+			{"group":"moonhawk_noseconefill"},
+			["n11rr","n12r","n11r"],
+			["n11rr","n13rr","n12r"],
+			["n13rr","n13r","n12r"],
+			["n11r","n12","n11"],
+			["n11r","n12r","n12"],
+			["n12r","n13","n12"],
+			["n12r","n13r","n13"],
+
+			["n11ll","n11l","n12l"],
+			["n11ll","n12l","n13ll"],
+			["n13ll","n12l","n13l"],
+			["n11l","n11","n12"],
+			["n11l","n12","n12l"],
+			["n12l","n12","n13"],
+			["n12l","n13","n13l"],
+		
+	],
+}
+"moonhawk_noseconefill_chrome": {	
+	"information":{
+		"authors":"AR162b",
+		"name":"Bruckell Moonhawk Nosecone fill Chrome Strip",
+	}
+    "slotType" : "moonhawk_bumper_F",
+	 "scalenodeWeight":0.89,
+	 "scalebeamSpring":0.83,
+	 "scalebeamDamp":0.84,
+	 "scalebeamDeform":0.6,
+	 "scalebeamStrength":0.84,
+	"slots": [
+		["type", "default", "description"]
+		["moonhawk_pushbar_F_oldstyle", "", "Bruckell Moonhawk Police Pushbar"],
+        	["moonhawk_licenseplate_F_oldstyle","", "Bruckell Moonhawk Front License Plate"],
+	],
+	 "flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 //body
+		 ["moonhawk_noseconefillchrome", ["moonhawk_noseconefill"]],
+
+	 ],
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"moonhawk_noseconefill"},
+		 {"selfCollision":true}
+		 {"collision":true}
+		 {"nodeWeight":1.9},
+		 {"frictionCoef":0.5},
+
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 //nose cone
+		 ["n11rr",-0.86, -2.21, 0.50],
+		 ["n11r",-0.38, -2.28, 0.50],
+		 ["n11", 0.0, -2.36, 0.50],
+		 ["n11l", 0.38, -2.28, 0.50],
+		 ["n11ll", 0.86, -2.21, 0.50],
+
+
+		 ["n12r",-0.37, -2.22, 0.40],
+		 ["n12", 0.0, -2.32, 0.40],
+		 ["n12l", 0.37, -2.22, 0.40],
+
+		 
+		 ["n13rr",-0.81, -2.17, 0.34],
+		 ["n13r",-0.37, -2.21, 0.34],
+		 ["n13", 0.0, -2.23, 0.34],
+		 ["n13l", 0.37, -2.21, 0.34],
+		 ["n13ll", 0.81, -2.17, 0.34],
+		 
+		 
+		 {"selfCollision":false}
+		 ["n15",0.0, -2.0, 0.40],
+
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+		  {"beamDeform":34000,"beamStrength":250000},
+	    	  {"beamSpring":1101000,"beamDamp":140},
+		  //nose cone fill main shape widthwise
+		  {"disableMeshBreaking":true},
+		  ["n11rr","n11r"],
+		  ["n11r","n11"],
+		  ["n11","n11l"],
+		  ["n11l","n11ll"],
+
+		  ["n12r","n12"],
+		  ["n12","n12l"],
+
+		  ["n13rr","n13r"],
+		  ["n13r","n13"],
+		  ["n13","n13l"],
+		  ["n13l","n13ll"],
+
+		  
+		  //vertical
+
+		  ["n11rr","n13rr"],
+		  ["n11r","n12r"],
+		  ["n12r","n13r"],
+		  ["n11","n12"],
+		  ["n12","n13"],
+		  ["n11l","n12l"],
+		  ["n12l","n13l"],
+		  ["n11ll","n13ll"],
+
+		  
+		  
+		  //crossing
+		  {"beamDeform":9000,"beamStrength":250000},
+
+		  ["n11rr","n12r"],
+		  ["n12r","n13rr"],
+		  ["n11r","n12"],
+		  ["n12","n13r"],
+		  ["n11","n12r"],
+		  ["n12r","n13"],
+
+		  ["n11ll","n12l"],
+		  ["n12lr","n13ll"],
+		  ["n11l","n12"],
+		  ["n12","n13l"],
+		  ["n11","n12l"],
+		  ["n12l","n13"],
+		  
+		  
+		  //rigids
+		  {"beamDeform":5000,"beamStrength":140000},
+
+		  ["n11rr","n11"],
+		  ["n13rr","n13"],
+
+		  ["n11","n11ll"],
+		  ["n13","n13ll"],
+
+		  ["n11r","n11l"],
+		  ["n12r","n12l"],
+		  ["n13r","n13l"],
+		  
+		  //vertical
+
+		  ["n11","n13"],
+		  ["n11r","n13r"],
+		  ["n11l","n13l"],
+		  ["n3r","n11"],
+		  ["n3l","n11"],
+		  
+		  
+		  
+		  //rigidifiers
+		  {"beamDeform":2500,"beamStrength":140000},
+
+		  ["n15","n11rr"],
+		  ["n15","n13rr"],
+		  ["n15","n11r"],
+		  ["n15","n12r"],
+		  ["n15","n13r"],
+		  ["n15","n11ll"],
+		  ["n15","n13ll"],
+		  ["n15","n11l"],
+		  ["n15","n12l"],
+		  ["n15","n13l"],
+		  ["n15","n11"],
+		  ["n15","n12"],
+		  ["n15","n13"],
+		  
+		  
+		  {"optional":true},
+		  //attach
+
+		  {"beamDeform":14000,"beamStrength":250000},
+	    	  {"beamSpring":501000,"beamDamp":140},
+		  //nose cone fill main shape widthwise
+
+		  ["n11rr","n3rr"],
+		  ["n11ll","n3ll"],
+		  ["n13rr","n4rr"],
+		  ["n13ll","n4ll"],
+
+		  //vertical
+
+		  ["n11r","n3r"],
+		  ["n11","n3"],
+		  ["n11l","n3l"],
+
+		  //crossing
+		  {"beamDeform":12000,"beamStrength":250000},
+
+		  ["n11rr","n3r"],
+		  ["n11r","n3"],
+		  ["n11r","n3rr"],
+		  ["n11","n3r"],
+		  ["n11ll","n3l"],
+		  ["n11l","n3"],
+		  ["n11l","n3ll"],
+		  ["n11","n3l"],
+
+		  ["n13rr","n3rr"],
+		  ["n11rr","n4rr"],
+		  ["n13ll","n3ll"],
+		  ["n11ll","n4ll"],
+
+		  //rigids
+		  {"beamDeform":7000,"beamStrength":140000},
+
+		  ["n11r","n3rr"],
+		  ["n11l","n3ll"],
+		  ["n13r","n4rr"],
+		  ["n13l","n4ll"],
+
+		  ["n12r","n3r"],
+		  ["n12","n3"],
+		  ["n12l","n3l"],
+
+		  ["n11rr","n2rr"],
+		  ["n11r","n2r"],
+		  ["n11","n2"],
+		  ["n11l","n2l"],
+		  ["n11ll","n2ll"],
+
+		  
+		  //anti stretch
+		  {"beamSpring":0,"beamDamp":0,"beamDeform":1000000,"beamStrength":10000000},
+		  {"beamLimitSpring":1401000,"beamLimitDamp":120},
+		  {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.05, "beamShortBound":1.0},
+		  //["n11rr","n11ll"],
+		  //["n12rr","n12ll"],
+		  //["n13rr","n13ll"],
+
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"disableMeshBreaking":false},
+		  
+	]
+    "triangles": [
+			["id1:","id2:","id3:"],
+			{"group":"moonhawk_noseconefill"},
+			["n11rr","n12r","n11r"],
+			["n11rr","n13rr","n12r"],
+			["n13rr","n13r","n12r"],
+			["n11r","n12","n11"],
+			["n11r","n12r","n12"],
+			["n12r","n13","n12"],
+			["n12r","n13r","n13"],
+
+			["n11ll","n11l","n12l"],
+			["n11ll","n12l","n13ll"],
+			["n13ll","n12l","n13l"],
+			["n11l","n11","n12"],
+			["n11l","n12","n12l"],
+			["n12l","n12","n13"],
+			["n12l","n13","n13l"],
+		
+	],
+}
+}
