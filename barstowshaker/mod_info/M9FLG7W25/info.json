@@ -1,0 +1,81 @@
+{
+    "attachments": [
+        {
+            "data_filename": "356880.jpg",
+            "original_filename": "20171130195443_1.jpg",
+            "thumb_filename": "thumbs\/356880.jpg"
+        },
+        {
+            "data_filename": "356882.jpg",
+            "original_filename": "20171130200146_1.jpg",
+            "thumb_filename": "thumbs\/356882.jpg"
+        },
+        {
+            "data_filename": "356885.jpg",
+            "original_filename": "20171130201746_1.jpg",
+            "thumb_filename": "thumbs\/356885.jpg"
+        }
+    ],
+    "resource_id": 3102,
+    "current_version_id": 8228,
+    "download_count": 0,
+    "resource_version_id": 8252,
+    "version_string": "1.2",
+    "last_update": 1512743056,
+    "rating_avg": 4.8000001907349,
+    "rating_count": 0,
+    "rating_sum": 0,
+    "resource_category_id": 7,
+    "resource_date": 1512381695,
+    "review_count": 16,
+    "tag_line": "Because torque reaction",
+    "update_count": 1,
+    "path": "M9FLG7W25\/8228\/",
+    "filename": "barstowshaker.zip",
+    "title": "Shaker intake for Barstow",
+    "user_id": 64306,
+    "username": "ehhi47",
+    "tagid": "M9FLG7W25",
+    "message": "The addition of torque reaction to the game makes functional shakers possible! And super rad\n[ATTACH]356885[\/ATTACH] [ATTACH]356882[\/ATTACH] [ATTACH]356880[\/ATTACH][ATTACH]359681[\/ATTACH][ATTACH]359682[\/ATTACH]",
+    "category_title": "",
+    "prefix_title": "",
+    "via": "packed by repo on Sat, 09 Dec 2017 03:00:01 GMT",
+    "hashes": [
+        [
+            "vehicles\/barstow\/info_panther.json",
+            "924d1ec66e0ff7cd"
+        ],
+        [
+            "vehicles\/barstow\/panther.png",
+            "8cae6a0d8254849d"
+        ],
+        [
+            "vehicles\/barstow\/Panther.pc",
+            "2aaa83493b28f95f"
+        ],
+        [
+            "vehicles\/barstow\/shaker\/materials.cs",
+            "04e7c898ff3c5021"
+        ],
+        [
+            "vehicles\/barstow\/shaker\/barstow_engine.jbeam",
+            "8b83044ff9c416d9"
+        ],
+        [
+            "vehicles\/barstow\/shaker\/barstow_shaker.png",
+            "24fbc928c32b37f5"
+        ],
+        [
+            "vehicles\/barstow\/shaker\/barstow_hood.jbeam",
+            "47a7e102e3929fb7"
+        ],
+        [
+            "vehicles\/barstow\/shaker\/shaker.dae",
+            "a5252011956d6a76"
+        ],
+        [
+            "vehicles\/barstow\/shaker\/barstow_lettering.jbeam",
+            "6bea3bd694debcd6"
+        ]
+    ]
+}

@@ -1,0 +1,26 @@
+{
+"barstow_intake_v8_423_shaker": {
+    "information":{
+        "authors":"ehhi47",
+        "name":"Four-Barrel Shaker Intake",
+        "value":500,
+    }
+    "slotType" : "barstow_intake_v8_423",
+    "mainEngine":{
+        "burnEfficiency":[
+            [0, 0.08],
+            [0.05, 0.18],
+            [0.4, 0.25],
+            [0.7, 0.32],
+            [1, 0.25],
+        ],
+        "instantAfterFireCoef": 0.75,
+        "sustainedAfterFireCoef": 1.0,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["barstow_intake_v8", ["barstow_engine"]],
+		["barstow_shaker", ["barstow_engine"]],
+    ],
+}
+}
