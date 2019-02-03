@@ -1,0 +1,819 @@
+{
+"moonhawk_engine_i6_new": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"4.1L I6 Engine",
+        "value":660,
+    }
+    "slotType" : "moonhawk_engine",
+    "slots": [
+        ["type", "default", "description"]
+        ["moonhawk_exhaust_R","moonhawk_exhaust_R", "Right Exhaust"],
+        ["moonhawk_transmission","moonhawk_transmission_4M", "Transmission"],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["combustionEngine", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine": {
+        "torque":[
+            ["rpm", "torque"]
+            [0, -20],
+            [500, 200],
+            [1000, 285],
+            [1750, 310],
+            [2000, 309],
+            [3000, 305],
+            [4000, 304],
+            [5000, 264],
+            [6000, 160],
+            [7000, 85],
+            [8000, 45],
+        ],
+
+        //engine performance
+        "idleRPM":800,
+        "maxRPM":5400,
+        "inertia":0.24,
+        "friction":17,
+        "dynamicFriction":0.025,
+        "burnEfficiency":0.33,
+        "torqueReactionNodes:":["e1l","e2l","e4r"],
+        "particulates":0.065,
+        "fuelCapacity":0.01,
+        "energyStorage": "mainTank",
+        "requiredEnergyType":"gasoline",
+
+        //cooling and oil system
+        "thermalsEnabled":true,
+        "engineBlockMaterial":"iron",
+        "oilVolume":6,
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":150,
+        "headGasketDamageThreshold":1500000,
+        "pistonRingDamageThreshold":1500000,
+        "connectingRodDamageThreshold":1500000,
+
+        //node beam interface
+        "waterDamage": {"[engineGroup]:":["engine_intake"]},
+        "radiator": {"[engineGroup]:":["radiator"]},
+        "engineBlock": {"[engineGroup]:":["engine_block"]},
+        "breakTriggerBeam":"engine",
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":1600,
+        "clutchLaunchTargetRPM":2200,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":[0,0,0,2600,2850,3050,3150,3150]
+        //**highShiftUp can be overwritten by intake modifications**
+        "highShiftUpRPM":5300
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["moonhawk_engine_i6", ["moonhawk_engine"]],
+        ["moonhawk_header_i6", ["moonhawk_engine","moonhawk_exhaust_R"]],
+        {"deformGroup":"radtube_break", "deformMaterialBase":"moonhawk", "deformMaterialDamaged":"invis"},
+        ["moonhawk_radtube_i6", ["moonhawk_radiator","moonhawk_radsupport","moonhawk_engine"]],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        ["rpmspin"  , "moonhawk_coolingfan_i6", "e2r","e2l","e4r",  {"x":0, "y":0, "z":0}, {"x":0, "y":1, "z":0}    , {"x":0, "y":0, "z":0}, -360, 360, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //4.0L I6 Engine
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":true},
+         {"collision":true}
+         {"group":"moonhawk_engine"},
+         {"nodeWeight":25},
+         {"engineGroup":"engine_block"}
+         ["e1r", -0.12, -1.08, 0.32,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.14}],
+         ["e1l", 0.14, -1.08, 0.32],
+         ["e2r", -0.12, -1.80, 0.32,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.14}],
+         ["e2l", 0.14, -1.80, 0.32],
+         {"selfCollision":true},
+         {"engineGroup":["engine_block","engine_intake"]}
+         ["e3r", -0.12, -1.08, 0.82,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.14}],
+         ["e3l", 0.21, -1.08, 0.82],
+         ["e4r", -0.12, -1.80, 0.82,{"isExhaust":true,"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.14}],
+         ["e4l", 0.21, -1.80, 0.82],
+         {"engineGroup":""}
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":9130830,"beamDamp":168},
+          {"beamDeform":359100,"beamStrength":"FLT_MAX"},
+          //engine
+          ["e1r","e1l"],
+          ["e2r","e2l"],
+          ["e3r","e3l"],
+          ["e4r","e4l"],
+
+          ["e1r","e2r"],
+          ["e1l","e2l"],
+          ["e3r","e4r"],
+          ["e3l","e4l"],
+
+          ["e1r","e3r"],
+          ["e1l","e3l"],
+          ["e2r","e4r"],
+          ["e2l","e4l"],
+
+          ["e2r","e3r"],
+          ["e2l","e3l"],
+          ["e2r","e3l"],
+          ["e2l","e3r"],
+
+          ["e1r","e4r"{"isExhaust":true}],
+          ["e1l","e4l"],
+          ["e1r","e4l"],
+          ["e1l","e4r"],
+
+          ["e1r","e2l"],
+          ["e1l","e2r"],
+          ["e3r","e4l"],
+          ["e3l","e4r"],
+
+          ["e1r","e3l"],
+          ["e1l","e3r"],
+          ["e2r","e4l"],
+          ["e2l","e4r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"moonhawk_engine_v8_new": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"4.5L V8 Engine",
+        "value":980,
+    }
+    "slotType" : "moonhawk_engine",
+    "slots": [
+        ["type", "default", "description"]
+        ["moonhawk_exhaust_R","moonhawk_exhaust_R", "Right Exhaust"],
+        ["moonhawk_exhaust_L","moonhawk_exhaust_L", "Left Exhaust"],
+        ["moonhawk_transmission","moonhawk_transmission_3A", "Transmission"],
+        ["moonhawk_intake_v8_new","moonhawk_intake_v8_new", "Intake",{"coreSlot":true}],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["combustionEngine", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine": {
+        "torque":[
+            ["rpm", "torque"]
+            [0, 0],
+            [500, 125],
+            [1000, 192],
+            [2000, 290],
+            [3000, 340],
+            [4000, 345],
+            [5000, 330],
+            [6000, 295],
+            [7000, 185],
+            [8000, 75],
+        ],
+
+        //engine performance
+        "idleRPM":850,
+        "maxRPM":5800,
+        "inertia":0.23,
+        "friction":19,
+        "dynamicFriction":0.035,
+        "burnEfficiency":0.33,
+        "torqueReactionNodes:":["e1l","e2l","e4r"],
+        "particulates":0.052,
+        "energyStorage": "mainTank",
+        "requiredEnergyType":"gasoline",
+
+        //cooling and oil system
+        "thermalsEnabled":true,
+        "engineBlockMaterial":"aluminum",
+        "oilVolume":8,
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":160,
+        "headGasketDamageThreshold":1500000,
+        "pistonRingDamageThreshold":1500000,
+        "connectingRodDamageThreshold":2000000,
+
+        //node beam interface
+        "waterDamage": {"[engineGroup]:":["engine_intake"]},
+        "radiator": {"[engineGroup]:":["radiator"]},
+        "engineBlock": {"[engineGroup]:":["engine_block"]},
+        "breakTriggerBeam":"engine",
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":1600,
+        "clutchLaunchTargetRPM":2200,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":[0,0,0,2600,2850,3050,3150,3150]
+        //**highShiftUp can be overwritten by intake modifications**
+        "highShiftUpRPM":5300
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["moonhawk_engine_v8", ["moonhawk_engine"]],
+        ["moonhawk_header_v8", ["moonhawk_engine","moonhawk_exhaust_L","moonhawk_exhaust_R"]],
+        {"deformGroup":"radtube_break", "deformMaterialBase":"moonhawk", "deformMaterialDamaged":"invis"},
+        ["moonhawk_radtube_v8", ["moonhawk_radiator","moonhawk_radsupport","moonhawk_engine"]],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        ["rpmspin"  , "moonhawk_coolingfan_v8", "e2r","e2l","e4r",  {"x":0, "y":0, "z":0}, {"x":0, "y":1, "z":0}    , {"x":0, "y":0, "z":0}, -360, 360, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //6.2L V8 Engine
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":true},
+         {"collision":true}
+         {"group":"moonhawk_engine"},
+         {"engineGroup":"engine_block"}
+         {"nodeWeight":39},
+         {"chemEnergy":2000,"burnRate":0.39,"flashPoint":1000,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":900,"baseTemp":"thermals","conductionRadius":0.13}
+         ["e1r", -0.13, -1.08, 0.32],
+         ["e1l", 0.13, -1.08, 0.32],
+         {"chemEnergy":2000,"burnRate":0.39,"flashPoint":1000,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":900,"baseTemp":"thermals","conductionRadius":0.2}
+         ["e2r", -0.13, -1.60, 0.32],
+         ["e2l", 0.13, -1.60, 0.32],
+         {"chemEnergy":false,"burnRate":false,"flashPoint":false, "specHeat": false,"selfIgnitionCoef":false,"smokePoint":false,"baseTemp":false,"conductionRadius":false},
+         {"selfCollision":false},
+         {"engineGroup":["engine_block","engine_intake"]}
+         ["e3r", -0.32, -1.08, 0.78],
+         ["e3l", 0.32, -1.08, 0.78],
+         ["e4r", -0.32, -1.60, 0.78{"isExhaust":true}],
+         ["e4l", 0.32, -1.60, 0.78],
+         {"engineGroup":""}
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":9130830,"beamDamp":168},
+          {"beamDeform":359100,"beamStrength":"FLT_MAX"},
+          //engine
+          ["e1r","e1l"],
+          ["e2r","e2l"],
+          ["e3r","e3l"],
+          ["e4r","e4l"],
+
+          ["e1r","e2r"],
+          ["e1l","e2l"],
+          ["e3r","e4r"],
+          ["e3l","e4l"],
+
+          ["e1r","e3r"],
+          ["e1l","e3l"],
+          ["e2r","e4r"],
+          ["e2l","e4l"],
+
+          ["e2r","e3r"],
+          ["e2l","e3l"],
+          ["e2r","e3l"],
+          ["e2l","e3r"],
+
+          ["e1r","e4r"{"isExhaust":true}],
+          ["e1l","e4l"],
+          ["e1r","e4l"],
+          ["e1l","e4r"],
+
+          ["e1r","e2l"],
+          ["e1l","e2r"],
+          ["e3r","e4l"],
+          ["e3l","e4r"],
+
+          ["e1r","e3l"],
+          ["e1l","e3r"],
+          ["e2r","e4l"],
+          ["e2l","e4r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"moonhawk_engine_v8_new_large": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"5.5L V8 Engine",
+        "value":980,
+    }
+    "slotType" : "moonhawk_engine",
+    "slots": [
+        ["type", "default", "description"]
+        ["moonhawk_exhaust_R","moonhawk_exhaust_R", "Right Exhaust"],
+        ["moonhawk_exhaust_L","moonhawk_exhaust_L", "Left Exhaust"],
+        ["moonhawk_transmission","moonhawk_transmission_3A", "Transmission"],
+        ["moonhawk_intake_v8_new","moonhawk_intake_v8_new", "Intake",{"coreSlot":true}],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["combustionEngine", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine": {
+        "torque":[
+            ["rpm", "torque"]
+            [0, 0],
+            [500, 155],
+            [1000, 225],
+            [2000, 344],
+            [3000, 391],
+            [4000, 390],
+            [5000, 376],
+            [6000, 315],
+            [7000, 205],
+            [8000, 95],
+        ],
+
+        //engine performance
+        "idleRPM":850,
+        "maxRPM":5800,
+        "inertia":0.26,
+        "friction":19,
+        "dynamicFriction":0.035,
+        "burnEfficiency":0.32,
+        "torqueReactionNodes:":["e1l","e2l","e4r"],
+        "particulates":0.052,
+        "energyStorage": "mainTank",
+        "requiredEnergyType":"gasoline",
+
+        //cooling and oil system
+        "thermalsEnabled":true,
+        "engineBlockMaterial":"aluminum",
+        "oilVolume":8,
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":160,
+        "headGasketDamageThreshold":1500000,
+        "pistonRingDamageThreshold":1500000,
+        "connectingRodDamageThreshold":2000000,
+
+        //node beam interface
+        "waterDamage": {"[engineGroup]:":["engine_intake"]},
+        "radiator": {"[engineGroup]:":["radiator"]},
+        "engineBlock": {"[engineGroup]:":["engine_block"]},
+        "breakTriggerBeam":"engine",
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":1600,
+        "clutchLaunchTargetRPM":2200,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":[0,0,0,2600,2850,3050,3150,3150]
+        //**highShiftUp can be overwritten by intake modifications**
+        "highShiftUpRPM":5300
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["moonhawk_engine_v8", ["moonhawk_engine"]],
+        ["moonhawk_header_v8", ["moonhawk_engine","moonhawk_exhaust_L","moonhawk_exhaust_R"]],
+        {"deformGroup":"radtube_break", "deformMaterialBase":"moonhawk", "deformMaterialDamaged":"invis"},
+        ["moonhawk_radtube_v8", ["moonhawk_radiator","moonhawk_radsupport","moonhawk_engine"]],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        ["rpmspin"  , "moonhawk_coolingfan_v8", "e2r","e2l","e4r",  {"x":0, "y":0, "z":0}, {"x":0, "y":1, "z":0}    , {"x":0, "y":0, "z":0}, -360, 360, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //6.2L V8 Engine
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":true},
+         {"collision":true}
+         {"group":"moonhawk_engine"},
+         {"engineGroup":"engine_block"}
+         {"nodeWeight":39},
+         {"chemEnergy":2000,"burnRate":0.39,"flashPoint":1000,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":900,"baseTemp":"thermals","conductionRadius":0.13}
+         ["e1r", -0.13, -1.08, 0.32],
+         ["e1l", 0.13, -1.08, 0.32],
+         {"chemEnergy":2000,"burnRate":0.39,"flashPoint":1000,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":900,"baseTemp":"thermals","conductionRadius":0.2}
+         ["e2r", -0.13, -1.60, 0.32],
+         ["e2l", 0.13, -1.60, 0.32],
+         {"chemEnergy":false,"burnRate":false,"flashPoint":false, "specHeat": false,"selfIgnitionCoef":false,"smokePoint":false,"baseTemp":false,"conductionRadius":false},
+         {"selfCollision":false},
+         {"engineGroup":["engine_block","engine_intake"]}
+         ["e3r", -0.32, -1.08, 0.78],
+         ["e3l", 0.32, -1.08, 0.78],
+         ["e4r", -0.32, -1.60, 0.78{"isExhaust":true}],
+         ["e4l", 0.32, -1.60, 0.78],
+         {"engineGroup":""}
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":9130830,"beamDamp":168},
+          {"beamDeform":359100,"beamStrength":"FLT_MAX"},
+          //engine
+          ["e1r","e1l"],
+          ["e2r","e2l"],
+          ["e3r","e3l"],
+          ["e4r","e4l"],
+
+          ["e1r","e2r"],
+          ["e1l","e2l"],
+          ["e3r","e4r"],
+          ["e3l","e4l"],
+
+          ["e1r","e3r"],
+          ["e1l","e3l"],
+          ["e2r","e4r"],
+          ["e2l","e4l"],
+
+          ["e2r","e3r"],
+          ["e2l","e3l"],
+          ["e2r","e3l"],
+          ["e2l","e3r"],
+
+          ["e1r","e4r"{"isExhaust":true}],
+          ["e1l","e4l"],
+          ["e1r","e4l"],
+          ["e1l","e4r"],
+
+          ["e1r","e2l"],
+          ["e1l","e2r"],
+          ["e3r","e4l"],
+          ["e3l","e4r"],
+
+          ["e1r","e3l"],
+          ["e1l","e3r"],
+          ["e2r","e4l"],
+          ["e2l","e4r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"moonhawk_intake_v8_new": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stock Intake",
+        "value":300,
+    }
+    "slotType" : "moonhawk_intake_v8_new",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["moonhawk_intake_v8", ["moonhawk_engine"]],
+    ],
+}
+"moonhawk_supercharger_stage1_new": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stage 1 Supercharger",
+        "value":1000,
+    }
+    "slotType" : "moonhawk_intake_v8_new",
+        "supercharger": {
+        "gearRatio":1.6,
+        "clutchEngageRPM":0,
+        "pressureRatePSI":500,
+        "pressurePSIPer1kRPM":2.4,
+        "crankLossPer1kRPM":0.04,
+        "type":"roots",
+        "boostController":[
+            //throttle in %, factor
+            [0,     0.2],
+            [100,     1],
+        ],
+    },
+    "mainEngine": {
+        //engine performance
+        "idleRPM":850,
+        "maxRPM":5900,
+        "burnEfficiency":0.29,
+        //supercharger name
+        "supercharger":"supercharger",
+    },
+    "vehicleController": {
+        "highShiftUpRPM":5600,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["moonhawk_supercharger_stage1", ["moonhawk_engine"]],
+    ],
+}
+"moonhawk_supercharger_stage2_new": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stage 2 Supercharger",
+        "value":1800,
+    }
+    "slotType" : "moonhawk_intake_v8_new",
+    "supercharger": {
+        "gearRatio":2.0,
+        "clutchEngageRPM":0,
+        "pressureRatePSI":500,
+        "pressurePSIPer1kRPM":3.8,
+        "crankLossPer1kRPM":0.04,
+        "type":"roots",
+        "boostController":[
+            //throttle in %, factor
+            [0,     0.2],
+            [100,     1],
+        ],
+    },
+    "mainEngine": {
+        "idleRPM":900,
+        "maxRPM":6000,
+        "burnEfficiency":0.26,
+        "revLimiterRPMDrop":50,
+        //supercharger name
+        "supercharger":"supercharger",
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":220,
+    },
+    "vehicleController": {
+        "highShiftUpRPM":5700,
+        "revMatchThrottle":0.3,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["moonhawk_supercharger_stage1", ["moonhawk_engine"]],
+    ],
+}
+"moonhawk_supercharger_stage3": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stage 3 Supercharger",
+        "value":3000,
+    }
+    "slotType" : "moonhawk_intake_v8_new",
+    "supercharger": {
+        "gearRatio":2.5,
+        "clutchEngageRPM":0,
+        "pressureRatePSI":500,
+        "pressurePSIPer1kRPM":5.2,
+        "crankLossPer1kRPM":0.04,
+        "type":"roots",
+        "boostController":[
+            //throttle in %, factor
+            [0,     0.2],
+            [100,     1],
+        ],
+    },
+    "mainEngine": {
+        //engine performance
+        "idleRPM":900,
+        "maxRPM":6000,
+        "burnEfficiency":0.24
+        "revLimiterRPMDrop":50,
+        //supercharger name
+        "supercharger":"supercharger",
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":260,
+    },
+    "vehicleController": {
+        "highShiftUpRPM":5700,
+        "revMatchThrottle":0.3,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["moonhawk_supercharger_stage1", ["moonhawk_engine"]],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        ["throttle"     ,"moonhawk_supercharger_throttle", "sch1r","sch1l","sch2r",  {"x":90, "y":0, "z":0} , {"x":-90, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":true},
+         {"collision":true}
+         {"nodeWeight":5.34},
+         ["sch1r",-0.18, -1.57, 1.12],
+         ["sch1l", 0.18, -1.57, 1.12],
+         ["sch2r",-0.18, -1.13, 1.12],
+         ["sch2l", 0.18, -1.13, 1.12],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":1660830,"beamDamp":168},
+          {"beamDeform":51870,"beamStrength":"FLT_MAX"},
+          //supercharger
+          ["sch1r","sch1l"],
+          ["sch2r","sch2l"],
+          ["sch1r","sch2r"],
+          ["sch1l","sch2l"],
+          ["sch2r","sch1l"],
+          ["sch2l","sch1r"],
+
+          {"beamDeform":35910,"beamStrength":"FLT_MAX"},
+          //attach to engine
+          ["sch1r","e3r"],
+          ["sch1r","e3l"],
+          ["sch1r","e4r"],
+          ["sch1r","e4l"],
+          ["sch1l","e3r"],
+          ["sch1l","e3l"],
+          ["sch1l","e4r"],
+          ["sch1l","e4l"],
+          ["sch2r","e3r"],
+          ["sch2r","e3l"],
+          ["sch2r","e4r"],
+          ["sch2r","e4l"],
+          ["sch2l","e3r"],
+          ["sch2l","e3l"],
+          ["sch2l","e4r"],
+          ["sch2l","e4l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"groundModel":"metal"},
+            {"group":"moonhawk_supercharger"},
+            ["sch1r","sch1l","sch2l"],
+            ["sch1r","sch2l","sch2r"],
+            {"group":""},
+    ],
+}
+"moonhawk_transmission_5M_new": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"New 5-Speed Manual Transmission",
+        "value":250,
+    }
+    "slotType" : "moonhawk_transmission",
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "gearRatios":[-3.39, 0, 3.9, 2.25, 1.5, 1.0, 0.8],
+        "friction": 1,
+    },
+    "clutch": {},
+    "vehicleController": {
+        "lowShiftDownRPM":[0,0,0,2600,2850,3050,3150,3150]
+        "lowShiftUpRPM":4400,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["moonhawk_transmission", ["moonhawk_engine","moonhawk_transmission"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--3 Speed Manual--
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true}
+         {"group":"moonhawk_transmission"},
+         {"nodeWeight":27},
+         ["tra1", 0.0, -0.38, 0.32],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":9130830,"beamDamp":168},
+          {"beamDeform":359100,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"moonhawk_transmission_4A_new": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"New 4-Speed Automatic Transmission",
+        "value":400,
+    }
+    "slotType" : "moonhawk_transmission",
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["automaticGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "gearbox": {
+        "gearRatios":[-2.00, 0, 2.4, 1.47, 1.0, 0.68],
+        "parkLockTorque":2500,
+        "oneWayViscousCoef":17,
+        "friction": 1,
+    },
+    "torqueConverter": {
+        "converterDiameter":0.28,
+        "converterStiffness":8,
+        "couplingAVRatio":0.85,
+        "stallTorqueRatio":2.05,
+        "lockupClutchTorque":300,
+    },
+    "vehicleController": {
+        "automaticModes":"PRND21",
+        "transmissionGearChangeDelay":2
+        "gearboxDecisionSmoothingDown":1
+        "gearboxDecisionSmoothingUp":1
+        "lowShiftDownRPM":1300,
+        "lowShiftUpRPM":2300,
+        "highShiftDownRPM":3100,
+        "torqueConverterLockupRPM":1800
+        "torqueConverterLockupMinGear":3
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["moonhawk_transmission", ["moonhawk_engine","moonhawk_transmission"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--3 Speed Automatic--
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true}
+         {"group":"moonhawk_transmission"},
+         {"nodeWeight":33},
+         ["tra1", 0.0, -0.38, 0.32],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":9130830,"beamDamp":168},
+          {"beamDeform":359100,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"moonhawk_transmission_6A_new": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"New 6-Speed Automatic Transmission",
+        "value":400,
+    }
+    "slotType" : "moonhawk_transmission",
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["automaticGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "gearbox": {
+        //premultiplied to account for 3.55 differential ratio instead of 3.15
+        //source ratios: [-3.4, 0, 4.17, 2.34, 1.52, 1.14, 0.87, 0.69]
+        "gearRatios":[-3.02, 0, 3.70, 2.08, 1.35, 1.02, 0.89, 0.62],
+        "parkLockTorque":2500,
+        "oneWayViscousCoef":17,
+        "friction": 1,
+    },
+    "torqueConverter": {
+        "converterDiameter":0.285,
+        "converterStiffness":10,
+        "couplingAVRatio":0.88,
+        "stallTorqueRatio":1.9,
+        "lockupClutchTorque":350,
+    },
+    "vehicleController": {
+        "automaticModes":"PRND21",
+        "calculateOptimalLoadShiftPoints": true
+        "transmissionGearChangeDelay":1.5
+        "gearboxDecisionSmoothingDown":1.5
+        "gearboxDecisionSmoothingUp":1.5
+        "lowShiftDownRPM":1300,
+        "lowShiftUpRPM":2300,
+        "torqueConverterLockupRPM":1800
+        "torqueConverterLockupMinGear":3
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["moonhawk_transmission", ["moonhawk_engine","moonhawk_transmission"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--3 Speed Automatic--
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true}
+         {"group":"moonhawk_transmission"},
+         {"nodeWeight":33},
+         ["tra1", 0.0, -0.38, 0.32],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":9130830,"beamDamp":168},
+          {"beamDeform":359100,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+}
