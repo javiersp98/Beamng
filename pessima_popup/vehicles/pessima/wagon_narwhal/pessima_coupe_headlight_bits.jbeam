@@ -1,0 +1,247 @@
+{
+"pessima_narwhal_headlightbits_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Right Sub-Headlight",
+        "value":70,
+    }
+    "slotType" : "pessima_headlightbits_R",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+		{"deformGroup":"pessima_headlightglass_R_break", "deformMaterialBase":"signalflat", "deformMaterialDamaged":"signalflat_dmg"}
+        ["pessima_coupe_headlightbits_R", ["pessima_headlightbits_R"]],
+		{"deformGroup":"pessima_headlightglass_R_break", "deformMaterialBase":"popupsignals", "deformMaterialDamaged":"popupsignals_dmg"}
+        ["pessima_coupe_headlightglass_R", ["pessima_headlightbits_R"],[]{"deformSound":"GlassBreakSound4", "deformVolume":0.5}],         
+		{"deformGroup":""},
+		["pessima_coupe_headlightframe_R", ["pessima_headlightbits_R"]],  
+    ],
+
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--HEADLIGHT--
+         //right
+         {"selfCollision":false}
+         {"collision":true}
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"nodeWeight":1.0},
+         {"group":"pessima_headlightbits_R"},
+         ["heb1r",-0.49, -2.085, 0.62],
+         ["heb3r",-0.49, -2.085, 0.575],
+         ["heb2r",-0.70, -2.05, 0.62],
+         ["heb4r",-0.70, -2.065, 0.575],
+         {"selfCollision":false}
+         ["heb5r",-0.59, -1.99, 0.55],
+         {"group":""},
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--HEADLIGHT--
+          {"beamSpring":1800600,"beamDamp":90},
+          {"beamDeform":22815,"beamStrength":49725},
+          //headlight main shape
+          {"deformGroup":"pessima_headlightglass_R_break", "deformationTriggerRatio":0.005}
+          //r
+          ["heb1r","heb2r"],
+          ["heb3r","heb4r"],
+          ["heb1r","heb3r"],
+          ["heb2r","heb4r"],
+
+          ["heb1r","heb4r"],
+          ["heb2r","heb3r"],
+
+          ["heb1r","heb5r"],
+          ["heb2r","heb5r"],
+          ["heb3r","heb5r"],
+          ["heb4r","heb5r"],
+          //attach
+          {"beamSpring":600600,"beamDamp":90},
+          {"beamDeform":8995,"beamStrength":12050},
+          //r
+          {"breakGroup":"pessima_headlight_a_R"},
+          ["heb5r","f15rr"],
+          ["heb5r","f15r"],
+          ["heb2r","f15rr"],
+          ["heb4r","f15rr"],
+          ["heb4r","f19rr"],
+
+          {"beamDeform":8995,"beamStrength":12050},
+          {"breakGroup":"pessima_headlight_b_R"},
+          ["heb1r","f15r"],
+          ["heb1r","f15rr"],
+          ["heb3r","f15r"],
+          ["heb3r","f13rr"],
+
+          {"breakGroup":""},
+          {"deformGroup":""}
+
+          //headlight support beams
+          {"beamType":"|SUPPORT", "beamLongBound":4},
+          {"beamSpring":600600,"beamDamp":90},
+          {"beamLimitSpring":1001000,"beamLimitDamp":150},
+          {"beamDeform":11880,"beamStrength":297000},
+          {"optional":true},
+          ["heb2r","h4"],
+          ["heb4r","h4"],
+          ["heb1r","h4r"],
+          {"optional":false},
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            //right headlight
+            {"group":"pessima_headlightbits_R"},
+            {"dragCoef":3},
+            ["heb3r","heb1r","heb4r"],
+            ["heb4r","heb1r","heb2r"],
+            ["heb4r","heb2r","heb5r"],
+            ["heb1r","heb5r","heb2r"],
+            ["heb3r","heb5r","heb1r"],
+            ["heb4r","heb5r","heb3r"],
+            {"group":""},
+            //gap
+            {"dragCoef":0},
+            {"optional":true}
+            {"breakGroup":["pessima_headlight_a_R"]}
+            ["heb1r","heb3r","g2r"],
+            ["heb1r","g2r","g1r"],
+            ["heb2r","fe12r","heb4r"],
+            ["fe11r","fe12r","heb2r"],
+            {"breakGroup":["pessima_headlight_a_R","pessima_hoodlatch"]}
+            ["h4rr","fe11r","heb2r"],
+            ["h4rr","heb2r","heb1r"],
+            ["h4rr","heb1r","h4r"],
+            ["h4r","heb1r","g1r"],
+            {"optional":false}
+            {"breakGroup":""}
+
+
+    ],
+}
+"pessima_narwhal_headlightbits_L": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Left Sub-Headlight",
+        "value":70,
+    }
+    "slotType" : "pessima_headlightbits_L",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pessima_coupe_headlightframe_L", ["pessima_headlightbits_L"]],
+		 {"deformGroup":"pessima_headlightglass_L_break", "deformMaterialBase":"signalflat", "deformMaterialDamaged":"signalflat_dmg"}
+         ["pessima_coupe_headlightbits_L", ["pessima_headlightbits_L"]],
+          {"deformGroup":"pessima_headlightglass_L_break", "deformMaterialBase":"popupsignals", "deformMaterialDamaged":"popupsignals_dmg"}
+        ["pessima_coupe_headlightglass_L", ["pessima_headlightbits_L"],[]{"deformSound":"GlassBreakSound4", "deformVolume":0.5}],
+         {"deformGroup":""},
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--HEADLIGHT--
+         //left
+         {"selfCollision":false}
+         {"collision":true}
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"nodeWeight":1.0},
+         {"group":"pessima_headlightbits_L"},
+         ["heb1l", 0.49, -2.085, 0.62],
+         ["heb3l", 0.49, -2.085, 0.575],
+         ["heb2l", 0.70, -2.05, 0.62],
+         ["heb4l", 0.70, -2.065, 0.575],
+         {"selfCollision":false}
+         ["heb5l", 0.59, -1.99, 0.55],
+         {"group":""},
+
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--HEADLIGHT--
+          {"beamSpring":1800600,"beamDamp":90},
+          {"beamDeform":22815,"beamStrength":49725},
+          //headlight main shape
+          {"deformGroup":"pessima_headlightglass_L_break", "deformationTriggerRatio":0.01}
+          //l
+          ["heb1l","heb2l"],
+          ["heb3l","heb4l"],
+          ["heb1l","heb3l"],
+          ["heb2l","heb4l"],
+
+          ["heb1l","heb4l"],
+          ["heb2l","heb3l"],
+
+          ["heb1l","heb5l"],
+          ["heb2l","heb5l"],
+          ["heb3l","heb5l"],
+          ["heb4l","heb5l"],
+          //attach
+          {"beamSpring":600600,"beamDamp":90},
+          {"beamDeform":8995,"beamStrength":12050},
+          //l
+          {"breakGroup":"pessima_headlight_a_L"},
+          ["heb5l","f15ll"],
+          ["heb5l","f15l"],
+          ["heb2l","f15ll"],
+          ["heb4l","f15ll"],
+          ["heb4l","f19ll"],
+
+
+          {"beamDeform":8995,"beamStrength":12050},
+          {"breakGroup":"pessima_headlight_b_L"},
+          ["heb1l","f15ll"],
+          ["heb1l","f15l"],
+          ["heb3l","f15l"],
+          ["heb3l","f13ll"],
+
+
+          {"breakGroup":""},
+          {"deformGroup":""}
+
+          //headlight support beams
+          {"beamType":"|SUPPORT", "beamLongBound":4},
+          {"beamSpring":600600,"beamDamp":90},
+          {"beamLimitSpring":1001000,"beamLimitDamp":150},
+          {"beamDeform":11880,"beamStrength":297000},
+          {"optional":true},
+          ["heb2l","h4"],
+          ["heb4l","h4"],
+          ["heb1l","h4l"],
+          {"optional":false},
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            //left headlight
+            {"group":"pessima_headlightbits_L"},
+            {"dragCoef":3},
+            ["heb1l","heb3l","heb4l"],
+            ["heb1l","heb4l","heb2l"],
+            ["heb2l","heb4l","heb5l"],
+            ["heb5l","heb1l","heb2l"],
+            ["heb5l","heb3l","heb1l"],
+            ["heb5l","heb4l","heb3l"],
+            {"group":""},
+            //gap
+            {"dragCoef":0},
+            {"optional":true}
+            {"breakGroup":["pessima_headlight_a_L"]}
+            ["heb3l","heb1l","g2l"],
+            ["heb1l","g1l","g2l"],
+            ["heb4l","fe12l","heb2l"],
+            ["fe12l","fe11l","heb2l"],
+            {"breakGroup":["pessima_headlight_a_L","pessima_hoodlatch"]}
+            ["heb2l","fe11l","h4ll"],
+            ["h4ll","heb1l","heb2l"],
+            ["h4l","heb1l","h4ll"],
+            ["heb1l","h4l","g1l"],
+            {"optional":false}
+            {"breakGroup":""}
+
+    ],
+}
+}
