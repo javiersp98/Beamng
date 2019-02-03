@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.79.0 commit date:2017-09-11, commit time:10:43, hash:5bd8ac9</authoring_tool>
+    </contributor>
+    <created>2017-12-18T18:50:46</created>
+    <modified>2017-12-18T18:50:46</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_cameras>
+    <camera id="Camera-camera" name="Camera">
+      <optics>
+        <technique_common>
+          <perspective>
+            <xfov sid="xfov">49.13434</xfov>
+            <aspect_ratio>1.777778</aspect_ratio>
+            <znear sid="znear">0.1</znear>
+            <zfar sid="zfar">100</zfar>
+          </perspective>
+        </technique_common>
+      </optics>
+      <extra>
+        <technique profile="blender">
+          <shiftx sid="shiftx" type="float">0</shiftx>
+          <shifty sid="shifty" type="float">0</shifty>
+          <YF_dofdist sid="YF_dofdist" type="float">0</YF_dofdist>
+        </technique>
+      </extra>
+    </camera>
+  </library_cameras>
+  <library_lights>
+    <light id="Lamp-light" name="Lamp">
+      <technique_common>
+        <point>
+          <color sid="color">1 1 1</color>
+          <constant_attenuation>1</constant_attenuation>
+          <linear_attenuation>0</linear_attenuation>
+          <quadratic_attenuation>0.00111109</quadratic_attenuation>
+        </point>
+      </technique_common>
+      <extra>
+        <technique profile="blender">
+          <type sid="type" type="int">0</type>
+          <flag sid="flag" type="int">0</flag>
+          <mode sid="mode" type="int">8192</mode>
+          <gamma sid="blender_gamma" type="float">1</gamma>
+          <red sid="red" type="float">1</red>
+          <green sid="green" type="float">1</green>
+          <blue sid="blue" type="float">1</blue>
+          <shadow_r sid="blender_shadow_r" type="float">0</shadow_r>
+          <shadow_g sid="blender_shadow_g" type="float">0</shadow_g>
+          <shadow_b sid="blender_shadow_b" type="float">0</shadow_b>
+          <energy sid="blender_energy" type="float">1</energy>
+          <dist sid="blender_dist" type="float">29.99998</dist>
+          <spotsize sid="spotsize" type="float">75</spotsize>
+          <spotblend sid="spotblend" type="float">0.15</spotblend>
+          <halo_intensity sid="blnder_halo_intensity" type="float">1</halo_intensity>
+          <att1 sid="att1" type="float">0</att1>
+          <att2 sid="att2" type="float">1</att2>
+          <falloff_type sid="falloff_type" type="int">2</falloff_type>
+          <clipsta sid="clipsta" type="float">1.000799</clipsta>
+          <clipend sid="clipend" type="float">30.002</clipend>
+          <bias sid="bias" type="float">1</bias>
+          <soft sid="soft" type="float">3</soft>
+          <compressthresh sid="compressthresh" type="float">0.04999995</compressthresh>
+          <bufsize sid="bufsize" type="int">2880</bufsize>
+          <samp sid="samp" type="int">3</samp>
+          <buffers sid="buffers" type="int">1</buffers>
+          <filtertype sid="filtertype" type="int">0</filtertype>
+          <bufflag sid="bufflag" type="int">0</bufflag>
+          <buftype sid="buftype" type="int">2</buftype>
+          <ray_samp sid="ray_samp" type="int">1</ray_samp>
+          <ray_sampy sid="ray_sampy" type="int">1</ray_sampy>
+          <ray_sampz sid="ray_sampz" type="int">1</ray_sampz>
+          <ray_samp_type sid="ray_samp_type" type="int">0</ray_samp_type>
+          <area_shape sid="area_shape" type="int">1</area_shape>
+          <area_size sid="area_size" type="float">0.1</area_size>
+          <area_sizey sid="area_sizey" type="float">0.1</area_sizey>
+          <area_sizez sid="area_sizez" type="float">1</area_sizez>
+          <adapt_thresh sid="adapt_thresh" type="float">0.000999987</adapt_thresh>
+          <ray_samp_method sid="ray_samp_method" type="int">1</ray_samp_method>
+          <shadhalostep sid="shadhalostep" type="int">0</shadhalostep>
+          <sun_effect_type sid="sun_effect_type" type="int">0</sun_effect_type>
+          <skyblendtype sid="skyblendtype" type="int">1</skyblendtype>
+          <horizon_brightness sid="horizon_brightness" type="float">1</horizon_brightness>
+          <spread sid="spread" type="float">1</spread>
+          <sun_brightness sid="sun_brightness" type="float">1</sun_brightness>
+          <sun_size sid="sun_size" type="float">1</sun_size>
+          <backscattered_light sid="backscattered_light" type="float">1</backscattered_light>
+          <sun_intensity sid="sun_intensity" type="float">1</sun_intensity>
+          <atm_turbidity sid="atm_turbidity" type="float">2</atm_turbidity>
+          <atm_extinction_factor sid="atm_extinction_factor" type="float">1</atm_extinction_factor>
+          <atm_distance_factor sid="atm_distance_factor" type="float">1</atm_distance_factor>
+          <skyblendfac sid="skyblendfac" type="float">1</skyblendfac>
+          <sky_exposure sid="sky_exposure" type="float">1</sky_exposure>
+          <sky_colorspace sid="sky_colorspace" type="int">0</sky_colorspace>
+        </technique>
+      </extra>
+    </light>
+  </library_lights>
+  <library_images/>
+  <library_effects>
+    <effect id="glass_tailgate_fen-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="glass_tailgate_int_fen-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="glass_tailgate_fen-material" name="glass_tailgate_fen">
+      <instance_effect url="#glass_tailgate_fen-effect"/>
+    </material>
+    <material id="glass_tailgate_int_fen-material" name="glass_tailgate_int_fen">
+      <instance_effect url="#glass_tailgate_int_fen-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="super_tailgate-mesh" name="super_tailgate">
+      <mesh>
+        <source id="super_tailgate-mesh-positions">
+          <float_array id="super_tailgate-mesh-positions-array" count="126">0.3776531 1.818458 0.8719061 0.1787934 1.819732 0.8746405 0.3875381 0.7519278 1.080256 0.183609 0.7519686 1.084156 0.5623055 1.443425 0.9500228 0.5670114 0.9849317 1.03467 0.5659229 1.222807 0.9929407 0.5555757 1.6455 0.9063761 0.5661861 0.7518383 1.071758 0.5471827 1.816136 0.8667257 0 1.819934 0.8750686 -0.3776531 1.818458 0.8719061 -0.1787934 1.819732 0.8746405 -0.5670114 0.9849317 1.03467 -0.5661861 0.7518383 1.071758 -0.5623055 1.443425 0.9500228 -0.5659229 1.222807 0.9929407 -0.5471827 1.816136 0.8667257 -0.5555757 1.6455 0.9063761 -0.183609 0.7519686 1.084156 -0.3875381 0.7519278 1.080256 0 0.7519755 1.084814 -0.3911507 0.9813426 1.050485 -0.3864448 1.439836 0.9658374 -0.3900622 1.219218 1.008755 -0.379715 1.641911 0.9221907 0.3936227 1.443425 0.9658374 0.3983286 0.9849317 1.050485 0.3972401 1.222807 1.008755 0.3868929 1.6455 0.9221907 0.1926389 1.443425 0.9732944 0.1973448 0.9849317 1.057942 0.1962563 1.222807 1.016212 0.1859091 1.6455 0.9296476 -0.1937559 0.9813426 1.057942 -0.18905 1.439836 0.9732944 -0.1926674 1.219218 1.016212 -0.1823202 1.641911 0.9296478 0 0.9813426 1.063668 0 1.439836 0.9790204 0 1.219218 1.021938 0 1.641911 0.9353737</float_array>
+          <technique_common>
+            <accessor source="#super_tailgate-mesh-positions-array" count="42" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="super_tailgate-mesh-normals">
+          <float_array id="super_tailgate-mesh-normals-array" count="126">-0.0849964 0.1645909 0.982693 -0.06082481 0.1820471 0.9814068 -0.08435463 0.1822292 0.979631 -0.08359193 0.202403 0.9757281 -0.053653 0.2376236 0.9698745 -0.08285909 0.2212323 0.9716948 -0.0603969 0.2020046 0.9775205 0.09204459 0.1643741 0.9820942 0.0642116 0.1821058 0.9811801 0.06000065 0.1535419 0.9863188 0.09100669 0.221291 0.9709522 0.0639975 0.2021247 0.9772666 0.09140336 0.2023387 0.9750407 0.091771 0.1820771 0.9789924 0.03097653 0.1820751 0.9827966 0.02938991 0.1438978 0.9891561 0.05646044 0.2400944 0.9691062 0.03094661 0.2016416 0.9789704 -0.05728352 0.1544855 0.9863331 -0.03317433 0.1821081 0.9827187 -0.03326559 0.2016386 0.978895 -0.03115987 0.1448127 0.9889683 -0.001983702 0.1818922 0.9833166 -0.002319395 0.2011193 0.9795641 -0.03051894 0.2514457 0.9673901 -0.002075254 0.2602958 0.9655267 0.02758955 0.2548681 0.9665822 0.01397758 0.3066223 0.9517287 0 0.3208203 0.9471401 0.06088459 0.2563564 0.9646629 0.02942043 0.2857813 0.9578433 -0.01553434 0.302294 0.9530882 -0.02954202 0.2793985 0.9597207 -0.05722373 0.2524865 0.9659068 0.03677505 0.120671 0.9920111 0.01641935 0.1051695 0.9943188 0.06509691 0.1370911 0.9884172 -0.00125128 0.137673 0.990477 0 0.09180146 0.9957774 -0.01693803 0.106603 0.9941574 -0.03711134 0.1236638 0.99163 -0.06299078 0.1396235 0.9881991</float_array>
+          <technique_common>
+            <accessor source="#super_tailgate-mesh-normals-array" count="42" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="super_tailgate-mesh-map-0">
+          <float_array id="super_tailgate-mesh-map-0-array" count="360">9.79584e-5 0.2097532 0.1564125 0.4170227 9.66874e-4 0.4225859 0.004034817 0.6206218 0.1651722 0.7967929 0.009772956 0.8027674 9.66874e-4 0.4225859 0.1594479 0.6148363 0.004034817 0.6206218 0.999902 0.2107889 0.8494172 0.4208513 0.8506671 0.2082672 0.989051 0.803792 0.8459854 0.6186473 0.9951236 0.6216345 0.8459854 0.6186473 0.9985975 0.4236165 0.9951236 0.6216345 0.8506671 0.2082672 0.6724414 0.4194226 0.6736443 0.2069277 0.8398594 0.8005829 0.6690249 0.6171296 0.8459854 0.6186473 0.8459854 0.6186473 0.6724414 0.4194226 0.8494172 0.4208513 0.1555963 0.2044181 0.3302424 0.4159584 0.1564125 0.4170227 0.3332549 0.6136792 0.1651722 0.7967929 0.1594479 0.6148363 0.1594479 0.6148363 0.3302424 0.4159584 0.3332549 0.6136792 0.3294789 0.2034486 0.4997638 0.4152026 0.3302424 0.4159584 0.4995651 0.6128236 0.3390154 0.7955505 0.3332549 0.6136792 0.3332549 0.6136792 0.4997638 0.4152026 0.4995651 0.6128236 0.4997638 0.4152026 0.6736443 0.2069277 0.6724414 0.4194226 0.6724414 0.4194226 0.4995651 0.6128236 0.4997638 0.4152026 0.4994115 0.794537 0.6690249 0.6171296 0.6628873 0.7989823 0.4994115 0.794537 0.6567298 0.9598566 0.4991964 0.9598718 0.9815363 0.9582216 0.8398594 0.8005829 0.989051 0.803792 0.6628873 0.7989823 0.8320016 0.9592563 0.6567298 0.9598566 0.3416525 0.9594547 0.4994115 0.794537 0.4991964 0.9598718 0.1664167 0.9584727 0.3390154 0.7955505 0.3416525 0.9594547 0.1651722 0.7967929 0.01694566 0.9571561 0.009772956 0.8027674 0.8418098 0.001288056 0.6736443 0.2069277 0.6620273 4.25188e-4 0.9994944 0.002704799 0.8506671 0.2082672 0.8418098 0.001288056 0.6620273 4.25188e-4 0.4999943 0.2028234 0.5001951 9.79584e-5 0.3383657 1.07417e-4 0.4999943 0.2028234 0.3294789 0.2034486 0.1585912 5.98025e-4 0.3294789 0.2034486 0.1555963 0.2044181 9.17109e-4 0.001679599 0.1555963 0.2044181 9.79584e-5 0.2097532 9.79584e-5 0.2097532 0.1555963 0.2044181 0.1564125 0.4170227 0.004034817 0.6206218 0.1594479 0.6148363 0.1651722 0.7967929 9.66874e-4 0.4225859 0.1564125 0.4170227 0.1594479 0.6148363 0.999902 0.2107889 0.9985975 0.4236165 0.8494172 0.4208513 0.989051 0.803792 0.8398594 0.8005829 0.8459854 0.6186473 0.8459854 0.6186473 0.8494172 0.4208513 0.9985975 0.4236165 0.8506671 0.2082672 0.8494172 0.4208513 0.6724414 0.4194226 0.8398594 0.8005829 0.6628873 0.7989823 0.6690249 0.6171296 0.8459854 0.6186473 0.6690249 0.6171296 0.6724414 0.4194226 0.1555963 0.2044181 0.3294789 0.2034486 0.3302424 0.4159584 0.3332549 0.6136792 0.3390154 0.7955505 0.1651722 0.7967929 0.1594479 0.6148363 0.1564125 0.4170227 0.3302424 0.4159584 0.3294789 0.2034486 0.4999943 0.2028234 0.4997638 0.4152026 0.4995651 0.6128236 0.4994115 0.794537 0.3390154 0.7955505 0.3332549 0.6136792 0.3302424 0.4159584 0.4997638 0.4152026 0.4997638 0.4152026 0.4999943 0.2028234 0.6736443 0.2069277 0.6724414 0.4194226 0.6690249 0.6171296 0.4995651 0.6128236 0.4994115 0.794537 0.4995651 0.6128236 0.6690249 0.6171296 0.4994115 0.794537 0.6628873 0.7989823 0.6567298 0.9598566 0.9815363 0.9582216 0.8320016 0.9592563 0.8398594 0.8005829 0.6628873 0.7989823 0.8398594 0.8005829 0.8320016 0.9592563 0.3416525 0.9594547 0.3390154 0.7955505 0.4994115 0.794537 0.1664167 0.9584727 0.1651722 0.7967929 0.3390154 0.7955505 0.1651722 0.7967929 0.1664167 0.9584727 0.01694566 0.9571561 0.8418098 0.001288056 0.8506671 0.2082672 0.6736443 0.2069277 0.9994944 0.002704799 0.999902 0.2107889 0.8506671 0.2082672 0.6620273 4.25188e-4 0.6736443 0.2069277 0.4999943 0.2028234 0.3383657 1.07417e-4 0.5001951 9.79584e-5 0.4999943 0.2028234 0.1585912 5.98025e-4 0.3383657 1.07417e-4 0.3294789 0.2034486 9.17109e-4 0.001679599 0.1585912 5.98025e-4 0.1555963 0.2044181</float_array>
+          <technique_common>
+            <accessor source="#super_tailgate-mesh-map-0-array" count="180" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="super_tailgate-mesh-map-1">
+          <float_array id="super_tailgate-mesh-map-1-array" count="360">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</float_array>
+          <technique_common>
+            <accessor source="#super_tailgate-mesh-map-1-array" count="180" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="super_tailgate-mesh-vertices">
+          <input semantic="POSITION" source="#super_tailgate-mesh-positions"/>
+        </vertices>
+        <triangles material="glass_tailgate_fen-material" count="60">
+          <input semantic="VERTEX" source="#super_tailgate-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#super_tailgate-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#super_tailgate-mesh-map-0" offset="2" set="0"/>
+          <input semantic="TEXCOORD" source="#super_tailgate-mesh-map-1" offset="2" set="1"/>
+          <p>13 0 0 24 1 1 16 2 2 15 3 3 25 4 4 18 5 5 16 2 6 23 6 7 15 3 8 5 7 9 28 8 10 27 9 11 7 10 12 26 11 13 4 12 14 26 11 15 6 13 16 4 12 17 27 9 18 32 14 19 31 15 20 29 16 21 30 17 22 26 11 23 26 11 24 32 14 25 28 8 26 22 18 27 36 19 28 24 1 29 35 20 30 25 4 31 23 6 32 23 6 33 36 19 34 35 20 35 34 21 36 40 22 37 36 19 38 39 23 39 37 24 40 35 20 41 35 20 42 40 22 43 39 23 44 40 22 45 31 15 46 32 14 47 32 14 48 39 23 49 40 22 50 41 25 51 30 17 52 33 26 53 41 25 54 1 27 55 10 28 56 9 29 57 29 16 58 7 10 59 33 26 60 0 30 61 1 27 62 12 31 63 41 25 64 10 28 65 11 32 66 37 24 67 12 31 68 25 4 69 17 33 70 18 5 71 2 34 72 31 15 73 3 35 74 8 36 75 27 9 76 2 34 77 3 35 78 38 37 79 21 38 80 19 39 81 38 37 82 34 21 83 20 40 84 34 21 85 22 18 86 14 41 87 22 18 88 13 0 89 13 0 90 22 18 91 24 1 92 15 3 93 23 6 94 25 4 95 16 2 96 24 1 97 23 6 98 5 7 99 6 13 100 28 8 101 7 10 102 29 16 103 26 11 104 26 11 105 28 8 106 6 13 107 27 9 108 28 8 109 32 14 110 29 16 111 33 26 112 30 17 113 26 11 114 30 17 115 32 14 116 22 18 117 34 21 118 36 19 119 35 20 120 37 24 121 25 4 122 23 6 123 24 1 124 36 19 125 34 21 126 38 37 127 40 22 128 39 23 129 41 25 130 37 24 131 35 20 132 36 19 133 40 22 134 40 22 135 38 37 136 31 15 137 32 14 138 30 17 139 39 23 140 41 25 141 39 23 142 30 17 143 41 25 144 33 26 145 1 27 146 9 29 147 0 30 148 29 16 149 33 26 150 29 16 151 0 30 152 12 31 153 37 24 154 41 25 155 11 32 156 25 4 157 37 24 158 25 4 159 11 32 160 17 33 161 2 34 162 27 9 163 31 15 164 8 36 165 5 7 166 27 9 167 3 35 168 31 15 169 38 37 170 19 39 171 21 38 172 38 37 173 20 40 174 19 39 175 34 21 176 14 41 177 20 40 178 22 18 179</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="super_tailgate_001-mesh" name="super_tailgate.001">
+      <mesh>
+        <source id="super_tailgate_001-mesh-positions">
+          <float_array id="super_tailgate_001-mesh-positions-array" count="126">0.3776531 1.818458 0.8709058 0.1787934 1.819732 0.8736403 0.3875381 0.7519278 1.079256 0.183609 0.7519686 1.083156 0.5623055 1.443425 0.9490226 0.5670114 0.9849317 1.03367 0.5659229 1.222807 0.9919405 0.5555757 1.6455 0.9053759 0.5661861 0.7518383 1.070758 0.5471827 1.816136 0.8657255 0 1.819934 0.8740684 -0.3776531 1.818458 0.8709058 -0.1787934 1.819732 0.8736403 -0.5670114 0.9849317 1.03367 -0.5661861 0.7518383 1.070758 -0.5623055 1.443425 0.9490226 -0.5659229 1.222807 0.9919405 -0.5471827 1.816136 0.8657255 -0.5555757 1.6455 0.9053759 -0.183609 0.7519686 1.083156 -0.3875381 0.7519278 1.079256 0 0.7519755 1.083814 -0.3911507 0.9813426 1.049484 -0.3864448 1.439836 0.9648372 -0.3900622 1.219218 1.007755 -0.379715 1.641911 0.9211905 0.3936227 1.443425 0.9648372 0.3983286 0.9849317 1.049484 0.3972401 1.222807 1.007755 0.3868929 1.6455 0.9211905 0.1926389 1.443425 0.9722942 0.1973448 0.9849317 1.056941 0.1962563 1.222807 1.015212 0.1859091 1.6455 0.9286475 -0.1937559 0.9813426 1.056941 -0.18905 1.439836 0.9722942 -0.1926674 1.219218 1.015212 -0.1823202 1.641911 0.9286475 0 0.9813426 1.062667 0 1.439836 0.9780203 0 1.219218 1.020938 0 1.641911 0.9343736</float_array>
+          <technique_common>
+            <accessor source="#super_tailgate_001-mesh-positions-array" count="42" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="super_tailgate_001-mesh-normals">
+          <float_array id="super_tailgate_001-mesh-normals-array" count="126">0.0849964 -0.1645909 -0.982693 0.06082481 -0.1820471 -0.9814068 0.05728352 -0.1544855 -0.9863331 0.08359193 -0.202403 -0.9757281 0.053653 -0.2376236 -0.9698745 0.0603969 -0.2020046 -0.9775205 0.08435463 -0.1822292 -0.979631 -0.09204459 -0.1643741 -0.9820942 -0.0642116 -0.1821058 -0.9811801 -0.091771 -0.1820771 -0.9789924 -0.0639975 -0.2021247 -0.9772666 -0.09100669 -0.221291 -0.9709522 -0.09140336 -0.2023387 -0.9750407 -0.06000065 -0.1535419 -0.9863188 -0.03097653 -0.1820751 -0.9827966 -0.03094661 -0.2016416 -0.9789704 -0.05646044 -0.2400944 -0.9691062 0.03317433 -0.1821081 -0.9827187 0.03115987 -0.1448127 -0.9889683 0.03326559 -0.2016386 -0.978895 0.001983702 -0.1818922 -0.9833166 0.00125128 -0.137673 -0.990477 0.03051894 -0.2514457 -0.9673901 0.002319395 -0.2011193 -0.9795641 -0.02938991 -0.1438978 -0.9891561 0.002075254 -0.2602958 -0.9655267 -0.02758955 -0.2548681 -0.9665822 -0.01397758 -0.3066223 -0.9517287 0 -0.3208203 -0.9471401 -0.06088459 -0.2563564 -0.9646629 -0.02942043 -0.2857813 -0.9578433 0.01553434 -0.302294 -0.9530882 0.02954202 -0.2793985 -0.9597207 0.05722373 -0.2524865 -0.9659068 0.08285909 -0.2212323 -0.9716948 -0.03677505 -0.120671 -0.9920111 -0.06509691 -0.1370911 -0.9884172 -0.01641935 -0.1051695 -0.9943188 0 -0.09180146 -0.9957774 0.01693803 -0.106603 -0.9941574 0.03711134 -0.1236638 -0.99163 0.06299078 -0.1396235 -0.9881991</float_array>
+          <technique_common>
+            <accessor source="#super_tailgate_001-mesh-normals-array" count="42" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="super_tailgate_001-mesh-map-0">
+          <float_array id="super_tailgate_001-mesh-map-0-array" count="360">9.79584e-5 0.7492105 0.1568293 0.5422561 0.1555852 0.7548587 0.004861712 0.3383507 0.1663533 0.1625041 0.1602628 0.3444489 0.1602628 0.3444489 0.001395165 0.5363801 0.004861712 0.3383507 0.999902 0.7501869 0.8498403 0.5398222 0.9990258 0.5373572 0.8468066 0.3420195 0.9902445 0.1571631 0.9959506 0.3393325 0.9990258 0.5373572 0.8468066 0.3420195 0.9959506 0.3393325 0.8506625 0.7524082 0.6728621 0.5408947 0.8498403 0.5398222 0.6698434 0.3431812 0.8410468 0.1600719 0.8468066 0.3420195 0.8468066 0.3420195 0.6728621 0.5408947 0.6698434 0.3431812 0.1555852 0.7548587 0.3306567 0.5436702 0.3294656 0.7561778 0.1663533 0.1625041 0.3340671 0.3459558 0.1602628 0.3444489 0.1602628 0.3444489 0.3306567 0.5436702 0.1568293 0.5422561 0.3294656 0.7561778 0.5001762 0.5447672 0.4999794 0.7571464 0.3401936 0.1640964 0.5003753 0.3471462 0.3340671 0.3459558 0.3340671 0.3459558 0.5001762 0.5447672 0.3306567 0.5436702 0.6736372 0.7533913 0.5001762 0.5447672 0.6728621 0.5408947 0.6728621 0.5408947 0.5003753 0.3471462 0.6698434 0.3431812 0.6698434 0.3431812 0.5005874 0.1654328 0.6640717 0.1613164 0.658238 4.3018e-4 0.5005874 0.1654328 0.500705 9.79584e-5 0.9830406 0.002718687 0.8410468 0.1600719 0.8335081 0.001383185 0.8335081 0.001383185 0.6640717 0.1613164 0.658238 4.3018e-4 0.5005874 0.1654328 0.3431605 1.98119e-4 0.500705 9.79584e-5 0.3401936 0.1640964 0.1679232 8.27406e-4 0.3431605 1.98119e-4 0.01844966 0.001843094 0.1663533 0.1625041 0.01096624 0.156217 0.8413886 0.959369 0.6736372 0.7533913 0.8506625 0.7524082 0.9990757 0.9582698 0.8506625 0.7524082 0.999902 0.7501869 0.4999794 0.7571464 0.6616048 0.9598701 0.4997723 0.9598718 0.3379433 0.9595367 0.4999794 0.7571464 0.4997723 0.9598718 0.1581701 0.9586844 0.3294656 0.7561778 0.3379433 0.9595367 0.1555852 0.7548587 4.98495e-4 0.9572855 9.79584e-5 0.7492105 9.79584e-5 0.7492105 0.001395165 0.5363801 0.1568293 0.5422561 0.004861712 0.3383507 0.01096624 0.156217 0.1663533 0.1625041 0.1602628 0.3444489 0.1568293 0.5422561 0.001395165 0.5363801 0.999902 0.7501869 0.8506625 0.7524082 0.8498403 0.5398222 0.8468066 0.3420195 0.8410468 0.1600719 0.9902445 0.1571631 0.9990258 0.5373572 0.8498403 0.5398222 0.8468066 0.3420195 0.8506625 0.7524082 0.6736372 0.7533913 0.6728621 0.5408947 0.6698434 0.3431812 0.6640717 0.1613164 0.8410468 0.1600719 0.8468066 0.3420195 0.8498403 0.5398222 0.6728621 0.5408947 0.1555852 0.7548587 0.1568293 0.5422561 0.3306567 0.5436702 0.1663533 0.1625041 0.3401936 0.1640964 0.3340671 0.3459558 0.1602628 0.3444489 0.3340671 0.3459558 0.3306567 0.5436702 0.3294656 0.7561778 0.3306567 0.5436702 0.5001762 0.5447672 0.3401936 0.1640964 0.5005874 0.1654328 0.5003753 0.3471462 0.3340671 0.3459558 0.5003753 0.3471462 0.5001762 0.5447672 0.6736372 0.7533913 0.4999794 0.7571464 0.5001762 0.5447672 0.6728621 0.5408947 0.5001762 0.5447672 0.5003753 0.3471462 0.6698434 0.3431812 0.5003753 0.3471462 0.5005874 0.1654328 0.658238 4.3018e-4 0.6640717 0.1613164 0.5005874 0.1654328 0.9830406 0.002718687 0.9902445 0.1571631 0.8410468 0.1600719 0.8335081 0.001383185 0.8410468 0.1600719 0.6640717 0.1613164 0.5005874 0.1654328 0.3401936 0.1640964 0.3431605 1.98119e-4 0.3401936 0.1640964 0.1663533 0.1625041 0.1679232 8.27406e-4 0.01844966 0.001843094 0.1679232 8.27406e-4 0.1663533 0.1625041 0.8413886 0.959369 0.6616048 0.9598701 0.6736372 0.7533913 0.9990757 0.9582698 0.8413886 0.959369 0.8506625 0.7524082 0.4999794 0.7571464 0.6736372 0.7533913 0.6616048 0.9598701 0.3379433 0.9595367 0.3294656 0.7561778 0.4999794 0.7571464 0.1581701 0.9586844 0.1555852 0.7548587 0.3294656 0.7561778 0.1555852 0.7548587 0.1581701 0.9586844 4.98495e-4 0.9572855</float_array>
+          <technique_common>
+            <accessor source="#super_tailgate_001-mesh-map-0-array" count="180" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="super_tailgate_001-mesh-map-1">
+          <float_array id="super_tailgate_001-mesh-map-1-array" count="360">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</float_array>
+          <technique_common>
+            <accessor source="#super_tailgate_001-mesh-map-1-array" count="180" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="super_tailgate_001-mesh-vertices">
+          <input semantic="POSITION" source="#super_tailgate_001-mesh-positions"/>
+        </vertices>
+        <triangles material="glass_tailgate_int_fen-material" count="60">
+          <input semantic="VERTEX" source="#super_tailgate_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#super_tailgate_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#super_tailgate_001-mesh-map-0" offset="2" set="0"/>
+          <input semantic="TEXCOORD" source="#super_tailgate_001-mesh-map-1" offset="2" set="1"/>
+          <p>13 0 0 24 1 1 22 2 2 15 3 3 25 4 4 23 5 5 23 5 6 16 6 7 15 3 8 5 7 9 28 8 10 6 9 11 26 10 12 7 11 13 4 12 14 6 9 15 26 10 16 4 12 17 27 13 18 32 14 19 28 8 20 30 15 21 29 16 22 26 10 23 26 10 24 32 14 25 30 15 26 22 2 27 36 17 28 34 18 29 25 4 30 35 19 31 23 5 32 23 5 33 36 17 34 24 1 35 34 18 36 40 20 37 38 21 38 37 22 39 39 23 40 35 19 41 35 19 42 40 20 43 36 17 44 31 24 45 40 20 46 32 14 47 32 14 48 39 23 49 30 15 50 30 15 51 41 25 52 33 26 53 1 27 54 41 25 55 10 28 56 9 29 57 29 16 58 0 30 59 0 30 60 33 26 61 1 27 62 41 25 63 12 31 64 10 28 65 37 22 66 11 32 67 12 31 68 17 33 69 25 4 70 18 34 71 2 35 72 31 24 73 27 13 74 8 36 75 27 13 76 5 7 77 38 21 78 3 37 79 21 38 80 19 39 81 38 21 82 21 38 83 20 40 84 34 18 85 19 39 86 22 2 87 14 41 88 13 0 89 13 0 90 16 6 91 24 1 92 15 3 93 18 34 94 25 4 95 23 5 96 24 1 97 16 6 98 5 7 99 27 13 100 28 8 101 26 10 102 29 16 103 7 11 104 6 9 105 28 8 106 26 10 107 27 13 108 31 24 109 32 14 110 30 15 111 33 26 112 29 16 113 26 10 114 28 8 115 32 14 116 22 2 117 24 1 118 36 17 119 25 4 120 37 22 121 35 19 122 23 5 123 35 19 124 36 17 125 34 18 126 36 17 127 40 20 128 37 22 129 41 25 130 39 23 131 35 19 132 39 23 133 40 20 134 31 24 135 38 21 136 40 20 137 32 14 138 40 20 139 39 23 140 30 15 141 39 23 142 41 25 143 1 27 144 33 26 145 41 25 146 9 29 147 7 11 148 29 16 149 0 30 150 29 16 151 33 26 152 41 25 153 37 22 154 12 31 155 37 22 156 25 4 157 11 32 158 17 33 159 11 32 160 25 4 161 2 35 162 3 37 163 31 24 164 8 36 165 2 35 166 27 13 167 38 21 168 31 24 169 3 37 170 19 39 171 34 18 172 38 21 173 20 40 174 22 2 175 34 18 176 22 2 177 20 40 178 14 41 179</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Camera" name="Camera" type="NODE">
+        <matrix sid="transform">0.6859207 -0.3240135 0.6515582 7.481132 0.7276763 0.3054208 -0.6141704 -6.50764 0 0.8953956 0.4452714 5.343665 0 0 0 1</matrix>
+        <instance_camera url="#Camera-camera"/>
+      </node>
+      <node id="Lamp" name="Lamp" type="NODE">
+        <matrix sid="transform">-0.2908646 -0.7711008 0.5663932 4.076245 0.9551712 -0.1998834 0.2183912 1.005454 -0.05518906 0.6045247 0.7946723 5.903862 0 0 0 1</matrix>
+        <instance_light url="#Lamp-light"/>
+      </node>
+      <node id="super_tailgate_glass" name="super_tailgate_glass" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#super_tailgate-mesh" name="super_tailgate_glass">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="glass_tailgate_fen-material" target="#glass_tailgate_fen-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="super_tailgate_glass_int" name="super_tailgate_glass_int" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#super_tailgate_001-mesh" name="super_tailgate_glass_int">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="glass_tailgate_int_fen-material" target="#glass_tailgate_int_fen-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

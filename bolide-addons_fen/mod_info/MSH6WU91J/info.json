@@ -1,0 +1,140 @@
+{
+    "attachments": [
+        {
+            "data_filename": "368922.jpg",
+            "original_filename": "widebody_fen.jpg",
+            "thumb_filename": "thumbs\/368922.jpg"
+        },
+        {
+            "data_filename": "368923.jpg",
+            "original_filename": "390gtrspeciale_fen.jpg",
+            "thumb_filename": "thumbs\/368923.jpg"
+        }
+    ],
+    "resource_id": 3240,
+    "current_version_id": 8492,
+    "download_count": 0,
+    "resource_version_id": 8492,
+    "version_string": "0.3",
+    "last_update": 1514846443,
+    "rating_avg": 0,
+    "rating_count": 0,
+    "rating_sum": 0,
+    "resource_category_id": 7,
+    "resource_date": 1514846443,
+    "review_count": 0,
+    "tag_line": "A few addons for the Bolide. Because the Bolide is cool.",
+    "update_count": 0,
+    "path": "MSH6WU91J\/8492\/",
+    "filename": "bolide-addons_fen.zip",
+    "title": "Bolide Addons",
+    "user_id": 125034,
+    "username": "Fen",
+    "tagid": "MSH6WU91J",
+    "message": "This is a quite simple and self explanatory mod. It's just a few extra parts for the Bolide.\n\nParts included:\nNomi GTRX wing \nGlass tailgate\nBody colored fender flares\nBody colored tailgate\nExtended nosecone\nCut tailcone\nLong exhuast\n\nKnown issues:\nGlass tailgate can't shatter\nCut tailcone tends to wobble a bit\nNone of the addons are compatible with skins\nNomi GTRX wing tends to also wobble\n\nVideos\/Photos:\n[MEDIA=streamable]41uti[\/MEDIA]\n[ATTACH]368922[\/ATTACH] \n[ATTACH]368923[\/ATTACH] \n\nCredits:\nBeamNG - Original parts used\nMe - Changing up the parts in blender, putting them in game, editing jbeam\n[USER=216371]@maty[\/USER] - Help with thumbnails, since my thumbnail gen is broken :p\n\nIf you have any issues please use the discussion tab :)",
+    "category_title": "",
+    "prefix_title": "Alpha",
+    "via": "packed by repo on Mon, 01 Jan 2018 23:00:02 GMT",
+    "hashes": [
+        [
+            "vehicles\/super\/390gtrspeciale_fen.png",
+            "b94f5e2c653376e1"
+        ],
+        [
+            "vehicles\/super\/bodycoloredparts_fen\/materials.cs",
+            "a6db758a50f744cc"
+        ],
+        [
+            "vehicles\/super\/bodycoloredparts_fen\/bodycolored_fen_d.png",
+            "7c24052e491f4e65"
+        ],
+        [
+            "vehicles\/super\/bodycoloredparts_fen\/bodycolored_fen_c.png",
+            "de4f60e31acfc548"
+        ],
+        [
+            "vehicles\/super\/bodycoloredparts_fen\/bodycolored_fen_n.jpg",
+            "623c793e83d67bbf"
+        ],
+        [
+            "vehicles\/super\/bodycoloredparts_fen\/super_bodycolored_race_fenders_fen.jbeam",
+            "e5715cddd85da150"
+        ],
+        [
+            "vehicles\/super\/bodycoloredparts_fen\/super_tailgate.jbeam",
+            "a404c91ef6b8b8b3"
+        ],
+        [
+            "vehicles\/super\/bodycoloredparts_fen\/bodycolored.dae",
+            "257c1a9958fb1c37"
+        ],
+        [
+            "vehicles\/super\/widebodyparts_fen\/super_nosecone_extended_fen.jbeam",
+            "7b5fd4946a881b73"
+        ],
+        [
+            "vehicles\/super\/widebodyparts_fen\/materials.cs",
+            "eb9ab34293cb4a41"
+        ],
+        [
+            "vehicles\/super\/widebodyparts_fen\/super_tailcone_cut_fen.jbeam",
+            "29f38fb98ecc30b3"
+        ],
+        [
+            "vehicles\/super\/widebodyparts_fen\/widebodyparts_fen.dae",
+            "086fc88bf9f4deb6"
+        ],
+        [
+            "vehicles\/super\/widebodyparts_fen\/super_exhaust_long_fen.jbeam",
+            "6ec8c2147297e1f0"
+        ],
+        [
+            "vehicles\/super\/widebodyparts_fen\/super_bigwing_fen.jbeam",
+            "9e2626831beda412"
+        ],
+        [
+            "vehicles\/super\/info_390gtrspeciale_fen.json",
+            "e56c8d74c151ae00"
+        ],
+        [
+            "vehicles\/super\/glasstailgate_fen\/materials.cs",
+            "3869bd075e33da2c"
+        ],
+        [
+            "vehicles\/super\/glasstailgate_fen\/glasstailgate.dae",
+            "dce6b8608a27f635"
+        ],
+        [
+            "vehicles\/super\/glasstailgate_fen\/super_glass_d_fen.png",
+            "1aaa773e126de110"
+        ],
+        [
+            "vehicles\/super\/glasstailgate_fen\/super_glasstailgate_fen.jbeam",
+            "9606ddcb0cbcc2f7"
+        ],
+        [
+            "vehicles\/super\/glasstailgate_fen\/super_glass_dmg_d_fen.png",
+            "549d3dde6055fee6"
+        ],
+        [
+            "vehicles\/super\/glasstailgate_fen\/super_glass_da_fen.png",
+            "ca412680c529191a"
+        ],
+        [
+            "vehicles\/super\/info_widebody_fen.json",
+            "5dfd70077f59e51c"
+        ],
+        [
+            "vehicles\/super\/widebody_fen.png",
+            "043e27bfb3a4cc2a"
+        ],
+        [
+            "vehicles\/super\/widebody_fen.pc",
+            "f25f4e224e392507"
+        ],
+        [
+            "vehicles\/super\/390gtrspeciale_fen.pc",
+            "14e319415668709d"
+        ]
+    ]
+}
