@@ -1,0 +1,350 @@
+{
+"ab_engine_ohv_radiator": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Radiator",
+        "value":250,
+    }
+    "slotType" : "autobello_radiator_ohv",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["ab_engine_ohv_radiator", ["ab_engine_ohv_radiator"]],
+		  ["ab_engine_ohv_radpipe_L", ["ab_engine_ohv_radiator","autobello_radtube_L","engine"]],
+		["ab_engine_ohv_radpipe_R", ["ab_engine_ohv_radiator","autobello_radtube_R","engine"]],
+     ],
+    "mainEngine":{
+        //cooling system
+        "radiatorArea":0.14,
+        "radiatorEffectiveness":11000,
+        "coolantVolume":5,
+        "radiatorFanType":"electric",
+        "radiatorFanTemperature":90,
+        "radiatorFanMaxAirSpeed":2,
+        "thermostatTemperature":85
+    },
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true}
+         {"collision":true}
+         //--RADIATOR--
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"group":"ab_engine_ohv_radiator"},
+         {"nodeWeight":1},
+		["rad1", 0.29100, 1.42700, 0.92000],
+		["rad2", -0.29100, 1.42700, 0.92000],
+		["rad3", 0.27300, 1.59800, 0.69100{"engineGroup":"autobello_radiator"}],
+		["rad4", -0.27300, 1.59800, 0.69100{"engineGroup":"autobello_radiator"}],
+         {"nodeWeight":0.6},
+         {"group":"autobello_radtube_R"},
+		["rtub2", -0.23600, 1.31000, 0.66000],
+         {"group":"autobello_radtube_L"},
+		 ["rtub1", 0.23900, 1.29300, 0.60700],
+         {"selfCollision":false}
+         {"collision":false}
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--RADIATOR--
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":2200800,"beamDamp":160},
+          {"beamDeform":80000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"radiator_damage","deformationTriggerRatio":0.0002}
+          //main shape widthwise
+            ["rad4", "rad3"],
+            ["rad1", "rad2"],
+
+          //vertical
+            ["rad3", "rad1"],
+            ["rad2", "rad4"],
+
+          //surficial crossing
+          {"beamDeform":45000,"beamStrength":"FLT_MAX"},
+            ["rad1", "rad4"],
+            ["rad2", "rad3"],
+
+          //attach
+          {"beamSpring":800800,"beamDamp":70},
+          {"beamDeform":25000,"beamStrength":120000},
+          {"breakGroup":"radiator_R"},
+          ["rad2", "m5r"],
+          ["rad2", "q8rr"],
+          ["rad2", "m6r"],
+          ["rad4", "m5r"],
+          ["rad4", "q8rr"],
+          ["rad4", "m6r"],
+          {"breakGroup":"radiator_L"},
+          ["rad1", "m5l"],
+          ["rad1", "q8ll"],
+          ["rad1", "m6l"],
+          ["rad3", "m5l"],
+          ["rad3", "q8ll"],
+          ["rad3", "m6l"],
+          {"breakGroup":""},
+          //rad pipes
+          {"beamSpring":1100800,"beamDamp":200},
+          {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+            ["rtub2", "e2r"],
+            ["rtub2", "e7r"],
+            ["rtub1", "e7l"],
+            ["rtub1", "e2l"],
+            ["rtub1", "e4l"],
+            ["rtub2", "e4r"],
+            ["rtub1", "rad1"],
+            ["rtub1", "rad3"],
+            ["rtub1", "rad4"],
+            ["rtub2", "rad4"],
+            ["rtub2", "rad3"],
+            ["rtub2", "rad2"],
+
+          {"deformGroup":""}
+          //support beams
+          {"beamSpring":3200800,"beamDamp":160,"beamDeform":100000,"beamStrength":"FLT_MAX"},
+          {"beamPrecompression":0.9, "beamType":"|SUPPORT", "beamLongBound":6},
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"group":"autobello_radiator"},
+            {"groundModel":"metal"},
+            {"dragCoef":1.5},
+			["rad1", "rad3", "rad4"],
+			["rad4", "rad2", "rad1"],
+            {"group":""},
+    ],
+}
+"ab_engine_ohv_radiator_performance": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"High Performance Radiator",
+        "value":250,
+    }
+    "slotType" : "autobello_radiator_ohv",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["ab_engine_ohv_radiator", ["ab_engine_ohv_radiator"]],
+		  ["ab_engine_ohv_radpipe_L", ["ab_engine_ohv_radiator","autobello_radtube_L","engine"]],
+		["ab_engine_ohv_radpipe_R", ["ab_engine_ohv_radiator","autobello_radtube_R","engine"]],
+     ],
+    "mainEngine":{
+        //cooling system
+        "radiatorArea":0.14,
+        "radiatorEffectiveness":30000,
+        "coolantVolume":5.2,
+        "radiatorFanType":"electric",
+        "radiatorFanTemperature":80,
+        "radiatorFanMaxAirSpeed":3,
+        "thermostatTemperature":80
+    },
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true}
+         {"collision":true}
+         //--RADIATOR--
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"group":"ab_engine_ohv_radiator"},
+         {"nodeWeight":1},
+		["rad1", 0.29100, 1.42700, 0.92000],
+		["rad2", -0.29100, 1.42700, 0.92000],
+		["rad3", 0.27300, 1.59800, 0.69100{"engineGroup":"autobello_radiator"}],
+		["rad4", -0.27300, 1.59800, 0.69100{"engineGroup":"autobello_radiator"}],
+         {"nodeWeight":0.6},
+         {"group":"autobello_radtube_R"},
+		["rtub2", -0.23600, 1.31000, 0.66000],
+         {"group":"autobello_radtube_L"},
+		 ["rtub1", 0.23900, 1.29300, 0.60700],
+         {"selfCollision":false}
+         {"collision":false}
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--RADIATOR--
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":2200800,"beamDamp":160},
+          {"beamDeform":80000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"radiator_damage","deformationTriggerRatio":0.0002}
+          //main shape widthwise
+            ["rad4", "rad3"],
+            ["rad1", "rad2"],
+
+          //vertical
+            ["rad3", "rad1"],
+            ["rad2", "rad4"],
+
+          //surficial crossing
+          {"beamDeform":45000,"beamStrength":"FLT_MAX"},
+            ["rad1", "rad4"],
+            ["rad2", "rad3"],
+
+          //attach
+          {"beamSpring":800800,"beamDamp":70},
+          {"beamDeform":25000,"beamStrength":120000},
+          {"breakGroup":"radiator_R"},
+          ["rad2", "m5r"],
+          ["rad2", "q8rr"],
+          ["rad2", "m6r"],
+          ["rad4", "m5r"],
+          ["rad4", "q8rr"],
+          ["rad4", "m6r"],
+          {"breakGroup":"radiator_L"},
+          ["rad1", "m5l"],
+          ["rad1", "q8ll"],
+          ["rad1", "m6l"],
+          ["rad3", "m5l"],
+          ["rad3", "q8ll"],
+          ["rad3", "m6l"],
+          {"breakGroup":""},
+          //rad pipes
+          {"beamSpring":1100800,"beamDamp":200},
+          {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+            ["rtub2", "e2r"],
+            ["rtub2", "e7r"],
+            ["rtub1", "e7l"],
+            ["rtub1", "e2l"],
+            ["rtub1", "e4l"],
+            ["rtub2", "e4r"],
+            ["rtub1", "rad1"],
+            ["rtub1", "rad3"],
+            ["rtub1", "rad4"],
+            ["rtub2", "rad4"],
+            ["rtub2", "rad3"],
+            ["rtub2", "rad2"],
+
+          {"deformGroup":""}
+          //support beams
+          {"beamSpring":3200800,"beamDamp":160,"beamDeform":100000,"beamStrength":"FLT_MAX"},
+          {"beamPrecompression":0.9, "beamType":"|SUPPORT", "beamLongBound":6},
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"group":"autobello_radiator"},
+            {"groundModel":"metal"},
+            {"dragCoef":1.5},
+			["rad1", "rad3", "rad4"],
+			["rad4", "rad2", "rad1"],
+            {"group":""},
+    ],
+}
+"ab_engine_ohv_radiator_superperformance": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Super High Performance Radiator",
+        "value":250,
+    }
+    "slotType" : "autobello_radiator_ohv",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["ab_engine_ohv_radiator", ["ab_engine_ohv_radiator"]],
+		  ["ab_engine_ohv_radpipe_L", ["ab_engine_ohv_radiator","autobello_radtube_L","engine"]],
+		["ab_engine_ohv_radpipe_R", ["ab_engine_ohv_radiator","autobello_radtube_R","engine"]],
+     ],
+    "mainEngine":{
+        //cooling system
+        "radiatorArea":0.14,
+        "radiatorEffectiveness":85000,
+        "coolantVolume":5.2,
+        "radiatorFanType":"electric",
+        "radiatorFanTemperature":80,
+        "radiatorFanMaxAirSpeed":5,
+        "thermostatTemperature":80
+    },
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true}
+         {"collision":true}
+         //--RADIATOR--
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"group":"ab_engine_ohv_radiator"},
+         {"nodeWeight":1},
+		["rad1", 0.29100, 1.42700, 0.92000],
+		["rad2", -0.29100, 1.42700, 0.92000],
+		["rad3", 0.27300, 1.59800, 0.69100{"engineGroup":"autobello_radiator"}],
+		["rad4", -0.27300, 1.59800, 0.69100{"engineGroup":"autobello_radiator"}],
+         {"nodeWeight":0.6},
+         {"group":"autobello_radtube_R"},
+		["rtub2", -0.23600, 1.31000, 0.66000],
+         {"group":"autobello_radtube_L"},
+		 ["rtub1", 0.23900, 1.29300, 0.60700],
+         {"selfCollision":false}
+         {"collision":false}
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--RADIATOR--
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":2200800,"beamDamp":160},
+          {"beamDeform":80000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"radiator_damage","deformationTriggerRatio":0.0002}
+          //main shape widthwise
+            ["rad4", "rad3"],
+            ["rad1", "rad2"],
+
+          //vertical
+            ["rad3", "rad1"],
+            ["rad2", "rad4"],
+
+          //surficial crossing
+          {"beamDeform":45000,"beamStrength":"FLT_MAX"},
+            ["rad1", "rad4"],
+            ["rad2", "rad3"],
+
+          //attach
+          {"beamSpring":800800,"beamDamp":70},
+          {"beamDeform":25000,"beamStrength":120000},
+          {"breakGroup":"radiator_R"},
+          ["rad2", "m5r"],
+          ["rad2", "q8rr"],
+          ["rad2", "m6r"],
+          ["rad4", "m5r"],
+          ["rad4", "q8rr"],
+          ["rad4", "m6r"],
+          {"breakGroup":"radiator_L"},
+          ["rad1", "m5l"],
+          ["rad1", "q8ll"],
+          ["rad1", "m6l"],
+          ["rad3", "m5l"],
+          ["rad3", "q8ll"],
+          ["rad3", "m6l"],
+          {"breakGroup":""},
+          //rad pipes
+          {"beamSpring":1100800,"beamDamp":200},
+          {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+            ["rtub2", "e2r"],
+            ["rtub2", "e7r"],
+            ["rtub1", "e7l"],
+            ["rtub1", "e2l"],
+            ["rtub1", "e4l"],
+            ["rtub2", "e4r"],
+            ["rtub1", "rad1"],
+            ["rtub1", "rad3"],
+            ["rtub1", "rad4"],
+            ["rtub2", "rad4"],
+            ["rtub2", "rad3"],
+            ["rtub2", "rad2"],
+
+          {"deformGroup":""}
+          //support beams
+          {"beamSpring":3200800,"beamDamp":160,"beamDeform":100000,"beamStrength":"FLT_MAX"},
+          {"beamPrecompression":0.9, "beamType":"|SUPPORT", "beamLongBound":6},
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"group":"autobello_radiator"},
+            {"groundModel":"metal"},
+            {"dragCoef":1.5},
+			["rad1", "rad3", "rad4"],
+			["rad4", "rad2", "rad1"],
+            {"group":""},
+    ],
+}
+}

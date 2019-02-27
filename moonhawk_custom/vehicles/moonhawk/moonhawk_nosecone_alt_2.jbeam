@@ -2,7 +2,7 @@
 "moonhawk_nosecone_facelift_1": {	
 	"information":{
 		"authors":"gabester",
-		"name":"Bruckell Moonhawk Facelifted Front Fascia",
+		"name":"1976-1978 Facelifted Front Fascia",
 	}
     "slotType" : "moonhawk_nosecone",
 	 "scalenodeWeight":0.89,
@@ -12,7 +12,7 @@
 	 "scalebeamStrength":0.84,
 	 "flexbodies": [
 		 ["mesh", "[group]:", "nonFlexMaterials"],
-		 ["moonhawk_nosecone_alt", ["moonhawk_nosecone_N"]],
+		 ["moonhawk_nosecone_alt2", ["moonhawk_nosecone_N"]],
 		 
 	 ],
 	"slots": [

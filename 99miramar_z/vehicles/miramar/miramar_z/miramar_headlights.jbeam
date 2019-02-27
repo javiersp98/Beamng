@@ -1,0 +1,142 @@
+{
+"miramar_headlight_R_z": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Right Z Headlight",
+        "value":130,
+    },
+    "slotType" : "miramar_headlight_R",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["miramarz_headlightframe_R", ["miramar_headlight_R","miramar_radsupport"]],
+         {"deformGroup":"headlightglass_R_break", "deformMaterialBase":"miramar_glass", "deformMaterialDamaged":"miramar_glass_dmg"}
+         ["miramarz_headlightglass_R", ["miramar_headlight_R","miramar_radsupport"],[]{"deformSound":"GlassBreakSound3", "deformVolume":0.5}],
+         {"deformGroup":"headlightglass_R_break", "deformMaterialBase":"miramar_lights", "deformMaterialDamaged":"miramar_lights_dmg"}
+         ["miramarz_headlight_R", ["miramar_headlight_R","miramar_radsupport"]],
+         {"deformGroup":""},
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":0
+            "lightOuterAngle":120
+            "lightBrightness":0.3
+            "lightRange":60
+            "lightColor":{"r":255, "g":255, "b":200, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.3
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        },
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "f13rr", "f13", "rd1r", {"x": 0, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.0, "y":0.67, "z":-0.05},"deformGroup":"headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,         "SPOTLIGHT"        , "f13rr", "f13", "rd1r", {"x": 10, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.0, "y":0.67, "z":-0.05},"lightRange":100,"lightBrightness":0.4,"deformGroup":"headlightglass_R_break"}],
+     ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--HEADLIGHT--
+         //right
+         {"selfCollision":false}
+         {"collision":true}
+         {"nodeMaterial":"|NM_GLASS"},
+         {"frictionCoef":0.5},
+         {"nodeWeight":0.93},
+         {"group":"miramar_headlight_R"},
+         ["he1r", -0.40, -1.87, 0.72],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--HEADLIGHT--
+          {"beamSpring":552460,"beamDamp":98.6},
+          {"beamDeform":9555,"beamStrength":18105},
+          //headlight main shape
+          {"deformGroup":"headlightglass_R_break", "deformationTriggerRatio":0.03}
+          ["he1r","f13rr"],
+          ["he1r","rd2rr"],
+          ["he1r","rd1r"],
+          ["he1r","f15rr"],
+          ["he1r","f16rr"],
+          {"deformationTriggerRatio":0.001},
+          {"beamDeform":60450,"beamStrength":89250},
+          ["he1r","rd3r"],
+          {"deformGroup":""}
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"miramar_headlight_L_z": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Left Z Headlight",
+        "value":130,
+    },
+    "slotType" : "miramar_headlight_L",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["miramarz_headlightframe_L", ["miramar_headlight_L","miramar_radsupport"]],
+         {"deformGroup":"headlightglass_L_break", "deformMaterialBase":"miramar_glass", "deformMaterialDamaged":"miramar_glass_dmg"}
+         ["miramarz_headlightglass_L", ["miramar_headlight_L","miramar_radsupport"],[]{"deformSound":"GlassBreakSound4", "deformVolume":0.5}],
+         {"deformGroup":"headlightglass_L_break", "deformMaterialBase":"miramar_lights", "deformMaterialDamaged":"miramar_lights_dmg"}
+         ["miramarz_headlight_L", ["miramar_headlight_L","miramar_radsupport"]],
+         {"deformGroup":""},
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.3
+            "lightRange":60
+            "lightColor":{"r":255, "g":255, "b":200, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.3
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        },
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "f13ll", "f13", "rd1l", {"x": 0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.0, "y":0.67, "z":0.05},"deformGroup":"headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,         "SPOTLIGHT"        , "f13ll", "f13", "rd1l", {"x": 10, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.0, "y":0.67, "z":0.05},"lightRange":100,"lightBrightness":0.4,"deformGroup":"headlightglass_L_break"}],
+     ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--HEADLIGHT--
+         //left
+         {"selfCollision":false}
+         {"collision":true}
+         {"nodeMaterial":"|NM_GLASS"},
+         {"frictionCoef":0.5},
+         {"nodeWeight":0.93},
+         {"group":"miramar_headlight_L"},
+         ["he1l", 0.40, -1.87, 0.72],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--HEADLIGHT--
+          {"beamSpring":552460,"beamDamp":98.6},
+          {"beamDeform":9555,"beamStrength":18105},
+          //headlight main shape
+          {"deformGroup":"headlightglass_L_break", "deformationTriggerRatio":0.03},
+          ["he1l","f13ll"],
+          ["he1l","rd2ll"],
+          ["he1l","rd1l"],
+          ["he1l","f15ll"],
+          ["he1l","f16ll"],
+          {"deformationTriggerRatio":0.001},
+          {"beamDeform":60450,"beamStrength":89250},
+          ["he1r","rd3r"],
+          {"deformGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+}

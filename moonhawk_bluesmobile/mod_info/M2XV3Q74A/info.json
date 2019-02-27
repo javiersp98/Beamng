@@ -1,0 +1,69 @@
+{
+    "attachments": [
+        {
+            "data_filename": "515669.jpg",
+            "original_filename": "20190121170902_1.jpg",
+            "thumb_filename": "thumbs\/515669.jpg"
+        },
+        {
+            "data_filename": "515670.jpg",
+            "original_filename": "20190121170938_1.jpg",
+            "thumb_filename": "thumbs\/515670.jpg"
+        },
+        {
+            "data_filename": "515671.jpg",
+            "original_filename": "20190121171023_1.jpg",
+            "thumb_filename": "thumbs\/515671.jpg"
+        }
+    ],
+    "resource_id": 7281,
+    "current_version_id": 14946,
+    "download_count": 0,
+    "resource_version_id": 14946,
+    "version_string": "1.0",
+    "last_update": 1548110518,
+    "rating_avg": 0,
+    "rating_count": 0,
+    "rating_sum": 0,
+    "resource_category_id": 12,
+    "resource_date": 1548110518,
+    "review_count": 0,
+    "tag_line": "Blues Brothers other car",
+    "update_count": 0,
+    "path": "M2XV3Q74A\/14946\/",
+    "filename": "MoonhawkBluesmobile.zip",
+    "title": "Bruckell Moonhawk Bluesmobile Skin",
+    "user_id": 47882,
+    "username": "AMBibbo",
+    "tagid": "M2XV3Q74A",
+    "message": "Once again \"It's 106 miles to Chicago we got a full tank of gas, half a pack of cigarettes, its dark and we're wearing sunglasses.. hit it!\"\n\nWhen you wreck your 4 door sedan in a cop chase and have to resort to a 2 door coupe the Bruckell Moonhawk is a fabulous choice.\n\nThis skin has two versions a \"clean\" version and a \"dirty\" version.\n\nNo other mods are required to make this work, but it wouldn't hurt to check out my other Bluesmobile mod here: [URL]https:\/\/www.beamng.com\/resources\/chevy-caprice-bluesmobile-skin.6905\/[\/URL]\n\n[B]Installation[\/B]\nManual Installation: Hit the Download Now button and drag the zip file into C:\\Users\\[YOUR USERNAME]\\Documents\\BeamNG.drive\\mods.\n\nAutomatic Installation: Just hit the Subscribe button and it will download the files automatically through the game.\n\n[B]PLEASE DO NOT RE UPLOAD THIS ANYWHERE\n\n[U]Some good old screenshots\n[ATTACH]515669[\/ATTACH] [ATTACH]515670[\/ATTACH] [ATTACH]515671[\/ATTACH] [ATTACH]515672[\/ATTACH] \n[ATTACH]515673[\/ATTACH] \nClean Skin\n[ATTACH]515674[\/ATTACH] [ATTACH]515676[\/ATTACH] [ATTACH]515677[\/ATTACH] [\/U][\/B]",
+    "category_title": "",
+    "prefix_title": "",
+    "via": "packed by repo on Mon, 21 Jan 2019 23:00:03 GMT",
+    "hashes": [
+        [
+            "vehicles\/moonhawk\/skins\/moonhawkbc\/materials.cs",
+            "9db43fec361246d4"
+        ],
+        [
+            "vehicles\/moonhawk\/skins\/moonhawkbc\/skin_moonhawk_bluesmobilec.dds",
+            "c43c838a99f937cc"
+        ],
+        [
+            "vehicles\/moonhawk\/skins\/moonhawkbc\/moonhawk_skin_moonhawk_bluesmobilec.jbeam",
+            "98a83a9805779317"
+        ],
+        [
+            "vehicles\/moonhawk\/skins\/moonhawkb\/materials.cs",
+            "3ae406d8e2374e38"
+        ],
+        [
+            "vehicles\/moonhawk\/skins\/moonhawkb\/moonhawk_skin_moonhawk_bluesmobile.jbeam",
+            "3d024480729ee529"
+        ],
+        [
+            "vehicles\/moonhawk\/skins\/moonhawkb\/skin_moonhawk_bluesmobile.dds",
+            "529dcd97281cd8d5"
+        ]
+    ]
+}

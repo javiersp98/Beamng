@@ -1,0 +1,11 @@
+{
+"moonhawk_skin_moonhawkbc": {
+    "information":{
+        "authors":"AMBibbo",
+        "name":"Bluesmobile Clean",
+        "value":200,
+    }
+	"slotType" : "paint_design",
+    "globalSkin" : "moonhawkbc",
+},
+}

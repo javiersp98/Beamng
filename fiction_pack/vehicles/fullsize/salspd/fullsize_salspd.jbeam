@@ -1,0 +1,11 @@
+{
+"fullsize_skin_salspd": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"Los Santos(SA) Police Department Skin",
+        "value":1200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "salspd",
+  }
+}

@@ -1,0 +1,11 @@
+{
+"van_skin_stars": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"Raccoon Special Tactics and Rescue Service Skin",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "stars",
+}
+}

@@ -1,0 +1,26 @@
+{
+"miramarz_licenseplate_F_side": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front License Plate",
+        "value":0,
+    }
+    "slotType" : "miramarz_licenseplate_F",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate", ["miramar_bumper_F"],[],{"pos":{"x":0.32676, "y":-1.86141, "z":0.40717}, "rot":{"x":6.526, "y":0, "z":-171.362}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+}
+"miramar_licenseplate_R_z": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear License Plate",
+        "value":0,
+    }
+    "slotType" : "miramar_licenseplate_R_z",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["licenseplate", ["miramar_body"],[],{"pos":{"x":0.0, "y":2.167, "z":0.695}, "rot":{"x":10, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+}
+}

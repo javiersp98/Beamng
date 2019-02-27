@@ -1,0 +1,103 @@
+{
+"miramar_rollcage_coupe": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Roll Cage",
+        "value":1900,
+    }
+    "slotType" : "miramar_rollcage_coupe",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["miramar_rollcage", ["miramar_body"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         //redefine nodes to make them heavier
+         {"collision":true},
+         {"selfCollision":true}
+         {"group":"miramar_body"},
+         //roof
+         {"nodeWeight":3.5},
+         ["rf1r", -0.64000, -0.32073, 1.39002{"group":["miramar_body","gps","miramar_windshield"]}],
+         ["rf1l", 0.64000, -0.32073, 1.39002{"group":["miramar_body","gps","miramar_windshield"]}],
+         {"nodeWeight":2.7}
+         ["rf2r", -0.64500, 0.32818, 1.41002],
+         ["rf2l", 0.64500, 0.32818, 1.41002],
+         ["rf3r", -0.64500, 0.65870, 1.40002],
+         ["rf3l", 0.64500, 0.65870, 1.40002],
+         {"nodeWeight":3.7},
+         ["rf4r", -0.60000, 0.90870, 1.38002],
+         ["rf4l", 0.60000, 0.90870, 1.38002],
+         //pillars
+         {"nodeWeight":2.9},
+         //a pillar
+         ["p1r", -0.67500, -0.50000, 1.21000{"group":["miramar_body","gps","miramar_windshield"]}],
+         ["p1l", 0.67500, -0.50000, 1.21000{"group":["miramar_body","gps","miramar_windshield"]}],
+         ["p2r", -0.70000, -0.43000, 1.18000{"group":""}],
+         ["p2l", 0.70000, -0.43000, 1.18000{"group":""}],
+         ["p2rr", -0.62000, -0.45000, 1.17000{"group":""}]
+         ["p2ll", 0.62000, -0.45000, 1.17000{"group":""}]
+         //b pillar
+         {"nodeWeight":2.9},
+         ["p3r", -0.76000, 0.26818, 0.60000],
+         ["p3l", 0.76000, 0.26818, 0.60000],
+         ["p4r", -0.80000, 0.37818, 0.60000],
+         ["p4l", 0.80000, 0.37818, 0.60000],
+         ["p5r", -0.74000, 0.27818, 0.92000],
+         ["p5l", 0.74000, 0.27818, 0.92000],
+         ["p6r", -0.78000, 0.37818, 0.92000],
+         ["p6l", 0.78000, 0.37818, 0.92000],
+         ["p7r", -0.71000, 0.28818, 1.17000],
+         ["p7l", 0.70000, 0.28818, 1.17000],
+         ["p8r", -0.70000, 0.36818, 1.17000],
+         ["p8l", 0.70000, 0.36818, 1.17000],
+         //c pillar
+         {"nodeWeight":2.9},
+         ["p9r", -0.71000, 0.86019, 1.18000],
+         ["p9l", 0.71000, 0.86019, 1.18000],
+         ["p10r", -0.62000, 1.15019, 1.21000],
+         ["p10l", 0.62000, 1.15019, 1.21000],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":1801000,"beamDamp":40},
+          {"beamDeform":360000,"beamStrength":"FLT_MAX"},
+          {"highlight":{"radius":0.005, "col":"#ff0000ff" }}
+          //left cage
+          ["rf2l", "q1l"],
+          ["rf2l", "rf1l"],
+          ["rf2l", "f3ll"],
+          ["rf1l", "f1ll"],
+          ["f3ll", "q1l"],
+          ["p6l","f1ll"],
+          ["p6l","q1l"],
+          ["c3lll","f3ll"],
+          ["c3ll","f3ll"],
+          ["p5l","c3lll"],
+
+          //right cage
+          ["rf2r", "q1r"],
+          ["rf2r", "rf1r"],
+          ["rf2r", "f3rr"],
+          ["rf1r", "f1rr"],
+          ["f3rr", "q1r"],
+          ["p6r","f1rr"],
+          ["p6r","q1r"],
+          ["c3rrr","f3rr"],
+          ["c3rr","f3rr"],
+          ["p5r","c3rrr"],
+
+          //crossing bars
+          ["rf2l", "rf2r"],
+          ["rf2l", "f3rr"],
+          ["rf2r", "f3ll"],
+          ["rf1l", "rf1r"],
+          ["q1l", "q1r"],
+          {"highlight":{"radius":0.0, "col":"#ff0000ff" }}
+    ],
+}
+}

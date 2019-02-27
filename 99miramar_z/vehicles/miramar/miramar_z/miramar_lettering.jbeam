@@ -1,0 +1,35 @@
+{
+"miramar_lettering_z": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Lettering",
+        "value":25,
+    }
+    "slotType" : "miramar_lettering_z",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["miramar_logo_R_z", ["miramar_body"]],
+         ["miramar_lettering_miramar_z", ["miramar_body"]],
+         ["miramar_lettering_miramar_FL", ["miramar_fender_L"]],
+         ["miramar_lettering_miramar_FR", ["miramar_fender_R"]],
+    ],
+}
+"miramar_lettering_gtz_z": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GTz Lettering",
+        "value":45,
+    }
+    "slotType" : "miramar_lettering_z",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["miramar_logo_R_z", ["miramar_body"]],
+         ["miramar_lettering_miramar_z", ["miramar_body"]],
+         ["miramar_lettering_miramar_FL", ["miramar_fender_L"]],
+         ["miramar_lettering_miramar_FR", ["miramar_fender_R"]],
+         ["miramar_lettering_gtz_z", ["miramar_body"]],
+         ["miramar_lettering_gtz_FL", ["miramar_fender_L"]],
+         ["miramar_lettering_gtz_FR", ["miramar_fender_R"]],
+    ],
+}
+}

@@ -1,0 +1,293 @@
+{
+"miramar_engine_16zz_dohc": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"1.6L DOHC I4 Twin Carb Race Engine",
+        "value":6000,
+    },
+    "slotType" : "miramar_engine",
+    "slots": [
+        ["type", "default", "description"]
+        ["miramar_exhaust_dohc","miramar_exhaust_dohc_race", "Exhaust"],
+        ["miramar_transmission","miramar_transmission_5M_race_z", "Transmission"],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["combustionEngine", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine": {
+        "torque":[
+            ["rpm", "torque"]
+            [0, 0],
+            [500,74],
+            [1000, 102],
+            [1500, 115],
+            [2000, 123],
+            [2500, 130],
+            [3000, 135],
+            [3500, 135],
+            [4000, 137],
+            [4500, 139],
+            [5000, 147],
+            [5500, 161],
+            [6000, 175],
+            [6500, 186],
+            [7000, 194],
+            [7500, 198],
+            [8000, 198],
+            [8500, 203],
+            [9000, 201],
+            [9500, 189],
+            [10000, 172],
+            [10500, 142],
+            [11000, 96],
+            [11500, 58],
+
+        ],
+
+        "idleRPM":1300,
+        "maxRPM":11000,
+        "revLimiterRPMDrop":0,
+        "inertia":0.15,
+        "friction":13
+        "dynamicFriction":0.0
+        "burnEfficiency":0.27
+        "torqueReactionNodes:":["e1l","e2l","e4r"]
+        "particulates":0.23
+
+        //cooling and oil system
+        "thermalsEnabled":true
+        "engineBlockMaterial":"aluminum"
+        "oilVolume":4
+        "energyStorage": "mainTank",
+        "requiredEnergyType":"gasoline",
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":120
+        "headGasketDamageThreshold":1500000
+        "pistonRingDamageThreshold":1500000
+        "connectingRodDamageThreshold":2000000
+
+        //node beam interface
+        "waterDamage": {"[engineGroup]:":["engine_intake"]},
+        "radiator": {"[engineGroup]:":["radiator"]},
+        "engineBlock": {"[engineGroup]:":["engine_block"]},
+        "breakTriggerBeam":"engine",
+
+        "soundConfig": "soundConfig",
+    },
+    "soundConfig": {
+        "sampleName": "i4",
+        "mainGain": -13,
+        "maxLoadMix": 0.80,
+        "minLoadMix": 0,
+        "onLoadGain":1,
+        "offLoadGain":0.7,
+        "eqLowGain": 10,
+        "eqLowFreq": 300,
+        //"eqLowWidth": 0,
+        "eqHighGain": 15,
+        "eqHighFreq": 6000,
+        //"eqHighWidth": 0.5,
+        "fundamentalFrequencyCylinderCount":4
+        "eqFundamentalGain": 10
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":1900,
+        "clutchLaunchTargetRPM":2400,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":[0,0,0,3600,4500,5100,6000]
+        //**highShiftUp can be overwritten by intake modifications**
+        "highShiftUpRPM":10000
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["miramar_engineblock", ["miramar_engine"]],
+        ["miramar_engine_1_6_dohc", ["miramar_engine"]],
+        ["miramar_radtube_dohc", ["miramar_radtube"]],
+        ["miramar_ignitioncoil_race", ["miramar_engine","miramar_body","miramar_radsupport"]],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        ["radiatorFanSpin"  , "miramar_coolingfan", "e2r","e2l","e4r",  {"x":7, "y":0, "z":0}, {"x":0, "y":1, "z":0}    , {"x":0, "y":0, "z":0}, -360, 360, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //1.6L I4 Engine
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true},
+         {"group":"miramar_engine"},
+         {"engineGroup":"engine_block"}
+         {"nodeWeight":14},
+         ["e1r", -0.17, -0.9, 0.29],
+         ["e1l", 0.17, -0.9, 0.29,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.16}],
+         ["e2r", -0.17, -1.63, 0.38],
+         ["e2l", 0.17, -1.63, 0.38,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.16}],
+         {"engineGroup":["engine_block","engine_intake"]}
+         {"nodeWeight":9},
+         ["e3r", -0.13, -0.93, 0.88],
+         ["e3l", 0.13, -0.93, 0.88,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.16}],,
+         ["e4r", -0.13, -1.58, 0.88],
+         ["e4l", 0.13, -1.58, 0.88,{"isExhaust":true,"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.16}],
+         {"nodeWeight":3},
+         //["e5l", 0.29, -1.08, 0.92,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":6,"specHeat": 0.5,"selfIgnitionCoef":false,"smokePoint":550,"baseTemp":500,"conductionRadius":0.13}],
+         //["e6l", 0.37, -1.53, 0.90,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":6,"specHeat": 0.5,"selfIgnitionCoef":false,"smokePoint":550,"baseTemp":500,"conductionRadius":0.13}],
+         {"engineGroup":""}
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":4600460,"beamDamp":145},
+          {"beamDeform":857999.9,"beamStrength":"FLT_MAX"},
+          //engine
+          ["e1r","e1l"],
+          ["e2r","e2l"],
+          ["e3r","e3l"],
+          ["e4r","e4l"],
+
+          ["e1r","e2r"],
+          ["e1l","e2l"],
+          ["e3r","e4r"],
+          ["e3l","e4l"{"isExhaust":true}],
+
+          ["e1r","e3r"],
+          ["e1l","e3l"],
+          ["e2r","e4r"],
+          ["e2l","e4l"],
+
+          ["e2r","e3r"],
+          ["e2l","e3l"],
+          ["e2r","e3l"],
+          ["e2l","e3r"],
+
+          ["e1r","e4r"],
+          ["e1l","e4l"],
+          ["e1r","e4l"],
+          ["e1l","e4r"],
+
+          ["e1r","e2l"],
+          ["e1l","e2r"],
+          ["e3r","e4l"],
+          ["e3l","e4r"],
+
+          ["e1r","e3l"],
+          ["e1l","e3r"],
+          ["e2r","e4l"],
+          ["e2l","e4r"],
+          {"beamSpring":1840460,"beamDamp":145},
+          //air filter
+          {"beamDeform":8580,"beamStrength":"FLT_MAX"},
+          /*
+          ["e4l", "e6l"],
+          ["e3l", "e5l"],
+          ["e6l", "e5l"],
+          ["e6l", "e2l"],
+          ["e5l", "e1l"],
+
+          ["e6l", "e3l"],
+          ["e5l", "e4l"],
+          ["e6l", "e1l"],
+          ["e2l", "e5l"],
+          */
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"groundModel":"metal"},
+            /*
+            ["e5l", "e1l", "e3l"],
+            ["e4r", "e3r", "e2r"],
+            ["e3r", "e1r", "e2r"],
+            ["e1r", "e1l", "e2r"],
+            ["e2r", "e1l", "e2l"],
+            ["e3l", "e1l", "e3r"],
+            ["e3r", "e1l", "e1r"],
+            ["e4r", "e4l", "e3l"],
+            ["e4r", "e3l", "e3r"],
+            ["e4r", "e2r", "e4l"],
+            ["e4l", "e2r", "e2l"],
+            ["e4l", "e2l", "e6l"],
+            ["e6l", "e3l", "e4l"],
+            ["e6l", "e2l", "e5l"],
+            ["e6l", "e5l", "e3l"],
+            ["e2l", "e1l", "e5l"],
+            */
+            {"triangleType":"NONCOLLIDABLE"},
+            ["e2l", "e2r", "e1r"],
+            ["e1r", "e1l", "e2l"],
+            {"triangleType":"NORMALTYPE"},
+    ],
+    },
+    "miramarz_transmission_2Az": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"3-Speed Mira-Matic-Z Transmission",
+            "value":600,
+        },
+        "slotType" : "miramar_transmission",
+        "powertrain": [
+            ["type", "name", "inputName", "inputIndex"],
+            ["torqueConverter", "torqueConverter", "mainEngine", 1],
+            ["automaticGearbox", "gearbox", "torqueConverter", 1],
+        ],
+        "gearbox": {
+            "gearRatios":[-2.393, 0, 2.804, 1.531, 1.0]
+            "parkLockTorque":1500,
+            "oneWayViscousCoef":8,
+            "friction": 1,
+        },
+        "torqueConverter": {
+            "converterDiameter": 0.25,
+            "converterStiffness":7.5,
+            "couplingAVRatio":0.87,
+            "stallTorqueRatio":2.0,
+        },
+        "vehicleController": {
+            "automaticModes":"PRND1",
+            "transmissionGearChangeDelay":2
+            "gearboxDecisionSmoothingDown":1
+            "gearboxDecisionSmoothingUp":1
+            "lowShiftDownRPM":1600,
+            "lowShiftUpRPM":2600,
+            "highShiftDownRPM":3200,
+        },
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            ["miramar_transmission", ["miramar_engine","miramar_transmission"]],
+            ["miramar_shifterbase_A", ["miramar_body"]],
+            ["miramar_lettering_miramatic_z", ["miramar_body"]],
+        ],
+        "props": [
+            ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+            //automatic transmission
+            ["gear_A"      , "miramar_shifter_A"    , "f7r", "f7l", "f8r", {"x":125, "y":0, "z":0} , {"x":-40, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 1, 0, 1],
+        ],
+        "nodes": [
+             ["id", "posX", "posY", "posZ"],
+             //--2 Speed Auto--
+             {"frictionCoef":0.5},
+             {"nodeMaterial":"|NM_METAL"},
+             {"selfCollision":false},
+             {"collision":true},
+             {"group":"miramar_transmission"},
+             {"nodeWeight":16},
+             ["tra1", 0.0, -0.1, 0.31],
+             {"group":""},
+        ],
+        "beams": [
+              ["id1:", "id2:"],
+              {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+              //--TRANSMISSION CONE--
+              {"beamSpring":6440460,"beamDamp":145},
+              {"beamDeform":857999.9,"beamStrength":"FLT_MAX"},
+              ["tra1","e1r"],
+              ["tra1","e3r"],
+              ["tra1","e1l"],
+              ["tra1","e3l"],
+              {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        ],
+},
+}

@@ -1,0 +1,29 @@
+{
+"miramar_skin_racez": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Dreid GT240 Livery",
+        "value":300,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "racez",
+}
+"miramar_skin_gtz1600": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GTz 1600 Livery (Paintable Hood)",
+        "value":150,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "gtz1600",
+}
+"miramar_skin_gtz1600b": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GTz 1600 Livery",
+        "value":150,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "gtz1600b",
+}
+}

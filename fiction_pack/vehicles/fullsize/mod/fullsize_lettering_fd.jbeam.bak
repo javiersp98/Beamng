@@ -1,0 +1,15 @@
+﻿{
+"fullsize_lettering_fd": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"Gavril Lettering",
+        "value":7,
+    }
+    "slotType" : "fullsize_lettering",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["fullsize_lettering_trunk_fd", ["fullsize_trunk"]],
+		 ["fullsize_lettering_hood_fd", ["fullsize_hood"]],
+    ],
+}
+}

@@ -1,0 +1,11 @@
+{
+"fullsize_skin_sasfpd": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"San Fierro Police Department Skin",
+        "value":1200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "sasfpd",
+  }
+}

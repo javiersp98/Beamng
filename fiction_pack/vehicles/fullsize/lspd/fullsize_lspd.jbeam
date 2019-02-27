@@ -1,0 +1,11 @@
+{
+"fullsize_skin_lspd": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"Los Santos Police Department Skin",
+        "value":1200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "lspd",
+  }
+}

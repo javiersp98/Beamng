@@ -1,0 +1,11 @@
+{
+"fullsize_skin_dnypd": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"The Division NYPD Skin",
+        "value":1200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "dnypd",
+  }
+}

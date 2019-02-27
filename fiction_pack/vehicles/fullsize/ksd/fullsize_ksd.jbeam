@@ -1,0 +1,11 @@
+{
+"fullsize_skin_ksd": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"King County Sheriff Department Skin",
+        "value":1200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "ksd",
+  }
+}

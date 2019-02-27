@@ -1,0 +1,11 @@
+{
+"fullsize_skin_gpd": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"GPD Skin",
+        "value":1200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "gpd",
+  }
+}

@@ -1,0 +1,258 @@
+{
+"etk_flat_lightbar": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Flat Light Bar",
+        "value":500,
+    }
+    "slotType" : "etk800_lightbar",
+	"slots": [
+        ["type", "default", "description"]
+        ["soundscape_siren","soundscape_siren_2", "Siren Audio"],
+    ],
+	"controller": [
+        ["fileName"],
+        ["lightbar", {
+            "defaultModeIndex": 1,
+            "modes": [
+                ["name", "config"]
+                ["Chase", [
+                    ["electric", "value", "duration"],
+                        ["blue_1", 1, 0.15],
+                        ["blue_1", 0, 0.2],
+                        ["blue_1", 1, 0.1],
+                        ["blue_1", 0, 0.25],
+                        
+                        ["blue_2", 0, 0.15],
+                        ["blue_2", 1, 0.2],
+                        ["blue_2", 0, 0.1],
+                        ["blue_2", 1, 0.05],
+                        
+                        ["blue_3", 1, 0.2],
+                        ["blue_3", 0, 0.1],
+                        ["blue_3", 1, 0.05],
+                        ["blue_3", 0, 0.1],
+                        ["blue_3", 1, 0.05],
+                        ["blue_3", 0, 0.2],
+                        
+                        ["red_1", 0, 0.1],
+                        ["red_1", 1, 0.3],
+                        ["red_1", 0, 0.1],
+                        ["red_1", 1, 0.15],
+                        
+                        ["red_2", 1, 0.25],
+                        ["red_2", 0, 0.2],
+                        ["red_2", 1, 0.1],
+                        ["red_2", 0, 0.25],
+                        
+                        ["red_3", 0, 0.1],
+                        ["red_3", 1, 0.1],
+                        ["red_3", 0, 0.1],
+                        ["red_3", 1, 0.3],
+                        
+                        ["white_1", 1, 0.05],
+                        ["white_1", 0, 0.1],
+                        ["white_1", 1, 0.05],
+                        ["white_1", 0, 0.1],
+                        ["white_1", 1, 0.05],
+                        ["white_1", 0, 0.4],
+                        
+                        ["white_2", 0, 0.4],
+                        ["white_2", 1, 0.05],
+                        ["white_2", 0, 0.1],
+                        ["white_2", 1, 0.05],
+                        ["white_2", 0, 0.1],
+                        ["white_2", 1, 0.05],                        
+                    ],                
+                
+                    ],                
+           
+            ],        
+        }],
+    ],
+    "glowMap":{
+            "mod_lightbar_b1":                   {"simpleFunction":"blue_1", "off":"mod_lightbar_b1", "on":"mod_lightbar_on"},
+            "mod_lightbar_b2":                   {"simpleFunction":"blue_2", "off":"mod_lightbar_b2", "on":"mod_lightbar_on"},
+            "mod_lightbar_b3":                   {"simpleFunction":"blue_3", "off":"mod_lightbar_b3", "on":"mod_lightbar_on"},
+            "mod_lightbar_r1":                   {"simpleFunction":"red_1", "off":"mod_lightbar_r1", "on":"mod_lightbar_on"},
+            "mod_lightbar_r2":                   {"simpleFunction":"red_2", "off":"mod_lightbar_r2", "on":"mod_lightbar_on"},
+            "mod_lightbar_r3":                   {"simpleFunction":"red_3", "off":"mod_lightbar_r3", "on":"mod_lightbar_on"},
+            "mod_lightbar_w1":                   {"simpleFunction":"white_1", "off":"mod_lightbar_w1", "on":"mod_lightbar_on"},
+            "mod_lightbar_w2":                   {"simpleFunction":"white_2", "off":"mod_lightbar_w2", "on":"mod_lightbar_on"},
+            "mod_lightbar_w3":                   {"simpleFunction":"white_3", "off":"mod_lightbar_w3", "on":"mod_lightbar_on"},
+
+            "mod_lightbar_sign":                 {"simpleFunction":"lightbar", "off":"mod_lightbar_sign", "on":"mod_lightbar_sign_on"},
+    },
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightRange":0
+            "lightColor":{"r":0, "g":0, "b":255, "a":255}
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.5
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+        }
+        ["blue_3"    , "SPOTLIGHT"        , "sunburst_lightbar_2r", "sunburst_lightbar_2", "sunburst_lightbar_4r", {"x":90, "y":90, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.0, "y":0.45, "z":0.0},"deformGroup":"lightbar_R"}],
+        {
+            "lightColor":{"r":255, "g":0, "b":0, "a":255}
+        }
+		["red_3"    , "SPOTLIGHT"        , "sunburst_lightbar_2l", "sunburst_lightbar_2", "sunburst_lightbar_4l", {"x":90, "y":90, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.0, "y":0.45, "z":0.0},"deformGroup":"lightbar_R"}],
+    ],		
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+        ["mod_lightbar_base", ["etk800_body"], [], {"pos":{"x": 0.0, "y":0.29, "z":1.41}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.12}}],
+        ["mod_lightbar_b", ["etk800_body"], [], {"pos":{"x": 0.0, "y":0.29, "z":1.41}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.12}}],
+        ["mod_lightbar_light", ["etk800_body"], [], {"pos":{"x": 0.0, "y":0.29, "z":1.41}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.12}}],
+        ["mod_lightbar_mini", ["etk800_body"], [], {"pos":{"x": 0.0, "y":0.29, "z":1.41}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.12, "y":1.12, "z":1.12}}],
+
+        
+        ["led_blue", ["etk800_bumper_F"], [], {"pos":{"x": -0.15, "y":-2.145, "z":0.71}, "rot":{"x":-15, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+        ["led_red", ["etk800_bumper_F"], [], {"pos":{"x": 0.15, "y":-2.145, "z":0.71}, "rot":{"x":-15, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+     "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"group":"sunburst_lightbar"},
+         {"selfCollision":true}
+         {"collision":true}
+         {"nodeWeight":0.76},
+         {"frictionCoef":0.7},
+         {"nodeMaterial":"|NM_METAL"},
+          ["sunburst_lightbar_1", 0.0, 0.22, 1.55],
+         ["sunburst_lightbar_2", 0.0, 0.20, 1.44],
+         ["sunburst_lightbar_3", 0.0, 0.36, 1.55],
+         ["sunburst_lightbar_4", 0.0, 0.38, 1.44],
+
+         ["sunburst_lightbar_1l", 0.57, 0.22, 1.55],
+         ["sunburst_lightbar_2l", 0.59, 0.20, 1.42],
+         ["sunburst_lightbar_3l", 0.57, 0.36, 1.55],
+         ["sunburst_lightbar_4l", 0.59, 0.38, 1.42],
+
+         ["sunburst_lightbar_1r", -0.57, 0.22, 1.55],
+         ["sunburst_lightbar_2r", -0.59, 0.20, 1.42],
+         ["sunburst_lightbar_3r", -0.57, 0.36, 1.55],
+         ["sunburst_lightbar_4r", -0.59, 0.38, 1.42],
+         {"group":""},
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":300000,"beamDamp":60},
+          {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+		  //Main shape
+          ["sunburst_lightbar_1","sunburst_lightbar_2"],
+          ["sunburst_lightbar_2","sunburst_lightbar_3"],
+          ["sunburst_lightbar_3","sunburst_lightbar_4"],
+          ["sunburst_lightbar_4","sunburst_lightbar_1"],
+          ["sunburst_lightbar_1","sunburst_lightbar_3"],
+          ["sunburst_lightbar_2","sunburst_lightbar_4"],
+
+          ["sunburst_lightbar_1l","sunburst_lightbar_2l"],
+          ["sunburst_lightbar_2l","sunburst_lightbar_3l"],
+          ["sunburst_lightbar_3l","sunburst_lightbar_4l"],
+          ["sunburst_lightbar_4l","sunburst_lightbar_1l"],
+          ["sunburst_lightbar_1l","sunburst_lightbar_3l"],
+          ["sunburst_lightbar_2l","sunburst_lightbar_4l"],
+
+          ["sunburst_lightbar_1r","sunburst_lightbar_2r"],
+          ["sunburst_lightbar_2r","sunburst_lightbar_3r"],
+          ["sunburst_lightbar_3r","sunburst_lightbar_4r"],
+          ["sunburst_lightbar_4r","sunburst_lightbar_1r"],
+          ["sunburst_lightbar_1r","sunburst_lightbar_3r"],
+          ["sunburst_lightbar_2r","sunburst_lightbar_4r"],
+
+          ["sunburst_lightbar_1r","sunburst_lightbar_1"],
+          ["sunburst_lightbar_2r","sunburst_lightbar_2"],
+          ["sunburst_lightbar_3r","sunburst_lightbar_3"],
+          ["sunburst_lightbar_4r","sunburst_lightbar_4"],
+
+          ["sunburst_lightbar_1l","sunburst_lightbar_1"],
+          ["sunburst_lightbar_2l","sunburst_lightbar_2"],
+          ["sunburst_lightbar_3l","sunburst_lightbar_3"],
+          ["sunburst_lightbar_4l","sunburst_lightbar_4"],
+
+		  //Center to left cross-beams
+          ["sunburst_lightbar_4l","sunburst_lightbar_3"],
+          ["sunburst_lightbar_3l","sunburst_lightbar_4"],
+          ["sunburst_lightbar_3","sunburst_lightbar_1l"],
+          ["sunburst_lightbar_3l","sunburst_lightbar_1"],
+          ["sunburst_lightbar_1","sunburst_lightbar_2l"],
+          ["sunburst_lightbar_2","sunburst_lightbar_1l"],
+          ["sunburst_lightbar_2l","sunburst_lightbar_4"],
+          ["sunburst_lightbar_4l","sunburst_lightbar_2"],
+
+          ["sunburst_lightbar_4l","sunburst_lightbar_1"],
+          ["sunburst_lightbar_2l","sunburst_lightbar_3"],
+          ["sunburst_lightbar_4","sunburst_lightbar_1l"],
+          ["sunburst_lightbar_2","sunburst_lightbar_3l"],
+
+		  //Center to right cross-beams
+          ["sunburst_lightbar_4r","sunburst_lightbar_3"],
+          ["sunburst_lightbar_3r","sunburst_lightbar_4"],
+          ["sunburst_lightbar_3","sunburst_lightbar_1r"],
+          ["sunburst_lightbar_3r","sunburst_lightbar_1"],
+          ["sunburst_lightbar_1","sunburst_lightbar_2r"],
+          ["sunburst_lightbar_2","sunburst_lightbar_1r"],
+          ["sunburst_lightbar_2r","sunburst_lightbar_4"],
+          ["sunburst_lightbar_4r","sunburst_lightbar_2"],
+
+          ["sunburst_lightbar_4r","sunburst_lightbar_1"],
+          ["sunburst_lightbar_2r","sunburst_lightbar_3"],
+          ["sunburst_lightbar_4","sunburst_lightbar_1r"],
+          ["sunburst_lightbar_2","sunburst_lightbar_3r"],
+
+          {"beamSpring":300000,"beamDamp":60},
+          {"beamDeform":30000,"beamStrength":5000},
+		  //To body
+          {"breakGroup":"sunburst_lightbar_breakl"},
+          ["sunburst_lightbar_2l","rf3l"],
+          ["sunburst_lightbar_2l","rf4l"],
+          ["sunburst_lightbar_2l","rf3"],
+          ["sunburst_lightbar_2l","rf3"],
+          ["sunburst_lightbar_4l","rf3r"],
+          ["sunburst_lightbar_4l","rf4l"],
+          ["sunburst_lightbar_4l","rf3"],
+          ["sunburst_lightbar_4l","rf3"],
+
+         
+
+          {"breakGroup":"sunburst_lightbar_breakr"},
+          ["sunburst_lightbar_2r","rf3r"],
+          ["sunburst_lightbar_2r","rf4r"],
+          ["sunburst_lightbar_2r","rf3"],
+          ["sunburst_lightbar_2r","rf3"],
+          ["sunburst_lightbar_4r","rf3r"],
+          ["sunburst_lightbar_4r","rf4r"],
+          ["sunburst_lightbar_4r","rf3"],
+          ["sunburst_lightbar_4r","rf3"],
+
+        ["sunburst_lightbar_4","rf4l"],
+		    ["sunburst_lightbar_4","rf4r"],
+			 ["sunburst_lightbar_2","rf4l"],
+		    ["sunburst_lightbar_2","rf4r"],
+
+          {"breakGroup":""},
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "quads": [
+            ["id1:","id2:","id3:","id4:"],
+            {"group":"sunburst_lightbar"},
+            {"dragCoef":10},
+            ["sunburst_lightbar_3l","sunburst_lightbar_4l","sunburst_lightbar_4","sunburst_lightbar_3"],
+            ["sunburst_lightbar_1l","sunburst_lightbar_3l","sunburst_lightbar_3","sunburst_lightbar_1"],
+            ["sunburst_lightbar_1l","sunburst_lightbar_2l","sunburst_lightbar_4l","sunburst_lightbar_3l"],
+            ["sunburst_lightbar_1","sunburst_lightbar_2","sunburst_lightbar_2l","sunburst_lightbar_1l"],
+            ["sunburst_lightbar_4l","sunburst_lightbar_2l","sunburst_lightbar_2","sunburst_lightbar_4"],
+
+            ["sunburst_lightbar_3","sunburst_lightbar_4","sunburst_lightbar_4r","sunburst_lightbar_3r"],
+            ["sunburst_lightbar_1","sunburst_lightbar_3","sunburst_lightbar_3r","sunburst_lightbar_1r"],
+            ["sunburst_lightbar_3r","sunburst_lightbar_4r","sunburst_lightbar_2r","sunburst_lightbar_1r"],
+            ["sunburst_lightbar_1r","sunburst_lightbar_2r","sunburst_lightbar_2","sunburst_lightbar_1"],
+            ["sunburst_lightbar_4","sunburst_lightbar_2","sunburst_lightbar_2r","sunburst_lightbar_4r"],
+
+
+            {"group":""},
+    ],
+}
+}

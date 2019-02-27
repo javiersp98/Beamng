@@ -1,0 +1,10 @@
+{
+	"Configuration":"Seacrest County Police Package",
+	"Transmission":"Manual",
+  "Description":"Seacrest County Police Package"
+	"Drivetrain":"RWD",
+	"Performance Class":"5",
+	"Value":4160,
+	"default_color":"Pearl White",
+	"Config Type":"Factory"
+}

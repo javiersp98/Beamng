@@ -1,4 +1,5 @@
 {
+/*
 "sunburst_spoiler_racevm1": {
     "information":{
         "authors":"BeamNG",
@@ -305,5 +306,5 @@
              ["sunburst_sunroof_int", ["sunburst_body"]],
              {"deformGroup":""}
         ],
-}
+}*/
 }

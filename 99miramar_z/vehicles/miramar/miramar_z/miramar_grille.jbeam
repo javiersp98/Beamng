@@ -1,0 +1,28 @@
+{
+"miramar_grille_z": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Z Grille",
+        "value":200,
+    }
+    "slotType" : "miramar_grille_z",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["miramarz_grille", ["miramar_fascia"]],
+         ["miramarz_logo_F", ["miramar_fascia"]],
+         ["miramar_lettering_miramar_grille_z", ["miramar_fascia"]],
+    ],
+    }
+    "miramar_grille__z_race": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"GT240 Grille",
+            "value":250,
+        }
+        "slotType" : "miramar_grille_z",
+        "flexbodies": [
+             ["mesh", "[group]:", "nonFlexMaterials"],
+             ["miramarz_grille_race", ["miramar_fascia"]],
+        ],
+},
+}

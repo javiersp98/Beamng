@@ -1,0 +1,31 @@
+{
+"Performance Class":"5",
+"Drivetrain":"RWD",
+"default_color_3":"Chrome",
+"Body Style":"Coupe",
+"Weight":950,
+"Value":30000,
+"Transmission":"Manual",
+"TorquePeakRPM":"3350 - 5300",
+"default_color_2":"Pure Black",
+"Description":"Rare Limited Edition Z GTz 1600 version with a 1.6 DOHC and a special paintjob",
+"Configuration":"Z Coupe GTz 1600 (M)",
+"Off-Road Score":34,
+"Top Speed":53.1252,
+"60-100 mph":17,
+"0-60 mph":8.3,
+"Config Type":"Factory",
+"100-0 km/h":39.8,
+"PowerPeakRPM":"5200 - 7150",
+"Power":123.239,
+"Torque":167.781,
+"0-100 km/h":8.9,
+"default_color":"Alpine White",
+"Weight/Power":7.72358,
+"60-0 mph":122.4,
+"Years":{
+  "min":1965,
+  "max":1968
+},
+"0-100 mph":25.2
+}

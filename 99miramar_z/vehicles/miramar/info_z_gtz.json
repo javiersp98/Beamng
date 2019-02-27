@@ -1,0 +1,30 @@
+{
+"Performance Class":"4",
+"Drivetrain":"RWD",
+"default_color_3":"Chrome",
+"Body Style":"Coupe",
+"Value":23000,
+"Configuration":"Z Coupe GTz (M)",
+"TorquePeakRPM":"2200 - 3700",
+"Weight":965,
+"Description":"Z Coupe Sport model with a more powerful engine, stiffer suspension, and sport wheels",
+"0-100 mph":45.7,
+"PowerPeakRPM":"4050 - 5250",
+"Power":96.1902,
+"60-100 mph":35.4,
+"0-60 mph":10.3,
+"Config Type":"Factory",
+"100-0 km/h":43.2,
+"Top Speed":46.5766,
+"default_color":"Garnet Red",
+"Torque":176.324,
+"0-100 km/h":11,
+"Off-Road Score":36,
+"Weight/Power":10.0521,
+"60-0 mph":129.2,
+"Years":{
+  "min":1965,
+  "max":1968
+},
+"Transmission":"Manual"
+}

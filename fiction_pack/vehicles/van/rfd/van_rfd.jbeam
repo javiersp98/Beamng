@@ -1,0 +1,11 @@
+{
+"ambulance_skin_rfd": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"Raccoon Amubulance Skin",
+        "value":100,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "rfd",
+},
+}

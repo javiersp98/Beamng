@@ -2,7 +2,7 @@
 "moonhawk_noseconeR_lights": {	
 	"information":{
 		"authors":"gabester, modded by AR162b",
-		"name":"Bruckell Moonhawk Front Headlights",
+		"name":"Front Headlights",
 	}
     "slotType" : "moonhawk_noseconeR_lights",
 	 "scalenodeWeight":0.89,
@@ -79,7 +79,7 @@
 "moonhawk_noseconeR_lights_race": {	
 	"information":{
 		"authors":"gabester, modded by AR162b",
-		"name":"Bruckell Moonhawk Front Headlight Race Covers",
+		"name":"Front Headlight Race Covers",
 	}
     "slotType" : "moonhawk_noseconeR_lights",
 	 "scalenodeWeight":0.89,
@@ -125,7 +125,7 @@
 "moonhawk_noseconeO_lights": {	
 	"information":{
 		"authors":"gabester, modded by AR162b",
-		"name":"Bruckell Moonhawk Front Headlights",
+		"name":"Front Headlights",
 	}
     "slotType" : "moonhawk_noseconeO_lights",
 	 "scalenodeWeight":0.89,
@@ -202,7 +202,7 @@
 "moonhawk_noseconeN_lights": {	
 	"information":{
 		"authors":"gabester, modded by AR162b",
-		"name":"Bruckell Moonhawk Front Headlights",
+		"name":"Front Headlights",
 	}
     "slotType" : "moonhawk_noseconeN_lights",
 	 "scalenodeWeight":0.89,
@@ -216,14 +216,14 @@
 		 ["moonhawk_headlightframe_R_alt", ["moonhawk_nosecone_N"]],
 		 ["moonhawk_headlightframe_L_alt", ["moonhawk_nosecone_N"]],
 		 {"deformGroup":"moonhawk_headlightglass_R_break", "deformMaterialBase":"moonhawk_lights", "deformMaterialDamaged":"moonhawk_lights_dmg"},
-		 ["moonhawk_headlight_R_alt", ["moonhawk_nosecone_N"]],
+		 ["moonhawk_headlight_R_alt2", ["moonhawk_nosecone_N"]],
 		 {"deformGroup":"moonhawk_headlightglass_L_break", "deformMaterialBase":"moonhawk_lights", "deformMaterialDamaged":"moonhawk_lights_dmg"},
-		 ["moonhawk_headlight_L_alt", ["moonhawk_nosecone_N"]],
+		 ["moonhawk_headlight_L_alt2", ["moonhawk_nosecone_N"]],
 		 
 		 {"deformGroup":"moonhawk_headlightglass_R_break", "deformMaterialBase":"moonhawk_glass", "deformMaterialDamaged":"moonhawk_glass_dmg"},
-		 ["moonhawk_headlightglass_R_alt", ["moonhawk_nosecone_N"]],
+		 ["moonhawk_headlightglass_R_alt2", ["moonhawk_nosecone_N"]],
 		 {"deformGroup":"moonhawk_headlightglass_L_break", "deformMaterialBase":"moonhawk_glass", "deformMaterialDamaged":"moonhawk_glass_dmg"},
-		 ["moonhawk_headlightglass_L_alt", ["moonhawk_nosecone_N"]],
+		 ["moonhawk_headlightglass_L_alt2", ["moonhawk_nosecone_N"]],
 		 {"deformGroup":""},
 	 ],	
 	 "props": [

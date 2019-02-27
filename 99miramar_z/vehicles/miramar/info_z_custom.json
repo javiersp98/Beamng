@@ -1,0 +1,32 @@
+{
+"Performance Class":"6",
+"Drivetrain":"RWD",
+"100-200 km/h":20.3,
+"default_color_3":"Chrome",
+"Body Style":"Coupe",
+"0-100 mph":16,
+"Value":38000,
+"0-100 km/h":6.9,
+"TorquePeakRPM":"5250 - 7050",
+"Weight":955,
+"Off-Road Score":28,
+"Configuration":"Z Coupe Custom (M)",
+"default_color":"Moonlight",
+"Description":"A unique custom variant of the Z with a powerful engine, custom suspension and a welded differential",
+"60-100 mph":9.4,
+"0-60 mph":6.6,
+"Config Type":"Custom",
+"100-0 km/h":39.3,
+"Top Speed":57.9548,
+"Power":202.878,
+"Torque":215.746,
+"Transmission":"Manual",
+"PowerPeakRPM":6450,
+"Weight/Power":4.72772,
+"60-0 mph":116.3,
+"Years":{
+  "min":1965,
+  "max":1968
+},
+"0-200 km/h":27.2
+}

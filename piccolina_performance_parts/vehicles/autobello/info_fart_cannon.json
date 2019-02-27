@@ -1,0 +1,26 @@
+{
+"Performance Class":"4",
+"Weight":745,
+"Fuel Type":"Gasoline",
+"Drivetrain":"RWD",
+"Value":65000,
+"Braking G":1.034,
+"TorquePeakRPM":"3000 - 4500",
+"Off-Road Score":20,
+"Description":"Let the whole city know that you're driving your car",
+"Configuration":"Fart Cannon (M)",
+"Transmission":"Manual",
+"Induction Type":"NA",
+"Torque":151,
+"Config Type":"Factory",
+"Power":101,
+"Propulsion":"ICE",
+"default_color":"Rosso Fuoco",
+"PowerPeakRPM":"5000 - 7000",
+"Weight/Power":7.38,
+"Years":{
+  "min":1957,
+  "max":1963
+},
+"0-100 km/h":6.95
+}

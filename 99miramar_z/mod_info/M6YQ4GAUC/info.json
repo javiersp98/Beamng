@@ -1,0 +1,309 @@
+{
+    "attachments": [
+        {
+            "data_filename": "295675.jpg",
+            "original_filename": "aaa.jpg",
+            "thumb_filename": "thumbs\/295675.jpg"
+        },
+        {
+            "data_filename": "295676.png",
+            "original_filename": "screenshot_04123.png",
+            "thumb_filename": "thumbs\/295676.jpg"
+        },
+        {
+            "data_filename": "295677.png",
+            "original_filename": "screenshot_04124.png",
+            "thumb_filename": "thumbs\/295677.jpg"
+        }
+    ],
+    "resource_id": 2490,
+    "current_version_id": 6555,
+    "download_count": 0,
+    "resource_version_id": 6944,
+    "version_string": "1.11",
+    "last_update": 1499430999,
+    "rating_avg": 4.9527025222778,
+    "rating_count": 0,
+    "rating_sum": 0,
+    "resource_category_id": 3,
+    "resource_date": 1499430999,
+    "review_count": 148,
+    "tag_line": "The Miramar in its most iconic form",
+    "update_count": 1,
+    "path": "M9D2E1T8O\/6398\/",
+    "filename": "99miramar_z.zip",
+    "title": "1965 Ibishu Miramar Z Coupe",
+    "user_id": 143371,
+    "username": "NinetyNine!",
+    "tagid": "M6YQ4GAUC",
+    "message": "[IMG]https:\/\/pp.userapi.com\/c637321\/v637321668\/5515a\/X4YRUwRrR9Y.jpg[\/IMG] [IMG]https:\/\/pp.userapi.com\/c637321\/v637321668\/55164\/t6oqXcc6GkQ.jpg[\/IMG] [IMG]https:\/\/pp.userapi.com\/c637321\/v637321668\/5516e\/Zc2p27X5mj0.jpg[\/IMG] [IMG]https:\/\/pp.userapi.com\/c637321\/v637321668\/55178\/tRF_LH2_wyU.jpg[\/IMG] [IMG]https:\/\/pp.userapi.com\/c637321\/v637321668\/55182\/Hlf_ex4dRCw.jpg[\/IMG] [IMG]https:\/\/pp.userapi.com\/c637321\/v637321668\/5518c\/QlaAFWHqeg8.jpg[\/IMG] [IMG]https:\/\/pp.userapi.com\/c637321\/v637321668\/55196\/nj28Lv_c7nc.jpg[\/IMG] [IMG]https:\/\/pp.userapi.com\/c637321\/v637321668\/551a0\/1Di9RXKNcuk.jpg[\/IMG] \n[B]Features:[\/B]\n[LIST]\n[*][I]6 different models;[\/I]\n[*][I]Working instrument panel;[\/I]\n[*][I]Animated pedals, handle AKPP, steering wheel;[\/I]\n[*][I]Fully working lighting;[\/I]\n[*][I]The police version with f[I]ully working lighting;[\/I][\/I]\n[\/LIST]\n[B]In next versions:[\/B]\n[LIST]\n[*][I]Added different tuning;[\/I]\n[*][I]Added to the sports kit;[\/I]\n[*][I]Added to wagon;[\/I]\n[\/LIST]\n\n[U][B]P.S. [\/B][I]Sorry for my English . I use a translator[\/I][\/U]",
+    "category_title": "",
+    "prefix_title": "",
+    "via": "packed by repo on Wed, 09 Aug 2017 21:00:03 GMT",
+    "hashes": [
+        [
+            "vehicles\/common\/miramarz_wheels\/wheels.dae",
+            "5ad0adc410d6e0c1"
+        ],
+        [
+            "vehicles\/common\/miramarz_wheels\/wheels_R.jbeam",
+            "6ad5dbed117892a1"
+        ],
+        [
+            "vehicles\/common\/miramarz_wheels\/wheels_F.jbeam",
+            "bb48a3fd768a7e46"
+        ],
+        [
+            "vehicles\/miramar\/info_z_luxe_m.json",
+            "2a33435c3b8abf9b"
+        ],
+        [
+            "vehicles\/miramar\/info_z_custom.json",
+            "a9d1e0a2d8d011ce"
+        ],
+        [
+            "vehicles\/miramar\/z_base_a.png",
+            "495dce4717ab2940"
+        ],
+        [
+            "vehicles\/miramar\/z_base_m.pc",
+            "679e3c515ebb53f4"
+        ],
+        [
+            "vehicles\/miramar\/z_base_a_garage_side.png",
+            "7f453b226bf7534c"
+        ],
+        [
+            "vehicles\/miramar\/z_gtz1600.png",
+            "9b46deb1de3615e7"
+        ],
+        [
+            "vehicles\/miramar\/z_custom_garage_side.png",
+            "dcc300bb237991bc"
+        ],
+        [
+            "vehicles\/miramar\/z_custom.pc",
+            "07cf6c57e525f854"
+        ],
+        [
+            "vehicles\/miramar\/z_luxe_m.png",
+            "76416b32c03cc0de"
+        ],
+        [
+            "vehicles\/miramar\/z_luxe_m_garage_side.png",
+            "a801605cc0d3a6fe"
+        ],
+        [
+            "vehicles\/miramar\/z_base_m_garage_side.png",
+            "52576bda9c90517a"
+        ],
+        [
+            "vehicles\/miramar\/z_gtz1600_garage_side.png",
+            "43ea5b3d3de1a6ab"
+        ],
+        [
+            "vehicles\/miramar\/z_luxe_a.png",
+            "2d8d79c467e12eaf"
+        ],
+        [
+            "vehicles\/miramar\/info_z_luxe_a.json",
+            "4a46558cc23b3214"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramar_doors_F.jbeam",
+            "5c44f3036cf8db47"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/materials.cs",
+            "41600e00a6684e11"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramar.jbeam",
+            "c889756b90e7463d"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/skinuv_miramarZ_extra.png",
+            "c2078da5f2d1f3f2"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramarz_skin_gtz1600_palette_uv1.dds",
+            "bca352ed0e25f000"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramar_bumper_F.jbeam",
+            "2c88f64029f182d1"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramar_licenseplate.jbeam",
+            "3e63fcf6262e4d5d"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/badge_z_n.dds",
+            "374ae1626184801b"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramarz_spoiler.jbeam",
+            "9dbaeb132a024aa3"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramarz_skin_gtz1600.dds",
+            "8e31781a1265fe99"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramarZ.dae",
+            "5a7b732b83c25d3c"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramar_trunk.jbeam",
+            "2c8a63e3effd8a13"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramar_headlights.jbeam",
+            "7d6e2d3fb4929fbf"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramar_fenders.jbeam",
+            "3bde37e9969baeb2"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramar_hood.jbeam",
+            "026193f4f21102c3"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramar_suspension_R.jbeam",
+            "4db2f974a6915646"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/badge_z_s.dds",
+            "db37e34e004fc3c3"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramar_lettering.jbeam",
+            "4ce8550eb3d84c80"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramar_glass.jbeam",
+            "1f52eb023948e9e5"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramarz_skin_racez_palette_uv1.dds",
+            "48d09199a5b6bfc8"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramar_engine.jbeam",
+            "433938f8c4b9bb7a"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramar_taillight.jbeam",
+            "fc51131f8c328628"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/skinuv_miramarZ.png",
+            "1aca1c5b6e5ce45a"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramar_fascia.jbeam",
+            "6388caeb24e3b091"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramar_exhaust.jbeam",
+            "1829d25301f461ae"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/badge_z_d.dds",
+            "1b6b4336cb60e6a4"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramarz_skin_gtz1600b_palette_uv1.dds",
+            "a23d341c3f687560"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramar_rollcage.jbeam",
+            "98d16a42e08e4ad5"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramar_grille.jbeam",
+            "44ad5b987d17c4b5"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramarz_skin_racez.dds",
+            "732091e554a5ace3"
+        ],
+        [
+            "vehicles\/miramar\/miramar_z\/miramar_body.jbeam",
+            "35bcb74f35b08682"
+        ],
+        [
+            "vehicles\/miramar\/z_luxe_m.pc",
+            "aab8e1213d60612a"
+        ],
+        [
+            "vehicles\/miramar\/z_luxe_a.pc",
+            "634edb6a13653b59"
+        ],
+        [
+            "vehicles\/miramar\/z_base_a.pc",
+            "eac4039177e6f6d8"
+        ],
+        [
+            "vehicles\/miramar\/z_race.pc",
+            "3f729715d2b9860f"
+        ],
+        [
+            "vehicles\/miramar\/z_custom.png",
+            "3a0def644ee805cc"
+        ],
+        [
+            "vehicles\/miramar\/z_base_m.png",
+            "0e1c8023a265030d"
+        ],
+        [
+            "vehicles\/miramar\/info_z_base_a.json",
+            "c96764846ec249ec"
+        ],
+        [
+            "vehicles\/miramar\/info_z_gtz.json",
+            "0b5d6f58503b4a59"
+        ],
+        [
+            "vehicles\/miramar\/z_luxe_a_garage_side.png",
+            "6f300c7aabb84f41"
+        ],
+        [
+            "vehicles\/miramar\/z_gtz1600.pc",
+            "1ed951a9267ff464"
+        ],
+        [
+            "vehicles\/miramar\/info_z_base_m.json",
+            "58febb750bbf4f74"
+        ],
+        [
+            "vehicles\/miramar\/info_z_race.json",
+            "b861a5e2c6a1bf25"
+        ],
+        [
+            "vehicles\/miramar\/z_race.png",
+            "784921c2c9457673"
+        ],
+        [
+            "vehicles\/miramar\/z_gtz.png",
+            "cc1be5ca3091a16d"
+        ],
+        [
+            "vehicles\/miramar\/z_race_garage_side.png",
+            "5ba68aa562f5578a"
+        ],
+        [
+            "vehicles\/miramar\/z_gtz.pc",
+            "c55a489dc175a022"
+        ],
+        [
+            "vehicles\/miramar\/z_gtz_garage_side.png",
+            "3a3053842c9bc420"
+        ],
+        [
+            "vehicles\/miramar\/info_z_gtz1600.json",
+            "cd98e67a361ae8c9"
+        ]
+    ]
+}

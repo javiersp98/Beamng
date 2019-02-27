@@ -1,0 +1,112 @@
+{
+"legran_spotlight_L": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Left Spotlight",
+        "value":60,
+    }
+    "slotType" : "legran_landau",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["spotlight_arm_L", ["legran_body"], [], {"pos":{"x": -0.05, "y":-0.1, "z":-0.1}}],
+         ["spotlight_L", ["legran_spotlight_L"], [], {"pos":{"x": -0.05, "y":-0.1, "z":-0.1}}],
+         {"deformGroup":"legran_spotlight_L_break", "deformMaterialBase":"pickup_glass", "deformMaterialDamaged":"pickup_glass_dmg"}
+         ["spotlight_glass_L", ["legran_spotlight_L"],[], {"pos":{"x": -0.05, "y":-0.1, "z":-0.1},"deformSound":"GlassBreakSound3", "deformVolume":0.5}],
+         {"deformGroup":"legran_spotlight_L_break", "deformMaterialBase":"light_generic", "deformMaterialDamaged":"light_generic_dmg"}
+         ["spotlight_inner_L", ["legran_spotlight_L"], [], {"pos":{"x": -0.05, "y":-0.1, "z":-0.1}}],
+         {"deformGroup":""}
+    ],
+     "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"group":"legran_spotlight_L"},
+         {"selfCollision":true}
+         {"collision":true}
+         {"nodeWeight":1.0},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_PLASTIC"},
+         ["spot1l",0.91, -0.8, 1.03],
+         ["spot2l",0.76, -0.8, 1.03],
+         ["spot3l",0.91, -0.8, 1.13],
+         ["spot4l",0.76, -0.8, 1.13],
+         ["spot5l",0.76, -0.77, 1.05],
+         {"group":""},
+
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":0
+            "lightOuterAngle":120
+            "lightBrightness":0.35
+            "lightRange":150
+            "lightColor":{"r":255, "g":255, "b":200, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.2
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        ["highbeam"    , "SPOTLIGHT"        , "spot1l", "spot2l", "spot4l", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":-0.0},"deformGroup":"legran_spotlight_L_break"}],,
+     ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":1176840,"beamDamp":78},
+          {"beamDeform":36750,"beamStrength":"FLT_MAX"},
+          //left light
+          {"deformationTriggerRatio":0.05}
+          {"deformGroup":"legran_spotlight_L_break"},
+          ["spot1l","spot2l"],
+          ["spot1l","spot3l"],
+          ["spot1l","spot4l"],
+          ["spot1l","spot5l"],
+          ["spot2l","spot3l"],
+          ["spot2l","spot4l"],
+          ["spot2l","spot5l"],
+          ["spot3l","spot4l"],
+          ["spot3l","spot5l"],
+          ["spot4l","spot5l"],
+          //attach
+          {"beamSpring":1176840,"beamDamp":78},
+          {"beamDeform":8250,"beamStrength":7120},
+          {"breakGroup":"legran_spotlight_L"},
+          ["spot1l","f6ll"],
+          ["spot2l","f6ll"],
+          ["spot3l","f6ll"],
+          ["spot4l","f6ll"],
+          ["spot5l","f6ll"],
+          ["spot1l","p1l"],
+          ["spot2l","p1l"],
+          ["spot3l","p1l"],
+          ["spot4l","p1l"],
+          ["spot5l","p1l"],
+          ["spot1l","p2l"],
+          ["spot2l","p2l"],
+          ["spot3l","p2l"],
+          ["spot4l","p2l"],
+          ["spot5l","p2l"],
+          ["spot1l","p2ll"],
+          ["spot2l","p2ll"],
+          ["spot3l","p2ll"],
+          ["spot4l","p2ll"],
+          ["spot5l","p2ll"],
+          {"breakGroup":""},
+          {"deformGroup":""},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"dragCoef":4},
+            {"group":"legran_spotlight_L"},
+            ["spot4l","spot2l","spot1l"],
+            ["spot4l","spot1l","spot3l"],
+            //
+            ["spot3l","spot1l","spot5l"],
+            ["spot5l","spot1l","spot2l"],
+            ["spot5l","spot2l","spot4l"],
+            ["spot3l","spot5l","spot4l"],
+    ],
+}
+}

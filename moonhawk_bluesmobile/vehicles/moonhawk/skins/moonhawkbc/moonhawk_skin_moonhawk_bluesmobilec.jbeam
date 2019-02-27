@@ -1,0 +1,11 @@
+{
+"moonhawk_skin_moonhawkb": {
+    "information":{
+        "authors":"AMBibbo",
+        "name":"Bluesmobile",
+        "value":200,
+    }
+	"slotType" : "paint_design",
+    "globalSkin" : "moonhawkb",
+},
+}

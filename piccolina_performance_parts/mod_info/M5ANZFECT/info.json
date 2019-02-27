@@ -1,0 +1,239 @@
+{
+    "attachments": [
+
+    ],
+    "resource_id": 6908,
+    "current_version_id": 14296,
+    "download_count": 0,
+    "resource_version_id": 15595,
+    "version_string": "0.2",
+    "last_update": 1545562294,
+    "rating_avg": 5,
+    "rating_count": 0,
+    "rating_sum": 0,
+    "resource_category_id": 7,
+    "resource_date": 1545562294,
+    "review_count": 7,
+    "tag_line": "Superchargers and fartcans",
+    "update_count": 0,
+    "path": "M5ANZFECT\/14296\/",
+    "filename": "piccolina_performance_parts.zip",
+    "title": "Autobello Piccolina performance parts",
+    "user_id": 308994,
+    "username": "BeamDrifter",
+    "tagid": "M5ANZFECT",
+    "message": "[IMG]https:\/\/i.imgur.com\/2SQgVdx.jpg[\/IMG] [IMG]https:\/\/i.imgur.com\/9Wjicjq.jpg[\/IMG] \nSome parts to make the Piccolina faster & better. Right now there isn't very much stuff but I'll add more later.\n\n[B]Currently includes:[\/B]\n- Race rev limiter\n- Stage 3 performance long block (can rev up to 8000 rpm)\n- Centrifugal supercharger + adjustable gear ratio\n- Drift steering\n- Race 5-speed sequential gearbox\n- Dual fart cans\n- A few configs\n\nFeel free to suggest anything that I should add :)",
+    "category_title": "",
+    "prefix_title": "Alpha",
+    "via": "packed by repo on Fri, 22 Feb 2019 20:00:02 GMT",
+    "hashes": [
+        [
+            "vehicles\/autobello\/tc4b_r.dds",
+            "54057e97bc070ed6"
+        ],
+        [
+            "vehicles\/autobello\/sleeper.png",
+            "e47f89d1e063c4cd"
+        ],
+        [
+            "vehicles\/autobello\/fartcan\/materials.cs",
+            "5dc6ea64ad380357"
+        ],
+        [
+            "vehicles\/autobello\/fartcan\/autobello_fartcan_d.dds",
+            "be8f54fd8386dabf"
+        ],
+        [
+            "vehicles\/autobello\/fartcan\/fartcan_n.dds",
+            "e0caafbc4ee8eef3"
+        ],
+        [
+            "vehicles\/autobello\/fartcan\/fartcan_r.dds",
+            "d03001964a0f539d"
+        ],
+        [
+            "vehicles\/autobello\/150S.png",
+            "e03141c7b9a66c00"
+        ],
+        [
+            "vehicles\/autobello\/info_drift.json",
+            "ad6d74c57b30bf64"
+        ],
+        [
+            "vehicles\/autobello\/engine_ohv_r.dds",
+            "c6490c4f0cb4233b"
+        ],
+        [
+            "vehicles\/autobello\/engine_ohv_n.dds",
+            "832e74193b053be1"
+        ],
+        [
+            "vehicles\/autobello\/engine_ohv_d.dds",
+            "0553baf7d90e1cb2"
+        ],
+        [
+            "vehicles\/autobello\/autobello_fartcan.dae",
+            "23e1b9e1d05c7a3d"
+        ],
+        [
+            "vehicles\/autobello\/autobello_engine_tuning.jbeam",
+            "33c826a736b48739"
+        ],
+        [
+            "vehicles\/autobello\/1.5_ohv.dae",
+            "a4385e90de810c98"
+        ],
+        [
+            "vehicles\/autobello\/drift.png",
+            "490872db2fedf96e"
+        ],
+        [
+            "vehicles\/autobello\/sleeper.pc",
+            "50ebc9a592939ead"
+        ],
+        [
+            "vehicles\/autobello\/drift.pc",
+            "cb0a27228a61f8da"
+        ],
+        [
+            "vehicles\/autobello\/autobello_engine_1500_ohv.jbeam",
+            "a19551bd8edaa570"
+        ],
+        [
+            "vehicles\/autobello\/tc4b_n.dds",
+            "0947b501fe370551"
+        ],
+        [
+            "vehicles\/autobello\/info_fart_cannon.json",
+            "9707e655ef7cde27"
+        ],
+        [
+            "vehicles\/autobello\/rally_supercharged.pc",
+            "dc69fe33e7ed857a"
+        ],
+        [
+            "vehicles\/autobello\/info_150S.json",
+            "3cca9dc30db3dacb"
+        ],
+        [
+            "vehicles\/autobello\/c.dds",
+            "e44eaa5fa066a829"
+        ],
+        [
+            "vehicles\/autobello\/sleeper_garage_front.png",
+            "6ebffcf6ff2ea742"
+        ],
+        [
+            "vehicles\/autobello\/150_track_supercharged.pc",
+            "505a23b5436188fb"
+        ],
+        [
+            "vehicles\/autobello\/autobello_exhaust_fartcan.jbeam",
+            "851c8623154a6f18"
+        ],
+        [
+            "vehicles\/autobello\/autobello_decklid_spoiler.jbeam",
+            "126d6adf9ee69421"
+        ],
+        [
+            "vehicles\/autobello\/1_5_exhaust_race.jbeam",
+            "d25881ea90e0d732"
+        ],
+        [
+            "vehicles\/autobello\/info_150_track_supercharged.json",
+            "3fb198723e5d9faa"
+        ],
+        [
+            "vehicles\/autobello\/engine_ohv_s.dds",
+            "95b5346bea404e60"
+        ],
+        [
+            "vehicles\/autobello\/spoiler.dae",
+            "4c8caedaaa0ec86c"
+        ],
+        [
+            "vehicles\/autobello\/info_rally_supercharged.json",
+            "76b896c1df04b0f0"
+        ],
+        [
+            "vehicles\/autobello\/fart_cannon.pc",
+            "b2aa82150b045720"
+        ],
+        [
+            "vehicles\/autobello\/fart_cannon.png",
+            "281ace3467645b6b"
+        ],
+        [
+            "vehicles\/autobello\/autobello_radiator_ohv.jbeam",
+            "881f381162b83714"
+        ],
+        [
+            "vehicles\/autobello\/info_150SS.json",
+            "8cd389b9812c0d4d"
+        ],
+        [
+            "vehicles\/autobello\/d.dds",
+            "edf7dfe67c28d39a"
+        ],
+        [
+            "vehicles\/autobello\/rally_supercharged.png",
+            "bfcec4b520980499"
+        ],
+        [
+            "vehicles\/autobello\/150_track_supercharged.png",
+            "b6f7e37a68f8ee67"
+        ],
+        [
+            "vehicles\/autobello\/150TS.pc",
+            "cf1e563dbfd72ebd"
+        ],
+        [
+            "vehicles\/autobello\/autobello_supercharger.dae",
+            "6d5a06a8ef893224"
+        ],
+        [
+            "vehicles\/autobello\/1.5_exhaust.jbeam",
+            "d4b0704e713d2e85"
+        ],
+        [
+            "vehicles\/autobello\/sleeper_garage_side.png",
+            "b94d425ccb6724fd"
+        ],
+        [
+            "vehicles\/autobello\/150S.pc",
+            "e5165293896e6a9d"
+        ],
+        [
+            "vehicles\/autobello\/150SS.pc",
+            "06cc6befa6d14e19"
+        ],
+        [
+            "vehicles\/autobello\/info_150TS.json",
+            "84d7208f1910ab50"
+        ],
+        [
+            "vehicles\/autobello\/info_sleeper.json",
+            "2a3d63f2ad1ad858"
+        ],
+        [
+            "vehicles\/autobello\/spoiler_n.dds",
+            "61718ccff20ad3d2"
+        ],
+        [
+            "vehicles\/autobello\/150SS.png",
+            "c573e6926faac03e"
+        ],
+        [
+            "vehicles\/autobello\/tc4b_d.dds",
+            "c6835699204bb71c"
+        ],
+        [
+            "vehicles\/autobello\/tc4b_s.dds",
+            "0da95832a091f1ca"
+        ],
+        [
+            "vehicles\/autobello\/150TS.png",
+            "c8b36ddbd8356224"
+        ]
+    ]
+}

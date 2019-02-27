@@ -1,0 +1,10 @@
+{
+	"Configuration":"Los Santos Sheriff Police Package",
+	"Transmission":"Manual",
+  "Description":"Los Santos Sheriff Police Package"
+	"Drivetrain":"RWD",
+	"Value":4180,
+	"Performance Class":"5",
+	"default_color":"Pearl White",
+	"Config Type":"Factory"
+}

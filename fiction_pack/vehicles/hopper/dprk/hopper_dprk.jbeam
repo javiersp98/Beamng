@@ -1,0 +1,9 @@
+  "hopper_skin_dprk": {
+   "information":{
+       "authors":"OuDacai",
+       "name":"North Korean Army Skin",
+       "value":200,
+   }
+   "slotType" : "paint_design",
+   "globalSkin" : "dprk",
+   }

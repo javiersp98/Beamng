@@ -1,0 +1,11 @@
+{
+"fullsize_skin_salvpd": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"Las Venturas Police Department Skin",
+        "value":1200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "salvpd",
+  }
+}

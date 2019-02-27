@@ -1,0 +1,11 @@
+{
+"fullsize_skin_fcpd": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"FCPD Skin",
+        "value":1200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "fcpd",
+  }
+}

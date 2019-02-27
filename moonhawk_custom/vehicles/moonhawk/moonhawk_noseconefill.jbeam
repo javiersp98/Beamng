@@ -2,7 +2,7 @@
 "moonhawk_noseconefill": {	
 	"information":{
 		"authors":"AR162b",
-		"name":"Bruckell Moonhawk Nosecone fill",
+		"name":"Nosecone",
 	}
     "slotType" : "moonhawk_bumper_F",
 	 "scalenodeWeight":0.89,
@@ -13,7 +13,8 @@
 	"slots": [
 		["type", "default", "description"]
 		["moonhawk_pushbar_F_oldstyle", "", "Bruckell Moonhawk Police Pushbar"],
-        	["moonhawk_licenseplate_F_oldstyle","", "Bruckell Moonhawk Front License Plate"],
+		["moonhawk_frontlip", "", "Lip"],
+        ["moonhawk_licenseplate_F_oldstyle","", "Bruckell Moonhawk Front License Plate"],
 	],
 	 "flexbodies": [
 		 ["mesh", "[group]:", "nonFlexMaterials"],
@@ -239,7 +240,7 @@
 "moonhawk_noseconefill_chrome": {	
 	"information":{
 		"authors":"AR162b",
-		"name":"Bruckell Moonhawk Nosecone fill Chrome Strip",
+		"name":"Nosecone (Chrome Strip)",
 	}
     "slotType" : "moonhawk_bumper_F",
 	 "scalenodeWeight":0.89,
@@ -250,6 +251,7 @@
 	"slots": [
 		["type", "default", "description"]
 		["moonhawk_pushbar_F_oldstyle", "", "Bruckell Moonhawk Police Pushbar"],
+		["moonhawk_frontlip", "", "Lip"],
         	["moonhawk_licenseplate_F_oldstyle","", "Bruckell Moonhawk Front License Plate"],
 	],
 	 "flexbodies": [

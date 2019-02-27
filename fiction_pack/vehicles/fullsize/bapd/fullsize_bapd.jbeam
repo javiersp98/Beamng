@@ -1,0 +1,11 @@
+{
+"fullsize_skin_bapd": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"Bay Area Police Department Skin",
+        "value":1200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "bapd",
+  }
+}

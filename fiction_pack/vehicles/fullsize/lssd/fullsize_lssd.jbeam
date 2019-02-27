@@ -1,0 +1,11 @@
+{
+"fullsize_skin_lssd": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"Los Santos Sheriff Department Skin",
+        "value":1200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "lssd",
+  }
+}

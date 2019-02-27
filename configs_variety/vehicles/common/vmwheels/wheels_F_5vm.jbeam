@@ -2,7 +2,7 @@
 "wheel_05vm1_17x7_F": {
     "information":{
         "authors":"Ninetynine",
-        "name":"Ibishu TWE 17x7 Front Wheels (Silver)",
+        "name":"Okudai TWE 17x7 Front Wheels (Silver)",
         "value":850,
     },
     "slotType" : "wheel_F_5",
@@ -39,8 +39,8 @@
         ["id1:", "id2:"],
         {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"breakGroup":""},
-        {"beamDeform":75000,"beamStrength":400000},
-        {"beamSpring":801000,"beamDamp":6},
+        {"beamDeform":78500,"beamStrength":434000},
+        {"beamSpring":1501000,"beamDamp":25},
         //front wheel
         ["fw1r","fw1rr"],
         ["fw1l","fw1ll"],
@@ -48,7 +48,7 @@
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
-        {"disableMeshBreaking":true,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+        {"disableMeshBreaking":false,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
         {"enableTireSideReinfBeams":true},
 
         //general settings
@@ -58,19 +58,19 @@
         {"numRays":16},
 
         //hub options
-        {"hubTreadBeamSpring":1101000, "hubTreadBeamDamp":10},
-        {"hubPeripheryBeamSpring":1101000, "hubPeripheryBeamDamp":10},
-        {"hubSideBeamSpring":1601000, "hubSideBeamDamp":10},
-        {"hubNodeWeight":0.41},
+        {"hubTreadBeamSpring":990900, "hubTreadBeamDamp":10},
+        {"hubPeripheryBeamSpring":990900, "hubPeripheryBeamDamp":10},
+        {"hubSideBeamSpring":1501000, "hubSideBeamDamp":10},
+        {"hubNodeWeight":0.44},
         {"hubNodeMaterial":"|NM_METAL"},
         {"hubFrictionCoef":0.5},
-        {"hubBeamDeform":68600, "hubBeamStrength":76000},
+        {"hubBeamDeform":43600, "hubBeamStrength":78000},
     ],
 },
 "wheel_05vm2_17x7_F": {
     "information":{
         "authors":"Ninetynine",
-        "name":"Ibishu TWE 17x7 Front Wheels (Gold)",
+        "name":"Okudai TWE 17x7 Front Wheels (Gold)",
         "value":850,
     },
     "slotType" : "wheel_F_5",
@@ -107,8 +107,8 @@
         ["id1:", "id2:"],
         {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"breakGroup":""},
-        {"beamDeform":75000,"beamStrength":400000},
-        {"beamSpring":801000,"beamDamp":6},
+        {"beamDeform":78500,"beamStrength":434000},
+        {"beamSpring":1501000,"beamDamp":25},
         //front wheel
         ["fw1r","fw1rr"],
         ["fw1l","fw1ll"],
@@ -116,7 +116,7 @@
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
-        {"disableMeshBreaking":true,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+        {"disableMeshBreaking":false,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
         {"enableTireSideReinfBeams":true},
 
         //general settings
@@ -126,14 +126,14 @@
         {"numRays":16},
 
         //hub options
-        {"hubTreadBeamSpring":1101000, "hubTreadBeamDamp":10},
-        {"hubPeripheryBeamSpring":1101000, "hubPeripheryBeamDamp":10},
-        {"hubSideBeamSpring":1601000, "hubSideBeamDamp":10},
-        {"hubNodeWeight":0.41},
+        {"hubTreadBeamSpring":990900, "hubTreadBeamDamp":10},
+        {"hubPeripheryBeamSpring":990900, "hubPeripheryBeamDamp":10},
+        {"hubSideBeamSpring":1501000, "hubSideBeamDamp":10},
+        {"hubNodeWeight":0.44},
         {"hubNodeMaterial":"|NM_METAL"},
         {"hubFrictionCoef":0.5},
-        {"hubBeamDeform":68600, "hubBeamStrength":76000},
-      ],
+        {"hubBeamDeform":43600, "hubBeamStrength":78000},
+    ],
 
 },
 "etk_wheel_07vm1_16x7_F": {

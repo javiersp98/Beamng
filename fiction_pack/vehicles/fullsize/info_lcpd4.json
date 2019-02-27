@@ -1,0 +1,10 @@
+{
+	"Configuration":"Liberty City Police Package",
+	"Transmission":"Manual",
+    "Description":"Liberty City Police Package"
+	"Drivetrain":"RWD",
+	"Value":4170,
+	"Performance Class":"5",
+	"default_color":"Pearl White",
+	"Config Type":"Factory"
+}

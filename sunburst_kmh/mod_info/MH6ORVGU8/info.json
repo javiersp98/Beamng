@@ -1,0 +1,321 @@
+{
+    "attachments": [
+        {
+            "data_filename": "348529.png",
+            "original_filename": "284160_20171109010339_1.png",
+            "thumb_filename": "thumbs\/348529.jpg"
+        },
+        {
+            "data_filename": "348530.png",
+            "original_filename": "284160_20171114135313_1.png",
+            "thumb_filename": "thumbs\/348530.jpg"
+        },
+        {
+            "data_filename": "348532.png",
+            "original_filename": "284160_20171114135516_1.png",
+            "thumb_filename": "thumbs\/348532.jpg"
+        }
+    ],
+    "resource_id": 2998,
+    "current_version_id": 7919,
+    "download_count": 0,
+    "resource_version_id": 7919,
+    "version_string": "1.0",
+    "last_update": 1510666667,
+    "rating_avg": 0,
+    "rating_count": 0,
+    "rating_sum": 0,
+    "resource_category_id": 14,
+    "resource_date": 1510666667,
+    "review_count": 0,
+    "tag_line": "European variants of the Sunburst, with custom interiors, gauges and skins",
+    "update_count": 0,
+    "path": "MH6ORVGU8\/7919\/",
+    "filename": "Euroburst_pack_JFXAM.zip",
+    "title": "JFXAM's Euroburst Pack",
+    "user_id": 225502,
+    "username": "JFXAM",
+    "tagid": "MH6ORVGU8",
+    "message": "My very first mod. Is a simple, yet interesting one. This pack adds 9 reskined versions of the Hirochi Sunburst, with custom interiors, European styled gauges in KM\/h and custom skins for the R and RS versions.\n\nWhile it doesn't add any new parts or has a different performance, this configuration is purely cosmetical (at least at the moment)\n\n[ATTACH]348529[\/ATTACH] [ATTACH]348530[\/ATTACH] [ATTACH]348532[\/ATTACH] [ATTACH]348533[\/ATTACH] [ATTACH]348534[\/ATTACH] [ATTACH]348535[\/ATTACH] [ATTACH]348536[\/ATTACH] [ATTACH]348537[\/ATTACH] [ATTACH]348538[\/ATTACH] [ATTACH]348539[\/ATTACH] [ATTACH]348540[\/ATTACH] [ATTACH]348541[\/ATTACH] [ATTACH]348542[\/ATTACH] \n\n[B]Features:[\/B]\n[LIST]\n[*]Custom interiors for each type (Base model, Sport, S and RS)\n[*]Two skins. One for the RS and other for the S\n[*]Accurate redesigned gauges. In KM\/h and with a more European look than the vanilla ones.\n[*]Custom-ish lettering[B]*[\/B]\n[*]Some easter eggs. \n[\/LIST]\n[B]Possible future additions. ([\/B][I][B]What you see here means what I'd like to add, not what future updates WILL contain for sure)[\/B][\/I]\n[LIST]\n[*]Diesel engines (they are quite popular here in Europe)\n[*]Propper custom lettering.\n[\/LIST]\n\n[B][U]IF YOU CAN HELP ME WITH ANY OF THEM, PLEASE SEND ME A PM ASAP[\/U][\/B]\n\nAlso, if you encounter any bugs, please report them in the discussion tab",
+    "category_title": "",
+    "prefix_title": "",
+    "via": "packed by repo on Tue, 14 Nov 2017 14:00:08 GMT",
+    "hashes": [
+        [
+            "vehicles\/sunburst\/info_Euro_18.json",
+            "4b1d949b2a52dd6b"
+        ],
+        [
+            "vehicles\/sunburst\/info_Euro_sport_cvt.json",
+            "55d95c4cdd7eee08"
+        ],
+        [
+            "vehicles\/sunburst\/Euro_18_cvt.pc",
+            "9db02b388956a74c"
+        ],
+        [
+            "vehicles\/sunburst\/Euro_S_A_A.pc",
+            "f398094404cdba21"
+        ],
+        [
+            "vehicles\/sunburst\/Euro_S.png",
+            "43298f1f18749291"
+        ],
+        [
+            "vehicles\/sunburst\/Euro_S_A_A.png",
+            "053f824352944c0d"
+        ],
+        [
+            "vehicles\/sunburst\/Euro_S_A.png",
+            "54fe4482fd834916"
+        ],
+        [
+            "vehicles\/sunburst\/Euro_RS.pc",
+            "6bb83ef658565510"
+        ],
+        [
+            "vehicles\/sunburst\/info_Euro_18_cvt.json",
+            "789d9b274c3bce59"
+        ],
+        [
+            "vehicles\/sunburst\/info_Euro_S_Au.json",
+            "7dd9246d77700af6"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/euros\/sunburst_interior_s_euros.dds",
+            "45b2a1a971020b7b"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/euros\/sunburst_gauges_n_euros.dds",
+            "6bcb143f2c9a03c1"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/euros\/sunburst_skin_euros_palette_uv1.dds",
+            "24e861087f9ece82"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/euros\/sunburst_interior_n_euros.dds",
+            "57d6c307f3e37f96"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/euros\/sunburst_gauges_s_euros.dds",
+            "e01cc9f471bc4f42"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/euros\/sunburst_skin_euros.dds",
+            "7d0ac02b4bdfc18b"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/euros\/euros.jbeam",
+            "e11e1415dc55beb3"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/euros\/sunburst_gauges_d_euros.dds",
+            "9a0a47a62393b837"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/euros\/sunburst_gauges_g_euros.dds",
+            "2dffa9e8ac68918b"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/euros\/sunburst_interior_d_euros.dds",
+            "1055d1652d297478"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/materials.cs",
+            "bf7aa5ea808616de"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurosport\/sunburst_interior_n_eurosport.dds",
+            "57d6c307f3e37f96"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurosport\/sunburst_skin_eurosport.dds",
+            "c465f3d8edc6e5ca"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurosport\/eurosport.jbeam",
+            "c61163dc2d78251b"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurosport\/sunburst_gauges_s_eurosport.dds",
+            "dae2d421b936fc59"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurosport\/sunburst_interior_s_eurosport.dds",
+            "45b2a1a971020b7b"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurosport\/sunburst_gauges_n_eurosport.dds",
+            "6bcb143f2c9a03c1"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurosport\/sunburst_interior_d_eurosport.dds",
+            "43ea484adc539b6c"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurosport\/sunburst_gauges_g_eurosport.dds",
+            "d5c0d6d7c96b2e49"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurosport\/sunburst_gauges_d_eurosport.dds",
+            "bae528e71cc61c53"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurors\/sunburst_gauges_g_rsmetric.dds",
+            "b72ef42f170720e3"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurors\/sunburst_skin_eurors.dds",
+            "2764e26eee29d8bb"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurors\/sunburst_eurors.jbeam",
+            "4461b94695db1bd7"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurors\/sunburst_gauges_d_rsmetric.dds",
+            "e2648ba8c1fd468a"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurors\/sunburst_skin_eurors_palette_uv1.dds",
+            "dc05d70b9e2c6f91"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurors\/sunburst_gauges_s_rsmetric.dds",
+            "72af0c83d678b9cf"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurors\/sunburst_interior_d_rs.dds",
+            "95bf46889285eb02"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurors\/sunburst_interior_s_rs.dds",
+            "42ea8c8d09e54715"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurors\/sunburst_interior_n_rs.dds",
+            "57d6c307f3e37f96"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurors\/sunburst_gauges_n_rsmetric.dds",
+            "f7bb6a2cb8421712"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/sunburst_lettering_euro_s.dds",
+            "0a65a2cdb034bee3"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/sunburst_lettering_euro_d.dds",
+            "6832b055ebf318a8"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/sunburst_lettering_euro_n.dds",
+            "c43395694fc6dfeb"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurobase\/sunburst_interior_n_eurosport.dds",
+            "57d6c307f3e37f96"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurobase\/sunburst_skin_eurobase.dds",
+            "c465f3d8edc6e5ca"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurobase\/sunburst_gauges_s_eurobase.dds",
+            "593fab3f6ed0e860"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurobase\/sunburst_interior_s_eurosport.dds",
+            "45b2a1a971020b7b"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurobase\/sunburst_gauges_d_eurobase.dds",
+            "61f60349f66515d7"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurobase\/sunburst_eurobase.jbeam",
+            "478ac46e54164114"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurobase\/sunburst_interior_d_eurobase.dds",
+            "54fe31f24ccd9e4a"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/eurobase\/sunburst_gauges_g_eurobase.dds",
+            "011fefac061ea09c"
+        ],
+        [
+            "vehicles\/sunburst\/euroburst\/sunburst_lettering_euro.jbeam",
+            "7526577fef70b58c"
+        ],
+        [
+            "vehicles\/sunburst\/Euro_18.pc",
+            "6b6d8d8b680eb527"
+        ],
+        [
+            "vehicles\/sunburst\/Euro_Sport_cvt.png",
+            "e5a905700558d00f"
+        ],
+        [
+            "vehicles\/sunburst\/info_Euro_RS.json",
+            "9e179cdcdf6eb193"
+        ],
+        [
+            "vehicles\/sunburst\/info_Euro_S_A.json",
+            "8614e61243aae52a"
+        ],
+        [
+            "vehicles\/sunburst\/Euro_RS.png",
+            "ea2e1c0a57b2bee6"
+        ],
+        [
+            "vehicles\/sunburst\/Euro_sport_m.pc",
+            "83c1bcf1a0540d0a"
+        ],
+        [
+            "vehicles\/sunburst\/Euro_S_Au.pc",
+            "14f28feae0e47504"
+        ],
+        [
+            "vehicles\/sunburst\/Euro_18_cvt.png",
+            "2f8635372d8a7778"
+        ],
+        [
+            "vehicles\/sunburst\/Euro_S_A.pc",
+            "ef441d25c1f278c6"
+        ],
+        [
+            "vehicles\/sunburst\/info_Euro_S.json",
+            "2825898b86982b98"
+        ],
+        [
+            "vehicles\/sunburst\/Euro_sport_cvt.pc",
+            "52e9f8499aa5554e"
+        ],
+        [
+            "vehicles\/sunburst\/Euro_S_Au.png",
+            "8fbb7b0b4b02014e"
+        ],
+        [
+            "vehicles\/sunburst\/info_Euro_S_A_A.json",
+            "4e32bddba65bf093"
+        ],
+        [
+            "vehicles\/sunburst\/Euro_Sport_m.png",
+            "e24a1bd9b9c6121a"
+        ],
+        [
+            "vehicles\/sunburst\/Euro_S.pc",
+            "b09b324c75cdf24e"
+        ],
+        [
+            "vehicles\/sunburst\/Euro_18.png",
+            "7a67bac1d4a13962"
+        ],
+        [
+            "vehicles\/sunburst\/info_Euro_sport_m.json",
+            "325c5ae8e1fc39a6"
+        ]
+    ]
+}

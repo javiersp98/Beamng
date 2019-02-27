@@ -1,0 +1,12 @@
+{
+
+"etki_skin_ger": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"German Police Skin",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "ger",
+  }
+  }

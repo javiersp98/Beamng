@@ -1,0 +1,11 @@
+{
+"fullsize_skin_lcpd4": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"Liberty City Police Department Skin",
+        "value":1200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "lcpd4",
+  }
+}

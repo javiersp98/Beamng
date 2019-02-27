@@ -1,0 +1,11 @@
+{
+"sbr_skin_scpd": {
+    "information":{
+        "authors":"OuDcai",
+        "name":"Seacrest County Police Department Skin",
+        "value":1100,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "scpd",
+}
+}

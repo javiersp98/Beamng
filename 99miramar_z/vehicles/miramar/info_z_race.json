@@ -1,0 +1,32 @@
+{
+"Performance Class":"7",
+"Drivetrain":"RWD",
+"100-200 km/h":20.5,
+"default_color_3":"Pure Black",
+"Body Style":"Coupe",
+"Power":238.123,
+"Value":105000,
+"0-100 km/h":7.1,
+"TorquePeakRPM":"7000 - 9350",
+"Weight":995,
+"Description":"The legendary #47 race car, with a beastly look and a screaming high-RPM engine",
+"Configuration":"Z240 Race Car (M)",
+"0-100 mph":16.4,
+"Transmission":"Manual",
+"60-100 mph":9.6,
+"0-60 mph":6.8,
+"Config Type":"Factory",
+"100-0 km/h":34.9,
+"Top Speed":61.0278,
+"default_color":"Pure Black",
+"Torque":190.23,
+"Off-Road Score":32,
+"PowerPeakRPM":"8500 - 9900",
+"Weight/Power":4.18067,
+"60-0 mph":106.4,
+"Years":{
+  "min":1965,
+  "max":1968
+},
+"0-200 km/h":27.6
+}

@@ -1,0 +1,11 @@
+{
+"fullsize_skin_scpd": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"SCPD Skin",
+        "value":1200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "scpd",
+  }
+}

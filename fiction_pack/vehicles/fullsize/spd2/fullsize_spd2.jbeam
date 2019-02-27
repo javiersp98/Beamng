@@ -1,0 +1,11 @@
+{
+"fullsize_skin_spd2": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"Stilwater Police Department Skin2",
+        "value":1200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "spd2",
+  }
+}

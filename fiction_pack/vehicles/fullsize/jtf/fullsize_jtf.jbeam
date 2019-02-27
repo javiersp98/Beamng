@@ -1,0 +1,11 @@
+{
+"fullsize_skin_jtf": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"The Division JTF NYPD Skin",
+        "value":1200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "jtf",
+  }
+}

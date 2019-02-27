@@ -1,0 +1,12 @@
+{
+"legran_rpd": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"RPD",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "rpd",
+}
+
+}

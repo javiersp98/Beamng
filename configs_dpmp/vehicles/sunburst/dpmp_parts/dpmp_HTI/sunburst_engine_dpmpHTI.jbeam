@@ -2,7 +2,7 @@
 "sunburst_engine_2.2": {
     "information":{
         "authors":"BeamNG",
-        "name":"2.0L I4 Engine (HTI)",
+        "name":"2.2L I4 Engine (HTI)",
         "value":2600,
     },
     "slotType" : "sunburst_engine",
@@ -41,7 +41,7 @@
 
         "idleRPM":950,
         //max rpm physically capable of
-        "maxRPM":7400,
+        "maxRPM":7500,
         "inertia":0.085,
         "friction":11,
         "dynamicFriction":0.025,
@@ -248,6 +248,19 @@
         //exhaust
         "instantAfterFireCoef": 1.5,
         "sustainedAfterFireCoef": 1.0,
+		"torqueModIntake":[
+            ["rpm", "torque"],
+            [0, 0],
+            [1000, 0],
+            [2000, 1],
+            [3000, 3],
+            [4000, 5],
+            [5000, 7],
+            [6000, 9],
+            [7000, 10.5],
+            [8000, 12],
+            [9000, 13],
+        ],
     },
     "vehicleController": {
         "revMatchThrottle":0.25,

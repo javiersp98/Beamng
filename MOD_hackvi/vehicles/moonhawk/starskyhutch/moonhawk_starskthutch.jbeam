@@ -1,0 +1,11 @@
+{
+"moonhawk_skin_starskyhutch": {
+    "information":{
+        "authors":"Fennie",
+        "name":"Starsky and Hutch",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "starskyhutch",
+}
+}

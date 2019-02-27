@@ -1,0 +1,11 @@
+{
+"fullsize_skin_rpd": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"RPD Skin",
+        "value":1200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "rpd",
+  }
+}

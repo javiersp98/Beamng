@@ -1,0 +1,84 @@
+{
+"miramarz_spring_R_custom": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Custom Rear Leaf Springs",
+        "value":300,
+    },
+    "slotType" : "miramar_spring_R",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["miramar_leaf_R", ["miramar_leafmounts_F","miramar_leafmounts_R","miramar_shockbottom_R","miramar_axle_R_2"]],
+        ["miramar_leafblock_R", ["miramar_leafmounts_F","miramar_leafmounts_R","miramar_shockbottom_R","miramar_axle_R_2"]],
+        ["miramar_shackle_R", ["miramar_shackle_R"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"group":"miramar_shackle_R"},
+         {"nodeWeight":3.1},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true},
+         ["rx3l", 0.455, 1.81, 0.31{"group":["miramar_leafmounts_R","miramar_shackle_R"]}],
+         ["rx3r", -0.455, 1.81, 0.31{"group":["miramar_leafmounts_R","miramar_shackle_R"]}],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":2001000,"beamDamp":250},
+          {"beamDeform":40000,"beamStrength":70000},
+          //rear shackle
+          {"breakGroup":"shackle_R"},
+          ["r3rr","rx3r"],
+          ["r3ll","rx3r"],
+          {"breakGroup":"shackle_L"},
+          ["r3rr","rx3l"],
+          ["r3ll","rx3l"],
+          {"breakGroup":""},
+
+          //main leaf
+          {"beamDeform":45000,"beamStrength":200000},
+          {"beamSpring":12001000,"beamDamp":100},
+          ["axshr","rx1r"],
+          ["axshl","rx1l"],
+          ["axshr","rx3r"],
+          ["axshl","rx3l"],
+
+          //leaf spring
+          {"beamSpring":101000,"beamDamp":1000},
+          {"beamType":"|LBEAM"},
+          {"beamPrecompression":1.0},
+          ["ax2r","rx3r",{"id3:":"axshr"}],
+          ["ax2l","rx3l",{"id3:":"axshl"}],
+          ["ax2r","rx1r",{"id3:":"axshr"}],
+          ["ax2l","rx1l",{"id3:":"axshl"}],
+
+          //leaf lateral
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":151000,"beamDamp":1000},
+          ["axshl","rx3r"],
+          ["axshr","rx3l"],
+          ["axshl","rx1r"],
+          ["axshr","rx1l"],
+
+          //shackle anti-invert
+          {"beamPrecompression":0.9, "beamType":"|SUPPORT", "beamLongBound":1.0},
+          {"beamSpring":920460,"beamDamp":58,"beamDeform":59280,"beamStrength":116280},
+          ["r6rr","rx3r"],
+          ["r6ll","rx3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+          ["id1:","id2:","id3:"],
+          {"triangleType":"NONCOLLIDABLE"},
+          ["ax2r", "axshr", "rx1r"],
+          ["ax2r", "rx3r", "axshr"],
+
+          ["axshl", "ax2l", "rx1l"],
+          ["rx3l", "ax2l", "axshl"],
+          {"triangleType":"NORMALTYPE"},
+    ],
+}
+}

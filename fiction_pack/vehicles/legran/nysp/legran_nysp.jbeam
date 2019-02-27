@@ -1,0 +1,12 @@
+{
+"legran_nysp": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"North Yankton State Patrol Skin",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "nysp",
+}
+
+}

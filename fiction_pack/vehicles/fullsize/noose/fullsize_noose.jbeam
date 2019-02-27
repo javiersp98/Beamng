@@ -1,0 +1,11 @@
+{
+"fullsize_skin_noose": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"National Office of Security Enforcement Skin",
+        "value":1200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "noose",
+  }
+}
