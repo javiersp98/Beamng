@@ -1,5 +1,69 @@
 {
 
+"hopper_internals_sport_i6": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Sport Long Block",
+        "value":1500,
+    }
+    "slotType" : "hopper_engine_i4_internals",
+    "mainEngine":{
+		"torqueModMult":[
+            ["rpm", "torque"],
+            [0,    1.02],
+            [1000, 1.04],
+            [2000, 1.05],
+			[3000, 1.05],
+			[4000, 1.07],
+            [5000, 1.10],
+			[5500, 1.25],
+            [6000, 1.50],
+			[6500, 1.50],
+        ],
+        //max rpm physically capable of
+        "maxRPM":6500,
+        "maxTorqueRating": 1000,
+        "maxOverTorqueDamage": 800,
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":175,
+        "headGasketDamageThreshold":1700000,
+        "pistonRingDamageThreshold":1700000,
+        "connectingRodDamageThreshold":2200000,
+    },
+},
+
+"hopper_internals_sport_i6": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Sport Long Block",
+        "value":1700,
+    }
+    "slotType" : "hopper_engine_i6_internals",
+    "mainEngine":{
+		"torqueModMult":[
+            ["rpm", "torque"],
+            [0,    1.02],
+            [1000, 1.04],
+            [2000, 1.05],
+			[3000, 1.05],
+			[4000, 1.07],
+            [5000, 1.10],
+			[5500, 1.25],
+            [6000, 1.50],
+			[6500, 1.70],
+        ],
+        //max rpm physically capable of
+        "maxRPM":6500,
+        "maxTorqueRating": 1000,
+        "maxOverTorqueDamage": 800,
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":175,
+        "headGasketDamageThreshold":1700000,
+        "pistonRingDamageThreshold":1700000,
+        "connectingRodDamageThreshold":2200000,
+    },
+}
+
 "hopper_intake_i4_fi": {
     "information":{
         "authors":"BeamNG",
@@ -120,8 +184,8 @@
     }
     "slotType" : "hopper_intake_i6",
     "turbocharger": {
-        "wastegateStart":4,
-        "wastegateLimit":6,
+        "wastegateStart":6,
+        "wastegateLimit":8,
         "maxExhaustPower": 15000,
         "backPressureCoef": 0.000055,
         "frictionCoef": 42.5,
@@ -149,6 +213,7 @@
             [4000,  1.0,     0.8],
             [5000,  1.0,     0.75],
             [6000,  1.0,     0.6],
+			[6500,  1.0,     0.6],
         ],
     },
     "mainEngine":{

@@ -2,7 +2,7 @@
 "sunburst_engine_vme": {
     "information":{
         "authors":"BeamNG",
-        "name":"HEV Electric Engine",
+        "name":"HEV Electric Engine (200NM)",
         "value":2000,
     },
     "slotType" : "sunburst_engine",
@@ -28,6 +28,354 @@
             [6000, 200],
             [7000, 200],
             [8000, 200],
+            
+        ],
+
+        "idleRPM":100,
+        "maxRPM":8000,
+        "revLimiterRPMDrop":250,
+        "inertia":0.01,
+        "friction":11,
+		"throttleSensitivity":1.4
+        "dynamicFriction":0.023,
+        "burnEfficiency":17,
+        "torqueReactionNodes:":["e1r","e2r","e4l"],
+        "particulates":0
+        "energyStorage": "mainBattery",
+        "requiredEnergyType":"electricEnergy",
+
+        //cooling and oil system
+        "thermalsEnabled":false,
+        "engineBlockMaterial":"aluminum",
+        "oilVolume":4,
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":130,
+        "headGasketDamageThreshold":1500000,
+        "pistonRingDamageThreshold":1500000,
+        "connectingRodDamageThreshold":2000000,
+
+        //node beam interface
+        "waterDamage": {"[engineGroup]:":["engine_intake"]},
+        "radiator": {"[engineGroup]:":["radiator"]},
+        "engineBlock": {"[engineGroup]:":["engine_block"]},
+        "breakTriggerBeam":"engine",
+
+        "soundConfig": "soundConfig",
+    },
+    "soundConfig": {
+        "sampleName": "I4",
+        "mainGain": -200000,
+        "maxLoadMix": 0,
+        "minLoadMix": 0,
+        "onLoadGain":0,
+        "offLoadGain":00,
+        "eqLowGain": 0,
+        "eqLowFreq": 0,
+        //"eqLowWidth": 0,
+        "eqHighGain": 5,
+        "eqHighFreq": 0,
+        //"eqHighWidth": 0.5,
+        "lowCutFreq":0,
+        "fundamentalFrequencyCylinderCount":4
+        "eqFundamentalGain": 0
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":2000,
+        "clutchLaunchTargetRPM":2800,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":[0,0,0,3300,3800,4000,4200,4200]
+        //**highShiftUp can be overwritten by intake modifications**
+        "highShiftUpRPM":6400
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sunburst_engineevm", ["sunburst_engine","sunburst_transmission"]],
+		 ["ecu", ["sunburst_engine","sunburst_transmission","sunburst_engine_bay"]],
+         ["sunburst_e_gaugesvm", ["sunburst_dash"]],
+		 
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--1.8L I4 Engine--
+         {"selfCollision":false},
+         {"collision":true},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"sunburst_engine"},
+         {"nodeWeight":20.2},
+         {"engineGroup":"engine_block"}
+         ["e1r", -0.34, -1.62, 0.32,{"chemEnergy":1000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.15}],
+         ["e1l", -0.34, -1.31, 0.32],
+         ["e2r", 0.17, -1.62, 0.32,{"chemEnergy":1000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.15}],
+         ["e2l", 0.17, -1.31, 0.32],
+         {"engineGroup":["engine_block","engine_intake"]}
+         ["e3r", -0.34, -1.62, 0.74,{"chemEnergy":1000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.15}],
+         ["e3l", -0.34, -1.31, 0.74],
+         ["e4r", 0.17, -1.62, 0.74,{"isExhaust":true,"chemEnergy":1000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.15}],
+         ["e4l", 0.17, -1.31, 0.74],
+         {"engineGroup":""},
+         {"chemEnergy":200,"burnRate":0.3,"flashPoint":600,"specHeat":0.1,"smokePoint":580,"selfIgnitionCoef":false},
+         ["tc1", 0.0, -1.6, 0.45],
+         {"chemEnergy":false,"burnRate":false,"flashPoint":false,"specHeat":false,"smokePoint":false,"selfIgnitionCoef":false},
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":8400600,"beamDamp":150},
+          {"beamDeform":600000,"beamStrength":"FLT_MAX"},
+          //engine
+          ["e1r","e1l"],
+          ["e2r","e2l"],
+          ["e3r","e3l"],
+          ["e4r","e4l"],
+
+          ["e1r","e2r"],
+          ["e1l","e2l"],
+          ["e3r","e4r"],
+          ["e3l","e4l"],
+
+          ["e1r","e3r"],
+          ["e1l","e3l"],
+          ["e2r","e4r"{"isExhaust":true}],
+          ["e2l","e4l"],
+
+          ["e2r","e3r"],
+          ["e2l","e3l"],
+          ["e2r","e3l"],
+          ["e2l","e3r"],
+
+          ["e1r","e4r"],
+          ["e1l","e4l"],
+          ["e1r","e4l"],
+          ["e1l","e4r"],
+
+          ["e1r","e2l"],
+          ["e1l","e2r"],
+          ["e3r","e4l"],
+          ["e3l","e4r"],
+
+          ["e1r","e3l"],
+          ["e1l","e3r"],
+          ["e2r","e4l"],
+          ["e2l","e4r"],
+
+          ["tc1","e3l"],
+          ["tc1","e3r"],
+          ["tc1","e4l"],
+          ["tc1","e4r"],
+          ["tc1","e1l"],
+          ["tc1","e1r"],
+          ["tc1","e2l"],
+          ["tc1","e2r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+"sunburst_engine_vme_250": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"HEV Electric Engine (250NM)",
+        "value":2500,
+    },
+    "slotType" : "sunburst_engine",
+    "slots": [
+        ["type", "default", "description"],        
+        ["sunburst_transmission","sunburst_transmission_CVT_electric2", "Transmission"],
+        
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["electricMotor", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine":{
+        "torque":[
+            ["rpm", "torque"],
+            [0,    250],
+            [500,  250],
+            [1000, 250],
+            [2000, 250],
+            [3000, 250],
+            [4000, 250],
+            [5000, 250],
+            [6000, 250],
+            [7000, 250],
+            [8000, 250],
+            
+        ],
+
+        "idleRPM":100,
+        "maxRPM":8000,
+        "revLimiterRPMDrop":250,
+        "inertia":0.01,
+        "friction":11,
+		"throttleSensitivity":1.4
+        "dynamicFriction":0.023,
+        "burnEfficiency":17,
+        "torqueReactionNodes:":["e1r","e2r","e4l"],
+        "particulates":0
+        "energyStorage": "mainBattery",
+        "requiredEnergyType":"electricEnergy",
+
+        //cooling and oil system
+        "thermalsEnabled":false,
+        "engineBlockMaterial":"aluminum",
+        "oilVolume":4,
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":130,
+        "headGasketDamageThreshold":1500000,
+        "pistonRingDamageThreshold":1500000,
+        "connectingRodDamageThreshold":2000000,
+
+        //node beam interface
+        "waterDamage": {"[engineGroup]:":["engine_intake"]},
+        "radiator": {"[engineGroup]:":["radiator"]},
+        "engineBlock": {"[engineGroup]:":["engine_block"]},
+        "breakTriggerBeam":"engine",
+
+        "soundConfig": "soundConfig",
+    },
+    "soundConfig": {
+        "sampleName": "I4",
+        "mainGain": -200000,
+        "maxLoadMix": 0,
+        "minLoadMix": 0,
+        "onLoadGain":0,
+        "offLoadGain":00,
+        "eqLowGain": 0,
+        "eqLowFreq": 0,
+        //"eqLowWidth": 0,
+        "eqHighGain": 5,
+        "eqHighFreq": 0,
+        //"eqHighWidth": 0.5,
+        "lowCutFreq":0,
+        "fundamentalFrequencyCylinderCount":4
+        "eqFundamentalGain": 0
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":2000,
+        "clutchLaunchTargetRPM":2800,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":[0,0,0,3300,3800,4000,4200,4200]
+        //**highShiftUp can be overwritten by intake modifications**
+        "highShiftUpRPM":6400
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sunburst_engineevm", ["sunburst_engine","sunburst_transmission"]],
+		 ["ecu", ["sunburst_engine","sunburst_transmission","sunburst_engine_bay"]],
+         ["sunburst_e_gaugesvm", ["sunburst_dash"]],
+		 
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--1.8L I4 Engine--
+         {"selfCollision":false},
+         {"collision":true},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"sunburst_engine"},
+         {"nodeWeight":20.2},
+         {"engineGroup":"engine_block"}
+         ["e1r", -0.34, -1.62, 0.32,{"chemEnergy":1000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.15}],
+         ["e1l", -0.34, -1.31, 0.32],
+         ["e2r", 0.17, -1.62, 0.32,{"chemEnergy":1000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.15}],
+         ["e2l", 0.17, -1.31, 0.32],
+         {"engineGroup":["engine_block","engine_intake"]}
+         ["e3r", -0.34, -1.62, 0.74,{"chemEnergy":1000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.15}],
+         ["e3l", -0.34, -1.31, 0.74],
+         ["e4r", 0.17, -1.62, 0.74,{"isExhaust":true,"chemEnergy":1000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.15}],
+         ["e4l", 0.17, -1.31, 0.74],
+         {"engineGroup":""},
+         {"chemEnergy":200,"burnRate":0.3,"flashPoint":600,"specHeat":0.1,"smokePoint":580,"selfIgnitionCoef":false},
+         ["tc1", 0.0, -1.6, 0.45],
+         {"chemEnergy":false,"burnRate":false,"flashPoint":false,"specHeat":false,"smokePoint":false,"selfIgnitionCoef":false},
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":8400600,"beamDamp":150},
+          {"beamDeform":600000,"beamStrength":"FLT_MAX"},
+          //engine
+          ["e1r","e1l"],
+          ["e2r","e2l"],
+          ["e3r","e3l"],
+          ["e4r","e4l"],
+
+          ["e1r","e2r"],
+          ["e1l","e2l"],
+          ["e3r","e4r"],
+          ["e3l","e4l"],
+
+          ["e1r","e3r"],
+          ["e1l","e3l"],
+          ["e2r","e4r"{"isExhaust":true}],
+          ["e2l","e4l"],
+
+          ["e2r","e3r"],
+          ["e2l","e3l"],
+          ["e2r","e3l"],
+          ["e2l","e3r"],
+
+          ["e1r","e4r"],
+          ["e1l","e4l"],
+          ["e1r","e4l"],
+          ["e1l","e4r"],
+
+          ["e1r","e2l"],
+          ["e1l","e2r"],
+          ["e3r","e4l"],
+          ["e3l","e4r"],
+
+          ["e1r","e3l"],
+          ["e1l","e3r"],
+          ["e2r","e4l"],
+          ["e2l","e4r"],
+
+          ["tc1","e3l"],
+          ["tc1","e3r"],
+          ["tc1","e4l"],
+          ["tc1","e4r"],
+          ["tc1","e1l"],
+          ["tc1","e1r"],
+          ["tc1","e2l"],
+          ["tc1","e2r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+"sunburst_engine_vme_300": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"HEV Electric Engine (350NM)",
+        "value":3500,
+    },
+    "slotType" : "sunburst_engine",
+    "slots": [
+        ["type", "default", "description"],        
+        ["sunburst_transmission","sunburst_transmission_CVT_electric2", "Transmission"],
+        
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["electricMotor", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine":{
+        "torque":[
+            ["rpm", "torque"],
+            [0,    350],
+            [500,  350],
+            [1000, 350],
+            [2000, 350],
+            [3000, 350],
+            [4000, 350],
+            [5000, 350],
+            [6000, 350],
+            [7000, 350],
+            [8000, 350],
             
         ],
 

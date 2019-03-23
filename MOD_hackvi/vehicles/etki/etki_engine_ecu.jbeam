@@ -1,4 +1,19 @@
 {
+	
+"etki_engine_ecu_sport": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Sport ECU",
+        "value":100,
+    }
+    "slotType" : "etki_engine_ecu",
+    "mainEngine":{
+        "idleRPM":850,
+        "revLimiterRPM":6200,
+        "revLimiterType":"timeBased",
+        "revLimiterCutTime":0.16,
+    },
+},
 
 "etki_engine_ecu_ttsport": {
     "information":{
@@ -9,9 +24,51 @@
     "slotType" : "etki_engine_ecu",
     "mainEngine":{
         "idleRPM":900,
-        "revLimiterRPM":6500,
+        "revLimiterRPM":6600,
         "revLimiterType":"timeBased",
         "revLimiterCutTime":0.16,
+    },
+},
+
+"etki_engine_ecu_ttsport_evo": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"TTSport Evolution ECU",
+        "value":150,
+    }
+    "slotType" : "etki_engine_ecu",
+    "mainEngine":{
+        "idleRPM":1000,
+        "revLimiterRPM":7000,
+        "revLimiterType":"timeBased",
+        "revLimiterCutTime":0.16,
+    },
+},
+
+"etki_engine_ecu_performance": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Adjustable Performance ECU",
+        "value":700,
+    }
+    "slotType" : "etki_engine_ecu",
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$revLimiterRPM", "range", "rpm", "Engine", 6200, 4500, 8000, "RPM Limit", "RPM where the rev limiter prevents further revving"{"stepDis":50}],
+        ["$revLimiterCutTime", "range", "s", "Engine", 0.12, 0.01, 0.5, "RPM Limit Cut Time", "How fast the rev limiter cycles"{"stepDis":0.01}],
+    ],
+    "controller": [
+        ["fileName"],
+        ["twoStepLaunch", {"rpmLimit":4000}]
+    ],
+    "mainEngine":{
+        "idleRPM":1000,
+        "revLimiterRPM":"$revLimiterRPM",
+        "revLimiterType":"timeBased",
+        "revLimiterCutTime":"$revLimiterCutTime",
+    },
+    "vehicleController": {
+        "highShiftUpRPM":"$=$revLimiterRPM - 200"
     },
 },
 

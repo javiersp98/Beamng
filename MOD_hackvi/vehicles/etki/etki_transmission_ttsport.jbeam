@@ -1,0 +1,140 @@
+{
+
+"etki_transmission_5M_ttsport": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"TTSport 5-Speed Manual Transmission",
+        "value":500,
+    }
+    "slotType" : "etki_transmission",
+    "slots": [
+        ["type", "default", "description"],
+        ["etki_flywheel","etki_flywheel","Flywheel", {"coreSlot":true}],
+        ["etki_transfer_case","etki_transfer_case_RWD", "Transfer Case"{"coreSlot":true}],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-4, 0, 4.09, 2.21, 1.45, 1.10, 0.89],
+	//	"gearRatios":[-3.45, 0, 3.72, 2.01, 1.32, 1.00, 0.81],
+        "friction": 5,
+        "gearboxNode:":["tra1"],
+    },
+    "clutch": {
+        "uiName":"Clutch",
+    },
+    "vehicleController": {
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.25,
+        "lowShiftDownRPM":[0,0,0,1300,1400,1400,1300],
+        "lowShiftUpRPM":[0,0,3000,2600,2550,2400],
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["etki_transmission", ["etki_engine","etki_transmission"],[]{"pos":{"x":0,"y":0,"z":0}}],
+    ],
+    "props": [
+        ["func"        , "mesh"                , "idRef:", "idX:", "idY:", "baseRotation"      , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        //shifter
+        ["gear_M"      , "etki_shifter_M"    , "f7r", "f7l", "f8r", {"x":85, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 1, 0, 1],
+        //pedal
+        ["clutch"     ,"etki_clutchpedal", "f1l","f1r","f6l",  {"x":5, "y":0, "z":180} , {"x":-18, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true}
+         {"group":"etki_transmission"},
+         {"nodeWeight":29},
+         ["tra1", 0.0, -0.22, 0.36],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":20001000,"beamDamp":500},
+          {"beamDeform":250000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+"etki_transmission_6M_ttsport": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"TTSport 6-Speed Manual Transmission",
+        "value":800,
+    }
+    "slotType" : "etki_transmission",
+    "slots": [
+        ["type", "default", "description"],
+        ["etki_flywheel","etki_flywheel","Flywheel", {"coreSlot":true}],
+        ["etki_transfer_case","etki_transfer_case_RWD", "Transfer Case"{"coreSlot":true}],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-3.67, 0, 3.89, 2.53, 1.67, 1.23, 1.00, 0.81],
+        "friction": 5,
+        "gearboxNode:":["tra1"],
+    },
+    "clutch": {
+        "uiName":"Clutch",
+    },
+    "vehicleController": {
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.25,
+        "lowShiftDownRPM":[0,0,0,1300,1400,1400,1300],
+        "lowShiftUpRPM":[0,0,3000,2600,2550,2400],
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["etki_transmission", ["etki_engine","etki_transmission"],[]{"pos":{"x":0,"y":0,"z":0}}],
+    ],
+    "props": [
+        ["func"        , "mesh"                , "idRef:", "idX:", "idY:", "baseRotation"      , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        //shifter
+        ["gear_M"      , "etki_shifter_M"    , "f7r", "f7l", "f8r", {"x":85, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 1, 0, 1],
+        //pedal
+        ["clutch"     ,"etki_clutchpedal", "f1l","f1r","f6l",  {"x":5, "y":0, "z":180} , {"x":-18, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true}
+         {"group":"etki_transmission"},
+         {"nodeWeight":29},
+         ["tra1", 0.0, -0.22, 0.36],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":20001000,"beamDamp":500},
+          {"beamDeform":250000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+}

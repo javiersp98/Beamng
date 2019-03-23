@@ -1,0 +1,21 @@
+{
+
+"hopper_differential_R_LSD_422": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"4.22 Limited Slip Rear Differential",
+        "value":500,
+    },
+    "slotType" : "hopper_differential_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["hopper_driveshaft_R","hopper_driveshaft_R","Rear Driveshaft"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        //rear diff
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"lsd", "gearRatio":4.22, "lsdPreload":150, "lsdLockCoef":0.2, "lsdRevLockCoef":0.1, "friction":4, "uiName":"Rear Differential","defaultVirtualInertia":0.5}]
+    ],
+},
+
+}

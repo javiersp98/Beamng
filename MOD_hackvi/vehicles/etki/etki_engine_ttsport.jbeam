@@ -1,0 +1,31 @@
+{
+
+"etki_engine_internals_ttsport": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"TTSport Performance Long Block",
+        "value":3600,
+    }
+    "slotType" : "etki_engine_internals",
+    "mainEngine":{
+        "torqueModMult":[
+            ["rpm", "torque"],
+            [0,    1],
+            [1000, 1.2],
+            [2500, 1.15],
+            [4000, 1.20],
+            [5000, 1.25],
+            [6000, 1.30],
+            [7000, 1.50],
+            [8000, 1.6],
+        ],
+        //max rpm physically capable of
+        "maxRPM":7000,
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":170,
+        "maxTorqueRating": 670,
+        "maxOverTorqueDamage": 250,
+    },
+},
+
+}

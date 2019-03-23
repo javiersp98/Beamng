@@ -13,7 +13,7 @@
         ["miramar_exhaust_dohc","miramar_exhaust_dohc_race", "Exhaust"],
         ["miramar_engine_ecu","", "Engine Management"],
         ["n2o_system","", "Nitrous Oxide System"],
-        ["miramar_engine_internals","miramar_engine_internals", "Engine Long Block",{"coreSlot":true}],
+        ["miramar_engine_internals","miramar_engine_internals_stage4_2", "Engine Long Block",{"coreSlot":true}],
         ["miramar_transmission","miramar_transmission_4M", "Transmission"],
     ],
     "powertrain": [

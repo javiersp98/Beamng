@@ -294,8 +294,8 @@
     ],
 }
 
-/*
-"semi_converter": {
+
+"semi_converter_locking": {
     "information":{
         "authors":"BeamNG",
         "name":"Locking Torque Converter",
@@ -315,7 +315,7 @@
         "torqueConverterLockupMinGear":3
     },
 },
-*/
+
 "semi_converter_heavy": {
     "information":{
         "authors":"BeamNG",
@@ -327,13 +327,13 @@
         "converterDiameter":0.6,
         "converterStiffness":12,
         "couplingAVRatio":0.85,
-        "stallTorqueRatio":1,
+        "stallTorqueRatio":1.5,
         "lockupClutchTorque":3000,
         "additionalEngineInertia":1.25,
     },
     "vehicleController": {
-        "torqueConverterLockupRPM":700
-        "torqueConverterLockupMinGear":4
+        "torqueConverterLockupRPM":1000
+        "torqueConverterLockupMinGear":3
     },
 },
 

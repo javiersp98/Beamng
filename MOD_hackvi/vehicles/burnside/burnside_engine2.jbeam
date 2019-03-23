@@ -26,7 +26,7 @@
 	
 	
     "mainEngine":{
-        "maxRPM":5100,
+        "maxRPM":5000,
         //"burnEfficiency":0.24
         //supercharger name
         "supercharger":"supercharger",
@@ -117,7 +117,7 @@
 "burnside_transmission_6M2": {
     "information":{
         "authors":"BeamNG",
-        "name":"6-Speed Manual Transmission",
+        "name":"Race 6-Speed Manual Transmission",
         "value":1000,
     }
     "slotType" : "burnside_transmission",
@@ -190,5 +190,22 @@
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
     ],
 }
-	
+
+"burnside_converter_heavy": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Heavy Duty Torque Converter",
+        "value":200,
+    },
+    "slotType" : "burnside_converter",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter":0.31,
+        "converterStiffness":10,
+        "couplingAVRatio":0.9,
+        "stallTorqueRatio":1.8,
+        "additionalEngineInertia":0.2,
+    },
+},
+
 }

@@ -1,0 +1,65 @@
+{
+
+"hopper_transfercase_awd2": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"AWD Transfer Case",
+        "value":500,
+    }
+    "slotType" : "hopper_transfercase",
+    "controller": [
+        ["fileName"],
+        //["4wd", {"shaftName":"transfercase_F", "rangeBoxName":"rangebox"}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        ["rangeBox", "rangebox", "gearbox", 1, {"gearRatios":[1,2.2], "uiName":"Rangebox"}]
+        //locked center diff
+        ["differential", "transfercase", "rangebox", 1, {"splitType":"viscous", "primaryOutputID":1, "viscousCoef":10, "viscousTorque":500, "friction":5, "uiName":"Transfer Case","defaultVirtualInertia":0.1}]
+        //disconnecting front shaft
+        ["shaft", "transfercase_F", "transfercase", 2, {"canDisconnect":true, "gearRatio":1, "friction":0, "uiName":"Front Output Shaft"}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["hopper_transfercase", ["hopper_transmission","hopper_transfercase"]],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        ["range",   "hopper_rangeselector",      "b1l","b1r","b8l",        {"x":90, "y":0, "z":180},     {"x":0, "y":0, "z":0},    {"x":0.0, "y":0.15, "z":0}, 0, 1, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false}
+         {"collision":true}
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"nodeWeight":16},
+         {"group":"hopper_transfercase"},
+         ["tra2", 0.0, 0.35, 0.445],
+         ["tra3", 0.21, -0.07, 0.41],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":12600840,"beamDamp":390},
+          {"beamDeform":99750,"beamStrength":"FLT_MAX"},
+          ["tra2","tra1"],
+
+          ["tra2","e1r"],
+          ["tra2","e1l"],
+          ["tra2","e3r"],
+          ["tra2","e3l"],
+
+          ["tra3","e1r"],
+          ["tra3","e1l"],
+          ["tra3","e3r"],
+          ["tra3","e3l"],
+
+          ["tra3","tra2"],
+          ["tra3","tra1"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+
+}

@@ -1,0 +1,21 @@
+{
+
+"hopper_differential_F_LSD_422": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"4.22 Limited Slip Front Differential",
+        "value":500,
+    },
+    "slotType" : "hopper_differential_F",
+    "slots": [
+        ["type", "default", "description"]
+        ["hopper_driveshaft_F","hopper_driveshaft_F","Front Driveshaft"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        //front diff
+        ["differential", "differential_F", "driveshaft_F", 1, {"diffType":"lsd", "gearRatio":4.22, "lsdPreload":150, "lsdLockCoef":0.2, "lsdRevLockCoef":0.1, "friction":4, "uiName":"Front Differential","defaultVirtualInertia":0.5}]
+    ],
+},
+
+}
