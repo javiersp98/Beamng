@@ -1,0 +1,224 @@
+{
+
+"coupe_skidplate": {
+//"begin"
+	"information":{
+		"authors":"Jesper, AKA D-TROXX",
+		"name":"Skidplate",
+		"value":200,
+	}
+    "slotType" : "coupe_skidplate",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_skidplate", ["coupe_skidplate"]],
+	],
+	"nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.7},
+         {"nodeMaterial":"|NM_METAL"},
+         {"nodeWeight":1.0},
+         {"selfCollision":true}
+         {"collision":true}
+         {"group":"coupe_skidplate"},
+         ["skid1l", 0.5, -1.82, 0.31],
+         ["skid1", 0.0, -1.85, 0.31],
+         ["skid1r", -0.5, -1.82, 0.31],
+
+         ["skid2l", 0.35, -1.62, 0.22],
+         ["skid2", 0.0, -1.62, 0.22],
+         ["skid2r", -0.35, -1.62, 0.22],
+
+         ["skid3l", 0.35, -1.31, 0.17],
+         ["skid3", 0.0, -1.31, 0.17],
+         ["skid3r", -0.35, -1.31, 0.17],
+
+         ["skid4l", 0.35, -0.81, 0.16],
+         ["skid4", 0.0, -0.81, 0.16],
+         ["skid4r", -0.35, -0.81, 0.16],
+
+         //rigidifier
+         {"collision":false}
+         ["skidrig", 0.0, -1.25, 0.25],
+
+         {"group":""},
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":850000,"beamDamp":95},
+          {"beamDeform":23450,"beamStrength":"FLT_MAX"},
+          //main shape
+          ["skid1","skid1l"],
+          ["skid1","skid1r"],
+
+          ["skid2","skid2l"],
+          ["skid2","skid2r"],
+
+          ["skid3","skid3l"],
+          ["skid3","skid3r"],
+
+          ["skid4","skid4l"],
+          ["skid4","skid4r"],
+
+          //
+          ["skid1r","skid2r"],
+          ["skid1","skid2"],
+          ["skid1l","skid2l"],
+          ["skid2r","skid3r"],
+          ["skid2","skid3"],
+          ["skid2l","skid3l"],
+          ["skid2r","skid3r"],
+          ["skid2","skid3"],
+          ["skid2l","skid3l"],
+          ["skid3r","skid4r"],
+          ["skid3","skid4"],
+          ["skid3l","skid4l"],
+
+          //crossing
+          {"beamDeform":11450,"beamStrength":"FLT_MAX"},
+          ["skid1r","skid2"],
+          ["skid1l","skid2"],
+          ["skid2r","skid1"],
+          ["skid2l","skid1"],
+          ["skid2r","skid3"],
+          ["skid2l","skid3"],
+          ["skid3r","skid2"],
+          ["skid3l","skid2"],
+          ["skid3r","skid4"],
+          ["skid3l","skid4"],
+          ["skid4r","skid3"],
+          ["skid4l","skid3"],
+
+          //rigidifier
+          {"beamDeform":4500,"beamStrength":"FLT_MAX"},
+          ["skidrig","skid3"],
+          ["skidrig","skid3l"],
+          ["skidrig","skid3r"],
+
+          ["skidrig","skid4"],
+          ["skidrig","skid4l"],
+          ["skidrig","skid4r"],
+
+          ["skidrig","skid2"],
+          ["skidrig","skid2l"],
+          ["skidrig","skid2r"],
+
+          ["skidrig","skid1"],
+          ["skidrig","skid1l"],
+          ["skidrig","skid1r"],
+
+          {"beamSpring":850000,"beamDamp":95},
+          {"beamDeform":11500,"beamStrength":39600},
+          //attach
+          {"breakGroup":"coupe_skidplate_FL"},
+          ["skid1l","f18l"],
+          ["skid1l","f18"],
+
+          ["skid1","f18l"],
+          ["skid2l","f18l"],
+          {"breakGroup":"coupe_skidplate_FR"},
+          ["skid1r","f18r"],
+          ["skid1r","f18"],
+
+          ["skid1","f18r"],
+          ["skid2r","f18r"],
+
+          {"breakGroup":"coupe_skidplate_F"},
+          ["skid2","f18"],
+          ["skid2r","f18"],
+          ["skid2l","f18"],
+          ["skid1","f18"],
+          ["skid1","f11"],
+		  ["skid1r","f11rr"],
+          ["skid1l","f11ll"],
+
+
+          {"breakGroup":"coupe_skidplate_bumper_F"},
+            {"optional":true},
+          ["skid1","fb6"],
+          ["skid1","fb3"],
+          ["skid1r","fb3r"],
+          ["skid1l","fb3l"],
+          ["skid1r","fb3"],
+          ["skid1l","fb3"],
+          ["skid1r","fb6"],
+          ["skid1l","fb6"],
+            {"optional":false},
+
+          {"breakGroup":"coupe_skidplate_RR"},
+          ["skid4l","f1r"],
+          ["skid4l","f1l"],
+          ["skid4l","fx2r"],
+          ["skid4l","fx2l"],
+          ["skid3l","f1r"],
+          ["skid3l","f1l"],
+
+          ["skid4","f1r"],
+          ["skid4","f1l"],
+          ["skid3","f1r"],
+          ["skid3","f1l"],
+
+          ["skid3","s1l"],
+          ["skid3l","s1l"],
+          {"breakGroup":"coupe_skidplate_RL"},
+          ["skid4r","f1r"],
+          ["skid4r","f1l"],
+          ["skid4r","fx2r"],
+          ["skid4r","fx2l"],
+          ["skid3r","f1r"],
+          ["skid3r","f1l"],
+
+          ["skid4","f1r"],
+          ["skid4","f1l"],
+
+          ["skid3","fx2r"],
+          ["skid3r","fx2r"],
+
+          {"breakGroup":""},
+          //support beams
+          {"beamType":"|SUPPORT", "beamLongBound":4},
+          {"beamSpring":2641000,"beamDamp":10},
+          {"beamLimitSpring":2641000,"beamLimitDamp":10},
+          {"beamDeform":66765,"beamStrength":1125000},
+            {"optional":true}
+            {"beamPrecompression":0.95}
+          ["skid3r","e1l"],
+          ["skid3l","e2l"],
+          ["skid3","e2l"],
+            {"beamPrecompression":0.9}
+            ["skid2r","e1r"],
+            ["skid2","e2r"],
+            ["skid2l","e2r"],
+
+            ["skid3r","e1r"],
+            ["skid3","e2r"],
+            ["skid3l","e2r"],
+            {"beamPrecompression":0.8}
+            ["skid3r","e3l"],
+            ["skid3","e4l"],
+            ["skid3l","e4l"],
+            ["skid2r","e3r"],
+            ["skid2","e4r"],
+            ["skid2l","e4r"],
+
+
+            {"optional":false}
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "quads": [
+        ["id1:","id2:","id3:","id4:"],
+        {"group":"coupe_skidplate"},
+         {"dragCoef":3},
+         ["skid1r","skid2r","skid2","skid1"],
+         ["skid1","skid2","skid2l","skid1l"],
+         ["skid2r","skid3r","skid3","skid2"],
+         ["skid2","skid3","skid3l","skid2l"],
+         ["skid3r","skid4r","skid4","skid3"],
+         ["skid3","skid4","skid4l","skid3l"],
+        {"group":""},
+    ],
+}
+//"eind"
+
+}

@@ -1,0 +1,1792 @@
+{
+"reziavan_engine_3.2v6": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"3.5L SOHC V6 Engine",
+        "value":1200,
+    }
+    "slotType" : "reziavan_engine",
+    "slots": [
+        ["type", "default", "description"]
+        ["reziavan_exhaust","reziavan_exhaust", "Exhaust"],
+        ["reziavan_transmission","reziavan_transmission_4A", "Transmission"],
+ // ["reziavan_intake_v6","", "Turbocharger"],
+        ["reziavan_radiator","reziavan_radiator_v6", "Radiator"],
+        ["n2o_system","", "Nitrous Oxide System"],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["combustionEngine", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine":{
+        "torque":[
+            ["rpm", "torque"]
+            [0, 0],
+            [900, 188],
+            [1000, 197],
+            [2000, 234.5],
+            [3000, 269],
+            [4100, 288],
+            [5000, 279],
+            [6000, 251],
+            [6500, 218],
+            [7000, 170],
+        ],
+
+        "idleRPM":700,
+        "maxRPM":6300,
+        "revLimiterType":"timeBased",
+        "revLimiterCutTime":0.15,
+        "inertia":0.1,
+        "friction":15
+        "dynamicFriction":0.040
+        //"burnEfficiency":0.34
+        "burnEfficiency":[
+            [0, 0.10],
+            [0.05, 0.24],
+            [0.4, 0.39],
+            [0.7, 0.45],
+            [1, 0.32],
+        ],
+        "torqueReactionNodes:":["e1l","e2l","e4r"]
+        "energyStorage": "mainTank",
+        "requiredEnergyType":"gasoline",
+
+        //exhaust
+        "particulates":0.02
+        "instantAfterFireCoef": 0.1,
+        "sustainedAfterFireCoef": 0.1,
+
+        //cooling and oil system
+        "thermalsEnabled":true
+        "engineBlockMaterial":"aluminum"
+        "oilVolume":6
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":150
+        "headGasketDamageThreshold":1500000
+        "pistonRingDamageThreshold":1500000
+        "connectingRodDamageThreshold":2000000
+        
+        "maxTorqueRating": 625,
+        "maxOverTorqueDamage": 600,
+
+        //node beam interface
+        "waterDamage": {"[engineGroup]:":["engine_intake"]},
+        "radiator": {"[engineGroup]:":["radiator"]},
+        "engineBlock": {"[engineGroup]:":["engine_block"]},
+        "breakTriggerBeam":"engine",
+        "uiName":"Engine",
+
+        "soundConfig": "soundConfig",
+    },
+    "soundConfig": {
+        "sampleName": "V6",
+        "mainGain": 5,
+        "maxLoadMix": 0.75,
+        "minLoadMix": 0,
+        "onLoadGain":1,
+        "offLoadGain":0.8,
+        "eqLowGain": -3,
+        "eqLowFreq": 125,
+        "eqLowWidth": 0.25,
+        "eqHighGain": -15,
+        "eqHighFreq": 4000,
+        "eqHighWidth": 0.1
+        "lowCutFreq":90,
+        "eqFundamentalGain": -22,
+    }
+    "vehicleController": {
+        "clutchLaunchStartRPM":1600,
+        "clutchLaunchTargetRPM":2200,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":[0,0,2300,2500,3300,3400,3400,3400]
+        //**highShiftUp can be overwritten by intake modifications**
+        "highShiftUpRPM":6000
+    },
+"engine":{
+	"soundGroup":"v6",
+		},
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["reziavan_engine_v6", ["reziavan_engine"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--2.7L V6 Engine--
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"reziavan_engine"},
+         {"engineGroup":"engine_block"}
+         {"nodeWeight":25},
+         ["e1r", 0.17000, -1.74000, 0.30000,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.12}],
+         ["e1l", 0.17000, -1.50000, 0.30000],
+         ["e2r", -0.30000, -1.74000, 0.30000,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.12}],
+         ["e2l", -0.30000, -1.50000, 0.30000],
+         {"engineGroup":["engine_block","engine_intake"]}
+         ["e3r", 0.17000, -1.81000, 0.75000,{"isExhaust":"mainEngine","chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.12}],
+         ["e3l", 0.17000, -1.26000, 0.79000],
+         ["e4r", -0.30000, -1.81000, 0.75000,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.12}],
+         ["e4l", -0.30000, -1.26000, 0.79000],
+         //["tc1", 0, -1.65, 0.42],
+         {"engineGroup":""}
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":8400600,"beamDamp":150},
+          {"beamDeform":540000,"beamStrength":"FLT_MAX"},
+          //engine
+          ["e1r","e1l"],
+          ["e2r","e2l"],
+          ["e3r","e3l"],
+          ["e4r","e4l"],
+
+          ["e1r","e2r"],
+          ["e1l","e2l"],
+          ["e3r","e4r"],
+          ["e3l","e4l"],
+
+          ["e1r","e3r"{"isExhaust":"mainEngine"}],
+          ["e1l","e3l"],
+          ["e2r","e4r"],
+          ["e2l","e4l"],
+
+          ["e2r","e3r"],
+          ["e2l","e3l"],
+          ["e2r","e3l"],
+          ["e2l","e3r"],
+
+          ["e1r","e4r"],
+          ["e1l","e4l"],
+          ["e1r","e4l"],
+          ["e1l","e4r"],
+
+          ["e1r","e2l"],
+          ["e1l","e2r"],
+          ["e3r","e4l"],
+          ["e3l","e4r"],
+
+          ["e1r","e3l"],
+          ["e1l","e3r"],
+          ["e2r","e4l"],
+          ["e2l","e4r"],
+
+          //["tc1","e3l"],
+          //["tc1","e3r"],
+          //["tc1","e4l"],
+          //["tc1","e4r"],
+          //["tc1","e1l"],
+          //["tc1","e1r"],
+          //{"disableMeshBreaking":true},
+          //{"beamDeform":90000,"beamStrength":90000}
+          //["tc1","e2l"{"name":"driveshaft"}],
+          //["tc1","e2r"{"name":"driveshaft"}],
+          //{"disableMeshBreaking":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"reziavan_engine_3.2v6turbo": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"3.5L SOHC V6 Engine Turbo",
+        "value":1200,
+    }
+    "slotType" : "reziavan_engine",
+    "slots": [
+        ["type", "default", "description"]
+        ["reziavan_exhaust","reziavan_exhaust", "Exhaust"],
+        ["reziavan_transmission","reziavan_transmission_4A", "Transmission"],
+    ["reziavan_intake_v6","reziavan_turbo_v6", "Turbocharger",{"coreSlot":true}],
+        ["reziavan_radiator","reziavan_radiator_v6", "Radiator"],
+        ["n2o_system","", "Nitrous Oxide System"],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["combustionEngine", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine":{
+        "torque":[
+            ["rpm", "torque"]
+            [0, 0],
+            [900, 188],
+            [1000, 197],
+            [2000, 234.5],
+            [3000, 269],
+            [4100, 288],
+            [5000, 279],
+            [6000, 251],
+            [6500, 218],
+            [7000, 170],
+        ],
+
+        "idleRPM":700,
+        "maxRPM":6300,
+        "revLimiterType":"timeBased",
+        "revLimiterCutTime":0.35,
+        "inertia":0.15,
+        "friction":10
+        "dynamicFriction":0.045
+        //"burnEfficiency":0.34
+        "burnEfficiency":[
+            [0, 0.10],
+            [0.05, 0.24],
+            [0.4, 0.39],
+            [0.7, 0.45],
+            [1, 0.32],
+        ],
+        "torqueReactionNodes:":["e1l","e2l","e4r"]
+        "energyStorage": "mainTank",
+        "requiredEnergyType":"gasoline",
+
+        //exhaust
+        "particulates":0.02
+        "instantAfterFireCoef": 0.1,
+        "sustainedAfterFireCoef": 0.1,
+
+        //cooling and oil system
+        "thermalsEnabled":true
+        "engineBlockMaterial":"aluminum"
+        "oilVolume":6
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":150
+        "headGasketDamageThreshold":1500000
+        "pistonRingDamageThreshold":1500000
+        "connectingRodDamageThreshold":2000000
+        
+        "maxTorqueRating": 1234,
+        "maxOverTorqueDamage": 1000,
+
+        //node beam interface
+        "waterDamage": {"[engineGroup]:":["engine_intake"]},
+        "radiator": {"[engineGroup]:":["radiator"]},
+        "engineBlock": {"[engineGroup]:":["engine_block"]},
+        "breakTriggerBeam":"engine",
+        "uiName":"Engine",
+
+        "soundConfig": "soundConfig",
+    },
+    "soundConfig": {
+        "sampleName": "V6",
+        "mainGain": 5,
+        "maxLoadMix": 0.75,
+        "minLoadMix": 0,
+        "onLoadGain":1,
+        "offLoadGain":0.8,
+        "eqLowGain": -3,
+        "eqLowFreq": 125,
+        "eqLowWidth": 0.25,
+        "eqHighGain": -15,
+        "eqHighFreq": 4000,
+        "eqHighWidth": 0.1
+        "lowCutFreq":90,
+        "eqFundamentalGain": -22,
+    }
+    "vehicleController": {
+        "clutchLaunchStartRPM":1600,
+        "clutchLaunchTargetRPM":2200,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":[0,0,2300,2700,3600,3600,3600,3600]
+        //**highShiftUp can be overwritten by intake modifications**
+        "highShiftUpRPM":[0,0,6000,6000,6000,6000]
+    },
+"engine":{
+	"soundGroup":"v6",
+		},
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["reziavan_engine_v6_turbo", ["reziavan_engine"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--2.7L V6 Engine--
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"reziavan_engine"},
+         {"engineGroup":"engine_block"}
+         {"nodeWeight":25},
+         ["e1r", 0.17000, -1.74000, 0.30000,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.12}],
+         ["e1l", 0.17000, -1.50000, 0.30000],
+         ["e2r", -0.30000, -1.74000, 0.30000,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.12}],
+         ["e2l", -0.30000, -1.50000, 0.30000],
+         {"engineGroup":["engine_block","engine_intake"]}
+         ["e3r", 0.17000, -1.81000, 0.75000,{"isExhaust":"mainEngine","chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.12}],
+         ["e3l", 0.17000, -1.26000, 0.79000],
+         ["e4r", -0.30000, -1.81000, 0.75000,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.12}],
+         ["e4l", -0.30000, -1.26000, 0.79000],
+         //["tc1", 0, -1.65, 0.42],
+         {"engineGroup":""}
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":8400600,"beamDamp":150},
+          {"beamDeform":540000,"beamStrength":"FLT_MAX"},
+          //engine
+          ["e1r","e1l"],
+          ["e2r","e2l"],
+          ["e3r","e3l"],
+          ["e4r","e4l"],
+
+          ["e1r","e2r"],
+          ["e1l","e2l"],
+          ["e3r","e4r"],
+          ["e3l","e4l"],
+
+          ["e1r","e3r"{"isExhaust":"mainEngine"}],
+          ["e1l","e3l"],
+          ["e2r","e4r"],
+          ["e2l","e4l"],
+
+          ["e2r","e3r"],
+          ["e2l","e3l"],
+          ["e2r","e3l"],
+          ["e2l","e3r"],
+
+          ["e1r","e4r"],
+          ["e1l","e4l"],
+          ["e1r","e4l"],
+          ["e1l","e4r"],
+
+          ["e1r","e2l"],
+          ["e1l","e2r"],
+          ["e3r","e4l"],
+          ["e3l","e4r"],
+
+          ["e1r","e3l"],
+          ["e1l","e3r"],
+          ["e2r","e4l"],
+          ["e2l","e4r"],
+
+          //["tc1","e3l"],
+          //["tc1","e3r"],
+          //["tc1","e4l"],
+          //["tc1","e4r"],
+          //["tc1","e1l"],
+          //["tc1","e1r"],
+          //{"disableMeshBreaking":true},
+          //{"beamDeform":90000,"beamStrength":90000}
+          //["tc1","e2l"{"name":"driveshaft"}],
+          //["tc1","e2r"{"name":"driveshaft"}],
+          //{"disableMeshBreaking":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"reziavan_engine_2.5i4": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"2.5L DOHC I4 Engine",
+        "value":1200,
+    }
+    "slotType" : "reziavan_engine",
+    "slots": [
+        ["type", "default", "description"]
+        ["reziavan_exhaust","reziavan_exhaust", "Exhaust"],
+        ["reziavan_transmission","reziavan_transmission_4A", "Transmission"],
+        //["reziavan_enginetuning","", "Engine Tuning",{"coreSlot":true}],
+        ["reziavan_radiator","reziavan_radiator_v6", "Radiator"],
+        ["n2o_system","", "Nitrous Oxide System"],
+  ["reziavan_intake_i4","reziavan_intake_i4", "Intake",{"coreSlot":true}],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["combustionEngine", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine":{
+        "torque":[
+            ["rpm", "torque"]
+            [0, 0],
+            [900, 160],
+            [1600, 194],
+            [2400, 206],
+            [3200, 210],
+            [4000, 204],
+            [4800, 186],
+            [5800, 159],
+            [6400, 142],
+        ],
+
+        "idleRPM":900,
+        "maxRPM":6300,
+        "revLimiterType":"timeBased",
+        "revLimiterCutTime":0.2,
+        "inertia":0.10,
+        "friction":10
+        "dynamicFriction":0.02
+        //"burnEfficiency":0.34
+        "burnEfficiency":[
+            [0, 0.10],
+            [0.05, 0.24],
+            [0.4, 0.39],
+            [0.7, 0.45],
+            [1, 0.32],
+        ],
+        "torqueReactionNodes:":["e1l","e2l","e4r"]
+        "energyStorage": "mainTank",
+        "requiredEnergyType":"gasoline",
+
+        //exhaust
+        "particulates":0.02
+        "instantAfterFireCoef": 0.1,
+        "sustainedAfterFireCoef": 0.1,
+
+        //cooling and oil system
+        "thermalsEnabled":true
+        "engineBlockMaterial":"aluminum"
+        "oilVolume":6
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":150
+        "headGasketDamageThreshold":1500000
+        "pistonRingDamageThreshold":1500000
+        "connectingRodDamageThreshold":2000000
+        
+        "maxTorqueRating": 525,
+        "maxOverTorqueDamage": 600,
+
+        //node beam interface
+        "waterDamage": {"[engineGroup]:":["engine_intake"]},
+        "radiator": {"[engineGroup]:":["radiator"]},
+        "engineBlock": {"[engineGroup]:":["engine_block"]},
+        "breakTriggerBeam":"engine",
+        "uiName":"Engine",
+
+        "soundConfig": "soundConfig",
+    },
+    "soundConfig": {
+        "sampleName": "I4",
+        "mainGain": -18,
+        "maxLoadMix": 0.65,
+        "minLoadMix": 0,
+        "onLoadGain":1,
+        "offLoadGain":0.7,
+        "eqLowGain": 10,
+        "eqLowFreq": 400,
+        //"eqLowWidth": 0,
+        "eqHighGain": -5,
+        "eqHighFreq": 2000,
+        //"eqHighWidth": 0.5,
+        "lowCutFreq":80,
+        "fundamentalFrequencyCylinderCount":4
+        "eqFundamentalGain": 10
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":1600,
+        "clutchLaunchTargetRPM":2200,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":[0,0,2300,2300,3000,3800,3800,3800]
+        //**highShiftUp can be overwritten by intake modifications**
+        "highShiftUpRPM":[0,0,5800,5800,6200,6200,6200,6200]
+    },
+"engine":{
+	"soundGroup":"i4",
+		},
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["reziavan_engine_i4", ["reziavan_engine"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--2.7L V6 Engine--
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"reziavan_engine"},
+         {"engineGroup":"engine_block"}
+         {"nodeWeight":20},
+         ["e1r", 0.17, -1.74, 0.30,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.12}],
+         ["e1l", 0.17, -1.50, 0.30],
+         ["e2r", -0.30, -1.74, 0.30,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.12}],
+         ["e2l", -0.30, -1.50, 0.30],
+         {"engineGroup":["engine_block","engine_intake"]}
+         ["e3r", 0.17, -1.81, 0.75,{"isExhaust":"mainEngine","chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.12}],
+         ["e3l", 0.17, -1.26, 0.79],
+         ["e4r", -0.30, -1.81, 0.75,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.12}],
+         ["e4l", -0.30, -1.26, 0.79],
+         //["tc1", 0, -1.65, 0.42],
+         {"engineGroup":""}
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":8400600,"beamDamp":150},
+          {"beamDeform":540000,"beamStrength":"FLT_MAX"},
+          //engine
+          ["e1r","e1l"],
+          ["e2r","e2l"],
+          ["e3r","e3l"],
+          ["e4r","e4l"],
+
+          ["e1r","e2r"],
+          ["e1l","e2l"],
+          ["e3r","e4r"],
+          ["e3l","e4l"],
+
+          ["e1r","e3r"{"isExhaust":"mainEngine"}],
+          ["e1l","e3l"],
+          ["e2r","e4r"],
+          ["e2l","e4l"],
+
+          ["e2r","e3r"],
+          ["e2l","e3l"],
+          ["e2r","e3l"],
+          ["e2l","e3r"],
+
+          ["e1r","e4r"],
+          ["e1l","e4l"],
+          ["e1r","e4l"],
+          ["e1l","e4r"],
+
+          ["e1r","e2l"],
+          ["e1l","e2r"],
+          ["e3r","e4l"],
+          ["e3l","e4r"],
+
+          ["e1r","e3l"],
+          ["e1l","e3r"],
+          ["e2r","e4l"],
+          ["e2l","e4r"],
+
+          //["tc1","e3l"],
+          //["tc1","e3r"],
+          //["tc1","e4l"],
+          //["tc1","e4r"],
+          //["tc1","e1l"],
+          //["tc1","e1r"],
+          //{"disableMeshBreaking":true},
+          //{"beamDeform":90000,"beamStrength":90000}
+          //["tc1","e2l"{"name":"driveshaft"}],
+          //["tc1","e2r"{"name":"driveshaft"}],
+          //{"disableMeshBreaking":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"reziavan_intake_i4": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stock Intake",
+        "value":150,
+    }
+    "slotType" : "reziavan_intake_i4",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_airbox", ["reziavan_engine","reziavan_airbox"]],
+         ["reziavan_header", ["reziavan_engine"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"reziavan_airbox"},
+         {"nodeWeight":2},
+         {"engineGroup":"engine_intake"},
+         ["airb", 0.57000, -1.55000, 0.75000],
+         {"engineGroup":""},
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":100600,"beamDamp":150},
+          {"beamDeform":12000,"beamStrength":36000},
+          ["airb","e1r"],
+          ["airb","e2r"],
+          ["airb","e3r"],
+          ["airb","e4r"],
+          ["airb","e1l"],
+          ["airb","e2l"],
+          ["airb","e3l"],
+          ["airb","e4l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"reziavan_transmission_5A": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"5-Speed Automatic Transmission (535T)",
+        "value":330,
+    }
+    "slotType" : "reziavan_transmission",
+    "slots": [
+        ["type", "default", "description"]
+        ["reziavan_converter","reziavan_converter","Torque Converter", {"coreSlot":true}],
+  ["reziavan_transfer_case","reziavan_transfer_case_FWD", "Transfer Case"{"coreSlot":true}],
+        ["reziavan_differential_F","reziavan_differential_F1_auto", "Front Differential"],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["automaticGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "torqueConverter": {
+        "converterDiameter": 0.255,
+        "converterStiffness":8,
+        "couplingAVRatio":0.9,
+        "stallTorqueRatio":2.4,
+        "lockupClutchTorque":300,
+        "additionalEngineInertia":0.10,
+    },
+    "gearbox": {
+        "gearRatios":[-3.30, 0, 3.318, 1.954, 1.401, 0.995, 0.753],
+        "parkLockTorque":2000,
+	"shiftEfficiency":0.85,
+        "oneWayViscousCoef":12,
+        "gearChangeTime": 0.45,
+        "friction": 1,
+    },
+    "vehicleController": {
+        "automaticModes":"PRNDS",
+        "calculateOptimalLoadShiftPoints": false,
+        "transmissionGearChangeDelay":0.2
+        "aggressionHoldOffThrottleDelay":0.3,
+        "aggressionSmoothingUp":1.55
+        "aggressionSmoothingDown":1.3
+        "gearboxDecisionSmoothingUp":1.6
+        "gearboxDecisionSmoothingDown":4
+        "lowShiftDownRPM":1000,
+	"lowShiftUpRPM":[0,0,1800,2100,2100,2000,2000]
+	"torqueConverterLockupMinGear":4,
+	"torqueConverterLockupRPM":1000
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["reziavan_transmission", ["reziavan_engine","reziavan_transmission"]],
+    ["reziavan_gearindicator_A", ["reziavan_dash"]],
+    ],
+    "glowMap":{
+            "auto_P":{"simpleFunction":"auto_p", "off":"reziavan_gauges", "on":"reziavan_gauges_on"},
+            "auto_R":{"simpleFunction":"auto_r", "off":"reziavan_gauges", "on":"reziavan_gauges_on"},
+            "auto_N":{"simpleFunction":"auto_n", "off":"reziavan_gauges", "on":"reziavan_gauges_on"},
+            "auto_D":{"simpleFunction":"auto_d", "off":"reziavan_gauges", "on":"reziavan_gauges_on"},
+            "auto_2":{"simpleFunction":"auto_2", "off":"reziavan_gauges", "on":"reziavan_gauges_on"},
+            "auto_1":{"simpleFunction":"auto_1", "off":"reziavan_gauges", "on":"reziavan_gauges_on"},
+    },
+
+ 
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        //automatic transmission
+             ["gear_A"      , "reziavan_shifter_A", "f1l","f1r","f6l",       {"x":-72.5, "y":0, "z":180}, {"x":0, "y":0, "z":-25}    , {"x":0, "y":0, "z":0}, 0, 1, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--4 Speed Auto--
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"reziavan_transmission"},
+         {"nodeWeight":12},
+         ["tra1r", -0.27000, -1.29000, 0.31000],
+         ["tra1l", 0.27000, -1.29000, 0.31000],
+         {"group":""},
+         ["ta1", 0.00000, -1.29000, 0.31000],
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          //--TRANSMISSION--
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":8400600,"beamDamp":150},
+          {"beamDeform":540000,"beamStrength":"FLT_MAX"},
+          ["tra1l","e2r"],
+          ["tra1l","e4r"],
+          ["tra1l","e2l"],
+          ["tra1l","e4l"],
+          ["tra1r","e1r"],
+          ["tra1r","e3r"],
+          ["tra1r","e1l"],
+          ["tra1r","e3l"],
+          ["tra1r","tra1l"],
+          ["ta1","e1l"],
+          ["ta1","e2l"],
+          ["ta1","e4l"],
+          ["ta1","e3l"],
+          ["ta1","tra1l"],
+          ["ta1","tra1r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"reziavan_transmission_4A2": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"4-Speed Automatic Transmission (430S)",
+        "value":330,
+    }
+    "slotType" : "reziavan_transmission",
+    "slots": [
+        ["type", "default", "description"]
+  ["reziavan_converter","reziavan_converter","Torque Converter", {"coreSlot":true}],
+  ["reziavan_transfer_case","reziavan_transfer_case_FWD", "Transfer Case"{"coreSlot":true}],
+        ["reziavan_differential_F","reziavan_differential_F", "Front Differential"],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["automaticGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-2.33, 0, 2.75, 1.60, 1.0, 0.67]
+        "parkLockTorque":2000,
+        "oneWayViscousCoef":40,
+        "gearChangeTime": 0.4,
+        "friction": 1,
+	"shiftEfficiency":0.80,
+        "gearboxNode:":"ta1",
+    },
+    "vehicleController": {
+        "automaticModes":"PRND21",
+        "calculateOptimalLoadShiftPoints": false,
+        "transmissionGearChangeDelay":0.4
+        "aggressionHoldOffThrottleDelay":0.2,
+        "aggressionSmoothingUp":1.5
+        "aggressionSmoothingDown":1.2
+        "gearboxDecisionSmoothingUp":1.7
+        "gearboxDecisionSmoothingDown":4
+        "lowShiftDownRPM":1200,
+        "lowShiftUpRPM":[0,0,2000,2200,2100,2000,2000]
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["reziavan_transmission", ["reziavan_engine","reziavan_transmission"]],
+    ["reziavan_gearindicator_A", ["reziavan_dash"]],
+    ],
+    "glowMap":{
+            "auto_P":{"simpleFunction":"auto_p", "off":"reziavan_gauges", "on":"reziavan_gauges_on"},
+            "auto_R":{"simpleFunction":"auto_r", "off":"reziavan_gauges", "on":"reziavan_gauges_on"},
+            "auto_N":{"simpleFunction":"auto_n", "off":"reziavan_gauges", "on":"reziavan_gauges_on"},
+            "auto_D":{"simpleFunction":"auto_d", "off":"reziavan_gauges", "on":"reziavan_gauges_on"},
+            "auto_2":{"simpleFunction":"auto_2", "off":"reziavan_gauges", "on":"reziavan_gauges_on"},
+            "auto_1":{"simpleFunction":"auto_1", "off":"reziavan_gauges", "on":"reziavan_gauges_on"},
+    },
+
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        //automatic transmission
+      ["gear_A"      , "reziavan_shifter_A", "f1l","f1r","f6l",       {"x":-72.5, "y":0, "z":180}, {"x":0, "y":0, "z":-25}    , {"x":0, "y":0, "z":0}, 0, 1, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--4 Speed Auto--
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"reziavan_transmission"},
+         {"nodeWeight":12},
+         ["tra1r",-0.27, -1.34, 0.39],
+         ["tra1l", 0.35, -1.34, 0.39],
+         {"group":""},
+         ["ta1", 0, -1.34, 0.39],
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          //--TRANSMISSION--
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":8400600,"beamDamp":150},
+          {"beamDeform":540000,"beamStrength":"FLT_MAX"},
+          ["tra1l","e2r"],
+          ["tra1l","e4r"],
+          ["tra1l","e2l"],
+          ["tra1l","e4l"],
+          ["tra1r","e1r"],
+          ["tra1r","e3r"],
+          ["tra1r","e1l"],
+          ["tra1r","e3l"],
+          ["tra1r","tra1l"],
+          ["ta1","e1l"],
+          ["ta1","e2l"],
+          ["ta1","e4l"],
+          ["ta1","e3l"],
+          ["ta1","tra1l"],
+          ["ta1","tra1r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"reziavan_converter2": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Locking Torque Converter",
+        "value":150,
+    },
+    "slotType" : "reziavan_converter",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter": 0.265,
+        "converterStiffness":8,
+        "couplingAVRatio":0.8,
+        "stallTorqueRatio":2.0,
+        "lockupClutchTorque":300,
+        "additionalEngineInertia":0.10,
+    },
+    "vehicleController": {
+        "torqueConverterLockupRPM":1000
+        "torqueConverterLockupMinGear":4
+    },
+},
+"reziavan_differential_F1": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"3.66 Open Front Differential",
+        "value":250,
+    }
+    "slotType" : "reziavan_differential_F",
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torsionReactor", "torsionReactorF", "gearbox", 1, {"gearRatio":3.66}]
+        ["differential", "differential_F", "torsionReactorF", 1, {"diffType":"open", "gearRatio": 1, "friction":7, "uiName":"Front Differential","defaultVirtualInertia":0.25}],
+    ],
+    "torsionReactorF": {
+        "torqueReactionNodes:":["e1l","e2l","e4r"],
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["reziavan_halfshaft_F", ["reziavan_tierod_F","reziavan_hub_F","reziavan_transmission","wheelhub_FR","wheelhub_FL"]],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":3000600,"beamDamp":150},
+          {"beamDeform":27000,"beamStrength":"FLT_MAX"},
+          //halfshafts
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.05, "beamShortBound":0.05},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":3240,"beamStrength":8550},
+          {"beamLimitSpring":7501000,"beamLimitDamp":300},
+          {"optional":true},
+          {"breakGroupType":1},
+          {"breakGroup":"wheel_FR"},
+          ["fw1r","tra1r", {"name":"axle_FR"}],
+          {"breakGroup":"wheel_FL"},
+          ["fw1l","tra1l", {"name":"axle_FL"}],
+          {"breakGroup":""},
+          {"optional":false},
+          {"breakGroupType":0},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"reziavan_differential_F1_auto": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"3.25 Open Front Differential",
+        "value":250,
+    }
+    "slotType" : "reziavan_differential_F",
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torsionReactor", "torsionReactorF", "gearbox", 1, {"gearRatio":3.25}]
+        ["differential", "differential_F", "torsionReactorF", 1, {"diffType":"open", "gearRatio": 1, "friction":7, "uiName":"Front Differential","defaultVirtualInertia":0.25}],
+    ],
+    "torsionReactorF": {
+        "torqueReactionNodes:":["e1l","e2l","e4r"],
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["reziavan_halfshaft_F", ["reziavan_tierod_F","reziavan_hub_F","reziavan_transmission","wheelhub_FR","wheelhub_FL"]],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":3000600,"beamDamp":150},
+          {"beamDeform":27000,"beamStrength":"FLT_MAX"},
+          //halfshafts
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.05, "beamShortBound":0.05},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":3240,"beamStrength":8550},
+          {"beamLimitSpring":7501000,"beamLimitDamp":300},
+          {"optional":true},
+          {"breakGroupType":1},
+          {"breakGroup":"wheel_FR"},
+          ["fw1r","tra1r", {"name":"axle_FR"}],
+          {"breakGroup":"wheel_FL"},
+          ["fw1l","tra1l", {"name":"axle_FL"}],
+          {"breakGroup":""},
+          {"optional":false},
+          {"breakGroupType":0},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"reziavan_turbo": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Sport Turbocharger",
+        "value":950,
+    }
+    "slotType" : "reziavan_intake_i4",
+    "turbocharger": {
+        "wastegateStart":9,
+        "wastegateLimit":11,
+        "maxExhaustPower": 4500,
+        "backPressureCoef": 0.000035,
+        "frictionCoef": 10.4,
+        "inertia":1.6,
+        "damageThresholdTemperature": 665,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -3.5],
+            [30000,     -0.5],
+            [60000,     5],
+            [90000,     9],
+            [150000,    12],
+            [200000,    16],
+            [250000,    20],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.0,    0.0],
+            [650,   0.2,   0.15],
+            [1400,  0.3,   0.23],
+            [2000,  0.36,    0.29],
+            [2500,  0.46,    0.39],
+            [3000,  0.78,    0.6],
+            [4000,  0.85,    0.8],
+            [5000,  0.85,    0.85],
+            [6000,  0.9,    0.85],
+            [7000,  0.95,    0.95],
+            [8000,  0.9,    1.0],
+        ],
+    },
+    "mainEngine":{
+        "maxRPM":6900,
+        "burnEfficiency":0.30
+        "cylinderWallTemperatureDamageThreshold":150
+        //turbocharger name
+        "turbocharger":"turbocharger",
+    },
+    "vehicleController": {
+        "highShiftUpRPM":6700
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_icpipe_intake", ["reziavan_engine","reziavan_intercooler","reziavan_rad"]],
+         ["reziavan_icpipe_turbo", ["reziavan_engine","reziavan_intercooler","reziavan_rad"]],
+         ["reziavan_turbo", ["reziavan_engine"]],
+         ["reziavan_intercooler", ["reziavan_intercooler","reziavan_rad"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"reziavan_intercooler"},
+         {"nodeWeight":11},
+         ["interc", 0.00000, -2.00000, 0.35000],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":350600,"beamDamp":60},
+          {"beamDeform":3000,"beamStrength":6000},
+          ["interc","f13rr"],
+          ["interc","f13"],
+          ["interc","f13ll"],
+          ["interc","f18"],
+          ["interc","f18r"],
+          ["interc","f18l"],
+
+          ["interc","f11rr"],
+          ["interc","f11"],
+          ["interc","f11ll"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"reziavan_turbo_stage2": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stage 2 Turbocharger",
+        "value":1800,
+    }
+    "slotType" : "reziavan_intake_i4",
+    "turbocharger": {
+        "volumePer10kRPM":0.06
+        "wastegateStart":23,
+        "wastegateLimit":25,
+        "maxExhaustPower": 11000,
+        "backPressureCoef": 0.00003,
+        "frictionCoef": 30,
+        "inertia":6,
+        "pressureRatePSI":55
+        "damageThresholdTemperature": 760,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -3.5],
+            [30000,     -0.5],
+            [60000,     5],
+            [90000,     13],
+            [150000,    23],
+            [200000,    29],
+            [250000,    35],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.0,    0.05],
+            [650,   0.1,   0.05],
+            [1400,  0.25,   0.1],
+            [2000,  0.35,    0.25],
+            [2500,  0.47,    0.50],
+            [3000,  0.60,    0.65],
+            [4000,  0.78,    0.8],
+            [5000,  0.85,    0.95],
+            [6000,  1.0,    1.0],
+            [7000,  1.0,    1.0],
+            [8000,  0.9,    1.0],
+        ],
+    },
+    "mainEngine":{
+        "idleRPM":1500,
+        "maxRPM":7300,
+        "burnEfficiency":0.26
+        "cylinderWallTemperatureDamageThreshold":150
+        //turbocharger name
+        "turbocharger":"turbocharger",
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":1800,
+        "clutchLaunchTargetRPM":2500,
+        "highShiftUpRPM":7000
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_icpipe_intake", ["reziavan_engine","reziavan_intercooler","reziavan_rad"]],
+         ["reziavan_icpipe_turbo", ["reziavan_engine","reziavan_intercooler","reziavan_rad"]],
+         ["reziavan_turbo", ["reziavan_engine"]],
+         ["reziavan_intercooler", ["reziavan_intercooler","reziavan_rad"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"reziavan_intercooler"},
+         {"nodeWeight":11},
+         ["interc", 0.0, -2.00, 0.35],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":350600,"beamDamp":60},
+          {"beamDeform":3000,"beamStrength":6000},
+          ["interc","f13rr"],
+          ["interc","f13"],
+          ["interc","f13ll"],
+          ["interc","f18"],
+          ["interc","f18r"],
+          ["interc","f18l"],
+
+          ["interc","f11rr"],
+          ["interc","f11"],
+          ["interc","f11ll"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"reziavan_turbo_stage3": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stage 3 Variable Boost Turbocharger",
+        "value":3000,
+    }
+    "slotType" : "reziavan_intake_i4",
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$wastegateStart", "range", "psi", "Turbocharger", 8, 6, 36, "Wastegate Start", "Pressure at which the wastegate begins to open"{"stepDis":0.5}]
+        ["$wastegateLimit", "range", "psi", "Turbocharger", 10, 8, 38, "Wastegate Limit", "Pressure at which the wastegate is fully opened"{"stepDis":0.5}]
+    ],
+    "turbocharger": {
+        "volumePer10kRPM":0.07
+        "wastegateStart":"$wastegateStart",
+        "wastegateLimit":"$wastegateLimit",
+        "maxExhaustPower": 180000,
+        "backPressureCoef": 0.000085,
+        "frictionCoef": 45.3,
+        "inertia":20.4,
+        "pressureRatePSI": 45,
+        "damageThresholdTemperature": 870,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -4.5],
+            [30000,     -1.5],
+            [60000,     5],
+            [90000,     18],
+            [150000,    32],
+            [200000,    39],
+            [250000,    48],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.0,    0.01],
+            [650,   0.23,   0.01],
+            [1400,  0.33,   0.02],
+            [2000,  0.41,    0.19],
+            [2500,  0.54,    0.41],
+            [3000,  0.72,    0.61],
+            [4000,  0.98,    0.77],
+            [5000,  1.13,    0.87],
+            [6000,  1.18,    1.0],
+            [7000,  1.11,    1.00],
+            [8000,  1.2,    1.0],
+            [9000,  1.25,    1.0],
+        ],
+    },
+    "mainEngine":{
+        "idleRPM":1100,
+        "maxRPM":8000,
+        "burnEfficiency":0.24,
+        "cylinderWallTemperatureDamageThreshold":180
+        //turbocharger name
+        "turbocharger":"turbocharger",
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":1800,
+        "clutchLaunchTargetRPM":2500,
+        "highShiftUpRPM":7700
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_icpipe_intake", ["reziavan_engine","reziavan_intercooler","reziavan_rad"]],
+         ["reziavan_icpipe_turbo", ["reziavan_engine","reziavan_intercooler","reziavan_rad"]],
+         ["reziavan_turbo", ["reziavan_engine"]],
+         ["reziavan_intercooler", ["reziavan_intercooler","reziavan_rad"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"reziavan_intercooler"},
+         {"nodeWeight":11},
+         ["interc", 0.0, -2.00, 0.35],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":350600,"beamDamp":60},
+          {"beamDeform":3000,"beamStrength":6000},
+          ["interc","f13rr"],
+          ["interc","f13"],
+          ["interc","f13ll"],
+          ["interc","f18"],
+          ["interc","f18r"],
+          ["interc","f18l"],
+
+          ["interc","f11rr"],
+          ["interc","f11"],
+          ["interc","f11ll"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"reziavan_transmission_5M": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"5-Speed Manual Transmission",
+        "value":250,
+    }
+    "slotType" : "reziavan_transmission",
+    "slots": [
+        ["type", "default", "description"],
+        ["reziavan_flywheel","reziavan_flywheel","Flywheel", {"coreSlot":true}],
+        ["reziavan_transfer_case","reziavan_transfer_case_AWD", "Transfer Case"{"coreSlot":true}],
+        ["reziavan_differential_F","reziavan_differential_F", "Front Differential"],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "gearRatios":[-3.0, 0, 3.31, 1.81, 1.19, 0.87, 0.71],
+        "friction": 1,
+    },
+    "vehicleController": {
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.33,
+        "lowShiftDownRPM":[0,0,0,1600,1900,1700,1600],
+        "lowShiftUpRPM":[0,0,3400,2800,2700,2600],
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_transmission", ["reziavan_engine","reziavan_transmission"]],
+
+["reziavan_dash_plate", ["reziavan_body"]],
+         ["reziavan_shifter_M", ["reziavan_body"]],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        //manual transmission
+        //["gear_M"   ,"reziavan_shifter_M", "f7r","f7l","f8r", {"x":85, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0, "z":0.0}, 0, 1, 0, 1],
+        ["clutch", "reziavan_clutchpedal", "f1l","f1r","f6l", {"x":-5, "y":0, "z":180}, {"x":-25, "y":0, "z":0}, {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"reziavan_transmission"},
+         {"nodeWeight":12},
+         ["tra1r",-0.27, -1.29, 0.31],
+         ["tra1l", 0.27, -1.29, 0.31],
+         ["ta1", 0, -1.29, 0.31],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--TRANSMISSION CONE--
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":8400600,"beamDamp":150},
+          {"beamDeform":540000,"beamStrength":"FLT_MAX"},
+          ["tra1l","e2r"],
+          ["tra1l","e4r"],
+          ["tra1l","e2l"],
+          ["tra1l","e4l"],
+          ["tra1r","e1r"],
+          ["tra1r","e3r"],
+          ["tra1r","e1l"],
+          ["tra1r","e3l"],
+          ["tra1r","tra1l"],
+          ["ta1","e1l"],
+          ["ta1","e2l"],
+          ["ta1","e4l"],
+          ["ta1","e3l"],
+          ["ta1","tra1l"],
+          ["ta1","tra1r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"reziavan_transmission_6M_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race 6-Speed Manual Transmission",
+        "value":1350,
+    }
+    "slotType" : "reziavan_transmission",
+    "slots": [
+        ["type", "default", "description"],
+        ["reziavan_flywheel","reziavan_flywheel_race","Flywheel", {"coreSlot":true}],
+        ["reziavan_transfer_case","reziavan_transfer_case_AWD_race", "Transfer Case"{"coreSlot":true}],
+        ["reziavan_differential_F","reziavan_differential_F", "Front Differential"],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$gear_R", "range", ":1", "Transmission", -2.95, -6.0, -0.5, "Reverse Gear Ratio", "Torque multiplication ratio"]
+        ["$gear_1", "range", ":1", "Transmission", 3.65, 0.5, 6.0, "1st Gear Ratio", "Torque multiplication ratio"]
+        ["$gear_2", "range", ":1", "Transmission", 2.37, 0.5, 6.0, "2nd Gear Ratio", "Torque multiplication ratio"]
+        ["$gear_3", "range", ":1", "Transmission", 1.67, 0.5, 6.0, "3rd Gear Ratio", "Torque multiplication ratio"]
+        ["$gear_4", "range", ":1", "Transmission", 1.28, 0.5, 6.0, "4th Gear Ratio", "Torque multiplication ratio"]
+        ["$gear_5", "range", ":1", "Transmission", 1.02, 0.5, 6.0, "5th Gear Ratio", "Torque multiplication ratio"]
+        ["$gear_6", "range", ":1", "Transmission", 0.82, 0.5, 6.0, "6th Gear Ratio", "Torque multiplication ratio"]
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "gearRatios":["$gear_R", 0, "$gear_1", "$gear_2", "$gear_3", "$gear_4", "$gear_5", "$gear_6"],
+        "friction": 1,
+    },
+    "vehicleController": {
+        "transmissionShiftDelay":0.13,
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.17,
+        //"aggressionSmoothingDown":0.05
+        "aggressionHoldOffThrottleDelay":3,
+        //"lowShiftDownRPM":[0,0,0,1600,1900,1800,1600,1500],
+        //"lowShiftUpRPM":[0,0,3500,3300,3150,3000,2900],
+        "lowShiftDownRPM":[0,0,0,2000,2600,2600,2600,2600],
+        "lowShiftUpRPM":[0,0,4200,4200,4050,3850,3700],
+        //"wheelSlipUpThreshold":100,
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_transmission", ["reziavan_engine","reziavan_transmission"]],
+
+     ["reziavan_shifter_M", ["reziavan_body"]],
+["reziavan_dash_plate", ["reziavan_body"]],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        //manual transmission
+        //["gear_M"   ,"reziavan_shifter_M", "f7r","f7l","f8r", {"x":85, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0, "z":0.0}, 0, 1, 0, 1],
+        ["clutch", "reziavan_clutchpedal", "f1l","f1r","f6l", {"x":-5, "y":0, "z":180}, {"x":-25, "y":0, "z":0}, {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"reziavan_transmission"},
+         {"nodeWeight":12},
+         ["tra1r",-0.27, -1.29, 0.31],
+         ["tra1l", 0.27, -1.29, 0.31],
+         ["ta1", 0, -1.29, 0.31],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--TRANSMISSION CONE--
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":8400600,"beamDamp":150},
+          {"beamDeform":540000,"beamStrength":"FLT_MAX"},
+          ["tra1l","e2r"],
+          ["tra1l","e4r"],
+          ["tra1l","e2l"],
+          ["tra1l","e4l"],
+          ["tra1r","e1r"],
+          ["tra1r","e3r"],
+          ["tra1r","e1l"],
+          ["tra1r","e3l"],
+          ["tra1r","tra1l"],
+          ["ta1","e1l"],
+          ["ta1","e2l"],
+          ["ta1","e4l"],
+          ["ta1","e3l"],
+          ["ta1","tra1l"],
+          ["ta1","tra1r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"reziavan_transfer_case_FWD": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"FWD Transfer Case",
+        "value":500,
+    },
+    "slotType" : "reziavan_transfer_case",
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["shaft", "transfercase", "gearbox", 1, {"outputPortOverride":[2], "friction":3, "uiName":"Front Output Shaft"}],
+    ],
+},
+"reziavan_transfer_case_RWD": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"RWD Transfer Case",
+        "value":700,
+    },
+    "slotType" : "reziavan_transfer_case",
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["shaft", "transfercase", "gearbox", 1, {"friction":3, "uiName":"Rear Output Shaft"}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_transfercase", ["reziavan_engine","reziavan_transmission"]],
+    ],
+},
+"reziavan_transfer_case_AWD": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Viscous AWD Transfer Case",
+        "value":1100,
+    },
+    "slotType" : "reziavan_transfer_case",
+    "controller": [
+        ["fileName"],
+        ["viscotronic", {"transfercaseName":"transfercase"}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["splitShaft", "transfercase", "gearbox", 1, {"splitType":"viscous", "primaryOutputID":2, "viscousCoef":15, "viscousTorque":500, "friction":5, "uiName":"Viscous Torque Splitter","defaultVirtualInertia":0.1}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_transfercase", ["reziavan_engine","reziavan_transmission"]],
+    ],
+},
+"reziavan_transfer_case_AWD_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race AWD Transfer Case",
+        "value":2500,
+    },
+    "slotType" : "reziavan_transfer_case",
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$difftorquesplit_C", "range", "", "Differentials", 0.5, 0.25, 0.75, "Center LSD Torque Split", "Percent torque to rear wheels", {"minDis":25, "maxDis":75}],
+        ["$lsdpreload_C", "range", "N/m", "Differentials", 50, 0, 500, "Center LSD Preload", "Initial cross torque between front and rear wheels"],
+        ["$lsdlockcoef_C", "range", "", "Differentials", 0.1, 0, 0.5, "Center LSD Forward Locking ", "Locking effect proportional to engine torque", {"minDis":0, "maxDis":100}],
+        ["$lsdlockcoefrev_C", "range", "", "Differentials", 0.025, 0, 0.5, "Center LSD Reverse Locking", "Locking effect proportional to engine braking", {"minDis":0, "maxDis":100}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["differential", "transfercase", "gearbox", 1, {"diffType":"lsd", "lsdPreload":"$lsdpreload_C", "lsdLockCoef":"$lsdlockcoef_C", "lsdRevLockCoef":"$lsdlockcoefrev_C", "diffTorqueSplit":"$difftorquesplit_C", "friction":5, "uiName":"Center Differential","defaultVirtualInertia":0.1}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_transfercase", ["reziavan_engine","reziavan_transmission"]],
+    ],
+},
+"reziavan_differential_F_LSD": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Limited Slip Front Differential",
+        "value":800,
+    },
+    "slotType" : "reziavan_differential_F",
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torsionReactor", "torsionReactorF", "transfercase", 2, {"gearRatio":4.266}]
+        ["differential", "differential_F", "torsionReactorF", 1, {"diffType":"viscous", "gearRatio":1, "viscousCoef":25, "viscousTorque":500, "friction":6, "uiName":"Front Differential","defaultVirtualInertia":0.25}],
+    ],
+    "torsionReactorF": {
+        "torqueReactionNodes:":["e1l","e2l","e4r"]
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_halfshaft_F", ["reziavan_hub_F","reziavan_transmission","wheelhub_FR","wheelhub_FL","reziavan_shockbottom_F"]],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //halfshafts
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.1, "beamShortBound":0.1},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":3240,"beamStrength":9550},
+          {"beamLimitSpring":7501000,"beamLimitDamp":300},
+          {"optional":true},
+          {"breakGroupType":1},
+          {"breakGroup":"wheel_FR"},
+          ["fw1r","tra1r", {"name":"axle_FR"}],
+          {"breakGroup":"wheel_FL"},
+          ["fw1l","tra1l", {"name":"axle_FL"}],
+          {"breakGroup":""},
+          {"optional":false},
+          {"breakGroupType":0},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"reziavan_differential_F_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Limited Slip Front Differential",
+        "value":1250,
+    },
+    "slotType" : "reziavan_differential_F",
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$lsdpreload_F", "range", "N/m", "Differentials", 50, 0, 500, "Front LSD Preload", "Initial cross torque between left and right wheels"],
+        ["$lsdlockcoef_F", "range", "", "Differentials", 0.15, 0, 0.5, "Front LSD Forward Locking ", "Locking effect proportional to engine torque", {"minDis":0, "maxDis":100}],
+        ["$lsdlockcoefrev_F", "range", "", "Differentials", 0.075, 0, 0.5, "Front LSD Reverse Locking", "Locking effect proportional to engine braking", {"minDis":0, "maxDis":100}],
+        ["$finaldrive", "range", ":1", "Differentials", 4.266, 2.0, 6.0, "Final Drive Ratio", "Torque multiplication ratio"]
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torsionReactor", "torsionReactorF", "transfercase", 2, {"gearRatio":"$finaldrive"}]
+        ["differential", "differential_F", "torsionReactorF", 1, {"diffType":"lsd", "gearRatio":1,  "lsdPreload":"$lsdpreload_F", "lsdLockCoef":"$lsdlockcoef_F", "lsdRevLockCoef":"$lsdlockcoefrev_F", "friction":6, "uiName":"Front Differential","defaultVirtualInertia":0.25}],
+    ],
+    "torsionReactorF": {
+        "torqueReactionNodes:":["e1l","e2l","e4r"]
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_halfshaft_F", ["reziavan_hub_F","reziavan_transmission","wheelhub_FR","wheelhub_FL","reziavan_shockbottom_F"]],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //halfshafts
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.1, "beamShortBound":0.1},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":3240,"beamStrength":9550},
+          {"beamLimitSpring":7501000,"beamLimitDamp":300},
+          {"optional":true},
+          {"breakGroupType":1},
+          {"breakGroup":"wheel_FR"},
+          ["fw1r","tra1r", {"name":"axle_FR"}],
+          {"breakGroup":"wheel_FL"},
+          ["fw1l","tra1l", {"name":"axle_FL"}],
+          {"breakGroup":""},
+          {"optional":false},
+          {"breakGroupType":0},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"reziavan_turbo_v6": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GTz Turbocharger",
+        "value":950,
+    }
+    "slotType" : "reziavan_intake_v6",
+    "turbocharger": {
+        "wastegateStart":9,
+        "wastegateLimit":11,
+        "maxExhaustPower": 4500,
+        "backPressureCoef": 0.000035,
+        "frictionCoef": 10.4,
+        "inertia":1.6,
+        "damageThresholdTemperature": 665,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -3.5],
+            [30000,     -0.5],
+            [60000,     5],
+            [90000,     9],
+            [150000,    12],
+            [200000,    16],
+            [250000,    20],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.0,    0.0],
+            [650,   0.2,   0.15],
+            [1400,  0.3,   0.23],
+            [2000,  0.36,    0.29],
+            [2500,  0.46,    0.39],
+            [3000,  0.78,    0.6],
+            [4000,  0.85,    0.8],
+            [5000,  0.85,    0.85],
+            [6000,  0.9,    0.85],
+            [7000,  0.95,    0.95],
+            [8000,  0.9,    1.0],
+        ],
+    },
+    "mainEngine":{
+        "maxRPM":6900,
+        "burnEfficiency":0.30
+        "cylinderWallTemperatureDamageThreshold":150
+        //turbocharger name
+        "turbocharger":"turbocharger",
+    },
+    "vehicleController": {
+        "highShiftUpRPM":6700
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+       //  ["reziavan_icpipe_intake", ["reziavan_engine","reziavan_intercooler","reziavan_rad"]],
+       //  ["reziavan_icpipe_turbo", ["reziavan_engine","reziavan_intercooler","reziavan_rad"]],
+      //   ["reziavan_engine_v6_turbo", ["reziavan_engine"]],
+         ["reziavan_intercooler", ["reziavan_intercooler","reziavan_rad"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"reziavan_intercooler"},
+         {"nodeWeight":11},
+         ["interc", 0.00000, -2.00000, 0.35000],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":350600,"beamDamp":60},
+          {"beamDeform":3000,"beamStrength":6000},
+          ["interc","f13rr"],
+          ["interc","f13"],
+          ["interc","f13ll"],
+          ["interc","f18"],
+          ["interc","f18r"],
+          ["interc","f18l"],
+
+          ["interc","f11rr"],
+          ["interc","f11"],
+          ["interc","f11ll"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"reziavan_turbo_stage2_v6": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stage 2 Turbocharger",
+        "value":1800,
+    }
+    "slotType" : "reziavan_intake_v6",
+    "turbocharger": {
+        "volumePer10kRPM":0.06
+        "wastegateStart":23,
+        "wastegateLimit":25,
+        "maxExhaustPower": 11000,
+        "backPressureCoef": 0.00003,
+        "frictionCoef": 30,
+        "inertia":6,
+        "pressureRatePSI":55
+        "damageThresholdTemperature": 760,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -3.5],
+            [30000,     -0.5],
+            [60000,     5],
+            [90000,     13],
+            [150000,    23],
+            [200000,    29],
+            [250000,    35],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.0,    0.05],
+            [650,   0.1,   0.05],
+            [1400,  0.25,   0.1],
+            [2000,  0.35,    0.25],
+            [2500,  0.47,    0.50],
+            [3000,  0.60,    0.65],
+            [4000,  0.78,    0.8],
+            [5000,  0.85,    0.95],
+            [6000,  1.0,    1.0],
+            [7000,  1.0,    1.0],
+            [8000,  0.9,    1.0],
+        ],
+    },
+    "mainEngine":{
+        "idleRPM":1500,
+        "maxRPM":7300,
+        "burnEfficiency":0.26
+        "cylinderWallTemperatureDamageThreshold":150
+        //turbocharger name
+        "turbocharger":"turbocharger",
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":1800,
+        "clutchLaunchTargetRPM":2500,
+        "highShiftUpRPM":7000
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+      //   ["reziavan_icpipe_intake", ["reziavan_engine","reziavan_intercooler","reziavan_rad"]],
+      //   ["reziavan_icpipe_turbo", ["reziavan_engine","reziavan_intercooler","reziavan_rad"]],
+          //  ["reziavan_engine_v6_turbo", ["reziavan_engine"]],
+         ["reziavan_intercooler", ["reziavan_intercooler","reziavan_rad"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"reziavan_intercooler"},
+         {"nodeWeight":11},
+         ["interc", 0.0, -2.00, 0.35],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":350600,"beamDamp":60},
+          {"beamDeform":3000,"beamStrength":6000},
+          ["interc","f13rr"],
+          ["interc","f13"],
+          ["interc","f13ll"],
+          ["interc","f18"],
+          ["interc","f18r"],
+          ["interc","f18l"],
+
+          ["interc","f11rr"],
+          ["interc","f11"],
+          ["interc","f11ll"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"reziavan_turbo_stage3_v6": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stage 3 Variable Boost Turbocharger",
+        "value":3000,
+    }
+    "slotType" : "reziavan_intake_v6",
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$wastegateStart", "range", "psi", "Turbocharger", 8, 6, 36, "Wastegate Start", "Pressure at which the wastegate begins to open"{"stepDis":0.5}]
+        ["$wastegateLimit", "range", "psi", "Turbocharger", 10, 8, 38, "Wastegate Limit", "Pressure at which the wastegate is fully opened"{"stepDis":0.5}]
+    ],
+    "turbocharger": {
+        "volumePer10kRPM":0.07
+        "wastegateStart":"$wastegateStart",
+        "wastegateLimit":"$wastegateLimit",
+        "maxExhaustPower": 180000,
+        "backPressureCoef": 0.000085,
+        "frictionCoef": 45.3,
+        "inertia":20.4,
+        "pressureRatePSI": 45,
+        "damageThresholdTemperature": 870,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -4.5],
+            [30000,     -1.5],
+            [60000,     5],
+            [90000,     18],
+            [150000,    32],
+            [200000,    39],
+            [250000,    48],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.0,    0.01],
+            [650,   0.23,   0.01],
+            [1400,  0.33,   0.02],
+            [2000,  0.41,    0.19],
+            [2500,  0.54,    0.41],
+            [3000,  0.72,    0.61],
+            [4000,  0.98,    0.77],
+            [5000,  1.13,    0.87],
+            [6000,  1.18,    1.0],
+            [7000,  1.11,    1.00],
+            [8000,  1.2,    1.0],
+            [9000,  1.25,    1.0],
+        ],
+    },
+    "mainEngine":{
+        "idleRPM":1100,
+        "maxRPM":8000,
+        "burnEfficiency":0.24,
+        "cylinderWallTemperatureDamageThreshold":180
+        //turbocharger name
+        "turbocharger":"turbocharger",
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":1800,
+        "clutchLaunchTargetRPM":2500,
+        "highShiftUpRPM":7700
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+      //   ["reziavan_icpipe_intake", ["reziavan_engine","reziavan_intercooler","reziavan_rad"]],
+        // ["reziavan_icpipe_turbo", ["reziavan_engine","reziavan_intercooler","reziavan_rad"]],
+         //    ["reziavan_engine_v6_turbo", ["reziavan_engine"]],
+         ["reziavan_intercooler", ["reziavan_intercooler","reziavan_rad"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"reziavan_intercooler"},
+         {"nodeWeight":11},
+         ["interc", 0.0, -2.00, 0.35],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":350600,"beamDamp":60},
+          {"beamDeform":3000,"beamStrength":6000},
+          ["interc","f13rr"],
+          ["interc","f13"],
+          ["interc","f13ll"],
+          ["interc","f18"],
+          ["interc","f18r"],
+          ["interc","f18l"],
+
+          ["interc","f11rr"],
+          ["interc","f11"],
+          ["interc","f11ll"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+}

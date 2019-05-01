@@ -1,0 +1,11 @@
+{
+"midsize_skin_flyus": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"Fly US Skin",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "flyus",
+}
+}

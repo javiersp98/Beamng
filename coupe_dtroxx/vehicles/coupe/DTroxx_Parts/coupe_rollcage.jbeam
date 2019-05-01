@@ -1,0 +1,449 @@
+{
+
+"coupe_half_rollcage": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Half Roll Cage",
+		"value":1800,
+	}
+    "slotType" : "coupe_rollcage",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_half_rollcage", ["coupe_body"]],
+	],
+	"nodes": [
+         ["id", "posX", "posY", "posZ"],
+		 //redefine nodes to make them heavier
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         //roof
+         {"collision":true}
+         {"selfCollision":true}
+         {"group":"coupe_body"},
+         {"nodeWeight":3.8},
+         ["rf3r", -0.54, 0.60, 1.26{"group":["int_seats","coupe_body"]}]
+         ["rf3", 0, 0.61, 1.31],
+         ["rf3l", 0.54, 0.60, 1.26{"group":["int_seats","coupe_body"]}]
+
+         ["rf4r", -0.56, 0.92, 1.22],
+         ["rf4", 0, 0.94, 1.27],
+         ["rf4l", 0.56, 0.92, 1.22],
+         //roof rigidifier
+         {"selfCollision":false}
+         {"Collision":false}
+         {"nodeWeight":3.2},
+         ["rf5", 0, 0.3, 1.17],
+         {"Collision":true}
+         {"selfCollision":true}
+
+         {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":2200550,"beamDamp":50},
+          {"beamDeform":360000,"beamStrength":"FLT_MAX"},
+		  //left cage
+		  ["rf3l", "q3l",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf3l", "f4ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  
+		   //right cage
+		  ["rf3r", "q3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf3r", "f4rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  
+		  //crossing bars
+		  ["rf3l", "rf3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf3l", "f4rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["q3l", "q3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf3r", "f4ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+
+	],
+}
+//"eind"
+
+"coupe_rollcage_2": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Roll Cage 2",
+		"value":1800,
+	}
+    "slotType" : "coupe_rollcage",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_rollcage_2", ["coupe_body"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+         //redefine nodes to make them heavier
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         //roof
+         {"collision":true}
+         {"selfCollision":true}
+         {"group":"coupe_body"},
+         {"nodeWeight":4.2},
+         ["rf1r", -0.56, -0.05, 1.23{"group":["coupe_windshield", "coupe_body"]}]
+         ["rf1", 0, -0.08, 1.27{"group":["coupe_windshield", "coupe_body"]}]
+         ["rf1l", 0.56, -0.05, 1.23{"group":["coupe_windshield", "coupe_body"]}]
+
+         ["rf2r", -0.55, 0.28, 1.26],
+         ["rf2", 0, 0.27, 1.31],
+         ["rf2l", 0.55, 0.28, 1.26],
+
+         ["rf3r", -0.54, 0.60, 1.26{"group":["int_seats","coupe_body"]}]
+         ["rf3", 0, 0.61, 1.31],
+         ["rf3l", 0.54, 0.60, 1.26{"group":["int_seats","coupe_body"]}]
+
+         ["rf4r", -0.56, 0.92, 1.22],
+         ["rf4", 0, 0.94, 1.27],
+         ["rf4l", 0.56, 0.92, 1.22],
+         //roof rigidifier
+         {"selfCollision":false}
+         {"Collision":false}
+         {"nodeWeight":3.2},
+         ["rf5", 0, 0.3, 1.17],
+         {"Collision":true}
+         {"selfCollision":true}
+         //pillars
+         {"nodeWeight":4.1},
+         //a pillar
+         ["p1r", -0.64, -0.42, 1.07{"group":["coupe_body","coupe_windshield"]}],
+         ["p1l", 0.64, -0.42, 1.07{"group":["coupe_body","coupe_windshield"]}],
+         ["p2r", -0.68, -0.36, 1.04{"group":["int_seats"]}]
+         ["p2l", 0.68, -0.36, 1.04{"group":["int_seats"]}]
+         ["p2rr", -0.61, -0.31, 1.03{"group":""}]
+         ["p2ll", 0.61, -0.31, 1.03{"group":""}]
+         {"selfCollision":false}
+
+         //b pillar
+         {"nodeWeight":4.1},
+
+         ["p3r", -0.69, 0.54, 1.04],
+         ["p3l", 0.69, 0.54, 1.04],
+         ["p4r", -0.69, 0.65, 1.04],
+         ["p4l", 0.69, 0.65, 1.04],
+         {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":2200550,"beamDamp":50},
+          {"beamDeform":360000,"beamStrength":"FLT_MAX"},
+		  //left cage
+		  ["rf3l", "q3l",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf3l", "rf1l",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf3l", "f4ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf1l", "f1ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf1l", "f4ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["f1ll", "q3l",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["f1ll", "rf1",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  
+		   //right cage
+		  ["rf3r", "q3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf3r", "rf1r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf3r", "f4rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf1r", "f1rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf1r", "f4rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["f1rr", "q3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["f1rr", "rf1",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  
+		  //crossing bars
+		  ["rf3l", "rf3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf3l", "f4rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf1l", "rf1r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["q3l", "q3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf3r", "f4ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf3l", "rf1r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf3r", "rf1l",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+
+	],
+}
+//"eind"
+
+"coupe_vert_rollcage": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Roll Cage",
+		"value":1800,
+	}
+    "slotType" : "coupe_vert_rollcage",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_rollcage", ["coupe_body"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"coupe_body"},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+		 {"selfCollision":true}
+         {"Collision":true}
+         {"nodeWeight":4.0},
+		 
+		 ["rfv3r", -0.54, 0.64, 1.2{"group":["coupe_body"]}]
+         ["rfv3l", 0.54, 0.64, 1.2{"group":["coupe_body"]}]
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":2200550,"beamDamp":50},
+          {"beamDeform":360000,"beamStrength":"FLT_MAX"},
+		  //left cage
+		  ["rfv3l", "q3l",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3l", "rf1l",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3l", "f4ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf1l", "f1ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf1l", "f4ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["f1ll", "q3l",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["f1ll", "rf1",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  
+		   //right cage
+		  ["rfv3r", "q3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3r", "rf1r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3r", "f4rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf1r", "f1rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf1r", "f4rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["f1rr", "q3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["f1rr", "rf1",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  
+		  //crossing bars
+		  ["rfv3l", "rfv3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3l", "f4rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf1l", "rf1r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["q3l", "q3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3r", "f4ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+
+	],
+}
+//"eind"
+
+"coupe_vert_half_rollcage": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Half Roll Cage",
+		"value":1800,
+	}
+    "slotType" : "coupe_vert_rollcage",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_half_rollcage", ["coupe_body"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"coupe_body"},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+		 {"selfCollision":true}
+         {"Collision":true}
+         {"nodeWeight":4.0},
+		 
+		 ["rfv3r", -0.54, 0.64, 1.2{"group":["coupe_body"]}]
+         ["rfv3l", 0.54, 0.64, 1.2{"group":["coupe_body"]}]
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":2200550,"beamDamp":50},
+          {"beamDeform":360000,"beamStrength":"FLT_MAX"},
+		  //left cage
+		  ["rfv3l", "q3l",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3l", "f4ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  
+		   //right cage
+		  ["rfv3r", "q3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3r", "f4rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  
+		  //crossing bars
+		  ["rfv3l", "rfv3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3l", "f4rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["q3l", "q3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3r", "f4ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+
+	],
+}
+//"eind"
+
+"coupe_vert_rollcage_2": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Roll Cage 2",
+		"value":1800,
+	}
+    "slotType" : "coupe_vert_rollcage",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_rollcage_2", ["coupe_body"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"coupe_body"},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+		 {"selfCollision":true}
+         {"Collision":true}
+         {"nodeWeight":4.0},
+		 
+		 ["rfv3r", -0.54, 0.64, 1.2{"group":["coupe_body"]}]
+         ["rfv3l", 0.54, 0.64, 1.2{"group":["coupe_body"]}]
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":2200550,"beamDamp":50},
+          {"beamDeform":360000,"beamStrength":"FLT_MAX"},
+		  //left cage
+		  ["rfv3l", "q3l",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3l", "rf1l",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3l", "f4ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf1l", "f1ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf1l", "f4ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["f1ll", "q3l",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["f1ll", "rf1",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  
+		   //right cage
+		  ["rfv3r", "q3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3r", "rf1r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3r", "f4rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf1r", "f1rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf1r", "f4rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["f1rr", "q3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["f1rr", "rf1",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  
+		  //crossing bars
+		  ["rfv3l", "rfv3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3l", "f4rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf1l", "rf1r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["q3l", "q3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3r", "f4ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3l", "rf1r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3r", "rf1l",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+
+	],
+}
+//"eind"
+
+"coupe_ute_rollcage": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Roll Cage",
+		"value":1800,
+	}
+    "slotType" : "coupe_ute_rollcage",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_ute_rollcage", ["coupe_body"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"coupe_body"},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+		 {"selfCollision":true}
+         {"Collision":true}
+         {"nodeWeight":4.0},
+		 
+		 ["rfv3r", -0.54, 0.64, 1.2{"group":["coupe_body"]}]
+         ["rfv3l", 0.54, 0.64, 1.2{"group":["coupe_body"]}]
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":2200550,"beamDamp":50},
+          {"beamDeform":360000,"beamStrength":"FLT_MAX"},
+		  //left cage
+		  ["rfv3l", "ubm2ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3l", "rf1l",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3l", "f4ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf1l", "f1ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf1l", "f4ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["f1ll", "ubm2ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["f1ll", "rf1",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  
+		   //right cage
+		  ["rfv3r", "ubm2rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3r", "rf1r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3r", "f4rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf1r", "f1rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf1r", "f4rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["f1rr", "ubm2rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["f1rr", "rf1",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  
+		  //crossing bars
+		  ["rfv3l", "rfv3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rf1l", "rf1r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3l", "rfv3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3l", "uw4rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3r", "uw4ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["ubm2rr", "uw4rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["ubm2ll", "uw4ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["ubm2rr", "rfv3l",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["ubm2ll", "rfv3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+
+	],
+}
+//"eind"
+
+"coupe_ute_half_rollcage": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Half Roll Cage",
+		"value":1800,
+	}
+    "slotType" : "coupe_ute_rollcage",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_ute_rollcage_half", ["coupe_body"]],
+	],
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"coupe_body"},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+		 {"selfCollision":true}
+         {"Collision":true}
+         {"nodeWeight":4.0},
+		 
+		 ["rfv3r", -0.54, 0.74, 1.2{"group":["coupe_body"]}]
+         ["rfv3l", 0.54, 0.74, 1.2{"group":["coupe_body"]}]
+		 {"group":""},
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":2200550,"beamDamp":50},
+          {"beamDeform":360000,"beamStrength":"FLT_MAX"},
+		  //left cage
+		  ["rfv3l", "ubm2ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3l", "uw4ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  
+		   //right cage
+		  ["rfv3r", "ubm2rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3r", "uw4rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  
+		  //crossing bars
+		  ["rfv3l", "rfv3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3l", "uw4rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["rfv3r", "uw4ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["ubm2rr", "uw4rr",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["ubm2ll", "uw4ll",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["ubm2rr", "rfv3l",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  ["ubm2ll", "rfv3r",{"highlight":{"radius":0.005, "col":"#ff0000ff" }}],
+		  
+
+	],
+}
+//"eind"
+
+
+}

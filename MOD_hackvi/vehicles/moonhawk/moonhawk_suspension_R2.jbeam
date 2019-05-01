@@ -1,0 +1,80 @@
+{
+
+"moonhawk_swaybar_R_hd2": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Heavy Duty Rear Sway Bar",
+        "value":350,
+    },
+
+    "slotType" : "moonhawk_swaybar_R",
+
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        //["barstow_swaybar_R", ["barstow_axle_R","barstow_swaybar_R"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //anti-roll
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":""},
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeWeight":1.6},
+         //rear anti-roll
+         ["arbrr", -0.54, 1.45, 0.37],
+         ["arbrl", 0.54, 1.45, 0.37],
+         //["arbr", 0.0, 1.26, 0.5],
+         {"group":""},
+    ],    
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        //arm length 0.51
+        {"spring":1800, "damp":10, "deform":4000, "strength":9999999},
+        ["axshr", "rx1r", "rx1l", "axshl"],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--ANTI-ROLL--
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":4001000,"beamDamp":100},
+          {"beamDeform":52000,"beamStrength":712000},
+          //end links
+          ["arbrr","axshr"],
+          ["arbrl","axshl"],
+          //rigids
+          ["arbrr","f6rr"],
+          ["arbrl","f6ll"],
+          ["arbrr","f6ll"],
+          ["arbrl","f6rr"],
+          //["arbrr","arbrl"],
+          {"beamSpring":"$arb_R","beamDamp":10},
+          //anti-roll
+          //["arbr", "f6rr"],
+          //["arbr", "f6ll"],
+          //["arbr", "arbrr"],
+          //["arbr", "arbrl"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+"moonhawk_differential_R_M_LSD_334": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"3.34 PlusTrak Limited Slip Rear Differential",
+        "value":600,
+    }
+    "slotType" : "moonhawk_differential_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["moonhawk_driveshaft","moonhawk_driveshaft", "Driveshaft"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        //rear diff
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"lsd", "gearRatio":3.34, "lsdPreload":150, "lsdLockCoef":0.1, "lsdRevLockCoef":0.1, "friction":9, "uiName":"Rear Differential","defaultVirtualInertia":0.25}]
+    ],
+}
+
+}

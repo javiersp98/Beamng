@@ -1,0 +1,735 @@
+{
+"coupe_windshield": {
+//"begin"
+    "information":{
+        "authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+        "name":"Windshield",
+		"value":100,
+    }
+    "slotType" : "coupe_windshield",
+	"slots": [
+        ["type", "default", "description"]
+		["coupe_windshield_decals","","Windshield Decals"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //glass
+         {"deformGroup":"windshield_break", "deformMaterialBase":"coupe_glass", "deformMaterialDamaged":"coupe_windshield_dmg"}
+         ["coupe_windshield", ["coupe_windshield"],[]{"deformSound":"GlassBreakSound1", "deformVolume":0.7}],
+         {"deformGroup":"windshield_break", "deformMaterialBase":"coupe_glass_int", "deformMaterialDamaged":"coupe_glass_int"}
+         //["coupe_windshield_int", ["coupe_windshield"]],
+
+         {"deformGroup":"windshield_break", "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_mirror"}
+         ["coupe_windshield_dmg", ["coupe_windshield"]],
+         
+         {"deformGroup":""}
+    ],
+	"nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true}
+         {"collision":true},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_GLASS"},
+         {"nodeWeight":2.66},
+         {"group":""},
+         //windshield node
+         ["wi1", 0, -0.50, 1.11{"group":["coupe_windshield","gps"]}],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //windshield node
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"beamSpring":1348050,"beamDamp":50},
+          {"beamDeform":3750,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"windshield_break", "deformationTriggerRatio":0.01},
+          ["wi1","rf1r"],
+          ["wi1","rf1"],
+          ["wi1","rf1l"],
+
+          ["wi1","p1r"],
+          ["wi1","p1l"],
+          ["wi1","p2r"],
+          ["wi1","p2l"],
+
+          ["wi1","f6r"],
+          ["wi1","f6l"],
+
+          ["wi1","f6rr"],
+          ["wi1","f6ll"],
+          ["wi1","p2rr"],
+          ["wi1","p2ll"],
+
+          {"beamDeform":4050,"beamStrength":10250},
+          ["f6rr","rf1"],
+          ["f6ll","rf1"],
+
+          ["f6r","rf1"],
+          ["f6l","rf1"],
+          ["p1r","p1l"],
+		  
+		  {"breakGroup":""},
+          {"deformGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    
+}
+//"eind"
+
+"coupe_windshield_dark": {
+//"begin"
+    "information":{
+        "authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+        "name":"Tinted Windshield",
+		"value":120,
+    }
+    "slotType" : "coupe_windshield",
+	"slots": [
+        ["type", "default", "description"]
+		["coupe_windshield_decals","","Windshield Decals"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //glass
+		 {"deformGroup":"windshield_break", "deformMaterialBase":"coupe_glass_dark", "deformMaterialDamaged":"coupe_windshield_dmg_dark"}
+         ["coupe_windshield_dark", ["coupe_windshield"],[]{"deformSound":"GlassBreakSound1", "deformVolume":0.7}],
+         {"deformGroup":"windshield_break", "deformMaterialBase":"coupe_glass_int_dark", "deformMaterialDamaged":"coupe_glass_int_dark"}
+         ["coupe_windshield_int_dark", ["coupe_windshield"]],
+
+         {"deformGroup":"windshield_break", "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_mirror"}
+         ["coupe_windshield_dmg", ["coupe_windshield"]],
+         
+         {"deformGroup":""}
+    ],
+	"nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true}
+         {"collision":true},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_GLASS"},
+         {"nodeWeight":2.66},
+         {"group":""},
+         //windshield node
+         ["wi1", 0, -0.50, 1.11{"group":["coupe_windshield","gps"]}],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //windshield node
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"beamSpring":1348050,"beamDamp":50},
+          {"beamDeform":3750,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"windshield_break", "deformationTriggerRatio":0.01},
+          ["wi1","rf1r"],
+          ["wi1","rf1"],
+          ["wi1","rf1l"],
+
+          ["wi1","p1r"],
+          ["wi1","p1l"],
+          ["wi1","p2r"],
+          ["wi1","p2l"],
+
+          ["wi1","f6r"],
+          ["wi1","f6l"],
+
+          ["wi1","f6rr"],
+          ["wi1","f6ll"],
+          ["wi1","p2rr"],
+          ["wi1","p2ll"],
+
+          {"beamDeform":4050,"beamStrength":10250},
+          ["f6rr","rf1"],
+          ["f6ll","rf1"],
+
+          ["f6r","rf1"],
+          ["f6l","rf1"],
+          ["p1r","p1l"],
+		  
+		  {"breakGroup":""},
+          {"deformGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    
+}
+//"eind"
+
+"coupe_sideglass": {
+//"begin"
+    "information":{
+        "authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+        "name":"Sideglass",
+		"value":100,
+    }
+    "slotType" : "coupe_sideglass",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //glass
+         
+         {"deformGroup":"sideglass_R_break", "deformMaterialBase":"coupe_glass", "deformMaterialDamaged":"coupe_glass_dmg"}
+         ["coupe_sideglass_R", ["coupe_body"],[]{"deformSound":"GlassBreakSound5", "deformVolume":0.6}],
+         {"deformGroup":"sideglass_R_break", "deformMaterialBase":"coupe_glass_int", "deformMaterialDamaged":"coupe_glass_dmg"}
+         ["coupe_sideglass_R_int", ["coupe_body"]],
+
+         {"deformGroup":"sideglass_L_break", "deformMaterialBase":"coupe_glass", "deformMaterialDamaged":"coupe_glass_dmg"}
+         ["coupe_sideglass_L", ["coupe_body"],[]{"deformSound":"GlassBreakSound6", "deformVolume":0.6}],
+         {"deformGroup":"sideglass_L_break", "deformMaterialBase":"coupe_glass_int", "deformMaterialDamaged":"coupe_glass_dmg"}
+         ["coupe_sideglass_L_int", ["coupe_body"]],
+         
+         {"deformGroup":""}
+    ],
+	"beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          
+          //brittle glass beams
+          {"beamSpring":1238050,"beamDamp":50},
+          {"beamDeform":8000,"beamStrength":8000},
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          //side glass
+          {"deformGroup":"sideglass_R_break", "deformationTriggerRatio":0.03},
+          {"breakGroup":"sideglass_R"},
+          ["rf3r","q1r"],
+          ["rf3r","q2r"],
+          ["rf4r","q1r"],
+          ["rf4r","q2r"],
+          ["rf4r","q3r"],
+          ["p5r","q2r"],
+          ["p4r","q3r"],
+          ["p4r","p5r"],
+
+          {"deformGroup":"sideglass_L_break", "deformationTriggerRatio":0.03},
+          {"breakGroup":"sideglass_L"},
+          ["rf3l","q1l"],
+          ["rf3l","q2l"],
+          ["rf4l","q1l"],
+          ["rf4l","q2l"],
+          ["rf4l","q3l"],
+          ["p5l","q2l"],
+          ["p4l","q3l"],
+          ["p4l","p5l"],
+          
+          {"breakGroup":""},
+          {"deformGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    
+}
+//"eind"
+
+"coupe_sideglass_dark": {
+//"begin"
+    "information":{
+        "authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+        "name":"Tinted Sideglass",
+		"value":120,
+    }
+    "slotType" : "coupe_sideglass",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //glass
+         {"deformGroup":"sideglass_R_break", "deformMaterialBase":"coupe_glass_dark", "deformMaterialDamaged":"coupe_glass_dmg_dark"}
+         ["coupe_sideglass_R_dark", ["coupe_body"],[]{"deformSound":"GlassBreakSound5", "deformVolume":0.6}],
+         {"deformGroup":"sideglass_R_break", "deformMaterialBase":"coupe_glass_int_dark", "deformMaterialDamaged":"coupe_glass_dmg_dark"}
+         ["coupe_sideglass_R_int_dark", ["coupe_body"]],
+
+         {"deformGroup":"sideglass_L_break", "deformMaterialBase":"coupe_glass_dark", "deformMaterialDamaged":"coupe_glass_dmg_dark"}
+         ["coupe_sideglass_L_dark", ["coupe_body"],[]{"deformSound":"GlassBreakSound6", "deformVolume":0.6}],
+         {"deformGroup":"sideglass_L_break", "deformMaterialBase":"coupe_glass_int_dark", "deformMaterialDamaged":"coupe_glass_dmg_dark"}
+         ["coupe_sideglass_L_int_dark", ["coupe_body"]],
+         
+         {"deformGroup":""}
+    ],
+	"beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  //brittle glass beams
+          {"beamSpring":1238050,"beamDamp":50},
+          {"beamDeform":8000,"beamStrength":8000},
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          //side glass
+          {"deformGroup":"sideglass_R_break", "deformationTriggerRatio":0.03},
+          {"breakGroup":"sideglass_R"},
+          ["rf3r","q1r"],
+          ["rf3r","q2r"],
+          ["rf4r","q1r"],
+          ["rf4r","q2r"],
+          ["rf4r","q3r"],
+          ["p5r","q2r"],
+          ["p4r","q3r"],
+          ["p4r","p5r"],
+
+          {"deformGroup":"sideglass_L_break", "deformationTriggerRatio":0.03},
+          {"breakGroup":"sideglass_L"},
+          ["rf3l","q1l"],
+          ["rf3l","q2l"],
+          ["rf4l","q1l"],
+          ["rf4l","q2l"],
+          ["rf4l","q3l"],
+          ["p5l","q2l"],
+          ["p4l","q3l"],
+          ["p4l","p5l"],
+          
+          {"breakGroup":""},
+          {"deformGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    
+}
+//"eind"
+
+"coupe_sideglass_cover": {
+//"begin"
+    "information":{
+        "authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+        "name":"Sideglass Cover",
+		"value":110,
+    }
+    "slotType" : "coupe_sideglass",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //glass
+         
+         ["coupe_sideglass_cover_R", ["coupe_body"]],
+         ["coupe_sideglass_cover_R_int", ["coupe_body"]],
+         
+         ["coupe_sideglass_cover_L", ["coupe_body"]],
+         ["coupe_sideglass_cover_L_int", ["coupe_body"]],
+         
+         {"deformGroup":""}
+    ],
+	"beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+          //brittle glass beams
+          {"beamSpring":1238050,"beamDamp":50},
+          {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          //side glass
+          ["rf3r","q1r"],
+          ["rf3r","q2r"],
+          ["rf4r","q1r"],
+          ["rf4r","q2r"],
+          ["rf4r","q3r"],
+          ["p5r","q2r"],
+          ["p4r","q3r"],
+          ["p4r","p5r"],
+
+          ["rf3l","q1l"],
+          ["rf3l","q2l"],
+          ["rf4l","q1l"],
+          ["rf4l","q2l"],
+          ["rf4l","q3l"],
+          ["p5l","q2l"],
+          ["p4l","q3l"],
+          ["p4l","p5l"],
+          
+          {"breakGroup":""},
+          {"deformGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  ],
+}
+//"eind"
+
+"coupe_rear_window": {
+//"begin"
+    "information":{
+        "authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+        "name":"Rear Window",
+		"value":100,
+    }
+    "slotType" : "coupe_rear_window",
+	"slots": [
+        ["type", "default", "description"]
+		["coupe_rear_window_decal","","Windshield Decals"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //glass        
+         {"deformGroup":"backlight_break", "deformMaterialBase":"coupe_glass", "deformMaterialDamaged":"coupe_glass_dmg"}
+         ["coupe_backlight", ["coupe_body"],[]{"deformSound":"GlassBreakSound9", "deformVolume":0.8}],
+         {"deformGroup":"backlight_break", "deformMaterialBase":"coupe_glass_int", "deformMaterialDamaged":"coupe_glass_dmg"}
+         ["coupe_backlight_int", ["coupe_body"]],
+		 {"deformGroup":""}
+    ],
+	
+	"beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+	      //rear window
+          {"beamSpring":1238050,"beamDamp":50},
+          {"beamDeform":5000,"beamStrength":10000},
+          {"deformGroup":"backlight_break", "deformationTriggerRatio":0.001}
+          {"breakGroup":"backlight"},
+          ["rf4","tb1"],
+          ["rf4","tb1l"],
+          ["rf4","tb1r"],
+          ["rf4r","tb1"],
+          ["rf4l","tb1"],
+
+          ["tb1r","rf4l"],
+          ["tb1l","rf4r"],
+          ["p6r","p6l"],
+
+          ["p6r","rf4l"],
+          ["p6r","tb1"],
+          ["p6l","rf4r"],
+          ["p6l","tb1"],
+          {"breakGroup":""},
+          {"deformGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    
+}
+//"eind"
+
+"coupe_rear_window_dark": {
+//"begin"
+    "information":{
+        "authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+        "name":"Tinted Rear Window",
+		"value":120,
+    }
+    "slotType" : "coupe_rear_window",
+	"slots": [
+        ["type", "default", "description"]
+		["coupe_rear_window_decal","","Windshield Decals"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //glass
+		 {"deformGroup":"backlight_break", "deformMaterialBase":"coupe_glass_dark", "deformMaterialDamaged":"coupe_glass_dmg_dark"}
+         ["coupe_backlight_dark", ["coupe_body"],[]{"deformSound":"GlassBreakSound9", "deformVolume":0.8}],
+         {"deformGroup":"backlight_break", "deformMaterialBase":"coupe_glass_int_dark", "deformMaterialDamaged":"coupe_glass_dmg_dark"}
+         ["coupe_backlight_int_dark", ["coupe_body"]],
+		 {"deformGroup":""}
+    ],
+	"beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+	      //rear window
+		  {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"beamSpring":1238050,"beamDamp":50},
+          {"beamDeform":5000,"beamStrength":10000},
+          {"deformGroup":"backlight_break", "deformationTriggerRatio":0.001}
+          {"breakGroup":"backlight"},
+          ["rf4","tb1"],
+          ["rf4","tb1l"],
+          ["rf4","tb1r"],
+          ["rf4r","tb1"],
+          ["rf4l","tb1"],
+
+          ["tb1r","rf4l"],
+          ["tb1l","rf4r"],
+          ["p6r","p6l"],
+
+          ["p6r","rf4l"],
+          ["p6r","tb1"],
+          ["p6l","rf4r"],
+          ["p6l","tb1"],
+          {"breakGroup":""},
+          {"deformGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    
+}
+//"eind"
+
+"coupe_rear_window_cover": {
+//"begin"
+    "information":{
+        "authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+        "name":"Rear Window Cover",
+		"value":110,
+    }
+    "slotType" : "coupe_rear_window",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //glass        
+         ["coupe_backlight_cover", ["coupe_body"]],
+         ["coupe_backlight_cover_int", ["coupe_body"]],
+		 {"deformGroup":""}
+    ],
+	"beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+		  //rear window
+		  {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"beamSpring":1238050,"beamDamp":50},
+          {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+          ["rf4","tb1"],
+          ["rf4","tb1l"],
+          ["rf4","tb1r"],
+          ["rf4r","tb1"],
+          ["rf4l","tb1"],
+
+          ["tb1r","rf4l"],
+          ["tb1l","rf4r"],
+          ["p6r","p6l"],
+
+          ["p6r","rf4l"],
+          ["p6r","tb1"],
+          ["p6l","rf4r"],
+          ["p6l","tb1"],
+          {"breakGroup":""},
+          {"deformGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  ],
+}
+//"eind"
+
+"coupe_rear_window_louvre": {
+//"begin"
+    "information":{
+        "authors":"Jesper, AKA D-TROXX",
+        "name":"Louvre",
+		"value":250,
+    }
+    "slotType" : "coupe_rear_window",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"], 
+         ["coupe_backlight_louvre_1", ["coupe_body"]],
+		 //glass        
+         {"deformGroup":"backlight_break", "deformMaterialBase":"coupe_glass", "deformMaterialDamaged":"coupe_glass_dmg"}
+         ["coupe_backlight", ["coupe_body"],[]{"deformSound":"GlassBreakSound9", "deformVolume":0.8}],
+         {"deformGroup":"backlight_break", "deformMaterialBase":"coupe_glass_int", "deformMaterialDamaged":"coupe_glass_dmg"}
+         ["coupe_backlight_int", ["coupe_body"]],
+		 {"deformGroup":""}
+    ],
+	"beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+	      //rear window
+          {"beamSpring":1238050,"beamDamp":50},
+          {"beamDeform":5000,"beamStrength":10000},
+          {"deformGroup":"backlight_break", "deformationTriggerRatio":0.001}
+          {"breakGroup":"backlight"},
+          ["rf4","tb1"],
+          ["rf4","tb1l"],
+          ["rf4","tb1r"],
+          ["rf4r","tb1"],
+          ["rf4l","tb1"],
+
+          ["tb1r","rf4l"],
+          ["tb1l","rf4r"],
+          ["p6r","p6l"],
+
+          ["p6r","rf4l"],
+          ["p6r","tb1"],
+          ["p6l","rf4r"],
+          ["p6l","tb1"],
+          {"breakGroup":""},
+          {"deformGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    
+}
+//"eind"
+
+"coupe_rear_window_louvre_acrylic": {
+//"begin"
+    "information":{
+        "authors":"Jesper, AKA D-TROXX",
+        "name":"Acrylic Louvre",
+		"value":350,
+    }
+    "slotType" : "coupe_rear_window",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"], 
+         ["coupe_backlight_louvre_1_acrylic", ["coupe_body"]],
+		 //glass        
+         {"deformGroup":"backlight_break", "deformMaterialBase":"coupe_glass", "deformMaterialDamaged":"coupe_glass_dmg"}
+         ["coupe_backlight", ["coupe_body"],[]{"deformSound":"GlassBreakSound9", "deformVolume":0.8}],
+         {"deformGroup":"backlight_break", "deformMaterialBase":"coupe_glass_int", "deformMaterialDamaged":"coupe_glass_dmg"}
+         ["coupe_backlight_int", ["coupe_body"]],
+		 {"deformGroup":""}
+    ],
+	"beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+	      //rear window
+          {"beamSpring":1238050,"beamDamp":50},
+          {"beamDeform":5000,"beamStrength":10000},
+          {"deformGroup":"backlight_break", "deformationTriggerRatio":0.001}
+          {"breakGroup":"backlight"},
+          ["rf4","tb1"],
+          ["rf4","tb1l"],
+          ["rf4","tb1r"],
+          ["rf4r","tb1"],
+          ["rf4l","tb1"],
+
+          ["tb1r","rf4l"],
+          ["tb1l","rf4r"],
+          ["p6r","p6l"],
+
+          ["p6r","rf4l"],
+          ["p6r","tb1"],
+          ["p6l","rf4r"],
+          ["p6l","tb1"],
+          {"breakGroup":""},
+          {"deformGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    
+}
+//"eind"
+
+"coupe_rear_window_louvre_black": {
+//"begin"
+    "information":{
+        "authors":"Jesper, AKA D-TROXX",
+        "name":"Plastic Louvre",
+		"value":200,
+    }
+    "slotType" : "coupe_rear_window",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"], 
+         ["coupe_backlight_louvre_1_black", ["coupe_body"]],
+		 //glass        
+		 {"deformGroup":"backlight_break", "deformMaterialBase":"coupe_glass", "deformMaterialDamaged":"coupe_glass_dmg"}
+         ["coupe_backlight", ["coupe_body"],[]{"deformSound":"GlassBreakSound9", "deformVolume":0.8}],
+         {"deformGroup":"backlight_break", "deformMaterialBase":"coupe_glass_int", "deformMaterialDamaged":"coupe_glass_dmg"}
+         ["coupe_backlight_int", ["coupe_body"]],
+		 {"deformGroup":""}
+    ],
+	"beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+	      //rear window
+          {"beamSpring":1238050,"beamDamp":50},
+          {"beamDeform":5000,"beamStrength":10000},
+          {"deformGroup":"backlight_break", "deformationTriggerRatio":0.001}
+          {"breakGroup":"backlight"},
+          ["rf4","tb1"],
+          ["rf4","tb1l"],
+          ["rf4","tb1r"],
+          ["rf4r","tb1"],
+          ["rf4l","tb1"],
+
+          ["tb1r","rf4l"],
+          ["tb1l","rf4r"],
+          ["p6r","p6l"],
+
+          ["p6r","rf4l"],
+          ["p6r","tb1"],
+          ["p6l","rf4r"],
+          ["p6l","tb1"],
+          {"breakGroup":""},
+          {"deformGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    
+}
+//"eind"
+
+"coupe_ute_rear_window": {
+//"begin"
+    "information":{
+        "authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+        "name":"Rear Window",
+		"value":100,
+    }
+    "slotType" : "coupe_ute_rear_window",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //glass        
+         {"deformGroup":"coupe_ute_rear_window_break", "deformMaterialBase":"coupe_ute_glass", "deformMaterialDamaged":"coupe_ute_glass_dmg"}
+         ["coupe_ute_rear_window", ["coupe_body"]],
+		 {"deformGroup":"coupe_ute_rear_window_break", "deformMaterialBase":"coupe_ute_glass_int", "deformMaterialDamaged":"coupe_ute_glass_dmg"}
+         ["coupe_ute_rear_window_int", ["coupe_body"]],
+		 {"deformGroup":""}
+    ],
+	"beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"beamSpring":1238050,"beamDamp":50},
+          //rear window
+          {"deformGroup":"coupe_ute_rear_window_break", "deformationTriggerRatio":0.03}
+          {"beamDeform":4000,"beamStrength":5000},
+          {"breakGroup":"coupe_ute_rear_window_break"},
+          ["uw1","uw3"],
+          ["uw2r","uw2l"],
+		  ["uw1l","uw3r"],
+		  ["uw1r","uw3l"],
+		  ["uw2l","uw3r"],
+		  ["uw2r","uw3l"],
+		  ["uw1l","uw2r"],
+		  ["uw1r","uw2l"],
+          
+          {"breakGroup":""},
+          {"disableMeshBreaking":false},
+          {"breakGroup":""},
+          {"deformGroup":""},
+    ],
+    
+}
+//"eind"
+
+"coupe_ute_rear_window_dark": {
+//"begin"
+    "information":{
+        "authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+        "name":"Tinted Rear Window",
+		"value":100,
+    }
+    "slotType" : "coupe_ute_rear_window",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //glass        
+         {"deformGroup":"coupe_ute_rear_window_break", "deformMaterialBase":"coupe_ute_glass_dark", "deformMaterialDamaged":"coupe_ute_glass_dmg_dark"}
+         ["coupe_ute_rear_window_dark", ["coupe_body"]],
+		 {"deformGroup":"coupe_ute_rear_window_break", "deformMaterialBase":"coupe_ute_glass_dark_int", "deformMaterialDamaged":"coupe_ute_glass_dmg_dark"}
+         ["coupe_ute_rear_window_dark_int", ["coupe_body"]],
+		 {"deformGroup":""}
+    ],
+	"beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"beamSpring":1238050,"beamDamp":50},
+          //rear window
+          {"deformGroup":"coupe_ute_rear_window_break", "deformationTriggerRatio":0.03}
+          {"beamDeform":4000,"beamStrength":5000},
+          {"breakGroup":"coupe_ute_rear_window_break"},
+          ["uw1","uw3"],
+          ["uw2r","uw2l"],
+		  ["uw1l","uw3r"],
+		  ["uw1r","uw3l"],
+		  ["uw2l","uw3r"],
+		  ["uw2r","uw3l"],
+		  ["uw1l","uw2r"],
+		  ["uw1r","uw2l"],
+          
+          {"breakGroup":""},
+          {"disableMeshBreaking":false},
+          {"breakGroup":""},
+          {"deformGroup":""},
+    ],
+    
+}
+//"eind"
+
+}

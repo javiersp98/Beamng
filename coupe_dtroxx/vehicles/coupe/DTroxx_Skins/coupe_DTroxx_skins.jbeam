@@ -1,0 +1,33 @@
+{
+
+"coupe_skin_nfsps_sx": {
+    "information":{
+        "authors":"Jesper, AKA D-TROXX",
+        "name":"Ryan Cooper",
+        "value":250,
+    },
+    "slotType" : "paint_design",
+    "skinName" : "nfsps_sx",
+  },
+
+"coupe_skin_dunlop": {
+    "information":{
+        "authors":"Jesper, AKA D-TROXX",
+        "name":"Dunlop",
+        "value":250,
+    },
+    "slotType" : "paint_design",
+    "skinName" : "dunlop",
+  },
+
+  "coupe_skin_color_trim": {
+    "information":{
+        "authors":"Jesper, AKA D-TROXX",
+        "name":"Body Colored Trim 2",
+        "value":1200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "color_trim",
+  }
+  
+}

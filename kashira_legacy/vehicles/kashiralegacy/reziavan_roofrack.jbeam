@@ -1,0 +1,18 @@
+{
+"reziavan_roofrack": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Roof Rack",
+        "value":120,
+    }
+    "slotType" : "reziavan_roofrack",
+    "slots": [
+        ["type", "default", "description"]
+	["reziavan_roofitem", "", "Roof Item"]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_roofrack", ["reziavan_body"]],
+    ],
+}
+}

@@ -1,0 +1,216 @@
+{
+"van_eu_lightbar": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"EU Light Bar",
+        "value":800,
+    }
+    "slotType" : "van_lightbar",
+	"slots": [
+        ["type", "default", "description"]
+        ["soundscape_siren","soundscape_siren_10", "Siren Audio"],
+    ],
+    "controller": [
+        ["fileName"],
+        ["lightbar", {
+            "defaultModeIndex": 1,
+            "modes": [
+                ["name", "config"]
+                ["Chase", [
+                    ["electric", "value", "duration"],
+                        ["lightbar_r", 1, 0.1],
+                        ["lightbar_r", 0, 0.07],
+                        ["lightbar_r", 1, 0.1],
+                        ["lightbar_r", 0, 0.2],
+
+                        ["lightbar_l", 0, 0.3],
+                        ["lightbar_l", 1, 0.1],
+                        ["lightbar_l", 0, 0.07],
+                        ["lightbar_l", 1, 0.1],
+
+                        ["lightbar_b", 1, 0.1],
+                        ["lightbar_b", 0, 0.1],
+                        ["lightbar_b", 1, 0.05],
+                        ["lightbar_b", 0, 0.05],
+                        ["lightbar_b", 1, 0.2],
+                        ["lightbar_b", 0, 0.35],
+                    ],
+                ],
+            ],
+        }],
+    ],
+    "glowMap":{
+            "eur_lightbar_b1":                   {"simpleFunction":"lightbar_l", "off":"eur_lightbar_b1", "on":"eur_lightbar_on"},
+            "eur_lightbar_b2":                   {"simpleFunction":"lightbar_r", "off":"eur_lightbar_b2", "on":"eur_lightbar_on"},
+            "eur_lightbar_blueglass_l":          {"simpleFunction":"lightbar_l", "off":"eur_lightbar_blueglass_l", "on":"eur_lightbar_blueglass_on"},
+            "eur_lightbar_blueglass_r":          {"simpleFunction":"lightbar_r", "off":"eur_lightbar_blueglass_r", "on":"eur_lightbar_blueglass_on"},
+            "eur_lightbar_sign":                 {"simpleFunction":"lightbar", "off":"eur_lightbar_sign", "on":"eur_lightbar_sign_on"},
+            "mod_lightbar_b1":                   {"simpleFunction":"lightbar_b", "off":"mod_lightbar_b1", "on":"mod_lightbar_on"},
+        },
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightRange":0
+            "lightColor":{"r":0, "g":0, "b":255, "a":255}
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.5
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+        }
+        ["lightbar_r"    , "SPOTLIGHT"        , "van_lightbar_2r", "van_lightbar_2", "van_lightbar_4r", {"x":90, "y":90, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":-0.1},"deformGroup":"lightbar_R"}],
+        ["lightbar_l"    , "SPOTLIGHT"        , "van_lightbar_2l", "van_lightbar_2", "van_lightbar_4l", {"x":90, "y":90, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0.0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.2, "y":0.5, "z":0.1},"deformGroup":"lightbar_R"}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+        ["eur_lightbar", ["van_body"], [], {"pos":{"x": 0.0, "y":-0.13, "z":2.05}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.45, "y":1.35, "z":1.35}}],
+        ["eur_lightbar_blueglass", ["van_body"], [], {"pos":{"x": 0.0, "y":-0.13, "z":2.05}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.45, "y":1.35, "z":1.35}}],
+        ["eur_lightbar_lights", ["van_body"], [], {"pos":{"x": 0.0, "y":-0.13, "z":2.05}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.45, "y":1.35, "z":1.35}}],
+        ["eur_lightbar_sign", ["van_body"], [], {"pos":{"x": 0.0, "y":-0.13, "z":2.05}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.45, "y":1.35, "z":1.35}}],
+
+    ],
+     "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"group":"van_lightbar"},
+         {"selfCollision":true}
+         {"collision":true}
+         {"nodeWeight":0.76},
+         {"frictionCoef":0.7},
+         {"nodeMaterial":"|NM_METAL"},
+         ["van_lightbar_1", 0.15000, 0.26854, 1.57489],
+         ["van_lightbar_2", 0.15000, 0.26854, 1.52489],
+         ["van_lightbar_3", 0.15000, 0.54854, 1.57489],
+         ["van_lightbar_4", 0.15000, 0.54854, 1.52489],
+
+         ["van_lightbar_1l", 0.65000, 0.26854, 1.57489],
+         ["van_lightbar_2l", 0.65000, 0.26854, 1.50489],
+         ["van_lightbar_3l", 0.65000, 0.54854, 1.57489],
+         ["van_lightbar_4l", 0.65000, 0.54854, 1.50489],
+
+         ["van_lightbar_1r", -0.65000, 0.26854, 1.57489],
+         ["van_lightbar_2r", -0.65000, 0.26854, 1.50489],
+         ["van_lightbar_3r", -0.65000, 0.54854, 1.57489],
+         ["van_lightbar_4r", -0.65000, 0.54854, 1.50489],
+         {"group":""},
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":300000,"beamDamp":60},
+          {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+		  //Main shape
+          ["van_lightbar_1","van_lightbar_2"],
+          ["van_lightbar_2","van_lightbar_3"],
+          ["van_lightbar_3","van_lightbar_4"],
+          ["van_lightbar_4","van_lightbar_1"],
+          ["van_lightbar_1","van_lightbar_3"],
+          ["van_lightbar_2","van_lightbar_4"],
+
+          ["van_lightbar_1l","van_lightbar_2l"],
+          ["van_lightbar_2l","van_lightbar_3l"],
+          ["van_lightbar_3l","van_lightbar_4l"],
+          ["van_lightbar_4l","van_lightbar_1l"],
+          ["van_lightbar_1l","van_lightbar_3l"],
+          ["van_lightbar_2l","van_lightbar_4l"],
+
+          ["van_lightbar_1r","van_lightbar_2r"],
+          ["van_lightbar_2r","van_lightbar_3r"],
+          ["van_lightbar_3r","van_lightbar_4r"],
+          ["van_lightbar_4r","van_lightbar_1r"],
+          ["van_lightbar_1r","van_lightbar_3r"],
+          ["van_lightbar_2r","van_lightbar_4r"],
+
+          ["van_lightbar_1r","van_lightbar_1"],
+          ["van_lightbar_2r","van_lightbar_2"],
+          ["van_lightbar_3r","van_lightbar_3"],
+          ["van_lightbar_4r","van_lightbar_4"],
+
+          ["van_lightbar_1l","van_lightbar_1"],
+          ["van_lightbar_2l","van_lightbar_2"],
+          ["van_lightbar_3l","van_lightbar_3"],
+          ["van_lightbar_4l","van_lightbar_4"],
+
+		  //Center to left cross-beams
+          ["van_lightbar_4l","van_lightbar_3"],
+          ["van_lightbar_3l","van_lightbar_4"],
+          ["van_lightbar_3","van_lightbar_1l"],
+          ["van_lightbar_3l","van_lightbar_1"],
+          ["van_lightbar_1","van_lightbar_2l"],
+          ["van_lightbar_2","van_lightbar_1l"],
+          ["van_lightbar_2l","van_lightbar_4"],
+          ["van_lightbar_4l","van_lightbar_2"],
+
+          ["van_lightbar_4l","van_lightbar_1"],
+          ["van_lightbar_2l","van_lightbar_3"],
+          ["van_lightbar_4","van_lightbar_1l"],
+          ["van_lightbar_2","van_lightbar_3l"],
+
+		  //Center to right cross-beams
+          ["van_lightbar_4r","van_lightbar_3"],
+          ["van_lightbar_3r","van_lightbar_4"],
+          ["van_lightbar_3","van_lightbar_1r"],
+          ["van_lightbar_3r","van_lightbar_1"],
+          ["van_lightbar_1","van_lightbar_2r"],
+          ["van_lightbar_2","van_lightbar_1r"],
+          ["van_lightbar_2r","van_lightbar_4"],
+          ["van_lightbar_4r","van_lightbar_2"],
+
+          ["van_lightbar_4r","van_lightbar_1"],
+          ["van_lightbar_2r","van_lightbar_3"],
+          ["van_lightbar_4","van_lightbar_1r"],
+          ["van_lightbar_2","van_lightbar_3r"],
+
+          {"beamSpring":300000,"beamDamp":60},
+          {"beamDeform":30000,"beamStrength":5000},
+		  //To body
+          {"breakGroup":"van_lightbar_breakl"},
+          ["van_lightbar_2l","rf3l"],
+          ["van_lightbar_2l","rf4l"],
+          ["van_lightbar_2l","rf3"],
+          ["van_lightbar_2l","rf3"],
+          ["van_lightbar_4l","rf3r"],
+          ["van_lightbar_4l","rf4l"],
+          ["van_lightbar_4l","rf3"],
+          ["van_lightbar_4l","rf3"],
+
+         
+
+          {"breakGroup":"van_lightbar_breakr"},
+          ["van_lightbar_2r","rf3r"],
+          ["van_lightbar_2r","rf4r"],
+          ["van_lightbar_2r","rf3"],
+          ["van_lightbar_2r","rf3"],
+          ["van_lightbar_4r","rf3r"],
+          ["van_lightbar_4r","rf4r"],
+          ["van_lightbar_4r","rf3"],
+          ["van_lightbar_4r","rf3"],
+
+        ["van_lightbar_4","rf4l"],
+		    ["van_lightbar_4","rf4r"],
+			 ["van_lightbar_2","rf4l"],
+		    ["van_lightbar_2","rf4r"],
+
+          {"breakGroup":""},
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "quads": [
+            ["id1:","id2:","id3:","id4:"],
+            {"group":"van_lightbar"},
+            {"dragCoef":10},
+            ["van_lightbar_3l","van_lightbar_4l","van_lightbar_4","van_lightbar_3"],
+            ["van_lightbar_1l","van_lightbar_3l","van_lightbar_3","van_lightbar_1"],
+            ["van_lightbar_1l","van_lightbar_2l","van_lightbar_4l","van_lightbar_3l"],
+            ["van_lightbar_1","van_lightbar_2","van_lightbar_2l","van_lightbar_1l"],
+            ["van_lightbar_4l","van_lightbar_2l","van_lightbar_2","van_lightbar_4"],
+
+            ["van_lightbar_3","van_lightbar_4","van_lightbar_4r","van_lightbar_3r"],
+            ["van_lightbar_1","van_lightbar_3","van_lightbar_3r","van_lightbar_1r"],
+            ["van_lightbar_3r","van_lightbar_4r","van_lightbar_2r","van_lightbar_1r"],
+            ["van_lightbar_1r","van_lightbar_2r","van_lightbar_2","van_lightbar_1"],
+            ["van_lightbar_4","van_lightbar_2","van_lightbar_2r","van_lightbar_4r"],
+
+
+            {"group":""},
+    ],
+}
+}

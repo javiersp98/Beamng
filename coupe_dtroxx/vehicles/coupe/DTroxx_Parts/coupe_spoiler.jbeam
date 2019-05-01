@@ -1,0 +1,1056 @@
+{
+
+"coupe_HS_spoiler_L": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Race Spoiler ",
+		"value":500,
+	}
+    "slotType" : "coupe_spoiler",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_HS_spoiler_L", ["coupe_spoiler"]],
+	],
+	
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--TRUNK--
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"frictionCoef":0.5},
+		 {"group":"coupe_spoiler"},
+		 {"collision":true},
+		 {"nodeWeight":0.28},
+		 {"selfCollision":true},
+		 
+		 ["sp2rr", -0.7, 1.65, 0.95],
+		 ["sp2r", -0.63, 1.90, 1.22],
+		 ["sp2l", 0.63, 1.90, 1.22],
+		 ["sp2ll", 0.7, 1.65, 0.95],
+		 
+		 ["sp3rr", -0.68, 2.05, 0.90],
+		 ["sp3r", -0.63, 2.11, 1.22],
+		 ["sp3", 0.0, 2.15, 1.23],
+		 ["sp3l", 0.63, 2.11, 1.22],
+		 ["sp3ll", 0.68, 2.05, 0.90],
+		 {"group":""},
+		 
+		 
+	],
+	 "beams": [
+          ["id1:", "id2:"],
+           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //left wing support
+          {"beamSpring":165000,"beamDamp":25},
+          {"beamDeform":"FLT_MAX","beamStrength":10000},
+          ["sp2ll", "sp2l"],
+          ["sp2ll", "sp3ll"],
+          ["sp2ll", "sp3ll"],
+          ["sp2ll", "sp3l"],
+          ["sp3ll", "sp3l"],
+          ["sp3ll", "sp2l"],
+          
+          ["sp2l", "sp3l"],
+          ["sp2l", "sp3"],
+          
+          ["sp3l", "sp3"],
+          
+          ["sp2rr", "sp2r"],
+          ["sp2rr", "sp3rr"],
+          ["sp2rr", "sp3rr"],
+          ["sp2rr", "sp3r"],
+          ["sp3rr", "sp3r"],
+          ["sp3rr", "sp2r"],
+          
+          ["sp2r", "sp3r"],
+          ["sp2r", "sp3"],
+          
+          ["sp3r", "sp3"],
+          
+          ["sp2l", "sp2r"],
+          
+          //wing rigids
+          ["sp3ll", "sp3"],
+          ["sp3ll", "sp3r"],
+          ["sp3ll", "sp3rr"],
+          ["sp3ll", "sp2r"],
+          ["sp3ll", "sp2rr"],
+          ["sp2ll", "sp2r"],
+          ["sp2ll", "sp2rr"],
+          ["sp2ll", "sp3"],
+          ["sp2ll", "sp3r"],
+          ["sp2ll", "sp3rr"],
+          
+          ["sp3rr", "sp3"],
+          ["sp3rr", "sp3l"],
+          ["sp3rr", "sp2l"],
+          ["sp2rr", "sp2l"],
+          ["sp2rr", "sp3"],
+          ["sp2rr", "sp3l"],
+          
+          //attachment left
+          {"beamSpring":165000,"beamDamp":50},
+          {"beamDeform":1675,"beamStrength":2620},
+          {"breakGroup":"coupe_spoiler_attach_l"},
+          ["sp3ll", "t3ll"],
+          ["sp2ll", "t3ll"],
+          
+          ["sp3ll", "t2ll"],
+          ["sp2ll", "t2ll"],
+          
+          ["sp3l", "t3ll"],
+          ["sp2l", "t3ll"],
+          
+          ["sp3l", "t2ll"],
+          ["sp2l", "t2ll"],
+          
+          ["sp3", "t2ll"],
+          ["sp3", "t3ll"],
+          
+          //attachment right
+          {"beamSpring":165000,"beamDamp":25},
+          {"beamDeform":1675,"beamStrength":2620},
+          {"breakGroup":"coupe_spoiler_attach_r"},
+          ["sp3rr", "t3rr"],
+          ["sp2rr", "t3rr"],
+          
+          ["sp3rr", "t2rr"],
+          ["sp2rr", "t2rr"],
+          
+          
+          ["sp3r", "t3rr"],
+          ["sp2r", "t3rr"],
+          
+          ["sp3r", "t2rr"],
+          ["sp2r", "t2rr"],
+          
+          ["sp3", "t2rr"],
+          ["sp3", "t3rr"],
+          
+          {"breakGroup":""},
+          
+          
+          
+    ],
+    
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"dragCoef":10},
+        ["sp2ll","sp3l","sp2l",{"liftCoef":50}],
+        ["sp2ll","sp3ll","sp3ll",{"liftCoef":50}],
+        ["sp2ll","sp3l","sp2l",{"liftCoef":50}],
+        ["sp2l","sp3l","sp3",{"liftCoef":50}],
+        
+        ["sp2l","sp3","sp2r",{"liftCoef":50}],
+        ["sp2r","sp3","sp3r",{"liftCoef":50}],
+        ["sp2r","sp3r","sp2rr",{"liftCoef":50}],
+        ["sp2rr","sp3r","sp3rr",{"liftCoef":50}],
+        
+            
+    ],
+}
+//"eind"
+
+"coupe_HS_spoiler_L_HCF": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"CF Race Spoiler ",
+		"value":700,
+	}
+    "slotType" : "coupe_spoiler",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_HS_spoiler_L_HCF", ["coupe_spoiler"]],
+	],
+	
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--TRUNK--
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"frictionCoef":0.5},
+		 {"group":"coupe_spoiler"},
+		 {"collision":true},
+		 {"nodeWeight":0.24},
+		 {"selfCollision":true},
+		 
+		 ["sp2rr", -0.7, 1.65, 0.95],
+		 ["sp2r", -0.63, 1.90, 1.22],
+		 ["sp2l", 0.63, 1.90, 1.22],
+		 ["sp2ll", 0.7, 1.65, 0.95],
+		 
+		 ["sp3rr", -0.68, 2.05, 0.90],
+		 ["sp3r", -0.63, 2.11, 1.22],
+		 ["sp3", 0.0, 2.15, 1.23],
+		 ["sp3l", 0.63, 2.11, 1.22],
+		 ["sp3ll", 0.68, 2.05, 0.90],
+		 {"group":""},
+		 
+		 
+	],
+	 "beams": [
+          ["id1:", "id2:"],
+           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //left wing support
+          {"beamSpring":165000,"beamDamp":25},
+          {"beamDeform":"FLT_MAX","beamStrength":10000},
+          ["sp2ll", "sp2l"],
+          ["sp2ll", "sp3ll"],
+          ["sp2ll", "sp3ll"],
+          ["sp2ll", "sp3l"],
+          ["sp3ll", "sp3l"],
+          ["sp3ll", "sp2l"],
+          
+          ["sp2l", "sp3l"],
+          ["sp2l", "sp3"],
+          
+          ["sp3l", "sp3"],
+          
+          ["sp2rr", "sp2r"],
+          ["sp2rr", "sp3rr"],
+          ["sp2rr", "sp3rr"],
+          ["sp2rr", "sp3r"],
+          ["sp3rr", "sp3r"],
+          ["sp3rr", "sp2r"],
+          
+          ["sp2r", "sp3r"],
+          ["sp2r", "sp3"],
+          
+          ["sp3r", "sp3"],
+          
+          ["sp2l", "sp2r"],
+          
+          //wing rigids
+          ["sp3ll", "sp3"],
+          ["sp3ll", "sp3r"],
+          ["sp3ll", "sp3rr"],
+          ["sp3ll", "sp2r"],
+          ["sp3ll", "sp2rr"],
+          ["sp2ll", "sp2r"],
+          ["sp2ll", "sp2rr"],
+          ["sp2ll", "sp3"],
+          ["sp2ll", "sp3r"],
+          ["sp2ll", "sp3rr"],
+          
+          ["sp3rr", "sp3"],
+          ["sp3rr", "sp3l"],
+          ["sp3rr", "sp2l"],
+          ["sp2rr", "sp2l"],
+          ["sp2rr", "sp3"],
+          ["sp2rr", "sp3l"],
+          
+          //attachment left
+          {"beamSpring":165000,"beamDamp":50},
+          {"beamDeform":1675,"beamStrength":2620},
+          {"breakGroup":"coupe_spoiler_attach_l"},
+          ["sp3ll", "t3ll"],
+          ["sp2ll", "t3ll"],
+          
+          ["sp3ll", "t2ll"],
+          ["sp2ll", "t2ll"],
+          
+          ["sp3l", "t3ll"],
+          ["sp2l", "t3ll"],
+          
+          ["sp3l", "t2ll"],
+          ["sp2l", "t2ll"],
+          
+          ["sp3", "t2ll"],
+          ["sp3", "t3ll"],
+          
+          //attachment right
+          {"beamSpring":165000,"beamDamp":25},
+          {"beamDeform":1675,"beamStrength":2620},
+          {"breakGroup":"coupe_spoiler_attach_r"},
+          ["sp3rr", "t3rr"],
+          ["sp2rr", "t3rr"],
+          
+          ["sp3rr", "t2rr"],
+          ["sp2rr", "t2rr"],
+          
+          
+          ["sp3r", "t3rr"],
+          ["sp2r", "t3rr"],
+          
+          ["sp3r", "t2rr"],
+          ["sp2r", "t2rr"],
+          
+          ["sp3", "t2rr"],
+          ["sp3", "t3rr"],
+          
+          {"breakGroup":""},
+          
+          
+          
+    ],
+    
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"dragCoef":10},
+        ["sp2ll","sp3l","sp2l",{"liftCoef":50}],
+        ["sp2ll","sp3ll","sp3ll",{"liftCoef":50}],
+        ["sp2ll","sp3l","sp2l",{"liftCoef":50}],
+        ["sp2l","sp3l","sp3",{"liftCoef":50}],
+        
+        ["sp2l","sp3","sp2r",{"liftCoef":50}],
+        ["sp2r","sp3","sp3r",{"liftCoef":50}],
+        ["sp2r","sp3r","sp2rr",{"liftCoef":50}],
+        ["sp2rr","sp3r","sp3rr",{"liftCoef":50}],
+        
+            
+    ],
+}
+//"eind"
+
+"coupe_HS_spoiler_L_2": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Race Spoiler 2",
+		
+	}
+    "slotType" : "coupe_spoiler",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_HS_spoiler_L_2", ["coupe_spoiler"]],
+	],
+	
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--TRUNK--
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"frictionCoef":0.5},
+		 {"group":"coupe_spoiler"},
+		 {"collision":true},
+		 {"nodeWeight":0.25},
+		 {"selfCollision":true},
+		 
+		 ["sp2rr", -0.7, 1.65, 0.95],
+		 ["sp2r", -0.63, 1.90, 1.22],
+		 ["sp2l", 0.63, 1.90, 1.22],
+		 ["sp2ll", 0.7, 1.65, 0.95],
+		 
+		 ["sp3rr", -0.68, 2.05, 0.90],
+		 ["sp3r", -0.63, 2.11, 1.22],
+		 ["sp3", 0.0, 2.15, 1.23],
+		 ["sp3l", 0.63, 2.11, 1.22],
+		 ["sp3ll", 0.68, 2.05, 0.90],
+		 {"group":""},
+		 
+		 
+	],
+	 "beams": [
+          ["id1:", "id2:"],
+           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //left wing support
+          {"beamSpring":165000,"beamDamp":25},
+          {"beamDeform":"FLT_MAX","beamStrength":10000},
+          ["sp2ll", "sp2l"],
+          ["sp2ll", "sp3ll"],
+          ["sp2ll", "sp3ll"],
+          ["sp2ll", "sp3l"],
+          ["sp3ll", "sp3l"],
+          ["sp3ll", "sp2l"],
+          
+          ["sp2l", "sp3l"],
+          ["sp2l", "sp3"],
+          
+          ["sp3l", "sp3"],
+          
+          ["sp2rr", "sp2r"],
+          ["sp2rr", "sp3rr"],
+          ["sp2rr", "sp3rr"],
+          ["sp2rr", "sp3r"],
+          ["sp3rr", "sp3r"],
+          ["sp3rr", "sp2r"],
+          
+          ["sp2r", "sp3r"],
+          ["sp2r", "sp3"],
+          
+          ["sp3r", "sp3"],
+          
+          ["sp2l", "sp2r"],
+          
+          //wing rigids
+          ["sp3ll", "sp3"],
+          ["sp3ll", "sp3r"],
+          ["sp3ll", "sp3rr"],
+          ["sp3ll", "sp2r"],
+          ["sp3ll", "sp2rr"],
+          ["sp2ll", "sp2r"],
+          ["sp2ll", "sp2rr"],
+          ["sp2ll", "sp3"],
+          ["sp2ll", "sp3r"],
+          ["sp2ll", "sp3rr"],
+          
+          ["sp3rr", "sp3"],
+          ["sp3rr", "sp3l"],
+          ["sp3rr", "sp2l"],
+          ["sp2rr", "sp2l"],
+          ["sp2rr", "sp3"],
+          ["sp2rr", "sp3l"],
+          
+          //attachment left
+          {"beamSpring":165000,"beamDamp":50},
+          {"beamDeform":1675,"beamStrength":2620},
+          {"breakGroup":"coupe_spoiler_attach_l"},
+          ["sp3ll", "t3ll"],
+          ["sp2ll", "t3ll"],
+          
+          ["sp3ll", "t2ll"],
+          ["sp2ll", "t2ll"],
+          
+          ["sp3l", "t3ll"],
+          ["sp2l", "t3ll"],
+          
+          ["sp3l", "t2ll"],
+          ["sp2l", "t2ll"],
+          
+          ["sp3", "t2ll"],
+          ["sp3", "t3ll"],
+          
+          //attachment right
+          {"beamSpring":165000,"beamDamp":25},
+          {"beamDeform":1675,"beamStrength":2620},
+          {"breakGroup":"coupe_spoiler_attach_r"},
+          ["sp3rr", "t3rr"],
+          ["sp2rr", "t3rr"],
+          
+          ["sp3rr", "t2rr"],
+          ["sp2rr", "t2rr"],
+          
+          
+          ["sp3r", "t3rr"],
+          ["sp2r", "t3rr"],
+          
+          ["sp3r", "t2rr"],
+          ["sp2r", "t2rr"],
+          
+          ["sp3", "t2rr"],
+          ["sp3", "t3rr"],
+          
+          {"breakGroup":""},
+          
+          
+          
+    ],
+    
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"dragCoef":10},
+        ["sp2ll","sp3l","sp2l",{"liftCoef":50}],
+        ["sp2ll","sp3ll","sp3ll",{"liftCoef":50}],
+        ["sp2ll","sp3l","sp2l",{"liftCoef":50}],
+        ["sp2l","sp3l","sp3",{"liftCoef":50}],
+        
+        ["sp2l","sp3","sp2r",{"liftCoef":50}],
+        ["sp2r","sp3","sp3r",{"liftCoef":50}],
+        ["sp2r","sp3r","sp2rr",{"liftCoef":50}],
+        ["sp2rr","sp3r","sp3rr",{"liftCoef":50}],
+        
+            
+    ],
+}
+//"eind"
+
+"coupe_HS_spoiler_L_2_HCF": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"CF Race Spoiler 2",
+		"value":700,
+	}
+    "slotType" : "coupe_spoiler",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_HS_spoiler_L_2_HCF", ["coupe_spoiler"]],
+	],
+	
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--TRUNK--
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"frictionCoef":0.5},
+		 {"group":"coupe_spoiler"},
+		 {"collision":true},
+		 {"nodeWeight":0.23},
+		 {"selfCollision":true},
+		 
+		 ["sp2rr", -0.7, 1.65, 0.95],
+		 ["sp2r", -0.63, 1.90, 1.22],
+		 ["sp2l", 0.63, 1.90, 1.22],
+		 ["sp2ll", 0.7, 1.65, 0.95],
+		 
+		 ["sp3rr", -0.68, 2.05, 0.90],
+		 ["sp3r", -0.63, 2.11, 1.22],
+		 ["sp3", 0.0, 2.15, 1.23],
+		 ["sp3l", 0.63, 2.11, 1.22],
+		 ["sp3ll", 0.68, 2.05, 0.90],
+		 {"group":""},
+		 
+		 
+	],
+	 "beams": [
+          ["id1:", "id2:"],
+           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //left wing support
+          {"beamSpring":165000,"beamDamp":25},
+          {"beamDeform":"FLT_MAX","beamStrength":10000},
+          ["sp2ll", "sp2l"],
+          ["sp2ll", "sp3ll"],
+          ["sp2ll", "sp3ll"],
+          ["sp2ll", "sp3l"],
+          ["sp3ll", "sp3l"],
+          ["sp3ll", "sp2l"],
+          
+          ["sp2l", "sp3l"],
+          ["sp2l", "sp3"],
+          
+          ["sp3l", "sp3"],
+          
+          ["sp2rr", "sp2r"],
+          ["sp2rr", "sp3rr"],
+          ["sp2rr", "sp3rr"],
+          ["sp2rr", "sp3r"],
+          ["sp3rr", "sp3r"],
+          ["sp3rr", "sp2r"],
+          
+          ["sp2r", "sp3r"],
+          ["sp2r", "sp3"],
+          
+          ["sp3r", "sp3"],
+          
+          ["sp2l", "sp2r"],
+          
+          //wing rigids
+          ["sp3ll", "sp3"],
+          ["sp3ll", "sp3r"],
+          ["sp3ll", "sp3rr"],
+          ["sp3ll", "sp2r"],
+          ["sp3ll", "sp2rr"],
+          ["sp2ll", "sp2r"],
+          ["sp2ll", "sp2rr"],
+          ["sp2ll", "sp3"],
+          ["sp2ll", "sp3r"],
+          ["sp2ll", "sp3rr"],
+          
+          ["sp3rr", "sp3"],
+          ["sp3rr", "sp3l"],
+          ["sp3rr", "sp2l"],
+          ["sp2rr", "sp2l"],
+          ["sp2rr", "sp3"],
+          ["sp2rr", "sp3l"],
+          
+          //attachment left
+          {"beamSpring":165000,"beamDamp":50},
+          {"beamDeform":1675,"beamStrength":2620},
+          {"breakGroup":"coupe_spoiler_attach_l"},
+          ["sp3ll", "t3ll"],
+          ["sp2ll", "t3ll"],
+          
+          ["sp3ll", "t2ll"],
+          ["sp2ll", "t2ll"],
+          
+          ["sp3l", "t3ll"],
+          ["sp2l", "t3ll"],
+          
+          ["sp3l", "t2ll"],
+          ["sp2l", "t2ll"],
+          
+          ["sp3", "t2ll"],
+          ["sp3", "t3ll"],
+          
+          //attachment right
+          {"beamSpring":165000,"beamDamp":25},
+          {"beamDeform":1675,"beamStrength":2620},
+          {"breakGroup":"coupe_spoiler_attach_r"},
+          ["sp3rr", "t3rr"],
+          ["sp2rr", "t3rr"],
+          
+          ["sp3rr", "t2rr"],
+          ["sp2rr", "t2rr"],
+          
+          
+          ["sp3r", "t3rr"],
+          ["sp2r", "t3rr"],
+          
+          ["sp3r", "t2rr"],
+          ["sp2r", "t2rr"],
+          
+          ["sp3", "t2rr"],
+          ["sp3", "t3rr"],
+          
+          {"breakGroup":""},
+          
+          
+          
+    ],
+    
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"dragCoef":10},
+        ["sp2ll","sp3l","sp2l",{"liftCoef":50}],
+        ["sp2ll","sp3ll","sp3ll",{"liftCoef":50}],
+        ["sp2ll","sp3l","sp2l",{"liftCoef":50}],
+        ["sp2l","sp3l","sp3",{"liftCoef":50}],
+        
+        ["sp2l","sp3","sp2r",{"liftCoef":50}],
+        ["sp2r","sp3","sp3r",{"liftCoef":50}],
+        ["sp2r","sp3r","sp2rr",{"liftCoef":50}],
+        ["sp2rr","sp3r","sp3rr",{"liftCoef":50}],
+        
+            
+    ],
+}
+//"eind"
+
+"coupe_spoiler_custom_1": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Custom Spoiler 1 ",
+		"value":400,
+	}
+    "slotType" : "coupe_spoiler",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_spoiler_custom_1", ["coupe_spoiler"]],
+	],
+	
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--TRUNK--
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"frictionCoef":0.5},
+		 {"group":"coupe_spoiler"},
+		 {"collision":true},
+		 {"nodeWeight":0.25},
+		 {"selfCollision":true},
+		 
+		 ["sp2rr", -0.7, 1.85, 0.95],
+		 ["sp2r", -0.49, 1.90, 1.02],
+		 ["sp2l", 0.49, 1.90, 1.02],
+		 ["sp2ll", 0.7, 1.85, 0.95],
+		 
+		 ["sp3rr", -0.68, 2.00, 0.90],
+		 ["sp3r", -0.53, 2.11, 1.02],
+		 ["sp3", 0.0, 2.12, 1.03],
+		 ["sp3l", 0.53, 2.11, 1.02],
+		 ["sp3ll", 0.68, 2.00, 0.90],
+		 {"group":""},
+		 
+		 
+	],
+	 "beams": [
+          ["id1:", "id2:"],
+           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //left wing support
+          {"beamSpring":165000,"beamDamp":25},
+          {"beamDeform":"FLT_MAX","beamStrength":10000},
+          ["sp2ll", "sp2l"],
+          ["sp2ll", "sp3ll"],
+          ["sp2ll", "sp3ll"],
+          ["sp2ll", "sp3l"],
+          ["sp3ll", "sp3l"],
+          ["sp3ll", "sp2l"],
+          
+          ["sp2l", "sp3l"],
+          ["sp2l", "sp3"],
+          
+          ["sp3l", "sp3"],
+          
+          ["sp2rr", "sp2r"],
+          ["sp2rr", "sp3rr"],
+          ["sp2rr", "sp3rr"],
+          ["sp2rr", "sp3r"],
+          ["sp3rr", "sp3r"],
+          ["sp3rr", "sp2r"],
+          
+          ["sp2r", "sp3r"],
+          ["sp2r", "sp3"],
+          
+          ["sp3r", "sp3"],
+          
+          ["sp2l", "sp2r"],
+          
+          //wing rigids
+          ["sp3ll", "sp3"],
+          ["sp3ll", "sp3r"],
+          ["sp3ll", "sp3rr"],
+          ["sp3ll", "sp2r"],
+          ["sp3ll", "sp2rr"],
+          ["sp2ll", "sp2r"],
+          ["sp2ll", "sp2rr"],
+          ["sp2ll", "sp3"],
+          ["sp2ll", "sp3r"],
+          ["sp2ll", "sp3rr"],
+          
+          ["sp3rr", "sp3"],
+          ["sp3rr", "sp3l"],
+          ["sp3rr", "sp2l"],
+          ["sp2rr", "sp2l"],
+          ["sp2rr", "sp3"],
+          ["sp2rr", "sp3l"],
+          
+          //attachment left
+          {"beamSpring":165000,"beamDamp":50},
+          {"beamDeform":1675,"beamStrength":2620},
+          {"breakGroup":"coupe_spoiler_attach_l"},
+          ["sp3ll", "t3ll"],
+          ["sp2ll", "t3ll"],
+          
+          ["sp3ll", "t2ll"],
+          ["sp2ll", "t2ll"],
+          
+          ["sp3l", "t3ll"],
+          ["sp2l", "t3ll"],
+          
+          ["sp3l", "t2ll"],
+          ["sp2l", "t2ll"],
+          
+          ["sp3", "t2ll"],
+          ["sp3", "t3ll"],
+          
+          //attachment right
+          {"beamSpring":165000,"beamDamp":25},
+          {"beamDeform":1675,"beamStrength":2620},
+          {"breakGroup":"coupe_spoiler_attach_r"},
+          ["sp3rr", "t3rr"],
+          ["sp2rr", "t3rr"],
+          
+          ["sp3rr", "t2rr"],
+          ["sp2rr", "t2rr"],
+          
+          
+          ["sp3r", "t3rr"],
+          ["sp2r", "t3rr"],
+          
+          ["sp3r", "t2rr"],
+          ["sp2r", "t2rr"],
+          
+          ["sp3", "t2rr"],
+          ["sp3", "t3rr"],
+          
+          {"breakGroup":""},
+          
+          
+          
+    ],
+    
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"dragCoef":10},
+        ["sp2ll","sp3l","sp2l",{"liftCoef":50}],
+        ["sp2ll","sp3ll","sp3ll",{"liftCoef":50}],
+        ["sp2ll","sp3l","sp2l",{"liftCoef":50}],
+        ["sp2l","sp3l","sp3",{"liftCoef":50}],
+        
+        ["sp2l","sp3","sp2r",{"liftCoef":50}],
+        ["sp2r","sp3","sp3r",{"liftCoef":50}],
+        ["sp2r","sp3r","sp2rr",{"liftCoef":50}],
+        ["sp2rr","sp3r","sp3rr",{"liftCoef":50}],
+        
+            
+    ],
+}
+//"eind"
+
+"coupe_spoiler_custom_2": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Custom Spoiler 2",
+		"value":400,
+	}
+    "slotType" : "coupe_spoiler",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_spoiler_custom_2", ["coupe_spoiler"]],
+	],
+	
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 //--TRUNK--
+		 {"nodeMaterial":"|NM_PLASTIC"},
+		 {"frictionCoef":0.5},
+		 {"group":"coupe_spoiler"},
+		 {"collision":true},
+		 {"nodeWeight":0.25},
+		 {"selfCollision":true},
+		 
+		 ["sp2rr", -0.65, 1.82, 0.95],
+		 ["sp2r", -0.56, 1.95, 1.06],
+		 ["sp2l", 0.56, 1.95, 1.06],
+		 ["sp2ll", 0.65, 1.82, 0.95],
+		 
+		 ["sp3rr", -0.64, 2.086, 0.90],
+		 ["sp3r", -0.56, 2.13, 1.06],
+		 ["sp3", 0.0, 2.18, 1.11],
+		 ["sp3l", 0.56, 2.13, 1.06],
+		 ["sp3ll", 0.64, 2.08, 0.90],
+		 {"group":""},
+		 
+		 
+	],
+	 "beams": [
+          ["id1:", "id2:"],
+           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //left wing support
+          {"beamSpring":165000,"beamDamp":25},
+          {"beamDeform":"FLT_MAX","beamStrength":10000},
+          ["sp2ll", "sp2l"],
+          ["sp2ll", "sp3ll"],
+          ["sp2ll", "sp3ll"],
+          ["sp2ll", "sp3l"],
+          ["sp3ll", "sp3l"],
+          ["sp3ll", "sp2l"],
+          
+          ["sp2l", "sp3l"],
+          ["sp2l", "sp3"],
+          
+          ["sp3l", "sp3"],
+          
+          ["sp2rr", "sp2r"],
+          ["sp2rr", "sp3rr"],
+          ["sp2rr", "sp3rr"],
+          ["sp2rr", "sp3r"],
+          ["sp3rr", "sp3r"],
+          ["sp3rr", "sp2r"],
+          
+          ["sp2r", "sp3r"],
+          ["sp2r", "sp3"],
+          
+          ["sp3r", "sp3"],
+          
+          ["sp2l", "sp2r"],
+          
+          //wing rigids
+          ["sp3ll", "sp3"],
+          ["sp3ll", "sp3r"],
+          ["sp3ll", "sp3rr"],
+          ["sp3ll", "sp2r"],
+          ["sp3ll", "sp2rr"],
+          ["sp2ll", "sp2r"],
+          ["sp2ll", "sp2rr"],
+          ["sp2ll", "sp3"],
+          ["sp2ll", "sp3r"],
+          ["sp2ll", "sp3rr"],
+          
+          ["sp3rr", "sp3"],
+          ["sp3rr", "sp3l"],
+          ["sp3rr", "sp2l"],
+          ["sp2rr", "sp2l"],
+          ["sp2rr", "sp3"],
+          ["sp2rr", "sp3l"],
+          
+          //attachment left
+          {"beamSpring":165000,"beamDamp":50},
+          {"beamDeform":1675,"beamStrength":2620},
+          {"breakGroup":"coupe_spoiler_attach_l"},
+          ["sp3ll", "t3ll"],
+          ["sp2ll", "t3ll"],
+          
+          ["sp3ll", "t2ll"],
+          ["sp2ll", "t2ll"],
+          
+          ["sp3l", "t3ll"],
+          ["sp2l", "t3ll"],
+          
+          ["sp3l", "t2ll"],
+          ["sp2l", "t2ll"],
+          
+          ["sp3", "t2ll"],
+          ["sp3", "t3ll"],
+          
+          //attachment right
+          {"beamSpring":165000,"beamDamp":25},
+          {"beamDeform":1675,"beamStrength":2620},
+          {"breakGroup":"coupe_spoiler_attach_r"},
+          ["sp3rr", "t3rr"],
+          ["sp2rr", "t3rr"],
+          
+          ["sp3rr", "t2rr"],
+          ["sp2rr", "t2rr"],
+          
+          
+          ["sp3r", "t3rr"],
+          ["sp2r", "t3rr"],
+          
+          ["sp3r", "t2rr"],
+          ["sp2r", "t2rr"],
+          
+          ["sp3", "t2rr"],
+          ["sp3", "t3rr"],
+          
+          {"breakGroup":""},
+          
+          
+          
+    ],
+    
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"dragCoef":10},
+        ["sp2ll","sp3l","sp2l",{"liftCoef":50}],
+        ["sp2ll","sp3ll","sp3ll",{"liftCoef":50}],
+        ["sp2ll","sp3l","sp2l",{"liftCoef":50}],
+        ["sp2l","sp3l","sp3",{"liftCoef":50}],
+        
+        ["sp2l","sp3","sp2r",{"liftCoef":50}],
+        ["sp2r","sp3","sp3r",{"liftCoef":50}],
+        ["sp2r","sp3r","sp2rr",{"liftCoef":50}],
+        ["sp2rr","sp3r","sp3rr",{"liftCoef":50}],
+        
+            
+    ],
+}
+//"eind"
+
+"coupe_spoiler_gtr": {
+//"begin"
+    "information":{
+        "authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+        "name":"GTR Spoiler",
+        "value":900,
+    }
+    "slotType" : "coupe_spoiler",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_spoiler_gtr", ["coupe_spoiler"]],
+    ],
+    
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--TRUNK--
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"group":"coupe_spoiler"},
+         {"collision":true},
+         {"nodeWeight":0.35},
+         {"selfCollision":true},
+         
+         ["sp2rr", -0.78, 1.99, 1.07],
+         ["sp2r", -0.27, 1.94, 1.08],
+         ["sp2l", 0.27, 1.94, 1.08],
+         ["sp2ll", 0.78, 1.99, 1.07],
+         
+         ["sp3rr", -0.78, 2.15, 1.09],
+         ["sp3r", -0.36, 2.13, 1.1],
+         ["sp3", 0.0, 2.15, 1.11],
+         ["sp3l", 0.36, 2.13, 1.1],
+         ["sp3ll", 0.78, 2.15, 1.09],
+         {"group":""},
+         
+         
+    ],
+     "beams": [
+          ["id1:", "id2:"],
+           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //left wing support
+          {"beamSpring":165000,"beamDamp":25},
+          {"beamDeform":"FLT_MAX","beamStrength":10000},
+          ["sp2ll", "sp2l"],
+          ["sp2ll", "sp3ll"],
+          ["sp2ll", "sp3ll"],
+          ["sp2ll", "sp3l"],
+          ["sp3ll", "sp3l"],
+          ["sp3ll", "sp2l"],
+          
+          ["sp2l", "sp3l"],
+          ["sp2l", "sp3"],
+          
+          ["sp3l", "sp3"],
+          
+          ["sp2rr", "sp2r"],
+          ["sp2rr", "sp3rr"],
+          ["sp2rr", "sp3rr"],
+          ["sp2rr", "sp3r"],
+          ["sp3rr", "sp3r"],
+          ["sp3rr", "sp2r"],
+          
+          ["sp2r", "sp3r"],
+          ["sp2r", "sp3"],
+          
+          ["sp3r", "sp3"],
+          
+          ["sp2l", "sp2r"],
+          
+          //wing rigids
+          ["sp3ll", "sp3"],
+          ["sp3ll", "sp3r"],
+          ["sp3ll", "sp3rr"],
+          ["sp3ll", "sp2r"],
+          ["sp3ll", "sp2rr"],
+          ["sp2ll", "sp2r"],
+          ["sp2ll", "sp2rr"],
+          ["sp2ll", "sp3"],
+          ["sp2ll", "sp3r"],
+          ["sp2ll", "sp3rr"],
+          
+          ["sp3rr", "sp3"],
+          ["sp3rr", "sp3l"],
+          ["sp3rr", "sp2l"],
+          ["sp2rr", "sp2l"],
+          ["sp2rr", "sp3"],
+          ["sp2rr", "sp3l"],
+          
+          //attachment left
+          {"beamSpring":165000,"beamDamp":50},
+          {"beamDeform":1675,"beamStrength":2620},
+          {"breakGroup":"coupe_spoiler_attach_l"},
+          ["sp3ll", "t3ll"],
+          ["sp2ll", "t3ll"],
+          
+          ["sp3ll", "t2ll"],
+          ["sp2ll", "t2ll"],
+          
+          ["sp3l", "t3ll"],
+          ["sp2l", "t3ll"],
+          
+          ["sp3l", "t2ll"],
+          ["sp2l", "t2ll"],
+          
+          ["sp3", "t2ll"],
+          ["sp3", "t3ll"],
+          
+          //attachment right
+          {"beamSpring":165000,"beamDamp":25},
+          {"beamDeform":1675,"beamStrength":2620},
+          {"breakGroup":"coupe_spoiler_attach_r"},
+          ["sp3rr", "t3rr"],
+          ["sp2rr", "t3rr"],
+          
+          ["sp3rr", "t2rr"],
+          ["sp2rr", "t2rr"],
+          
+          
+          ["sp3r", "t3rr"],
+          ["sp2r", "t3rr"],
+          
+          ["sp3r", "t2rr"],
+          ["sp2r", "t2rr"],
+          
+          ["sp3", "t2rr"],
+          ["sp3", "t3rr"],
+          
+          {"breakGroup":""},
+
+    ],
+    
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"dragCoef":15},
+        ["sp2ll","sp3ll","sp3ll",{"liftCoef":70}],
+        ["sp2ll","sp3l","sp2l",{"liftCoef":70}],
+        ["sp2l","sp3l","sp3",{"liftCoef":70}],
+        
+        ["sp2l","sp3","sp2r",{"liftCoef":70}],
+        ["sp2r","sp3","sp3r",{"liftCoef":70}],
+        ["sp2r","sp3r","sp2rr",{"liftCoef":70}],
+        ["sp2rr","sp3r","sp3rr",{"liftCoef":70}],
+   
+    ],
+}
+//"eind"
+
+}

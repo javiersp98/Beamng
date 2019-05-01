@@ -5,14 +5,19 @@
         "name":"Four-Barrel Shaker Intake",
         "value":500,
     }
-    "slotType" : "barstow_intake_v8_423",
+    "slotType" : "barstow_intake_v8",
     "mainEngine":{
-        "burnEfficiency":[
-            [0, 0.08],
-            [0.05, 0.18],
-            [0.4, 0.25],
-            [0.7, 0.32],
-            [1, 0.25],
+        "torqueModIntake":[
+            ["rpm", "torque"],
+            [0,    0 ],
+            [1000, 3.3 ],
+            [2000, 11],
+            [3000, 19],
+            [4000, 31],
+            [5000, 44],
+            [6000, 59],
+            [7000, 73],
+            [8000, 86],
         ],
         "instantAfterFireCoef": 0.75,
         "sustainedAfterFireCoef": 1.0,

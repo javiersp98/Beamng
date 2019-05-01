@@ -1,0 +1,1052 @@
+{
+"coupe_engine_F4_20": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"2.0L F4 Engine",
+		"value":6000,
+	}
+    "slotType" : "coupe_engine_DT",
+	"slots": [
+		["type", "default", "description"]
+		["coupe_F4_exhaust","coupe_F4_exhaust", "Exhaust"],
+		["coupe_F4_transmission","coupe_F4_transmission_5M", "Transmission"],
+		["coupe_F4_enginetuning","coupe_F4_stock", "Engine Tuning",{"coreSlot":true}],
+		["coupe_F4_radiator","coupe_F4_radiator", "Radiator"],
+		["n2o_system","", "Nitrous Oxide System"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_F4_engine", ["coupe_engine"]],
+		 ["coupe_F4_engbaycrap", ["coupe_body", "coupe_engine_bay", "coupe_rad"]],
+		 ["coupe_F4_engbaycrap_b", ["coupe_body", "coupe_engine_bay", "coupe_rad"]],
+	],
+	"powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["combustionEngine", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine":{
+        "torque":[
+            ["rpm", "torque"]
+            [0, 0],
+            [500, 97],
+            [1000, 131],
+            [2000, 166],
+            [3000, 191],
+            [3500, 204],
+            [4000, 210],
+            [4500, 215],
+            [5000, 216],
+            [5500, 217],
+            [6000, 216],
+            [6500, 212],
+            [7000, 207],
+            [7500, 198],
+            [8000, 176],
+            [9000, 143],
+        ],
+
+        "idleRPM":950,
+        "maxRPM":8000,
+        "revLimiterType": "soft",
+        "inertia":0.09,
+        "friction":12
+        "dynamicFriction":0.023,
+        //"burnEfficiency":0.4
+        "burnEfficiency":[
+            [0, 0.12],
+            [0.05, 0.27],
+            [0.4, 0.5],
+            [0.7, 0.47],
+            [1, 0.34],
+        ],
+        "torqueReactionNodes:":["e1l","e2l","e4r"]
+        "energyStorage": "mainTank",
+        "requiredEnergyType":"gasoline",
+
+        //exhaust
+        "particulates":0.02
+        "instantAfterFireCoef": 0.75,
+        "sustainedAfterFireCoef": 0.5,
+
+        //cooling and oil system
+        "thermalsEnabled":true
+        "engineBlockMaterial":"aluminum"
+        "oilVolume":5
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":150
+        "headGasketDamageThreshold":1500000
+        "pistonRingDamageThreshold":1500000
+        "connectingRodDamageThreshold":2000000
+
+        "maxTorqueRating": 250,
+        "maxOverTorqueDamage": 500,
+
+        //node beam interface
+        "waterDamage": {"[engineGroup]:":["engine_intake"]},
+        "radiator": {"[engineGroup]:":["radiator"]},
+        "engineBlock": {"[engineGroup]:":["engine_block"]},
+        "breakTriggerBeam":"engine",
+        "uiName":"Engine",
+
+        "soundConfig": "soundConfig",
+        "instantAfterFireSound": "event:>Vehicle>Afterfire_01_Single_EQ3",
+        "sustainedAfterFireSound": "event:>Vehicle>Afterfire_01_Single_EQ3",
+        "shiftAfterFireSound": "event:>Vehicle>Afterfire_01_Multi_EQ3",
+    },
+	"soundConfig": {
+        "sampleName": "B4",
+        "mainGain": 4,
+        "maxLoadMix": 0.65,
+        "minLoadMix": 0,
+        "onLoadGain":1,
+        "offLoadGain":0.65,
+        "eqLowGain": -15,
+        "eqLowFreq": 100,
+        //"eqLowWidth": 0.05,
+        "eqHighGain": -5,
+        "eqHighFreq": 6000,
+        //"eqHighWidth": 0.1,
+        //"eqFundamentalGain": -5,
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":2000,
+        "clutchLaunchTargetRPM":2800,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":[0,0,0,3500,4300,4400,4450,4500,4500]
+        //**highShiftUp can be overwritten by intake modifications**
+        "highShiftUpRPM":7700
+    },
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true}
+         {"group":"coupe_engine"},
+         {"engineGroup":"engine_block"}
+         {"nodeWeight":19},
+         {"chemEnergy":2000,"burnRate":0.39,"flashPoint":1000,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":900,"baseTemp":"thermals","conductionRadius":0.12},
+         ["e1r", -0.26, -0.97, 0.31],
+         ["e1l", 0.26, -0.97, 0.31],
+         ["e2r", -0.26, -1.53, 0.31],
+         ["e2l", 0.26, -1.53, 0.31],
+		 {"chemEnergy":false,"burnRate":false,"flashPoint":false, "specHeat": false,"selfIgnitionCoef":false,"smokePoint":false,"baseTemp":false,"conductionRadius":false},
+         {"engineGroup":["engine_block","engine_intake"]}
+         ["e3r", -0.26, -0.97, 0.79],
+         ["e3l", 0.26, -0.97, 0.79{"isExhaust":"mainEngine"}],
+         ["e4r", -0.26, -1.53, 0.79],
+         ["e4l", 0.26, -1.53, 0.79],
+         {"engineGroup":""}
+         {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":7700550,"beamDamp":125},
+          {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+		  //engine
+		  ["e1r","e1l"],
+		  ["e2r","e2l"],
+		  ["e3r","e3l"],
+		  ["e4r","e4l"],
+		  
+		  ["e1r","e2r"],
+		  ["e1l","e2l"],
+		  ["e3r","e4r"],
+		  ["e3l","e4l"],
+		  
+		  ["e1r","e3r"],
+		  ["e1l","e3l"{"isExhaust":"mainEngine"}],
+		  ["e2r","e4r"],
+		  ["e2l","e4l"],
+		  
+		  ["e2r","e3r"],
+		  ["e2l","e3l"],
+		  ["e2r","e3l"],
+		  ["e2l","e3r"],
+		  
+		  ["e1r","e4r"],
+		  ["e1l","e4l"],
+		  ["e1r","e4l"],
+		  ["e1l","e4r"],
+		  
+		  ["e1r","e2l"],
+		  ["e1l","e2r"],
+		  ["e3r","e4l"],
+		  ["e3l","e4r"],
+		  
+		  ["e1r","e3l"],
+		  ["e1l","e3r"],
+		  ["e2r","e4l"],
+		  ["e2l","e4r"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+}
+//"eind"
+
+"coupe_engine_F4_25": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"2.5L F4 Engine",
+		"value":8000,
+	}
+    "slotType" : "coupe_engine_DT",
+	"slots": [
+		["type", "default", "description"]
+		["coupe_F4_exhaust","coupe_F4_exhaust", "Exhaust"],
+		["coupe_F4_transmission","coupe_F4_transmission_5M", "Transmission"],
+		["coupe_F4_enginetuning","coupe_F4_stock", "Engine Tuning",{"coreSlot":true}],
+		["coupe_F4_radiator","coupe_F4_radiator", "Radiator"],
+		["n2o_system","", "Nitrous Oxide System"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_F4_engine", ["coupe_engine"]],
+		 ["coupe_F4_engbaycrap", ["coupe_body", "coupe_engine_bay", "coupe_rad"]],
+		 ["coupe_F4_engbaycrap_b", ["coupe_body", "coupe_engine_bay", "coupe_rad"]],
+	],
+	"powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["combustionEngine", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine":{
+        "torque":[
+            ["rpm", "torque"]
+            [0, 0],
+            [500, 101],
+            [1000, 155],
+            [2000, 204],
+            [3000, 246],
+            [3500, 263],
+            [4000, 275],
+            [4500, 280],
+            [5000, 281],
+            [5500, 277],
+            [6000, 269],
+            [6500, 256],
+            [7000, 243],
+            [7500, 219],
+            [8000, 193],
+            [9000, 152],
+        ],
+
+        "idleRPM":950,
+        "maxRPM":7700,
+        "revLimiterType": "soft",
+        "inertia":0.10,
+        "friction":12
+        "dynamicFriction":0.025,
+        //"burnEfficiency":0.39
+        "burnEfficiency":[
+            [0, 0.11],
+            [0.05, 0.26],
+            [0.4, 0.48],
+            [0.7, 0.48],
+            [1, 0.34],
+        ],
+        "torqueReactionNodes:":["e1l","e2l","e4r"]
+        "energyStorage": "mainTank",
+        "requiredEnergyType":"gasoline",
+
+        //exhaust
+        "particulates":0.02
+        "instantAfterFireCoef": 0.75,
+        "sustainedAfterFireCoef": 0.5,
+
+        //cooling and oil system
+        "thermalsEnabled":true
+        "engineBlockMaterial":"aluminum"
+        "oilVolume":6
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":160
+        "headGasketDamageThreshold":1500000
+        "pistonRingDamageThreshold":1500000
+        "connectingRodDamageThreshold":2000000
+
+        "maxTorqueRating": 900,
+        "maxOverTorqueDamage": 2000,
+
+        //node beam interface
+        "waterDamage": {"[engineGroup]:":["engine_intake"]},
+        "radiator": {"[engineGroup]:":["radiator"]},
+        "engineBlock": {"[engineGroup]:":["engine_block"]},
+        "breakTriggerBeam":"engine",
+        "uiName":"Engine",
+
+        "soundConfig": "soundConfig",
+        "instantAfterFireSound": "event:>Vehicle>Afterfire_01_Single_EQ3",
+        "sustainedAfterFireSound": "event:>Vehicle>Afterfire_01_Single_EQ3",
+        "shiftAfterFireSound": "event:>Vehicle>Afterfire_01_Multi_EQ3",
+    },
+	"soundConfig": {
+        "sampleName": "B4S",
+        "mainGain": 2,
+        "maxLoadMix": 0.65,
+        "minLoadMix": 0,
+        "onLoadGain":1,
+        "offLoadGain":0.7,
+        "eqLowGain": -10,
+        "eqLowFreq": 100,
+        //"eqLowWidth": 0.05,
+        "eqHighGain": -5,
+        "eqHighFreq": 6000,
+        //"eqHighWidth": 0.1,
+        //"eqFundamentalGain": -5,
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":2000,
+        "clutchLaunchTargetRPM":2800,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":[0,0,0,3500,4300,4400,4450,4500,4500]
+        //**highShiftUp can be overwritten by intake modifications**
+        "highShiftUpRPM":7400
+    },
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true}
+         {"group":"coupe_engine"},
+         {"engineGroup":"engine_block"}
+         {"nodeWeight":19},
+         {"chemEnergy":2000,"burnRate":0.39,"flashPoint":1000,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":900,"baseTemp":"thermals","conductionRadius":0.12},
+         ["e1r", -0.26, -0.97, 0.31],
+         ["e1l", 0.26, -0.97, 0.31],
+         ["e2r", -0.26, -1.53, 0.31],
+         ["e2l", 0.26, -1.53, 0.31],
+		 {"chemEnergy":false,"burnRate":false,"flashPoint":false, "specHeat": false,"selfIgnitionCoef":false,"smokePoint":false,"baseTemp":false,"conductionRadius":false},
+         {"engineGroup":["engine_block","engine_intake"]}
+         ["e3r", -0.26, -0.97, 0.79],
+         ["e3l", 0.26, -0.97, 0.79{"isExhaust":"mainEngine"}],
+         ["e4r", -0.26, -1.53, 0.79],
+         ["e4l", 0.26, -1.53, 0.79],
+         {"engineGroup":""}
+         {"group":""},
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  {"beamSpring":7700550,"beamDamp":125},
+          {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+		  //engine
+		  ["e1r","e1l"],
+		  ["e2r","e2l"],
+		  ["e3r","e3l"],
+		  ["e4r","e4l"],
+		  
+		  ["e1r","e2r"],
+		  ["e1l","e2l"],
+		  ["e3r","e4r"],
+		  ["e3l","e4l"],
+		  
+		  ["e1r","e3r"],
+		  ["e1l","e3l"{"isExhaust":"mainEngine"}],
+		  ["e2r","e4r"],
+		  ["e2l","e4l"],
+		  
+		  ["e2r","e3r"],
+		  ["e2l","e3l"],
+		  ["e2r","e3l"],
+		  ["e2l","e3r"],
+		  
+		  ["e1r","e4r"],
+		  ["e1l","e4l"],
+		  ["e1r","e4l"],
+		  ["e1l","e4r"],
+		  
+		  ["e1r","e2l"],
+		  ["e1l","e2r"],
+		  ["e3r","e4l"],
+		  ["e3l","e4r"],
+		  
+		  ["e1r","e3l"],
+		  ["e1l","e3r"],
+		  ["e2r","e4l"],
+		  ["e2l","e4r"],
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+}
+//"eind"
+
+"coupe_F4_stock": {
+//"begin"
+	"information":{
+		"authors":"BeamNG",
+		"name":"Stock Tuning",
+		"value":0,
+	}
+    "slotType" : "coupe_F4_enginetuning",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_F4_intake_box", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+		 ["coupe_F4_intake", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+		 ["coupe_F4_exhaust", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+		 
+	],
+
+}
+//"eind"
+
+"coupe_F4_turbo_stage1": {
+//"begin"
+	"information":{
+		"authors":"BeamNG",
+		"name":"Single Turbocharger",
+		"value":4400,
+	}
+    "slotType" : "coupe_F4_enginetuning",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_F4_turbo", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+		 ["coupe_F4_intercooler_T", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+		 ["coupe_F4_exhaust_T_1", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+		 ["coupe_F4_exhaust_T_2", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+		 ["coupe_F4_intake_T_1", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+		 ["coupe_F4_intake_T_2", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+		 ["coupe_F4_intake_T_3", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+	],
+	"turbocharger": {
+        "wastegateStart":8,
+        "wastegateLimit":9,
+        "maxExhaustPower": 18000,
+        "backPressureCoef": 0.000055,
+        "frictionCoef": 40.5,
+        "inertia":30.2,
+        "damageThresholdTemperature": 690,
+        "pressureRatePSI": 40,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -2.5],
+            [30000,     -0.5],
+            [60000,     5],
+            [90000,     10],
+            [150000,    13],
+            [200000,    16],
+            [250000,    19],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.31,    0.0],
+            [650,   0.39,   0.17],
+            [1400,  0.44,   0.19],
+            [2000,  0.49,    0.35],
+            [2500,  0.53,    0.59],
+            [3000,  0.62,    0.70],
+            [4000,  0.78,    0.85],
+            [5000,  0.85,    0.95],
+            [6000,  1.0,    1.0],
+            [7000,  1.0,    1.0],
+            [8000,  0.9,    1.0],
+        ],
+    },
+    "mainEngine":{
+        "maxRPM":8400,
+        "burnEfficiency":0.37
+        //turbocharger name
+        "turbocharger":"turbocharger",
+		"instantAfterFireCoef": 1.0,
+        "sustainedAfterFireCoef": 0.75,
+    },
+    "vehicleController": {
+        "highShiftUpRPM":8100
+		"revMatchThrottle":0.35,
+    },
+	"nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--turbo and intercooler weight--
+         {"selfCollision":false},
+         {"collision":false}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":""},
+         {"nodeWeight":14.25},
+         ["turbo", 0.0, -1.33, 0.66],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":2750550,"beamDamp":125},
+          {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+          ["turbo","e1r"],
+          ["turbo","e2r"],
+          ["turbo","e3r"],
+          ["turbo","e4r"],
+          ["turbo","e1l"],
+          ["turbo","e2l"],
+          ["turbo","e3l"],
+          ["turbo","e4l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+//"eind"
+
+"coupe_F4_turbo_stage2": {
+//"begin"
+	"information":{
+		"authors":"BeamNG",
+		"name":"Twin Turbocharger",
+		"value":8600,
+	}
+    "slotType" : "coupe_F4_enginetuning",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_F4_twin_turbo", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+		 ["coupe_F4_intercooler_TT", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+		 ["coupe_F4_exhaust_TT_1", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+		 ["coupe_F4_exhaust_TT_2", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+		 ["coupe_F4_intake_T_1", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+		 ["coupe_F4_intake_T_2", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+		 ["coupe_F4_intake_T_3", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+	],
+	"turbocharger": {
+        "volumePer10kRPM":0.07
+        "wastegateStart":19.5,
+        "wastegateLimit":21.5,
+        "maxExhaustPower": 250000,
+        "backPressureCoef": 0.00075,
+        "frictionCoef": 65.3,
+        "inertia":35.0,
+        "pressureRatePSI": 75,
+        "bovSoundVolumeCoef":0.5,
+        "damageThresholdTemperature": 720,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -2.5],
+            [20000,     -1.8],
+            [30000,     10],
+            [60000,     15],
+            [90000,     19],
+            [150000,    25],
+            [200000,    28],
+            [250000,    29],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.0,    0.0],
+            [650,   0.29,    0.03],
+            [1400,  0.34,    0.05],
+            [2000,  0.79,   0.25],
+            [2500,  0.92,    0.6],
+            [3000,  0.95,    0.72],
+            [4000,  0.82,    0.85],
+            [5000,  0.81,    1.0],
+            [6000,  0.83,    1.0],
+            [7000,  0.83,   1.0],
+            [8000,  1.0,   1.0],
+            [9000,  1.0,    1.0],
+        ],
+    },
+    "mainEngine":{
+        "maxRPM":8400,
+        //"burnEfficiency":0.35
+        //turbocharger name
+        "turbocharger":"turbocharger",
+        "instantAfterFireCoef": 1.0,
+        "sustainedAfterFireCoef": 1.0,
+    },
+    "vehicleController": {
+        "highShiftUpRPM":8100
+        "revMatchThrottle":0.25,
+    },
+	"nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--turbo and intercooler weight--
+         {"selfCollision":false},
+         {"collision":false}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":""},
+         {"nodeWeight":14.25},
+         ["turbo", 0.0, -1.33, 0.66],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":2750550,"beamDamp":125},
+          {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+          ["turbo","e1r"],
+          ["turbo","e2r"],
+          ["turbo","e3r"],
+          ["turbo","e4r"],
+          ["turbo","e1l"],
+          ["turbo","e2l"],
+          ["turbo","e3l"],
+          ["turbo","e4l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+//"eind"
+
+"coupe_F4_turbo_stage3": {
+//"begin"
+	"information":{
+		"authors":"BeamNG",
+		"name":"Variable Boost Twin Turbochargers",
+		"value":15000,
+	}
+    "slotType" : "coupe_F4_enginetuning",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_F4_twin_turbo", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+		 ["coupe_F4_intercooler_TT", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+		 ["coupe_F4_exhaust_TT_1", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+		 ["coupe_F4_exhaust_TT_2", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+		 ["coupe_F4_intake_T_1", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+		 ["coupe_F4_intake_T_2", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+		 ["coupe_F4_intake_T_3", ["coupe_body", "coupe_engine_bay", "coupe_lowermounts_a_F"]],
+	],
+	"variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$wastegateStart", "range", "psi", "Turbocharger", 8, 6, 36, "Wastegate Start", "Pressure at which the wastegate begins to open"{"stepDis":0.5}]
+        ["$wastegateLimit", "range", "psi", "Turbocharger", 10, 8, 38, "Wastegate Limit", "Pressure at which the wastegate is fully opened"{"stepDis":0.5}]
+    ],
+    "turbocharger": {
+        "volumePer10kRPM":0.08
+        "wastegateStart":"$wastegateStart",
+        "wastegateLimit":"$wastegateLimit",
+        "maxExhaustPower": 180000,
+        "backPressureCoef": 0.00040,
+        "frictionCoef": 195.3,
+        "inertia":20.4,
+        "pressureRatePSI": 75,
+        "damageThresholdTemperature": 900,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         -4.5],
+            [30000,     -2.5],
+            [60000,     5],
+            [90000,     18],
+            [150000,    35],
+            [200000,    40],
+            [250000,    48],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.0,    0.0],
+            [650,   0.23,   0.09],
+            [1400,  0.33,   0.10],
+            [2000,  0.41,    0.14],
+            [2500,  0.54,    0.35],
+            [3000,  0.72,    0.61],
+            [4000,  0.98,    0.77],
+            [5000,  1.13,    0.87],
+            [6000,  1.18,    1.0],
+            [7000,  1.11,    1.00],
+            [8000,  1.2,    1.0],
+            [9000,  1.25,    1.0],
+        ],
+    },
+    "mainEngine":{
+        "maxRPM":8500,
+        "revMatchThrottle":0.2,
+        //"burnEfficiency":0.32,
+        "cylinderWallTemperatureDamageThreshold":180
+        //turbocharger name
+        "turbocharger":"turbocharger",
+        "instantAfterFireCoef": 1.5,
+        "sustainedAfterFireCoef": 1.0,
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":4000,
+        "clutchLaunchTargetRPM":2000,
+        "highShiftUpRPM":8300
+    },
+	"nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--turbo and intercooler weight--
+         {"selfCollision":false},
+         {"collision":false}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":""},
+         {"nodeWeight":14.25},
+         ["turbo", 0.0, -1.33, 0.66],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":2750550,"beamDamp":125},
+          {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+          ["turbo","e1r"],
+          ["turbo","e2r"],
+          ["turbo","e3r"],
+          ["turbo","e4r"],
+          ["turbo","e1l"],
+          ["turbo","e2l"],
+          ["turbo","e3l"],
+          ["turbo","e4l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+//"eind"
+
+"coupe_F4_transmission_5M": {
+//"begin"
+	"information":{
+		"authors":"BeamNG",
+		"name":"5-Speed Manual Transmission",
+		"value":300,
+	}
+    "slotType" : "coupe_F4_transmission",
+	"slots": [
+        ["type", "default", "description"]
+        ["coupe_transfer_case_f4","coupe_transfer_case_f4_RWD", "Transfer Case"{"coreSlot":true}],
+		["coupe_flywheel","coupe_flywheel","Flywheel", {"coreSlot":true}],
+    ],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_F4_transmission", ["coupe_engine","coupe_transmission"]],
+	],
+	"powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-3.35, 0, 3.32, 1.90, 1.31, 1.00, 0.84]
+        "friction": 1,
+        "gearboxNode:":"tra1",
+    },
+    "clutch": {
+        "uiName":"Clutch",
+    },
+    "vehicleController": {
+        "calculateOptimalLoadShiftPoints": true,
+        "lowShiftDownRPM":[0,0,0,1600,1900,1700,1600],
+        "lowShiftUpRPM":[0,0,3400,2800,2700,2600],
+    },
+	"nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--5 Speed Manual--
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":true},
+         {"collision":true}
+         {"group":"coupe_transmission"},
+         {"nodeWeight":20.9},
+         ["tra1", 0.0, -0.09, 0.32],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":7700550,"beamDamp":125},
+          {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+//"eind"
+
+"coupe_F4_transmission_6M": {
+//"begin"
+	"information":{
+		"authors":"BeamNG",
+		"name":"6-Speed Manual Transmission",
+		"value":420,
+	}
+    "slotType" : "coupe_F4_transmission",
+	"slots": [
+        ["type", "default", "description"]
+        ["coupe_transfer_case_f4","coupe_transfer_case_f4_RWD", "Transfer Case"{"coreSlot":true}],
+		["coupe_flywheel","coupe_flywheel","Flywheel", {"coreSlot":true}],
+    ],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_F4_transmission", ["coupe_engine","coupe_transmission"]],
+	],
+	"variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$gear_R", "range", ":1", "Transmission", -3.05, -6.0, -0.5, "Reverse Gear Ratio", "Torque multiplication ratio"],
+        ["$gear_1", "range", ":1", "Transmission", 3.2, 0.5, 6.0, "1st Gear Ratio", "Torque multiplication ratio"],
+        ["$gear_2", "range", ":1", "Transmission", 2.0, 0.5, 6.0, "2nd Gear Ratio", "Torque multiplication ratio"],
+        ["$gear_3", "range", ":1", "Transmission", 1.45, 0.5, 6.0, "3rd Gear Ratio", "Torque multiplication ratio"],
+        ["$gear_4", "range", ":1", "Transmission", 1.10, 0.5, 6.0, "4th Gear Ratio", "Torque multiplication ratio"],
+        ["$gear_5", "range", ":1", "Transmission", 0.90, 0.5, 6.0, "5th Gear Ratio", "Torque multiplication ratio"],
+        ["$gear_6", "range", ":1", "Transmission", 0.74, 0.5, 6.0, "6th Gear Ratio", "Torque multiplication ratio"],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":["$gear_R", 0, "$gear_1", "$gear_2", "$gear_3", "$gear_4", "$gear_5", "$gear_6"]
+        "friction": 1,
+        "gearboxNode:":"tra1",
+    },
+    "clutch": {
+        "uiName":"Clutch",
+    },
+    "vehicleController": {
+        "transmissionShiftDelay":0.12,
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.18,
+        //"aggressionSmoothingDown":0.05
+        "aggressionHoldOffThrottleDelay":3,
+        "lowShiftDownRPM":[0,0,0,2000,2600,2600,2600,2600],
+        "lowShiftUpRPM":[0,0,4200,4200,4050,3850,3700],
+        //"lowShiftDownRPM":[0,0,0,1600,1900,1800,1600,1500],
+        //"lowShiftUpRPM":[0,0,3400,3000,2900,2800,2700],
+        //"wheelSlipUpThreshold":100,
+    },
+	"nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--5 Speed Manual--
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":true},
+         {"collision":true}
+         {"group":"coupe_transmission"},
+         {"nodeWeight":20.9},
+         ["tra1", 0.0, -0.09, 0.32],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":7700550,"beamDamp":125},
+          {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+//"eind"
+
+"coupe_F4_transmission_4A": {
+//"begin"
+	"information":{
+		"authors":"BeamNG",
+		"name":"4-Speed Automatic Transmission",
+		"value":350,
+	}
+    "slotType" : "coupe_F4_transmission",
+	"slots": [
+        ["type", "default", "description"]
+        ["coupe_transfer_case_f4","coupe_transfer_case_f4_RWD", "Transfer Case"{"coreSlot":true}],
+		["coupe_converter","coupe_converter","Torque Converter", {"coreSlot":true}],
+    ],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_F4_transmission", ["coupe_engine","coupe_transmission"]],
+	],
+	"powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["automaticGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-2.27, 0, 2.79, 1.54, 1.00, 0.695]
+        "parkLockTorque":2000,
+        "oneWayViscousCoef":25,
+        "friction": 6,
+        "gearboxNode:":"tra1",
+    },
+    "vehicleController": {
+        "automaticModes":"PRND21",
+        "useSmartAggressionCalculation":false,
+        "calculateOptimalLoadShiftPoints": true,
+        "transmissionGearChangeDelay":1.5
+        "gearboxDecisionSmoothingUp":0.5
+        "gearboxDecisionSmoothingDown":0.5
+        "lowShiftDownRPM":1200,
+        "lowShiftUpRPM":[0,0,2400,2200,2000]
+        //"highShiftDownRPM":3300,
+    },
+	"nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--5 Speed Manual--
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":true},
+         {"collision":true}
+         {"group":"coupe_transmission"},
+         {"nodeWeight":20.9},
+         ["tra1", 0.0, -0.09, 0.32],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--TRANSMISSION CONE--
+          {"beamSpring":7700550,"beamDamp":125},
+          {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+//"eind"
+
+"coupe_transfer_case_f4_RWD": {
+//"begin"
+    "information":{
+        "authors":"BeamNG",
+        "name":"RWD Transfer Case",
+        "value":800,
+    },
+    "slotType" : "coupe_transfer_case_f4",
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["shaft", "transfercase", "gearbox", 1, {"friction":3}],
+    ],
+},
+//"eind"
+
+"coupe_transfer_case_f4_AWD": {
+//"begin"
+    "information":{
+        "authors":"BeamNG",
+        "name":"AWD Transfer Case",
+        "value":1200,
+    },
+    "slotType" : "coupe_transfer_case_f4",
+	"slots": [
+        ["type", "default", "description"]
+        ["coupe_driveshaft_F_f4","coupe_driveshaft_F_f4", "Front Driveshaft"],
+    ],
+	"flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+		["coupe_transfercase_f4", ["coupe_engine","coupe_transmission"]]
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["differential", "transfercase", "gearbox", 1, {"diffType":"viscous", "viscousCoef":4, "viscousTorque":200, "diffTorqueSplit":0.75, "friction":5}],
+    ],
+},
+//"eind"
+
+"coupe_transfer_case_f4_AWD_race": {
+//"begin"
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race AWD Transfer Case",
+        "value":2500,
+    },
+    "slotType" : "coupe_transfer_case_f4",
+	"slots": [
+        ["type", "default", "description"]
+        ["coupe_driveshaft_F_f4","coupe_driveshaft_F_f4", "Front Driveshaft"],
+    ],
+	"flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+		["coupe_transfercase_f4", ["coupe_engine","coupe_transmission"]]
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$difftorquesplit_C", "range", "", "Differentials", 0.75, 0.6, 0.85, "Center LSD Torque Split", "Percent torque to rear wheels", {"minDis":50, "maxDis":85}],
+        ["$lsdpreload_C", "range", "N/m", "Differentials", 50, 0, 500, "Center LSD Preload", "Initial cross torque between front and rear wheels"],
+        ["$lsdlockcoef_C", "range", "", "Differentials", 0.15, 0, 0.5, "Center LSD Forward Locking ", "Locking effect proportional to engine torque", {"minDis":0, "maxDis":100}],
+        ["$lsdlockcoefrev_C", "range", "", "Differentials", 0.02, 0, 0.5, "Center LSD Reverse Locking", "Locking effect proportional to engine braking", {"minDis":0, "maxDis":100}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["differential", "transfercase", "gearbox", 1, {"diffType":"lsd", "lsdPreload":"$lsdpreload_C", "lsdLockCoef":"$lsdlockcoef_C", "lsdRevLockCoef":"$lsdlockcoefrev_C", "diffTorqueSplit":"$difftorquesplit_C", "friction":5}],
+    ],
+},
+//"eind"
+
+"coupe_driveshaft_F_f4": {
+//"begin"
+    "information":{
+        "authors":"D-Troxx",
+        "name":"Front Driveshaft",
+        "value":200,
+    }
+    "slotType" : "coupe_driveshaft_F_f4",
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        ["shaft", "driveshaft_F", "transfercase", 2, {"breakTriggerBeam":"driveshaft_F", "electricsName":"driveshaft", "friction":2}]
+    ],
+     "props": [
+        ["func"      , "mesh"           , "idRef:", "idX:", "idY:", "baseRotation"        , "rotation"            , "translation"        , "min", "max", "offset", "multiplier",],
+        ["driveshaft", "coupe_driveshaft_F_f4", "f3r", "f3l", "f8r",    {"x":0, "y":0, "z":0}, {"x":0, "y":1, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1,{"breakGroup":"driveshaft_F","deformGroup":"driveshaft_F"}],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //driveshaft
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":0.005, "beamShortBound":0.005},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":1200,"beamStrength":4500},
+          {"beamLimitSpring":7501000,"beamLimitDamp":250},
+          ["fdiff","tra1", {"name":"driveshaft_F","optional":true,"breakGroup":"driveshaft_F","deformGroup":"driveshaft_F"}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+//"eind"
+
+"coupe_F4_radiator": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Radiator",
+		"value":80,
+	}
+    "slotType" : "coupe_F4_radiator",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_F4_radiator", ["coupe_body", "coupe_engine_bay", "coupe_rad"]],
+		 ["coupe_F4_radtube", ["coupe_body", "coupe_engine", "coupe_engine_bay", "coupe_rad"]],
+	],
+	"mainEngine":{
+        "radiatorArea":0.32,
+        "radiatorEffectiveness":9000,
+        "coolantVolume":6.5,
+        "radiatorFanType":"electric",
+        "radiatorFanTemperature":100,
+        "radiatorFanMaxAirSpeed":2,
+        "thermostatTemperature":90
+        },
+}
+//"eind"
+
+"coupe_F4_radiator_race": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"High Performance Radiator",
+		"value":80,
+	}
+    "slotType" : "coupe_F4_radiator",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_F4_radiator", ["coupe_body", "coupe_engine_bay", "coupe_rad"]],
+		 ["coupe_F4_radtube", ["coupe_body", "coupe_engine", "coupe_engine_bay", "coupe_rad"]],
+	],
+	"mainEngine":{
+        "radiatorArea":0.37,
+        "radiatorEffectiveness":16000,
+        "coolantVolume":7.5,
+        "radiatorFanType":"electric",
+        "radiatorFanTemperature":100,
+        "radiatorFanMaxAirSpeed":3,
+        "thermostatTemperature":90
+        },
+}
+//"eind"
+
+}

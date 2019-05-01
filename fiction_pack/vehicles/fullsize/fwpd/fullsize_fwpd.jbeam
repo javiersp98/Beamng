@@ -1,0 +1,11 @@
+{
+"fullsize_skin_fwpd": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"New Firwood Police Department Skin",
+        "value":1200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "fwpd",
+  }
+}

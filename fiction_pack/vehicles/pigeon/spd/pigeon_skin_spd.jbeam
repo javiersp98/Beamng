@@ -1,0 +1,13 @@
+{
+
+"pigeon_skin_spd": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"Stilwater Police Department Skin",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "spd",
+}
+
+}

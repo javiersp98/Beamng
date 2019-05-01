@@ -1,0 +1,1176 @@
+{
+"reziavan_hood": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Hood",
+        "value":90,
+    }
+    "slotType" : "reziavan_hood",
+
+    "slots": [
+        ["type", "default", "description"]
+        ["reziavan_logo_F","", "Badge"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_hood", ["reziavan_hood"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         //--HOOD--
+         {"collision":true}
+         {"selfCollision":true},
+         {"group":"reziavan_hood"},
+         {"nodeWeight":1.4},
+         ["h1rr", -0.73000, -1.16317, 0.98379],
+         ["h1r", -0.32000, -1.21956, 1.00379],
+         ["h1l", 0.32000, -1.21956, 1.00379],
+         ["h1ll", 0.73000, -1.16317, 0.98379],
+
+         ["h2rr", -0.73000, -1.50857, 0.91879],
+         ["h2r", -0.32000, -1.54382, 0.95879],
+         ["h2l", 0.32000, -1.54382, 0.95879],
+         ["h2ll", 0.73000, -1.50857, 0.91879],
+
+         ["h3rr", -0.71000, -1.74824, 0.86879],
+         ["h3r", -0.36000, -1.76938, 0.90879],
+         ["h3", 0.00000, -1.77643, 0.91379],
+         ["h3l", 0.36000, -1.76938, 0.90879],
+         ["h3ll", 0.71000, -1.74824, 0.86879],
+
+         ["h4rr", -0.68000, -1.96676, 0.78879],
+         ["h4r", -0.36000, -2.02667, 0.78879],
+         ["h4", 0.00000, -2.03725, 0.78879],
+         ["h4l", 0.36000, -2.02667, 0.78879],
+         ["h4ll", 0.68000, -1.96676, 0.78879],
+
+         //rigidifier
+         {"selfCollision":false},
+         {"collision":false}
+         {"group":""},
+         ["h6", 0.00000, -1.59316, 0.70879],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--HOOD--
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":630600,"beamDamp":60},
+          {"beamDeform":32535,"beamStrength":"FLT_MAX"},
+          //hood main shape
+          ["h1rr","h2rr"],
+          ["h1r","h2r"],
+          ["h1l","h2l"],
+          ["h1ll","h2ll"],
+          ["h2rr","h3rr"],
+          ["h2r","h3r"],
+          ["h2l","h3l"],
+          ["h2ll","h3ll"],
+          ["h3rr","h4rr"],
+          ["h3r","h4r"],
+          ["h3","h4"],
+          ["h3l","h4l"],
+          ["h3ll","h4ll"],
+          //widthwise
+          ["h1rr","h1r"],
+          ["h1r","h1l"],
+          ["h1l","h1ll"],
+          ["h2rr","h2r"],
+          ["h2r","h2l"],
+          ["h2l","h2ll"],
+          ["h3rr","h3r"],
+          ["h3r","h3"],
+          ["h3","h3l"],
+          ["h3l","h3ll"],
+          ["h4rr","h4r"],
+          ["h4r","h4"],
+          ["h4","h4l"],
+          ["h4l","h4ll"],
+
+          //surficial crossing
+          {"beamDeform":12150,"beamStrength":"FLT_MAX"},
+          ["h1rr","h2r"],
+          ["h1r","h2rr"],
+          ["h1r","h2l"],
+          ["h1l","h2r"],
+          ["h1l","h2ll"],
+          ["h1ll","h2l"],
+
+          ["h2rr","h3r"],
+          ["h2r","h3rr"],
+          ["h2r","h3"],
+          ["h2l","h3"],
+
+          ["h2l","h3r"],
+          ["h2r","h3l"],
+
+          ["h2l","h3"],
+          ["h2l","h3ll"],
+          ["h2ll","h3l"],
+
+          ["h3rr","h4r"],
+          ["h3r","h4rr"],
+          ["h3r","h4"],
+          ["h3","h4r"],
+          ["h3","h4l"],
+          ["h3l","h4"],
+          ["h3l","h4ll"],
+          ["h3ll","h4l"],
+
+          //extra
+          //rigids
+          {"beamSpring":300600,"beamDamp":50},
+          {"beamDeform":1890,"beamStrength":"FLT_MAX"},
+          ["h2rr","h4rr"],
+          ["h2r","h4r"],
+          ["h2r","h4"],
+          ["h2l","h4"],
+          ["h2l","h4l"],
+          ["h2ll","h4ll"],
+
+          ["h1rr","h3rr"],
+          ["h1r","h3r"],
+          ["h1r","h3"],
+          ["h1l","h3"],
+          ["h1l","h3l"],
+          ["h1ll","h3ll"],
+
+          //rigidifier
+          {"beamSpring":600600,"beamDamp":50},
+          {"beamDeform":3105,"beamStrength":"FLT_MAX"},
+          ["h6","h1rr"],
+          ["h6","h2rr"],
+          ["h6","h3rr"],
+          ["h6","h4rr"],
+          ["h6","h1r"],
+          ["h6","h2r"],
+          ["h6","h3r"],
+          ["h6","h4r"],
+          ["h6","h3"],
+          ["h6","h4"],
+          ["h6","h1l"],
+          ["h6","h2l"],
+          ["h6","h3l"],
+          ["h6","h4l"],
+          ["h6","h1ll"],
+          ["h6","h2ll"],
+          ["h6","h3ll"],
+          ["h6","h4ll"],
+
+          //hood hinge
+          {"disableTriangleBreaking":true}
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":1201000,"beamDamp":60},
+          {"beamDeform":15000,"beamStrength":35000},
+          {"breakGroupType":0},
+          {"breakGroup":"hoodhinge_R"},
+          //r
+          ["h1rr","f6rr"],
+          ["h1ll","f6l"],
+          ["h1ll","f5ll"],
+          ["h1rr","f5r"],
+          {"breakGroup":"hoodhinge_L"},
+          //l
+          ["h1ll","f6ll"],
+          ["h1rr","f6r"],
+          ["h1rr","f5rr"],
+          ["h1ll","f5l"],
+          {"breakGroup":""},
+
+          //hood latch
+          {"beamDeform":8500,"beamStrength":25500},
+          {"breakGroup":"hoodlatch"},
+          ["h4r","f15"],
+          ["h4","f15"],
+          ["h4l","f15"],
+          {"breakGroup":""},
+
+          //damping
+          {"beamDeform":24840,"beamStrength":202500},
+          {"beamSpring":0,"beamDamp":36},
+          {"breakGroup":"hoodhinge_R"},
+          ["h4rr","f13rr"],
+          {"breakGroup":"hoodhinge_L"},
+          ["h4ll","f13ll"],
+          {"breakGroup":""},
+
+          //hood support beams
+          {"beamType":"|SUPPORT", "beamLongBound":8},
+          {"beamSpring":630600,"beamDamp":60},
+          {"beamDeform":12150,"beamStrength":1125000},
+          ["h1rr","f5rr"],
+          ["h1r","f5r"],
+          ["h1l","f5l"],
+          ["h1ll","f5ll"],
+
+          ["h2rr","fx1r"],
+          ["h2r","fx1r"],
+          ["h2l","fx1l"],
+          ["h2ll","fx1l"],
+
+          ["h3rr","fx1r"],
+          ["h3ll","fx1l"],
+
+          ["h3r","fx1r"],
+          ["h3l","fx1l"],
+
+          ["h2r","f14rr"],
+          ["h2l","f14ll"],
+
+          ["h1rr","p1r"],
+          ["h1ll","p1l"],
+
+          //width
+          ["h1r","f6rr"],
+          ["h2r","f14rr"],
+          ["h4r","f15rr"],
+
+          ["h1l","f6ll"],
+          ["h2l","f14ll"],
+          ["h4l","f15ll"],
+
+          {"optional":true},
+          ["h3r","fe10r"],
+          ["h3l","fe10l"],
+          ["h4rr","fe11r"],
+          ["h4ll","fe11l"],
+          ["h4rr","fe12r"],
+          ["h4ll","fe12l"],
+
+          ["h4r","g2r"],
+          ["h4","g2"],
+          ["h4l","g2l"],
+          {"optional":false},
+
+          {"beamDeform":4050,"beamStrength":1125000},
+          ["h4","f15"],
+
+          //inter part triangle breaking triggers
+          {"beamType":"|SUPPORT", "beamLongBound":1.0},
+          {"beamSpring":0,"beamDamp":0},
+          {"beamDeform":1000,"beamStrength":1000},
+          {"optional":true}
+          {"breakGroup":"hood_body"},
+          //["h4l","f11ll"],
+          //["h4r","f11rr"],
+          {"breakGroup":""},
+          {"disableTriangleBreaking":false}
+          {"optional":false}
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            //hood
+            {"groundModel":"metal"},
+            {"dragCoef":9},
+            {"group":"reziavan_hood"},
+            ["h1rr","h2rr","h2r"],
+            ["h2r","h1r","h1rr"],
+            ["h1l","h1r","h2r"],
+            ["h1l","h2r","h2l"],
+            ["h1ll","h1l","h2l"],
+            ["h1ll","h2l","h2ll"],
+            ["h2r","h2rr","h3rr"],
+            ["h2r","h3rr","h3r"],
+            ["h2r","h3r","h3"],
+            ["h2l","h2r","h3"],
+            ["h2l","h3","h3l"],
+
+            ["h2ll","h2l","h3ll"],
+            ["h2l","h3l","h3ll"],
+
+            ["h3r","h3rr","h4rr"],
+            ["h3r","h4rr","h4r"],
+            ["h3","h3r","h4r"],
+            ["h3","h4r","h4"],
+
+            ["h3l","h4ll","h3ll"],
+            ["h4l","h4ll","h3l"],
+            ["h3","h4l","h3l"],
+            ["h4","h4l","h3"],
+            {"group":""},
+    ],
+}
+/*
+"reziavan_hood_vented": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Vented Hood",
+        "value":200,
+    }
+    "slotType" : "reziavan_hood",
+
+    "slots": [
+        ["type", "default", "description"]
+        ["reziavan_logo_F","", "Badge"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_hood_vented", ["reziavan_hood"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         //--HOOD--
+         {"collision":true}
+         {"selfCollision":true},
+         {"group":"reziavan_hood"},
+         {"nodeWeight":0.75},
+         ["h1rr",-0.73, -0.83, 0.895],
+         ["h1r",-0.32, -0.91, 0.915],
+         ["h1l",0.32, -0.91, 0.915],
+         ["h1ll",0.73, -0.83, 0.895],
+
+         ["h2rr",-0.73, -1.32, 0.83],
+         ["h2r",-0.32, -1.37, 0.87],
+         ["h2l",0.32, -1.37, 0.87],
+         ["h2ll",0.73, -1.32, 0.83],
+
+         ["h3rr",-0.71, -1.66, 0.78],
+         ["h3r",-0.36, -1.69, 0.82],
+         ["h3",0.0, -1.70, 0.825],
+         ["h3l",0.36, -1.69, 0.82],
+         ["h3ll",0.71, -1.66, 0.78],
+
+         ["h4rr",-0.68, -1.97, 0.70],
+         ["h4r",-0.36, -2.055, 0.70],
+         ["h4",0.0, -2.07, 0.70],
+         ["h4l",0.36, -2.055, 0.70],
+         ["h4ll",0.68, -1.97, 0.70],
+
+         //rigidifier
+         {"selfCollision":false},
+         {"collision":false}
+         {"group":""},
+         ["h6",0.0, -1.44, 0.62],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--HOOD--
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":630600,"beamDamp":60},
+          {"beamDeform":32535,"beamStrength":"FLT_MAX"},
+          //hood main shape
+          ["h1rr","h2rr"],
+          ["h1r","h2r"],
+          ["h1l","h2l"],
+          ["h1ll","h2ll"],
+          ["h2rr","h3rr"],
+          ["h2r","h3r"],
+          ["h2l","h3l"],
+          ["h2ll","h3ll"],
+          ["h3rr","h4rr"],
+          ["h3r","h4r"],
+          ["h3","h4"],
+          ["h3l","h4l"],
+          ["h3ll","h4ll"],
+          //widthwise
+          ["h1rr","h1r"],
+          ["h1r","h1l"],
+          ["h1l","h1ll"],
+          ["h2rr","h2r"],
+          ["h2r","h2l"],
+          ["h2l","h2ll"],
+          ["h3rr","h3r"],
+          ["h3r","h3"],
+          ["h3","h3l"],
+          ["h3l","h3ll"],
+          ["h4rr","h4r"],
+          ["h4r","h4"],
+          ["h4","h4l"],
+          ["h4l","h4ll"],
+
+          //surficial crossing
+          {"beamDeform":12150,"beamStrength":"FLT_MAX"},
+          ["h1rr","h2r"],
+          ["h1r","h2rr"],
+          ["h1r","h2l"],
+          ["h1l","h2r"],
+          ["h1l","h2ll"],
+          ["h1ll","h2l"],
+
+          ["h2rr","h3r"],
+          ["h2r","h3rr"],
+          ["h2r","h3"],
+          ["h2l","h3"],
+
+          ["h2l","h3r"],
+          ["h2r","h3l"],
+
+          ["h2l","h3"],
+          ["h2l","h3ll"],
+          ["h2ll","h3l"],
+
+          ["h3rr","h4r"],
+          ["h3r","h4rr"],
+          ["h3r","h4"],
+          ["h3","h4r"],
+          ["h3","h4l"],
+          ["h3l","h4"],
+          ["h3l","h4ll"],
+          ["h3ll","h4l"],
+
+          //extra
+          //rigids
+          {"beamSpring":300600,"beamDamp":50},
+          {"beamDeform":1890,"beamStrength":"FLT_MAX"},
+          ["h2rr","h4rr"],
+          ["h2r","h4r"],
+          ["h2r","h4"],
+          ["h2l","h4"],
+          ["h2l","h4l"],
+          ["h2ll","h4ll"],
+
+          ["h1rr","h3rr"],
+          ["h1r","h3r"],
+          ["h1r","h3"],
+          ["h1l","h3"],
+          ["h1l","h3l"],
+          ["h1ll","h3ll"],
+
+          //rigidifier
+          {"beamSpring":600600,"beamDamp":50},
+          {"beamDeform":3105,"beamStrength":"FLT_MAX"},
+          ["h6","h1rr"],
+          ["h6","h2rr"],
+          ["h6","h3rr"],
+          ["h6","h4rr"],
+          ["h6","h1r"],
+          ["h6","h2r"],
+          ["h6","h3r"],
+          ["h6","h4r"],
+          ["h6","h3"],
+          ["h6","h4"],
+          ["h6","h1l"],
+          ["h6","h2l"],
+          ["h6","h3l"],
+          ["h6","h4l"],
+          ["h6","h1ll"],
+          ["h6","h2ll"],
+          ["h6","h3ll"],
+          ["h6","h4ll"],
+
+          //hood hinge
+          {"disableTriangleBreaking":true}
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":1201000,"beamDamp":60},
+          {"beamDeform":15000,"beamStrength":35000},
+          {"breakGroupType":0},
+          {"breakGroup":"hoodhinge_R"},
+          //r
+          ["h1rr","f6rr"],
+          ["h1ll","f6l"],
+          ["h1ll","f5ll"],
+          ["h1rr","f5r"],
+          {"breakGroup":"hoodhinge_L"},
+          //l
+          ["h1ll","f6ll"],
+          ["h1rr","f6r"],
+          ["h1rr","f5rr"],
+          ["h1ll","f5l"],
+          {"breakGroup":""},
+
+          //hood latch
+          {"beamDeform":8500,"beamStrength":25500},
+          {"breakGroup":"hoodlatch"},
+          ["h4r","f15"],
+          ["h4","f15"],
+          ["h4l","f15"],
+          {"breakGroup":""},
+
+          //damping
+          {"beamDeform":24840,"beamStrength":202500},
+          {"beamSpring":0,"beamDamp":36},
+          {"breakGroup":"hoodhinge_R"},
+          ["h4rr","f13rr"],
+          {"breakGroup":"hoodhinge_L"},
+          ["h4ll","f13ll"],
+          {"breakGroup":""},
+
+          //hood support beams
+          {"beamType":"|SUPPORT", "beamLongBound":8},
+          {"beamSpring":630600,"beamDamp":60},
+          {"beamDeform":12150,"beamStrength":1125000},
+          ["h1rr","f5rr"],
+          ["h1r","f5r"],
+          ["h1l","f5l"],
+          ["h1ll","f5ll"],
+
+          ["h2rr","fx1r"],
+          ["h2r","fx1r"],
+          ["h2l","fx1l"],
+          ["h2ll","fx1l"],
+
+          ["h3rr","fx1r"],
+          ["h3ll","fx1l"],
+
+          ["h3r","fx1r"],
+          ["h3l","fx1l"],
+
+          ["h2r","f14rr"],
+          ["h2l","f14ll"],
+
+          ["h1rr","p1r"],
+          ["h1ll","p1l"],
+
+          //width
+          ["h1r","f6rr"],
+          ["h2r","f14rr"],
+          ["h4r","f15rr"],
+
+          ["h1l","f6ll"],
+          ["h2l","f14ll"],
+          ["h4l","f15ll"],
+
+          {"optional":true},
+          ["h3r","fe10r"],
+          ["h3l","fe10l"],
+          ["h4rr","fe11r"],
+          ["h4ll","fe11l"],
+          ["h4rr","fe12r"],
+          ["h4ll","fe12l"],
+
+          ["h4r","g2r"],
+          ["h4","g2"],
+          ["h4l","g2l"],
+          {"optional":false},
+
+          {"beamDeform":4050,"beamStrength":1125000},
+          ["h4","f15"],
+
+          //inter part triangle breaking triggers
+          {"beamType":"|SUPPORT", "beamLongBound":1.0},
+          {"beamSpring":0,"beamDamp":0},
+          {"beamDeform":1000,"beamStrength":1000},
+          {"optional":true}
+          {"breakGroup":"hood_body"},
+          //["h4l","f11ll"],
+          //["h4r","f11rr"],
+          {"breakGroup":""},
+          {"disableTriangleBreaking":false}
+          {"optional":false}
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            //hood
+            {"groundModel":"metal"},
+            {"dragCoef":9},
+            {"group":"reziavan_hood"},
+            ["h1rr","h2rr","h2r"],
+            ["h2r","h1r","h1rr"],
+            ["h1l","h1r","h2r"],
+            ["h1l","h2r","h2l"],
+            ["h1ll","h1l","h2l"],
+            ["h1ll","h2l","h2ll"],
+            ["h2r","h2rr","h3rr"],
+            ["h2r","h3rr","h3r"],
+            ["h2r","h3r","h3"],
+            ["h2l","h2r","h3"],
+            ["h2l","h3","h3l"],
+
+            ["h2ll","h2l","h3ll"],
+            ["h2l","h3l","h3ll"],
+
+            ["h3r","h3rr","h4rr"],
+            ["h3r","h4rr","h4r"],
+            ["h3","h3r","h4r"],
+            ["h3","h4r","h4"],
+
+            ["h3l","h4ll","h3ll"],
+            ["h4l","h4ll","h3l"],
+            ["h3","h4l","h3l"],
+            ["h4","h4l","h3"],
+            {"group":""},
+    ],
+}
+"reziavan_hood_CF": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Carbon Fiber Hood",
+        "value":500,
+    }
+    "slotType" : "reziavan_hood",
+
+    "slots": [
+        ["type", "default", "description"]
+        ["reziavan_logo_F","", "Badge"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_hood_CF", ["reziavan_hood"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         //--HOOD--
+         {"collision":true}
+         {"selfCollision":true},
+         {"group":"reziavan_hood"},
+         {"nodeWeight":0.45},
+         ["h1rr",-0.73, -0.83, 0.895],
+         ["h1r",-0.32, -0.91, 0.915],
+         ["h1l",0.32, -0.91, 0.915],
+         ["h1ll",0.73, -0.83, 0.895],
+
+         ["h2rr",-0.73, -1.32, 0.83],
+         ["h2r",-0.32, -1.37, 0.87],
+         ["h2l",0.32, -1.37, 0.87],
+         ["h2ll",0.73, -1.32, 0.83],
+
+         ["h3rr",-0.71, -1.66, 0.78],
+         ["h3r",-0.36, -1.69, 0.82],
+         ["h3",0.0, -1.70, 0.825],
+         ["h3l",0.36, -1.69, 0.82],
+         ["h3ll",0.71, -1.66, 0.78],
+
+         ["h4rr",-0.68, -1.97, 0.70],
+         ["h4r",-0.36, -2.055, 0.70],
+         ["h4",0.0, -2.07, 0.70],
+         ["h4l",0.36, -2.055, 0.70],
+         ["h4ll",0.68, -1.97, 0.70],
+
+         //rigidifier
+         {"selfCollision":false},
+         {"collision":false}
+         {"group":""},
+         ["h6",0.0, -1.44, 0.62],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--HOOD--
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":423050,"beamDamp":25},
+          {"beamDeform":50000,"beamStrength":60000},
+          //hood main shape
+          ["h1rr","h2rr"],
+          ["h1r","h2r"],
+          ["h1l","h2l"],
+          ["h1ll","h2ll"],
+          ["h2rr","h3rr"],
+          ["h2r","h3r"],
+          ["h2l","h3l"],
+          ["h2ll","h3ll"],
+          ["h3rr","h4rr"],
+          ["h3r","h4r"],
+          ["h3","h4"],
+          ["h3l","h4l"],
+          ["h3ll","h4ll"],
+          //widthwise
+          ["h1rr","h1r"],
+          ["h1r","h1l"],
+          ["h1l","h1ll"],
+          ["h2rr","h2r"],
+          ["h2r","h2l"],
+          ["h2l","h2ll"],
+          ["h3rr","h3r"],
+          ["h3r","h3"],
+          ["h3","h3l"],
+          ["h3l","h3ll"],
+          ["h4rr","h4r"],
+          ["h4r","h4"],
+          ["h4","h4l"],
+          ["h4l","h4ll"],
+
+          //surficial crossing
+          {"beamDeform":24500,"beamStrength":32000},
+          ["h1rr","h2r"],
+          ["h1r","h2rr"],
+          ["h1r","h2l"],
+          ["h1l","h2r"],
+          ["h1l","h2ll"],
+          ["h1ll","h2l"],
+
+          ["h2rr","h3r"],
+          ["h2r","h3rr"],
+          ["h2r","h3"],
+          ["h2l","h3"],
+
+          ["h2l","h3r"],
+          ["h2r","h3l"],
+
+          ["h2l","h3"],
+          ["h2l","h3ll"],
+          ["h2ll","h3l"],
+
+          ["h3rr","h4r"],
+          ["h3r","h4rr"],
+          ["h3r","h4"],
+          ["h3","h4r"],
+          ["h3","h4l"],
+          ["h3l","h4"],
+          ["h3l","h4ll"],
+          ["h3ll","h4l"],
+
+          //extra
+          //rigids
+          {"beamSpring":220600,"beamDamp":20},
+          {"beamDeform":3500,"beamStrength":6000},
+          ["h2rr","h4rr"],
+          ["h2r","h4r"],
+          ["h2r","h4"],
+          ["h2l","h4"],
+          ["h2l","h4l"],
+          ["h2ll","h4ll"],
+
+          ["h1rr","h3rr"],
+          ["h1r","h3r"],
+          ["h1r","h3"],
+          ["h1l","h3"],
+          ["h1l","h3l"],
+          ["h1ll","h3ll"],
+
+          //rigidifier
+          {"beamSpring":400050,"beamDamp":20},
+          {"beamDeform":6450,"beamStrength":8000},
+          ["h6","h1rr"],
+          ["h6","h2rr"],
+          ["h6","h3rr"],
+          ["h6","h4rr"],
+          ["h6","h1r"],
+          ["h6","h2r"],
+          ["h6","h3r"],
+          ["h6","h4r"],
+          ["h6","h3"],
+          ["h6","h4"],
+          ["h6","h1l"],
+          ["h6","h2l"],
+          ["h6","h3l"],
+          ["h6","h4l"],
+          ["h6","h1ll"],
+          ["h6","h2ll"],
+          ["h6","h3ll"],
+          ["h6","h4ll"],
+
+          //hood hinge
+          {"disableTriangleBreaking":true}
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":901000,"beamDamp":25},
+          {"beamDeform":12000,"beamStrength":18000},
+          {"breakGroupType":0},
+          {"breakGroup":"hoodhinge_R"},
+          //r
+          ["h1rr","f6rr"],
+          ["h1ll","f6l"],
+          ["h1ll","f5ll"],
+          ["h1rr","f5r"],
+          {"breakGroup":"hoodhinge_L"},
+          //l
+          ["h1ll","f6ll"],
+          ["h1rr","f6r"],
+          ["h1rr","f5rr"],
+          ["h1ll","f5l"],
+          {"breakGroup":""},
+
+          //hood latch
+          {"beamDeform":4500,"beamStrength":9000},
+          {"breakGroup":"hoodlatch"},
+          ["h4r","f15"],
+          ["h4","f15"],
+          ["h4l","f15"],
+          {"breakGroup":""},
+
+          //damping
+          {"beamDeform":24840,"beamStrength":202500},
+          {"beamSpring":0,"beamDamp":36},
+          {"breakGroup":"hoodhinge_R"},
+          ["h4rr","f13rr"],
+          {"breakGroup":"hoodhinge_L"},
+          ["h4ll","f13ll"],
+          {"breakGroup":""},
+
+          //hood support beams
+          {"beamType":"|SUPPORT", "beamLongBound":8},
+          {"beamSpring":630600,"beamDamp":60},
+          {"beamDeform":12150,"beamStrength":1125000},
+          ["h1rr","f5rr"],
+          ["h1r","f5r"],
+          ["h1l","f5l"],
+          ["h1ll","f5ll"],
+
+          ["h2rr","fx1r"],
+          ["h2r","fx1r"],
+          ["h2l","fx1l"],
+          ["h2ll","fx1l"],
+
+          ["h3rr","fx1r"],
+          ["h3ll","fx1l"],
+
+          ["h3r","fx1r"],
+          ["h3l","fx1l"],
+
+          ["h2r","f14rr"],
+          ["h2l","f14ll"],
+
+          ["h1rr","p1r"],
+          ["h1ll","p1l"],
+
+          //width
+          ["h1r","f6rr"],
+          ["h2r","f14rr"],
+          ["h4r","f15rr"],
+
+          ["h1l","f6ll"],
+          ["h2l","f14ll"],
+          ["h4l","f15ll"],
+
+          {"optional":true},
+          ["h3r","fe10r"],
+          ["h3l","fe10l"],
+          ["h4rr","fe11r"],
+          ["h4ll","fe11l"],
+          ["h4rr","fe12r"],
+          ["h4ll","fe12l"],
+
+          ["h4r","g2r"],
+          ["h4","g2"],
+          ["h4l","g2l"],
+          {"optional":false},
+
+          {"beamDeform":4050,"beamStrength":1125000},
+          ["h4","f15"],
+
+          //inter part triangle breaking triggers
+          {"beamType":"|SUPPORT", "beamLongBound":1.0},
+          {"beamSpring":0,"beamDamp":0},
+          {"beamDeform":1000,"beamStrength":1000},
+          {"optional":true}
+          {"breakGroup":"hood_body"},
+          //["h4l","f11ll"],
+          //["h4r","f11rr"],
+          {"breakGroup":""},
+          {"disableTriangleBreaking":false}
+          {"optional":false}
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            //hood
+            {"groundModel":"metal"},
+            {"dragCoef":9},
+            {"group":"reziavan_hood"},
+            ["h1rr","h2rr","h2r"],
+            ["h2r","h1r","h1rr"],
+            ["h1l","h1r","h2r"],
+            ["h1l","h2r","h2l"],
+            ["h1ll","h1l","h2l"],
+            ["h1ll","h2l","h2ll"],
+            ["h2r","h2rr","h3rr"],
+            ["h2r","h3rr","h3r"],
+            ["h2r","h3r","h3"],
+            ["h2l","h2r","h3"],
+            ["h2l","h3","h3l"],
+
+            ["h2ll","h2l","h3ll"],
+            ["h2l","h3l","h3ll"],
+
+            ["h3r","h3rr","h4rr"],
+            ["h3r","h4rr","h4r"],
+            ["h3","h3r","h4r"],
+            ["h3","h4r","h4"],
+
+            ["h3l","h4ll","h3ll"],
+            ["h4l","h4ll","h3l"],
+            ["h3","h4l","h3l"],
+            ["h4","h4l","h3"],
+            {"group":""},
+    ],
+}
+"reziavan_hood_vented_CF": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Carbon Fiber Vented Hood",
+        "value":600,
+    }
+    "slotType" : "reziavan_hood",
+
+    "slots": [
+        ["type", "default", "description"]
+        ["reziavan_logo_F","", "Badge"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_hood_vented_CF", ["reziavan_hood"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         //--HOOD--
+         {"collision":true}
+         {"selfCollision":true},
+         {"group":"reziavan_hood"},
+         {"nodeWeight":0.45},
+         ["h1rr",-0.73, -0.83, 0.895],
+         ["h1r",-0.32, -0.91, 0.915],
+         ["h1l",0.32, -0.91, 0.915],
+         ["h1ll",0.73, -0.83, 0.895],
+
+         ["h2rr",-0.73, -1.32, 0.83],
+         ["h2r",-0.32, -1.37, 0.87],
+         ["h2l",0.32, -1.37, 0.87],
+         ["h2ll",0.73, -1.32, 0.83],
+
+         ["h3rr",-0.71, -1.66, 0.78],
+         ["h3r",-0.36, -1.69, 0.82],
+         ["h3",0.0, -1.70, 0.825],
+         ["h3l",0.36, -1.69, 0.82],
+         ["h3ll",0.71, -1.66, 0.78],
+
+         ["h4rr",-0.68, -1.97, 0.70],
+         ["h4r",-0.36, -2.055, 0.70],
+         ["h4",0.0, -2.07, 0.70],
+         ["h4l",0.36, -2.055, 0.70],
+         ["h4ll",0.68, -1.97, 0.70],
+
+         //rigidifier
+         {"selfCollision":false},
+         {"collision":false}
+         {"group":""},
+         ["h6",0.0, -1.44, 0.62],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--HOOD--
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":423050,"beamDamp":25},
+          {"beamDeform":50000,"beamStrength":60000},
+          //hood main shape
+          ["h1rr","h2rr"],
+          ["h1r","h2r"],
+          ["h1l","h2l"],
+          ["h1ll","h2ll"],
+          ["h2rr","h3rr"],
+          ["h2r","h3r"],
+          ["h2l","h3l"],
+          ["h2ll","h3ll"],
+          ["h3rr","h4rr"],
+          ["h3r","h4r"],
+          ["h3","h4"],
+          ["h3l","h4l"],
+          ["h3ll","h4ll"],
+          //widthwise
+          ["h1rr","h1r"],
+          ["h1r","h1l"],
+          ["h1l","h1ll"],
+          ["h2rr","h2r"],
+          ["h2r","h2l"],
+          ["h2l","h2ll"],
+          ["h3rr","h3r"],
+          ["h3r","h3"],
+          ["h3","h3l"],
+          ["h3l","h3ll"],
+          ["h4rr","h4r"],
+          ["h4r","h4"],
+          ["h4","h4l"],
+          ["h4l","h4ll"],
+
+          //surficial crossing
+          {"beamDeform":24500,"beamStrength":32000},
+          ["h1rr","h2r"],
+          ["h1r","h2rr"],
+          ["h1r","h2l"],
+          ["h1l","h2r"],
+          ["h1l","h2ll"],
+          ["h1ll","h2l"],
+
+          ["h2rr","h3r"],
+          ["h2r","h3rr"],
+          ["h2r","h3"],
+          ["h2l","h3"],
+
+          ["h2l","h3r"],
+          ["h2r","h3l"],
+
+          ["h2l","h3"],
+          ["h2l","h3ll"],
+          ["h2ll","h3l"],
+
+          ["h3rr","h4r"],
+          ["h3r","h4rr"],
+          ["h3r","h4"],
+          ["h3","h4r"],
+          ["h3","h4l"],
+          ["h3l","h4"],
+          ["h3l","h4ll"],
+          ["h3ll","h4l"],
+
+          //extra
+          //rigids
+          {"beamSpring":220600,"beamDamp":20},
+          {"beamDeform":3500,"beamStrength":6000},
+          ["h2rr","h4rr"],
+          ["h2r","h4r"],
+          ["h2r","h4"],
+          ["h2l","h4"],
+          ["h2l","h4l"],
+          ["h2ll","h4ll"],
+
+          ["h1rr","h3rr"],
+          ["h1r","h3r"],
+          ["h1r","h3"],
+          ["h1l","h3"],
+          ["h1l","h3l"],
+          ["h1ll","h3ll"],
+
+          //rigidifier
+          {"beamSpring":400050,"beamDamp":20},
+          {"beamDeform":6450,"beamStrength":8000},
+          ["h6","h1rr"],
+          ["h6","h2rr"],
+          ["h6","h3rr"],
+          ["h6","h4rr"],
+          ["h6","h1r"],
+          ["h6","h2r"],
+          ["h6","h3r"],
+          ["h6","h4r"],
+          ["h6","h3"],
+          ["h6","h4"],
+          ["h6","h1l"],
+          ["h6","h2l"],
+          ["h6","h3l"],
+          ["h6","h4l"],
+          ["h6","h1ll"],
+          ["h6","h2ll"],
+          ["h6","h3ll"],
+          ["h6","h4ll"],
+
+          //hood hinge
+          {"disableTriangleBreaking":true}
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":901000,"beamDamp":25},
+          {"beamDeform":12000,"beamStrength":18000},
+          {"breakGroupType":0},
+          {"breakGroup":"hoodhinge_R"},
+          //r
+          ["h1rr","f6rr"],
+          ["h1ll","f6l"],
+          ["h1ll","f5ll"],
+          ["h1rr","f5r"],
+          {"breakGroup":"hoodhinge_L"},
+          //l
+          ["h1ll","f6ll"],
+          ["h1rr","f6r"],
+          ["h1rr","f5rr"],
+          ["h1ll","f5l"],
+          {"breakGroup":""},
+
+          //hood latch
+          {"beamDeform":4500,"beamStrength":9000},
+          {"breakGroup":"hoodlatch"},
+          ["h4r","f15"],
+          ["h4","f15"],
+          ["h4l","f15"],
+          {"breakGroup":""},
+
+          //damping
+          {"beamDeform":24840,"beamStrength":202500},
+          {"beamSpring":0,"beamDamp":36},
+          {"breakGroup":"hoodhinge_R"},
+          ["h4rr","f13rr"],
+          {"breakGroup":"hoodhinge_L"},
+          ["h4ll","f13ll"],
+          {"breakGroup":""},
+
+          //hood support beams
+          {"beamType":"|SUPPORT", "beamLongBound":8},
+          {"beamSpring":630600,"beamDamp":60},
+          {"beamDeform":12150,"beamStrength":1125000},
+          ["h1rr","f5rr"],
+          ["h1r","f5r"],
+          ["h1l","f5l"],
+          ["h1ll","f5ll"],
+
+          ["h2rr","fx1r"],
+          ["h2r","fx1r"],
+          ["h2l","fx1l"],
+          ["h2ll","fx1l"],
+
+          ["h3rr","fx1r"],
+          ["h3ll","fx1l"],
+
+          ["h3r","fx1r"],
+          ["h3l","fx1l"],
+
+          ["h2r","f14rr"],
+          ["h2l","f14ll"],
+
+          ["h1rr","p1r"],
+          ["h1ll","p1l"],
+
+          //width
+          ["h1r","f6rr"],
+          ["h2r","f14rr"],
+          ["h4r","f15rr"],
+
+          ["h1l","f6ll"],
+          ["h2l","f14ll"],
+          ["h4l","f15ll"],
+
+          {"optional":true},
+          ["h3r","fe10r"],
+          ["h3l","fe10l"],
+          ["h4rr","fe11r"],
+          ["h4ll","fe11l"],
+          ["h4rr","fe12r"],
+          ["h4ll","fe12l"],
+
+          ["h4r","g2r"],
+          ["h4","g2"],
+          ["h4l","g2l"],
+          {"optional":false},
+
+          {"beamDeform":4050,"beamStrength":1125000},
+          ["h4","f15"],
+
+          //inter part triangle breaking triggers
+          {"beamType":"|SUPPORT", "beamLongBound":1.0},
+          {"beamSpring":0,"beamDamp":0},
+          {"beamDeform":1000,"beamStrength":1000},
+          {"optional":true}
+          {"breakGroup":"hood_body"},
+          //["h4l","f11ll"],
+          //["h4r","f11rr"],
+          {"breakGroup":""},
+          {"disableTriangleBreaking":false}
+          {"optional":false}
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            //hood
+            {"groundModel":"metal"},
+            {"dragCoef":9},
+            {"group":"reziavan_hood"},
+            ["h1rr","h2rr","h2r"],
+            ["h2r","h1r","h1rr"],
+            ["h1l","h1r","h2r"],
+            ["h1l","h2r","h2l"],
+            ["h1ll","h1l","h2l"],
+            ["h1ll","h2l","h2ll"],
+            ["h2r","h2rr","h3rr"],
+            ["h2r","h3rr","h3r"],
+            ["h2r","h3r","h3"],
+            ["h2l","h2r","h3"],
+            ["h2l","h3","h3l"],
+
+            ["h2ll","h2l","h3ll"],
+            ["h2l","h3l","h3ll"],
+
+            ["h3r","h3rr","h4rr"],
+            ["h3r","h4rr","h4r"],
+            ["h3","h3r","h4r"],
+            ["h3","h4r","h4"],
+
+            ["h3l","h4ll","h3ll"],
+            ["h4l","h4ll","h3l"],
+            ["h3","h4l","h3l"],
+            ["h4","h4l","h3"],
+            {"group":""},
+    ],
+}
+*/
+}

@@ -1,5 +1,4 @@
-{
-	
+{	
 
 "burnside_supercharger_stage1_313": {
     "information":{
@@ -22,20 +21,16 @@
             [0,     0.2],
             [100,     1],
         ],
-    },
-	
-	
+    },	
     "mainEngine":{
         "maxRPM":5000,
         //"burnEfficiency":0.24
         //supercharger name
         "supercharger":"supercharger",
         "instantAfterFireCoef": 1,
-        "sustainedAfterFireCoef": 1.25,
-		
+        "sustainedAfterFireCoef": 1.25,		
 		"maxTorqueRating": 800,
-		"maxOverTorqueDamage": 200,
-	
+		"maxOverTorqueDamage": 200,	
     },
     "vehicleController": {
         "highShiftUpRPM":5000

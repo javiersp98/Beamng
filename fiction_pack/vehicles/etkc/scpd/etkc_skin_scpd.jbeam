@@ -1,0 +1,12 @@
+{
+"etkc_scpd": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"Seacrest County Police Department Skin",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "scpd",
+}
+
+}

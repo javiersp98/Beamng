@@ -3,7 +3,7 @@
 "tire_F_295_50_15_drag": {
     "information":{
         "authors":"BeamNG",
-        "name":"295/50R15 Grip-All Drag Front Tires",
+        "name":"295/50R15 Grip-All Front Tires",
         "value":450,
     }
     "slotType" : "tire_F_15x12_alt" 
@@ -14,7 +14,7 @@
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
-        ["$tirepressure_F", "range", "psi", "Tires", 15, 0, 30, "Rear Tire Pressure", "Relative to atmospheric pressure"]
+        ["$tirepressure_F", "range", "psi", "Tires", 25, 0, 50, "Rear Tire Pressure", "Relative to atmospheric pressure"]
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -31,7 +31,7 @@
         {"tireWidth":0.295},
         {"numRays":20},
 
-        //tire options
+        //tire options		
         {"wheelSideBeamSpring":100,"wheelSideBeamDamp":60},
         {"wheelSideBeamSpringExpansion":411000,"wheelSideBeamDampExpansion":30},
         {"wheelSideTransitionZone":0.1,"wheelSideBeamPrecompression":0.99},
@@ -47,21 +47,22 @@
 
         {"wheelPeripheryBeamSpring":81000,"wheelPeripheryBeamDamp":50},
         {"wheelPeripheryBeamPrecompression":0.99},
-
+		
+		
         //general tire values
-        {"nodeWeight":0.14},
+        {"nodeWeight":0.16},
         {"nodeMaterial":"|NM_RUBBER","hasTire":true},
         {"frictionCoef":1.5},
         {"triangleCollision":false},
         {"pressurePSI":"$tirepressure_F"},
         {"maxPressurePSI":1500},
-        {"dragCoef":10},
+        {"dragCoef":7},
 
         //deform values
-        {"wheelSideBeamDeform":28000,"wheelSideBeamStrength":32000},
-        {"wheelSideReinfBeamDeform":28000,"wheelSideReinfBeamStrength":32000},
+        {"wheelSideBeamDeform":19000,"wheelSideBeamStrength":26000}
         {"wheelReinfBeamDeform":101000,"wheelReinfBeamStrength":101000},
-        {"wheelTreadBeamDeform":28000,"wheelTreadBeamStrength":32000},
+        {"wheelTreadBeamDeform":14000,"wheelTreadBeamStrength":18000},
+        {"wheelTreadReinfBeamDeform":14000,"wheelTreadReinfBeamStrength":18000},
         {"wheelPeripheryBeamDeform":101000,"wheelPeripheryBeamStrength":101000},
     ],
 },

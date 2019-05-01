@@ -1,0 +1,12 @@
+{
+
+"pessima_skin_gendarmerie": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"Gendarmerie Skin",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "gendarmerie",
+}
+}

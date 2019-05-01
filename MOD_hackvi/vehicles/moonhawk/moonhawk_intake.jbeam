@@ -1,0 +1,61 @@
+{
+
+"moonhawk_intake_v8_street1": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stage 1 Street Carburetor",
+        "value":300,
+    }
+    "slotType" : "moonhawk_intake_v8",
+    "mainEngine":{
+        "torqueModIntake":[
+            ["rpm", "torque"],
+            [0, 0],
+            [1000, 4],
+            [2000, 13],
+            [3000, 27],
+            [4000, 40],
+            [5000, 57],
+            [6000, 78],
+            [7000, 101],
+            [8000, 116],
+        ],
+        "instantAfterFireCoef": 1,
+        "sustainedAfterFireCoef": 1.25,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["moonhawk_intake_v8", ["moonhawk_engine"]],
+    ],
+}
+
+"moonhawk_intake_v8_street2": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stage 2 Street Carburetor",
+        "value":400,
+    }
+    "slotType" : "moonhawk_intake_v8",
+    "mainEngine":{
+        "torqueModIntake":[
+            ["rpm", "torque"],
+            [0, 0],
+            [1000, 5.4],
+            [2000, 16],
+            [3000, 34],
+            [4000, 52],
+            [5000, 74],
+            [6000, 101],
+            [7000, 130],
+            [8000, 149],
+        ],
+        "instantAfterFireCoef": 1,
+        "sustainedAfterFireCoef": 1.25,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["moonhawk_intake_v8", ["moonhawk_engine"]],
+    ],
+}
+
+}

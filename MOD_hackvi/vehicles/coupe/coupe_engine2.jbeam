@@ -47,7 +47,7 @@
     },
     "mainEngine":{
         "idleRPM":950,
-        "maxRPM":6900,
+        "maxRPM":7000,
         "burnEfficiency":0.24,
         "cylinderWallTemperatureDamageThreshold":180
         //turbocharger name

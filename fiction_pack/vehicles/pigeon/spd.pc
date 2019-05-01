@@ -1,0 +1,80 @@
+{
+"vars":{
+  "$tirepressure_R":25,
+  "$steer_center":0.999,
+  "$fuel":30,
+  "$trackwidth_R":0.05,
+  "$tirepressure_F":25
+},
+"format":2,
+"model":"pigeon",
+"colors":[
+  [
+    1,
+    1,
+    1,
+    1.4
+  ],
+  [
+    1,
+    1,
+    1,
+    1.4
+  ],
+  [
+    0.5,
+    0,
+    0,
+    1.4
+  ]
+],
+"parts":{
+  "paint_design":"pigeon_skin_spd",
+  "gps":"none",
+  "pigeon_bumper_F":"pigeon_bumper_F",
+  "pigeon_brake_R":"pigeon_brake_R",
+  "brakepad_R":"brakepad_R",
+  "pigeon_flywheel_600":"pigeon_flywheel_600",
+  "pigeon_frame":"pigeon_frame",
+  "pigeon_engine":"pigeon_engine_600",
+  "pigeon_licenseplate_F":"pigeon_licenseplate_F",
+  "pigeon_suspension_F":"pigeon_suspension_F",
+  "pigeon_door_R":"pigeon_door_R",
+  "pigeon_radiator":"pigeon_radiator",
+  "pigeon_wheel_F":"pigeon_wheel_F",
+  "n2o_system":"none",
+  "pigeon_steer":"pigeon_steer",
+  "pigeon_hood":"pigeon_hood",
+  "pigeon_door_L":"pigeon_door_L",
+  "pigeon_bed_flares":"pigeon_bed_flares",
+  "pigeon_wheel_R":"pigeon_wheel_R",
+  "pigeon_driveshaft_R":"pigeon_driveshaft_R",
+  "pigeon_beacon":"pigeon_lightbar_blue",
+  "pigeon_transmission_600":"pigeon_transmission_600",
+  "pigeon_bumper_R":"pigeon_bumper_R",
+  "pigeon_stabilizer_L":"none",
+  "pigeon_stabilizer_R":"none",
+  "pigeon_spring_R":"pigeon_spring_R",
+  "pigeon_licenseplate_R":"pigeon_licenseplate_R",
+  "pigeon_fueltank":"pigeon_fueltank_gasoline",
+  "pigeon_tailgate":"pigeon_tailgate",
+  "licenseplate_design_2_1":"none",
+  "soundscape":"soundscape_2",
+  "pigeon_bedextension":"pigeon_bedextension",
+  "pigeon_bed":"pigeon_bed",
+  "pigeon_coilover_F":"pigeon_coilover_F",
+  "soundscape_siren":"soundscape_siren_3",
+  "pigeon_differential_R":"pigeon_differential_R_lsd",
+  "pigeon_brake_F":"pigeon_brake_F",
+  "pigeon_steering":"pigeon_steering",
+  "pigeon_suspension_R":"pigeon_axle_R",
+  "pigeon_towhitch":"none",
+  "pigeon_body":"pigeon_body",
+  "pigeon_bin":"none",
+  "pigeon_mirror_R":"pigeon_mirror_R",
+  "brakepad_F":"brakepad_F",
+  "pigeon_shock_R":"pigeon_shock_R",
+  "pigeon_exhaust":"pigeon_exhaust",
+  "pigeon_sparetire":"pigeon_sparetire"
+}
+}

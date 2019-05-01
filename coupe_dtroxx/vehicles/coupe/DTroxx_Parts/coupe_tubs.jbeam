@@ -1,0 +1,20 @@
+{
+
+"coupe_F_tubs": {
+//"begin"
+	"information":{
+		"authors":"Jesper, AKA D-TROXX",
+		"name":"Front Tubs",
+		"value":150,
+	}
+    "slotType" : "coupe_F_tubs",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_tubs", ["coupe_body","coupe_shocktop_F","coupe_engine_bay"]],
+		 
+	],
+
+}
+//"eind"
+
+}

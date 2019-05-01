@@ -1,0 +1,303 @@
+{
+
+"coupe_roofspoiler_1": {
+//"begin"
+	"information":{
+		"authors":"Jesper, AKA D-TROXX",
+		"name":"Roofspoiler 1",
+	}
+    "slotType" : "coupe_roofspoiler",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_roofspoiler_1", ["coupe_roofspoiler"]],
+		 
+	],
+	"nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--TRUNK--
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"group":"coupe_roofspoiler"},
+         {"collision":true},
+         {"nodeWeight":0.25},
+         {"selfCollision":false},
+         
+         ["rsp2rr", -0.58, 0.93, 1.21],
+         ["rsp2ll", 0.58, 0.93, 1.21],
+		 ["rsp3ll", 0.61, 1.05, 1.17],
+		 ["rsp3rr", -0.61, 1.05, 1.17],
+		 
+		 {"selfCollision":true},
+		 ["rsp2r", -0.27, 1.0, 1.25],
+         ["rsp2l", 0.27, 1.0, 1.25],
+
+         ["rsp3r", -0.36, 1.11, 1.25],
+         ["rsp3", 0.0, 1.12, 1.26],
+         ["rsp3l", 0.36, 1.11, 1.25],
+         {"group":""},
+
+    ],
+     "beams": [
+          ["id1:", "id2:"],
+           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //left wing support
+          {"beamSpring":165000,"beamDamp":25},
+          {"beamDeform":"FLT_MAX","beamStrength":10000},
+          ["rsp2ll", "rsp2l"],
+          ["rsp2ll", "rsp3ll"],
+          ["rsp2ll", "rsp3ll"],
+          ["rsp2ll", "rsp3l"],
+          ["rsp3ll", "rsp3l"],
+          ["rsp3ll", "rsp2l"],
+          
+          ["rsp2l", "rsp3l"],
+          ["rsp2l", "rsp3"],
+          
+          ["rsp3l", "rsp3"],
+          
+          ["rsp2rr", "rsp2r"],
+          ["rsp2rr", "rsp3rr"],
+          ["rsp2rr", "rsp3rr"],
+          ["rsp2rr", "rsp3r"],
+          ["rsp3rr", "rsp3r"],
+          ["rsp3rr", "rsp2r"],
+          
+          ["rsp2r", "rsp3r"],
+          ["rsp2r", "rsp3"],
+          
+          ["rsp3r", "rsp3"],
+          
+          ["rsp2l", "rsp2r"],
+          
+          //wing rigids
+          ["rsp3ll", "rsp3"],
+          ["rsp3ll", "rsp3r"],
+          ["rsp3ll", "rsp3rr"],
+          ["rsp3ll", "rsp2r"],
+          ["rsp3ll", "rsp2rr"],
+          ["rsp2ll", "rsp2r"],
+          ["rsp2ll", "rsp2rr"],
+          ["rsp2ll", "rsp3"],
+          ["rsp2ll", "rsp3r"],
+          ["rsp2ll", "rsp3rr"],
+          
+          ["rsp3rr", "rsp3"],
+          ["rsp3rr", "rsp3l"],
+          ["rsp3rr", "rsp2l"],
+          ["rsp2rr", "rsp2l"],
+          ["rsp2rr", "rsp3"],
+          ["rsp2rr", "rsp3l"],
+          
+          //attachment left
+          {"beamSpring":165000,"beamDamp":50},
+          {"beamDeform":1675,"beamStrength":2600},
+          {"breakGroup":"coupe_roofspoiler_attach_l"},
+          ["rsp3ll", "p6l"],
+          ["rsp2ll", "p6l"],
+          
+          ["rsp3ll", "rf4l"],
+          ["rsp2ll", "rf4l"],
+          
+          ["rsp3l", "p6l"],
+          ["rsp2l", "p6l"],
+          
+          ["rsp3l", "rf4l"],
+          ["rsp2l", "rf4l"],
+          
+          ["rsp3", "rf4l"],
+          ["rsp3", "p6l"],
+		  
+		  ["rsp2l", "rf3l"],
+          
+          //attachment right
+          {"beamSpring":165000,"beamDamp":25},
+          {"beamDeform":1675,"beamStrength":2600},
+          {"breakGroup":"coupe_roofspoiler_attach_r"},
+          ["rsp3rr", "p6rr"],
+          ["rsp2rr", "p6rr"],
+          
+          ["rsp3rr", "rf4r"],
+          ["rsp2rr", "rf4r"],
+          
+          ["rsp3r", "p6r"],
+          ["rsp2r", "p6r"],
+          
+          ["rsp3r", "rf4r"],
+          ["rsp2r", "rf4r"],
+          
+          ["rsp3", "rf4r"],
+          ["rsp3", "p6r"],
+		  
+          ["rsp2r", "rf3r"],
+          {"breakGroup":""},
+
+    ],
+    
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"dragCoef":10},
+        ["rsp2ll","rsp3l","rsp2l",{"liftCoef":50}],
+        ["rsp2ll","rsp3ll","rsp3ll",{"liftCoef":50}],
+        ["rsp2ll","rsp3l","rsp2l",{"liftCoef":50}],
+        ["rsp2l","rsp3l","rsp3",{"liftCoef":50}],
+        
+        ["rsp2l","rsp3","rsp2r",{"liftCoef":50}],
+        ["rsp2r","rsp3","rsp3r",{"liftCoef":50}],
+        ["rsp2r","rsp3r","rsp2rr",{"liftCoef":50}],
+        ["rsp2rr","rsp3r","rsp3rr",{"liftCoef":50}],
+
+    ],
+}
+//"eind"
+
+"coupe_roofspoiler_2": {
+//"begin"
+	"information":{
+		"authors":"Jesper, AKA D-TROXX",
+		"name":"Roofspoiler 2",
+	}
+    "slotType" : "coupe_roofspoiler",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_roofspoiler_2", ["coupe_roofspoiler"]],
+		 
+	],
+	"nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--TRUNK--
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"group":"coupe_roofspoiler"},
+         {"collision":true},
+         {"nodeWeight":0.25},
+         {"selfCollision":false},
+         
+         ["rsp2rr", -0.58, 0.93, 1.21],
+         ["rsp2ll", 0.58, 0.93, 1.21],
+		 ["rsp3ll", 0.61, 1.05, 1.17],
+		 ["rsp3rr", -0.61, 1.05, 1.17],
+		 
+		 {"selfCollision":true},
+		 ["rsp2r", -0.27, 1.0, 1.25],
+         ["rsp2l", 0.27, 1.0, 1.25],
+
+         ["rsp3r", -0.36, 1.11, 1.25],
+         ["rsp3", 0.0, 1.12, 1.26],
+         ["rsp3l", 0.36, 1.11, 1.25],
+         {"group":""},
+
+    ],
+     "beams": [
+          ["id1:", "id2:"],
+           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //left wing support
+          {"beamSpring":165000,"beamDamp":25},
+          {"beamDeform":"FLT_MAX","beamStrength":10000},
+          ["rsp2ll", "rsp2l"],
+          ["rsp2ll", "rsp3ll"],
+          ["rsp2ll", "rsp3ll"],
+          ["rsp2ll", "rsp3l"],
+          ["rsp3ll", "rsp3l"],
+          ["rsp3ll", "rsp2l"],
+          
+          ["rsp2l", "rsp3l"],
+          ["rsp2l", "rsp3"],
+          
+          ["rsp3l", "rsp3"],
+          
+          ["rsp2rr", "rsp2r"],
+          ["rsp2rr", "rsp3rr"],
+          ["rsp2rr", "rsp3rr"],
+          ["rsp2rr", "rsp3r"],
+          ["rsp3rr", "rsp3r"],
+          ["rsp3rr", "rsp2r"],
+          
+          ["rsp2r", "rsp3r"],
+          ["rsp2r", "rsp3"],
+          
+          ["rsp3r", "rsp3"],
+          
+          ["rsp2l", "rsp2r"],
+          
+          //wing rigids
+          ["rsp3ll", "rsp3"],
+          ["rsp3ll", "rsp3r"],
+          ["rsp3ll", "rsp3rr"],
+          ["rsp3ll", "rsp2r"],
+          ["rsp3ll", "rsp2rr"],
+          ["rsp2ll", "rsp2r"],
+          ["rsp2ll", "rsp2rr"],
+          ["rsp2ll", "rsp3"],
+          ["rsp2ll", "rsp3r"],
+          ["rsp2ll", "rsp3rr"],
+          
+          ["rsp3rr", "rsp3"],
+          ["rsp3rr", "rsp3l"],
+          ["rsp3rr", "rsp2l"],
+          ["rsp2rr", "rsp2l"],
+          ["rsp2rr", "rsp3"],
+          ["rsp2rr", "rsp3l"],
+          
+          //attachment left
+          {"beamSpring":165000,"beamDamp":50},
+          {"beamDeform":1675,"beamStrength":2600},
+          {"breakGroup":"coupe_roofspoiler_attach_l"},
+          ["rsp3ll", "p6l"],
+          ["rsp2ll", "p6l"],
+          
+          ["rsp3ll", "rf4l"],
+          ["rsp2ll", "rf4l"],
+          
+          ["rsp3l", "p6l"],
+          ["rsp2l", "p6l"],
+          
+          ["rsp3l", "rf4l"],
+          ["rsp2l", "rf4l"],
+          
+          ["rsp3", "rf4l"],
+          ["rsp3", "p6l"],
+		  
+		  ["rsp2l", "rf3l"],
+          
+          //attachment right
+          {"beamSpring":165000,"beamDamp":25},
+          {"beamDeform":1675,"beamStrength":2600},
+          {"breakGroup":"coupe_roofspoiler_attach_r"},
+          ["rsp3rr", "p6rr"],
+          ["rsp2rr", "p6rr"],
+          
+          ["rsp3rr", "rf4r"],
+          ["rsp2rr", "rf4r"],
+          
+          ["rsp3r", "p6r"],
+          ["rsp2r", "p6r"],
+          
+          ["rsp3r", "rf4r"],
+          ["rsp2r", "rf4r"],
+          
+          ["rsp3", "rf4r"],
+          ["rsp3", "p6r"],
+		  
+          ["rsp2r", "rf3r"],
+          {"breakGroup":""},
+
+    ],
+    
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"dragCoef":10},
+        ["rsp2ll","rsp3l","rsp2l",{"liftCoef":50}],
+        ["rsp2ll","rsp3ll","rsp3ll",{"liftCoef":50}],
+        ["rsp2ll","rsp3l","rsp2l",{"liftCoef":50}],
+        ["rsp2l","rsp3l","rsp3",{"liftCoef":50}],
+        
+        ["rsp2l","rsp3","rsp2r",{"liftCoef":50}],
+        ["rsp2r","rsp3","rsp3r",{"liftCoef":50}],
+        ["rsp2r","rsp3r","rsp2rr",{"liftCoef":50}],
+        ["rsp2rr","rsp3r","rsp3rr",{"liftCoef":50}],
+
+    ],
+}
+//"eind"
+
+}

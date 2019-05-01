@@ -1,0 +1,19 @@
+{
+"reziavan_oilcooler": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Oil Cooler",
+        "value":110,
+    },
+    "slotType" : "reziavan_oilcooler",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_oilcooler", ["reziavan_body"]],
+    ],
+    "mainEngine":{
+        "oilRadiatorArea":0.16,
+        "oilRadiatorEffectiveness":1000,
+        "oilThermostatTemperature":110
+    },
+},
+}

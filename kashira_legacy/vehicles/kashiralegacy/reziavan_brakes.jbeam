@@ -1,0 +1,554 @@
+{
+"reziavan_brake_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Brakes",
+        "value":240,
+    }
+    "slotType" : "reziavan_brake_F",
+    "slots": [
+        ["type", "default", "description"]
+        ["brakepad_F","brakepad_F", "Front Brake Pads"{"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["reziavan_brake_F", ["reziavan_lowerarm_F","reziavan_tierod_F","reziavan_hub_F"]],
+        //brake discs
+        ["reziavan_brakedisc_FR", ["wheel_FR","wheelhub_FR"], []],
+        ["reziavan_brakedisc_FL", ["wheel_FL","wheelhub_FL"], []],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"ABSthreshold":2.1}
+        {"brakeTorque":1700},
+        {"brakeInputSplit":1},
+        {"brakeSplitCoef":1},
+        {"parkingTorque":0},
+        {"brakeSpring":45},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.25},
+        {"brakeMass":6.0},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":1.0},
+    ],
+},
+"reziavan_brake_R": {
+    "information":{
+        "authors":"gabester",
+        "name":"Rear Brakes",
+        "value":210,
+    }
+    "slotType" : "reziavan_brake_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["brakepad_R","brakepad_R", "Rear Brake Pads"{"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["reziavan_brake_R", ["reziavan_hub_R"]],
+        //brake discs
+        ["reziavan_brakedisc_RR", ["wheel_RR","wheelhub_RR"], []],
+        ["reziavan_brakedisc_RL", ["wheel_RL","wheelhub_RL"], []],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"ABSthreshold":1.8}
+        {"brakeTorque":750},
+        {"brakeInputSplit":0.5},
+        {"brakeSplitCoef":0.25},
+        {"parkingTorque":2000},
+        {"brakeSpring":45},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.23},
+        {"brakeMass":4.0},
+        {"brakeType":"disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":0.8},
+    ],
+}
+
+
+
+
+
+"reziavan_brake_F_5": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Brakes",
+        "value":240,
+    }
+    "slotType" : "reziavan_brake_F_5",
+    "slots": [
+        ["type", "default", "description"]
+        ["brakepad_F","brakepad_F", "Front Brake Pads"{"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["reziavan_brake_F", ["reziavan_lowerarm_F","reziavan_tierod_F","reziavan_hub_F"]],
+        //brake discs
+        ["reziavan_brakedisc_5l_FR", ["wheel_FR","wheelhub_FR"], []],
+        ["reziavan_brakedisc_5l_FL", ["wheel_FL","wheelhub_FL"], []],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"ABSthreshold":2.1}
+        {"brakeTorque":1700},
+        {"brakeInputSplit":1},
+        {"brakeSplitCoef":1},
+        {"parkingTorque":0},
+        {"brakeSpring":45},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.25},
+        {"brakeMass":6.0},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":1.0},
+    ],
+},
+"reziavan_brake_R_5": {
+    "information":{
+        "authors":"gabester",
+        "name":"Rear Brakes",
+        "value":210,
+    }
+    "slotType" : "reziavan_brake_R_5",
+    "slots": [
+        ["type", "default", "description"]
+        ["brakepad_R","brakepad_R", "Rear Brake Pads"{"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["reziavan_brake_R", ["reziavan_hub_R"]],
+        //brake discs
+        ["reziavan_brakedisc_5l_RR", ["wheel_RR","wheelhub_RR"], []],
+        ["reziavan_brakedisc_5l_RL", ["wheel_RL","wheelhub_RL"], []],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"ABSthreshold":1.8}
+        {"brakeTorque":750},
+        {"brakeInputSplit":0.5},
+        {"brakeSplitCoef":0.25},
+        {"parkingTorque":2000},
+        {"brakeSpring":45},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.23},
+        {"brakeMass":4.0},
+        {"brakeType":"disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":0.8},
+    ],
+}
+
+
+
+
+
+"reziavan_brake_F_sport": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Sport Front Brakes",
+        "value":310,
+    }
+    "slotType" : "reziavan_brake_F",
+    "slots": [
+        ["type", "default", "description"]
+        ["brakepad_F","brakepad_F_sport", "Front Brake Pads"{"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["reziavan_brake_F", ["reziavan_lowerarm_F","reziavan_tierod_F","reziavan_hub_F"]],
+        //brake discs
+        ["reziavan_brakedisc_FR", ["wheel_FR","wheelhub_FR"], []],
+        ["reziavan_brakedisc_FL", ["wheel_FL","wheelhub_FL"], []],
+    ],
+
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"ABSthreshold":2.1}
+        {"brakeTorque":2100},
+        {"brakeInputSplit":1},
+        {"brakeSplitCoef":1},
+        {"parkingTorque":0},
+        {"brakeSpring":45},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.26},
+        {"brakeMass":6.5},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":1.0},
+    ],
+},
+"reziavan_brake_R_sport": {
+    "information":{
+        "authors":"gabester",
+        "name":"Sport Rear Brakes",
+        "value":270,
+    }
+    "slotType" : "reziavan_brake_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["brakepad_R","brakepad_R_sport", "Rear Brake Pads"{"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["reziavan_brake_R", ["reziavan_hub_R"]],
+        //brake discs
+        ["reziavan_brakedisc_RR", ["wheel_RR","wheelhub_RR"], []],
+        ["reziavan_brakedisc_RL", ["wheel_RL","wheelhub_RL"], []],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"ABSthreshold":1.8}
+        {"brakeTorque":875},
+        {"brakeInputSplit":0.5},
+        {"brakeSplitCoef":0.25},
+        {"parkingTorque":2000},
+        {"brakeSpring":45},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.24},
+        {"brakeMass":4.0},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":0.8},
+    ],
+}
+
+
+
+
+"reziavan_brake_F_sport_5": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Sport Front Brakes",
+        "value":310,
+    }
+    "slotType" : "reziavan_brake_F_5",
+    "slots": [
+        ["type", "default", "description"]
+        ["brakepad_F","brakepad_F_sport", "Front Brake Pads"{"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["reziavan_brake_F", ["reziavan_lowerarm_F","reziavan_tierod_F","reziavan_hub_F"]],
+        //brake discs
+        ["reziavan_brakedisc_5l_FR", ["wheel_FR","wheelhub_FR"], []],
+        ["reziavan_brakedisc_5l_FL", ["wheel_FL","wheelhub_FL"], []],
+    ],
+
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"ABSthreshold":2.1}
+        {"brakeTorque":2100},
+        {"brakeInputSplit":1},
+        {"brakeSplitCoef":1},
+        {"parkingTorque":0},
+        {"brakeSpring":45},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.26},
+        {"brakeMass":6.5},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":1.0},
+    ],
+},
+"reziavan_brake_R_sport_5": {
+    "information":{
+        "authors":"gabester",
+        "name":"Sport Rear Brakes",
+        "value":270,
+    }
+    "slotType" : "reziavan_brake_R_5",
+    "slots": [
+        ["type", "default", "description"]
+        ["brakepad_R","brakepad_R_sport", "Rear Brake Pads"{"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["reziavan_brake_R", ["reziavan_hub_R"]],
+        //brake discs
+        ["reziavan_brakedisc_5l_RR", ["wheel_RR","wheelhub_RR"], []],
+        ["reziavan_brakedisc_5l_RL", ["wheel_RL","wheelhub_RL"], []],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"ABSthreshold":1.8}
+        {"brakeTorque":875},
+        {"brakeInputSplit":0.5},
+        {"brakeSplitCoef":0.25},
+        {"parkingTorque":2000},
+        {"brakeSpring":45},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.24},
+        {"brakeMass":4.0},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":0.8},
+    ],
+}
+
+
+
+
+
+"reziavan_brake_F_gtz": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GTz Front Brakes",
+        "value":350,
+    }
+    "slotType" : "reziavan_brake_F",
+    "slots": [
+        ["type", "default", "description"]
+        ["brakepad_F","brakepad_F_sport", "Front Brake Pads"{"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["reziavan_brake_F_sport", ["reziavan_lowerarm_F","reziavan_tierod_F","reziavan_hub_F"]],
+        //brake discs
+        ["reziavan_brakedisc_FR_sport", ["wheel_FR","wheelhub_FR"], []],
+        ["reziavan_brakedisc_FL_sport", ["wheel_FL","wheelhub_FL"], []],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"ABSthreshold":1.8}
+        {"brakeTorque":2100},
+        {"brakeInputSplit":1},
+        {"brakeSplitCoef":1},
+        {"parkingTorque":0},
+        {"brakeSpring":45},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.28},
+        {"brakeMass":7.0},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":1.0},
+    ],
+},
+"reziavan_brake_R_gtz": {
+    "information":{
+        "authors":"gabester",
+        "name":"GTz Rear Brakes",
+        "value":300,
+    }
+    "slotType" : "reziavan_brake_R",
+    "slots": [
+        ["type", "default", "description"]
+        ["brakepad_R","brakepad_R_sport", "Rear Brake Pads"{"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["reziavan_brake_R_sport", ["reziavan_hub_R"]],
+        //brake discs
+        ["reziavan_brakedisc_RR_sport", ["wheel_RR","wheelhub_RR"], []],
+        ["reziavan_brakedisc_RL_sport", ["wheel_RL","wheelhub_RL"], []],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"ABSthreshold":1.8}
+        {"brakeTorque":950},
+        {"brakeInputSplit":0.5},
+        {"brakeSplitCoef":0.25},
+        {"parkingTorque":2000},
+        {"brakeSpring":45},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.25},
+        {"brakeMass":4.25},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":0.8},
+    ],
+}
+
+
+
+"reziavan_brake_F_gtz_5": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GTz Front Brakes",
+        "value":350,
+    }
+    "slotType" : "reziavan_brake_F_5",
+    "slots": [
+        ["type", "default", "description"]
+        ["brakepad_F","brakepad_F_sport", "Front Brake Pads"{"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["reziavan_brake_F_sport", ["reziavan_lowerarm_F","reziavan_tierod_F","reziavan_hub_F"]],
+        //brake discs
+        ["reziavan_brakedisc_5l_FR", ["wheel_FR","wheelhub_FR"], []],
+        ["reziavan_brakedisc_5l_FL", ["wheel_FL","wheelhub_FL"], []],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"ABSthreshold":1.8}
+        {"brakeTorque":2100},
+        {"brakeInputSplit":1},
+        {"brakeSplitCoef":1},
+        {"parkingTorque":0},
+        {"brakeSpring":45},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.28},
+        {"brakeMass":7.0},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":1.0},
+    ],
+},
+"reziavan_brake_R_gtz_5": {
+    "information":{
+        "authors":"gabester",
+        "name":"GTz Rear Brakes",
+        "value":300,
+    }
+    "slotType" : "reziavan_brake_R_5",
+    "slots": [
+        ["type", "default", "description"]
+        ["brakepad_R","brakepad_R_sport", "Rear Brake Pads"{"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["reziavan_brake_R_sport", ["reziavan_hub_R"]],
+        //brake discs
+        ["reziavan_brakedisc_5l_RR", ["wheel_RR","wheelhub_RR"], []],
+        ["reziavan_brakedisc_5l_RL", ["wheel_RL","wheelhub_RL"], []],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"ABSthreshold":1.8}
+        {"brakeTorque":950},
+        {"brakeInputSplit":0.5},
+        {"brakeSplitCoef":0.25},
+        {"parkingTorque":2000},
+        {"brakeSpring":45},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.25},
+        {"brakeMass":4.25},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":0.8},
+    ],
+}
+
+
+"reziavan_brake_F_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Front Brakes",
+        "value":400,
+    }
+    "slotType" : "reziavan_brake_F_5",
+    "slots": [
+        ["type", "default", "description"]
+        ["brakepad_F","brakepad_F_race", "Front Brake Pads"{"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["reziavan_brake_F_sport", ["reziavan_lowerarm_F","reziavan_tierod_F","reziavan_hub_F"]],
+        //brake discs
+        ["reziavan_brakedisc_5l_FR", ["wheel_FR","wheelhub_FR"], []],
+        ["reziavan_brakedisc_5l_FL", ["wheel_FL","wheelhub_FL"], []],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$braketorque_F", "range", "", "Brakes", 2300, 0, 2800, "Front Brake Torque", "Strength of the front brakes"{"minDis":0}]
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"ABSthreshold":1.8}
+        {"brakeTorque":"$braketorque_F"},
+        {"brakeInputSplit":1},
+        {"brakeSplitCoef":1},
+        {"parkingTorque":0},
+        {"brakeSpring":45},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.31},
+        {"brakeMass":7.5},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":1.2},
+    ],
+},
+"reziavan_brake_R_race": {
+    "information":{
+        "authors":"gabester",
+        "name":"Race Rear Brakes",
+        "value":370,
+    }
+    "slotType" : "reziavan_brake_R_5",
+    "slots": [
+        ["type", "default", "description"]
+        ["brakepad_R","brakepad_R_race", "Rear Brake Pads"{"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["reziavan_brake_R_sport", ["reziavan_hub_R"]],
+        //brake discs
+        ["reziavan_brakedisc_5l_RR", ["wheel_RR","wheelhub_RR"], []],
+        ["reziavan_brakedisc_5l_RL", ["wheel_RL","wheelhub_RL"], []],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$braketorque_R", "range", "", "Brakes", 1200, 0, 2500, "Rear Brake Torque", "Strength of the rear brakes"{"minDis":0}]
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"ABSthreshold":1.8}
+        {"brakeTorque":"$braketorque_R"},
+        {"brakeInputSplit":0.5},
+        {"brakeSplitCoef":0.25},
+        {"parkingTorque":2000},
+        {"brakeSpring":45},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.27},
+        {"brakeMass":5.0},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":0.9},
+    ],
+}
+}

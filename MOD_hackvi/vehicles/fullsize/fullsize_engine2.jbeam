@@ -1,57 +1,5 @@
 {
-	
-"fullsize_supercharger_drag": {
-    "information":{
-        "authors":"BeamNG",
-        "name":"Drag Supercharger",
-        "value":4000,
-    }
-    "slotType" : "fullsize_intake",
-    "flexbodies": [
-        ["mesh", "[group]:", "nonFlexMaterials"],
-        {"deformGroup":"intake_break", "deformMaterialBase":"fullsize", "deformMaterialDamaged":"invis"},
-        ["fullsize_supercharger", ["fullsize_engine"]],
-        {"deformGroup":""},
-    ],
-    "supercharger": {
-        "gearRatio":1.5,
-        "clutchEngageRPM":0,
-        "pressureRatePSI":500,
-        "pressurePSIPer1kRPM":12,
-        "crankLossPer1kRPM":0.035,
-        "type":"roots",
-        "boostController":[
-            //throttle in %, factor
-            [0,     0.2],
-            [100,     1],
-        ],
-    },
-    "mainEngine": {
-        //engine performance
-        "idleRPM":1200,
-        "maxRPM":6800,
-        "burnEfficiency":0.22
-        "instantAfterFireCoef": 1.25,
-        "sustainedAfterFireCoef": 1.25,
 
-        //supercharger name
-        "supercharger":"supercharger",
-
-        //engine durability
-        "cylinderWallTemperatureDamageThreshold":260,
-		
-		"maxTorqueRating": 2000,
-        "maxOverTorqueDamage": 2000,
-		
-    },
-    "vehicleController": {
-        //**highShiftDown can be overwritten by automatic transmissions**
-        "highShiftDownRPM":[0,0,0,2600,3300,3600,4400]
-        "highShiftUpRPM":6600,
-        "revMatchThrottle":0.25,
-    },
-}
-	
 "fullsize_transmission_6A": {
     "information":{
         "authors":"BeamNG",
@@ -71,14 +19,15 @@
     "gearbox": {
         "uiName":"Gearbox",
 		// Ford 6R80 ratios
-        "gearRatios":[-3.40, 0, 4.17, 2.34, 1.52, 1.14, 0.87, 0.69],
+        // [-3.40, 0, 4.17, 2.34, 1.52, 1.14, 0.87, 0.69],
+        "gearRatios":[-3.40, 0, 3.45, 2.34, 1.52, 1.14, 0.87, 0.69],
         "parkLockTorque":2500,
         "oneWayViscousCoef":50,
         "friction": 8,
         "gearboxNode:":"tra1",
     },
     "vehicleController": {
-        "automaticModes":"PRND21",
+        "automaticModes":"PRNDSM",
         "calculateOptimalLoadShiftPoints": true
         "transmissionGearChangeDelay":0.5
         "gearboxDecisionSmoothingUp":2
@@ -143,7 +92,7 @@
     ],
     "gearbox": {
         "uiName":"Gearbox",
-        "gearRatios":[-3.02, 0, 3.60, 2.08, 1.35, 1.02, 0.85, 0.70],
+        "gearRatios":[-3.40, 0, 3.45, 2.34, 1.52, 1.14, 0.87, 0.69],
         "friction": 1,
         "gearboxNode:":"tra1",
     },

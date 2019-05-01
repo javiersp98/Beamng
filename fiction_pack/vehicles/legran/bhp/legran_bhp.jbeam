@@ -1,0 +1,12 @@
+{
+"legran_bhp": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"Highway Patrol",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "bhp",
+}
+
+}

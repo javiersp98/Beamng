@@ -16,7 +16,7 @@
 "hatch_differential_F_CJD": {
     "information":{
         "authors":"javiersp98",
-        "name":"Limited Slip Front Differential",
+        "name":"4.25 Limited Slip Front Differential",
         "value":800,
     },
     "slotType" : "hatch_differential_F_CJD",

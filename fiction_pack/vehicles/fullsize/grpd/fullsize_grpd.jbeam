@@ -1,0 +1,11 @@
+{
+"fullsize_skin_grpd": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"Gavril Police Skin",
+        "value":1200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "grpd",
+  }
+}

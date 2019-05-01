@@ -6,6 +6,10 @@
         "value":500,
     }
     "slotType" : "pigeon_beacon",
+	"slots": [
+        ["type", "default", "description"]
+        ["soundscape_siren","soundscape_siren_3", "Siren Audio"],
+    ],
     "controller": [
         ["fileName"],
         ["lightbar", {
@@ -41,18 +45,18 @@
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-        ["old_lightbar_a", ["coupe_lightbar"], [], {"pos":{"x": 0.0, "y":0.06, "z":1.43}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":0.9, "y":0.95, "z":0.95}}],
+        ["old_lightbar_a", ["pigeon_body"], [], {"pos":{"x": 0.0, "y":0.06, "z":1.43}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":0.9, "y":0.95, "z":0.95}}],
         //glass
         {"deformGroup":"lightbar_R", "deformMaterialBase":"old_lightbar_b1", "deformMaterialDamaged":"old_lightbar_dmg"}
-        ["old_blue_r", ["coupe_lightbar"], [], {"pos":{"x": 0.0, "y":0.06, "z":1.43}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":0.9, "y":0.95, "z":0.95},"deformSound":"GlassBreakSound3", "deformVolume":0.5}],
+        ["old_blue_r", ["pigeon_body"], [], {"pos":{"x": 0.0, "y":0.06, "z":1.43}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":0.9, "y":0.95, "z":0.95},"deformSound":"GlassBreakSound3", "deformVolume":0.5}],
         {"deformGroup":"lightbar_L", "deformMaterialBase":"old_lightbar_b2", "deformMaterialDamaged":"old_lightbar_dmg"}
-        ["old_blue_l", ["coupe_lightbar"], [], {"pos":{"x": 0.0, "y":0.06, "z":1.43}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":0.9, "y":0.95, "z":0.95},"deformSound":"GlassBreakSound4", "deformVolume":0.5}],
+        ["old_blue_l", ["pigeon_body"], [], {"pos":{"x": 0.0, "y":0.06, "z":1.43}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":0.9, "y":0.95, "z":0.95},"deformSound":"GlassBreakSound4", "deformVolume":0.5}],
         {"deformGroup":""}
 
     ],
      "nodes": [
          ["id", "posX", "posY", "posZ"],
-         {"group":"coupe_lightbar"},
+         {"group":"pigeon_beacon"},
          {"selfCollision":true}
          {"collision":true}
          {"frictionCoef":0.7},

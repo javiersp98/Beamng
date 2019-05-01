@@ -16,7 +16,7 @@
 "hatch_differential_R_CJD": {
     "information":{
         "authors":"javiersp98",
-        "name":"Limited Slip Rear Differential",
+        "name":"4.25 Limited Slip Rear Differential",
         "value":800,
     },
     "slotType" : "hatch_differential_R_CJD",

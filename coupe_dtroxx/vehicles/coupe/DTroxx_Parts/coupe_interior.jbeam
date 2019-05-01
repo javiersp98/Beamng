@@ -1,0 +1,352 @@
+{
+
+//universal
+"coupe_ceiling_flaps": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Sun Visor",
+		"value":150,
+	}
+    "slotType" : "coupe_ceiling_flaps",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_ceiling_flaps", ["coupe_body"]],
+		 {"deformGroup":""},
+	],
+}
+//"eind"
+
+//Left Hand Drive
+
+"coupe_dash": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Dashboard Left Hand Drive",
+		"value":500,
+	}
+    "slotType" : "coupe_dash",
+		"slots": [
+		["type", "default", "description"]
+		//Interior
+		["coupe_shifter","coupe_shifter_M", "Shifter"{"coreSlot":true}],
+		["coupe_dash_L_boostgauge","", "Boost Gauge"],
+		["coupe_steer","coupe_steer", "Steering Wheel"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_dash", ["coupe_dash"]],
+		 ["coupe_int_mirror", ["coupe_body"]],
+		 ["coupe_wipers", ["coupe_body","coupe_uppermounts_R","coupe_shocktop_R","coupe_shocktop_F", "coupe_rad", "coupe_engine_bay"]],
+		 //gauge lights
+		 ["coupe_decals_gauges", ["coupe_dash"]],
+		 {"deformGroup":""},
+	],
+	"glowMap":{
+			"coupe_gauges":{"simpleFunction":"lowhighbeam", "off":"coupe_gauges", "on":"coupe_gauges_on"},
+			//gauge lights
+			"signal_L":{"simpleFunction":"signal_L", "off":"invis", "on":"decals_gauges"},
+			"signal_R":{"simpleFunction":"signal_R", "off":"invis", "on":"decals_gauges"},
+			"checkengine":{"simpleFunction":"checkengine", "off":"invis", "on":"decals_gauges"},
+			"hazard":{"simpleFunction":"hazard", "off":"invis", "on":"decals_gauges"},
+			"battery":{"simpleFunction":"battery", "off":"invis", "on":"decals_gauges"},
+			"highbeam":{"simpleFunction":"highbeam", "off":"invis", "on":"decals_gauges"},
+			"parkingbrake":{"simpleFunction":"parkingbrake", "off":"invis", "on":"decals_gauges"},
+			"lowfuel":{"simpleFunction":"lowfuel", "off":"invis", "on":"decals_gauges"},
+			"lowpressure":{"simpleFunction":"lowpressure", "off":"invis", "on":"decals_gauges"},
+			"abs":{"simpleFunction":"abs", "off":"invis", "on":"decals_gauges"},
+			}
+	"props": [
+		["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+		//parkingbrake
+		["parkingbrake"     ,"coupe_parkingbrake", "f7r","f7l","f8r",  {"x":125, "y":0, "z":0} , {"x":-25, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+		
+		//turn signal stalk
+		["turnsignal"  , "coupe_signalstalk"      , "f7r","f7l","f8r",  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":-15}    , {"x":0, "y":0, "z":0}, -1, 1, 0.8, 1],
+		//wiper stalk
+		["wipers"  , "coupe_wiperstalk"      , "f7r","f7l","f8r",  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":15}    , {"x":0, "y":0, "z":0}, -1, 1, -0.8, 1],
+		//pedals
+		["brake"     ,"coupe_brakepedal", "f7r","f7l","f8r",  {"x":90, "y":0, "z":0} , {"x":-25, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+		
+		["throttle"     ,"coupe_gaspedal", "f7r","f7l","f8r",  {"x":90, "y":0, "z":0} , {"x":-25, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+
+		//needles
+		["wheelspeed", "coupe_needle_speedo", "f7r","f7l","f8r", {"x":5, "y":0, "z":0}, {"x":0, "y":0, "z":-3.5}     , {"x":0, "y":0, "z":0}, 0, 80.5, 19, 1.01],
+		["rpm",         "coupe_needle_tacho", "f7r","f7l","f8r", {"x":5, "y":0, "z":0}, {"x":0, "y":0, "z":-0.02}     , {"x":0, "y":0, "z":0}, 0, 12000, 3340, 1.35],
+		["fuel",         "coupe_needle_fuel", "f7r","f7l","f8r", {"x":5, "y":0, "z":0}, {"x":0, "y":0, "z":100}     , {"x":0, "y":0, "z":0}, 0, 50, 0.8, 0.85],
+		["watertemp",  "coupe_needle_temp",   "f1l","f1r","f6l", {"x":-95, "y":0, "z":180}, {"x":0, "y":0, "z":-1.5}     , {"x":0, "y":0, "z":0}, 65, 118, -10, 1],
+		
+		
+	 ],
+	
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 
+		 //interior flexbody
+         {"group":"coupe_dash"},
+         {"nodeWeight":2},
+         ["int1", 0.4, -0.4, 0.8],
+         ["int2", -0.4, -0.4, 0.8],
+
+         ["int3", 0.4, -0.4, 0.4],
+         ["int4", -0.4, -0.4, 0.4],
+         {"group":""},
+		 
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  //dash flexbody node
+          {"beamSpring":275000,"beamDamp":125},
+          {"beamDeform":3750,"beamStrength":"FLT_MAX"},
+          ["int1","f6ll"],
+          ["int1","f6l"],
+          ["int1","f1ll"],
+          ["int1","f6rr"],
+          ["int1","f6r"],
+          ["int1","f1rr"],
+
+          ["int2","f6ll"],
+          ["int2","f6l"],
+          ["int2","f1ll"],
+          ["int2","f6rr"],
+          ["int2","f6r"],
+          ["int2","f1rr"],
+
+          ["int3","f6ll"],
+          ["int3","f6l"],
+          ["int3","f1ll"],
+          ["int3","f6rr"],
+          ["int3","f6r"],
+          ["int3","f1rr"],
+
+          ["int2","f6ll"],
+          ["int4","f6l"],
+          ["int4","f1ll"],
+          ["int4","f6rr"],
+          ["int4","f6r"],
+          ["int4","f1rr"],
+
+          ["int1","int2"],
+          ["int1","int3"],
+          ["int1","int4"],
+
+          ["int2","int3"],
+          ["int2","int4"],
+
+          ["int3","int4"],
+		  
+	],
+	
+}
+//"eind"
+
+"coupe_shifter_M": {
+//"begin"
+    "information":{
+        "authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+        "name":"Manual Shifter",
+		"value":100,
+    }
+    "slotType" : "coupe_shifter",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_shifter_M", ["coupe_dash"]],
+	],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        //clutch pedal
+		["clutch"     ,"coupe_clutchpedal", "f7r","f7l","f8r",  {"x":90, "y":0, "z":0} , {"x":-25, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+        
+     ],
+}
+//"eind"
+
+"coupe_shifter_A": {
+//"begin"
+    "information":{
+        "authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+        "name":"Automatic Shifter",
+		"value":100,
+    }
+    "slotType" : "coupe_shifter",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_shifterbase_a", ["coupe_dash"]],
+	],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        //auto shifter
+		["gear_A",         "coupe_shifter_A", "f7r","f7l","f8r", {"x":90, "y":0, "z":0}, {"x":0, "y":0, "z":0.1}     , {"x":0, "y":0.25, "z":0}, 0, 1, -0.2, 0.5],
+        
+     ],
+}
+//"eind"
+
+//Right Hand Drive
+
+"coupe_dash_R": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Dashboard Right Hand Drive",
+		"value":500,
+	}
+    "slotType" : "coupe_dash",
+	"slots": [
+		["type", "default", "description"]
+		//Interior
+		["coupe_shifter_R","coupe_shifter_M_R", "Shifter"{"coreSlot":true}],
+		["coupe_steer_R","coupe_steer_R", "Steering Wheel"],
+		
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_dash_R", ["coupe_dash"]],
+		 ["coupe_int_mirror_R", ["coupe_body"]],
+		 ["coupe_wipers_R", ["coupe_body","coupe_uppermounts_R","coupe_shocktop_R","coupe_shocktop_F", "coupe_rad", "coupe_engine_bay"]],
+		 ["coupe_dash_R_gauges", ["coupe_dash"]],
+		 //gauge lights
+		 ["coupe_decals_gauges_R", ["coupe_dash"]],
+		 {"deformGroup":""},
+	],
+	"glowMap":{
+			"coupe_gauges":{"simpleFunction":"lowhighbeam", "off":"coupe_gauges", "on":"coupe_gauges_on"},
+			//gauge lights
+			"signal_L":{"simpleFunction":"signal_L", "off":"invis", "on":"decals_gauges"},
+			"signal_R":{"simpleFunction":"signal_R", "off":"invis", "on":"decals_gauges"},
+			"checkengine":{"simpleFunction":"checkengine", "off":"invis", "on":"decals_gauges"},
+			"hazard":{"simpleFunction":"hazard", "off":"invis", "on":"decals_gauges"},
+			"battery":{"simpleFunction":"battery", "off":"invis", "on":"decals_gauges"},
+			"highbeam":{"simpleFunction":"highbeam", "off":"invis", "on":"decals_gauges"},
+			"parkingbrake":{"simpleFunction":"parkingbrake", "off":"invis", "on":"decals_gauges"},
+			"lowfuel":{"simpleFunction":"lowfuel", "off":"invis", "on":"decals_gauges"},
+			"lowpressure":{"simpleFunction":"lowpressure", "off":"invis", "on":"decals_gauges"},
+			"abs":{"simpleFunction":"abs", "off":"invis", "on":"decals_gauges"},
+			}
+	"props": [
+		["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+		//parkingbrake
+		["parkingbrake"     ,"coupe_parkingbrake_R", "f7r","f7l","f8r",  {"x":125, "y":0, "z":0} , {"x":-25, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+		
+		//turn signal stalk
+		["turnsignal"  , "coupe_signalstalk_R"      , "f7r","f7l","f8r",  {"x":30, "y":0, "z":0}, {"x":0, "y":0, "z":15}    , {"x":0, "y":0, "z":0}, -1, 1, 0.8, 1],
+		//wiper stalk
+		["wipers"  , "coupe_wiperstalk_R"      , "f7r","f7l","f8r",  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":-15}    , {"x":0, "y":0, "z":0}, -1, 1, -0.8, 1],
+		//pedals
+		["brake"     ,"coupe_brakepedal_R", "f7r","f7l","f8r",  {"x":90, "y":0, "z":0} , {"x":-25, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+		
+		["throttle"     ,"coupe_gaspedal_R", "f7r","f7l","f8r",  {"x":90, "y":0, "z":0} , {"x":-25, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+		
+		//needles
+		["wheelspeed", "coupe_needle_speedo_R", "f7r","f7l","f8r", {"x":5, "y":0, "z":0}, {"x":0, "y":0, "z":-3.5}     , {"x":0, "y":0, "z":0}, 0, 80.5, 19, 1.01],
+		["rpm",         "coupe_needle_tacho_R", "f7r","f7l","f8r", {"x":5, "y":0, "z":0}, {"x":0, "y":0, "z":-0.02}     , {"x":0, "y":0, "z":0}, 0, 12000, 3340, 1.35],
+		["fuel",         "coupe_needle_fuel_R", "f7r","f7l","f8r", {"x":5, "y":0, "z":0}, {"x":0, "y":0, "z":100}     , {"x":0, "y":0, "z":0}, 0, 50, 0.8, 0.85],
+		["watertemp",  "coupe_needle_temp_R",   "f1l","f1r","f6l", {"x":-95, "y":0, "z":180}, {"x":0, "y":0, "z":-1.5}     , {"x":0, "y":0, "z":0}, 65, 118, -10, 1],
+	 ],
+	
+	"nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 
+		 //interior flexbody
+         {"group":"coupe_dash"},
+         {"nodeWeight":2},
+         ["int1", 0.4, -0.4, 0.8],
+         ["int2", -0.4, -0.4, 0.8],
+
+         ["int3", 0.4, -0.4, 0.4],
+         ["int4", -0.4, -0.4, 0.4],
+         {"group":""},
+		 
+	],
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"breakGroupType":0},
+		  //dash flexbody node
+          {"beamSpring":275000,"beamDamp":125},
+          {"beamDeform":3750,"beamStrength":"FLT_MAX"},
+          ["int1","f6ll"],
+          ["int1","f6l"],
+          ["int1","f1ll"],
+          ["int1","f6rr"],
+          ["int1","f6r"],
+          ["int1","f1rr"],
+
+          ["int2","f6ll"],
+          ["int2","f6l"],
+          ["int2","f1ll"],
+          ["int2","f6rr"],
+          ["int2","f6r"],
+          ["int2","f1rr"],
+
+          ["int3","f6ll"],
+          ["int3","f6l"],
+          ["int3","f1ll"],
+          ["int3","f6rr"],
+          ["int3","f6r"],
+          ["int3","f1rr"],
+
+          ["int2","f6ll"],
+          ["int4","f6l"],
+          ["int4","f1ll"],
+          ["int4","f6rr"],
+          ["int4","f6r"],
+          ["int4","f1rr"],
+
+          ["int1","int2"],
+          ["int1","int3"],
+          ["int1","int4"],
+
+          ["int2","int3"],
+          ["int2","int4"],
+
+          ["int3","int4"],
+		  
+	],
+}
+//"eind"
+
+"coupe_shifter_M_R": {
+//"begin"
+    "information":{
+        "authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+        "name":"Manual Shifter",
+		"value":100,
+    }
+    "slotType" : "coupe_shifter_R",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_shifter_M_R", ["coupe_dash"]],
+	],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        //clutch pedal
+		["clutch"     ,"coupe_clutchpedal_R", "f7r","f7l","f8r",  {"x":90, "y":0, "z":0} , {"x":-25, "y":0, "z":0}    , {"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
+        
+     ],
+}
+//"eind"
+
+"coupe_shifter_A_R": {
+//"begin"
+    "information":{
+        "authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+        "name":"Automatic Shifter",
+		"value":100,
+    }
+    "slotType" : "coupe_shifter_R",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_shifterbase_a_R", ["coupe_dash"]],
+	],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        //auto shifter
+		["gear_A",         "coupe_shifter_A_R", "f7r","f7l","f8r", {"x":90, "y":0, "z":0}, {"x":0, "y":0, "z":0.1}     , {"x":0, "y":0.25, "z":0}, 0, 1, -0.2, 0.5],
+        
+     ],
+}
+//"eind"
+
+}

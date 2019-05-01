@@ -1,0 +1,325 @@
+{
+
+"coupe_rearpanel": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"200BX Rearpanel",
+		"value":150,
+	}
+    "slotType" : "coupe_rearpanel",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_rearpanel", ["coupe_trunk"]],
+		 {"deformGroup":"coupe_trunklight_R_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+		 ["coupe_reverselight_R", ["coupe_trunk"]],
+		 {"deformGroup":"coupe_trunklight_L_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+		 ["coupe_reverselight_L", ["coupe_trunk"]],
+		 {"deformGroup":""},
+	],
+	"props": [
+		["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+		{
+			"lightInnerAngle":0
+			"lightOuterAngle":80
+			"lightBrightness":0.1
+			"lightRange":30
+			"lightColor":{"r":255, "g":255, "b":200, "a":255}
+			"lightAttenuation":{"x":0, "y":1, "z":1}
+			"lightCastShadows":true
+            "flareName":"vehicleReverseLightFlare"
+            "flareScale":0.15
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5  
+		}
+		//reverse lights
+		["reverse" , 		"SPOTLIGHT"        , "t4r", "t4", "t3r", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.1, "y":0.04, "z":0.00},"deformGroup":"coupe_trunklight_R_break"}],
+		["reverse" , 		"SPOTLIGHT"        , "t4l", "t4", "t3l", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.1, "y":0.04, "z":-0.00},"deformGroup":"coupe_trunklight_L_break"}],
+	],
+}
+//"eind"
+
+"coupe_rearpanel_200SX": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"200SX Rearpanel",
+		"value":200,
+	}
+    "slotType" : "coupe_rearpanel",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_rearpanel_200SX", ["coupe_trunk"]],
+		 {"deformGroup":"coupe_trunklight_R_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+		 ["coupe_reverselight_R", ["coupe_trunk"]],
+		 {"deformGroup":"coupe_trunklight_L_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+		 ["coupe_reverselight_L", ["coupe_trunk"]],
+		 {"deformGroup":""},
+	],
+	"props": [
+		["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+		{
+			"lightInnerAngle":0
+			"lightOuterAngle":80
+			"lightBrightness":0.1
+			"lightRange":30
+			"lightColor":{"r":255, "g":255, "b":200, "a":255}
+			"lightAttenuation":{"x":0, "y":1, "z":1}
+			"lightCastShadows":true
+            "flareName":"vehicleReverseLightFlare"
+            "flareScale":0.15
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5  
+		}
+		//reverse lights
+		["reverse" , 		"SPOTLIGHT"        , "t4r", "t4", "t3r", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.1, "y":0.04, "z":0.00},"deformGroup":"coupe_trunklight_R_break"}],
+		["reverse" , 		"SPOTLIGHT"        , "t4l", "t4", "t3l", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.1, "y":0.04, "z":-0.00},"deformGroup":"coupe_trunklight_L_break"}],
+	],
+}
+//"eind"
+
+"coupe_rearpanel_180SX": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"180SX Rearpanel",
+		"value":250,
+	}
+    "slotType" : "coupe_rearpanel",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_rearpanel_180SX", ["coupe_trunk"]],
+		 {"deformGroup":"coupe_trunklight_R_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+		 ["coupe_reverselight_R", ["coupe_trunk"]],
+		 {"deformGroup":"coupe_trunklight_L_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+		 ["coupe_reverselight_L", ["coupe_trunk"]],
+		 {"deformGroup":""},
+	],
+	"props": [
+		["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+		{
+			"lightInnerAngle":0
+			"lightOuterAngle":80
+			"lightBrightness":0.1
+			"lightRange":30
+			"lightColor":{"r":255, "g":255, "b":200, "a":255}
+			"lightAttenuation":{"x":0, "y":1, "z":1}
+			"lightCastShadows":true
+            "flareName":"vehicleReverseLightFlare"
+            "flareScale":0.15
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5  
+		}
+		//reverse lights
+		["reverse" , 		"SPOTLIGHT"        , "t4r", "t4", "t3r", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.1, "y":0.04, "z":0.00},"deformGroup":"coupe_trunklight_R_break"}],
+		["reverse" , 		"SPOTLIGHT"        , "t4l", "t4", "t3l", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.1, "y":0.04, "z":-0.00},"deformGroup":"coupe_trunklight_L_break"}],
+	],
+}
+//"eind"
+
+"coupe_rearpanel_240SX": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"240SX Rearpanel",
+		"value":300,
+	}
+    "slotType" : "coupe_rearpanel",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_rearpanel_240SX", ["coupe_trunk"]],
+		 {"deformGroup":"coupe_trunklight_R_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+		 ["coupe_reverselight_R", ["coupe_trunk"]],
+		 {"deformGroup":"coupe_trunklight_L_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+		 ["coupe_reverselight_L", ["coupe_trunk"]],
+		 {"deformGroup":""},
+	],
+	"props": [
+		["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+		{
+			"lightInnerAngle":0
+			"lightOuterAngle":80
+			"lightBrightness":0.1
+			"lightRange":30
+			"lightColor":{"r":255, "g":255, "b":200, "a":255}
+			"lightAttenuation":{"x":0, "y":1, "z":1}
+			"lightCastShadows":true
+            "flareName":"vehicleReverseLightFlare"
+            "flareScale":0.15
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5  
+		}
+		//reverse lights
+		["reverse" , 		"SPOTLIGHT"        , "t4r", "t4", "t3r", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.1, "y":0.04, "z":0.00},"deformGroup":"coupe_trunklight_R_break"}],
+		["reverse" , 		"SPOTLIGHT"        , "t4l", "t4", "t3l", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.1, "y":0.04, "z":-0.00},"deformGroup":"coupe_trunklight_L_break"}],
+	],
+}
+//"eind"
+
+"coupe_rearpanel_RPS13": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"RPS13 Rearpanel",
+		"value":350,
+	}
+    "slotType" : "coupe_rearpanel",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_rearpanel_RPS13", ["coupe_trunk"]],
+		 {"deformGroup":"coupe_trunklight_R_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+		 ["coupe_reverselight_R", ["coupe_trunk"]],
+		 {"deformGroup":"coupe_trunklight_L_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+		 ["coupe_reverselight_L", ["coupe_trunk"]],
+		 {"deformGroup":""},
+	],
+	"props": [
+		["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+		{
+			"lightInnerAngle":0
+			"lightOuterAngle":80
+			"lightBrightness":0.1
+			"lightRange":30
+			"lightColor":{"r":255, "g":255, "b":200, "a":255}
+			"lightAttenuation":{"x":0, "y":1, "z":1}
+			"lightCastShadows":true
+            "flareName":"vehicleReverseLightFlare"
+            "flareScale":0.15
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5  
+		}
+		//reverse lights
+		["reverse" , 		"SPOTLIGHT"        , "t4r", "t4", "t3r", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.1, "y":0.04, "z":0.00},"deformGroup":"coupe_trunklight_R_break"}],
+		["reverse" , 		"SPOTLIGHT"        , "t4l", "t4", "t3l", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.1, "y":0.04, "z":-0.00},"deformGroup":"coupe_trunklight_L_break"}],
+	],
+}
+//"eind"
+
+"coupe_rearpanel_color": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Color Rearpanel",
+		"value":400,
+	}
+    "slotType" : "coupe_rearpanel",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_rearpanel_color", ["coupe_trunk"]],
+		 {"deformGroup":"coupe_trunklight_R_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+		 ["coupe_reverselight_R", ["coupe_trunk"]],
+		 {"deformGroup":"coupe_trunklight_L_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+		 ["coupe_reverselight_L", ["coupe_trunk"]],
+		 {"deformGroup":""},
+	],
+	"props": [
+		["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+		{
+			"lightInnerAngle":0
+			"lightOuterAngle":80
+			"lightBrightness":0.1
+			"lightRange":30
+			"lightColor":{"r":255, "g":255, "b":200, "a":255}
+			"lightAttenuation":{"x":0, "y":1, "z":1}
+			"lightCastShadows":true
+            "flareName":"vehicleReverseLightFlare"
+            "flareScale":0.15
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5  
+		}
+		//reverse lights
+		["reverse" , 		"SPOTLIGHT"        , "t4r", "t4", "t3r", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.1, "y":0.04, "z":0.00},"deformGroup":"coupe_trunklight_R_break"}],
+		["reverse" , 		"SPOTLIGHT"        , "t4l", "t4", "t3l", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.1, "y":0.04, "z":-0.00},"deformGroup":"coupe_trunklight_L_break"}],
+	],
+}
+//"eind"
+
+"coupe_rearpanel_black": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Black Rearpanel",
+		"value":450,
+	}
+    "slotType" : "coupe_rearpanel",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_rearpanel_black", ["coupe_trunk"]],
+		 {"deformGroup":"coupe_trunklight_R_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+		 ["coupe_reverselight_R", ["coupe_trunk"]],
+		 {"deformGroup":"coupe_trunklight_L_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+		 ["coupe_reverselight_L", ["coupe_trunk"]],
+		 {"deformGroup":""},
+	],
+	"props": [
+		["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+		{
+			"lightInnerAngle":0
+			"lightOuterAngle":80
+			"lightBrightness":0.1
+			"lightRange":30
+			"lightColor":{"r":255, "g":255, "b":200, "a":255}
+			"lightAttenuation":{"x":0, "y":1, "z":1}
+			"lightCastShadows":true
+            "flareName":"vehicleReverseLightFlare"
+            "flareScale":0.15
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5  
+		}
+		//reverse lights
+		["reverse" , 		"SPOTLIGHT"        , "t4r", "t4", "t3r", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.1, "y":0.04, "z":0.00},"deformGroup":"coupe_trunklight_R_break"}],
+		["reverse" , 		"SPOTLIGHT"        , "t4l", "t4", "t3l", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.1, "y":0.04, "z":-0.00},"deformGroup":"coupe_trunklight_L_break"}],
+	],
+}
+//"eind"
+
+//liftback
+"coupe_rearpanel_liftback": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"200BX Rearpanel",
+		"value":150,
+	}
+    "slotType" : "coupe_rearpanel_liftback",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_rearpanel", ["coupe_body"]],
+		 {"deformGroup":"coupe_taillight_R_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+		 ["coupe_reverselight_R", ["coupe_body"]],
+		 {"deformGroup":"coupe_taillight_L_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+		 ["coupe_reverselight_L", ["coupe_body"]],
+		 {"deformGroup":""},
+	],
+	
+	"props": [
+		["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+		{
+			"lightInnerAngle":0
+			"lightOuterAngle":80
+			"lightBrightness":0.1
+			"lightRange":30
+			"lightColor":{"r":255, "g":255, "b":200, "a":255}
+			"lightAttenuation":{"x":0, "y":1, "z":1}
+			"lightCastShadows":true
+            "flareName":"vehicleReverseLightFlare"
+            "flareScale":0.15
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5  
+		}
+		//reverse lights
+		["reverse" , 		"SPOTLIGHT"        , "t4r", "t4", "t3r", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.1, "y":0.04, "z":0.00},"deformGroup":"coupe_trunklight_R_break"}],
+		["reverse" , 		"SPOTLIGHT"        , "t4l", "t4", "t3l", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.1, "y":0.04, "z":-0.00},"deformGroup":"coupe_trunklight_L_break"}],
+	],
+}
+//"eind"
+
+}

@@ -1,0 +1,185 @@
+{
+
+"coupe_differential_F": {
+//"begin"
+    "information":{
+        "authors":"Jesper, AKA D-TROXX",
+        "name":"Differential",
+        "value":150,
+    }
+    "slotType" : "coupe_differential_F",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["coupe_sunburst_halfshaft_F", ["coupe_hub_F","coupe_lowermounts_F","coupe_lowerarm_F","coupe_engine","coupe_differential_F"]],
+		["coupe_diff_F", ["coupe_lowermounts_F","coupe_engine","coupe_transmission","coupe_differential_F"]]
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        ["differential", "differential_F", "driveshaft_F", 1, {"diffType":"open", "gearRatio": 4.11, "friction":8}]
+    ],
+	"nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--diff weight--
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"coupe_differential_F"},
+         {"nodeWeight":28},
+         ["fdiff", 0, -1.26, 0.26],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":6600550,"beamDamp":125},
+          {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+          ["fdiff","fx1r"],
+          ["fdiff","fx1l"],
+          ["fdiff","f10rr"],
+          ["fdiff","f10ll"],
+		  ["fdiff","f1r"],
+          ["fdiff","f1l"],
+          //halfshafts
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.008, "beamShortBound":0.008},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":2600,"beamStrength":9500},
+          {"beamLimitSpring":7501000,"beamLimitDamp":250},
+          {"breakGroupType":1},
+          {"optional":true},
+          {"breakGroup":"wheel_RR"},
+          ["fw1r","fdiff", {"name":"axle_FR"}],
+          {"breakGroup":"wheel_RL"},
+          ["fw1l","fdiff", {"name":"axle_fL"}],
+          {"breakGroup":""},
+          {"optional":false},
+          {"breakGroupType":0},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+	
+}
+//"eind"
+
+"coupe_differential_F_LSD": {
+//"begin"
+    "information":{
+        "authors":"Jesper, AKA D-TROXX",
+        "name":"Limited Slip Differential",
+        "value":150,
+    }
+    "slotType" : "coupe_differential_F",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["coupe_sunburst_halfshaft_F", ["coupe_hub_F","coupe_lowermounts_F","coupe_lowerarm_F","coupe_engine","coupe_differential_F"]],
+		["coupe_diff_F", ["coupe_lowermounts_F","coupe_engine","coupe_transmission","coupe_differential_F"]]
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        ["differential", "differential_F", "driveshaft_F", 1, {"diffType":"lsd", "gearRatio": 4.11, "lsdPreload":80, "lsdLockCoef":0.125, "lsdRevLockCoef":0.02, "friction":8}]
+    ],
+	"nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--diff weight--
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"coupe_differential_F"},
+         {"nodeWeight":28},
+         ["fdiff", 0, -1.26, 0.26],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":6600550,"beamDamp":125},
+          {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+          ["fdiff","fx1r"],
+          ["fdiff","fx1l"],
+          ["fdiff","f10rr"],
+          ["fdiff","f10ll"],
+		  ["fdiff","f1r"],
+          ["fdiff","f1l"],
+          //halfshafts
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.008, "beamShortBound":0.008},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":2600,"beamStrength":9500},
+          {"beamLimitSpring":7501000,"beamLimitDamp":250},
+          {"breakGroupType":1},
+          {"optional":true},
+          {"breakGroup":"wheel_RR"},
+          ["fw1r","fdiff", {"name":"axle_FR"}],
+          {"breakGroup":"wheel_RL"},
+          ["fw1l","fdiff", {"name":"axle_fL"}],
+          {"breakGroup":""},
+          {"optional":false},
+          {"breakGroupType":0},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+//"eind"
+
+"coupe_differential_F_LSD_Race": {
+//"begin"
+    "information":{
+        "authors":"Jesper, AKA D-TROXX",
+        "name":"Race Limited Slip Differential",
+        "value":150,
+    }
+    "slotType" : "coupe_differential_F",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["coupe_sunburst_halfshaft_F", ["coupe_hub_F","coupe_lowermounts_F","coupe_lowerarm_F","coupe_engine","coupe_differential_F"]],
+		["coupe_diff_F", ["coupe_lowermounts_F","coupe_engine","coupe_transmission","coupe_differential_F"]]
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$lsdpreload_F", "range", "N/m", "Differentials", 100, 0, 500, "Front LSD Preload", "Initial cross torque between left and right wheels"]
+        ["$lsdlockcoef_F", "range", "", "Differentials", 0.12 0, 0.5, "Front LSD Forward Locking", "Locking effect proportional to engine torque", {"minDis":0, "maxDis":100}]
+        ["$lsdlockcoefrev_F", "range", "", "Differentials", 0.06, 0, 0.5, "Front LSD Reverse Locking", "Locking effect proportional to engine braking", {"minDis":0, "maxDis":100}]
+		["$finaldrive_F", "range", ":1", "Differentials", 4.11, 2.0, 6.0, "Final Drive Ratio", "Torque multiplication ratio"]
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        ["differential", "differential_F", "driveshaft_F", 1, {"diffType":"lsd", "gearRatio":"$finaldrive_F", "lsdPreload":"$lsdpreload_F", "lsdLockCoef":"$lsdlockcoef_F", "lsdRevLockCoef":"$lsdlockcoefrev_F", "friction":8}]
+    ],
+	"nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--diff weight--
+         {"selfCollision":false},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"coupe_differential_F"},
+         {"nodeWeight":28},
+         ["fdiff", 0, -1.26, 0.26],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":6600550,"beamDamp":125},
+          {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+          ["fdiff","fx1r"],
+          ["fdiff","fx1l"],
+          ["fdiff","f10rr"],
+          ["fdiff","f10ll"],
+		  ["fdiff","f1r"],
+          ["fdiff","f1l"],
+          //halfshafts
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.008, "beamShortBound":0.008},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":2200,"beamStrength":9500},
+          {"beamLimitSpring":7501000,"beamLimitDamp":250},
+          {"breakGroupType":1},
+          {"optional":true},
+          {"breakGroup":"wheel_RR"},
+          ["fw1r","fdiff", {"name":"axle_FR"}],
+          {"breakGroup":"wheel_RL"},
+          ["fw1l","fdiff", {"name":"axle_fL"}],
+          {"breakGroup":""},
+          {"optional":false},
+          {"breakGroupType":0},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+//"eind"
+
+}

@@ -1,0 +1,147 @@
+{
+"reziavan_lettering": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Trunk Lettering",
+        "value":5,
+    }
+    "slotType" : "reziavan_lettering_trunk",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_lettering_trunk", ["reziavan_trunk"]],
+    ],
+}
+"reziavan_lettering_DX": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"DX Trunk Lettering",
+        "value":5,
+    }
+    "slotType" : "reziavan_lettering_trunk",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_lettering_trunk", ["reziavan_trunk"]],
+         ["reziavan_lettering_i4", ["reziavan_trunk"]],
+         ["reziavan_lettering_DX", ["reziavan_trunk"]],
+    ],
+}
+"reziavan_lettering_DX_awd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"DX AWD Trunk Lettering",
+        "value":5,
+    }
+    "slotType" : "reziavan_lettering_trunk",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_lettering_trunk", ["reziavan_trunk"]],
+         ["reziavan_lettering_i4", ["reziavan_trunk"]],
+         ["reziavan_lettering_4wd", ["reziavan_trunk"]],
+         ["reziavan_lettering_DX", ["reziavan_trunk"]],
+    ],
+}
+"reziavan_lettering_LX": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"LX Trunk Lettering",
+        "value":7,
+    }
+    "slotType" : "reziavan_lettering_trunk",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_lettering_trunk", ["reziavan_trunk"]],
+         ["reziavan_lettering_i4", ["reziavan_trunk"]],
+         ["reziavan_lettering_turbo", ["reziavan_trunk"]],
+         ["reziavan_lettering_LX", ["reziavan_trunk"]],
+
+    ],
+}
+"reziavan_lettering_LX_awd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"LX AWD Trunk Lettering",
+        "value":7,
+    }
+    "slotType" : "reziavan_lettering_trunk",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_lettering_trunk", ["reziavan_trunk"]],
+         ["reziavan_lettering_4wd", ["reziavan_trunk"]],
+         ["reziavan_lettering_i4", ["reziavan_trunk"]],
+         ["reziavan_lettering_turbo", ["reziavan_trunk"]],
+         ["reziavan_lettering_LX", ["reziavan_trunk"]],
+
+    ],
+}
+"reziavan_lettering_ZX": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"ZX Trunk Lettering",
+        "value":9,
+    }
+    "slotType" : "reziavan_lettering_trunk",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_lettering_trunk", ["reziavan_trunk"]],
+         ["reziavan_lettering_v6", ["reziavan_trunk"]],
+         ["reziavan_lettering_ZX", ["reziavan_trunk"]],
+
+    ],
+}
+"reziavan_lettering_ZX_awd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"ZX AWD Trunk Lettering",
+        "value":9,
+    }
+    "slotType" : "reziavan_lettering_trunk",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_lettering_trunk", ["reziavan_trunk"]],
+         ["reziavan_lettering_v6", ["reziavan_trunk"]],
+        ["reziavan_lettering_4wd", ["reziavan_trunk"]],
+         ["reziavan_lettering_ZX", ["reziavan_trunk"]],
+
+    ],
+}
+"reziavan_lettering_gtz": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GTz Trunk Lettering",
+        "value":9,
+    }
+    "slotType" : "reziavan_lettering_trunk",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_lettering_trunk", ["reziavan_trunk"]],
+         ["reziavan_lettering_v6", ["reziavan_trunk"]],
+        ["reziavan_lettering_4wd", ["reziavan_trunk"]],
+         ["reziavan_lettering_GTz", ["reziavan_trunk"]],
+
+    ],
+}
+"reziavan_logo_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Ibishu Logo",
+        "value":5,
+    }
+    "slotType" : "reziavan_logo_F",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_logo_F", ["reziavan_hood"]],
+    ],
+}
+"reziavan_logo_F_grille": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Ibishu Logo",
+        "value":5,
+    }
+    "slotType" : "reziavan_logo_F_grille",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_logo_F_grille", ["reziavan_grille"]],
+    ],
+}
+}

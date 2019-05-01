@@ -1,0 +1,11 @@
+{
+"roamer_skin_grpd": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"Gavril Police Department",
+        "value":1300,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "grpd",
+}
+}

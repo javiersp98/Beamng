@@ -2,7 +2,7 @@
 "moonhawk_radsupport_race": {	
 	"information":{
 		"authors":"gabester, modded by AR162b",
-		"name":"Bruckell Moonhawk Front Tubing",
+		"name":"Race Front Tubing",
 	}
     "slotType" : "moonhawk_radsupport",
 	"slots": [
@@ -25,7 +25,7 @@
 		 {"group":"moonhawk_radsupport"},
 		 {"selfCollision":true}
 		 {"collision":true}
-		 {"nodeWeight":2.1},
+		 {"nodeWeight":2.5},
 		 {"frictionCoef":0.7},
 		 {"nodeMaterial":"|NM_METAL"},
 		 //radiator support
@@ -74,8 +74,9 @@
 		  ["id1:", "id2:"],
 		  {"breakGroupType":0},
 		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
-		  {"beamDeform":140000,"beamStrength":"FLT_MAX"},
+		  {"beamDeform":1400000,"beamStrength":"FLT_MAX"},
 	      {"beamSpring":2001000,"beamDamp":140},
+		  {"deformGroup":"radiator_damage","deformationTriggerRatio":0.01}
 		  //radiator support main shape widthwise
 		  ["s1rr","s1r"],
 		  ["s1r","s1"],
@@ -235,29 +236,31 @@
 		  //["f2ll","s1ll"],
 		  
 		  //rigidifier
-		  {"beamDeform":10000,"beamStrength":"FLT_MAX"},
-		  ["s1rr","s7"],
+		  {"beamDeform":50000,"beamStrength":"FLT_MAX"},
 		  ["s1r","s7"],
-		  ["s1","s7"],
-		  ["s1l","s7"],
-		  ["s1ll","s7"],
-		  
-		  ["s3rr","s7"],
-		  ["s3r","s7"],
-		  ["s3l","s7"],
-		  ["s3ll","s7"],
-		  
-		  ["s5r","s7"],
-		  ["s5","s7"],
-		  ["s5l","s7"],
-		  
-		  ["s4rr","s7"],
-		  ["s4r","s7"],
-		  ["s6r","s7"],
-		  ["s6","s7"],
-		  ["s6l","s7"],
-		  ["s4l","s7"],
-		  ["s4ll","s7"],
+          ["s1","s7"],
+          ["s1l","s7"],
+          ["s3r","s7"],
+          ["s3l","s7"],
+
+          ["s5r","s7"],
+          ["s5","s7"],
+          ["s5l","s7"],
+
+          ["s4r","s7"],
+          ["s6r","s7"],
+          ["s6","s7"],
+          ["s6l","s7"],
+          ["s4l","s7"],
+          {"deformGroup":""}
+          ["s1rr","s7"],
+          ["s1ll","s7"],
+
+          ["s3rr","s7"],
+          ["s3ll","s7"],
+
+          ["s4rr","s7"],
+          ["s4ll","s7"],
 		  
 		  //attach
 		  {"beamDeform":35000,"beamStrength":75000},
@@ -324,11 +327,22 @@
 		  ["s9l","f23ll"],
 		  ["s9l","f10l"],
 
-
+		  //to engine
+          {"beamType":"|SUPPORT", "beamLongBound":0.75},
+          {"beamSpring":120000,"beamDamp":100},
+          {"beamDeform":10000,"beamStrength":35000},
+          {"deformGroup":"radtube_break","deformationTriggerRatio":0.5},
+          {"optional":true},
+          ["s1l","e4l"],
+          ["s1r","e4r"],
+          {"optional":false},
+          {"deformGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
 		  
 	]
     "triangles": [
 			["id1:","id2:","id3:"],
+			{"groundModel":"metal"},
 			{"group":"moonhawk_radsupport"},
 			["s1rr","s3rr","s3r"],
 			["s1rr","s3r","s1r"],
@@ -366,6 +380,7 @@
 			["s3l","s4ll","s4l"],
 			["s5l","s3l","s4l"],
 			["s5l","s4l","s6l"],
+			{"triangleType":"NORMALTYPE"},
 			
 	],
 }

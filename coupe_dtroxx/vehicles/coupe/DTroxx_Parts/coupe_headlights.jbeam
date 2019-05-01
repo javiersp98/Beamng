@@ -1,0 +1,3180 @@
+{
+//oem unit + base
+
+//"begin"
+
+"coupe_headlight_R_DT": {
+//"begin"
+    "information":{
+        "authors":"Jesper, AKA D-TROXX",
+        "name":"Right Headlight [D-Troxx]",
+		"value":150,
+    }
+    "slotType" : "coupe_headlight_R",
+	"slots": [
+		["type", "default", "description"]
+		["coupe_headlight_R_unit","coupe_headlight_R_unit_oem", "Unit"{"coreSlot":true}],
+	],	
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //["coupe_headlightframe_R", ["coupe_headlight_R"]],
+         //{"deformGroup":"coupe_headlightglass_R_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+         {"deformGroup":""},
+    ],    
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--HEADLIGHTS--
+         {"nodeWeight":0.95},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":true},
+         {"collision":true}
+         {"group":"coupe_headlight_R"},
+         //r
+         ["he1rr",-0.66, -1.785, 0.74],
+         ["he1r",-0.43, -1.83, 0.72],
+         ["he2rr",-0.64, -1.95, 0.65],
+         ["he2r",-0.41, -2.02, 0.65],
+
+         {"selfCollision":false},
+         ["he3rr",-0.60, -1.85, 0.54],
+         ["he3r",-0.38, -1.91, 0.54],
+
+         //["he4rr",-0.65, -1.74, 0.69],
+         //["he4r",-0.42, -1.795, 0.69],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--HEADLIGHTS--
+          {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":1001000,"beamDamp":50},
+          {"beamDeform":31950,"beamStrength":"FLT_MAX"},
+          //main shape
+          //r
+          {"deformationTriggerRatio":0.01},
+          {"deformGroup":"headlightglass_R_break"}
+          ["he1rr","he1r"],
+          ["he2rr","he2r"],
+          ["he3rr","he3r"],
+          //["he4rr","he4r"],
+          ["he1rr","he2rr"],
+          ["he1r","he2r"],
+          ["he1rr","he3rr"],
+          ["he1r","he3r"],
+          ["he2rr","he3rr"],
+          ["he2r","he3r"],
+
+          //cross
+          //r
+          ["he1rr","he2r"],
+          ["he1rr","he3r"],
+          ["he2rr","he1r"],
+          ["he2rr","he3r"],
+          ["he3rr","he1r"],
+          ["he3rr","he2r"],
+          {"deformGroup":""},
+
+          //attach to hinge nodes
+          {"beamDeform":10950,"beamStrength":"FLT_MAX"},
+          //r
+          //["he1rr","he4rr"],
+          //["he2rr","he4rr"],
+          //["he3rr","he4rr"],
+          //["he1rr","he4r"],
+          //["he2rr","he4r"],
+          //["he3rr","he4r"],
+          //["he1r","he4rr"],
+          //["he2r","he4rr"],
+          //["he3r","he4rr"],
+          //["he1r","he4r"],
+          //["he2r","he4r"],
+          //["he3r","he4r"],
+
+          //hinge
+          {"beamDeform":9750,"beamStrength":27500},
+          {"breakGroup":"headlight_R"},
+          //r
+          ["he1rr","f15r"],
+          ["he1rr","f15rr"],
+          ["he1rr","f14rr"],
+          ["he1r","f15r"],
+          ["he1r","f15rr"],
+          ["he1r","f14rr"],
+
+          ["he1rr","f13rr"],
+          ["he1rr","f19rr"],
+          ["he1r","f13rr"],
+          ["he1r","f19rr"],
+
+          //damp
+          ["he2r","f13rr"{"beamSpring":0,"beamDamp":150}],
+          ["he2rr","f19rr"{"beamSpring":0,"beamDamp":150}],
+          {"breakGroup":""},
+
+          //headlight support beams
+          {"beamPrecompression":1,"beamType":"|SUPPORT","beamLongBound":4},
+          {"beamSpring":1100550,"beamDamp":50},
+          {"beamDeform":5400,"beamStrength":100000},
+          //r
+          {"optional":true},
+          ["he1r","fb1r"],
+          ["he1rr","fb1rr"],
+          ["he1r","fb1"],
+          {"optional":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    
+     "triangles": [
+            ["id1:","id2:","id3:"],
+            
+            //right headlight
+            {"group":"coupe_headlight_R"},
+            {"dragCoef":4},
+            ["he1r","he1rr","he2rr"],
+            ["he1r","he2rr","he2r"],
+            {"group":""},
+    ],
+}
+//"eind"
+
+"coupe_headlight_R_unit_oem": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"OEM Unit",
+		"value":75,
+	}
+    "slotType" : "coupe_headlight_R_unit",
+	"slots": [
+		["type", "default", "description"]
+		["coupe_headlight_R_hydro","coupe_headlight_R_hydro_1", "Rotation"{"coreSlot":true}],
+		["coupe_headlight_R_lens","coupe_headlight_R_lens_oem", "Lens"{"coreSlot":true}],
+		["coupe_headlight_R_light","coupe_headlight_R_light_oem", "Light"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_headlight_R_unit_oem", ["coupe_headlight_R"]],
+		 ["coupe_headlight_R_cover_oem", ["coupe_headlight_R"]],
+		 {"deformGroup":""},
+	],
+	
+}
+//"eind"
+
+//hydro
+
+//"begin"
+"coupe_headlight_R_hydro_1": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"100%",
+		"value":10,
+	}
+    "slotType" : "coupe_headlight_R_hydro",
+	"hydros": [
+            ["id1:","id2:"],
+            {"beamDeform":55500,"beamStrength":145000},
+            {"beamSpring":1001000,"beamDamp":500},
+            {"breakGroupType":1},
+            {"breakGroup":"headlight_R"},
+            {"deformGroup":"headlightglass_R_break"}
+            ["f13rr","he3r",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1.82,"inRate":2,"outRate":2,"inputFactor":1}],
+            {"breakGroupType":0},
+            {"breakGroup":""},
+    ],
+}
+//"eind"
+
+"coupe_headlight_R_hydro_3/4": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"75%",
+		"value":10,
+	}
+    "slotType" : "coupe_headlight_R_hydro",
+	"hydros": [
+            ["id1:","id2:"],
+            {"beamDeform":55500,"beamStrength":145000},
+            {"beamSpring":1001000,"beamDamp":500},
+            {"breakGroupType":1},
+            {"breakGroup":"headlight_R"},
+            {"deformGroup":"headlightglass_R_break"}
+            ["f13rr","he3r",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1.615,"inRate":2,"outRate":2,"inputFactor":1}],
+            {"breakGroupType":0},
+            {"breakGroup":""},
+    ],
+}
+//"eind"
+
+"coupe_headlight_R_hydro_1/2": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"50%",
+		"value":10,
+	}
+    "slotType" : "coupe_headlight_R_hydro",
+	"hydros": [
+            ["id1:","id2:"],
+            {"beamDeform":55500,"beamStrength":145000},
+            {"beamSpring":1001000,"beamDamp":500},
+            {"breakGroupType":1},
+            {"breakGroup":"headlight_R"},
+            {"deformGroup":"headlightglass_R_break"}
+            ["f13rr","he3r",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1.41,"inRate":2,"outRate":2,"inputFactor":1}],
+            {"breakGroupType":0},
+            {"breakGroup":""},
+    ],
+}
+//"eind"
+
+"coupe_headlight_R_hydro_1/4": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"25%",
+		"value":10,
+	}
+    "slotType" : "coupe_headlight_R_hydro",
+	"hydros": [
+            ["id1:","id2:"],
+            {"beamDeform":55500,"beamStrength":145000},
+            {"beamSpring":1001000,"beamDamp":500},
+            {"breakGroupType":1},
+            {"breakGroup":"headlight_R"},
+            {"deformGroup":"headlightglass_R_break"}
+            ["f13rr","he3r",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1.205,"inRate":2,"outRate":2,"inputFactor":1}],
+            {"breakGroupType":0},
+            {"breakGroup":""},
+    ],
+}
+//"eind"
+
+"coupe_headlight_R_hydro_0": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"0%",
+		"value":10,
+	}
+    "slotType" : "coupe_headlight_R_hydro",
+	"hydros": [
+            ["id1:","id2:"],
+            {"beamDeform":55500,"beamStrength":145000},
+            {"beamSpring":1001000,"beamDamp":500},
+            {"breakGroupType":1},
+            {"breakGroup":"headlight_R"},
+            {"deformGroup":"headlightglass_R_break"}
+            ["f13rr","he3r",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1.0,"inRate":2,"outRate":2,"inputFactor":1}],
+            {"breakGroupType":0},
+            {"breakGroup":""},
+    ],
+}
+//"eind"
+
+//"eind"
+
+"coupe_headlight_R_lens_oem": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"OEM Lens",
+		"value":15,
+	}
+    "slotType" : "coupe_headlight_R_lens",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 {"deformGroup":"coupe_headlightglass_R_break", "deformMaterialBase":"coupe_headlightlens", "deformMaterialDamaged":"coupe_headlightlens_dmg"},
+         ["coupe_headlightlens_R_oem", ["coupe_headlight_R"]],
+		 {"deformGroup":""},
+	],
+	
+}
+//"eind"
+
+"coupe_headlight_R_lens_yellow": {
+//"begin"
+	"information":{
+		"authors":"Jesper, AKA D-TROXX",
+		"name":"Yellow Lens",
+		"value":20,
+	}
+    "slotType" : "coupe_headlight_R_lens",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 {"deformGroup":"coupe_headlightglass_R_break", "deformMaterialBase":"coupe_headlightlens_yellow", "deformMaterialDamaged":"coupe_headlightlens_dmg_yellow"},
+         ["coupe_headlightlens_R_yellow", ["coupe_headlight_R"]],
+		 {"deformGroup":""},
+	],
+	"glowMap":{	
+		//yellow headlight lens
+		"coupe_headlightlens_yellow":{"simpleFunction":{"lowbeam":0.49,"highbeam":0.49}, "off":"coupe_headlightlens_off_yellow", "on":"coupe_headlightlens_on_yellow", "on_intense":"coupe_headlightlens_on_yellow"},
+		}
+}
+//"eind"
+
+//light
+
+//"begin"
+"coupe_headlight_R_light_oem": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"OEM Light",
+		"value":15,
+	}
+    "slotType" : "coupe_headlight_R_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":255, "g":255, "b":200, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":10, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":7, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_R_light_xenon": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Xenon Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":230, "g":255, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":10, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":7, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_R_light_red": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pure Red Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":255, "g":0, "b":0, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":10, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":7, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_R_light_green": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pure Green Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":0, "g":255, "b":0, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":10, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":7, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_R_light_blue": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pure Blue Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":0, "g":0, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":10, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":7, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_R_light_yellow": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Yellow Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":255, "g":255, "b":0, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":10, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":7, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_R_light_cyan": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Cyan Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":0, "g":255, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":10, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":7, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+
+}
+//"eind"
+
+"coupe_headlight_R_light_pink": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pink Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":255, "g":0, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":10, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":7, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+	
+}
+//"eind"
+
+//"eind"
+
+"coupe_headlight_L_DT": {
+//"begin"
+    "information":{
+        "authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+        "name":"Left Headlight [D-Troxx]",
+		"value":150,
+    }
+    "slotType" : "coupe_headlight_L",
+	"slots": [
+		["type", "default", "description"]
+		["coupe_headlight_L_unit","coupe_headlight_L_unit_oem", "Unit"{"coreSlot":true}],
+	],	
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //["coupe_headlightframe_L", ["coupe_headlight_L"]],
+         //{"deformGroup":"coupe_headlightglass_L_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+         {"deformGroup":""},
+    ],    
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--HEADLIGHTS--
+         {"nodeWeight":0.95},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":true},
+         {"collision":true}
+         {"group":"coupe_headlight_L"},
+         ["he1ll", 0.66, -1.785, 0.74],
+         ["he1l", 0.43, -1.83, 0.72],
+         ["he2ll", 0.64, -1.95, 0.65],
+         ["he2l", 0.41, -2.02, 0.65],
+
+         {"selfCollision":false},
+         ["he3ll", 0.60, -1.85, 0.54],
+         ["he3l", 0.38, -1.91, 0.54],
+
+         //["he4ll", 0.65, -1.74, 0.69],
+         //["he4l", 0.42, -1.795, 0.69],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--HEADLIGHTS--
+          {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":1001000,"beamDamp":50},
+          {"beamDeform":31950,"beamStrength":"FLT_MAX"},
+          //main shape
+          //l
+          {"deformationTriggerRatio":0.01},
+          {"deformGroup":"headlightglass_L_break"}
+          ["he1ll","he1l"],
+          ["he2ll","he2l"],
+          ["he3ll","he3l"],
+          //["he4ll","he4l"],
+          ["he1ll","he2ll"],
+          ["he1l","he2l"],
+          ["he1ll","he3ll"],
+          ["he1l","he3l"],
+          ["he2ll","he3ll"],
+          ["he2l","he3l"],
+
+          //cross
+          //l
+          ["he1ll","he2l"],
+          ["he1ll","he3l"],
+          ["he2ll","he1l"],
+          ["he2ll","he3l"],
+          ["he3ll","he1l"],
+          ["he3ll","he2l"],
+          {"deformGroup":""}
+
+          {"beamDeform":10950,"beamStrength":"FLT_MAX"},
+          //attach to hinge nodes
+          //l
+
+          //["he1ll","he4ll"],
+          //["he2ll","he4ll"],
+          //["he3ll","he4ll"],
+          //["he1ll","he4l"],
+          //["he2ll","he4l"],
+          //["he3ll","he4l"],
+          //["he1l","he4ll"],
+          //["he2l","he4ll"],
+          //["he3l","he4ll"],
+          //["he1l","he4l"],
+          //["he2l","he4l"],
+          //["he3l","he4l"],
+
+          //hinge
+          {"beamDeform":9750,"beamStrength":27500},
+          {"breakGroup":"headlight_L"},
+          //l
+          ["he1ll","f15l"],
+          ["he1ll","f15ll"],
+          ["he1ll","f14ll"],
+          ["he1l","f15l"],
+          ["he1l","f15ll"],
+          ["he1l","f14ll"],
+
+          ["he1ll","f13ll"],
+          ["he1ll","f19ll"],
+          ["he1l","f13ll"],
+          ["he1l","f19ll"],
+
+          //damp
+          ["he2l","f13ll"{"beamSpring":0,"beamDamp":150}],
+          ["he2ll","f19ll"{"beamSpring":0,"beamDamp":150}],
+          {"breakGroup":""},
+
+          //headlight support beams
+          {"beamPrecompression":1,"beamType":"|SUPPORT","beamLongBound":4},
+          {"beamSpring":1100550,"beamDamp":50},
+          {"beamDeform":5400,"beamStrength":100000},
+          //l
+          {"optional":true},
+          ["he1l","fb1l"],
+          ["he1ll","fb1ll"],
+          ["he1l","fb1"],
+          {"optional":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            
+            //left headlight
+            {"group":"coupe_headlight_L"},
+            {"dragCoef":4},
+            ["he1ll","he1l","he2ll"],
+            ["he1l","he2l","he2ll"],
+            
+            
+            {"group":""},
+    ],
+}
+//"eind"
+
+"coupe_headlight_L_unit_oem": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"OEM Unit",
+		"value":75,
+	}
+    "slotType" : "coupe_headlight_L_unit",
+	"slots": [
+		["type", "default", "description"]
+		["coupe_headlight_L_hydro","coupe_headlight_L_hydro_1", "Rotation"{"coreSlot":true}],
+		["coupe_headlight_L_lens","coupe_headlight_L_lens_oem", "Lens"{"coreSlot":true}],
+		["coupe_headlight_L_light","coupe_headlight_L_light_oem", "Light"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_headlight_L_unit_oem", ["coupe_headlight_L"]],
+		 ["coupe_headlight_L_cover_oem", ["coupe_headlight_L"]],
+		 {"deformGroup":""},
+	],
+	
+}
+//"eind"
+
+//hydro
+
+//"begin"
+"coupe_headlight_L_hydro_1": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"100%",
+		"value":10,
+	}
+    "slotType" : "coupe_headlight_L_hydro",
+	"hydros": [
+        ["id1:","id2:"],
+        {"beamDeform":55500,"beamStrength":145000},
+            {"beamSpring":1001000,"beamDamp":500},
+            {"breakGroupType":1},
+            {"breakGroup":"headlight_L"},
+            {"deformGroup":"headlightglass_L_break"}
+            ["f13ll","he3l",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1.82,"inRate":2,"outRate":2,"inputFactor":1}],
+            {"breakGroup":""},
+            {"breakGroupType":0},
+            {"deformGroup":""}
+    ],
+}
+//"eind"
+
+"coupe_headlight_L_hydro_3/4": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"75%",
+		"value":10,
+	}
+    "slotType" : "coupe_headlight_L_hydro",
+	"hydros": [
+        ["id1:","id2:"],
+        {"beamDeform":55500,"beamStrength":145000},
+            {"beamSpring":1001000,"beamDamp":500},
+            {"breakGroupType":1},
+            {"breakGroup":"headlight_L"},
+            {"deformGroup":"headlightglass_L_break"}
+            ["f13ll","he3l",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1.615,"inRate":2,"outRate":2,"inputFactor":1}],
+            {"breakGroup":""},
+            {"breakGroupType":0},
+            {"deformGroup":""}
+    ],
+}
+//"eind"
+
+"coupe_headlight_L_hydro_1/2": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"50%",
+		"value":10,
+	}
+    "slotType" : "coupe_headlight_L_hydro",
+	"hydros": [
+        ["id1:","id2:"],
+        {"beamDeform":55500,"beamStrength":145000},
+            {"beamSpring":1001000,"beamDamp":500},
+            {"breakGroupType":1},
+            {"breakGroup":"headlight_L"},
+            {"deformGroup":"headlightglass_L_break"}
+            ["f13ll","he3l",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1.41,"inRate":2,"outRate":2,"inputFactor":1}],
+            {"breakGroup":""},
+            {"breakGroupType":0},
+            {"deformGroup":""}
+    ],
+}
+//"eind"
+
+"coupe_headlight_L_hydro_1/4": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"25%",
+		"value":10,
+	}
+    "slotType" : "coupe_headlight_L_hydro",
+	"hydros": [
+        ["id1:","id2:"],
+        {"beamDeform":55500,"beamStrength":145000},
+            {"beamSpring":1001000,"beamDamp":500},
+            {"breakGroupType":1},
+            {"breakGroup":"headlight_L"},
+            {"deformGroup":"headlightglass_L_break"}
+            ["f13ll","he3l",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1.205,"inRate":2,"outRate":2,"inputFactor":1}],
+            {"breakGroup":""},
+            {"breakGroupType":0},
+            {"deformGroup":""}
+    ],
+}
+//"eind"
+
+"coupe_headlight_L_hydro_0": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"0%",
+		"value":10,
+	}
+    "slotType" : "coupe_headlight_L_hydro",
+	"hydros": [
+        ["id1:","id2:"],
+        {"beamDeform":55500,"beamStrength":145000},
+            {"beamSpring":1001000,"beamDamp":500},
+            {"breakGroupType":1},
+            {"breakGroup":"headlight_L"},
+            {"deformGroup":"headlightglass_L_break"}
+            ["f13ll","he3l",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1.0,"inRate":2,"outRate":2,"inputFactor":1}],
+            {"breakGroup":""},
+            {"breakGroupType":0},
+            {"deformGroup":""}
+    ],
+}
+//"eind"
+
+//"eind"
+
+"coupe_headlight_L_lens_oem": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"OEM Lens",
+		"value":15,
+	}
+    "slotType" : "coupe_headlight_L_lens",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 {"deformGroup":"coupe_headlightglass_L_break", "deformMaterialBase":"coupe_headlightlens", "deformMaterialDamaged":"coupe_headlightlens_dmg"},
+         ["coupe_headlightlens_L_oem", ["coupe_headlight_L"]],
+		 {"deformGroup":""},
+	],
+	
+}
+//"eind"
+
+"coupe_headlight_L_lens_yellow": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Yellow Lens",
+		"value":20,
+	}
+    "slotType" : "coupe_headlight_L_lens",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 {"deformGroup":"coupe_headlightglass_L_break", "deformMaterialBase":"coupe_headlightlens_yellow", "deformMaterialDamaged":"coupe_headlightlens_dmg_yellow"},
+         ["coupe_headlightlens_L_yellow", ["coupe_headlight_L"]],
+		 {"deformGroup":""},
+	],
+	"glowMap":{	
+		//yellow headlight lens
+		"coupe_headlightlens_yellow":{"simpleFunction":{"lowbeam":0.49,"highbeam":0.49}, "off":"coupe_headlightlens_off_yellow", "on":"coupe_headlightlens_on_yellow", "on_intense":"coupe_headlightlens_on_yellow"},
+		}
+		
+}
+//"eind"
+
+//light
+
+//"begin"
+"coupe_headlight_L_light_oem": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"OEM Light",
+		"value":15,
+	}
+    "slotType" : "coupe_headlight_L_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.4
+            "lightRange":60
+            "lightColor":{"r":255, "g":255, "b":200, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":175, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":173, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_L_light_xenon": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Xenon Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.4
+            "lightRange":60
+            "lightColor":{"r":230, "g":255, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":175, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":173, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_L_light_red": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pure Red Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":255, "g":0, "b":0, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":175, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":173, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_L_light_green": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pure Green Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":0, "g":255, "b":0, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":175, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":173, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_L_light_blue": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pure Blue Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":0, "g":0, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":175, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":173, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_L_light_yellow": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Yellow Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":255, "g":255, "b":0, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":175, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":173, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_L_light_cyan": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Cyan Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":0, "g":255, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":175, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":173, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_L_light_pink": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pink Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":255, "g":0, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":175, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":173, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+	
+}
+//"eind"
+
+//"eind"
+
+//"eind"
+
+//low unit
+
+//"begin"
+"coupe_headlight_R_unit_low": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Low Unit",
+		"value":100,
+	}
+    "slotType" : "coupe_headlight_R_unit",
+	"slots": [
+		["type", "default", "description"]
+		["coupe_headlight_R_hydro_low","coupe_headlight_R_hydro_low_1", "Rotation"{"coreSlot":true}],
+		["coupe_headlight_R_lens_low","coupe_headlight_R_lens_low", "Lens"{"coreSlot":true}],
+		["coupe_headlight_R_light_low","coupe_headlight_R_light_low", "Light"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_headlight_R_unit_low", ["coupe_headlight_R"]],
+		 ["coupe_headlight_R_cover_oem", ["coupe_headlight_R"]],
+		 {"deformGroup":""},
+	],
+	
+}
+//"eind"
+
+"coupe_headlight_R_lens_low": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Lens",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_lens_low",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 {"deformGroup":"coupe_headlightglass_R_break", "deformMaterialBase":"coupe_headlightlens", "deformMaterialDamaged":"coupe_headlightlens_dmg"},
+         ["coupe_headlightlens_R_low", ["coupe_headlight_R"]],
+		 {"deformGroup":""},
+	],
+	
+}
+//"eind"
+
+"coupe_headlight_R_lens_low_yellow": {
+//"begin"
+	"information":{
+		"authors":"Jesper, AKA D-TROXX",
+		"name":"Yellow Lens",
+		"value":35,
+	}
+    "slotType" : "coupe_headlight_R_lens_low",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 {"deformGroup":"coupe_headlightglass_R_break", "deformMaterialBase":"coupe_headlightlens_yellow", "deformMaterialDamaged":"coupe_headlightlens_dmg_yellow"},
+         ["coupe_headlightlens_R_low_yellow", ["coupe_headlight_R"]],
+		 {"deformGroup":""},
+	],
+	"glowMap":{	
+		//yellow headlight lens
+		"coupe_headlightlens_yellow":{"simpleFunction":{"lowbeam":0.49,"highbeam":0.49}, "off":"coupe_headlightlens_off_yellow", "on":"coupe_headlightlens_on_yellow", "on_intense":"coupe_headlightlens_on_yellow"},
+		}
+}
+//"eind"
+
+//hydro
+//"begin"
+
+"coupe_headlight_R_hydro_low_1": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"100%",
+		"value":10,
+	}
+    "slotType" : "coupe_headlight_R_hydro_low",
+	"hydros": [
+            ["id1:","id2:"],
+            {"beamDeform":55500,"beamStrength":145000},
+            {"beamLimitSpring":1501000,"beamLimitDamp":300},
+            {"beamSpring":825550,"beamDamp":150},
+            {"breakGroupType":1},
+            {"breakGroup":"coupe_headlight_R"},
+            {"deformGroup":"coupe_headlightglass_R_break"}
+            ["f13rr","he2r",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1.25,"inRate":1,"outRate":1,"inputFactor":1}],
+            {"breakGroupType":0},
+            {"breakGroup":""},
+    ],
+}
+//"eind"
+
+"coupe_headlight_R_hydro_low_3/4": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"75%",
+		"value":10,
+	}
+    "slotType" : "coupe_headlight_R_hydro_low",
+	"hydros": [
+            ["id1:","id2:"],
+            {"beamDeform":55500,"beamStrength":145000},
+            {"beamLimitSpring":1501000,"beamLimitDamp":300},
+            {"beamSpring":825550,"beamDamp":150},
+            {"breakGroupType":1},
+            {"breakGroup":"coupe_headlight_R"},
+            {"deformGroup":"coupe_headlightglass_R_break"}
+            ["f13rr","he2r",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1.19,"inRate":1,"outRate":1,"inputFactor":1}],
+            {"breakGroupType":0},
+            {"breakGroup":""},
+    ],
+}
+//"eind"
+
+"coupe_headlight_R_hydro_low_1/2": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"50%",
+		"value":10,
+	}
+    "slotType" : "coupe_headlight_R_hydro_low",
+	"hydros": [
+            ["id1:","id2:"],
+            {"beamDeform":55500,"beamStrength":145000},
+            {"beamLimitSpring":1501000,"beamLimitDamp":300},
+            {"beamSpring":825550,"beamDamp":150},
+            {"breakGroupType":1},
+            {"breakGroup":"coupe_headlight_R"},
+            {"deformGroup":"coupe_headlightglass_R_break"}
+            ["f13rr","he2r",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1.13,"inRate":1,"outRate":1,"inputFactor":1}],
+            {"breakGroupType":0},
+            {"breakGroup":""},
+    ],
+}
+//"eind"
+
+"coupe_headlight_R_hydro_low_1/4": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"25%",
+		"value":10,
+	}
+    "slotType" : "coupe_headlight_R_hydro_low",
+	"hydros": [
+            ["id1:","id2:"],
+            {"beamDeform":55500,"beamStrength":145000},
+            {"beamLimitSpring":1501000,"beamLimitDamp":300},
+            {"beamSpring":825550,"beamDamp":150},
+            {"breakGroupType":1},
+            {"breakGroup":"coupe_headlight_R"},
+            {"deformGroup":"coupe_headlightglass_R_break"}
+            ["f13rr","he2r",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1.07,"inRate":1,"outRate":1,"inputFactor":1}],
+            {"breakGroupType":0},
+            {"breakGroup":""},
+    ],
+}
+//"eind"
+
+"coupe_headlight_R_hydro_low_0": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"0%",
+		"value":10,
+	}
+    "slotType" : "coupe_headlight_R_hydro_low",
+	"hydros": [
+            ["id1:","id2:"],
+            {"beamDeform":55500,"beamStrength":145000},
+            {"beamLimitSpring":1501000,"beamLimitDamp":300},
+            {"beamSpring":825550,"beamDamp":150},
+            {"breakGroupType":1},
+            {"breakGroup":"coupe_headlight_R"},
+            {"deformGroup":"coupe_headlightglass_R_break"}
+            ["f13rr","he2r",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1,"inRate":1,"outRate":1,"inputFactor":1}],
+            {"breakGroupType":0},
+            {"breakGroup":""},
+    ],
+}
+//"eind"
+
+//"eind"
+
+//light
+//"begin"
+"coupe_headlight_R_light_low": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"OEM Light",
+		"value":15,
+	}
+    "slotType" : "coupe_headlight_R_light_low",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":255, "g":255, "b":200, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":25, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":22, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_R_light_low_xenon": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Xenon Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_light_low",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":230, "g":255, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":25, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":22, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_R_light_low_red": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pure Red Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_light_low",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":255, "g":0, "b":0, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":25, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":22, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_R_light_low_green": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pure Green Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_light_low",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":0, "g":255, "b":0, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":25, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":22, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_R_light_low_blue": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pure Blue Light_low",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":0, "g":0, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":25, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":22, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_R_light_low_yellow": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Yellow Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_light_low",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":255, "g":255, "b":0, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":25, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":22, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_R_light_low_cyan": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Cyan Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_light_low",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":0, "g":255, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":25, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":22, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_R_light_low_pink": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pink Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_light_low",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":255, "g":0, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":25, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":22, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+	
+}
+//"eind"
+
+//"eind"
+
+"coupe_headlight_L_unit_low": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Low Unit",
+		"value":100,
+	}
+    "slotType" : "coupe_headlight_L_unit",
+	"slots": [
+		["type", "default", "description"]
+		["coupe_headlight_L_hydro_low","coupe_headlight_L_hydro_low_1", "Rotation"{"coreSlot":true}],
+		["coupe_headlight_L_lens_low","coupe_headlight_L_lens_low", "Lens"{"coreSlot":true}],
+		["coupe_headlight_L_light_low","coupe_headlight_L_light_low", "Light"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_headlight_L_unit_low", ["coupe_headlight_L"]],
+		 ["coupe_headlight_L_cover_oem", ["coupe_headlight_L"]],
+		 {"deformGroup":""},
+	],
+	
+}
+//"eind"
+
+"coupe_headlight_L_lens_low": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Lens",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_lens_low",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 {"deformGroup":"coupe_headlightglass_L_break", "deformMaterialBase":"coupe_headlightlens", "deformMaterialDamaged":"coupe_headlightlens_dmg"},
+         ["coupe_headlightlens_L_low", ["coupe_headlight_L"]],
+		 {"deformGroup":""},
+	],
+	
+}
+//"eind"
+
+"coupe_headlight_L_lens_low_yellow": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Yellow Lens",
+		"value":35,
+	}
+    "slotType" : "coupe_headlight_L_lens_low",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 {"deformGroup":"coupe_headlightglass_L_break", "deformMaterialBase":"coupe_headlightlens_yellow", "deformMaterialDamaged":"coupe_headlightlens_dmg_yellow"},
+         ["coupe_headlightlens_L_low_yellow", ["coupe_headlight_L"]],
+		 {"deformGroup":""},
+	],
+	"glowMap":{	
+		//yellow headlight lens
+		"coupe_headlightlens_yellow":{"simpleFunction":{"lowbeam":0.49,"highbeam":0.49}, "off":"coupe_headlightlens_off_yellow", "on":"coupe_headlightlens_on_yellow", "on_intense":"coupe_headlightlens_on_yellow"},
+		}
+}
+//"eind"
+
+//hydro
+//"begin"
+
+"coupe_headlight_L_hydro_low_1": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"100%",
+		"value":10,
+	}
+    "slotType" : "coupe_headlight_L_hydro_low",
+	"hydros": [
+        ["id1:","id2:"],
+        {"beamDeform":55500,"beamStrength":145000},
+        {"beamLimitSpring":1501000,"beamLimitDamp":300},
+        {"beamSpring":825550,"beamDamp":150},
+        {"breakGroupType":1},
+        {"breakGroup":"coupe_headlight_L"},
+        {"deformGroup":"coupe_headlightglass_L_break"}
+        ["f13ll","he2l",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1.25,"inRate":1,"outRate":1,"inputFactor":1}],
+        {"breakGroup":""},
+        {"breakGroupType":0},
+        {"deformGroup":""}
+    ],
+}
+//"eind"
+
+"coupe_headlight_L_hydro_low_3/4": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"75%",
+		"value":10,
+	}
+    "slotType" : "coupe_headlight_L_hydro_low",
+	"hydros": [
+        ["id1:","id2:"],
+        {"beamDeform":55500,"beamStrength":145000},
+        {"beamLimitSpring":1501000,"beamLimitDamp":300},
+        {"beamSpring":825550,"beamDamp":150},
+        {"breakGroupType":1},
+        {"breakGroup":"coupe_headlight_L"},
+        {"deformGroup":"coupe_headlightglass_L_break"}
+        ["f13ll","he2l",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1.19,"inRate":1,"outRate":1,"inputFactor":1}],
+        {"breakGroup":""},
+        {"breakGroupType":0},
+        {"deformGroup":""}
+    ],
+}
+//"eind"
+
+"coupe_headlight_L_hydro_low_1/2": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"50%",
+		"value":10,
+	}
+    "slotType" : "coupe_headlight_L_hydro_low",
+	"hydros": [
+        ["id1:","id2:"],
+        {"beamDeform":55500,"beamStrength":145000},
+        {"beamLimitSpring":1501000,"beamLimitDamp":300},
+        {"beamSpring":825550,"beamDamp":150},
+        {"breakGroupType":1},
+        {"breakGroup":"coupe_headlight_L"},
+        {"deformGroup":"coupe_headlightglass_L_break"}
+        ["f13ll","he2l",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1.13,"inRate":1,"outRate":1,"inputFactor":1}],
+        {"breakGroup":""},
+        {"breakGroupType":0},
+        {"deformGroup":""}
+    ],
+}
+//"eind"
+
+"coupe_headlight_L_hydro_low_1/4": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"25%",
+		"value":10,
+	}
+    "slotType" : "coupe_headlight_L_hydro_low",
+	"hydros": [
+        ["id1:","id2:"],
+        {"beamDeform":55500,"beamStrength":145000},
+        {"beamLimitSpring":1501000,"beamLimitDamp":300},
+        {"beamSpring":825550,"beamDamp":150},
+        {"breakGroupType":1},
+        {"breakGroup":"coupe_headlight_L"},
+        {"deformGroup":"coupe_headlightglass_L_break"}
+        ["f13ll","he2l",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1.07,"inRate":1,"outRate":1,"inputFactor":1}],
+        {"breakGroup":""},
+        {"breakGroupType":0},
+        {"deformGroup":""}
+    ],
+}
+//"eind"
+
+"coupe_headlight_L_hydro_low_0": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"0%",
+		"value":10,
+	}
+    "slotType" : "coupe_headlight_L_hydro_low",
+	"hydros": [
+        ["id1:","id2:"],
+        {"beamDeform":55500,"beamStrength":145000},
+        {"beamLimitSpring":1501000,"beamLimitDamp":300},
+        {"beamSpring":825550,"beamDamp":150},
+        {"breakGroupType":1},
+        {"breakGroup":"coupe_headlight_L"},
+        {"deformGroup":"coupe_headlightglass_L_break"}
+        ["f13ll","he2l",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1,"inRate":1,"outRate":1,"inputFactor":1}],
+        {"breakGroup":""},
+        {"breakGroupType":0},
+        {"deformGroup":""}
+    ],
+}
+//"eind"
+
+//"eind"
+
+//light
+//"begin"
+"coupe_headlight_L_light_low": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"OEM Light",
+		"value":15,
+	}
+    "slotType" : "coupe_headlight_L_light_low",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.4
+            "lightRange":60
+            "lightColor":{"r":255, "g":255, "b":200, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":160, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":158, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+
+}
+//"eind"
+
+"coupe_headlight_L_light_low_xenon": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Xenon Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_light_low",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.4
+            "lightRange":60
+            "lightColor":{"r":230, "g":255, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":160, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":158, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+
+}
+//"eind"
+
+"coupe_headlight_L_light_low_red": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pure Red Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_light_low",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":255, "g":0, "b":0, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":160, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":158, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+
+}
+//"eind"
+
+"coupe_headlight_L_light_low_green": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pure Green Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_light_low",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":0, "g":255, "b":0, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":160, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":158, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_L_light_low_blue": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pure Blue Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_light_low",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":0, "g":0, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":160, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":158, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_L_light_low_yellow": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Yellow Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_light_low",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":255, "g":255, "b":0, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":160, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":158, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_L_light_low_cyan": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Cyan Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_light_low",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":0, "g":255, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":160, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":158, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_L_light_low_pink": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pink Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_light_low",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":255, "g":0, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":160, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":158, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+	
+}
+//"eind"
+
+//"eind"
+
+//"eind"
+
+//straight forward unit
+
+//"begin"
+"coupe_headlight_R_unit_straight": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Straight Forward Unit",
+		"value":150,
+	}
+    "slotType" : "coupe_headlight_R_unit",
+	"slots": [
+		["type", "default", "description"]
+		["coupe_headlight_R_hydro","coupe_headlight_R_hydro_1", "Rotation"{"coreSlot":true}],
+		["coupe_headlight_R_lens_straight","coupe_headlight_R_lens_straight", "Lens"{"coreSlot":true}],
+		["coupe_headlight_R_light","coupe_headlight_R_light_oem", "Light"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_headlight_R_unit_straight", ["coupe_headlight_R"]],
+		 ["coupe_headlight_R_cover_oem", ["coupe_headlight_R"]],
+		 {"deformGroup":""},
+	],
+	
+}
+//"eind"
+
+"coupe_headlight_R_lens_straight": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Lens",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_lens_straight",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 {"deformGroup":"coupe_headlightglass_R_break", "deformMaterialBase":"coupe_headlightlens", "deformMaterialDamaged":"coupe_headlightlens_dmg"},
+         ["coupe_headlightlens_R_straight", ["coupe_headlight_R"]],
+		 {"deformGroup":""},
+	],
+	
+}
+//"eind"
+
+"coupe_headlight_R_lens_straight_yellow": {
+//"begin"
+	"information":{
+		"authors":"Jesper, AKA D-TROXX",
+		"name":"Yellow Lens",
+		"value":35,
+	}
+    "slotType" : "coupe_headlight_R_lens_straight",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 {"deformGroup":"coupe_headlightglass_R_break", "deformMaterialBase":"coupe_headlightlens_yellow", "deformMaterialDamaged":"coupe_headlightlens_dmg_yellow"},
+         ["coupe_headlightlens_R_straight_yellow", ["coupe_headlight_R"]],
+		 {"deformGroup":""},
+	],
+	"glowMap":{	
+		//yellow headlight lens
+		"coupe_headlightlens_yellow":{"simpleFunction":{"lowbeam":0.49,"highbeam":0.49}, "off":"coupe_headlightlens_off_yellow", "on":"coupe_headlightlens_on_yellow", "on_intense":"coupe_headlightlens_on_yellow"},
+		}
+}
+//"eind"
+
+"coupe_headlight_L_unit_straight": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Straight Forward Unit",
+		"value":150,
+	}
+    "slotType" : "coupe_headlight_L_unit",
+	"slots": [
+		["type", "default", "description"]
+		["coupe_headlight_L_hydro","coupe_headlight_L_hydro_1", "Rotation"{"coreSlot":true}],
+		["coupe_headlight_L_lens_straight","coupe_headlight_L_lens_straight", "Lens"{"coreSlot":true}],
+		["coupe_headlight_L_light","coupe_headlight_L_light_oem", "Light"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_headlight_L_unit_straight", ["coupe_headlight_L"]],
+		 ["coupe_headlight_L_cover_oem", ["coupe_headlight_L"]],
+		 {"deformGroup":""},
+	],
+	
+}
+//"eind"
+
+"coupe_headlight_L_lens_straight": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Lens",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_lens_straight",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 {"deformGroup":"coupe_headlightglass_L_break", "deformMaterialBase":"coupe_headlightlens", "deformMaterialDamaged":"coupe_headlightlens_dmg"},
+         ["coupe_headlightlens_L_straight", ["coupe_headlight_L"]],
+		 {"deformGroup":""},
+	],
+	
+}
+//"eind"
+
+"coupe_headlight_L_lens_straight_yellow": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Yellow Lens",
+		"value":35,
+	}
+    "slotType" : "coupe_headlight_L_lens_straight",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 {"deformGroup":"coupe_headlightglass_L_break", "deformMaterialBase":"coupe_headlightlens_yellow", "deformMaterialDamaged":"coupe_headlightlens_dmg_yellow"},
+         ["coupe_headlightlens_L_straight_yellow", ["coupe_headlight_L"]],
+		 {"deformGroup":""},
+	],
+	"glowMap":{	
+		//yellow headlight lens
+		"coupe_headlightlens_yellow":{"simpleFunction":{"lowbeam":0.49,"highbeam":0.49}, "off":"coupe_headlightlens_off_yellow", "on":"coupe_headlightlens_on_yellow", "on_intense":"coupe_headlightlens_on_yellow"},
+		}
+}
+//"eind"
+
+//"eind"
+
+//tuner unit + base
+
+//"begin"
+
+"coupe_headlight_R_tuner": {
+//"begin"
+    "information":{
+        "authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+        "name":"Tuner Headlight",
+		"value":200,
+    }
+    "slotType" : "coupe_headlight_R",
+	"slots": [
+		["type", "default", "description"]
+		["coupe_headlightlens_R_tuner","coupe_headlightlens_R_tuner", "Lens"{"coreSlot":true}],
+		["coupe_headlight_R_tuner_light","coupe_headlight_R_tuner_light_oem", "Light"],
+		["coupe_headlight_R_tuner_bumper_filler","coupe_headlight_R_tuner_bumper_filler", "Bumper Filler"],
+	],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //["coupe_headlightframe_R", ["coupe_headlight_R"]],
+         //{"deformGroup":"coupe_headlightglass_R_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+         ["coupe_headlight_R_unit_tuner", ["coupe_headlight_R"]],
+		 ["coupe_headlight_R_cover_tuner", ["coupe_headlight_R"]],
+         {"deformGroup":""},
+    ],    
+    
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         
+         //--HEADLIGHTS--
+         {"nodeWeight":0.9},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":true},
+         {"collision":true}
+         {"group":"coupe_headlight_R"},
+         //r
+         ["he1rr",-0.66, -1.79, 0.74],
+		 ["he1r",-0.43, -1.83, 0.74],
+		 ["he2rr",-0.65, -1.85, 0.72],
+		 ["he2r",-0.41, -1.92, 0.72],
+		 
+		 {"selfCollision":false},
+		 ["he3rr",-0.63, -1.83, 0.55],
+		 ["he3r",-0.40, -1.87, 0.55],
+		 
+		 ["he4rr",-0.65, -1.76, 0.69],
+		 ["he4r",-0.42, -1.83, 0.69],
+         {"group":""},
+         
+    ],
+    
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+          //--HEADLIGHTS--
+          {"beamSpring":550550,"beamDamp":50},
+          {"beamDeform":31950,"beamStrength":"FLT_MAX"},
+          //main shape
+          //r
+          {"deformationTriggerRatio":0.01},
+          {"deformGroup":"coupe_headlightglass_R_break"}
+          ["he1rr","he1r"],
+          ["he2rr","he2r"],
+          ["he3rr","he3r"],
+          ["he4rr","he4r"],
+          ["he1rr","he2rr"],
+          ["he1r","he2r"],
+          ["he1rr","he3rr"],
+          ["he1r","he3r"],
+          ["he2rr","he3rr"],
+          ["he2r","he3r"],
+          
+          //cross
+          //r
+          ["he1rr","he2r"],
+          ["he1rr","he3r"],
+          ["he2rr","he1r"],
+          ["he2rr","he3r"],
+          ["he3rr","he1r"],
+          ["he3rr","he2r"],
+          
+          {"deformGroup":""}
+          {"beamDeform":10950,"beamStrength":"FLT_MAX"},
+          //attach to hinge nodes
+          //r
+          ["he1rr","he4rr"],
+          ["he2rr","he4rr"],
+          ["he3rr","he4rr"],
+          ["he1rr","he4r"],
+          ["he2rr","he4r"],
+          ["he3rr","he4r"],
+          ["he1r","he4rr"],
+          ["he2r","he4rr"],
+          ["he3r","he4rr"],
+          ["he1r","he4r"],
+          ["he2r","he4r"],
+          ["he3r","he4r"],
+          
+          //hinge
+          {"beamDeform":9750,"beamStrength":27500},
+          {"breakGroup":"coupe_headlight_R"},
+          //r
+          ["he4rr","f15r"],
+          ["he4rr","f15rr"],
+          ["he4r","f15r"],
+          ["he4r","f15rr"],
+          
+          ["he4rr","f13rr"],
+          ["he4rr","f19rr"],
+          ["he4r","f13rr"],
+          ["he4r","f19rr"],
+          
+          ["he4r","f17r"],
+          ["he4r","f15"],
+          {"breakGroup":""},
+          
+          //headlight support beams
+          {"beamType":"|SUPPORT","beamLongBound":4},
+          {"beamSpring":1100550,"beamDamp":50},
+          {"beamPrecompression":1},
+          {"beamLimitSpring":2001000,"beamLimitDamp":100},
+          {"beamDeform":5400,"beamStrength":100000},
+          //r
+          ["he1r","fb1r"],
+          ["he1rr","fb1rr"],
+          
+          ["he1r","fb1"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "hydros": [
+            ["id1:","id2:"],
+            {"beamDeform":55500,"beamStrength":145000},
+            {"beamLimitSpring":1501000,"beamLimitDamp":300},
+            {"beamSpring":825550,"beamDamp":150},
+            {"breakGroupType":1},
+            {"breakGroup":"coupe_headlight_R"},
+            {"deformGroup":"coupe_headlightglass_R_break"}
+            ["f13rr","he2r",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1.0,"inRate":1,"outRate":1,"inputFactor":1}],
+            {"breakGroupType":0},
+            {"breakGroup":""},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            
+            //right headlight
+            {"group":"coupe_headlight_R"},
+            {"dragCoef":4},
+            ["he1r","he1rr","he2rr"],
+            ["he1r","he2rr","he2r"],
+            {"group":""},
+            
+            
+    ],
+}
+//"eind"
+
+"coupe_headlightlens_R_tuner": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Lens",
+		"value":30,
+	}
+    "slotType" : "coupe_headlightlens_R_tuner",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 {"deformGroup":"coupe_headlightglass_R_break", "deformMaterialBase":"coupe_headlightlens", "deformMaterialDamaged":"coupe_headlightlens_dmg"},
+         ["coupe_headlightlens_R_tuner", ["coupe_headlight_R"]],
+		 {"deformGroup":""},
+	],
+}
+//"eind"
+
+"coupe_headlightlens_R_tuner_yellow": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Yellow Lens",
+		"value":35,
+	}
+    "slotType" : "coupe_headlightlens_R_tuner",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 {"deformGroup":"coupe_headlightglass_R_break", "deformMaterialBase":"coupe_headlightlens_yellow", "deformMaterialDamaged":"coupe_headlightlens_dmg_yellow"},
+         ["coupe_headlightlens_R_tuner_yellow", ["coupe_headlight_R"]],
+		 {"deformGroup":""},
+	],
+	"glowMap":{	
+		//yellow headlight lens
+		"coupe_headlightlens_yellow":{"simpleFunction":{"lowbeam":0.49,"highbeam":0.49}, "off":"coupe_headlightlens_off_yellow", "on":"coupe_headlightlens_on_yellow", "on_intense":"coupe_headlightlens_on_yellow"},
+		}
+}
+//"eind"
+
+"coupe_headlight_R_tuner_bumper_filler": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Bumper Filler",
+		"value":25,
+	}
+    "slotType" : "coupe_headlight_R_tuner_bumper_filler",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_headlight_R_tuner_bumper_filler", ["coupe_bumper_F"]],
+		 {"deformGroup":""},
+	],
+}
+//"eind"
+
+//light
+//"begin"
+"coupe_headlight_R_tuner_light_oem": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"OEM Light",
+		"value":15,
+	}
+    "slotType" : "coupe_headlight_R_tuner_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":255, "g":255, "b":200, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":20, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":7, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+}
+//"eind"
+
+"coupe_headlight_R_tuner_light_xenon": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Xenon Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_tuner_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":230, "g":255, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":20, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":7, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+}
+//"eind"
+
+"coupe_headlight_R_tuner_light_red": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pure Red Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_tuner_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":255, "g":0, "b":0, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":20, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":7, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_R_tuner_light_green": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pure Green Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_tuner_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":0, "g":255, "b":0, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":20, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":7, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_R_tuner_light_blue": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pure Blue Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_tuner_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":0, "g":0, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":20, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":7, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_R_tuner_light_yellow": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Yellow Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_tuner_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":255, "g":255, "b":0, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":20, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":7, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_R_tuner_light_cyan": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Cyan Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_tuner_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":0, "g":255, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":20, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":7, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_R_tuner_light_pink": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pink Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_R_tuner_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":255, "g":0, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3r", "he3rr", "he2r", {"x":20, "y":0, "z":10} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_R_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3r", "he3rr", "he2r", {"x":7, "y":0, "z":12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":-0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_R_break"}],
+     ],
+	
+}
+//"eind"
+
+//"eind"
+
+"coupe_headlight_L_tuner": {
+//"begin"
+    "information":{
+        "authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+        "name":"Tuner Headlight",
+		"value":200,
+    }
+    "slotType" : "coupe_headlight_L",
+	"slots": [
+		["type", "default", "description"]
+		["coupe_headlightlens_L_tuner","coupe_headlightlens_L_tuner", "Lens"{"coreSlot":true}],
+		["coupe_headlight_L_tuner_light","coupe_headlight_L_tuner_light_oem", "Light"],
+		["coupe_headlight_L_tuner_bumper_filler","coupe_headlight_L_tuner_bumper_filler", "Bumper Filler"],
+	],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //["coupe_headlightframe_L", ["coupe_headlight_L"]],
+         //{"deformGroup":"coupe_headlightglass_L_break", "deformMaterialBase":"coupe_lights", "deformMaterialDamaged":"coupe_lights_dmg"},
+         ["coupe_headlight_L_unit_tuner", ["coupe_headlight_L"]],
+		 ["coupe_headlight_L_cover_tuner", ["coupe_headlight_L"]],
+         {"deformGroup":""},
+    ],    
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         
+         //--HEADLIGHTS--
+         {"nodeWeight":0.9},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":true},
+         {"collision":true}
+         {"group":"coupe_headlight_L"},
+         ["he1ll", 0.66, -1.79, 0.74],
+		 ["he1l", 0.43, -1.83, 0.74],
+		 ["he2ll", 0.65, -1.85, 0.72],
+		 ["he2l", 0.41, -1.92, 0.72],
+		 
+		 {"selfCollision":false},
+		 ["he3ll", 0.63, -1.83, 0.55],
+		 ["he3l", 0.40, -1.87, 0.55],
+		 
+		 ["he4ll", 0.65, -1.76, 0.69],
+		 ["he4l", 0.42, -1.83, 0.69],
+         {"group":""},
+         
+    ],
+    
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+          //--HEADLIGHTS--
+          {"beamSpring":550550,"beamDamp":50},
+          {"beamDeform":31950,"beamStrength":"FLT_MAX"},
+          //main shape
+          //l
+          {"deformationTriggerRatio":0.01},
+          {"deformGroup":"coupe_headlightglass_L_break"}
+          ["he1ll","he1l"],
+          ["he2ll","he2l"],
+          ["he3ll","he3l"],
+          ["he4ll","he4l"],
+          ["he1ll","he2ll"],
+          ["he1l","he2l"],
+          ["he1ll","he3ll"],
+          ["he1l","he3l"],
+          ["he2ll","he3ll"],
+          ["he2l","he3l"],
+          
+          //cross
+          
+          //l
+          ["he1ll","he2l"],
+          ["he1ll","he3l"],
+          ["he2ll","he1l"],
+          ["he2ll","he3l"],
+          ["he3ll","he1l"],
+          ["he3ll","he2l"],
+          
+          {"deformGroup":""}
+          {"beamDeform":10950,"beamStrength":"FLT_MAX"},
+          //attach to hinge nodes
+          
+          //l
+          
+          ["he1ll","he4ll"],
+          ["he2ll","he4ll"],
+          ["he3ll","he4ll"],
+          ["he1ll","he4l"],
+          ["he2ll","he4l"],
+          ["he3ll","he4l"],
+          ["he1l","he4ll"],
+          ["he2l","he4ll"],
+          ["he3l","he4ll"],
+          ["he1l","he4l"],
+          ["he2l","he4l"],
+          ["he3l","he4l"],
+          
+          //hinge
+          {"beamDeform":9750,"beamStrength":27500},
+          {"breakGroup":"coupe_headlight_L"},
+          //l
+          ["he4ll","f15l"],
+          ["he4ll","f15ll"],
+          ["he4l","f15l"],
+          ["he4l","f15ll"],
+          
+          ["he4ll","f13ll"],
+          ["he4ll","f19ll"],
+          ["he4l","f13ll"],
+          ["he4l","f19ll"],
+          
+          ["he4l","f17l"],
+          ["he4l","f15"],
+          {"breakGroup":""},
+          
+          //headlight support beams
+          {"beamType":"|SUPPORT","beamLongBound":4},
+          {"beamSpring":1100550,"beamDamp":50},
+          {"beamPrecompression":1},
+          {"beamLimitSpring":2001000,"beamLimitDamp":100},
+          {"beamDeform":5400,"beamStrength":100000},
+          //l
+          ["he1l","fb1l"],
+          ["he1ll","fb1ll"],
+          
+          ["he1l","fb1"],
+          
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "hydros": [
+            ["id1:","id2:"],
+            {"beamDeform":55500,"beamStrength":145000},
+            {"beamLimitSpring":1501000,"beamLimitDamp":300},
+            {"beamSpring":825550,"beamDamp":150},
+            {"breakGroupType":1},
+            {"breakGroup":"coupe_headlight_L"},
+            {"deformGroup":"coupe_headlightglass_L_break"}
+            ["f13ll","he2l",{"inputSource":"lowhighbeam","inLimit":0,"outLimit":1.0,"inRate":1,"outRate":1,"inputFactor":1}],
+            {"breakGroup":""},
+            {"breakGroupType":0},
+            {"deformGroup":""}
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            
+            //left headlight
+            {"group":"coupe_headlight_L"},
+            {"dragCoef":4},
+            ["he1ll","he1l","he2ll"],
+            ["he1l","he2l","he2ll"],
+            
+            
+            {"group":""},
+    ],
+}
+//"eind"
+
+"coupe_headlightlens_L_tuner": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Lens",
+		"value":30,
+	}
+    "slotType" : "coupe_headlightlens_L_tuner",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 {"deformGroup":"coupe_headlightglass_L_break", "deformMaterialBase":"coupe_headlightlens", "deformMaterialDamaged":"coupe_headlightlens_dmg"},
+         ["coupe_headlightlens_L_tuner", ["coupe_headlight_L"]],
+		 {"deformGroup":""},
+	],
+}
+//"eind"
+
+"coupe_headlightlens_L_tuner_yellow": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Yellow Lens",
+		"value":35,
+	}
+    "slotType" : "coupe_headlightlens_L_tuner",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 {"deformGroup":"coupe_headlightglass_L_break", "deformMaterialBase":"coupe_headlightlens_yellow", "deformMaterialDamaged":"coupe_headlightlens_dmg_yellow"},
+         ["coupe_headlightlens_L_tuner_yellow", ["coupe_headlight_L"]],
+		 {"deformGroup":""},
+	],
+	"glowMap":{	
+		//yellow headlight lens
+		"coupe_headlightlens_yellow":{"simpleFunction":{"lowbeam":0.49,"highbeam":0.49}, "off":"coupe_headlightlens_off_yellow", "on":"coupe_headlightlens_on_yellow", "on_intense":"coupe_headlightlens_on_yellow"},
+		}
+}
+//"eind"
+
+"coupe_headlight_L_tuner_bumper_filler": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Bumper Filler",
+		"value":25,
+	}
+    "slotType" : "coupe_headlight_L_tuner_bumper_filler",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_headlight_L_tuner_bumper_filler", ["coupe_bumper_F"]],
+		 {"deformGroup":""},
+	],
+}
+//"eind"
+
+//light
+//"begin"
+"coupe_headlight_L_tuner_light_oem": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"OEM Light",
+		"value":15,
+	}
+    "slotType" : "coupe_headlight_L_tuner_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.4
+            "lightRange":60
+            "lightColor":{"r":255, "g":255, "b":200, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":160, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":173, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+}
+//"eind"
+
+"coupe_headlight_L_tuner_light_xenon": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Xenon Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_tuner_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.4
+            "lightRange":60
+            "lightColor":{"r":230, "g":255, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":160, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":173, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+}
+//"eind"
+
+"coupe_headlight_L_tuner_light_red": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pure Red Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_tuner_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":255, "g":0, "b":0, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":175, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":173, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_L_tuner_light_green": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pure Green Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_tuner_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":0, "g":255, "b":0, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":175, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":173, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_L_tuner_light_blue": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pure Blue Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_tuner_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":0, "g":0, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":175, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":173, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_L_tuner_light_yellow": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Yellow Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_tuner_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":255, "g":255, "b":0, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":175, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":173, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_L_tuner_light_cyan": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Cyan Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_tuner_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":0, "g":255, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":175, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":173, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+	
+}
+//"eind"
+
+"coupe_headlight_L_tuner_light_pink": {
+//"begin"
+	"information":{
+		"authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+		"name":"Pink Light",
+		"value":30,
+	}
+    "slotType" : "coupe_headlight_L_tuner_light",
+	"props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        {
+            "lightInnerAngle":65
+            "lightOuterAngle":120
+            "lightBrightness":0.2
+            "lightRange":60
+            "lightColor":{"r":255, "g":0, "b":255, "a":255}
+            "lightAttenuation":{"x":0, "y":1, "z":1}
+            "lightCastShadows":true
+            "flareName":"vehicleHeadLightFlare"
+            "flareScale":0.4
+            "cookieName":"art/special/BNG_light_cookie_headlight.png"
+            "texSize":512
+            "shadowSoftness":0.5
+        }
+        //low beams
+        ["lowbeam"    , "SPOTLIGHT"        , "he3l", "he3ll", "he2l", {"x":175, "y":0, "z":-20} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":70,"lightBrightness":0.5,"lightOuterAngle":85,"deformGroup":"coupe_headlightglass_L_break"}],
+        //high beams
+        ["highbeam" ,   "SPOTLIGHT"           , "he3l", "he3ll", "he2l", {"x":173, "y":0, "z":-12} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.6, "y":0.5, "z":0.0},"lightRange":120,"lightBrightness":0.8,"lightOuterAngle":70,"deformGroup":"coupe_headlightglass_L_break"}],
+     ],
+	
+}
+//"eind"
+
+//"eind"
+
+//"eind"
+
+
+}

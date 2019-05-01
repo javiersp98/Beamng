@@ -295,7 +295,152 @@
 }
 
 
-"semi_converter_locking": {
+"semi_transmission_6A": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"6-Speed Automatic Transmission",
+        "value":3500,
+    }
+    "slotType" : "semi_transmission",
+    "slots": [
+        ["type", "default", "description"]
+        ["semi_converter","semi_converter","Torque Converter", {"coreSlot":true}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["automaticGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-5, 0, 6.26, 3.85, 2.38, 1.62, 1.17, 0.86],
+        "friction": 35,
+        "gearboxNode:":["tra1"],
+    },	
+    "vehicleController": {
+        "automaticModes":"PRNDSM",
+        "transmissionGearChangeDelay":0.2,
+        "transmissionShiftDelay":0.2,
+        //"shiftDownRPMOffsetCoef":0.6,
+        "calculateOptimalLoadShiftPoints": false
+        "lowShiftDownRPM":[500,0,0,0,500,700,700,700,700,700,700,700,700]
+        "lowShiftUpRPM":1200,
+        //"highShiftUpRPM":1600,
+        //"highShiftDownRPM":[500,0,0,0,500,1000,1000,1000,1000,1000,1000,1000,1000]
+        //"wheelSlipUpThreshold":5,
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["semi_transmission", ["semi_transmission"]],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        ["gear_M"      , "semi_shifter_A"    , "dc3","dc3l","dc12",  {"x":90, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 1, 0, 1],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true}
+         {"collision":true}
+         //--TRANSMISSION CONE--
+         {"nodeWeight":56.1},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"group":"semi_transmission"},
+         ["tra1", 0.0, -1.13, 0.55],
+         ["tra2r", -0.27, -2.45, 0.44],
+         ["tra2l", 0.27, -2.45, 0.44],
+         ["tra3r", -0.27, -2.45, 1.02],
+         ["tra3l", 0.27, -2.45, 1.02],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--TRANSMISSION CONE--
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":32000800,"beamDamp":1600},
+          {"beamDeform":1500000,"beamStrength":"FLT_MAX"},
+          ["tra1","tra2r"],
+          ["tra1","tra2l"],
+          ["tra1","tra3r"],
+          ["tra1","tra3l"],
+          ["tra2r","tra2l"],
+          ["tra3r","tra3l"],
+          ["tra2r","tra3r"],
+          ["tra2l","tra3l"],
+          ["tra2r","tra3l"],
+          ["tra2l","tra3r"],
+          //attach to engine
+          ["tra1","en2r"],
+          ["tra1","en2l"],
+          ["tra3l","en1l"],
+          ["tra3r","en1r"],
+          ["tra2r","en2r"],
+          ["tra2r","en2l"],
+          ["tra2r","en4r"],
+          ["tra2r","en4l"],
+          ["tra2l","en2r"],
+          ["tra2l","en2l"],
+          ["tra2l","en4r"],
+          ["tra2l","en4l"],
+          ["tra3r","en2r"],
+          ["tra3r","en2l"],
+          ["tra3r","en4r"],
+          ["tra3r","en4l"],
+          ["tra3l","en2r"],
+          ["tra3l","en2l"],
+          ["tra3l","en4r"],
+          ["tra3l","en4l"],
+          //transmission mounts
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":4000800,"beamDamp":1600},
+          {"beamDeform":100000,"beamStrength":295000},
+          ["tra2r","f4r"],
+          ["tra2l","f4l"],
+          ["tra2r","f4l"],
+          ["tra2l","f4r"],
+          ["tra2r","f14r"],
+          ["tra2l","f14l"],
+          //support beams for anti clipping
+          {"beamType":"|SUPPORT", "beamLongBound":5},
+          {"beamSpring":8000800,"beamDamp":800},
+          {"beamDeform":250000,"beamStrength":850000},
+          {"beamPrecompression":0.8},
+          ["tra1","f6l"],
+          ["tra1","f6r"],
+          ["tra1","f16l"],
+          ["tra1","f16r"],
+          ["tra2r","fsd1r"],
+          ["tra2l","fsd1l"],
+          ["tra2r","fsd1"],
+          ["tra2l","fsd1"],
+          ["tra3r","f4rr"],
+          ["tra3l","f4ll"],
+          {"beamSpring":1600800,"beamDamp":160},
+          ["tra1","dc9"],
+          ["tra1","dc11"],
+          ["tra1","dc10rr"],
+          ["tra1","dc10ll"],
+          ["tra2l","dc9"],
+          ["tra2r","dc9"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"group":"semi_engine"},
+            {"groundModel":"metal"},
+            {"dragCoef":3},
+            ["tra2l", "tra2r", "tra1"],
+            ["tra2l", "tra1", "tra3l"],
+            ["tra3l", "tra1", "tra3r"],
+            ["tra3r", "tra1", "tra2r"],
+            ["tra3r", "tra2r", "tra2l"],
+            ["tra3r", "tra2l", "tra3l"],
+            {"group":""},
+    ],
+}
+
+/*
+"semi_converter_locking2": {
     "information":{
         "authors":"BeamNG",
         "name":"Locking Torque Converter",
@@ -315,8 +460,8 @@
         "torqueConverterLockupMinGear":3
     },
 },
-
-"semi_converter_heavy": {
+*/
+"semi_converter_heavy2": {
     "information":{
         "authors":"BeamNG",
         "name":"Heavy Duty Locking Torque Converter",
@@ -324,15 +469,15 @@
     },
     "slotType" : "semi_converter",
     "torqueConverter": {
-        "converterDiameter":0.6,
-        "converterStiffness":12,
+        "converterDiameter":0.5,
+        "converterStiffness":11,
         "couplingAVRatio":0.85,
         "stallTorqueRatio":1.5,
-        "lockupClutchTorque":3000,
+        "lockupClutchTorque":5000,
         "additionalEngineInertia":1.25,
     },
     "vehicleController": {
-        "torqueConverterLockupRPM":1000
+        "torqueConverterLockupRPM":750
         "torqueConverterLockupMinGear":3
     },
 },

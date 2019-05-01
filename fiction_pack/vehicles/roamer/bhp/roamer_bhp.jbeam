@@ -1,0 +1,11 @@
+{
+"roamer_skin_bhp": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"Highway Patrol",
+        "value":1300,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "bhp",
+}
+}

@@ -1,0 +1,11 @@
+{
+"midsize_skin_pdny": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"Police Department of New York City Skin",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "pdny",
+}
+}

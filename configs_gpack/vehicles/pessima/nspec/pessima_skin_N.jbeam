@@ -18,3 +18,13 @@
     "skinName" : "NSPEC",
   },
 }
+"pessima_skin_interior_gtz2": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"GTz Interior",
+        "value":50,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "gtz",
+  },
+}

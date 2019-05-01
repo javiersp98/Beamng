@@ -1,0 +1,11 @@
+{
+"van_skin_sfctos": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"San Francisco CTOS Skin",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "sfctos",
+}
+}

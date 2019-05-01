@@ -1,0 +1,145 @@
+{
+"reziavan_roofbox": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Roof Box",
+        "value":120,
+    }
+    "slotType" : "reziavan_roofitem",
+    "slots": [
+        ["type", "default", "description"]
+    ],
+	"variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$weight", "range", "kg", "Load", 0.5, 5, 8, "Weight Scale", "Weight of one node (x8)"]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_roofbox", ["roofbox"]],
+    ],
+	"nodes": [
+         ["id", "posX", "posY", "posZ"],
+
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":true},
+         {"collision":true},
+         {"group":"roofbox"},
+         {"nodeWeight":"$weight"},
+		["rfbox1r", -0.33146, -0.14492, 1.59118],   
+		["rfbox1l", 0.32059, -0.15008, 1.59118],   
+		["rfbox2r", -0.33146, -0.14492, 1.86271],   
+		["rfbox2l", 0.32059, -0.15008, 1.86271],   
+		["rfbox3r", -0.33146, 1.41247, 1.86271],   
+		["rfbox3l", 0.32059, 1.40730, 1.86271],   
+		["rfbox4r", -0.33146, 1.41247, 1.59118],   
+		["rfbox4l", 0.32059, 1.40730, 1.59118],   
+
+
+
+        {"group":""},
+
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":340460,"beamDamp":45},
+		{"disableMeshBreaking":true,"disableTriangleBreaking":true}
+          {"beamDeform":8580,"beamStrength":"FLT_MAX"},
+//right
+            ["rfbox2r", "rfbox3r"],
+            ["rfbox3r", "rfbox4r"],
+            ["rfbox4r", "rfbox1r"],
+            ["rfbox1r", "rfbox2r"],
+            ["rfbox4r", "rfbox2r"],
+            ["rfbox3r", "rfbox1r"],
+
+//left
+            ["rfbox2l", "rfbox3l"],
+            ["rfbox3l", "rfbox4l"],
+            ["rfbox4l", "rfbox1l"],
+            ["rfbox1l", "rfbox2l"],
+            ["rfbox2l", "rfbox4l"],
+            ["rfbox3l", "rfbox1l"],
+
+
+
+//cross
+            ["rfbox4r", "rfbox4l"],
+            ["rfbox3r", "rfbox3l"],
+            ["rfbox3l", "rfbox4r"],
+            ["rfbox3r", "rfbox4l"],
+            ["rfbox3r", "rfbox2l"],
+            ["rfbox2l", "rfbox2r"],
+            ["rfbox2r", "rfbox3l"],
+            ["rfbox2r", "rfbox1l"],
+            ["rfbox2l", "rfbox1r"],
+            ["rfbox1l", "rfbox4r"],
+            ["rfbox1r", "rfbox4l"],
+            ["rfbox1l", "rfbox1r"],
+
+//attach
+
+		{"beamDeform":8500,"beamStrength":18000},
+		{"breakGroup":"rfboxmount_R"},
+
+		{"breakGroupType":0},
+  
+            ["rfbox1r", "rf1r"],
+			["rfbox1r", "rf2r"],
+            ["rfbox4r", "rf4r"],
+			["rfbox4r", "ar16"],
+			["rfbox4r", "ar13"],
+            ["rfbox3r", "ar13"],
+			["rfbox3r", "ar16"],
+			["rfbox2r", "rf1"],
+			["rfbox2r", "rf1r"],
+
+
+			
+		{"breakGroup":""},
+
+
+		{"breakGroup":"rfboxmount_L"},
+            ["rfbox1l", "rf1l"],
+			["rfbox1l", "rf2l"],
+            ["rfbox4l", "rf4l"],
+			["rfbox4l", "ar18"],
+			["rfbox4l", "ar15"],
+            ["rfbox3l", "ar15"],
+			["rfbox3l", "ar18"],
+			["rfbox2l", "rf1"],
+			["rfbox2l", "rf1l"],
+
+		{"breakGroupType":0},
+  
+
+
+			
+		{"breakGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+
+    "triangles": [
+            ["id1:","id2:","id3:"],
+        {"dragCoef":5}
+            ["rfbox3l", "rfbox4l", "rfbox4r"],
+            ["rfbox4r", "rfbox3r", "rfbox3l"],
+            ["rfbox4r", "rfbox1r", "rfbox3r"],
+            ["rfbox3r", "rfbox1r", "rfbox2r"],
+            ["rfbox1r", "rfbox1l", "rfbox2r"],
+            ["rfbox2r", "rfbox1l", "rfbox2l"],
+            ["rfbox2l", "rfbox1l", "rfbox4l"],
+            ["rfbox2l", "rfbox4l", "rfbox3l"],
+            ["rfbox3l", "rfbox2r", "rfbox2l"],
+            ["rfbox2r", "rfbox3l", "rfbox3r"],
+            ["rfbox1l", "rfbox4r", "rfbox4l"],
+            ["rfbox1l", "rfbox1r", "rfbox4r"],
+
+
+
+  
+            {"triangleType":"NORMALTYPE"},
+    ], 
+}
+}

@@ -1,0 +1,14 @@
+{
+"reziavan_rearwiper": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Wiper",
+        "value":120,
+    }
+    "slotType" : "reziavan_rearwiper",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["reziavan_rearwiper", ["reziavan_trunk"]],
+    ],
+}
+}

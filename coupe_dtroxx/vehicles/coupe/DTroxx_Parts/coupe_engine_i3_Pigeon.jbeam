@@ -1,0 +1,647 @@
+{
+"coupe_i3_engine": {
+//"begin"
+    "information":{
+        "authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+        "name":"658cc I3 Diesel Engine",
+		"value":320,
+    }
+    "slotType" : "coupe_engine_DT",
+    "slots": [
+        ["type", "default", "description"]
+        ["coupe_exhaust_I4","coupe_exhaust", "Exhaust"],
+        ["coupe_i3_transmission","coupe_i3_transmission_3M", "Transmission"],
+		["n2o_system","", "Nitrous Oxide System"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_i3_engine", ["coupe_engine"]],
+         ["coupe_i3_radtube", ["coupe_engine","coupe_body"]],
+		 ["coupe_i3_radiator", ["coupe_engine","coupe_body"]],
+		 ["coupe_i3_engbaycrap", ["coupe_body"]],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        ["rpmspin"  , "coupe_i3_fan", "e2r","e2l","e4r",  {"x":0, "y":0, "z":0}, {"x":0, "y":1, "z":0}    , {"x":0, "y":0, "z":0}, -360, 360, 0, 1],
+     ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["combustionEngine", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine": {
+        "torque":[
+            ["rpm", "torque"]
+            [0, 0],
+            [500, 55],
+            [1000, 69],
+            [1500, 75],
+            [2000, 82],
+            [2500, 83],
+            [3000, 77],
+            [4000, 57],
+            [5000, 35],
+            [5500, 21],
+            [6000, 10],
+        ],
+
+        "idleRPM":650,
+        "maxRPM":4500,
+        "revLimiterRPMDrop":200,
+        "inertia":0.08,
+        "friction":8
+        "dynamicFriction":0.018
+        //"burnEfficiency":0.3
+        "burnEfficiency":[
+            [0, 0.12],
+            [0.05, 0.32],
+            [0.4, 0.47],
+            [0.7, 0.41],
+            [1, 0.29],
+        ],
+        "torqueReactionNodes:":["e1l","e2l","e4r"]
+        "particulates":0.15
+        "energyStorage": "mainTank",
+        "requiredEnergyType":"diesel",
+
+        //cooling and oil system
+        "thermalsEnabled":true
+        "engineBlockMaterial":"iron"
+        "oilVolume":2
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":160
+        "headGasketDamageThreshold":1500000
+        "pistonRingDamageThreshold":1500000
+        "connectingRodDamageThreshold":1500000
+        
+        "maxTorqueRating": 100,
+        "maxOverTorqueDamage": 100,
+
+        //node beam interface
+        "waterDamage": {"[engineGroup]:":["engine_intake"]},
+        "radiator": {"[engineGroup]:":["radiator"]},
+        "engineBlock": {"[engineGroup]:":["engine_block"]},
+        "breakTriggerBeam":"engine",
+        "uiName":"Engine",
+
+        "soundConfig": "soundConfig",
+    },
+    "soundConfig": {
+        "sampleName": "I4",
+        "mainGain": -18,
+        "maxLoadMix": 0.65,
+        "minLoadMix": 0,
+        "onLoadGain":1,
+        "offLoadGain":0.7,
+        "eqLowGain": 10,
+        "eqLowFreq": 400,
+        //"eqLowWidth": 0,
+        "eqHighGain": -5,
+        "eqHighFreq": 6000,
+        //"eqHighWidth": 0.5,
+        "lowCutFreq":80,
+        "fundamentalFrequencyCylinderCount":4
+        "eqFundamentalGain": 10
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":1200,
+        "clutchLaunchTargetRPM":1800,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":[0,0,0,1600,2100,2300,2300]
+        //**highShiftUp can be overwritten by intake modifications**
+        "highShiftUpRPM":4300
+    },
+	
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true}
+         {"group":"coupe_engine"},
+         {"engineGroup":"engine_block"}
+         {"nodeWeight":12},
+         {"chemEnergy":2000,"burnRate":0.39,"flashPoint":1000,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":900,"baseTemp":"thermals","conductionRadius":0.12},
+         ["e1r", -0.06, -0.97, 0.31],
+         ["e1l", 0.21, -0.97, 0.31],
+         ["e2r", -0.06, -1.53, 0.31],
+         ["e2l", 0.21, -1.53, 0.31],
+		 {"chemEnergy":false,"burnRate":false,"flashPoint":false, "specHeat": false,"selfIgnitionCoef":false,"smokePoint":false,"baseTemp":false,"conductionRadius":false},
+         {"engineGroup":["engine_block","engine_intake"]}
+         ["e3r", -0.06, -0.97, 0.79],
+         ["e3l", 0.21, -0.97, 0.79{"isExhaust":"mainEngine"}],
+         ["e4r", -0.06, -1.53, 0.79],
+         ["e4l", 0.21, -1.53, 0.79],
+         {"engineGroup":""}
+         {"group":""},
+         
+    ],
+    
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":4001000,"beamDamp":150},
+          {"beamDeform":1500000,"beamStrength":"FLT_MAX"},
+          //engine
+          ["e1r","e1l"],
+          ["e2r","e2l"],
+          ["e3r","e3l"],
+          ["e4r","e4l"],
+
+          ["e1r","e2r"],
+          ["e1l","e2l"],
+          ["e3r","e4r"],
+          ["e3l","e4l"],
+
+          ["e1r","e3r"],
+          ["e1l","e3l"{"isExhaust":"mainEngine"}],
+          ["e2r","e4r"],
+          ["e2l","e4l"],
+
+          ["e2r","e3r"],
+          ["e2l","e3l"],
+          ["e2r","e3l"],
+          ["e2l","e3r"],
+
+          ["e1r","e4r"],
+          ["e1l","e4l"],
+          ["e1r","e4l"],
+          ["e1l","e4r"],
+
+          ["e1r","e2l"],
+          ["e1l","e2r"],
+          ["e3r","e4l"],
+          ["e3l","e4r"],
+
+          ["e1r","e3l"],
+          ["e1l","e3r"],
+          ["e2r","e4l"],
+          ["e2l","e4r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"triangleType":"NONCOLLIDABLE"},
+            ["e2r", "e1r", "e1l"],
+            ["e1l", "e2l", "e2r"],
+            {"triangleType":"NORMALTYPE"},
+    ],
+}
+//"eind"
+
+"coupe_i3_transmission_3M": {
+//"begin"
+    "information":{
+        "authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+        "name":"3-Speed Manual Transmission",
+		"value":200,
+    }
+    "slotType" : "coupe_i3_transmission",
+	"slots": [
+        ["type", "default", "description"]
+        ["coupe_transfer_case_i3","coupe_transfer_case_i3_RWD", "Transfer Case"{"coreSlot":true}],
+		["pigeon_flywheel","pigeon_flywheel","Flywheel", {"coreSlot":true}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_i3_transmission", ["coupe_engine","coupe_transmission"]],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-3.2, 0, 3.6, 1.85, 1.0]
+        "friction": 1,
+        "gearboxNode:":"tra1",
+    },
+    "vehicleController": {
+        //"lowShiftDownRPM":[0,0,0,1600,2100,2300,2300],
+        //"lowShiftUpRPM":3500,
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.3,
+        "lowShiftDownRPM":[0,0,0,900,900],
+        "lowShiftUpRPM":[0,0,2300,1800],
+    },
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--3 Speed Manual--
+         {"selfCollision":true},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"pigeon_transmission"},
+         {"nodeWeight":13},
+         ["tra1", 0.0, -0.09, 0.32],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":4001000,"beamDamp":150},
+          {"beamDeform":1500000,"beamStrength":"FLT_MAX"},
+          //transmission
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+//"eind"
+
+"pigeon_flywheel": {
+//"begin"
+    "information":{
+        "authors":"BeamNG",
+        "name":"Flywheel",
+        "value":125,
+    },
+    "slotType" : "pigeon_flywheel",
+    "clutch": {
+        "uiName":"Clutch",
+        "additionalEngineInertia":0.05,
+    },
+},
+//"eind"
+
+"pigeon_flywheel_light": {
+//"begin"
+    "information":{
+        "authors":"BeamNG",
+        "name":"Lightened Flywheel",
+        "value":175,
+    },
+    "slotType" : "pigeon_flywheel",
+    "clutch": {
+        "uiName":"Clutch",
+        "additionalEngineInertia":0.03,
+    },
+},
+//"eind"
+
+"coupe_i3_600_engine": {
+//"begin"
+    "information":{
+        "authors":"BeamNG (Edited by Jesper, AKA D-TROXX)",
+        "name":"600cc I3 Fuel Injected Engine",
+		"value":420,
+    }
+    "slotType" : "coupe_engine_DT",
+    "slots": [
+        ["type", "default", "description"]
+        ["coupe_exhaust_I4","coupe_exhaust", "Exhaust"],
+        ["coupe_i3_600_transmission","coupe_i3_600_transmission_5M", "Transmission"],
+		["n2o_system","", "Nitrous Oxide System"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_600_engine", ["coupe_engine"]],
+         ["coupe_600_radtube", ["coupe_engine","coupe_body"]],
+		 ["coupe_i3_radiator", ["coupe_engine","coupe_body"]],
+		 ["coupe_i3_engbaycrap", ["coupe_body"]],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
+        //["radiatorFanSpin"  , "pigeon_fan", "e2r","e2l","e4r",  {"x":0, "y":0, "z":0}, {"x":0, "y":1, "z":0}    , {"x":0, "y":0, "z":0}, -360, 360, 0, 1],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["combustionEngine", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine": {
+        "torque":[
+            ["rpm", "torque"]
+            [0, 0],
+            [500, 21],
+            [1000, 27],
+            [1500, 29],
+            [2000, 31],
+            [3000, 35],
+            [4000, 38],
+            [5000, 40],
+            [6000, 45],
+            [7000, 54],
+            [7500, 61],
+            [8000, 67],
+            [8500, 72],
+            [9000, 71],
+            [9500, 68],
+        ],
+
+        "idleRPM":1200,
+        "maxRPM":9500,
+        "revLimiterRPMDrop":500,
+        "inertia":0.015,
+        "friction":4
+        "dynamicFriction":0.005
+        //"burnEfficiency":0.23
+        "burnEfficiency":[
+            [0, 0.10],
+            [0.05, 0.22],
+            [0.4, 0.39],
+            [0.7, 0.46],
+            [1, 0.36],
+        ],
+        "torqueReactionNodes:":["e1l","e2l","e4r"]
+        "particulates":0.05
+        "energyStorage": "mainTank",
+        "requiredEnergyType":"gasoline",
+
+        //cooling and oil system
+        "thermalsEnabled":true
+        "engineBlockMaterial":"aluminum"
+        "oilVolume":2
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":160
+        "headGasketDamageThreshold":1500000
+        "pistonRingDamageThreshold":1500000
+        "connectingRodDamageThreshold":1500000
+        
+        "maxTorqueRating": 140,
+        "maxOverTorqueDamage": 150,
+
+        //node beam interface
+        "waterDamage": {"[engineGroup]:":["engine_intake"]},
+        "radiator": {"[engineGroup]:":["radiator"]},
+        "engineBlock": {"[engineGroup]:":["engine_block"]},
+        "breakTriggerBeam":"engine",
+        "uiName":"Engine",
+
+        "soundConfig": "soundConfig",
+    },
+    "soundConfig": {
+        "sampleName": "B4",
+        "mainGain": -2,
+        "maxLoadMix": 0.8,
+        "minLoadMix": 0,
+        "eqLowGain": -15,
+        "eqLowFreq": 100,
+        //"eqLowWidth": 0.05,
+        "eqHighGain": -5,
+        "eqHighFreq": 6000,
+        //"eqHighWidth": 0.1,
+        //"eqFundamentalGain": -5,
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":3200,
+        "clutchLaunchTargetRPM":4000,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":[0,0,0,3500,4200,4500,4500]
+        //**highShiftUp can be overwritten by intake modifications**
+        "highShiftUpRPM":9200
+    },
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true}
+         {"group":"coupe_engine"},
+         {"engineGroup":"engine_block"}
+         {"nodeWeight":12},
+         {"chemEnergy":2000,"burnRate":0.39,"flashPoint":1000,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":900,"baseTemp":"thermals","conductionRadius":0.12},
+         ["e1r", -0.06, -0.97, 0.31],
+         ["e1l", 0.21, -0.97, 0.31],
+         ["e2r", -0.06, -1.53, 0.31],
+         ["e2l", 0.21, -1.53, 0.31],
+		 {"chemEnergy":false,"burnRate":false,"flashPoint":false, "specHeat": false,"selfIgnitionCoef":false,"smokePoint":false,"baseTemp":false,"conductionRadius":false},
+         {"engineGroup":["engine_block","engine_intake"]}
+         ["e3r", -0.06, -0.97, 0.79],
+         ["e3l", 0.21, -0.97, 0.79{"isExhaust":"mainEngine"}],
+         ["e4r", -0.06, -1.53, 0.79],
+         ["e4l", 0.21, -1.53, 0.79],
+         {"engineGroup":""}
+         {"group":""},
+         
+    ],
+    
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":4001000,"beamDamp":150},
+          {"beamDeform":1500000,"beamStrength":"FLT_MAX"},
+          //engine
+          ["e1r","e1l"],
+          ["e2r","e2l"],
+          ["e3r","e3l"],
+          ["e4r","e4l"],
+
+          ["e1r","e2r"],
+          ["e1l","e2l"],
+          ["e3r","e4r"],
+          ["e3l","e4l"],
+
+          ["e1r","e3r"],
+          ["e1l","e3l"],
+          ["e2r","e4r"],
+          ["e2l","e4l"],
+
+          ["e2r","e3r"],
+          ["e2l","e3l"],
+          ["e2r","e3l"],
+          ["e2l","e3r"],
+
+          ["e1r","e4r"],
+          ["e1l","e4l"{"isExhaust":true}],
+          ["e1r","e4l"],
+          ["e1l","e4r"],
+
+          ["e1r","e2l"],
+          ["e1l","e2r"],
+          ["e3r","e4l"],
+          ["e3l","e4r"],
+
+          ["e1r","e3l"],
+          ["e1l","e3r"],
+          ["e2r","e4l"],
+          ["e2l","e4r"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"triangleType":"NONCOLLIDABLE"},
+            ["e2r", "e1r", "e1l"],
+            ["e1l", "e2l", "e2r"],
+            {"triangleType":"NORMALTYPE"},
+    ],
+}
+//"eind"
+
+"coupe_i3_600_transmission_5M": {
+//"begin"
+    "information":{
+        "authors":"BeamNG",
+        "name":"5-Speed Manual Transmission",
+		"value":300,
+    }
+    "slotType" : "coupe_i3_600_transmission",
+	"slots": [
+        ["type", "default", "description"]
+        ["coupe_transfer_case_i3","coupe_transfer_case_i3_RWD", "Transfer Case"{"coreSlot":true}],
+		["pigeon_flywheel_600","pigeon_flywheel_600","Flywheel", {"coreSlot":true}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["coupe_i3_transmission", ["coupe_engine","coupe_transmission"]],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-4.53, 0, 4.83, 3.3, 2.32, 1.72, 1.48]
+        "friction": 1,
+        "gearboxNode:":"tra1",
+    },
+    "vehicleController": {
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.18,
+	    "transmissionShiftDelay":0.12,
+        "lowShiftDownRPM":[0,0,0,2000,2500,2500,2500]
+        "lowShiftUpRPM":[0,0,5000,4500,4500,4500]
+    },
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--3 Speed Manual--
+         {"selfCollision":true},
+         {"collision":true}
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"coupe_transmission"},
+         {"nodeWeight":13},
+         ["tra1", 0.0, -0.09, 0.32],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":4001000,"beamDamp":150},
+          {"beamDeform":1500000,"beamStrength":"FLT_MAX"},
+          //transmission
+          ["tra1","e1r"],
+          ["tra1","e3r"],
+          ["tra1","e1l"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+//"eind"
+
+"pigeon_flywheel_600": {
+//"begin"
+    "information":{
+        "authors":"BeamNG",
+        "name":"Flywheel",
+        "value":150,
+    },
+    "slotType" : "pigeon_flywheel_600",
+    "clutch": {
+        "uiName":"Clutch",
+        "additionalEngineInertia":0.01,
+    },
+},
+//"eind"
+
+"coupe_transfer_case_i3_RWD": {
+//"begin"
+    "information":{
+        "authors":"BeamNG",
+        "name":"RWD Transfer Case",
+        "value":800,
+    },
+    "slotType" : "coupe_transfer_case_i3",
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["shaft", "transfercase", "gearbox", 1, {"friction":3}],
+    ],
+},
+//"eind"
+
+"coupe_transfer_case_i3_AWD": {
+//"begin"
+    "information":{
+        "authors":"BeamNG",
+        "name":"AWD Transfer Case",
+        "value":1200,
+    },
+    "slotType" : "coupe_transfer_case_i3",
+	"slots": [
+        ["type", "default", "description"]
+        ["coupe_driveshaft_F_i3","coupe_driveshaft_F_i3", "Front Driveshaft"],
+    ],
+	"flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+		["coupe_transfercase_i3", ["coupe_engine","coupe_transmission"]]
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["differential", "transfercase", "gearbox", 1, {"diffType":"viscous", "viscousCoef":4, "viscousTorque":200, "diffTorqueSplit":0.75, "friction":5}],
+    ],
+},
+//"eind"
+
+"coupe_transfer_case_i3_AWD_race": {
+//"begin"
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race AWD Transfer Case",
+        "value":2500,
+    },
+    "slotType" : "coupe_transfer_case_i3",
+	"slots": [
+        ["type", "default", "description"]
+        ["coupe_driveshaft_F_i3","coupe_driveshaft_F_i3", "Front Driveshaft"],
+    ],
+	"flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+		["coupe_transfercase_i3", ["coupe_engine","coupe_transmission"]]
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$difftorquesplit_C", "range", "", "Differentials", 0.75, 0.6, 0.85, "Center LSD Torque Split", "Percent torque to rear wheels", {"minDis":50, "maxDis":85}],
+        ["$lsdpreload_C", "range", "N/m", "Differentials", 50, 0, 500, "Center LSD Preload", "Initial cross torque between front and rear wheels"],
+        ["$lsdlockcoef_C", "range", "", "Differentials", 0.15, 0, 0.5, "Center LSD Forward Locking ", "Locking effect proportional to engine torque", {"minDis":0, "maxDis":100}],
+        ["$lsdlockcoefrev_C", "range", "", "Differentials", 0.02, 0, 0.5, "Center LSD Reverse Locking", "Locking effect proportional to engine braking", {"minDis":0, "maxDis":100}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["differential", "transfercase", "gearbox", 1, {"diffType":"lsd", "lsdPreload":"$lsdpreload_C", "lsdLockCoef":"$lsdlockcoef_C", "lsdRevLockCoef":"$lsdlockcoefrev_C", "diffTorqueSplit":"$difftorquesplit_C", "friction":5}],
+    ],
+},
+//"eind"
+
+"coupe_driveshaft_F_i3": {
+//"begin"
+    "information":{
+        "authors":"D-Troxx",
+        "name":"Front Driveshaft",
+        "value":200,
+    }
+    "slotType" : "coupe_driveshaft_F_i3",
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"]
+        ["shaft", "driveshaft_F", "transfercase", 2, {"breakTriggerBeam":"driveshaft_F", "electricsName":"driveshaft", "friction":2}]
+    ],
+     "props": [
+        ["func"      , "mesh"           , "idRef:", "idX:", "idY:", "baseRotation"        , "rotation"            , "translation"        , "min", "max", "offset", "multiplier",],
+        ["driveshaft", "coupe_driveshaft_F_i3", "f3r", "f3l", "f8r",    {"x":0, "y":0, "z":0}, {"x":0, "y":1, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1,{"breakGroup":"driveshaft_F","deformGroup":"driveshaft_F"}],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //driveshaft
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":0.005, "beamShortBound":0.005},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":1200,"beamStrength":4500},
+          {"beamLimitSpring":7501000,"beamLimitDamp":250},
+          ["fdiff","tra1", {"name":"driveshaft_F","optional":true,"breakGroup":"driveshaft_F","deformGroup":"driveshaft_F"}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+//"eind"
+
+}

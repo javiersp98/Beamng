@@ -1,0 +1,11 @@
+{
+"ambulance_skin_lcpd": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"Liberty City Police Transport Department Skin",
+        "value":100,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "lcpd",
+},
+}

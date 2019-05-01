@@ -20,12 +20,15 @@
             [8000, 1.6],
         ],
         //max rpm physically capable of
-        "maxRPM":7000,
+        "maxRPM":8000,
         //engine durability
         "cylinderWallTemperatureDamageThreshold":170,
         "maxTorqueRating": 670,
         "maxOverTorqueDamage": 250,
+		"instantAfterFireCoef": 1.5,
+        "sustainedAfterFireCoef": 1.5,
     },
+	
 },
 
 }

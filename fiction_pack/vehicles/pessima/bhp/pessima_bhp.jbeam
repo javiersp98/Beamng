@@ -1,0 +1,12 @@
+{
+
+"pessima_skin_bhp": {
+    "information":{
+        "authors":"OuDacai",
+        "name":"Highway Patrol Skin",
+        "value":200,
+    }
+    "slotType" : "paint_design",
+    "globalSkin" : "bhp",
+}
+}

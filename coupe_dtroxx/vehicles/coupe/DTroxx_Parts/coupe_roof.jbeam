@@ -1,0 +1,51 @@
+{
+
+"coupe_roof": {
+//"begin"
+	"information":{
+		"authors":"Jesper, AKA D-TROXX",
+		"name":"Roof",
+		"value":150,
+	}
+    "slotType" : "coupe_roof",
+	"slots": [
+		["type", "default", "description"]
+		["coupe_roofscoop","","Roof Scoop"],
+		["coupe_lightbar","", "Light Bar"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_roof", ["coupe_body"]],
+		 
+	],
+
+}
+//"eind"
+
+"coupe_sunroof": {
+//"begin"
+	"information":{
+		"authors":"Jesper, AKA D-TROXX",
+		"name":"Sun Roof",
+		"value":350,
+	}
+    "slotType" : "coupe_roof",
+	"slots": [
+		["type", "default", "description"]
+		["coupe_lightbar","", "Light Bar"],
+	],
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["coupe_sunroof", ["coupe_body"]],
+		 ["coupe_roofcover", ["coupe_body"]],
+		 {"deformGroup":"coupe_windshield_break", "deformMaterialBase":"sunburst_glass", "deformMaterialDamaged":"sunburst_glass_dmg"}
+		 ["coupe_sunroof_glass", ["coupe_body"]],
+		 {"deformGroup":"coupe_windshield_break", "deformMaterialBase":"sunburst_glass_int", "deformMaterialDamaged":"sunburst_glass_dmg"}
+		 ["coupe_sunroof_glass_int", ["coupe_body"]],
+		 {"deformGroup":""}
+	],
+
+}
+//"eind"
+
+}
